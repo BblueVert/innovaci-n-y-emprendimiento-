@@ -65,6 +65,12 @@ td { font-size:9.3pt; padding:7px 8px; border-bottom:1px solid var(--page-border
 .fill-box { border:1px dashed var(--page-border); border-radius:6px; padding:8px 10px; min-height:20mm; }
 .fill-lines { border-bottom:1px solid var(--page-border); height:6mm; }
 
+.quote { font-family:var(--fs); font-style:italic; font-size:10.5pt; color:var(--page-text); border-left:3px solid var(--h4); padding:4px 0 4px 10px; margin-bottom:6px; }
+.quote .src { display:block; font-family:var(--fm); font-style:normal; font-size:7pt; letter-spacing:.08em; text-transform:uppercase; color:var(--page-text2); margin-top:2px; }
+.st { font-family:var(--fm); font-size:7pt; letter-spacing:.06em; text-transform:uppercase; white-space:nowrap; }
+.st.ok { color:#1F8A5B; } .st.part { color:var(--accent); } .st.no { color:var(--h4); }
+.verdict { background:var(--page-card); border:1px solid var(--page-border); border-left:3px solid #1F8A5B; border-radius:6px; padding:8px 12px; margin-bottom:6px; font-size:9.2pt; line-height:1.55; }
+.verdict.warn { border-left-color:var(--accent); }
 .footer { position:absolute; bottom:10mm; left:18mm; right:18mm; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--page-border); padding-top:4px; }
 </style>
 </head>
@@ -110,9 +116,9 @@ td { font-size:9.3pt; padding:7px 8px; border-bottom:1px solid var(--page-border
     <tr><th>Campo</th><th>Contenido</th></tr>
     <tr><td>Objetivo general</td><td>Validar, desde la experiencia de una par cercana al ejercicio de la kinesiología, si el dolor de gestión de agenda y control financiero detectado en Joselyn Toledo es un patrón compartido en el sector.</td></tr>
     <tr><td>Objetivo específico</td><td>Entender cómo la entrevistada gestiona hoy su agenda de atenciones y el control financiero de su ejercicio, para contrastar el dolor y la oportunidad seleccionada (agenda personalizada + dashboard financiero en tiempo real).</td></tr>
-    <tr><td>Entrevistada</td><td>Catalina — colega/conocida del área de la salud, especializada en kinesiología, colaboradora previa de HORIZON en el proyecto de Vital Kine.</td></tr>
+    <tr><td>Entrevistada</td><td>Catalina — kinesióloga con contrato en hospital, que además atiende pacientes particulares en sus días libres. Tiene Instagram profesional y sitio web propios.</td></tr>
     <tr><td>Información buscada</td><td>Herramientas de agenda actuales (y su costo si son pagadas), método de control financiero, variabilidad estacional de la carga de trabajo, canal de captación y fidelización, disposición a pagar por una solución a medida.</td></tr>
-    <tr><td>Formato</td><td>Conversación escrita, vía chat, con registro de respuestas para Ficha B.</td></tr>
+    <tr><td>Formato</td><td>Guion enviado por chat; respuestas recibidas como 6 notas de voz por WhatsApp (22-09-2026), transcritas para Ficha B.</td></tr>
   </table>
 
   <h3>Enfoque — mismo eje que la oportunidad seleccionada</h3>
@@ -149,20 +155,71 @@ td { font-size:9.3pt; padding:7px 8px; border-bottom:1px solid var(--page-border
   </div>
 </div>
 
-<!-- FICHA B — PARA COMPLETAR -->
+<!-- FICHA B — PERFIL Y HALLAZGOS -->
 <div class="page">
   <div class="abar-light"></div>
-  <h2>Ficha B — Perfil y Hallazgos <span class="tag" style="background:rgba(232,99,122,.12);border-color:rgba(232,99,122,.4);color:var(--h4);">Para completar</span></h2>
-  <p>Completar esta ficha una vez recibidas las respuestas de Catalina.</p>
+  <h2>Ficha B — Perfil y Hallazgos</h2>
+  <p><span class="tag">Fuente</span> 6 notas de voz de Catalina vía WhatsApp, 22-09-2026 (≈ 2,5 min en total), transcritas.</p>
 
   <div class="fill-label">Perfil de la entrevistada</div>
-  <div class="fill-box">
-    <div class="fill-lines"></div>
-    <div class="fill-lines" style="margin-top:5mm;"></div>
+  <div class="card" style="font-size:9.5pt;">
+    Kinesióloga con contrato en hospital (sueldo ≈ $1.100.000) que además atiende de forma particular 1–2 pacientes por día libre. Ingreso mensual total estimado entre $1.200.000 y $1.400.000. Tiene presencia digital propia: Instagram de kinesiología y sitio web con información de agendamiento y especialidades.
   </div>
 
   <div class="fill-label">Temáticas tratadas</div>
-  <div class="fill-box" style="min-height:32mm;">
+  <table>
+    <tr><th style="width:28%">Tema</th><th>Hallazgo</th></tr>
+    <tr><td>Agenda</td><td>Usa <strong>Cal.com</strong> sincronizado con Google Calendar; ahí ve juntos los turnos del hospital y las atenciones particulares. Lo valora por rápido y simple.</td></tr>
+    <tr><td>Control financiero</td><td>Registra ingresos y egresos en <strong>Excel</strong>, de forma manual. Le toma <strong>~1 hora diaria</strong> mantener cuentas y agenda ordenadas.</td></tr>
+    <tr><td>Estacionalidad</td><td>Carga estable todo el año, limitada por su disponibilidad (1–2 pacientes por día libre), no por la demanda.</td></tr>
+    <tr><td>Fidelización</td><td>Deja su WhatsApp al cerrar el tratamiento para dudas, síntomas nuevos o ejercicios en casa. Instagram y web como canal de re-agendamiento.</td></tr>
+    <tr><td>Disposición a pagar</td><td>Pagaría <strong>$30.000–$40.000 CLP/mes</strong> por un sistema que junte agenda + dashboard financiero.</td></tr>
+  </table>
+
+  <div class="fill-label">Citas clave</div>
+  <div class="quote">“Para poder organizar el Excel sobre los ingresos y egresos que estoy teniendo me toma una hora actualmente diario.”<span class="src">Audio 19:35 · P09</span></div>
+  <div class="quote">“Sí pagaría por una herramienta así que juntara eso… fácilmente 30 a 40 mil pesos, ya que me estaría ahorrando bastante tiempo.”<span class="src">Audio 19:36 · P10</span></div>
+  <div class="quote">“Se me sincroniza automáticamente con mi calendario Google, lo cual me permite ir viendo tanto los turnos del hospital como las atenciones particulares.”<span class="src">Audio 19:31 · P02</span></div>
+
+  <div class="footer">
+    <span class="label-lgt">Ficha B — Perfil y hallazgos</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+<!-- FICHA B — CONTRASTE CON LA OPORTUNIDAD -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>¿Confirma o contradice la oportunidad seleccionada?</h2>
+  <p>Oportunidad: <em>sistema de agenda personalizado + dashboard financiero en tiempo real</em>.</p>
+
+  <div class="verdict"><strong>Confirma — dolor financiero.</strong> El control de ingresos y egresos es manual y le cuesta ~1 h diaria (≈ 20–30 h al mes). Es el mismo patrón detectado en Joselyn: el dolor es compartido por otras profesionales del área.</div>
+  <div class="verdict"><strong>Confirma — disposición a pagar.</strong> Declara $30.000–$40.000 CLP/mes sin inducción de precio, lo que da un primer rango de referencia para el modelo de ingresos.</div>
+  <div class="verdict warn"><strong>Matiza — agenda.</strong> La agenda por sí sola no es un dolor para ella: Cal.com + Google Calendar le funciona. El valor está en <strong>conectar la agenda con las finanzas</strong>, no en reemplazar la herramienta de agendamiento. La propuesta debería integrarse con herramientas como Cal.com en vez de competir con ellas.</div>
+  <div class="verdict warn"><strong>Matiza — perfil mixto.</strong> Combina sueldo fijo (hospital) con ingresos particulares variables. El dashboard debe separar ambas fuentes para dar una visión real del mes.</div>
+
+  <div class="fill-label">Cobertura del guion</div>
+  <table>
+    <tr><th style="width:8%">N°</th><th>Pregunta</th><th style="width:40%">Estado</th></tr>
+    <tr><td>01</td><td>Años de ejercicio y modalidad</td><td><span class="st part">Parcial</span> — hospital + particular; falta antigüedad</td></tr>
+    <tr><td>02</td><td>Gestión de agenda</td><td><span class="st ok">Respondida</span></td></tr>
+    <tr><td>03</td><td>Costo de la herramienta de agenda</td><td><span class="st no">Pendiente</span></td></tr>
+    <tr><td>04</td><td>Registro de ingresos y gastos</td><td><span class="st ok">Respondida</span> (Excel, vía P09)</td></tr>
+    <tr><td>05</td><td>Claridad sobre ingresos</td><td><span class="st ok">Respondida</span></td></tr>
+    <tr><td>06</td><td>Variabilidad estacional</td><td><span class="st ok">Respondida</span></td></tr>
+    <tr><td>07</td><td>Canal de pacientes nuevos</td><td><span class="st part">Parcial</span> — IG y web; falta canal principal</td></tr>
+    <tr><td>08</td><td>Fidelización</td><td><span class="st ok">Respondida</span></td></tr>
+    <tr><td>09</td><td>Ahorro de tiempo o dinero</td><td><span class="st ok">Respondida</span></td></tr>
+    <tr><td>10</td><td>Disposición a pagar</td><td><span class="st ok">Respondida</span></td></tr>
+  </table>
+
+  <div class="footer">
+    <span class="label-lgt">Ficha B — Contraste con la oportunidad</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+>
     <div class="fill-lines"></div>
     <div class="fill-lines" style="margin-top:5mm;"></div>
     <div class="fill-lines" style="margin-top:5mm;"></div>

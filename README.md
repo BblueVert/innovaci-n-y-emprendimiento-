@@ -16,7 +16,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 ## Estado actual
 
 - **Semana 1** — Completa: Canvas de Preguntas (33 preguntas / 9 bloques BMC), Card Sorting (9 categorías emergentes), entrevista de usuario Ficha A/B (Joselyn), observación no participante (por autorreporte).
-- **Semana 2** — Entrevista a experto/a Ficha A completa; Ficha B pendiente de completar con las respuestas de Catalina. Matriz PESTAL formateada en grid 2×3.
+- **Semana 2** — Entrevista a experta Ficha A y B completas (respuestas de Catalina por audio, transcritas). Matriz PESTAL formateada en grid 2×3.
 - **Semana 3** — En progreso: matrices de vaciado de hallazgos y estudio comparativo de antecedentes.
 
 ### Oportunidades seleccionadas
@@ -28,7 +28,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 | Archivo | Descripción |
 |---|---|
 | `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Joselyn, mapa de síntesis, hallazgos. |
-| `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B pendiente de completar con sus respuestas. |
+| `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B completa: perfil, hallazgos, citas clave y contraste con la oportunidad. |
 
 Ambos documentos usan la identidad visual HORIZON (portada degradada, barra de acento, tipografía Arial Narrow/Courier New/Helvetica o Bebas Neue/DM Mono/Plus Jakarta Sans según el entregable) y están pensados para exportarse a PDF vía WeasyPrint, formato A4.
 
@@ -52,7 +52,7 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 | `*_infografia.pdf` | Infografías de apoyo con ejemplos aplicados por técnica (entrevista usuario/experto, observación, cuestionario, PESTEL, procesamiento de hallazgos, redefinición del desafío) |
 
 ## Pendientes
-- Completar Ficha B de la entrevista a Catalina con sus respuestas.
+- Seguimiento breve con Catalina: antigüedad (P01), costo de Cal.com (P03) y canal principal de pacientes nuevos (P07).
 - Rellenar las plantillas en blanco (entrevista usuario/experto, observación, PESTAL, antecedentes) con la información real del caso.
 - Terminar matrices de Semana 3 (vaciado de hallazgos, comparativo de antecedentes).
 - Redefinición del desafío (Semana 4).
