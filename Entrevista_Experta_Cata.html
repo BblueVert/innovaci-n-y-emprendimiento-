@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ficha de Entrevista a Experta — Catalina</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --void:#07060E; --card:#1A1828; --border:#252235; --border2:#302D45;
+  --accent:#FF6B35; --h4:#E8637A; --h6:#7B3FA0;
+  --text:#F5F2FF; --text2:#9B98B8; --text3:#504D6E;
+  --page-bg:#F8F7FF; --page-text:#12101E; --page-text2:#504D6E;
+  --page-border:#E2E0EF; --page-card:#FFFFFF;
+  --fd:'Bebas Neue',sans-serif;
+  --fm:'DM Mono',monospace;
+  --fb:'Plus Jakarta Sans',sans-serif;
+  --fs:'Instrument Serif',serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+@page { size: A4; margin: 0; }
+body { font-family: var(--fb); font-size: 10.5pt; line-height: 1.7; }
+
+.page-cover {
+  width:210mm; min-height:297mm; padding:20mm 18mm;
+  background: linear-gradient(135deg, var(--void) 0%, #1A0E2E 60%, #0D0820 100%);
+  color: var(--text);
+  display:flex; flex-direction:column; justify-content:space-between;
+  position:relative; overflow:hidden; page-break-after:always;
+}
+.page {
+  width:210mm; min-height:297mm; padding:16mm 18mm 26mm;
+  background: var(--page-bg); color: var(--page-text);
+  position:relative; overflow:hidden; page-break-after:always;
+}
+.page:last-child { page-break-after: auto; }
+
+.abar-dark { position:absolute; left:0; top:0; bottom:0; width:5px; background: linear-gradient(180deg, var(--accent), var(--h4), var(--h6)); }
+.abar-light { position:absolute; left:0; top:0; bottom:0; width:3px; background: linear-gradient(180deg, var(--accent), var(--h4), var(--h6)); opacity:0.5; }
+
+.display  { font-family:var(--fd); letter-spacing:.04em; line-height:1.05; }
+.label    { font-family:var(--fm); font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--text2); }
+.label-lgt{ font-family:var(--fm); font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--page-text2); }
+.accent   { color:var(--accent); }
+.serif    { font-family:var(--fs); font-style:italic; }
+h1 { font-family:var(--fd); font-size:22pt; color:var(--page-text); margin-bottom:4mm; }
+h2 { font-family:var(--fb); font-size:13pt; font-weight:700; color:var(--page-text); margin:6mm 0 3mm; border-left:3px solid var(--accent); padding-left:8px; }
+h3 { font-family:var(--fb); font-size:11pt; font-weight:600; color:var(--page-text2); margin:4mm 0 2mm; }
+p  { margin-bottom:3mm; }
+
+.card { background:var(--page-card); border:1px solid var(--page-border); border-radius:6px; padding:11px 13px; margin-bottom:7px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+.divider-accent { height:2px; background:linear-gradient(90deg,var(--accent),var(--h4),transparent); margin:8px 0; }
+.tag { display:inline-block; background:rgba(255,107,53,.1); border:1px solid rgba(255,107,53,.3); border-radius:3px; padding:2px 8px; font-family:var(--fm); font-size:7pt; color:var(--accent); letter-spacing:.08em; text-transform:uppercase; margin-right:4px; }
+
+table { width:100%; border-collapse:separate; border-spacing:0; margin:3mm 0; }
+th { font-family:var(--fm); font-size:7pt; text-transform:uppercase; letter-spacing:.08em; color:var(--page-text2); text-align:left; padding:5px 8px; border-bottom:2px solid var(--page-border); }
+td { font-size:9.3pt; padding:7px 8px; border-bottom:1px solid var(--page-border); vertical-align:top; }
+
+.qitem { background:var(--page-card); border:1px solid var(--page-border); border-left:3px solid var(--accent); border-radius:6px; padding:10px 13px; margin-bottom:8px; }
+.qnum { display:inline-block; font-family:var(--fm); font-size:7.5pt; color:var(--accent); letter-spacing:.08em; margin-bottom:3px; }
+.qtext { font-size:9.8pt; color:var(--page-text); }
+.qhint { font-size:8.3pt; color:var(--page-text2); margin-top:2px; }
+
+.fill-label { font-family:var(--fm); font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase; color:var(--page-text2); margin:5mm 0 2mm; }
+.fill-box { border:1px dashed var(--page-border); border-radius:6px; padding:8px 10px; min-height:20mm; }
+.fill-lines { border-bottom:1px solid var(--page-border); height:6mm; }
+
+.footer { position:absolute; bottom:10mm; left:18mm; right:18mm; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--page-border); padding-top:4px; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="page-cover">
+  <div class="abar-dark"></div>
+  <div>
+    <div class="display" style="font-size:18pt;color:var(--text);">HORIZON</div>
+    <div class="label accent">Arquitectura Digital → Expansión Digital</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:10mm 0;">
+    <div class="label" style="margin-bottom:3mm;">Innovación y Emprendimiento III · INACAP Rancagua</div>
+    <div class="display" style="font-size:30pt;color:var(--text);margin-bottom:3mm;">FICHA DE ENTREVISTA A EXPERTA</div>
+    <div class="display" style="font-size:16pt;color:var(--h4);margin-bottom:3mm;">Instrumento 1.1.2.3</div>
+    <div class="divider-accent" style="max-width:80mm;"></div>
+    <div style="margin-top:3mm;color:var(--text2);font-size:9.5pt;max-width:130mm;">
+      Validación del dolor de gestión de agenda y control financiero detectado en el caso
+      Joselyn Toledo (Kinesiología), desde la experiencia de una par del área.
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div>
+      <div style="font-weight:600;color:var(--text);">Francisco Ahumada · Claudia Cifuentes</div>
+      <div style="font-weight:600;color:var(--text);">Néstor Rivera · Benjamín Vera Yáñez</div>
+      <div class="label" style="margin-top:2px;">Diseño Digital · INACAP Rancagua</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="label">Rancagua, Chile</div>
+      <div class="label">Septiembre 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- FICHA A -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>Ficha A — Preparación de la Entrevista</h2>
+  <p><span class="tag">Instrumento 1.1.2.3</span> Entrevista en profundidad a experta, en el marco del diagnóstico de oportunidades del proyecto HORIZON x Joselyn Toledo (Kinesiología).</p>
+
+  <table>
+    <tr><th>Campo</th><th>Contenido</th></tr>
+    <tr><td>Objetivo general</td><td>Validar, desde la experiencia de una par cercana al ejercicio de la kinesiología, si el dolor de gestión de agenda y control financiero detectado en Joselyn Toledo es un patrón compartido en el sector.</td></tr>
+    <tr><td>Objetivo específico</td><td>Entender cómo la entrevistada gestiona hoy su agenda de atenciones y el control financiero de su ejercicio, para contrastar el dolor y la oportunidad seleccionada (agenda personalizada + dashboard financiero en tiempo real).</td></tr>
+    <tr><td>Entrevistada</td><td>Catalina — colega/conocida del área de la salud, especializada en kinesiología, colaboradora previa de HORIZON en el proyecto de Vital Kine.</td></tr>
+    <tr><td>Información buscada</td><td>Herramientas de agenda actuales (y su costo si son pagadas), método de control financiero, variabilidad estacional de la carga de trabajo, canal de captación y fidelización, disposición a pagar por una solución a medida.</td></tr>
+    <tr><td>Formato</td><td>Conversación escrita, vía chat, con registro de respuestas para Ficha B.</td></tr>
+  </table>
+
+  <h3>Enfoque — mismo eje que la oportunidad seleccionada</h3>
+  <p>El objetivo no es levantar un perfil general del rubro, sino entender qué está haciendo hoy la experta exactamente en el mismo tema de la oportunidad ya seleccionada: manejo de agenda y control financiero.</p>
+
+  <div class="footer">
+    <span class="label-lgt">Ficha A — Preparación</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+<!-- GUION DE PREGUNTAS -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>Guion de Preguntas</h2>
+  <p>Preguntas orientadoras a enviar a Catalina. Pueden reformularse según el flujo natural de la conversación.</p>
+
+  <div class="qitem"><span class="qnum">01</span><div class="qtext">¿Hace cuánto ejerces (o estás en práctica) y trabajas en clínica, de forma particular, o ambas?</div></div>
+  <div class="qitem"><span class="qnum">02</span><div class="qtext">¿Cómo llevas hoy tu agenda de pacientes/atenciones?</div><div class="qhint">¿Usas alguna app (Agenda Pro u otra), WhatsApp, o algo manual?</div></div>
+  <div class="qitem"><span class="qnum">03</span><div class="qtext">Si usas una herramienta de agenda pagada, ¿cuánto pagas al mes por ella?</div></div>
+  <div class="qitem"><span class="qnum">04</span><div class="qtext">¿Cómo registras y revisas tus ingresos y gastos?</div><div class="qhint">Excel, cuaderno, alguna app...</div></div>
+  <div class="qitem"><span class="qnum">05</span><div class="qtext">¿Sabes con claridad cuánto ganaste el mes pasado, o cuánto proyectas ganar el próximo mes?</div></div>
+  <div class="qitem"><span class="qnum">06</span><div class="qtext">¿Qué tan variable es tu carga de atenciones entre temporadas del año?</div></div>
+  <div class="qitem"><span class="qnum">07</span><div class="qtext">¿Por dónde te llegan la mayoría de tus pacientes nuevos hoy?</div><div class="qhint">Boca a boca, redes sociales, referidos de un centro/clínica...</div></div>
+  <div class="qitem"><span class="qnum">08</span><div class="qtext">¿Haces algo para mantener el contacto con pacientes antiguos y que vuelvan a agendar?</div></div>
+  <div class="qitem"><span class="qnum">09</span><div class="qtext">Si existiera un sistema de agenda + dashboard financiero hecho a la medida de tu forma de trabajar, ¿te ahorraría tiempo o dinero frente a lo que usas hoy?</div></div>
+  <div class="qitem"><span class="qnum">10</span><div class="qtext">¿Pagarías por una herramienta así? ¿Cuánto te parecería razonable al mes?</div></div>
+
+  <p style="color:var(--page-text2);font-size:9pt;margin-top:4mm;">Este perfil de experta es especialmente útil para validar si el dolor detectado en Joselyn es un patrón compartido por otras profesionales del área, reforzando el caso de negocio de la oportunidad seleccionada.</p>
+
+  <div class="footer">
+    <span class="label-lgt">Guion de preguntas</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+<!-- FICHA B — PARA COMPLETAR -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>Ficha B — Perfil y Hallazgos <span class="tag" style="background:rgba(232,99,122,.12);border-color:rgba(232,99,122,.4);color:var(--h4);">Para completar</span></h2>
+  <p>Completar esta ficha una vez recibidas las respuestas de Catalina.</p>
+
+  <div class="fill-label">Perfil de la entrevistada</div>
+  <div class="fill-box">
+    <div class="fill-lines"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+  </div>
+
+  <div class="fill-label">Temáticas tratadas</div>
+  <div class="fill-box" style="min-height:32mm;">
+    <div class="fill-lines"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+  </div>
+
+  <div class="fill-label">Citas clave</div>
+  <div class="fill-box" style="min-height:22mm;">
+    <div class="fill-lines"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+  </div>
+
+  <div class="fill-label">¿Confirma o contradice la oportunidad seleccionada?</div>
+  <div class="fill-box">
+    <div class="fill-lines"></div>
+    <div class="fill-lines" style="margin-top:5mm;"></div>
+  </div>
+
+  <div class="footer">
+    <span class="label-lgt">Ficha B — Perfil y hallazgos</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+</body>
+</html>

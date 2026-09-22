@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evaluación 1 — Diagnóstico y Selección de Oportunidades</title>
+<style>
+:root {
+  --void:#07060E; --deep:#0D0B18; --surface:#13111F; --card:#1A1828; --border:#252235; --border2:#302D45;
+  --accent:#FF6B35; --h2:#FF8C42; --h3:#FFB347; --h4:#E8637A; --h5:#C4467A; --h6:#7B3FA0; --h7:#4A3580;
+  --text:#F5F2FF; --text2:#9B98B8; --text3:#504D6E;
+  --page-bg:#F8F7FF; --page-text:#12101E; --page-text2:#504D6E;
+  --page-border:#E2E0EF; --page-card:#FFFFFF;
+  --fd:'Arial Narrow', Arial, sans-serif;
+  --fm:'Courier New', monospace;
+  --fb:'Helvetica Neue', Arial, sans-serif;
+  --fs:Georgia, 'Times New Roman', serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+@page { size: A4; margin: 0; }
+body { font-family: var(--fb); font-size: 10.3pt; line-height: 1.65; }
+
+.page-cover {
+  width:210mm; min-height:297mm; padding:20mm 18mm;
+  background: linear-gradient(135deg, var(--void) 0%, #1A0E2E 60%, #0D0820 100%);
+  color: var(--text);
+  display:flex; flex-direction:column; justify-content:space-between;
+  position:relative; overflow:hidden; page-break-after:always;
+}
+.page {
+  width:210mm; min-height:297mm; padding:16mm 18mm 26mm;
+  background: var(--page-bg); color: var(--page-text);
+  position:relative; overflow:hidden; page-break-after:always;
+}
+.page:last-child { page-break-after: auto; }
+
+.abar-dark { position:absolute; left:0; top:0; bottom:0; width:5px; background: linear-gradient(180deg, var(--accent), var(--h4), var(--h6)); }
+.abar-light { position:absolute; left:0; top:0; bottom:0; width:3px; background: linear-gradient(180deg, var(--accent), var(--h4), var(--h6)); opacity:0.5; }
+
+.display  { font-family:var(--fd); letter-spacing:.04em; line-height:1.05; }
+.label    { font-family:var(--fm); font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--text2); }
+.label-lgt{ font-family:var(--fm); font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--page-text2); }
+.accent   { color:var(--accent); }
+.serif    { font-family:var(--fs); font-style:italic; }
+h1 { font-family:var(--fd); font-size:21pt; color:var(--page-text); margin-bottom:4mm; }
+h2 { font-family:var(--fb); font-size:12.5pt; font-weight:700; color:var(--page-text); margin:6mm 0 3mm; border-left:3px solid var(--accent); padding-left:8px; }
+h3 { font-family:var(--fb); font-size:10.5pt; font-weight:700; color:var(--page-text2); margin:4mm 0 2mm; }
+p  { margin-bottom:3mm; }
+ul, ol { margin:0 0 3mm 5mm; }
+li { margin-bottom:1.5mm; }
+blockquote { border-left:3px solid var(--accent); padding:6px 12px; background:rgba(255,107,53,.05); margin:4mm 0; font-family:var(--fs); font-style:italic; color:var(--page-text2); }
+
+.card { background:var(--page-card); border:1px solid var(--page-border); border-radius:6px; padding:10px 12px; margin-bottom:6px; }
+.card-dark { background:var(--card); border:1px solid var(--border); border-radius:6px; padding:10px 12px; margin-bottom:6px; }
+.divider-accent { height:2px; background:linear-gradient(90deg,var(--accent),var(--h4),transparent); margin:8px 0; }
+.divider-light  { height:1px; background:var(--page-border); margin:8px 0; }
+.tag { display:inline-block; background:rgba(255,107,53,.1); border:1px solid rgba(255,107,53,.3); border-radius:3px; padding:2px 8px; font-family:var(--fm); font-size:6.8pt; color:var(--accent); letter-spacing:.08em; text-transform:uppercase; margin-right:4px; }
+.tag-purple { background:rgba(123,63,160,.1); border:1px solid rgba(123,63,160,.35); color:var(--h6); }
+
+.footer { position:absolute; bottom:10mm; left:18mm; right:18mm; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--page-border); padding-top:4px; }
+
+table { width:100%; border-collapse:separate; border-spacing:0; margin:3mm 0; }
+th { font-family:var(--fm); font-size:7pt; text-transform:uppercase; letter-spacing:.08em; color:var(--page-text2); text-align:left; padding:5px 8px; border-bottom:2px solid var(--page-border); }
+td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border); vertical-align:top; }
+
+.cat-block { border-radius:6px; padding:8px 10px; margin-bottom:6px; color:#fff; }
+.cat-num { font-family:var(--fm); font-size:6.5pt; letter-spacing:.1em; opacity:.85; text-transform:uppercase; }
+.cat-title { font-weight:700; font-size:9.5pt; margin-top:1px; }
+.cat-question { font-family:var(--fs); font-style:italic; font-size:8.3pt; margin-top:2px; opacity:.95; }
+.cat-questions-list { background:#fff; border:1px solid var(--page-border); border-radius:0 0 6px 6px; margin-top:-6px; padding:8px 10px 6px; font-size:8.3pt; color:var(--page-text); }
+.cat-questions-list ul { margin:0 0 0 4mm; }
+.cat-questions-list li { margin-bottom:1mm; }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="page-cover">
+  <div class="abar-dark"></div>
+  <div>
+    <div class="display" style="font-size:18pt;color:var(--text);">HORIZON</div>
+    <div class="label accent">Arquitectura Digital → Expansión Digital</div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:10mm 0;">
+    <div class="label" style="margin-bottom:3mm;">Innovación y Emprendimiento III · INACAP Rancagua</div>
+    <div class="display" style="font-size:32pt;color:var(--text);margin-bottom:3mm;">EVALUACIÓN N°1</div>
+    <div class="display" style="font-size:18pt;color:var(--h3);margin-bottom:3mm;">Diagnóstico y Selección de Oportunidades</div>
+    <div class="divider-accent" style="max-width:80mm;"></div>
+    <div style="margin-top:3mm;color:var(--text2);font-size:9.5pt;max-width:130mm;">
+      Informe consolidado del proceso de diagnóstico aplicado al caso real de Joselyn Toledo,
+      kinesióloga independiente — Centro Médico InMotion. Semanas 1 a 5, criterios 1.1.1 a 1.1.6
+      del Ciclo de Innovación INACAP.
+    </div>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <div>
+      <div style="font-weight:700;color:var(--text);">Francisco Ahumada · Claudia Cifuentes</div>
+      <div style="font-weight:700;color:var(--text);">Néstor Rivera · Benjamín Vera Yáñez</div>
+      <div class="label" style="margin-top:2px;">Diseño Digital · INACAP Rancagua</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="label">Rancagua, Chile</div>
+      <div class="label">Septiembre 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h1>Índice</h1>
+  <div class="divider-accent"></div>
+  <div style="margin-top:6mm;">
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>1. Contexto del proyecto y equipo</span><span class="label-lgt">03</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>2. Metodología aplicada — Toolkit Semanas 1-4</span><span class="label-lgt">04</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>3. Guion de sondeo — Canvas de Preguntas</span><span class="label-lgt">05</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>4. Síntesis por Card Sorting — 9 categorías emergentes</span><span class="label-lgt">06</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>5. Entrevista en profundidad — Joselyn Toledo</span><span class="label-lgt">08</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>6. Mapa de síntesis complementario</span><span class="label-lgt">10</span></div>
+    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>7. Hallazgos preliminares y próximos pasos</span><span class="label-lgt">11</span></div>
+  </div>
+  <div class="footer">
+    <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+<!-- 1. CONTEXTO -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>1. Contexto del Proyecto y Equipo</h2>
+  <p>Este informe consolida el proceso de diagnóstico y selección de oportunidades desarrollado durante las semanas 1 a 5 de la asignatura <strong>Innovación y Emprendimiento III</strong>, aplicando el Ciclo de Innovación INACAP sobre un caso real de emprendimiento.</p>
+
+  <h3>Equipo de trabajo</h3>
+  <div class="card">
+    <span class="tag">Integrante</span> Francisco Ahumada<br>
+    <span class="tag">Integrante</span> Claudia Cifuentes<br>
+    <span class="tag">Integrante</span> Néstor Rivera<br>
+    <span class="tag">Integrante</span> Benjamín Vera Yáñez
+  </div>
+
+  <h3>Cliente / caso de estudio</h3>
+  <div class="card">
+    <strong>Joselyn Toledo</strong> — Kinesióloga, Centro Médico InMotion.<br>
+    Especialidades: rehabilitación músculoesquelética, kinesioterapia respiratoria, kinesiología neurológica, masoterapia, psicomotricidad acuática. Diplomados en fisiología del ejercicio y piso pélvico. Empresa propia desde hace aproximadamente 1 año, con modelo mixto de atención en clínica (comisión 70/30) y atención particular a domicilio.
+  </div>
+
+  <h3>Marco de evaluación</h3>
+  <p>La entrega corresponde a la Escala de Apreciación <em>"Diagnóstico y Selección de Oportunidades"</em>, con criterios 1.1.1 a 1.1.6, cuyo respaldo se construyó semana a semana mediante la Bitácora de Declaración de Avance y el toolkit de instrumentos de needfinding entregado por la asignatura.</p>
+
+  <div class="footer">
+    <span class="label-lgt">Contexto y equipo</span>
+    <span class="label-lgt">Pág. 03</span>
+  </div>
+</div>
+
+<!-- 2. METODOLOGÍA -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>2. Metodología Aplicada — Toolkit Semanas 1 a 4</h2>
+  <p>Siguiendo el cronograma de entrega, el equipo aplicó de forma progresiva el toolkit de instrumentos de needfinding del Ciclo de Innovación INACAP:</p>
+
+  <h3>Semana 1 — Needfinding: usuario</h3>
+  <ul>
+    <li>Pregunta exploratoria (evaluación diagnóstica UA1)</li>
+    <li>Instrumento 1.1.2.1 — Preparación y pauta de entrevista en profundidad a usuario</li>
+    <li>Instrumento 1.1.2.2 — Preparación y pauta de observación no participante (AEIOU)</li>
+  </ul>
+
+  <h3>Semana 2 — Needfinding: experto y entorno</h3>
+  <ul>
+    <li>Instrumento 1.1.2.3 — Entrevista en profundidad a experto/a</li>
+    <li>Instrumento 1.1.3.1 — Matriz PESTAL</li>
+  </ul>
+
+  <h3>Semana 3 — Síntesis y benchmark</h3>
+  <ul>
+    <li>Instrumento 1.1.4.1 — Vaciado de hallazgos</li>
+    <li>Instrumento 1.1.4.2 — Categorización y priorización de insights</li>
+    <li>Instrumento 1.1.5.1 — Ficha y matriz de estudio comparativo de antecedentes</li>
+  </ul>
+
+  <h3>Semana 4 — Redefinición del desafío</h3>
+  <ul>
+    <li>Técnica de redefinición: "¿Cómo podríamos + verbo + proceso/componente + usuarios + impacto medible + alcance"</li>
+    <li>Cierre de la Bitácora de Declaración de Avance (evaluación formativa)</li>
+  </ul>
+
+  <blockquote>La Bitácora de Avance consolidó, semana a semana, el instrumento usado, su objetivo, el tiempo utilizado, los responsables y si los resultados permitieron el logro del objetivo — sirviendo de respaldo directo a los criterios 1.1.1 a 1.1.6 de esta evaluación.</blockquote>
+
+  <div class="footer">
+    <span class="label-lgt">Metodología aplicada</span>
+    <span class="label-lgt">Pág. 04</span>
+  </div>
+</div>
+
+<!-- 3. GUION DE SONDEO -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>3. Guion de Sondeo — Canvas de Preguntas</h2>
+  <p>Como instrumento aplicado de needfinding, el equipo construyó un guion de preguntas de sondeo estructurado sobre los 9 bloques del Business Model Canvas, para guiar la entrevista real al caso de estudio (no un canvas ya completado, sino la pauta para levantar la información). El guion integra las preguntas recopiladas por Benjamín a partir de notas manuscritas y el aporte de preguntas de Francisco.</p>
+
+  <div class="card">
+    <span class="tag">33+ preguntas</span><span class="tag">9 bloques BMC</span><span class="tag tag-purple">Aporte Francisco</span>
+    <p style="margin-top:6px;margin-bottom:0;">El guion cubre: socios clave, actividades y recursos clave, propuesta de valor, relación con clientes, canales, segmentos de clientes, estructura de costos y fuentes de ingresos — cada bloque con preguntas abiertas orientadas a levantar información real del negocio de Joselyn.</p>
+  </div>
+
+  <h3>Ejemplos representativos del guion</h3>
+  <ul>
+    <li>¿Cómo definirían a su cliente ideal?</li>
+    <li>¿Qué los diferencia de otros centros de kinesiología o spa?</li>
+    <li>¿Cuál es el flujo a día de hoy para poder agendar?</li>
+    <li>¿Cómo establecen los valores de sus servicios?</li>
+    <li>¿Tienen algún convenio con doctores o centros de medicina?</li>
+  </ul>
+
+  <p style="color:var(--page-text2);font-size:9pt;">Documento completo entregado como PDF independiente: <em>Canvas de Preguntas — Kinesiología SPA</em> (formato A4 horizontal).</p>
+
+  <div class="footer">
+    <span class="label-lgt">Guion de sondeo</span>
+    <span class="label-lgt">Pág. 05</span>
+  </div>
+</div>
+
+<!-- 4. CARD SORTING -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>4. Síntesis por Card Sorting — 9 Categorías Emergentes</h2>
+  <p>Las 33+ preguntas del guion se trataron como tarjetas de un brainstorming y se agruparon mediante la técnica de <strong>card sorting</strong> en 9 categorías temáticas emergentes, cada una resumida en una "pregunta paraguas".</p>
+
+  <div class="cat-block" style="background:var(--accent);">
+    <div class="cat-num">Categoría 01</div>
+    <div class="cat-title">Equipo y Capacidad Operativa</div>
+    <div class="cat-question">¿Con qué equipo humano y estructura operan hoy?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h2);">
+    <div class="cat-num">Categoría 02</div>
+    <div class="cat-title">Red de Alianzas y Proveedores</div>
+    <div class="cat-question">¿Con quién trabajan para poder operar y crecer?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h3);color:var(--page-text);">
+    <div class="cat-num" style="color:#6b5420;">Categoría 03</div>
+    <div class="cat-title">Catálogo y Oferta de Servicios</div>
+    <div class="cat-question">¿Qué ofrecen y qué tan definida está su oferta?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h4);">
+    <div class="cat-num">Categoría 04</div>
+    <div class="cat-title">Cliente Ideal y Propuesta de Valor</div>
+    <div class="cat-question">¿A quién atienden y por qué los eligen a ellos?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h5);">
+    <div class="cat-num">Categoría 05</div>
+    <div class="cat-title">Relación y Fidelización</div>
+    <div class="cat-question">¿Cómo cuidan la relación con quien ya es cliente?</div>
+  </div>
+
+  <div class="footer">
+    <span class="label-lgt">Card sorting — 1/2</span>
+    <span class="label-lgt">Pág. 06</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <div class="cat-block" style="background:var(--h6);">
+    <div class="cat-num">Categoría 06</div>
+    <div class="cat-title">Captación y Canales Digitales</div>
+    <div class="cat-question">¿Por dónde llegan los clientes nuevos hoy?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h7);">
+    <div class="cat-num">Categoría 07</div>
+    <div class="cat-title">Operación de Agenda y Venta</div>
+    <div class="cat-question">¿Cómo transforman el interés en una cita agendada?</div>
+  </div>
+  <div class="cat-block" style="background:var(--accent);">
+    <div class="cat-num">Categoría 08</div>
+    <div class="cat-title">Modelo de Cobro e Ingresos</div>
+    <div class="cat-question">¿Cómo y cuándo genera dinero el negocio?</div>
+  </div>
+  <div class="cat-block" style="background:var(--h2);">
+    <div class="cat-num">Categoría 09</div>
+    <div class="cat-title">Estructura de Costos</div>
+    <div class="cat-question">¿En qué se va la plata cada mes?</div>
+  </div>
+
+  <blockquote>Lectura del sorting: las 9 categorías emergentes no calzan 1:1 con los 9 bloques del Business Model Canvas — por ejemplo, "Operación de Agenda" cruza Canales y Relación con Clientes, y "Modelo de Cobro" cruza Costos e Ingresos. Esto es analíticamente relevante: el card sorting revela cómo agrupa el problema real quien hace las preguntas, no cómo lo predefine el framework.</blockquote>
+
+  <p style="color:var(--page-text2);font-size:9pt;">Documento completo entregado como PDF independiente: <em>Mapa de Card Sorting — Kinesiología SPA</em> (portada + 2 tableros A4 horizontal).</p>
+
+  <div class="footer">
+    <span class="label-lgt">Card sorting — 2/2</span>
+    <span class="label-lgt">Pág. 07</span>
+  </div>
+</div>
+
+<!-- 5. ENTREVISTA JOSELYN -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>5. Entrevista en Profundidad — Joselyn Toledo</h2>
+  <p>Entrevista realizada en clases (Clase 3) al caso de estudio. Se registró parcialmente en audio y se complementó con la transcripción de la sesión. A continuación, el resumen estructurado en los dos instrumentos de needfinding correspondientes.</p>
+
+  <h3>Instrumento A — Preparación de la entrevista</h3>
+  <table>
+    <tr><th>Campo</th><th>Contenido</th></tr>
+    <tr><td>Objetivo general</td><td>Levantar información sobre el modelo de negocio, operación y necesidades de Joselyn Toledo para el diagnóstico de oportunidades del proyecto.</td></tr>
+    <tr><td>Objetivos específicos</td><td>Identificar el modelo de servicio (clínica vs. domicilio) y estructura de ingresos; conocer el proceso de captación y fidelización; detectar dolores de gestión; explorar planes de crecimiento.</td></tr>
+    <tr><td>Entrevistada</td><td>Joselyn Toledo, kinesióloga, Centro Médico InMotion.</td></tr>
+    <tr><td>Información buscada</td><td>Modelo operativo, canales de contacto, estructura de costos/ingresos, propuesta de valor, expectativas de apoyo (Sercotec/INACAP).</td></tr>
+    <tr><td>Formato</td><td>Entrevista semiestructurada, presencial, registrada en audio (parcial).</td></tr>
+  </table>
+
+  <h3>Instrumento B — Perfil y hallazgos</h3>
+  <p><strong>Perfil:</strong> Kinesióloga, ~1 año con empresa propia; especialidades en rehabilitación músculoesquelética, kinesioterapia respiratoria, neurológica, masoterapia, psicomotricidad acuática; diplomados en fisiología del ejercicio y piso pélvico.</p>
+
+  <p><strong>Temáticas tratadas:</strong></p>
+  <ol>
+    <li>Estructura del negocio: clínica InMotion (comisión 70/30) + servicios a domicilio en paralelo</li>
+    <li>Canal de captación: WhatsApp, boca a boca, referidos de la clínica</li>
+    <li>Propuesta de valor: atención personalizada 1:1 (45-60 min) vs. atención masiva de otros kinesiólogos</li>
+    <li>Proceso a domicilio: coordinación previa, evaluación de materiales según patología, cobro (efectivo/boleta/convenios)</li>
+    <li>Dolor principal: gestión financiera — variabilidad estacional de ingresos, control manual en Excel, falta de proyección a 6-12 meses</li>
+    <li>Carga horaria: variable (10-32 hrs/semana), lunes a sábado</li>
+    <li>Visión de crecimiento: sumar kinesiólogos por comisión, servicios grupales para adultos mayores, inversión en presoterapia</li>
+    <li>Estructura de costos: vehículo propio, materiales, combustible</li>
+  </ol>
+
+  <div class="footer">
+    <span class="label-lgt">Entrevista — Joselyn Toledo</span>
+    <span class="label-lgt">Pág. 08</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <h3>Citas clave</h3>
+  <blockquote>"Yo los trato como a mí me gustase que me tratasen."</blockquote>
+  <blockquote>"Siento que igual tengo como un cierto desorden o falta de educación" — sobre gestión económica.</blockquote>
+  <blockquote>"La carrera de kinesiología es muy inestable, muy inestable."</blockquote>
+
+  <h3>Herramientas de gestión declaradas</h3>
+  <ul>
+    <li>Excel para registro de ingresos y gastos (diario, resumen semanal y mensual)</li>
+    <li>Agenda / calendario móvil para coordinación de horarios</li>
+    <li>Apoyo externo: contadora y secretaria de la clínica</li>
+  </ul>
+
+  <div class="footer">
+    <span class="label-lgt">Entrevista — Joselyn Toledo</span>
+    <span class="label-lgt">Pág. 09</span>
+  </div>
+</div>
+
+<!-- 6. MAPA COMPLEMENTARIO -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>6. Mapa de Síntesis Complementario</h2>
+  <p>Como instrumento adicional de síntesis, se generó un mapa mental jerárquico (NotebookLM) que organiza la información recabada de Joselyn en 5 ramas principales, aportando detalle nuevo no capturado explícitamente en la transcripción disponible.</p>
+
+  <h3>Estructura del mapa</h3>
+  <table>
+    <tr><th>Rama</th><th>Contenido</th></tr>
+    <tr><td>Especialidades y Servicios</td><td>Rehabilitación musculoesquelética, kinesioterapia respiratoria, kinesiología neurológica, masoterapia, psicomotricidad acuática, fisiología del ejercicio, piso pélvico, entrenamientos personalizados.</td></tr>
+    <tr><td>Modelos de Atención</td><td>Clínica InMotion (comisión 70/30, gestión vía secretaria) y atención domiciliaria particular (gestión directa por WhatsApp, materiales propios, traslado en vehículo propio).</td></tr>
+    <tr><td>Propuesta de Valor</td><td>Atención 1 a 1 (45-60 min), foco en la persona, educación para el alta rápida, rehabilitación efectiva en 3-4 sesiones.</td></tr>
+    <tr><td>Gestión Administrativa</td><td>Herramientas (Excel, agenda digital, calendario móvil), finanzas (contadora externa, control de gastos, boletas/reembolsos) y desafíos económicos (inestabilidad estacional, falta de proyección financiera, necesidad de educación administrativa).</td></tr>
+    <tr><td>Proyección Futura</td><td>Escalabilidad por comisiones, contratación de nuevos profesionales, servicios grupales para adultos mayores, inversión en equipos (presoterapia).</td></tr>
+  </table>
+
+  <p style="color:var(--page-text2);font-size:9pt;">Este mapa refuerza y amplía especialmente la sección de proyección futura del Instrumento B, incorporando la idea de servicios grupales e inversión en nuevo equipamiento.</p>
+
+  <div class="footer">
+    <span class="label-lgt">Mapa de síntesis</span>
+    <span class="label-lgt">Pág. 10</span>
+  </div>
+</div>
+
+<!-- 7. HALLAZGOS Y PRÓXIMOS PASOS -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>7. Hallazgos Preliminares y Próximos Pasos</h2>
+
+  <h3>Hallazgos preliminares</h3>
+  <ul>
+    <li>El negocio opera con un modelo híbrido (clínica + domicilio) que genera dos flujos de ingreso distintos, con lógicas de costo y captación diferentes.</li>
+    <li>La propuesta de valor central es la atención personalizada 1:1, que Joselyn identifica explícitamente como su diferenciador frente a la competencia.</li>
+    <li>El dolor más urgente y verbalizado es la gestión financiera: variabilidad estacional de ingresos y ausencia de proyección o control estructurado más allá de un Excel manual.</li>
+    <li>Existe una visión de crecimiento clara (comisión sobre sueldo fijo, servicios grupales, nuevo equipamiento) pero sin un plan formalizado.</li>
+  </ul>
+
+  <h3>Pendientes</h3>
+  <ul>
+    <li>Completar el respaldo formal de los criterios 1.1.1 a 1.1.6 en la Bitácora de Avance con la información real ya recabada.</li>
+    <li>Definir la redefinición del desafío (Semana 4) usando como insumo el dolor financiero identificado como hallazgo principal.</li>
+    <li>Confirmar contra la pauta/rúbrica oficial de la Entrega N°1 (pendiente de recibir) la cobertura exacta de cada criterio.</li>
+  </ul>
+
+  <div class="divider-light"></div>
+  <p style="font-size:8.5pt;color:var(--page-text2);">Documentos anexos entregados por separado: Canvas de Preguntas (PDF A4 horizontal), Mapa de Card Sorting (PDF A4 horizontal, portada + 2 tableros), Bitácora de Declaración de Avance (Excel, semanas 1-4).</p>
+
+  <div class="footer">
+    <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>
+    <span class="label accent">HORIZON</span>
+  </div>
+</div>
+
+</body>
+</html>
