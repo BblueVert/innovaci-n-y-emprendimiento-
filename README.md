@@ -29,6 +29,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 |---|---|
 | `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Joselyn, mapa de síntesis, hallazgos. |
 | `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B completa: perfil, hallazgos, citas clave y contraste con la oportunidad. |
+| `Toolkit_UA1_Integrado.html` / `.pdf` | Documento integrado A4 vertical con los 12 instrumentos del toolkit UA1 aplicados al caso (entrevistas, AEIOU, PESTAL, procesamiento de hallazgos, antecedentes, redefinición del desafío y trazabilidad a criterios 1.1.1–1.1.6). Encabezado, pie y numeración en cada página. Borrador: campos marcados «Por confirmar» / «Completar» pendientes del equipo. |
 
 Ambos documentos usan la identidad visual HORIZON (portada degradada, barra de acento, tipografía Arial Narrow/Courier New/Helvetica o Bebas Neue/DM Mono/Plus Jakarta Sans según el entregable) y están pensados para exportarse a PDF vía WeasyPrint, formato A4.
 
