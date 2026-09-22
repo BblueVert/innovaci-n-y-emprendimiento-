@@ -52,7 +52,7 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 | `*_infografia.pdf` | Infografías de apoyo con ejemplos aplicados por técnica (entrevista usuario/experto, observación, cuestionario, PESTEL, procesamiento de hallazgos, redefinición del desafío) |
 
 ## Pendientes
-- Seguimiento breve con Catalina: antigüedad (P01), costo de Cal.com (P03) y canal principal de pacientes nuevos (P07).
+- (Opcional) Seguimiento con Catalina: antigüedad (P01), costo de Cal.com (P03) y canal principal de pacientes nuevos (P07) — no los abordó en sus audios.
 - Rellenar las plantillas en blanco (entrevista usuario/experto, observación, PESTAL, antecedentes) con la información real del caso.
 - Terminar matrices de Semana 3 (vaciado de hallazgos, comparativo de antecedentes).
 - Redefinición del desafío (Semana 4).
