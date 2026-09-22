@@ -143,7 +143,7 @@ td.k { font-weight:600; width:28%; }
 /* Matriz 2x2 */
 .m2 { position:relative; margin:4mm 0 4mm 10mm; }
 .m2 .row { display:flex; gap:2mm; margin-bottom:2mm; }
-.m2 .q { flex:1; min-height:52mm; border-radius:6px; padding:3mm; border:1px solid var(--page-border); }
+.m2 .q { flex:1; min-height:30mm; border-radius:6px; padding:3mm; border:1px solid var(--page-border); }
 .m2 .q .h { font-family:var(--fm); font-size:6.8pt; letter-spacing:.1em; text-transform:uppercase; margin-bottom:2mm; color:var(--page-text2); }
 .m2 .q.hot { background:rgba(255,107,53,.08); border-color:rgba(255,107,53,.5); }
 .m2 .q.hot .h { color:var(--accent); }
@@ -152,6 +152,33 @@ td.k { font-weight:600; width:28%; }
 .m2 .yl { position:absolute; left:-10mm; top:0; bottom:0; width:8mm; display:flex; align-items:center; justify-content:center; }
 .m2 .yl span { transform:rotate(-90deg); white-space:nowrap; font-family:var(--fm); font-size:6.6pt; letter-spacing:.12em; color:var(--page-text2); }
 .axis-x { text-align:center; font-family:var(--fm); font-size:6.6pt; letter-spacing:.12em; color:var(--page-text2); margin-left:10mm; }
+
+
+/* Fuentes: U usuaria · E expertos · O observación */
+.legend { display:flex; gap:4mm; flex-wrap:wrap; font-size:7.8pt; margin:1mm 0 3mm; }
+.legend .sw { display:inline-block; width:3mm; height:3mm; border-radius:1px; margin-right:1.5mm; vertical-align:-0.4mm; }
+.sw.su { background:#FFB347; } .sw.se { background:#7B3FA0; } .sw.so { background:#2A9D8F; }
+.vac3 { display:flex; gap:2.5mm; margin-bottom:2.5mm; break-inside:avoid; }
+.vac3 > div { flex:1; border:1px solid var(--page-border); border-radius:6px; padding:2.2mm 2.6mm; }
+.vac3 .hd { font-family:var(--fm); font-size:6.5pt; letter-spacing:.1em; text-transform:uppercase; margin-bottom:1.2mm; }
+.vac3 ul { margin:0 0 0 3.5mm; font-size:7.8pt; line-height:1.45; } .vac3 li { margin-bottom:.8mm; }
+.vac3 .u { background:rgba(255,179,71,.09); border-top:2.5px solid #FFB347; } .vac3 .u .hd { color:#B7701A; }
+.vac3 .e { background:rgba(123,63,160,.05); border-top:2.5px solid #7B3FA0; } .vac3 .e .hd { color:#7B3FA0; }
+.vac3 .o { background:rgba(42,157,143,.06); border-top:2.5px solid #2A9D8F; } .vac3 .o .hd { color:#1F7A6F; }
+.ins2 { border:1px solid var(--page-border); border-radius:6px; padding:2.5mm 3.2mm; margin-bottom:2.5mm; break-inside:avoid; }
+.ins2 .hd2 { display:flex; justify-content:space-between; align-items:baseline; }
+.ins2 .n { font-family:var(--fd); font-size:14pt; color:var(--accent); letter-spacing:.03em; }
+.ins2 .n span { font-family:var(--fb); font-size:9.6pt; font-weight:700; color:var(--page-text); margin-left:2mm; }
+.ins2 .meta span { font-family:var(--fm); font-size:6.3pt; letter-spacing:.07em; text-transform:uppercase; border:1px solid var(--page-border); border-radius:3px; padding:1px 5px; margin-left:1.5mm; color:var(--page-text2); }
+.ins2 .meta .tri { color:var(--ok); border-color:rgba(31,138,91,.4); } .ins2 .meta .tri.p { color:var(--accent); border-color:rgba(255,107,53,.4); }
+.ins2 .d { font-size:8.2pt; margin:1mm 0 1.5mm; }
+.ins2 .ev { display:flex; gap:2mm; } .ins2 .ev > div { flex:1; font-size:7.6pt; line-height:1.4; padding:1.5mm 2mm; border-radius:4px; }
+.ins2 .ev b { font-family:var(--fm); margin-right:1.2mm; }
+.ins2 .ev .u { background:rgba(255,179,71,.1); } .ins2 .ev .u b { color:#B7701A; }
+.ins2 .ev .e { background:rgba(123,63,160,.06); } .ins2 .ev .e b { color:#7B3FA0; }
+.ins2 .ev .o { background:rgba(42,157,143,.07); } .ins2 .ev .o b { color:#1F7A6F; }
+.ins2 .ev .na { color:var(--page-text2); font-style:italic; background:#F4F3F8; }
+.m2 .pill .src3 { float:right; font-style:normal; font-family:var(--fm); font-size:6.3pt; letter-spacing:.08em; color:#1F7A6F; }
 
 /* Antecedentes */
 .ante { border:1px solid var(--page-border); border-radius:6px; margin-bottom:3mm; break-inside:avoid; overflow:hidden; }
@@ -623,30 +650,39 @@ td.k { font-weight:600; width:28%; }
     <div class="kicker">Técnica · Procesamiento de hallazgos · Etapa I</div>
     <h2>Instrumento 1.1.4.1 — Matriz de vaciado de hallazgos</h2>
   </div>
-  <p>Los hallazgos de las tres fuentes primarias se agrupan en cuatro temáticas, diferenciando <span style="color:#B7701A;font-weight:600;">usuaria</span> y <span style="color:var(--h6);font-weight:600;">expertos</span>, como indica el toolkit.</p>
+  <p>Se vacían los hallazgos de los <strong>tres instrumentos de levantamiento</strong> en cuatro temáticas. Cada fuente se identifica con un color, equivalente a los post-it de colores que sugiere el toolkit.</p>
+  <div class="legend">
+    <span><i class="sw su"></i><b>U</b> Entrevista a usuaria · 1.1.2.1 · Joselyn</span>
+    <span><i class="sw se"></i><b>E</b> Entrevistas a expertos · 1.1.2.3 · Catalina + asesor financiero</span>
+    <span><i class="sw so"></i><b>O</b> Observación no participante AEIOU · 1.1.2.2</span>
+  </div>
 
   <div class="tema">Temática 1 · Control financiero</div>
-  <div class="vac">
-    <div class="u"><div class="hd">Usuaria — Joselyn</div><ul><li>Excel manual: diario, semanal y mensual.</li><li>Siente «desorden o falta de educación» económica.</li><li>Sin proyección a 6–12 meses.</li></ul></div>
-    <div class="e"><div class="hd">Expertos — Catalina · Asesor</div><ul><li>Catalina: Excel mensual, ~1 h diaria, «ha sido complejo».</li><li>Asesor: saldo bancario como termómetro; casi nadie proyecta flujo de caja.</li><li>Asesor: se mezclan cuentas personal y profesional.</li></ul></div>
+  <div class="vac3">
+    <div class="u"><div class="hd">U · Usuaria</div><ul><li>Registro manual en Excel: diario, semanal y mensual.</li><li>Reconoce «desorden o falta de educación» económica.</li><li>Sin proyección a 6–12 meses.</li></ul></div>
+    <div class="e"><div class="hd">E · Expertos</div><ul><li>Catalina: Excel mensual, «ha sido complejo».</li><li>Asesor: el saldo bancario es el «termómetro»; casi nadie proyecta flujo de caja.</li><li>Asesor: se mezclan cuentas personal y profesional.</li></ul></div>
+    <div class="o"><div class="hd">O · Observación</div><ul><li><em>Actividad:</em> el registro ocurre al cierre del día, fuera del horario de atención.</li><li><em>Objeto:</em> Excel como única herramienta financiera.</li></ul></div>
   </div>
 
   <div class="tema">Temática 2 · Agenda y operación</div>
-  <div class="vac">
-    <div class="u"><div class="hd">Usuaria — Joselyn</div><ul><li>Agenda / calendario móvil; coordina por WhatsApp.</li><li>Carga variable: 10–32 h semanales.</li><li>En clínica la agenda la gestiona la secretaria.</li></ul></div>
-    <div class="e"><div class="hd">Expertos — Catalina · Asesor</div><ul><li>Catalina: Cal.com gratuito + Google Calendar le funciona.</li><li>Asesor: sin agenda centralizada no hay registro financiero confiable.</li></ul></div>
+  <div class="vac3">
+    <div class="u"><div class="hd">U · Usuaria</div><ul><li>Agenda / calendario móvil; coordina por WhatsApp.</li><li>Carga variable: 10–32 h semanales, lunes a sábado.</li></ul></div>
+    <div class="e"><div class="hd">E · Expertos</div><ul><li>Catalina: Cal.com gratuito + Google Calendar le funciona.</li><li>Asesor: sin agenda centralizada no hay registro financiero confiable.</li></ul></div>
+    <div class="o"><div class="hd">O · Observación</div><ul><li><em>Entornos:</em> en clínica la agenda la media la secretaria; en domicilio todo recae en la kinesióloga.</li><li><em>Objetos:</em> agenda y Excel son herramientas separadas, sin conexión.</li></ul></div>
   </div>
 
   <div class="tema">Temática 3 · Costos, ingresos y estacionalidad</div>
-  <div class="vac">
-    <div class="u"><div class="hd">Usuaria — Joselyn</div><ul><li>«La carrera es muy inestable».</li><li>Costos: vehículo, combustible, materiales.</li><li>Comisión 70/30 en clínica + cobro directo a domicilio.</li></ul></div>
-    <div class="e"><div class="hd">Expertos — Catalina · Asesor</div><ul><li>Catalina: registra movilización, equipamiento y tiempo de traslado.</li><li>Asesor: baja enero–febrero, repunte marzo–abril.</li><li>Asesor: «estar ocupado no es estar ganando».</li></ul></div>
+  <div class="vac3">
+    <div class="u"><div class="hd">U · Usuaria</div><ul><li>«La carrera es muy inestable».</li><li>Costos: vehículo propio, combustible, materiales.</li><li>Comisión 70/30 en clínica + cobro directo a domicilio.</li></ul></div>
+    <div class="e"><div class="hd">E · Expertos</div><ul><li>Catalina: registra movilización, equipamiento y tiempo de traslado.</li><li>Asesor: baja en enero–febrero, repunte en marzo–abril.</li><li>Asesor: «estar ocupado no es estar ganando».</li></ul></div>
+    <div class="o"><div class="hd">O · Observación</div><ul><li><em>Actividades:</em> traslado entre domicilios y preparación de materiales según patología antes de cada visita.</li><li>Los costos aparecen como tareas, no como datos descontados del ingreso.</li></ul></div>
   </div>
 
-  <div class="tema">Temática 4 · Tributación y valor de una solución</div>
-  <div class="vac">
-    <div class="u"><div class="hd">Usuaria — Joselyn</div><ul><li>Depende de contadora externa.</li><li>Busca apoyo (Sercotec / INACAP) para ordenarse y crecer.</li></ul></div>
-    <div class="e"><div class="hd">Expertos — Catalina · Asesor</div><ul><li>Asesor: no provisionan Operación Renta; retención vista como «plata perdida».</li><li>Catalina pagaría $30–40 mil/mes; asesor estima $8–25 mil/mes.</li></ul></div>
+  <div class="tema">Temática 4 · Tributación, relación y crecimiento</div>
+  <div class="vac3">
+    <div class="u"><div class="hd">U · Usuaria</div><ul><li>Depende de una contadora externa.</li><li>Visión: comisionistas, grupos de adultos mayores, presoterapia.</li><li>Captación por WhatsApp, boca a boca y referidos.</li></ul></div>
+    <div class="e"><div class="hd">E · Expertos</div><ul><li>Asesor: no provisionan Operación Renta; la retención se ve como «plata perdida».</li><li>Catalina: deja su WhatsApp al alta; capta por landing y boca a boca.</li><li>Precio: Catalina $30–40 mil/mes; asesor $8–25 mil/mes.</li></ul></div>
+    <div class="o"><div class="hd">O · Observación</div><ul><li><em>Objetos:</em> boletas y reembolsos gestionados aparte.</li><li><em>Interacciones:</em> contadora esporádica; paciente ↔ kinesióloga solo por WhatsApp, sin recordatorios.</li></ul></div>
   </div>
 </div>
 
@@ -656,39 +692,39 @@ td.k { font-weight:600; width:28%; }
     <div class="kicker">Técnica · Procesamiento de hallazgos · Etapa II</div>
     <h2>Instrumento 1.1.4.2 — Matriz de categorización de insights</h2>
   </div>
-  <p>Temas que se saturan entre fuentes se convierten en insights. Cada uno se nombra con una frase que representa el problema, se describe y se respalda con citas.</p>
+  <p>Los temas que se repiten entre las tres fuentes se convierten en insights. Cada insight se nombra, se describe y se respalda con evidencia de <strong>usuaria (U)</strong>, <strong>expertos (E)</strong> y <strong>observación (O)</strong>. El indicador de triangulación muestra cuántas fuentes lo sostienen.</p>
 
-  <div class="ins"><span class="cat">Económico · Estratégico</span><div class="n">I1<span>Ocupada no es lo mismo que rentable</span></div>
-    <p class="small">La profesional no sabe cuánto gana realmente en un mes promedio, bueno o malo. Decide inversiones y ritmo de trabajo sin datos.</p>
-    <div class="cite">“«Estar ocupado» y «estar ganando dinero» no son lo mismo.” — Asesor</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I1<span>Ocupada no es lo mismo que rentable</span></div><div class="meta"><span class="cat">Económico · Estratégico</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">No sabe cuánto gana realmente en un mes promedio, bueno o malo; decide inversión y ritmo de trabajo sin datos.</p>
+    <div class="ev"><div class="u"><b>U</b>“Siento que igual tengo como un cierto desorden o falta de educación.”</div><div class="e"><b>E</b>“«Estar ocupado» y «estar ganando dinero» no son lo mismo.” — Asesor</div><div class="o"><b>O</b>El registro nocturno suma ingresos, pero no calcula la ganancia por atención.</div></div></div>
 
-  <div class="ins"><span class="cat">Operativo · Estratégico</span><div class="n">I2<span>La agenda es el origen del dato financiero</span></div>
-    <p class="small">Agenda y finanzas viven en herramientas separadas. Cada cita agendada es un ingreso proyectado que hoy no se aprovecha.</p>
-    <div class="cite">“Sin agenda confiable no hay dato de ingresos confiable.” — Asesor</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I2<span>La agenda es el origen del dato financiero</span></div><div class="meta"><span class="cat">Operativo · Estratégico</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">Agenda y finanzas viven en herramientas separadas. Cada cita agendada es un ingreso proyectado que hoy se pierde.</p>
+    <div class="ev"><div class="u"><b>U</b>Calendario móvil para horarios + Excel para ingresos, sin conexión.</div><div class="e"><b>E</b>“Sin agenda confiable no hay dato de ingresos confiable.” — Asesor · Catalina usa Cal.com y Excel por separado.</div><div class="o"><b>O</b>En clínica la agenda la gestiona la secretaria; en domicilio, WhatsApp. El dato se reescribe a mano en Excel.</div></div></div>
 
-  <div class="ins"><span class="cat">Operativo</span><div class="n">I3<span>El Excel como parche diario</span></div>
-    <p class="small">El registro manual consume ~1 h diaria (20–30 h al mes) y depende de la disciplina personal al cierre de la jornada.</p>
-    <div class="cite">“Me toma una hora actualmente diario.” — Catalina</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I3<span>El Excel como parche diario</span></div><div class="meta"><span class="cat">Operativo</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">El registro manual consume ~1 h diaria (20–30 h al mes) y depende de la disciplina al cierre de la jornada.</p>
+    <div class="ev"><div class="u"><b>U</b>Excel diario, con resumen semanal y mensual.</div><div class="e"><b>E</b>“Me toma una hora actualmente diario.” — Catalina</div><div class="o"><b>O</b>La gestión ocurre fuera del horario de atención, al final del día.</div></div></div>
 
-  <div class="ins"><span class="cat">Económico · Legal</span><div class="n">I4<span>Impuestos como sorpresa</span></div>
-    <p class="small">No se provisiona la retención ni la Operación Renta; el pago anual llega como un golpe inesperado.</p>
-    <div class="cite">“Global Complementario en abril, que llega como sorpresa desagradable.” — Asesor</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I4<span>Impuestos como sorpresa</span></div><div class="meta"><span class="cat">Económico · Legal</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">No se provisiona la retención ni la Operación Renta; el pago anual llega como un golpe inesperado.</p>
+    <div class="ev"><div class="u"><b>U</b>Delega lo tributario en una contadora externa.</div><div class="e"><b>E</b>“Global Complementario en abril, que llega como sorpresa desagradable.” — Asesor</div><div class="o"><b>O</b>Boletas y reembolsos se gestionan aparte; el contacto con la contadora es esporádico.</div></div></div>
 
-  <div class="ins"><span class="cat">Económico · Operativo</span><div class="n">I5<span>Los costos invisibles del domicilio</span></div>
-    <p class="small">Movilización, combustible, equipamiento y tiempo de traslado no se descuentan del ingreso por atención, lo que distorsiona la ganancia real.</p>
-    <div class="cite">“…tanto en la movilización como en el uso del equipamiento y en tiempo.” — Catalina</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I5<span>Los costos invisibles del domicilio</span></div><div class="meta"><span class="cat">Económico · Operativo</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">Traslado, combustible, equipamiento y tiempo no se descuentan por atención; la ganancia real queda distorsionada.</p>
+    <div class="ev"><div class="u"><b>U</b>Declara vehículo propio, combustible y materiales como costos.</div><div class="e"><b>E</b>“…tanto en la movilización como en el uso del equipamiento y en tiempo.” — Catalina</div><div class="o"><b>O</b>Traslado entre domicilios y preparación de materiales aparecen como tareas, no como datos.</div></div></div>
 
-  <div class="ins"><span class="cat">Económico · Estratégico</span><div class="n">I6<span>Inestabilidad sin memoria</span></div>
-    <p class="small">La estacionalidad se vive cada año como sorpresa porque no hay registro histórico que permita anticiparla.</p>
-    <div class="cite">“La carrera de kinesiología es muy inestable, muy inestable.” — Joselyn</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I6<span>Inestabilidad sin memoria</span></div><div class="meta"><span class="cat">Económico · Estratégico</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">La estacionalidad se vive cada año como sorpresa porque no hay registro histórico que permita anticiparla.</p>
+    <div class="ev"><div class="u"><b>U</b>“La carrera de kinesiología es muy inestable, muy inestable.”</div><div class="e"><b>E</b>Asesor: baja en enero–febrero, repunte en marzo–abril. Catalina es estable, pero porque tiene sueldo fijo.</div><div class="o"><b>O</b>Carga observada de 10 a 32 h semanales.</div></div></div>
 
-  <div class="ins"><span class="cat">Social · Operativo</span><div class="n">I7<span>Fidelización informal por WhatsApp</span></div>
-    <p class="small">El vínculo post-alta depende de que el paciente escriba; no hay recordatorios ni seguimiento sistemático.</p>
-    <div class="cite">“Les dejo mi contacto para que puedan comunicarse ante alguna duda.” — Catalina</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I7<span>Fidelización informal por WhatsApp</span></div><div class="meta"><span class="cat">Social · Operativo</span><span class="tri">U E O · 3/3</span></div></div>
+    <p class="d">El vínculo post-alta depende de que el paciente escriba; no hay recordatorios ni seguimiento sistemático.</p>
+    <div class="ev"><div class="u"><b>U</b>Captación y contacto por WhatsApp y boca a boca.</div><div class="e"><b>E</b>“Les dejo mi contacto para que puedan comunicarse ante alguna duda.” — Catalina</div><div class="o"><b>O</b>Interacción paciente ↔ kinesióloga solo por WhatsApp, iniciada por el paciente.</div></div></div>
 
-  <div class="ins"><span class="cat">Estratégico</span><div class="n">I8<span>Crecimiento sin plan</span></div>
-    <p class="small">Existe visión (comisionistas, servicios grupales, presoterapia), pero sin datos financieros que la respalden ni plan formal.</p>
-    <div class="cite">Síntesis de la entrevista a Joselyn — proyección futura.</div></div>
+  <div class="ins2"><div class="hd2"><div class="n">I8<span>Crecimiento sin plan</span></div><div class="meta"><span class="cat">Estratégico</span><span class="tri p">U E · 2/3</span></div></div>
+    <p class="d">Hay una visión de crecimiento (comisionistas, servicios grupales, presoterapia), pero sin datos financieros que la respalden.</p>
+    <div class="ev"><div class="u"><b>U</b>Quiere sumar kinesiólogos por comisión e invertir en presoterapia.</div><div class="e"><b>E</b>Asesor: riesgo de «sobre-invertir en un mes bueno sin colchón».</div><div class="o na"><b>O</b>Sin evidencia en la observación.</div></div></div>
 </div>
 
 <!-- ================= 1.1.4.3 PRIORIZACIÓN ================= -->
@@ -697,34 +733,38 @@ td.k { font-weight:600; width:28%; }
     <div class="kicker">Técnica · Procesamiento de hallazgos · Etapa III</div>
     <h2>Instrumento 1.1.4.3 — Mapa de priorización de hallazgos</h2>
   </div>
-  <p>Los insights se ubican según <strong>complejidad</strong> e <strong>impacto</strong>. Se priorizan los del cuadrante (+) complejo / (+) impacto, como indica el toolkit.</p>
+  <p>Los insights se ubican según <strong>complejidad</strong> e <strong>impacto</strong>. Cada tarjeta indica las fuentes que la respaldan (<b>U</b> usuaria · <b>E</b> expertos · <b>O</b> observación). Se prioriza el cuadrante (+) complejo / (+) impacto.</p>
   <div class="m2">
     <div class="yl"><span>IMPACTO →</span></div>
     <div class="row">
       <div class="q"><div class="h">(−) Complejo · (+) Impacto</div>
-        <span class="pill"><b>I3</b> El Excel como parche diario</span>
-        <span class="pill"><b>I5</b> Los costos invisibles del domicilio</span>
-        <span class="pill"><b>I1</b> Ocupada no es lo mismo que rentable</span></div>
+        <span class="pill"><b>I3</b> El Excel como parche diario <em class="src3">U E O</em></span>
+        <span class="pill"><b>I5</b> Costos invisibles del domicilio <em class="src3">U E O</em></span>
+        <span class="pill"><b>I1</b> Ocupada no es lo mismo que rentable <em class="src3">U E O</em></span></div>
       <div class="q hot"><div class="h">(+) Complejo · (+) Impacto — Prioridad</div>
-        <span class="pill"><b>I2</b> La agenda es el origen del dato financiero</span>
-        <span class="pill"><b>I6</b> Inestabilidad sin memoria</span>
-        <span class="pill"><b>I4</b> Impuestos como sorpresa</span></div>
+        <span class="pill"><b>I2</b> Agenda = origen del dato financiero <em class="src3">U E O</em></span>
+        <span class="pill"><b>I6</b> Inestabilidad sin memoria <em class="src3">U E O</em></span>
+        <span class="pill"><b>I4</b> Impuestos como sorpresa <em class="src3">U E O</em></span></div>
     </div>
     <div class="row">
       <div class="q"><div class="h">(−) Complejo · (−) Impacto</div>
-        <span class="pill"><b>I7</b> Fidelización informal por WhatsApp</span></div>
+        <span class="pill"><b>I7</b> Fidelización informal por WhatsApp <em class="src3">U E O</em></span></div>
       <div class="q"><div class="h">(+) Complejo · (−) Impacto</div>
-        <span class="pill"><b>I8</b> Crecimiento sin plan</span></div>
+        <span class="pill"><b>I8</b> Crecimiento sin plan <em class="src3">U E</em></span></div>
     </div>
   </div>
   <div class="axis-x">COMPLEJIDAD →</div>
-  <h3>Selección y potencial</h3>
-  <ul>
-    <li><strong>I2 es el insight raíz:</strong> resolverlo habilita I1, I6 e I4, porque la agenda conectada genera el dato histórico y proyectado.</li>
-    <li><strong>I3 e I5 son de alto impacto y baja complejidad:</strong> automatizar el registro y descontar costos por atención son victorias tempranas.</li>
-    <li><strong>I7 e I8</strong> quedan como líneas futuras (fidelización y planificación del crecimiento).</li>
-  </ul>
-  <div class="note">Ubicación propuesta a partir de la evidencia. Validar en sesión de equipo (post-it) antes de la entrega.</div>
+  <h3>Justificación por fuente</h3>
+  <table class="tight">
+    <tr><th style="width:7%">Insight</th><th style="width:21%">Ubicación</th><th>Por qué (usuaria · expertos · observación)</th></tr>
+    <tr><td><b>I2</b></td><td>+ Complejo · + Impacto</td><td>Lo nombra el asesor como causa raíz; Joselyn y Catalina usan agenda y Excel por separado; la observación muestra el dato reescrito a mano. Requiere integrar herramientas.</td></tr>
+    <tr><td><b>I6</b></td><td>+ Complejo · + Impacto</td><td>Dolor verbalizado por Joselyn, explicado por el asesor y visible en la carga de 10–32 h. Necesita historial de datos para proyectar.</td></tr>
+    <tr><td><b>I4</b></td><td>+ Complejo · + Impacto</td><td>Riesgo alto según el asesor; la observación muestra boletas gestionadas aparte. Implica reglas tributarias.</td></tr>
+    <tr><td><b>I3 · I5 · I1</b></td><td>− Complejo · + Impacto</td><td>Presentes en las tres fuentes y resolubles con registro por atención y descuento de costos: victorias tempranas.</td></tr>
+    <tr><td><b>I7</b></td><td>− Complejo · − Impacto</td><td>Presente en las tres fuentes, pero no afecta directamente el control financiero.</td></tr>
+    <tr><td><b>I8</b></td><td>+ Complejo · − Impacto</td><td>Sin evidencia en la observación; depende de resolver primero I1 e I6.</td></tr>
+  </table>
+  <div class="verdict"><strong>Selección: I2 es el insight raíz</strong>, respaldado por las tres fuentes. Conectar la agenda con las finanzas habilita I1, I6 e I4; I3 e I5 son las victorias tempranas. <span class="muted">Ubicación propuesta; validar en sesión de equipo (post-it).</span></div>
 </div>
 
 <!-- ================= 1.1.5.1 A ================= -->
