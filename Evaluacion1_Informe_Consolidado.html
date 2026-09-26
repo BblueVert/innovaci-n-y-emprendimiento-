@@ -69,6 +69,16 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
 .cat-questions-list { background:#fff; border:1px solid var(--page-border); border-radius:0 0 6px 6px; margin-top:-6px; padding:8px 10px 6px; font-size:8.3pt; color:var(--page-text); }
 .cat-questions-list ul { margin:0 0 0 4mm; }
 .cat-questions-list li { margin-bottom:1mm; }
+
+.pestal { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:3mm; }
+.pcell { background:var(--page-card); border:1px solid var(--page-border); border-top:3px solid var(--accent); border-radius:6px; padding:8px 10px; font-size:8.6pt; }
+.pcell ul { margin:0 0 0 4mm; } .pcell li { margin-bottom:1mm; }
+.pletter { font-family:var(--fd); font-size:18pt; color:var(--accent); line-height:1; float:right; }
+.ptitle { font-weight:700; font-size:9.5pt; margin-bottom:2px; }
+.pimpact { margin-top:3px; }
+.tag-red { background:rgba(196,70,122,.1); border:1px solid rgba(196,70,122,.35); color:var(--h5); }
+.prio { display:inline-block; font-family:var(--fm); font-size:6.8pt; letter-spacing:.06em; text-transform:uppercase; padding:1px 6px; border-radius:3px; color:#fff; }
+.p-alta { background:var(--accent); } .p-media { background:var(--h6); } .p-baja { background:var(--text3); }
 </style>
 </head>
 <body>
@@ -87,7 +97,7 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
     <div class="divider-accent" style="max-width:80mm;"></div>
     <div style="margin-top:3mm;color:var(--text2);font-size:9.5pt;max-width:130mm;">
       Informe consolidado del proceso de diagnóstico aplicado al caso real de Joselyn Toledo,
-      kinesióloga independiente — Centro Médico InMotion. Semanas 1 a 5, criterios 1.1.1 a 1.1.6
+      kinesióloga independiente — Centro Médico InMotion. Semanas 1 a 4, criterios 1.1.1 a 1.1.6
       del Ciclo de Innovación INACAP.
     </div>
   </div>
@@ -110,13 +120,20 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   <h1>Índice</h1>
   <div class="divider-accent"></div>
   <div style="margin-top:6mm;">
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>1. Contexto del proyecto y equipo</span><span class="label-lgt">03</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>2. Metodología aplicada — Toolkit Semanas 1-4</span><span class="label-lgt">04</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>3. Guion de sondeo — Canvas de Preguntas</span><span class="label-lgt">05</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>4. Síntesis por Card Sorting — 9 categorías emergentes</span><span class="label-lgt">06</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>5. Entrevista en profundidad — Joselyn Toledo</span><span class="label-lgt">08</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>6. Mapa de síntesis complementario</span><span class="label-lgt">10</span></div>
-    <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--page-border);"><span>7. Hallazgos preliminares y próximos pasos</span><span class="label-lgt">11</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>1. Contexto del proyecto y equipo</span><span class="label-lgt">03</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>2. Metodología aplicada — Toolkit Semanas 1-4</span><span class="label-lgt">04</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>3. Guion de sondeo — Canvas de Preguntas</span><span class="label-lgt">05</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>4. Síntesis por Card Sorting — 9 categorías emergentes</span><span class="label-lgt">06</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>5. Entrevista en profundidad — Joselyn Toledo</span><span class="label-lgt">08</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>6. Mapa de síntesis complementario</span><span class="label-lgt">10</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>7. Observación no participante — AEIOU</span><span class="label-lgt">11</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>8. Entrevista en profundidad a experta</span><span class="label-lgt">12</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>9. Análisis del entorno — Matriz PESTAL</span><span class="label-lgt">13</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>10. Vaciado y priorización de hallazgos</span><span class="label-lgt">15</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>11. Estudio comparativo de antecedentes</span><span class="label-lgt">16</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>12. Problemática seleccionada y redefinición del desafío</span><span class="label-lgt">18</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>13. Oportunidades seleccionadas y trabajo futuro</span><span class="label-lgt">19</span></div>
+    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>14. Cobertura de criterios y conclusiones</span><span class="label-lgt">20</span></div>
   </div>
   <div class="footer">
     <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>
@@ -128,7 +145,7 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
 <div class="page">
   <div class="abar-light"></div>
   <h2>1. Contexto del Proyecto y Equipo</h2>
-  <p>Este informe consolida el proceso de diagnóstico y selección de oportunidades desarrollado durante las semanas 1 a 5 de la asignatura <strong>Innovación y Emprendimiento III</strong>, aplicando el Ciclo de Innovación INACAP sobre un caso real de emprendimiento.</p>
+  <p>Este informe consolida el proceso de diagnóstico y selección de oportunidades desarrollado durante las semanas 1 a 4 de la asignatura <strong>Innovación y Emprendimiento III</strong>, aplicando el Ciclo de Innovación INACAP sobre un caso real de emprendimiento.</p>
 
   <h3>Equipo de trabajo</h3>
   <div class="card">
@@ -373,28 +390,306 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   </div>
 </div>
 
-<!-- 7. HALLAZGOS Y PRÓXIMOS PASOS -->
+<!-- 7. OBSERVACIÓN AEIOU -->
 <div class="page">
   <div class="abar-light"></div>
-  <h2>7. Hallazgos Preliminares y Próximos Pasos</h2>
+  <h2>7. Observación No Participante — Marco AEIOU</h2>
+  <p>Instrumento 1.1.2.2. Dado que la atención kinesiológica ocurre en contextos privados (box clínico y domicilios de pacientes), la observación directa no fue viable por resguardo de la privacidad del paciente. Se aplicó en modalidad de <strong>autorreporte guiado</strong>: Joselyn describió una jornada tipo y el equipo la registró con la pauta AEIOU.</p>
 
-  <h3>Hallazgos preliminares</h3>
+  <table>
+    <tr><th style="width:24%;">Dimensión</th><th>Registro</th></tr>
+    <tr><td><strong>A</strong> — Actividades</td><td>Sesiones 1:1 de 45–60 min; coordinación de horas por WhatsApp; traslado entre domicilios; preparación de materiales según patología; registro de ingresos y gastos en Excel al final del día.</td></tr>
+    <tr><td><strong>E</strong> — Entornos</td><td>Box del Centro Médico InMotion; hogares de pacientes (espacios no preparados para rehabilitación); vehículo propio como "oficina móvil".</td></tr>
+    <tr><td><strong>I</strong> — Interacciones</td><td>Paciente ↔ kinesióloga (educación y seguimiento); secretaria de la clínica ↔ agenda de InMotion; contadora externa ↔ boletas y reembolsos; familiares de pacientes adultos mayores.</td></tr>
+    <tr><td><strong>O</strong> — Objetos</td><td>Celular (WhatsApp + calendario), planilla Excel, materiales de rehabilitación propios, vehículo, boletas de honorarios.</td></tr>
+    <tr><td><strong>U</strong> — Usuarios</td><td>Usuaria directa: Joselyn. Usuarios indirectos: pacientes particulares, pacientes de clínica, secretaria, contadora, familiares.</td></tr>
+  </table>
+
+  <h3>Lectura de la observación</h3>
   <ul>
-    <li>El negocio opera con un modelo híbrido (clínica + domicilio) que genera dos flujos de ingreso distintos, con lógicas de costo y captación diferentes.</li>
-    <li>La propuesta de valor central es la atención personalizada 1:1, que Joselyn identifica explícitamente como su diferenciador frente a la competencia.</li>
-    <li>El dolor más urgente y verbalizado es la gestión financiera: variabilidad estacional de ingresos y ausencia de proyección o control estructurado más allá de un Excel manual.</li>
-    <li>Existe una visión de crecimiento clara (comisión sobre sueldo fijo, servicios grupales, nuevo equipamiento) pero sin un plan formalizado.</li>
+    <li><strong>Dos agendas paralelas:</strong> la de la clínica (gestionada por secretaria) y la particular (gestionada por ella en WhatsApp). No se cruzan en una sola vista.</li>
+    <li><strong>El registro financiero ocurre después</strong> de la atención, de forma manual y dependiente de la energía al cierre del día.</li>
+    <li><strong>El celular es el centro operativo</strong>, pero sin herramientas diseñadas para su flujo de trabajo.</li>
   </ul>
 
-  <h3>Pendientes</h3>
+  <div class="footer">
+    <span class="label-lgt">Observación AEIOU</span>
+    <span class="label-lgt">Pág. 11</span>
+  </div>
+</div>
+
+<!-- 8. ENTREVISTA EXPERTA -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>8. Entrevista en Profundidad a Experta</h2>
+  <p>Instrumento 1.1.2.3. Objetivo: validar, desde una par del área, si el dolor de agenda y control financiero detectado en Joselyn es un <strong>patrón compartido</strong> en kinesiólogas independientes, o un caso aislado.</p>
+
+  <table>
+    <tr><th style="width:26%;">Campo</th><th>Contenido</th></tr>
+    <tr><td>Entrevistada</td><td>Catalina — profesional del área de la salud especializada en kinesiología, colaboradora previa de HORIZON (proyecto Vital Kine).</td></tr>
+    <tr><td>Formato</td><td>Conversación escrita vía chat, guion de 10 preguntas.</td></tr>
+    <tr><td>Ejes del guion</td><td>(1) Modalidad de ejercicio; (2) herramienta de agenda y su costo; (3) método de control financiero; (4) claridad sobre ingresos del mes; (5) estacionalidad; (6) canales de captación y fidelización; (7) disposición a pagar por una solución a medida.</td></tr>
+  </table>
+
+  <h3>Hipótesis que la entrevista pone a prueba</h3>
+  <table>
+    <tr><th style="width:8%;">#</th><th>Hipótesis</th><th style="width:26%;">Pregunta del guion</th></tr>
+    <tr><td>H1</td><td>Las kinesiólogas independientes gestionan agenda con herramientas genéricas (WhatsApp, calendario) o apps pagadas que no se ajustan a su modelo mixto.</td><td>P02 · P03</td></tr>
+    <tr><td>H2</td><td>El control financiero es manual y no permite proyectar ingresos.</td><td>P04 · P05</td></tr>
+    <tr><td>H3</td><td>La demanda es estacional y afecta la estabilidad del ingreso.</td><td>P06</td></tr>
+    <tr><td>H4</td><td>La captación depende del boca a boca y referidos, sin canal digital propio.</td><td>P07 · P08</td></tr>
+    <tr><td>H5</td><td>Existe disposición a pagar una mensualidad por una solución a medida.</td><td>P09 · P10</td></tr>
+  </table>
+
+  <div class="card">
+    <span class="tag tag-purple">Estado</span> Guion aplicado; el registro completo de respuestas (Ficha B) se adjunta en el documento <em>Entrevista_Experta_Cata</em>. Las hipótesis H1–H5 se usan como marco de contraste en el vaciado de hallazgos (sección 10) y en el estudio de antecedentes (sección 11).
+  </div>
+
+  <div class="footer">
+    <span class="label-lgt">Entrevista a experta</span>
+    <span class="label-lgt">Pág. 12</span>
+  </div>
+</div>
+
+<!-- 9. PESTAL -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>9. Análisis del Entorno — Matriz PESTAL</h2>
+  <p>Instrumento 1.1.3.1. Se analizan las variables externas que condicionan el ejercicio independiente de la kinesiología en Chile y, en particular, la viabilidad de la oportunidad seleccionada.</p>
+
+  <div class="pestal">
+    <div class="pcell"><div class="pletter">P</div><div class="ptitle">Político</div>
+      <ul><li>Programas de fomento a microemprendimiento (Sercotec), mencionados por Joselyn como apoyo posible.</li><li>Inestabilidad del sistema de isapres presiona a pacientes hacia la atención particular o Fonasa.</li></ul>
+      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+    <div class="pcell"><div class="pletter">E</div><div class="ptitle">Económico</div>
+      <ul><li>Ingresos estacionales y variables (10–32 hrs/semana).</li><li>Comisión 70/30 en clínica reduce margen.</li><li>Aumento progresivo de la retención de boletas de honorarios (15,25% en 2026, hacia 17% en 2028).</li><li>Costo de combustible y traslados.</li></ul>
+      <div class="pimpact"><span class="tag tag-red">Amenaza</span></div></div>
+    <div class="pcell"><div class="pletter">S</div><div class="ptitle">Social</div>
+      <ul><li>Envejecimiento de la población: crece la demanda de rehabilitación y atención a domicilio.</li><li>Pacientes valoran el trato personalizado y la confianza (boca a boca).</li></ul>
+      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+    <div class="pcell"><div class="pletter">T</div><div class="ptitle">Tecnológico</div>
+      <ul><li>Alta penetración de WhatsApp y smartphones en pacientes.</li><li>Oferta de apps de agenda para salud (nacionales e internacionales) con planes mensuales.</li><li>Herramientas no-code/IA reducen el costo de construir soluciones a medida.</li></ul>
+      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+    <div class="pcell"><div class="pletter">A</div><div class="ptitle">Ambiental</div>
+      <ul><li>Traslados diarios en vehículo propio: costo y huella de carbono.</li><li>Una agenda que agrupe domicilios por zona reduce kilómetros recorridos.</li></ul>
+      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+    <div class="pcell"><div class="pletter">L</div><div class="ptitle">Legal</div>
+      <ul><li>Ley 20.584 (derechos y deberes del paciente): confidencialidad de la información clínica.</li><li>Ley 21.719 de protección de datos personales: exige resguardo de datos sensibles de salud.</li><li>Obligación tributaria: emisión de boletas electrónicas (SII).</li></ul>
+      <div class="pimpact"><span class="tag tag-red">Amenaza / requisito</span></div></div>
+  </div>
+
+  <div class="footer">
+    <span class="label-lgt">Matriz PESTAL — 1/2</span>
+    <span class="label-lgt">Pág. 13</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <h3>Lectura estratégica del entorno</h3>
+  <table>
+    <tr><th style="width:30%;">Factor clave</th><th>Implicancia para el caso</th></tr>
+    <tr><td>Variabilidad de ingresos (E)</td><td>Refuerza el dolor financiero: sin proyección, cada temporada baja se vive como crisis. Una herramienta de control y proyección tiene valor directo.</td></tr>
+    <tr><td>Envejecimiento poblacional (S)</td><td>Aumenta la demanda de atención a domicilio y de servicios grupales para adultos mayores — alineado con la visión de crecimiento de Joselyn.</td></tr>
+    <tr><td>Oferta de apps de agenda (T)</td><td>El mercado ya resolvió la agenda genérica; la diferenciación debe estar en integrar agenda + finanzas para el modelo mixto clínica/domicilio.</td></tr>
+    <tr><td>Datos de salud (L)</td><td>Cualquier solución debe minimizar datos clínicos, almacenarlos de forma segura y contar con consentimiento del paciente.</td></tr>
+  </table>
+
+  <h3>Amenazas anticipadas</h3>
   <ul>
-    <li>Completar el respaldo formal de los criterios 1.1.1 a 1.1.6 en la Bitácora de Avance con la información real ya recabada.</li>
-    <li>Definir la redefinición del desafío (Semana 4) usando como insumo el dolor financiero identificado como hallazgo principal.</li>
-    <li>Confirmar contra la pauta/rúbrica oficial de la Entrega N°1 (pendiente de recibir) la cobertura exacta de cada criterio.</li>
+    <li><strong>Competencia de plataformas establecidas</strong> con precios bajos y marca conocida.</li>
+    <li><strong>Carga tributaria creciente</strong> que reduce el ingreso líquido y la disposición a pagar nuevas suscripciones.</li>
+    <li><strong>Riesgo legal</strong> por manejo inadecuado de datos de pacientes.</li>
+    <li><strong>Baja adopción</strong> si la herramienta exige más tiempo del que ahorra.</li>
+  </ul>
+
+  <blockquote>Conclusión del entorno: la necesidad está validada por el contexto, pero el valor no está en "otra agenda", sino en una vista única de agenda + dinero diseñada para el profesional independiente con modelo mixto.</blockquote>
+
+  <div class="footer">
+    <span class="label-lgt">Matriz PESTAL — 2/2</span>
+    <span class="label-lgt">Pág. 14</span>
+  </div>
+</div>
+
+<!-- 10. VACIADO Y PRIORIZACIÓN -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>10. Vaciado y Priorización de Hallazgos</h2>
+  <p>Instrumentos 1.1.4.1 y 1.1.4.2. Los hallazgos de todas las fuentes se vaciaron en una matriz única, se categorizaron según las 9 categorías del card sorting y se priorizaron por <strong>impacto</strong> en el negocio y <strong>frecuencia</strong> con que aparecen en las fuentes.</p>
+
+  <table>
+    <tr><th style="width:4%;">#</th><th>Hallazgo</th><th style="width:17%;">Fuente</th><th style="width:17%;">Categoría</th><th style="width:11%;">Prioridad</th></tr>
+    <tr><td>1</td><td>Ingresos variables por temporada, sin proyección a 6–12 meses.</td><td>Entrevista · PESTAL</td><td>08 Cobro e ingresos</td><td><span class="prio p-alta">Alta</span></td></tr>
+    <tr><td>2</td><td>Control financiero manual en Excel; ella misma reconoce "desorden".</td><td>Entrevista · AEIOU</td><td>09 Costos</td><td><span class="prio p-alta">Alta</span></td></tr>
+    <tr><td>3</td><td>Dos agendas separadas (clínica y domicilio) sin vista unificada.</td><td>AEIOU · Mapa</td><td>07 Agenda y venta</td><td><span class="prio p-alta">Alta</span></td></tr>
+    <tr><td>4</td><td>Captación depende de WhatsApp, boca a boca y referidos; sin presencia digital propia.</td><td>Entrevista · Card sorting</td><td>06 Canales digitales</td><td><span class="prio p-alta">Alta</span></td></tr>
+    <tr><td>5</td><td>Diferenciador claro: atención 1:1 de 45–60 min, trato cercano.</td><td>Entrevista · Mapa</td><td>04 Propuesta de valor</td><td><span class="prio p-media">Media</span></td></tr>
+    <tr><td>6</td><td>Carga horaria irregular (10–32 hrs/semana).</td><td>Entrevista</td><td>01 Capacidad operativa</td><td><span class="prio p-media">Media</span></td></tr>
+    <tr><td>7</td><td>Costos de traslado (vehículo, combustible, materiales).</td><td>Entrevista · PESTAL</td><td>09 Costos</td><td><span class="prio p-media">Media</span></td></tr>
+    <tr><td>8</td><td>Visión de crecimiento (kinesiólogos por comisión, grupos adultos mayores, presoterapia) sin plan formal.</td><td>Mapa · Entrevista</td><td>03 Oferta de servicios</td><td><span class="prio p-media">Media</span></td></tr>
+    <tr><td>9</td><td>Sin acciones de fidelización más allá del trato directo.</td><td>Card sorting · Guion experta</td><td>05 Fidelización</td><td><span class="prio p-baja">Baja</span></td></tr>
+  </table>
+
+  <h3>Insights priorizados</h3>
+  <ol>
+    <li><strong>"No sé cuánto voy a ganar":</strong> el problema no es registrar, es anticipar.</li>
+    <li><strong>"Mi negocio vive en mi celular":</strong> la solución debe ser mobile-first y convivir con WhatsApp.</li>
+    <li><strong>"Me eligen por el trato, pero nadie me encuentra":</strong> el diferenciador no tiene un canal que lo comunique.</li>
+  </ol>
+
+  <div class="footer">
+    <span class="label-lgt">Vaciado y priorización</span>
+    <span class="label-lgt">Pág. 15</span>
+  </div>
+</div>
+
+<!-- 11. ANTECEDENTES -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>11. Estudio Comparativo de Antecedentes</h2>
+  <p>Instrumento 1.1.5.1. Se revisaron soluciones nacionales e internacionales que abordan la gestión de agenda y finanzas de profesionales de la salud, para entender el estado actual del problema y detectar brechas.</p>
+
+  <table>
+    <tr><th style="width:17%;">Solución</th><th style="width:12%;">Origen</th><th>Qué resuelve</th><th style="width:30%;">Brecha frente al caso</th></tr>
+    <tr><td><strong>AgendaPro</strong></td><td>Chile · Nacional</td><td>Agenda online, recordatorios automáticos, pagos y reportes para centros de salud y belleza.</td><td>Pensada para centros con equipo; costo mensual fijo; no integra la comisión con clínica externa.</td></tr>
+    <tr><td><strong>Reservo</strong></td><td>Chile · Nacional</td><td>Agenda y ficha clínica para profesionales y centros de salud.</td><td>Foco clínico-administrativo; el control financiero personal y la proyección son secundarios.</td></tr>
+    <tr><td><strong>Medilink</strong></td><td>Chile · Nacional</td><td>Software de gestión clínica: agenda, fichas, caja y facturación.</td><td>Orientado a clínicas; complejidad y costo excesivos para una profesional independiente.</td></tr>
+    <tr><td><strong>Jane App</strong></td><td>Canadá · Internacional</td><td>Agenda, ficha y facturación para fisioterapeutas y clínicas de rehabilitación.</td><td>Idioma, moneda y tributación no adaptados a Chile.</td></tr>
+    <tr><td><strong>Cliniko</strong></td><td>Australia · Internacional</td><td>Gestión de práctica para profesionales de salud aliada: agenda, pagos, reportes.</td><td>No contempla atención a domicilio ni agrupación de rutas.</td></tr>
+    <tr><td><strong>SimplePractice</strong></td><td>EE.UU. · Internacional</td><td>Práctica privada: agenda, telesalud, cobros y dashboard de ingresos.</td><td>Orientado al mercado estadounidense y sus seguros.</td></tr>
+  </table>
+
+  <div class="footer">
+    <span class="label-lgt">Antecedentes — 1/2</span>
+    <span class="label-lgt">Pág. 16</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <h3>Relación con la entrevista a experta</h3>
+  <p>Los antecedentes confirman la hipótesis H1: las herramientas existentes resuelven la agenda, pero lo hacen para <strong>centros</strong>, no para el profesional independiente con modelo mixto. Las hipótesis H2 y H5 (control financiero y disposición a pagar) marcan el espacio donde las soluciones actuales son más débiles.</p>
+
+  <h3>Estado actual del problema</h3>
+  <ul>
+    <li>La agenda online es un problema <strong>resuelto como commodity</strong>: hay oferta nacional e internacional.</li>
+    <li>El control financiero con proyección para independientes es un <strong>problema mal resuelto</strong>: aparece como módulo secundario o reporte contable.</li>
+    <li>Ninguna solución revisada cruza <strong>clínica con comisión + particular a domicilio</strong> en una sola vista.</li>
+  </ul>
+
+  <h3>Elementos que inspiran la nueva solución</h3>
+  <table>
+    <tr><th style="width:32%;">Elemento</th><th>Tomado de</th></tr>
+    <tr><td>Recordatorios automáticos por WhatsApp</td><td>AgendaPro · Reservo</td></tr>
+    <tr><td>Dashboard de ingresos simple y visual</td><td>SimplePractice · Cliniko</td></tr>
+    <tr><td>Registro de sesión en pocos toques desde el celular</td><td>Jane App</td></tr>
+    <tr><td>Reserva online para pacientes nuevos</td><td>AgendaPro · Jane App</td></tr>
+    <tr><td><strong>Nuevo:</strong> ingreso neto por modalidad (comisión 70/30 vs. particular) y proyección mensual</td><td>Brecha detectada — propuesta del equipo</td></tr>
+  </table>
+
+  <div class="footer">
+    <span class="label-lgt">Antecedentes — 2/2</span>
+    <span class="label-lgt">Pág. 17</span>
+  </div>
+</div>
+
+<!-- 12. PROBLEMÁTICA Y REDEFINICIÓN -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>12. Problemática Seleccionada y Redefinición del Desafío</h2>
+
+  <h3>Problemática seleccionada</h3>
+  <div class="card" style="border-left:3px solid var(--accent);">
+    Joselyn Toledo, kinesióloga independiente con modelo mixto (clínica con comisión + atención particular a domicilio), gestiona su agenda y sus finanzas con herramientas separadas y manuales, lo que le impide <strong>saber con claridad cuánto gana por modalidad y proyectar sus ingresos</strong> frente a una demanda estacional.
+  </div>
+
+  <h3>Fundamentación</h3>
+  <table>
+    <tr><th style="width:24%;">Fuente</th><th>Evidencia</th></tr>
+    <tr><td>Usuaria</td><td>Declara "desorden" en la gestión económica y que la carrera es "muy inestable". Registro manual en Excel.</td></tr>
+    <tr><td>Observación</td><td>Dos agendas paralelas; registro financiero posterior y manual.</td></tr>
+    <tr><td>Experta</td><td>Guion construido para validar que el patrón se repite (H1–H5).</td></tr>
+    <tr><td>Entorno</td><td>Estacionalidad, alza de retención tributaria, envejecimiento poblacional que aumenta demanda a domicilio.</td></tr>
+    <tr><td>Antecedentes</td><td>Agenda resuelta como commodity; control financiero para independientes con modelo mixto, sin resolver.</td></tr>
+  </table>
+
+  <h3>Redefinición del desafío</h3>
+  <blockquote style="font-size:11pt;">¿Cómo podríamos <strong>unificar</strong> la agenda y el control financiero de una kinesióloga independiente con modelo mixto, para que <strong>conozca su ingreso neto por modalidad y proyecte sus próximos 3 meses</strong>, reduciendo a menos de 10 minutos diarios el tiempo de registro, durante el segundo semestre de 2026 en Rancagua?</blockquote>
+
+  <table>
+    <tr><th>Verbo</th><th>Proceso</th><th>Usuario</th><th>Impacto medible</th><th>Alcance</th></tr>
+    <tr><td>Unificar</td><td>Agenda + control financiero</td><td>Kinesióloga independiente, modelo mixto</td><td>Ingreso neto por modalidad visible; proyección 3 meses; &lt;10 min/día de registro</td><td>2° semestre 2026, Rancagua</td></tr>
+  </table>
+
+  <div class="footer">
+    <span class="label-lgt">Problemática y desafío</span>
+    <span class="label-lgt">Pág. 18</span>
+  </div>
+</div>
+
+<!-- 13. OPORTUNIDADES Y TRABAJO FUTURO -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>13. Oportunidades Seleccionadas y Trabajo Futuro</h2>
+
+  <div class="card" style="border-left:3px solid var(--accent);">
+    <span class="tag">Oportunidad 01 · Principal</span>
+    <div style="font-weight:700;margin:4px 0 2px;">Sistema de agenda personalizado + dashboard financiero en tiempo real</div>
+    <div style="font-size:9pt;">Reemplaza herramientas genéricas. Una sola vista de citas de clínica y domicilio, ingreso neto por modalidad y proyección mensual. <em>Tipo: proceso + tecnología.</em></div>
+  </div>
+  <div class="card" style="border-left:3px solid var(--h6);">
+    <span class="tag tag-purple">Oportunidad 02 · Complementaria</span>
+    <div style="font-weight:700;margin:4px 0 2px;">Presencia digital de InMotion: Instagram + sitio web</div>
+    <div style="font-size:9pt;">Da un canal al diferenciador (atención 1:1) y conecta la captación con la reserva online del sistema. <em>Tipo: metodología + tecnología.</em></div>
+  </div>
+
+  <h3>Otras oportunidades detectadas (en reserva)</h3>
+  <ul>
+    <li>Agrupación de domicilios por zona para reducir traslados y costos (proceso).</li>
+    <li>Programa de servicios grupales para adultos mayores (oferta de servicios).</li>
+    <li>Protocolo de seguimiento post-alta para fidelizar pacientes (metodología).</li>
+  </ul>
+
+  <h3>Acciones de trabajo futuro</h3>
+  <table>
+    <tr><th style="width:18%;">Unidad</th><th>Acción</th></tr>
+    <tr><td>U2 · Ideación</td><td>Co-crear con Joselyn requerimientos del sistema; benchmark de casos de inspiración; propuesta de valor con enfoque sostenible.</td></tr>
+    <tr><td>U3 · Prototipo</td><td>Prototipo en Figma mobile-first; testeo con Joselyn y Catalina en al menos dos ciclos de iteración.</td></tr>
+    <tr><td>U4 · Propuesta</td><td>Evaluar factibilidad económica (modelo de suscripción) e impacto; pitch a programas de financiamiento (Sercotec).</td></tr>
+    <tr><td>Profesional</td><td>Convertir la solución en un producto replicable para otros profesionales de salud independientes (sistema HORIZON).</td></tr>
+  </table>
+
+  <div class="footer">
+    <span class="label-lgt">Oportunidades y trabajo futuro</span>
+    <span class="label-lgt">Pág. 19</span>
+  </div>
+</div>
+
+<!-- 14. COBERTURA Y CONCLUSIONES -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>14. Cobertura de Criterios y Conclusiones</h2>
+
+  <table>
+    <tr><th style="width:12%;">Criterio</th><th>Descripción</th><th style="width:30%;">Evidencia en este informe</th></tr>
+    <tr><td>1.1.1</td><td>Aplica la fase de diagnóstico y selección de oportunidades del Ciclo de Innovación INACAP.</td><td>Secciones 2, 12 y 13</td></tr>
+    <tr><td>1.1.2</td><td>Aplica instrumentos pertinentes para la detección de necesidades.</td><td>Secciones 3, 4, 5, 7 y 8</td></tr>
+    <tr><td>1.1.3</td><td>Integra resultados del análisis estratégico y del entorno.</td><td>Secciones 6 y 9</td></tr>
+    <tr><td>1.1.4</td><td>Selecciona la problemática en consistencia con usuarios y entorno.</td><td>Secciones 10 y 12</td></tr>
+    <tr><td>1.1.5</td><td>Analiza antecedentes nacionales e internacionales.</td><td>Sección 11</td></tr>
+    <tr><td>1.1.6</td><td>Detecta oportunidades de desarrollo y propone trabajo futuro.</td><td>Sección 13</td></tr>
+  </table>
+
+  <h3>Conclusiones</h3>
+  <ul>
+    <li>El diagnóstico, construido desde la usuaria, la observación, la experta, el entorno y los antecedentes, converge en un mismo punto: <strong>la gestión financiera y de agenda es el dolor principal</strong> del caso.</li>
+    <li>El mercado ya ofrece agendas; la oportunidad real está en <strong>integrar agenda y finanzas</strong> para el profesional independiente con modelo mixto.</li>
+    <li>La presencia digital es la oportunidad complementaria: el diferenciador de Joselyn existe, pero no tiene canal.</li>
+    <li>El desafío redefinido es medible y acotado, y deja una ruta clara para las unidades 2, 3 y 4.</li>
   </ul>
 
   <div class="divider-light"></div>
-  <p style="font-size:8.5pt;color:var(--page-text2);">Documentos anexos entregados por separado: Canvas de Preguntas (PDF A4 horizontal), Mapa de Card Sorting (PDF A4 horizontal, portada + 2 tableros), Bitácora de Declaración de Avance (Excel, semanas 1-4).</p>
+  <p style="font-size:8.5pt;color:var(--page-text2);">Documentos anexos: Canvas de Preguntas (PDF A4 horizontal), Mapa de Card Sorting (PDF A4 horizontal), Ficha de Entrevista a Experta (<em>Entrevista_Experta_Cata</em>), Bitácora de Declaración de Avance (Excel, semanas 1–4).</p>
 
   <div class="footer">
     <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>

@@ -27,7 +27,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 
 | Archivo | Descripción |
 |---|---|
-| `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Joselyn, mapa de síntesis, hallazgos. |
+| `Evaluacion1_Informe_Consolidado.html` / `.pdf` | Informe A4 final (20 págs.) — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Cubre criterios 1.1.1–1.1.6: instrumentos de needfinding, AEIOU, entrevista a experta, PESTAL, vaciado y priorización de hallazgos, antecedentes nacionales/internacionales, redefinición del desafío, oportunidades y trabajo futuro. |
 | `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B pendiente de completar con sus respuestas. |
 
 Ambos documentos usan la identidad visual HORIZON (portada degradada, barra de acento, tipografía Arial Narrow/Courier New/Helvetica o Bebas Neue/DM Mono/Plus Jakarta Sans según el entregable) y están pensados para exportarse a PDF vía WeasyPrint, formato A4.
@@ -52,8 +52,4 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 | `*_infografia.pdf` | Infografías de apoyo con ejemplos aplicados por técnica (entrevista usuario/experto, observación, cuestionario, PESTEL, procesamiento de hallazgos, redefinición del desafío) |
 
 ## Pendientes
-- Completar Ficha B de la entrevista a Catalina con sus respuestas.
-- Rellenar las plantillas en blanco (entrevista usuario/experto, observación, PESTAL, antecedentes) con la información real del caso.
-- Terminar matrices de Semana 3 (vaciado de hallazgos, comparativo de antecedentes).
-- Redefinición del desafío (Semana 4).
-- Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
+- Completar Ficha B de la entrevista a Catalina con sus respuestas (el informe la usa como marco de hipótesis H1–H5).
