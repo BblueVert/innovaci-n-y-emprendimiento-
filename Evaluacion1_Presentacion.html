@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>EV1 — Presentación Diagnóstico InMotion</title>
+<style>
+@font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2);}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;src:url(fonts/plus-jakarta-sans-latin-400-normal.woff2);}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:400;font-style:italic;src:url(fonts/plus-jakarta-sans-latin-400-italic.woff2);}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:600;src:url(fonts/plus-jakarta-sans-latin-600-normal.woff2);}
+@font-face{font-family:'Plus Jakarta Sans';font-weight:700;src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2);}
+@font-face{font-family:'DM Mono';font-weight:400;src:url(fonts/dm-mono-latin-400-normal.woff2);}
+@font-face{font-family:'DM Mono';font-weight:500;src:url(fonts/dm-mono-latin-500-normal.woff2);}
+</style>
+<style>
+:root{
+  --void:#07060E; --card:#1A1828; --border:#302D45;
+  --accent:#FF6B35; --h2:#FF8C42; --h3:#FFB347; --h4:#E8637A; --h5:#C4467A; --h6:#7B3FA0; --h7:#4A3580;
+  --text:#F5F2FF; --text2:#9B98B8;
+  --bg:#F8F7FF; --ink:#12101E; --ink2:#504D6E; --line:#E2E0EF; --white:#FFFFFF;
+  --fd:'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
+  --fm:'DM Mono', 'Courier New', monospace;
+  --fb:'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:1920px 1080px;margin:0;}
+body{font-family:var(--fb);color:var(--ink);background:#222;}
+.s{width:1920px;height:1080px;position:relative;overflow:hidden;padding:110px 128px 150px;display:flex;flex-direction:column;gap:40px;background:var(--bg);page-break-after:always;}
+.s:last-child{page-break-after:auto;}
+.dark{background:linear-gradient(135deg,var(--void) 0%,#1A0E2E 60%,#0D0820 100%);color:var(--text);}
+.bar{position:absolute;left:0;top:0;bottom:0;width:12px;background:linear-gradient(180deg,var(--accent),var(--h4),var(--h6));}
+.eyebrow{font-family:var(--fm);font-size:24px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);}
+h1{font-family:var(--fd);font-weight:400;font-size:200px;line-height:.95;letter-spacing:4px;}
+h2{font-family:var(--fd);font-weight:400;font-size:88px;line-height:1;letter-spacing:2px;}
+h3{font-size:34px;font-weight:700;line-height:1.2;}
+p,li{font-size:28px;line-height:1.45;}
+.muted{color:var(--ink2);} .dark .muted{color:var(--text2);}
+.foot{position:absolute;left:128px;right:128px;bottom:56px;display:flex;justify-content:space-between;font-family:var(--fm);font-size:22px;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);border-top:1px solid var(--line);padding-top:14px;}
+.dark .foot{color:var(--text2);border-color:var(--border);}
+.row{display:flex;gap:32px;}
+.col{display:flex;flex-direction:column;gap:20px;}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:32px 36px;display:flex;flex-direction:column;gap:12px;flex:1;}
+.dark .card{background:var(--card);border-color:var(--border);}
+.card.acc{border-left:8px solid var(--accent);}
+.card.pur{border-left:8px solid var(--h6);}
+.num{font-family:var(--fd);font-size:120px;line-height:1;color:var(--accent);}
+.tag{display:inline-block;font-family:var(--fm);font-size:22px;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:6px;border:1px solid rgba(255,107,53,.4);background:rgba(255,107,53,.1);color:var(--accent);align-self:flex-start;}
+.tag.pur{border-color:rgba(123,63,160,.4);background:rgba(123,63,160,.1);color:var(--h6);}
+.dark .tag.pur{color:#C9A3EE;border-color:rgba(201,163,238,.45);}
+.tag.red{border-color:rgba(196,70,122,.4);background:rgba(196,70,122,.1);color:var(--h5);}
+table{width:100%;border-collapse:collapse;}
+th{font-family:var(--fm);font-size:22px;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);text-align:left;padding:12px 16px;border-bottom:3px solid var(--line);}
+td{font-size:25px;line-height:1.35;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
+.dark th{color:var(--text2);border-color:var(--border);} .dark td{border-color:var(--border);}
+.prio{font-family:var(--fm);font-size:20px;letter-spacing:1px;text-transform:uppercase;color:#fff;padding:4px 12px;border-radius:6px;white-space:nowrap;}
+.alta{background:var(--accent);} .media{background:var(--h6);}
+.quote{font-family:Georgia,serif;font-style:italic;}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.cat{border-radius:14px;padding:20px 24px;color:#fff;}
+.cat .n{font-family:var(--fm);font-size:20px;letter-spacing:2px;opacity:.85;}
+.cat .t{font-size:27px;font-weight:700;line-height:1.2;margin-top:4px;}
+.pestal{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;flex:1;}
+.pc{background:var(--white);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:14px;padding:22px 26px;display:flex;flex-direction:column;gap:10px;position:relative;}
+.pc .L{position:absolute;right:22px;top:12px;font-family:var(--fd);font-size:64px;color:var(--accent);opacity:.9;}
+.pc h3{font-size:30px;}
+.pc li{font-size:23px;line-height:1.35;margin-left:26px;margin-bottom:4px;}
+ul.b li{margin-left:34px;margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<!-- 1 PORTADA -->
+<div class="s dark" style="justify-content:space-between;padding:110px 128px;">
+  <div class="bar"></div>
+  <div class="col" style="gap:8px;">
+    <p style="font-family:var(--fd);font-size:48px;letter-spacing:5px;">HORIZON</p>
+    <p class="eyebrow">Innovación y Emprendimiento III · INACAP Rancagua</p>
+  </div>
+  <div class="col" style="gap:24px;">
+    <h1>Evaluación N°1</h1>
+    <h2 style="color:var(--h3);font-size:80px;">Diagnóstico y selección de oportunidades</h2>
+    <p class="muted" style="font-size:32px;max-width:1300px;">Caso real: Joselyn Toledo, kinesióloga independiente — Centro Médico InMotion</p>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <p style="font-weight:600;">Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez</p>
+    <p class="eyebrow" style="color:var(--text2);">Septiembre 2026</p>
+  </div>
+</div>
+
+<!-- 2 CASO -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">01 · El caso</p>
+  <h2>Una kinesióloga, dos negocios en paralelo</h2>
+  <div class="row" style="flex:1;">
+    <div class="card acc" style="flex:1.3;">
+      <span class="tag">Caso de estudio</span>
+      <h3>Joselyn Toledo — Centro Médico InMotion</h3>
+      <p class="muted">~1 año con empresa propia. Rehabilitación musculoesquelética, respiratoria, neurológica, masoterapia y psicomotricidad acuática. Diplomados en fisiología del ejercicio y piso pélvico.</p>
+    </div>
+    <div class="col" style="flex:1;">
+      <div class="card"><span class="tag">Modalidad A</span><h3>Clínica InMotion</h3><p class="muted">Comisión 70/30 · agenda gestionada por secretaria</p></div>
+      <div class="card"><span class="tag pur">Modalidad B</span><h3>Particular a domicilio</h3><p class="muted">Gestión propia por WhatsApp · vehículo y materiales propios</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>El caso</span><span>02</span></div>
+</div>
+
+<!-- 3 METODOLOGÍA -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">02 · Metodología</p>
+  <h2>Ciclo de Innovación INACAP en 4 semanas</h2>
+  <div class="row" style="flex:1;">
+    <div class="card"><p class="num">S1</p><h3>Needfinding usuario</h3><p class="muted">Guion de sondeo · entrevista en profundidad · observación AEIOU</p></div>
+    <div class="card"><p class="num">S2</p><h3>Experto y entorno</h3><p class="muted">Entrevista a experta · matriz PESTAL</p></div>
+    <div class="card"><p class="num">S3</p><h3>Síntesis y benchmark</h3><p class="muted">Vaciado y priorización de hallazgos · estudio de antecedentes</p></div>
+    <div class="card"><p class="num">S4</p><h3>Redefinición</h3><p class="muted">"¿Cómo podríamos…?" · cierre de la Bitácora de Avance</p></div>
+  </div>
+  <div class="foot"><span>Metodología</span><span>03</span></div>
+</div>
+
+<!-- 4 SONDEO + CARD SORTING -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">03 · Guion de sondeo y card sorting</p>
+  <h2>33 preguntas → 9 categorías emergentes</h2>
+  <div class="grid9">
+    <div class="cat" style="background:var(--accent);"><div class="n">01</div><div class="t">Equipo y capacidad operativa</div></div>
+    <div class="cat" style="background:var(--h2);"><div class="n">02</div><div class="t">Red de alianzas y proveedores</div></div>
+    <div class="cat" style="background:#E8A23A;"><div class="n">03</div><div class="t">Catálogo y oferta de servicios</div></div>
+    <div class="cat" style="background:var(--h4);"><div class="n">04</div><div class="t">Cliente ideal y propuesta de valor</div></div>
+    <div class="cat" style="background:var(--h5);"><div class="n">05</div><div class="t">Relación y fidelización</div></div>
+    <div class="cat" style="background:var(--h6);"><div class="n">06</div><div class="t">Captación y canales digitales</div></div>
+    <div class="cat" style="background:var(--h7);"><div class="n">07</div><div class="t">Operación de agenda y venta</div></div>
+    <div class="cat" style="background:var(--accent);"><div class="n">08</div><div class="t">Modelo de cobro e ingresos</div></div>
+    <div class="cat" style="background:var(--h2);"><div class="n">09</div><div class="t">Estructura de costos</div></div>
+  </div>
+  <p class="muted">Las categorías no calzan 1:1 con el Business Model Canvas: "Agenda" cruza canales y relación; "Cobro" cruza costos e ingresos.</p>
+  <div class="foot"><span>Sondeo y card sorting</span><span>04</span></div>
+</div>
+
+<!-- 5 ENTREVISTA -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">04 · Entrevista en profundidad</p>
+  <h2>Lo que nos contó Joselyn</h2>
+  <div class="row">
+    <div class="card"><p class="num">70/30</p><p class="muted">Comisión en clínica: el 30% se queda en InMotion</p></div>
+    <div class="card"><p class="num">45–60'</p><p class="muted">Sesión 1:1 — su diferenciador frente a la atención masiva</p></div>
+    <div class="card"><p class="num">10–32 h</p><p class="muted">Carga semanal variable, de lunes a sábado</p></div>
+  </div>
+  <div class="row" style="flex:1;">
+    <div class="card"><h3>Dolor principal</h3><p class="muted">Gestión financiera: ingresos estacionales, control manual en Excel, sin proyección a 6–12 meses.</p></div>
+    <div class="card"><h3>Visión de crecimiento</h3><p class="muted">Sumar kinesiólogos por comisión, servicios grupales para adultos mayores, invertir en presoterapia.</p></div>
+  </div>
+  <div class="foot"><span>Entrevista — Joselyn Toledo</span><span>05</span></div>
+</div>
+
+<!-- 6 CITA -->
+<div class="s" style="background:var(--accent);color:#1A0E12;justify-content:center;gap:48px;">
+  <p class="eyebrow" style="color:#1A0E12;">La voz de la usuaria</p>
+  <p class="quote" style="font-size:84px;line-height:1.2;max-width:1600px;">"Siento que igual tengo como un cierto desorden o falta de educación."</p>
+  <p style="font-size:30px;font-weight:600;">— Joselyn Toledo, sobre su gestión económica</p>
+  <p class="quote" style="font-size:40px;opacity:.85;">"La carrera de kinesiología es muy inestable, muy inestable."</p>
+</div>
+
+<!-- 7 AEIOU -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">05 · Observación no participante</p>
+  <h2>Una jornada tipo, en marco AEIOU</h2>
+  <table>
+    <tr><th style="width:18%;">Dimensión</th><th>Registro (autorreporte guiado, por privacidad del paciente)</th></tr>
+    <tr><td><b>Actividades</b></td><td>Sesiones 1:1 · coordinación por WhatsApp · traslados · registro en Excel al cierre del día</td></tr>
+    <tr><td><b>Entornos</b></td><td>Box de InMotion · hogares de pacientes · el auto como "oficina móvil"</td></tr>
+    <tr><td><b>Interacciones</b></td><td>Pacientes y familiares · secretaria de la clínica · contadora externa</td></tr>
+    <tr><td><b>Objetos</b></td><td>Celular (WhatsApp + calendario) · planilla Excel · materiales · vehículo · boletas</td></tr>
+    <tr><td><b>Usuarios</b></td><td>Directa: Joselyn · Indirectos: pacientes, secretaria, contadora, familiares</td></tr>
+  </table>
+  <p><b style="color:var(--accent);">Lectura:</b> dos agendas que no se cruzan, y las finanzas se registran <i>después</i>, a mano.</p>
+  <div class="foot"><span>Observación AEIOU</span><span>07</span></div>
+</div>
+
+<!-- 8 EXPERTA -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">06 · Entrevista a experta</p>
+  <h2>¿Es un patrón o un caso aislado?</h2>
+  <p class="muted">Catalina, kinesióloga y colaboradora previa de HORIZON (Vital Kine). Guion de 10 preguntas vía chat, construido sobre 5 hipótesis:</p>
+  <table>
+    <tr><th style="width:8%;">#</th><th>Hipótesis</th><th style="width:18%;">Preguntas</th></tr>
+    <tr><td><b>H1</b></td><td>La agenda se gestiona con herramientas genéricas o apps que no calzan con el modelo mixto</td><td>P02 · P03</td></tr>
+    <tr><td><b>H2</b></td><td>El control financiero es manual y no permite proyectar</td><td>P04 · P05</td></tr>
+    <tr><td><b>H3</b></td><td>La demanda es estacional y desestabiliza el ingreso</td><td>P06</td></tr>
+    <tr><td><b>H4</b></td><td>La captación depende del boca a boca, sin canal digital propio</td><td>P07 · P08</td></tr>
+    <tr><td><b>H5</b></td><td>Hay disposición a pagar por una solución a medida</td><td>P09 · P10</td></tr>
+  </table>
+  <div class="foot"><span>Entrevista a experta</span><span>08</span></div>
+</div>
+
+<!-- 9 PESTAL -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">07 · Análisis del entorno</p>
+  <h2>Matriz PESTAL</h2>
+  <div class="pestal">
+    <div class="pc"><span class="L">P</span><h3>Político</h3><ul><li>Fomento a microemprendimiento (Sercotec)</li><li>Crisis de isapres empuja a atención particular</li></ul><span class="tag">Oportunidad</span></div>
+    <div class="pc"><span class="L">E</span><h3>Económico</h3><ul><li>Ingresos estacionales · comisión 70/30</li><li>Retención de honorarios al alza (15,25% en 2026)</li><li>Combustible y traslados</li></ul><span class="tag red">Amenaza</span></div>
+    <div class="pc"><span class="L">S</span><h3>Social</h3><ul><li>Envejecimiento: más demanda a domicilio</li><li>Se valora el trato personalizado</li></ul><span class="tag">Oportunidad</span></div>
+    <div class="pc"><span class="L">T</span><h3>Tecnológico</h3><ul><li>WhatsApp y smartphone universales</li><li>Apps de agenda con planes mensuales</li><li>No-code e IA abaratan soluciones a medida</li></ul><span class="tag">Oportunidad</span></div>
+    <div class="pc"><span class="L">A</span><h3>Ambiental</h3><ul><li>Traslados diarios: costo y huella</li><li>Agrupar domicilios por zona reduce km</li></ul><span class="tag">Oportunidad</span></div>
+    <div class="pc"><span class="L">L</span><h3>Legal</h3><ul><li>Ley 20.584: confidencialidad clínica</li><li>Ley 21.719: datos personales sensibles</li><li>Boleta electrónica (SII)</li></ul><span class="tag red">Requisito</span></div>
+  </div>
+  <div class="foot"><span>Matriz PESTAL</span><span>09</span></div>
+</div>
+
+<!-- 10 HALLAZGOS -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">08 · Vaciado y priorización</p>
+  <h2>Hallazgos priorizados por impacto y frecuencia</h2>
+  <table>
+    <tr><th style="width:52%;">Hallazgo</th><th>Fuente</th><th style="width:13%;">Prioridad</th></tr>
+    <tr><td>Ingresos variables, sin proyección a 6–12 meses</td><td>Entrevista · PESTAL</td><td><span class="prio alta">Alta</span></td></tr>
+    <tr><td>Control financiero manual en Excel ("desorden")</td><td>Entrevista · AEIOU</td><td><span class="prio alta">Alta</span></td></tr>
+    <tr><td>Dos agendas separadas, sin vista unificada</td><td>AEIOU · Mapa de síntesis</td><td><span class="prio alta">Alta</span></td></tr>
+    <tr><td>Captación solo por WhatsApp, boca a boca y referidos</td><td>Entrevista · Card sorting</td><td><span class="prio alta">Alta</span></td></tr>
+    <tr><td>Diferenciador claro: atención 1:1 y trato cercano</td><td>Entrevista · Mapa</td><td><span class="prio media">Media</span></td></tr>
+    <tr><td>Visión de crecimiento sin plan formal</td><td>Mapa · Entrevista</td><td><span class="prio media">Media</span></td></tr>
+  </table>
+  <div class="foot"><span>Vaciado y priorización</span><span>10</span></div>
+</div>
+
+<!-- 11 INSIGHTS (dark) -->
+<div class="s dark" style="justify-content:center;">
+  <div class="bar"></div>
+  <p class="eyebrow">Insights</p>
+  <div class="row">
+    <div class="card acc"><p class="num" style="font-size:96px;">01</p><h3>"No sé cuánto voy a ganar"</h3><p class="muted">El problema no es registrar: es anticipar.</p></div>
+    <div class="card acc"><p class="num" style="font-size:96px;">02</p><h3>"Mi negocio vive en mi celular"</h3><p class="muted">La solución debe ser mobile-first y convivir con WhatsApp.</p></div>
+    <div class="card acc"><p class="num" style="font-size:96px;">03</p><h3>"Me eligen por el trato, pero nadie me encuentra"</h3><p class="muted">El diferenciador no tiene un canal que lo comunique.</p></div>
+  </div>
+  <div class="foot"><span>Insights</span><span>11</span></div>
+</div>
+
+<!-- 12 ANTECEDENTES -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">09 · Antecedentes nacionales e internacionales</p>
+  <h2>La agenda ya está resuelta. Las finanzas, no.</h2>
+  <table>
+    <tr><th style="width:18%;">Solución</th><th style="width:14%;">Origen</th><th style="width:30%;">Qué resuelve</th><th>Brecha frente al caso</th></tr>
+    <tr><td><b>AgendaPro</b></td><td>Chile</td><td>Agenda, recordatorios, pagos</td><td>Pensada para centros; no integra la comisión con clínica externa</td></tr>
+    <tr><td><b>Reservo</b></td><td>Chile</td><td>Agenda y ficha clínica</td><td>Finanzas personales y proyección, secundarias</td></tr>
+    <tr><td><b>Medilink</b></td><td>Chile</td><td>Gestión clínica y caja</td><td>Complejo y caro para una independiente</td></tr>
+    <tr><td><b>Jane App</b></td><td>Canadá</td><td>Agenda y cobros para fisioterapia</td><td>No adaptado a moneda ni tributación chilena</td></tr>
+    <tr><td><b>Cliniko</b></td><td>Australia</td><td>Práctica de salud aliada</td><td>No contempla domicilios ni rutas</td></tr>
+    <tr><td><b>SimplePractice</b></td><td>EE.UU.</td><td>Práctica privada + dashboard</td><td>Orientado a seguros de EE.UU.</td></tr>
+  </table>
+  <div class="foot"><span>Antecedentes</span><span>12</span></div>
+</div>
+
+<!-- 13 DESAFÍO -->
+<div class="s dark" style="justify-content:center;gap:48px;">
+  <div class="bar"></div>
+  <p class="eyebrow">10 · Redefinición del desafío</p>
+  <p class="quote" style="font-size:58px;line-height:1.3;max-width:1650px;">¿Cómo podríamos <span style="color:var(--accent);font-style:normal;font-family:var(--fb);font-weight:700;">unificar</span> la agenda y el control financiero de una kinesióloga independiente con modelo mixto, para que <span style="color:var(--h3);">conozca su ingreso neto por modalidad y proyecte sus próximos 3 meses</span>, con menos de 10 minutos diarios de registro, durante el 2° semestre de 2026 en Rancagua?</p>
+  <div class="row">
+    <span class="tag">Verbo: unificar</span><span class="tag">Proceso: agenda + finanzas</span><span class="tag pur">Impacto medible</span><span class="tag pur">Alcance: Rancagua 2026</span>
+  </div>
+  <div class="foot"><span>Problemática y desafío</span><span>13</span></div>
+</div>
+
+<!-- 14 OPORTUNIDADES -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">11 · Oportunidades seleccionadas</p>
+  <h2>Dos oportunidades y una ruta</h2>
+  <div class="row">
+    <div class="card acc"><span class="tag">01 · Principal</span><h3>Agenda personalizada + dashboard financiero en tiempo real</h3><p class="muted">Una vista de citas de clínica y domicilio, ingreso neto por modalidad y proyección mensual.</p></div>
+    <div class="card pur"><span class="tag pur">02 · Complementaria</span><h3>Presencia digital de InMotion: Instagram + sitio web</h3><p class="muted">Un canal para el diferenciador, conectado a la reserva online.</p></div>
+  </div>
+  <table>
+    <tr><th style="width:22%;">Unidad</th><th>Trabajo futuro</th></tr>
+    <tr><td><b>U2 · Ideación</b></td><td>Co-crear requerimientos con Joselyn · propuesta de valor sostenible</td></tr>
+    <tr><td><b>U3 · Prototipo</b></td><td>Prototipo mobile-first en Figma · 2+ ciclos de testeo con Joselyn y Catalina</td></tr>
+    <tr><td><b>U4 · Propuesta</b></td><td>Factibilidad económica (suscripción) · pitch a Sercotec</td></tr>
+  </table>
+  <div class="foot"><span>Oportunidades y trabajo futuro</span><span>14</span></div>
+</div>
+
+<!-- 15 CIERRE -->
+<div class="s dark" style="justify-content:space-between;">
+  <div class="bar"></div>
+  <p class="eyebrow">Conclusión</p>
+  <div class="col" style="gap:28px;">
+    <h2 style="font-size:110px;max-width:1600px;">El valor no está en otra agenda, sino en ver agenda y dinero en un solo lugar.</h2>
+    <p class="muted" style="font-size:32px;max-width:1500px;">Usuaria, observación, experta, entorno y antecedentes convergen en el mismo dolor: la gestión financiera y de agenda del profesional independiente.</p>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+    <p style="font-family:var(--fd);font-size:48px;letter-spacing:5px;">HORIZON</p>
+    <p class="eyebrow" style="color:var(--text2);">Criterios 1.1.1 – 1.1.6 · Gracias</p>
+  </div>
+</div>
+
+</body>
+</html>
