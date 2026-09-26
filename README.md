@@ -28,7 +28,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 | Archivo | Descripción |
 |---|---|
 | `Evaluacion1_Informe_Consolidado.html` / `.pdf` | Informe A4 final (20 págs.) — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Cubre criterios 1.1.1–1.1.6: instrumentos de needfinding, AEIOU, entrevista a experta, PESTAL, vaciado y priorización de hallazgos, antecedentes nacionales/internacionales, redefinición del desafío, oportunidades y trabajo futuro. |
-| `Evaluacion1_Presentacion.html` / `.pdf` | Presentación 16:9 (15 slides) del informe EV1, identidad HORIZON. Fuentes locales en `/fonts`. |
+| `Evaluacion1_Presentacion.html` / `.pdf` | Presentación 16:9 (15 slides) del informe EV1, identidad HORIZON, con ilustraciones en `/img`. Fuentes locales en `/fonts`. |
 | `Evaluacion1_Prompts_Visuales.md` | 10 prompts para generar imágenes/ilustraciones vectoriales que complementan la presentación. |
 | `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B pendiente de completar con sus respuestas. |
 
