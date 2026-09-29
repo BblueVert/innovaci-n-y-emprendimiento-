@@ -70,6 +70,9 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
 .z{position:relative;}
 .pc .ic{width:60px;height:60px;object-fit:contain;flex:none;}
 .pc .hd{display:flex;align-items:center;gap:14px;}
+table.mx th,table.mx td{text-align:center;padding:10px 12px;} table.mx td:first-child,table.mx th:first-child{text-align:left;}
+.d{display:inline-block;width:22px;height:22px;border-radius:50%;border:3px solid var(--ink);vertical-align:middle;}
+.d.f{background:var(--ink);} .d.h{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%);} .d.o{border-color:var(--accent);background:var(--accent);}
 </style>
 </head>
 <body>
@@ -117,8 +120,8 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
     <img class="img" src="img/03-ciclo.jpg" alt="Ciclo: investigar, conversar, sintetizar, idear" style="width:760px;height:424px;">
     <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px;">
       <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S1</p><h3 style="font-size:28px;">Needfinding usuario</h3><p class="muted" style="font-size:23px;">Guion · entrevista · AEIOU</p></div>
-      <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S2</p><h3 style="font-size:28px;">Experto y entorno</h3><p class="muted" style="font-size:23px;">Entrevista experta · PESTAL</p></div>
-      <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S3</p><h3 style="font-size:28px;">Síntesis y benchmark</h3><p class="muted" style="font-size:23px;">Hallazgos · antecedentes</p></div>
+      <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S2</p><h3 style="font-size:28px;">Experto y entorno</h3><p class="muted" style="font-size:23px;">2 expertos · PESTAL</p></div>
+      <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S3</p><h3 style="font-size:28px;">Síntesis y benchmark</h3><p class="muted" style="font-size:23px;">8 insights · antecedentes</p></div>
       <div class="card" style="gap:6px;padding:24px 28px;"><p class="num" style="font-size:80px;">S4</p><h3 style="font-size:28px;">Redefinición</h3><p class="muted" style="font-size:23px;">"¿Cómo podríamos…?" · Bitácora</p></div>
     </div>
   </div>
@@ -231,49 +234,66 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
   <div class="foot"><span>Entrevista a experta — contraste</span><span>09</span></div>
 </div>
 
+<!-- 8c ASESOR FINANCIERO -->
+<div class="s">
+  <div class="bar" style="opacity:.5;"></div>
+  <p class="eyebrow">06 · Entrevista a experto — asesoría financiera</p>
+  <h2>"Estar ocupado no es estar ganando dinero"</h2>
+  <p class="muted" style="font-size:26px;">Asesor de profesionales independientes con boleta de honorarios. Entrevista realizada por Francisco Ahumada.</p>
+  <div class="row" style="gap:20px;">
+    <div class="card" style="padding:26px 30px;"><h3 style="font-size:30px;">Control actual</h3><p class="muted" style="font-size:24px;">El saldo bancario es el "termómetro". Casi nadie proyecta flujo de caja.</p></div>
+    <div class="card" style="padding:26px 30px;"><h3 style="font-size:30px;">Error más común</h3><p class="muted" style="font-size:24px;">No provisionar la Operación Renta: la retención se ve como "plata perdida".</p></div>
+    <div class="card" style="padding:26px 30px;"><h3 style="font-size:30px;">Precio razonable</h3><p class="muted" style="font-size:24px;">$8.000–$25.000 CLP/mes, sin duplicar el costo de una agenda.</p></div>
+  </div>
+  <div class="card pur" style="flex:0;">
+    <p class="quote" style="font-size:36px;line-height:1.35;">"Sin agenda confiable no hay dato de ingresos confiable, y sin dato de ingresos confiable no hay control financiero posible."</p>
+    <p class="muted" style="font-size:24px;">— Experto financiero · P10 (resumen de la entrevista)</p>
+  </div>
+  <div class="foot"><span>Entrevista a experto — asesoría financiera</span><span>10</span></div>
+</div>
+
 <!-- 9 PESTAL -->
 <div class="s">
   <div class="bar" style="opacity:.5;"></div>
   <p class="eyebrow">07 · Análisis del entorno</p>
   <h2>Matriz PESTAL</h2>
   <div class="pestal">
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-politico.png" alt=""><h3>Político</h3></div><ul><li>Fomento a microemprendimiento (Sercotec)</li><li>Crisis de isapres empuja a atención particular</li></ul><span class="tag">Oportunidad</span></div>
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-economico.png" alt=""><h3>Económico</h3></div><ul><li>Ingresos estacionales · comisión 70/30</li><li>Retención de honorarios al alza (15,25% en 2026)</li><li>Combustible y traslados</li></ul><span class="tag red">Amenaza</span></div>
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-social.png" alt=""><h3>Social</h3></div><ul><li>Envejecimiento: más demanda a domicilio</li><li>Se valora el trato personalizado</li></ul><span class="tag">Oportunidad</span></div>
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-tecnologico.png" alt=""><h3>Tecnológico</h3></div><ul><li>WhatsApp y smartphone universales</li><li>Apps de agenda con planes mensuales</li><li>No-code e IA abaratan soluciones a medida</li></ul><span class="tag">Oportunidad</span></div>
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-ambiental.png" alt=""><h3>Ambiental</h3></div><ul><li>Traslados diarios: costo y huella</li><li>Agrupar domicilios por zona reduce km</li></ul><span class="tag">Oportunidad</span></div>
-    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-legal.png" alt=""><h3>Legal</h3></div><ul><li>Ley 20.584: confidencialidad clínica</li><li>Ley 21.719: datos personales sensibles</li><li>Boleta electrónica (SII)</li></ul><span class="tag red">Requisito</span></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-politico.png" alt=""><h3>Político</h3></div><ul><li>Formalización de independientes y Estado digital</li><li><b>+</b> Más profesionales que deben ordenar ingresos</li><li><b>−</b> Cambios en reglas de retención</li></ul></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-economico.png" alt=""><h3>Económico</h3></div><ul><li>Ingresos estacionales · comisión 70/30 · traslados</li><li><b>+</b> Mostrar ganancia real y meses bajos</li><li><b>−</b> Poca disposición a pagar software</li></ul></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-social.png" alt=""><h3>Social</h3></div><ul><li>Envejecimiento: más atención a domicilio</li><li><b>+</b> Crece la kinesiología particular</li><li><b>−</b> Formación sin gestión financiera</li></ul></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-tecnologico.png" alt=""><h3>Tecnológico</h3></div><ul><li>WhatsApp, Cal.com, AgendaPro, boleta SII</li><li><b>+</b> Integrar lo que ya usan</li><li><b>−</b> Riesgo de ser "una app más"</li></ul></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-ambiental.png" alt=""><h3>Ambiental</h3></div><ul><li>Traslados en vehículo propio</li><li><b>+</b> Agrupar por zona reduce km</li><li><b>−</b> Alza del combustible</li></ul></div>
+    <div class="pc"><div class="hd"><img class="ic" src="img/pestal-legal.png" alt=""><h3>Legal</h3></div><ul><li>Ley 21.133: retención hasta 17% en 2028 · Leyes 20.584 y 21.719</li><li><b>+</b> Provisionar impuestos automáticamente</li><li><b>−</b> Resguardo de datos de salud</li></ul></div>
   </div>
-  <div class="foot"><span>Matriz PESTAL</span><span>10</span></div>
+  <p class="muted" style="font-size:24px;"><b style="color:var(--accent);">+</b> oportunidad · <b style="color:var(--h5);">−</b> amenaza</p>
+  <div class="foot"><span>Matriz PESTAL</span><span>11</span></div>
 </div>
 
-<!-- 10 HALLAZGOS -->
+<!-- 10 PRIORIZACIÓN -->
 <div class="s">
   <div class="bar" style="opacity:.5;"></div>
-  <p class="eyebrow">08 · Vaciado y priorización</p>
-  <h2>Hallazgos priorizados por impacto y frecuencia</h2>
-  <table>
-    <tr><th style="width:52%;">Hallazgo</th><th>Fuente</th><th style="width:13%;">Prioridad</th></tr>
-    <tr><td>Ingresos variables, sin proyección a 6–12 meses</td><td>Entrevista · PESTAL</td><td><span class="prio alta">Alta</span></td></tr>
-    <tr><td>Control financiero manual en Excel ("desorden"); a Catalina le toma ~1 h diaria</td><td>Entrevista · AEIOU · Catalina</td><td><span class="prio alta">Alta</span></td></tr>
-    <tr><td>Agenda y finanzas en herramientas separadas, sin conexión</td><td>AEIOU · Catalina</td><td><span class="prio alta">Alta</span></td></tr>
-    <tr><td>Captación solo por WhatsApp, boca a boca y referidos</td><td>Entrevista · Card sorting</td><td><span class="prio alta">Alta</span></td></tr>
-    <tr><td>Diferenciador claro: atención 1:1 y trato cercano</td><td>Entrevista · Mapa</td><td><span class="prio media">Media</span></td></tr>
-    <tr><td>Visión de crecimiento sin plan formal</td><td>Mapa · Entrevista</td><td><span class="prio media">Media</span></td></tr>
-  </table>
-  <div class="foot"><span>Vaciado y priorización</span><span>11</span></div>
+  <p class="eyebrow">08 · Procesamiento de hallazgos</p>
+  <h2>8 insights, triangulados y priorizados</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;">
+    <div class="card" style="gap:10px;"><p class="eyebrow" style="font-size:20px;color:var(--ink2);">(−) Complejidad · (+) Impacto — victorias tempranas</p><p>I3 · El Excel como parche diario <span class="muted">(U E O)</span></p><p>I5 · Costos invisibles del domicilio <span class="muted">(U E O)</span></p><p>I1 · Ocupada no es lo mismo que rentable <span class="muted">(U E O)</span></p></div>
+    <div class="card acc" style="gap:10px;border:3px solid var(--accent);"><p class="eyebrow" style="font-size:20px;">(+) Complejidad · (+) Impacto — prioridad</p><p><b style="color:var(--accent);">I2 · La agenda es el origen del dato financiero</b> <span class="muted">(U E O)</span></p><p>I6 · Inestabilidad sin memoria <span class="muted">(U E O)</span></p><p>I4 · Impuestos como sorpresa <span class="muted">(U E O)</span></p></div>
+    <div class="card" style="gap:10px;"><p class="eyebrow" style="font-size:20px;color:var(--ink2);">(−) Complejidad · (−) Impacto</p><p>I7 · Fidelización informal por WhatsApp <span class="muted">(U E O)</span></p></div>
+    <div class="card" style="gap:10px;"><p class="eyebrow" style="font-size:20px;color:var(--ink2);">(+) Complejidad · (−) Impacto</p><p>I8 · Crecimiento sin plan <span class="muted">(U E)</span></p></div>
+  </div>
+  <p class="muted" style="font-size:24px;">U = usuaria (Joselyn) · E = expertos (Catalina + asesor) · O = observación AEIOU</p>
+  <div class="foot"><span>Vaciado, categorización y priorización</span><span>12</span></div>
 </div>
 
 <!-- 11 INSIGHTS (dark) -->
 <div class="s dark" style="justify-content:center;">
   <div class="bar"></div>
-  <p class="eyebrow">Insights</p>
+  <p class="eyebrow">Insights clave</p>
   <div class="row">
-    <div class="card acc"><p class="num" style="font-size:96px;">01</p><h3>"No sé cuánto voy a ganar"</h3><p class="muted">El problema no es registrar: es anticipar.</p></div>
-    <div class="card acc"><p class="num" style="font-size:96px;">02</p><h3>"Mi negocio vive en mi celular"</h3><p class="muted">La solución debe ser mobile-first y convivir con WhatsApp.</p></div>
-    <div class="card acc"><p class="num" style="font-size:96px;">03</p><h3>"Me eligen por el trato, pero nadie me encuentra"</h3><p class="muted">El diferenciador no tiene un canal que lo comunique.</p></div>
+    <div class="card acc"><p class="num" style="font-size:96px;">I2</p><h3>La agenda es el origen del dato financiero</h3><p class="muted">Cada cita agendada es un ingreso proyectado que hoy se pierde. Es el insight raíz.</p></div>
+    <div class="card acc"><p class="num" style="font-size:96px;">I1</p><h3>Ocupada no es lo mismo que rentable</h3><p class="muted">No sabe cuánto gana en un mes promedio; decide sin datos.</p></div>
+    <div class="card acc"><p class="num" style="font-size:96px;">I3</p><h3>El Excel como parche diario</h3><p class="muted">~1 h diaria de registro manual, al cierre de la jornada.</p></div>
   </div>
-  <div class="foot"><span>Insights</span><span>12</span></div>
+  <div class="foot"><span>Insights</span><span>13</span></div>
 </div>
 
 <!-- 12 ANTECEDENTES -->
@@ -281,28 +301,31 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
   <div class="bar" style="opacity:.5;"></div>
   <p class="eyebrow">09 · Antecedentes nacionales e internacionales</p>
   <h2>La agenda ya está resuelta. Las finanzas, no.</h2>
-  <table>
-    <tr><th style="width:18%;">Solución</th><th style="width:14%;">Origen</th><th style="width:30%;">Qué resuelve</th><th>Brecha frente al caso</th></tr>
-    <tr><td><b>AgendaPro</b></td><td>Chile</td><td>Agenda, recordatorios, pagos</td><td>Pensada para centros; no integra la comisión con clínica externa</td></tr>
-    <tr><td><b>Reservo</b></td><td>Chile</td><td>Agenda y ficha clínica</td><td>Finanzas personales y proyección, secundarias</td></tr>
-    <tr><td><b>Medilink</b></td><td>Chile</td><td>Gestión clínica y caja</td><td>Complejo y caro para una independiente</td></tr>
-    <tr><td><b>Cal.com</b></td><td>Internacional</td><td>Agenda gratuita (la usa Catalina)</td><td>No registra ingresos, costos ni impuestos</td></tr>
-    <tr><td><b>Jane App</b></td><td>Canadá</td><td>Agenda y cobros para fisioterapia</td><td>No adaptado a moneda ni tributación chilena</td></tr>
-    <tr><td><b>Cliniko</b></td><td>Australia</td><td>Práctica de salud aliada</td><td>No contempla domicilios ni rutas</td></tr>
-    <tr><td><b>SimplePractice</b></td><td>EE.UU.</td><td>Práctica privada + dashboard</td><td>Orientado a seguros de EE.UU.</td></tr>
+  <table class="mx">
+    <tr><th style="width:19%;">Caso</th><th>Agenda</th><th>Registro financiero</th><th>Costos por atención</th><th>Impuestos</th><th>Foco independiente</th><th>Agenda → finanzas</th></tr>
+    <tr><td><b>AgendaPro</b></td><td><span class="d f"></span></td><td><span class="d h"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d h"></span></td></tr>
+    <tr><td><b>Encuadrado</b></td><td><span class="d f"></span></td><td><span class="d h"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d f"></span></td><td><span class="d h"></span></td></tr>
+    <tr><td><b>Reservo</b></td><td><span class="d f"></span></td><td><span class="d h"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d n"></span></td></tr>
+    <tr><td><b>Medilink</b></td><td><span class="d f"></span></td><td><span class="d f"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td></tr>
+    <tr><td><b>Cal.com</b></td><td><span class="d f"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d f"></span></td><td><span class="d n"></span></td></tr>
+    <tr><td><b>Cliniko</b></td><td><span class="d f"></span></td><td><span class="d f"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d h"></span></td></tr>
+    <tr><td><b>Jane App</b></td><td><span class="d f"></span></td><td><span class="d f"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td><td><span class="d h"></span></td><td><span class="d h"></span></td></tr>
+    <tr><td><b>Nubox</b></td><td><span class="d n"></span></td><td><span class="d f"></span></td><td><span class="d h"></span></td><td><span class="d f"></span></td><td><span class="d n"></span></td><td><span class="d n"></span></td></tr>
+    <tr style="background:rgba(255,107,53,.1);"><td><b style="color:var(--accent);">Oportunidad</b></td><td><span class="d o"></span></td><td><span class="d o"></span></td><td><span class="d o"></span></td><td><span class="d o"></span></td><td><span class="d o"></span></td><td><span class="d o"></span></td></tr>
   </table>
-  <div class="foot"><span>Antecedentes</span><span>13</span></div>
+  <p class="muted" style="font-size:24px;"><span class="d f"></span> resuelto · <span class="d h"></span> parcial · <span class="d n"></span> no resuelto — ningún caso cruza agenda, costos e impuestos.</p>
+  <div class="foot"><span>Antecedentes</span><span>14</span></div>
 </div>
 
 <!-- 13 DESAFÍO -->
 <div class="s dark" style="justify-content:center;gap:48px;">
   <div class="bar"></div>
   <p class="eyebrow">10 · Redefinición del desafío</p>
-  <p class="quote" style="font-size:58px;line-height:1.3;max-width:1650px;">¿Cómo podríamos <span style="color:var(--accent);font-style:normal;font-family:var(--fb);font-weight:700;">unificar</span> la agenda y el control financiero de una kinesióloga independiente con modelo mixto, para que <span style="color:var(--h3);">conozca su ingreso neto por modalidad y proyecte sus próximos 3 meses</span>, con menos de 10 minutos diarios de registro, durante el 2° semestre de 2026 en Rancagua?</p>
+  <p class="quote" style="font-size:58px;line-height:1.3;max-width:1650px;">¿Cómo podríamos <span style="color:var(--accent);font-style:normal;font-family:var(--fb);font-weight:700;">aumentar la visibilidad financiera</span> de kinesiólogas independientes con atención mixta, conectando su agenda con sus ingresos y costos, para <span style="color:var(--h3);">reducir a la mitad el tiempo de registro manual</span> (de ~1 h a menos de 30 min diarios) en Rancagua durante 2027?</p>
   <div class="row">
-    <span class="tag">Verbo: unificar</span><span class="tag">Proceso: agenda + finanzas</span><span class="tag pur">Impacto medible</span><span class="tag pur">Alcance: Rancagua 2026</span>
+    <span class="tag">Verbo: aumentar</span><span class="tag">Proceso: agenda → finanzas</span><span class="tag pur">Impacto: 1 h → 30 min</span><span class="tag pur">Alcance: Rancagua 2027</span>
   </div>
-  <div class="foot"><span>Problemática y desafío</span><span>14</span></div>
+  <div class="foot"><span>Problemática y desafío</span><span>15</span></div>
 </div>
 
 <!-- 14 OPORTUNIDADES -->
@@ -312,16 +335,16 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
   <p class="eyebrow">11 · Oportunidades seleccionadas</p>
   <h2>Dos oportunidades y una ruta</h2>
   <div class="row" style="gap:20px;">
-    <div class="card acc" style="padding:24px 28px;gap:8px;"><span class="tag">01 · Principal</span><h3 style="font-size:28px;">Agenda + dashboard financiero en tiempo real</h3><p class="muted" style="font-size:23px;">Clínica y domicilio en una vista, ingreso neto por modalidad y proyección.</p></div>
-    <div class="card pur" style="padding:24px 28px;gap:8px;"><span class="tag pur">02 · Complementaria</span><h3 style="font-size:28px;">Presencia digital: Instagram + web</h3><p class="muted" style="font-size:23px;">Un canal para el diferenciador, conectado a la reserva online.</p></div>
+    <div class="card acc" style="padding:24px 28px;gap:8px;"><span class="tag">01 · Principal</span><h3 style="font-size:28px;">Dashboard financiero conectado a la agenda</h3><p class="muted" style="font-size:23px;">Se integra con Cal.com / Google Calendar: cada cita es ingreso proyectado, con costos e impuestos.</p></div>
+    <div class="card pur" style="padding:24px 28px;gap:8px;"><span class="tag pur">02 · Complementaria</span><h3 style="font-size:28px;">Presencia digital: Instagram + web</h3><p class="muted" style="font-size:23px;">Un canal para el diferenciador, conectado a la agenda.</p></div>
   </div>
   <table>
     <tr><th style="width:26%;">Unidad</th><th>Trabajo futuro</th></tr>
-    <tr><td><b>U2 · Ideación</b></td><td>Co-crear requerimientos con Joselyn · propuesta de valor sostenible</td></tr>
-    <tr><td><b>U3 · Prototipo</b></td><td>Figma mobile-first · 2+ ciclos de testeo</td></tr>
-    <tr><td><b>U4 · Propuesta</b></td><td>Factibilidad (suscripción) · pitch a Sercotec</td></tr>
+    <tr><td><b>U2 · Ideación</b></td><td>Requerimientos con Joselyn · flujo de registro &lt; 30 min</td></tr>
+    <tr><td><b>U3 · Prototipo</b></td><td>Figma mobile-first · testeo con Joselyn y Catalina</td></tr>
+    <tr><td><b>U4 · Propuesta</b></td><td>Precio de entrada ~$20–25 mil/mes · pitch a Sercotec</td></tr>
   </table>
-  <div class="foot"><span>Oportunidades y trabajo futuro</span><span>15</span></div>
+  <div class="foot"><span>Oportunidades y trabajo futuro</span><span>16</span></div>
 </div>
 
 <!-- 15 CIERRE -->
@@ -331,7 +354,7 @@ ul.b li{margin-left:34px;margin-bottom:10px;}
   <div class="col z" style="gap:24px;">
     <p class="eyebrow" style="color:#F5F2FF;">Conclusión</p>
     <h2 style="font-size:96px;max-width:1500px;color:#F5F2FF;text-shadow:0 2px 24px rgba(7,6,14,.35);">El valor no está en otra agenda, sino en ver agenda y dinero en un solo lugar.</h2>
-    <p style="font-size:30px;color:#F5F2FF;max-width:1300px;text-shadow:0 1px 12px rgba(7,6,14,.35);">Usuaria, observación, experta, entorno y antecedentes convergen en el mismo dolor: la gestión financiera y de agenda del profesional independiente.</p>
+    <p style="font-size:30px;color:#F5F2FF;max-width:1300px;text-shadow:0 1px 12px rgba(7,6,14,.35);">Usuaria, dos expertos, observación, entorno y antecedentes convergen en el mismo dolor: la gestión financiera y de agenda del profesional independiente.</p>
   </div>
   <div class="col z" style="gap:28px;">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;">

@@ -79,6 +79,32 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
 .tag-red { background:rgba(196,70,122,.1); border:1px solid rgba(196,70,122,.35); color:var(--h5); }
 .prio { display:inline-block; font-family:var(--fm); font-size:6.8pt; letter-spacing:.06em; text-transform:uppercase; padding:1px 6px; border-radius:3px; color:#fff; }
 .p-alta { background:var(--accent); } .p-media { background:var(--h6); } .p-baja { background:var(--text3); }
+
+.pk { font-family:var(--fm); font-size:6.5pt; letter-spacing:.1em; text-transform:uppercase; color:var(--page-text2); margin:3px 0 0; }
+.pk.ok { color:var(--accent); } .pk.bad { color:var(--h5); }
+.pv { font-size:8.4pt; line-height:1.4; margin:0 0 2px; }
+.src { display:inline-block; width:15px; height:15px; line-height:15px; text-align:center; border-radius:3px; font-family:var(--fm); font-size:7pt; font-weight:700; color:#fff; margin:0 3px 0 6px; }
+.su { background:var(--accent); } .se { background:var(--h6); } .so { background:#3A7D8C; }
+table.vac td { font-size:8.3pt; line-height:1.45; }
+.ins { background:var(--page-card); border:1px solid var(--page-border); border-left:3px solid var(--accent); border-radius:6px; padding:8px 11px; margin-bottom:6px; }
+.ins-h { display:flex; align-items:center; gap:8px; font-size:9.8pt; }
+.ins-n { font-family:var(--fd); font-size:14pt; color:var(--accent); }
+.tri { margin-left:auto; font-family:var(--fm); font-size:7pt; color:var(--page-text2); letter-spacing:.06em; }
+.ins p { margin:3px 0 0; font-size:9pt; }
+.ins .ev { font-size:8.2pt; color:var(--page-text2); }
+.quad { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:3mm; }
+.q { border:1px solid var(--page-border); border-radius:6px; padding:8px 10px; background:var(--page-card); min-height:24mm; }
+.q-top { border:2px solid var(--accent); background:rgba(255,107,53,.05); }
+.q-hi { background:rgba(123,63,160,.04); }
+.qt { font-family:var(--fm); font-size:6.8pt; letter-spacing:.08em; text-transform:uppercase; color:var(--page-text2); margin-bottom:5px; }
+.chip { display:inline-block; font-size:8.3pt; background:#F1EFFA; border-radius:4px; padding:2px 7px; margin:0 4px 4px 0; }
+.chip-a { background:var(--accent); color:#fff; font-weight:700; }
+table.mat th, table.mat td { text-align:center; } table.mat td:first-child, table.mat th:first-child { text-align:left; }
+table.mat td { font-size:10pt; } table.mat tr.opp td { background:rgba(255,107,53,.08); color:var(--accent); font-weight:700; }
+ul.refs li { font-size:9.2pt; margin-bottom:3mm; padding-left:6mm; text-indent:-6mm; list-style:none; }
+.dot { display:inline-block; width:10px; height:10px; border-radius:50%; border:1.5px solid var(--page-text); vertical-align:middle; }
+.d-f { background:var(--page-text); } .d-h { background:linear-gradient(90deg,var(--page-text) 50%,transparent 50%); }
+tr.opp .dot { border-color:var(--accent); background:var(--accent); }
 </style>
 </head>
 <body>
@@ -120,20 +146,21 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   <h1>Índice</h1>
   <div class="divider-accent"></div>
   <div style="margin-top:6mm;">
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>1. Contexto del proyecto y equipo</span><span class="label-lgt">03</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>2. Metodología aplicada — Toolkit Semanas 1-4</span><span class="label-lgt">04</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>3. Guion de sondeo — Canvas de Preguntas</span><span class="label-lgt">05</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>4. Síntesis por Card Sorting — 9 categorías emergentes</span><span class="label-lgt">06</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>5. Entrevista en profundidad — Joselyn Toledo</span><span class="label-lgt">08</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>6. Mapa de síntesis complementario</span><span class="label-lgt">10</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>7. Observación no participante — AEIOU</span><span class="label-lgt">11</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>8. Entrevista en profundidad a experta</span><span class="label-lgt">12</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>9. Análisis del entorno — Matriz PESTAL</span><span class="label-lgt">13</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>10. Vaciado y priorización de hallazgos</span><span class="label-lgt">15</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>11. Estudio comparativo de antecedentes</span><span class="label-lgt">16</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>12. Problemática seleccionada y redefinición del desafío</span><span class="label-lgt">18</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>13. Oportunidades seleccionadas y trabajo futuro</span><span class="label-lgt">19</span></div>
-    <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--page-border);"><span>14. Cobertura de criterios y conclusiones</span><span class="label-lgt">20</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>1. Contexto del Proyecto y Equipo</span><span class="label-lgt">03</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>2. Metodología Aplicada — Toolkit Semanas 1 a 4</span><span class="label-lgt">04</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>3. Guion de Sondeo — Canvas de Preguntas</span><span class="label-lgt">05</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>4. Síntesis por Card Sorting — 9 Categorías Emergentes</span><span class="label-lgt">06</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>5. Entrevista en Profundidad — Joselyn Toledo</span><span class="label-lgt">08</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>6. Mapa de Síntesis Complementario</span><span class="label-lgt">10</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>7. Observación No Participante — Marco AEIOU</span><span class="label-lgt">11</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>8. Entrevistas en Profundidad a Expertos</span><span class="label-lgt">12</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>9. Análisis del Entorno — Matriz PESTAL</span><span class="label-lgt">15</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>10. Procesamiento de Hallazgos</span><span class="label-lgt">17</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>11. Estudio Comparativo de Antecedentes</span><span class="label-lgt">20</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>12. Problemática Seleccionada y Redefinición del Desafío</span><span class="label-lgt">22</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>13. Oportunidades de Desarrollo y Trabajo Futuro</span><span class="label-lgt">23</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>14. Cobertura de Criterios y Conclusiones</span><span class="label-lgt">24</span></div>
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--page-border);"><span>Referencias</span><span class="label-lgt">25</span></div>
   </div>
   <div class="footer">
     <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>
@@ -185,14 +212,15 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
 
   <h3>Semana 2 — Needfinding: experto y entorno</h3>
   <ul>
-    <li>Instrumento 1.1.2.3 — Entrevista en profundidad a experto/a</li>
+    <li>Instrumento 1.1.2.3 — Entrevista en profundidad a expertos (experta par + experto financiero)</li>
     <li>Instrumento 1.1.3.1 — Matriz PESTAL</li>
   </ul>
 
   <h3>Semana 3 — Síntesis y benchmark</h3>
   <ul>
     <li>Instrumento 1.1.4.1 — Vaciado de hallazgos</li>
-    <li>Instrumento 1.1.4.2 — Categorización y priorización de insights</li>
+    <li>Instrumento 1.1.4.2 — Categorización de insights</li>
+    <li>Instrumento 1.1.4.3 — Mapa de priorización de hallazgos</li>
     <li>Instrumento 1.1.5.1 — Ficha y matriz de estudio comparativo de antecedentes</li>
   </ul>
 
@@ -409,6 +437,7 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   <ul>
     <li><strong>Dos agendas paralelas:</strong> la de la clínica (gestionada por secretaria) y la particular (gestionada por ella en WhatsApp). No se cruzan en una sola vista.</li>
     <li><strong>El registro financiero ocurre después</strong> de la atención, de forma manual y dependiente de la energía al cierre del día.</li>
+    <li><strong>Los costos del domicilio</strong> (traslado, combustible, materiales) aparecen como tareas, pero no como datos que se descuenten del ingreso.</li>
     <li><strong>El celular es el centro operativo</strong>, pero sin herramientas diseñadas para su flujo de trabajo.</li>
   </ul>
 
@@ -418,70 +447,107 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   </div>
 </div>
 
-<!-- 8. ENTREVISTA EXPERTA -->
+<!-- 8. ENTREVISTAS A EXPERTOS -->
 <div class="page">
   <div class="abar-light"></div>
-  <h2>8. Entrevista en Profundidad a Experta</h2>
-  <p>Instrumento 1.1.2.3. Objetivo: validar, desde una par del área, si el dolor de agenda y control financiero detectado en Joselyn es un <strong>patrón compartido</strong> en kinesiólogas independientes, o un caso aislado.</p>
+  <h2>8. Entrevistas en Profundidad a Expertos</h2>
+  <p>Instrumento 1.1.2.3. Objetivo: validar, desde una par del área y desde un especialista en gestión financiera, si el dolor de agenda y control financiero detectado en Joselyn es un <strong>patrón compartido</strong> por profesionales de salud independientes. Ambos expertos respondieron sobre un guion de 10 temáticas.</p>
 
+  <h3>8.1 Experta par — Catalina, kinesióloga</h3>
   <table>
-    <tr><th style="width:26%;">Campo</th><th>Contenido</th></tr>
-    <tr><td>Entrevistada</td><td>Catalina — profesional del área de la salud especializada en kinesiología, colaboradora previa de HORIZON (proyecto Vital Kine).</td></tr>
-    <tr><td>Formato</td><td>Conversación escrita vía chat, guion de 10 preguntas.</td></tr>
-    <tr><td>Ejes del guion</td><td>(1) Modalidad de ejercicio; (2) herramienta de agenda y su costo; (3) método de control financiero; (4) claridad sobre ingresos del mes; (5) estacionalidad; (6) canales de captación y fidelización; (7) disposición a pagar por una solución a medida.</td></tr>
+    <tr><th style="width:24%;">Campo</th><th>Registro</th></tr>
+    <tr><td>Perfil</td><td>Egresada en dic. 2025, ejerce desde mar. 2026 (~7 meses). Contrato en hospital (≈ $1.100.000) + atención particular de 1–2 pacientes por día libre. Ingreso total ≈ $1.200.000–$1.400.000/mes. Tiene Instagram, sitio web y landing page.</td></tr>
+    <tr><td>Registro</td><td>7 notas de voz por WhatsApp (≈ 3 min, transcritas) + seguimiento escrito, 22-09-2026. Entrevistador: Benjamín Vera. 10 de 10 preguntas respondidas.</td></tr>
+    <tr><td>Agenda</td><td>Cal.com (plan gratuito) sincronizado con Google Calendar: ve juntos los turnos del hospital y las atenciones particulares.</td></tr>
+    <tr><td>Control financiero</td><td>Excel mensual manual con ingresos y gastos de movilización, equipamiento y tiempo de traslado. "Ha sido complejo". Le toma <strong>~1 hora diaria</strong>.</td></tr>
+    <tr><td>Estacionalidad</td><td>Carga estable, limitada por su disponibilidad y no por la demanda (tiene sueldo fijo).</td></tr>
+    <tr><td>Captación y fidelización</td><td>Landing page y boca a boca. Al alta deja su WhatsApp; Instagram y web sirven para re-agendar.</td></tr>
+    <tr><td>Disposición a pagar</td><td><strong>$30.000–$40.000 CLP/mes</strong> por un sistema que junte agenda + dashboard financiero.</td></tr>
+  </table>
+  <blockquote>"Para poder organizar el Excel sobre los ingresos y egresos que estoy teniendo me toma una hora actualmente diario." — Catalina · P09</blockquote>
+  <blockquote>"Sí pagaría por una herramienta así que juntara eso… fácilmente 30 a 40 mil pesos, ya que me estaría ahorrando bastante tiempo." — Catalina · P10</blockquote>
+
+  <div class="footer"><span class="label-lgt">Entrevistas a expertos — 1/3</span><span class="label-lgt">Pág. 12</span></div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <h3>Contraste de Catalina con las hipótesis del guion</h3>
+  <table>
+    <tr><th style="width:30%;">Hipótesis</th><th>Evidencia</th><th style="width:15%;">Resultado</th></tr>
+    <tr><td>H2 · Control financiero manual, sin proyección</td><td>Excel mensual a mano; ~1 h diaria (≈ 20–30 h al mes).</td><td><span class="prio p-alta">Confirma</span></td></tr>
+    <tr><td>H5 · Disposición a pagar</td><td>$30–40 mil/mes, sin inducción de precio.</td><td><span class="prio p-alta">Confirma</span></td></tr>
+    <tr><td>H1 · La agenda es un dolor</td><td>Cal.com gratuito + Google Calendar le funciona, sin costo.</td><td><span class="prio p-media">Matiza</span></td></tr>
+    <tr><td>H4 · Sin canal digital propio</td><td>Capta por landing y boca a boca; re-agenda por Instagram y web.</td><td><span class="prio p-media">Matiza</span></td></tr>
+    <tr><td>H3 · Demanda estacional</td><td>Carga estable gracias al sueldo fijo del hospital.</td><td><span class="prio p-baja">No aplica</span></td></tr>
+  </table>
+  <div class="card" style="border-left:3px solid var(--accent);"><strong>Aprendizaje:</strong> el valor no está en reemplazar la agenda, sino en <strong>conectar la agenda con las finanzas</strong>, descontando los costos propios de la atención particular. La solución debe integrarse con herramientas como Cal.com, no competir con ellas.</div>
+
+  <h3>8.2 Experto técnico — Asesoría financiera</h3>
+  <p style="font-size:9pt;color:var(--page-text2);">Asesor de profesionales independientes con boleta de honorarios (salud, diseño, consultoría). Entrevista realizada por Francisco Ahumada; registro en resumen, no transcripción literal.</p>
+  <table>
+    <tr><th style="width:26%;">Temática</th><th>Hallazgo</th></tr>
+    <tr><td>Experiencia con el segmento</td><td>Dominan su disciplina, pero casi ninguno tiene formación en gestión: el manejo del dinero es autodidacta y reactivo.</td></tr>
+    <tr><td>Control actual</td><td>Saldo bancario como "termómetro", Excel básico en algunos casos; casi nadie proyecta flujo de caja ni separa gasto personal y profesional.</td></tr>
+    <tr><td>Errores comunes</td><td>Mezclar cuentas; no provisionar la Operación Renta; ver la retención como "plata perdida"; no tener colchón para meses bajos.</td></tr>
+    <tr><td>Variabilidad</td><td>Alta en independientes puros: baja en enero–febrero, repunte en marzo–abril.</td></tr>
+    <tr><td>Validez de la solución</td><td>Problema real y subestimado: sin agenda centralizada no hay registro financiero confiable, porque cada cita es un ingreso proyectado.</td></tr>
+    <tr><td>Precio de referencia</td><td>$8.000–$25.000 CLP/mes según automatización; sumar lo financiero sin duplicar el costo de una agenda ($10.000–$20.000).</td></tr>
   </table>
 
-  <h3>Hipótesis que la entrevista pone a prueba</h3>
+  <div class="footer"><span class="label-lgt">Entrevistas a expertos — 2/3</span><span class="label-lgt">Pág. 13</span></div>
+</div>
+
+<div class="page">
+  <div class="abar-light"></div>
+  <blockquote>"«Estar ocupado» y «estar ganando dinero» no son lo mismo." — Experto financiero · P05</blockquote>
+  <blockquote>"Sin agenda confiable no hay dato de ingresos confiable, y sin dato de ingresos confiable no hay control financiero posible." — Experto financiero · P10</blockquote>
+
+  <h3>Síntesis de ambos expertos</h3>
   <table>
-    <tr><th style="width:8%;">#</th><th>Hipótesis</th><th style="width:26%;">Pregunta del guion</th></tr>
-    <tr><td>H1</td><td>Las kinesiólogas independientes gestionan agenda con herramientas genéricas (WhatsApp, calendario) o apps pagadas que no se ajustan a su modelo mixto.</td><td>P02 · P03</td></tr>
-    <tr><td>H2</td><td>El control financiero es manual y no permite proyectar ingresos.</td><td>P04 · P05</td></tr>
-    <tr><td>H3</td><td>La demanda es estacional y afecta la estabilidad del ingreso.</td><td>P06</td></tr>
-    <tr><td>H4</td><td>La captación depende del boca a boca y referidos, sin canal digital propio.</td><td>P07 · P08</td></tr>
-    <tr><td>H5</td><td>Existe disposición a pagar una mensualidad por una solución a medida.</td><td>P09 · P10</td></tr>
+    <tr><th style="width:26%;">Eje</th><th>Catalina (par)</th><th>Asesor financiero</th></tr>
+    <tr><td>¿El dolor es real?</td><td>Sí: ~1 h diaria de registro manual.</td><td>Sí: patrón estructural del segmento.</td></tr>
+    <tr><td>Causa</td><td>Agenda y Excel separados.</td><td>Sin agenda confiable no hay dato financiero.</td></tr>
+    <tr><td>Riesgo</td><td>Costos de movilización y tiempo sin descontar.</td><td>Operación Renta sorpresa; decisiones mal informadas.</td></tr>
+    <tr><td>Precio</td><td>$30–40 mil/mes.</td><td>$8–25 mil/mes.</td></tr>
   </table>
+  <div class="card" style="border-left:3px solid var(--h6);"><strong>Conclusión de la validación:</strong> ambos expertos confirman que el problema de Joselyn es un patrón del segmento. El precio de entrada razonable se ubica cerca de <strong>$20.000–$25.000 CLP/mes</strong>, compatible con ambos rangos.</div>
 
-  <div class="card">
-    <span class="tag tag-purple">Estado</span> Guion aplicado; el registro completo de respuestas (Ficha B) se adjunta en el documento <em>Entrevista_Experta_Cata</em>. Las hipótesis H1–H5 se usan como marco de contraste en el vaciado de hallazgos (sección 10) y en el estudio de antecedentes (sección 11).
-  </div>
-
-  <div class="footer">
-    <span class="label-lgt">Entrevista a experta</span>
-    <span class="label-lgt">Pág. 12</span>
-  </div>
+  <div class="footer"><span class="label-lgt">Entrevistas a expertos — 3/3</span><span class="label-lgt">Pág. 14</span></div>
 </div>
 
 <!-- 9. PESTAL -->
 <div class="page">
   <div class="abar-light"></div>
   <h2>9. Análisis del Entorno — Matriz PESTAL</h2>
-  <p>Instrumento 1.1.3.1. Se analizan las variables externas que condicionan el ejercicio independiente de la kinesiología en Chile y, en particular, la viabilidad de la oportunidad seleccionada.</p>
-
+  <p>Instrumento 1.1.3.1, base PEST de Aguilar (1967) ampliada a PESTAL. Desafío analizado: mejorar la gestión de agenda y el control financiero de kinesiólogas independientes con atención mixta.</p>
   <div class="pestal">
     <div class="pcell"><div class="pletter">P</div><div class="ptitle">Político</div>
-      <ul><li>Programas de fomento a microemprendimiento (Sercotec), mencionados por Joselyn como apoyo posible.</li><li>Inestabilidad del sistema de isapres presiona a pacientes hacia la atención particular o Fonasa.</li></ul>
-      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Agenda pública de formalización de independientes y transformación digital del Estado.</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Más profesionales formalizados que necesitan ordenar ingresos y tributación.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Cambios en reglas de cotización o retención.</p></div>
     <div class="pcell"><div class="pletter">E</div><div class="ptitle">Económico</div>
-      <ul><li>Ingresos estacionales y variables (10–32 hrs/semana).</li><li>Comisión 70/30 en clínica reduce margen.</li><li>Aumento progresivo de la retención de boletas de honorarios (15,25% en 2026, hacia 17% en 2028).</li><li>Costo de combustible y traslados.</li></ul>
-      <div class="pimpact"><span class="tag tag-red">Amenaza</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Ingresos estacionales; comisión 70/30; costos de traslado y combustible.</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Una herramienta que muestre la ganancia real y proyecte los meses bajos.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Baja disposición a pagar software con ingresos ajustados.</p></div>
     <div class="pcell"><div class="pletter">S</div><div class="ptitle">Social</div>
-      <ul><li>Envejecimiento de la población: crece la demanda de rehabilitación y atención a domicilio.</li><li>Pacientes valoran el trato personalizado y la confianza (boca a boca).</li></ul>
-      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Envejecimiento poblacional: más demanda de rehabilitación y atención a domicilio.</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Crece la kinesiología particular y los servicios para adultos mayores.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Formación universitaria sin contenidos de gestión financiera.</p></div>
     <div class="pcell"><div class="pletter">T</div><div class="ptitle">Tecnológico</div>
-      <ul><li>Alta penetración de WhatsApp y smartphones en pacientes.</li><li>Oferta de apps de agenda para salud (nacionales e internacionales) con planes mensuales.</li><li>Herramientas no-code/IA reducen el costo de construir soluciones a medida.</li></ul>
-      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Adopción masiva de WhatsApp, agendas online (Cal.com, AgendaPro) y boleta electrónica del SII.</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Integrar las herramientas que el profesional ya usa en vez de reemplazarlas.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Mercado con muchas soluciones genéricas: riesgo de ser "una app más".</p></div>
     <div class="pcell"><div class="pletter">A</div><div class="ptitle">Ambiental</div>
-      <ul><li>Traslados diarios en vehículo propio: costo y huella de carbono.</li><li>Una agenda que agrupe domicilios por zona reduce kilómetros recorridos.</li></ul>
-      <div class="pimpact"><span class="tag">Oportunidad</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Traslados en vehículo propio entre domicilios; registros en papel.</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Agrupar atenciones por zona reduce kilómetros y emisiones.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Alza del costo del combustible.</p></div>
     <div class="pcell"><div class="pletter">L</div><div class="ptitle">Legal</div>
-      <ul><li>Ley 20.584 (derechos y deberes del paciente): confidencialidad de la información clínica.</li><li>Ley 21.719 de protección de datos personales: exige resguardo de datos sensibles de salud.</li><li>Obligación tributaria: emisión de boletas electrónicas (SII).</li></ul>
-      <div class="pimpact"><span class="tag tag-red">Amenaza / requisito</span></div></div>
+      <p class="pk">Cambio</p><p class="pv">Ley 21.133: retención gradual de honorarios hasta 17% en 2028. Ley 20.584 (ficha clínica). Ley 21.719 de datos personales (vigencia dic. 2026).</p>
+      <p class="pk ok">Oportunidad</p><p class="pv">Calcular y provisionar automáticamente la retención y la Operación Renta.</p>
+      <p class="pk bad">Amenaza</p><p class="pv">Exigencias de resguardo de datos de salud.</p></div>
   </div>
-
-  <div class="footer">
-    <span class="label-lgt">Matriz PESTAL — 1/2</span>
-    <span class="label-lgt">Pág. 13</span>
-  </div>
+  <div class="footer"><span class="label-lgt">Matriz PESTAL — 1/2</span><span class="label-lgt">Pág. 15</span></div>
 </div>
 
 <div class="page">
@@ -489,212 +555,229 @@ td { font-size:9pt; padding:6px 8px; border-bottom:1px solid var(--page-border);
   <h3>Lectura estratégica del entorno</h3>
   <table>
     <tr><th style="width:30%;">Factor clave</th><th>Implicancia para el caso</th></tr>
-    <tr><td>Variabilidad de ingresos (E)</td><td>Refuerza el dolor financiero: sin proyección, cada temporada baja se vive como crisis. Una herramienta de control y proyección tiene valor directo.</td></tr>
-    <tr><td>Envejecimiento poblacional (S)</td><td>Aumenta la demanda de atención a domicilio y de servicios grupales para adultos mayores — alineado con la visión de crecimiento de Joselyn.</td></tr>
-    <tr><td>Oferta de apps de agenda (T)</td><td>El mercado ya resolvió la agenda genérica; la diferenciación debe estar en integrar agenda + finanzas para el modelo mixto clínica/domicilio.</td></tr>
-    <tr><td>Datos de salud (L)</td><td>Cualquier solución debe minimizar datos clínicos, almacenarlos de forma segura y contar con consentimiento del paciente.</td></tr>
+    <tr><td>Variabilidad de ingresos (E)</td><td>Refuerza el dolor financiero: sin proyección, cada temporada baja se vive como crisis (Joselyn; asesor financiero).</td></tr>
+    <tr><td>Retención creciente (L)</td><td>La Operación Renta llega como sorpresa si no se provisiona. Es un dato que la herramienta puede calcular por el usuario.</td></tr>
+    <tr><td>Agendas ya adoptadas (T)</td><td>Catalina usa Cal.com gratis: la diferenciación no es la agenda, sino conectarla con ingresos, costos e impuestos.</td></tr>
+    <tr><td>Envejecimiento (S)</td><td>Aumenta la atención a domicilio y con ella los costos de traslado que hoy no se descuentan.</td></tr>
+    <tr><td>Datos de salud (L)</td><td>La solución debe minimizar datos clínicos y registrar solo lo necesario para las finanzas.</td></tr>
   </table>
 
-  <h3>Amenazas anticipadas</h3>
+  <h3>Amenazas anticipadas y su impacto</h3>
   <ul>
-    <li><strong>Competencia de plataformas establecidas</strong> con precios bajos y marca conocida.</li>
-    <li><strong>Carga tributaria creciente</strong> que reduce el ingreso líquido y la disposición a pagar nuevas suscripciones.</li>
-    <li><strong>Riesgo legal</strong> por manejo inadecuado de datos de pacientes.</li>
-    <li><strong>Baja adopción</strong> si la herramienta exige más tiempo del que ahorra.</li>
+    <li><strong>Ser "una app más":</strong> competir con agendas establecidas diluye el valor → integrarse, no reemplazar.</li>
+    <li><strong>Precio:</strong> el segmento tiene ingresos ajustados → mantenerse bajo el umbral de $25.000/mes.</li>
+    <li><strong>Riesgo legal:</strong> manejo inadecuado de datos de pacientes → diseño con mínimo de datos.</li>
+    <li><strong>Baja adopción:</strong> si registrar toma más tiempo que hoy, se abandona → meta de menos de 30 min diarios.</li>
   </ul>
-
-  <blockquote>Conclusión del entorno: la necesidad está validada por el contexto, pero el valor no está en "otra agenda", sino en una vista única de agenda + dinero diseñada para el profesional independiente con modelo mixto.</blockquote>
-
-  <div class="footer">
-    <span class="label-lgt">Matriz PESTAL — 2/2</span>
-    <span class="label-lgt">Pág. 14</span>
-  </div>
+  <div class="footer"><span class="label-lgt">Matriz PESTAL — 2/2</span><span class="label-lgt">Pág. 16</span></div>
 </div>
 
-<!-- 10. VACIADO Y PRIORIZACIÓN -->
+<!-- 10. PROCESAMIENTO DE HALLAZGOS -->
 <div class="page">
   <div class="abar-light"></div>
-  <h2>10. Vaciado y Priorización de Hallazgos</h2>
-  <p>Instrumentos 1.1.4.1 y 1.1.4.2. Los hallazgos de todas las fuentes se vaciaron en una matriz única, se categorizaron según las 9 categorías del card sorting y se priorizaron por <strong>impacto</strong> en el negocio y <strong>frecuencia</strong> con que aparecen en las fuentes.</p>
-
-  <table>
-    <tr><th style="width:4%;">#</th><th>Hallazgo</th><th style="width:17%;">Fuente</th><th style="width:17%;">Categoría</th><th style="width:11%;">Prioridad</th></tr>
-    <tr><td>1</td><td>Ingresos variables por temporada, sin proyección a 6–12 meses.</td><td>Entrevista · PESTAL</td><td>08 Cobro e ingresos</td><td><span class="prio p-alta">Alta</span></td></tr>
-    <tr><td>2</td><td>Control financiero manual en Excel; ella misma reconoce "desorden".</td><td>Entrevista · AEIOU</td><td>09 Costos</td><td><span class="prio p-alta">Alta</span></td></tr>
-    <tr><td>3</td><td>Dos agendas separadas (clínica y domicilio) sin vista unificada.</td><td>AEIOU · Mapa</td><td>07 Agenda y venta</td><td><span class="prio p-alta">Alta</span></td></tr>
-    <tr><td>4</td><td>Captación depende de WhatsApp, boca a boca y referidos; sin presencia digital propia.</td><td>Entrevista · Card sorting</td><td>06 Canales digitales</td><td><span class="prio p-alta">Alta</span></td></tr>
-    <tr><td>5</td><td>Diferenciador claro: atención 1:1 de 45–60 min, trato cercano.</td><td>Entrevista · Mapa</td><td>04 Propuesta de valor</td><td><span class="prio p-media">Media</span></td></tr>
-    <tr><td>6</td><td>Carga horaria irregular (10–32 hrs/semana).</td><td>Entrevista</td><td>01 Capacidad operativa</td><td><span class="prio p-media">Media</span></td></tr>
-    <tr><td>7</td><td>Costos de traslado (vehículo, combustible, materiales).</td><td>Entrevista · PESTAL</td><td>09 Costos</td><td><span class="prio p-media">Media</span></td></tr>
-    <tr><td>8</td><td>Visión de crecimiento (kinesiólogos por comisión, grupos adultos mayores, presoterapia) sin plan formal.</td><td>Mapa · Entrevista</td><td>03 Oferta de servicios</td><td><span class="prio p-media">Media</span></td></tr>
-    <tr><td>9</td><td>Sin acciones de fidelización más allá del trato directo.</td><td>Card sorting · Guion experta</td><td>05 Fidelización</td><td><span class="prio p-baja">Baja</span></td></tr>
+  <h2>10. Procesamiento de Hallazgos</h2>
+  <p><strong>10.1 Matriz de vaciado</strong> (Instrumento 1.1.4.1). Los hallazgos de los tres instrumentos de levantamiento se vacían en cuatro temáticas. Fuentes: <span class="src su">U</span> usuaria (Joselyn) · <span class="src se">E</span> expertos (Catalina + asesor) · <span class="src so">O</span> observación AEIOU.</p>
+  <table class="vac">
+    <tr><th style="width:15%;">Temática</th><th><span class="src su">U</span> Usuaria</th><th><span class="src se">E</span> Expertos</th><th><span class="src so">O</span> Observación</th></tr>
+    <tr><td><strong>Control financiero</strong></td><td>Excel manual diario, semanal y mensual. Reconoce "desorden". Sin proyección a 6–12 meses.</td><td>Catalina: Excel mensual, "ha sido complejo". Asesor: el saldo bancario es el "termómetro"; nadie proyecta flujo de caja.</td><td>El registro ocurre al cierre del día, fuera del horario de atención. Excel es la única herramienta financiera.</td></tr>
+    <tr><td><strong>Agenda y operación</strong></td><td>Calendario móvil; coordina por WhatsApp. Carga de 10–32 h semanales.</td><td>Catalina: Cal.com + Google Calendar le funciona. Asesor: sin agenda centralizada no hay registro financiero confiable.</td><td>En clínica la agenda la media la secretaria; en domicilio todo recae en ella. Agenda y Excel sin conexión.</td></tr>
+    <tr><td><strong>Costos, ingresos y estacionalidad</strong></td><td>"La carrera es muy inestable". Vehículo, combustible, materiales. Comisión 70/30 + cobro directo.</td><td>Catalina: registra movilización, equipamiento y tiempo. Asesor: baja en enero–febrero; "estar ocupado no es estar ganando".</td><td>Traslados y preparación de materiales aparecen como tareas, no como datos descontados del ingreso.</td></tr>
+    <tr><td><strong>Tributación, relación y crecimiento</strong></td><td>Depende de contadora externa. Visión: comisionistas, grupos de adultos mayores, presoterapia.</td><td>Asesor: no provisionan Operación Renta. Catalina: deja su WhatsApp al alta. Precio: $30–40 mil (Catalina); $8–25 mil (asesor).</td><td>Boletas gestionadas aparte. Contacto paciente ↔ kinesióloga solo por WhatsApp, sin recordatorios.</td></tr>
   </table>
+  <div class="footer"><span class="label-lgt">Procesamiento de hallazgos — vaciado</span><span class="label-lgt">Pág. 17</span></div>
+</div>
 
-  <h3>Insights priorizados</h3>
-  <ol>
-    <li><strong>"No sé cuánto voy a ganar":</strong> el problema no es registrar, es anticipar.</li>
-    <li><strong>"Mi negocio vive en mi celular":</strong> la solución debe ser mobile-first y convivir con WhatsApp.</li>
-    <li><strong>"Me eligen por el trato, pero nadie me encuentra":</strong> el diferenciador no tiene un canal que lo comunique.</li>
-  </ol>
+<div class="page">
+  <div class="abar-light"></div>
+  <p><strong>10.2 Matriz de categorización de insights</strong> (Instrumento 1.1.4.2). Los temas que se repiten entre fuentes se convierten en insights; el indicador muestra cuántas fuentes los sostienen.</p>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I1</span><strong>Ocupada no es lo mismo que rentable</strong><span class="tri">U E O · 3/3</span></div>
+    <p>No sabe cuánto gana en un mes promedio; decide inversión y ritmo de trabajo sin datos.</p>
+    <p class="ev"><span class="src su">U</span>"Siento que tengo un cierto desorden…" <span class="src se">E</span>"Estar ocupado y estar ganando no son lo mismo." <span class="src so">O</span>El registro suma ingresos, no calcula ganancia.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I2</span><strong>La agenda es el origen del dato financiero</strong><span class="tri">U E O · 3/3</span></div>
+    <p>Agenda y finanzas viven separadas: cada cita agendada es un ingreso proyectado que hoy se pierde.</p>
+    <p class="ev"><span class="src su">U</span>Calendario + Excel sin conexión. <span class="src se">E</span>"Sin agenda confiable no hay dato de ingresos confiable." <span class="src so">O</span>El dato se reescribe a mano en Excel.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I3</span><strong>El Excel como parche diario</strong><span class="tri">U E O · 3/3</span></div>
+    <p>El registro manual consume ~1 h diaria (20–30 h al mes) y depende de la disciplina al cierre del día.</p>
+    <p class="ev"><span class="src su">U</span>Excel diario, semanal y mensual. <span class="src se">E</span>"Me toma una hora actualmente diario." <span class="src so">O</span>Gestión fuera del horario de atención.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I4</span><strong>Impuestos como sorpresa</strong><span class="tri">U E O · 3/3</span></div>
+    <p>No se provisiona la retención ni la Operación Renta; el pago anual llega como un golpe.</p>
+    <p class="ev"><span class="src su">U</span>Delega lo tributario en una contadora. <span class="src se">E</span>La Operación Renta "llega como sorpresa desagradable". <span class="src so">O</span>Boletas gestionadas aparte.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I5</span><strong>Los costos invisibles del domicilio</strong><span class="tri">U E O · 3/3</span></div>
+    <p>Traslado, combustible, equipamiento y tiempo no se descuentan por atención: la ganancia real queda distorsionada.</p>
+    <p class="ev"><span class="src su">U</span>Vehículo, combustible y materiales. <span class="src se">E</span>"…en la movilización, el equipamiento y en tiempo." <span class="src so">O</span>Aparecen como tareas, no como datos.</p></div>
+  <div class="footer"><span class="label-lgt">Procesamiento de hallazgos — insights 1/2</span><span class="label-lgt">Pág. 18</span></div>
+</div>
 
-  <div class="footer">
-    <span class="label-lgt">Vaciado y priorización</span>
-    <span class="label-lgt">Pág. 15</span>
+<div class="page">
+  <div class="abar-light"></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I6</span><strong>Inestabilidad sin memoria</strong><span class="tri">U E O · 3/3</span></div>
+    <p>La estacionalidad se vive cada año como sorpresa porque no hay registro histórico que permita anticiparla.</p>
+    <p class="ev"><span class="src su">U</span>"La carrera es muy inestable." <span class="src se">E</span>Baja en enero–febrero (asesor); Catalina es estable por su sueldo fijo. <span class="src so">O</span>Carga de 10 a 32 h semanales.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I7</span><strong>Fidelización informal por WhatsApp</strong><span class="tri">U E O · 3/3</span></div>
+    <p>El vínculo post-alta depende de que el paciente escriba; no hay recordatorios ni seguimiento sistemático.</p>
+    <p class="ev"><span class="src su">U</span>Contacto por WhatsApp y boca a boca. <span class="src se">E</span>Catalina deja su contacto al alta. <span class="src so">O</span>Interacción iniciada siempre por el paciente.</p></div>
+  <div class="ins"><div class="ins-h"><span class="ins-n">I8</span><strong>Crecimiento sin plan</strong><span class="tri">U E · 2/3</span></div>
+    <p>Hay visión de crecimiento (comisionistas, servicios grupales, presoterapia), pero sin datos financieros que la respalden.</p>
+    <p class="ev"><span class="src su">U</span>Quiere sumar kinesiólogos e invertir en presoterapia. <span class="src se">E</span>Riesgo de "sobre-invertir en un mes bueno sin colchón".</p></div>
+
+  <p style="margin-top:5mm;"><strong>10.3 Mapa de priorización</strong> (Instrumento 1.1.4.3). Los insights se ubican según complejidad e impacto; se prioriza el cuadrante de mayor impacto.</p>
+  <div class="quad">
+    <div class="q q-hi"><div class="qt">(−) Complejidad · (+) Impacto — victorias tempranas</div><span class="chip">I3 Excel como parche</span><span class="chip">I5 Costos invisibles</span><span class="chip">I1 Ocupada ≠ rentable</span></div>
+    <div class="q q-top"><div class="qt">(+) Complejidad · (+) Impacto — prioridad</div><span class="chip chip-a">I2 Agenda = origen del dato</span><span class="chip">I6 Inestabilidad sin memoria</span><span class="chip">I4 Impuestos como sorpresa</span></div>
+    <div class="q"><div class="qt">(−) Complejidad · (−) Impacto</div><span class="chip">I7 Fidelización informal</span></div>
+    <div class="q"><div class="qt">(+) Complejidad · (−) Impacto</div><span class="chip">I8 Crecimiento sin plan</span></div>
   </div>
+  <div class="card" style="border-left:3px solid var(--accent);margin-top:4mm;"><strong>Selección:</strong> I2 es el insight raíz, respaldado por las tres fuentes. Conectar la agenda con las finanzas habilita I1, I6 e I4; I3 e I5 son las victorias tempranas.</div>
+  <div class="footer"><span class="label-lgt">Procesamiento de hallazgos — insights 2/2 y priorización</span><span class="label-lgt">Pág. 19</span></div>
 </div>
 
 <!-- 11. ANTECEDENTES -->
 <div class="page">
   <div class="abar-light"></div>
   <h2>11. Estudio Comparativo de Antecedentes</h2>
-  <p>Instrumento 1.1.5.1. Se revisaron soluciones nacionales e internacionales que abordan la gestión de agenda y finanzas de profesionales de la salud, para entender el estado actual del problema y detectar brechas.</p>
-
+  <p>Instrumento 1.1.5.1 (A). Se revisaron 8 soluciones nacionales e internacionales. Descripciones basadas en la información pública de cada producto.</p>
   <table>
-    <tr><th style="width:17%;">Solución</th><th style="width:12%;">Origen</th><th>Qué resuelve</th><th style="width:30%;">Brecha frente al caso</th></tr>
-    <tr><td><strong>AgendaPro</strong></td><td>Chile · Nacional</td><td>Agenda online, recordatorios automáticos, pagos y reportes para centros de salud y belleza.</td><td>Pensada para centros con equipo; costo mensual fijo; no integra la comisión con clínica externa.</td></tr>
-    <tr><td><strong>Reservo</strong></td><td>Chile · Nacional</td><td>Agenda y ficha clínica para profesionales y centros de salud.</td><td>Foco clínico-administrativo; el control financiero personal y la proyección son secundarios.</td></tr>
-    <tr><td><strong>Medilink</strong></td><td>Chile · Nacional</td><td>Software de gestión clínica: agenda, fichas, caja y facturación.</td><td>Orientado a clínicas; complejidad y costo excesivos para una profesional independiente.</td></tr>
-    <tr><td><strong>Jane App</strong></td><td>Canadá · Internacional</td><td>Agenda, ficha y facturación para fisioterapeutas y clínicas de rehabilitación.</td><td>Idioma, moneda y tributación no adaptados a Chile.</td></tr>
-    <tr><td><strong>Cliniko</strong></td><td>Australia · Internacional</td><td>Gestión de práctica para profesionales de salud aliada: agenda, pagos, reportes.</td><td>No contempla atención a domicilio ni agrupación de rutas.</td></tr>
-    <tr><td><strong>SimplePractice</strong></td><td>EE.UU. · Internacional</td><td>Práctica privada: agenda, telesalud, cobros y dashboard de ingresos.</td><td>Orientado al mercado estadounidense y sus seguros.</td></tr>
+    <tr><th style="width:15%;">Caso</th><th style="width:13%;">Origen</th><th>Aspectos resueltos</th><th style="width:34%;">Aspectos por resolver</th></tr>
+    <tr><td><strong>AgendaPro</strong></td><td>Chile / LATAM</td><td>Agenda online, recordatorios, pagos y reportes de ventas.</td><td>Orientado a centros; no descuenta costos de domicilio ni provisiona impuestos.</td></tr>
+    <tr><td><strong>Encuadrado</strong></td><td>Chile</td><td>Pensado para el profesional de salud independiente: agenda, ficha y cobros.</td><td>Visión financiera limitada a cobros; sin proyección ni costos por atención.</td></tr>
+    <tr><td><strong>Reservo</strong></td><td>Chile</td><td>Reservas online, confirmaciones y ficha clínica.</td><td>Sin control de rentabilidad real ni provisión tributaria.</td></tr>
+    <tr><td><strong>Medilink</strong></td><td>Chile</td><td>Gestión integral para centros con varios profesionales.</td><td>Sobredimensionado para una independiente; no contempla domicilio.</td></tr>
+    <tr><td><strong>Nubox</strong></td><td>Chile</td><td>Contabilidad y facturación electrónica para pymes.</td><td>Lenguaje contable, desconectado de la agenda y la operación diaria.</td></tr>
+    <tr><td><strong>Cal.com</strong></td><td>Internacional · código abierto</td><td>Agenda gratuita con Google Calendar. La usa Catalina.</td><td>No registra ingresos, costos ni impuestos.</td></tr>
+    <tr><td><strong>Cliniko</strong></td><td>Australia</td><td>Diseñado para fisioterapia; facturación y reportes.</td><td>No adaptado a la boleta de honorarios chilena.</td></tr>
+    <tr><td><strong>Jane App</strong></td><td>Canadá</td><td>Reserva online cuidada y facturación integrada.</td><td>Enfoque en clínica; sin costos de domicilio ni realidad tributaria local.</td></tr>
   </table>
-
-  <div class="footer">
-    <span class="label-lgt">Antecedentes — 1/2</span>
-    <span class="label-lgt">Pág. 16</span>
-  </div>
+  <div class="footer"><span class="label-lgt">Antecedentes — fichas</span><span class="label-lgt">Pág. 20</span></div>
 </div>
 
 <div class="page">
   <div class="abar-light"></div>
-  <h3>Relación con la entrevista a experta</h3>
-  <p>Los antecedentes confirman la hipótesis H1: las herramientas existentes resuelven la agenda, pero lo hacen para <strong>centros</strong>, no para el profesional independiente con modelo mixto. Las hipótesis H2 y H5 (control financiero y disposición a pagar) marcan el espacio donde las soluciones actuales son más débiles.</p>
-
-  <h3>Estado actual del problema</h3>
-  <ul>
-    <li>La agenda online es un problema <strong>resuelto como commodity</strong>: hay oferta nacional e internacional.</li>
-    <li>El control financiero con proyección para independientes es un <strong>problema mal resuelto</strong>: aparece como módulo secundario o reporte contable.</li>
-    <li>Ninguna solución revisada cruza <strong>clínica con comisión + particular a domicilio</strong> en una sola vista.</li>
-  </ul>
-
-  <h3>Elementos que inspiran la nueva solución</h3>
-  <table>
-    <tr><th style="width:32%;">Elemento</th><th>Tomado de</th></tr>
-    <tr><td>Recordatorios automáticos por WhatsApp</td><td>AgendaPro · Reservo</td></tr>
-    <tr><td>Dashboard de ingresos simple y visual</td><td>SimplePractice · Cliniko</td></tr>
-    <tr><td>Registro de sesión en pocos toques desde el celular</td><td>Jane App</td></tr>
-    <tr><td>Reserva online para pacientes nuevos</td><td>AgendaPro · Jane App</td></tr>
-    <tr><td><strong>Nuevo:</strong> ingreso neto por modalidad (comisión 70/30 vs. particular) y proyección mensual</td><td>Brecha detectada — propuesta del equipo</td></tr>
+  <h3>Matriz de antecedentes (Instrumento 1.1.5.1 B)</h3>
+  <p style="font-size:9pt;color:var(--page-text2);"><span class="dot d-f"></span> Resuelto · <span class="dot d-h"></span> Parcial · <span class="dot d-n"></span> No resuelto — evaluación preliminar del equipo.</p>
+  <table class="mat">
+    <tr><th>Caso</th><th>V1 Agenda online</th><th>V2 Registro financiero</th><th>V3 Costos por atención</th><th>V4 Impuestos</th><th>V5 Foco independiente</th><th>V6 Agenda → finanzas</th></tr>
+    <tr><td>AgendaPro</td><td><span class="dot d-f"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-h"></span></td></tr>
+    <tr><td>Encuadrado</td><td><span class="dot d-f"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-h"></span></td></tr>
+    <tr><td>Reservo</td><td><span class="dot d-f"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-n"></span></td></tr>
+    <tr><td>Medilink</td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td></tr>
+    <tr><td>Cal.com</td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td></tr>
+    <tr><td>Cliniko</td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-h"></span></td></tr>
+    <tr><td>Jane App</td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-h"></span></td></tr>
+    <tr><td>Nubox</td><td><span class="dot d-n"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-h"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-n"></span></td><td><span class="dot d-n"></span></td></tr>
+    <tr class="opp"><td><strong>Oportunidad</strong></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td><td><span class="dot d-f"></span></td></tr>
   </table>
 
-  <div class="footer">
-    <span class="label-lgt">Antecedentes — 2/2</span>
-    <span class="label-lgt">Pág. 17</span>
-  </div>
+  <h3>Conclusiones del estado del arte</h3>
+  <ul>
+    <li><strong>Casos clave:</strong> Encuadrado (foco en el independiente chileno) y Cal.com (agenda gratuita ya adoptada por el segmento) son los referentes más cercanos.</li>
+    <li><strong>Vacío detectado:</strong> ningún caso cruza la agenda con los costos por atención (traslado, equipamiento) y la provisión tributaria de la boleta de honorarios (V3 + V4 + V6).</li>
+    <li><strong>Relación con los expertos:</strong> la agenda existe y funciona (Catalina), pero no genera un dato financiero confiable (asesor). La solución debe integrarse con agendas existentes y mantenerse bajo el umbral de precio del segmento.</li>
+  </ul>
+  <div class="footer"><span class="label-lgt">Antecedentes — matriz</span><span class="label-lgt">Pág. 21</span></div>
 </div>
 
 <!-- 12. PROBLEMÁTICA Y REDEFINICIÓN -->
 <div class="page">
   <div class="abar-light"></div>
   <h2>12. Problemática Seleccionada y Redefinición del Desafío</h2>
-
   <h3>Problemática seleccionada</h3>
-  <div class="card" style="border-left:3px solid var(--accent);">
-    Joselyn Toledo, kinesióloga independiente con modelo mixto (clínica con comisión + atención particular a domicilio), gestiona su agenda y sus finanzas con herramientas separadas y manuales, lo que le impide <strong>saber con claridad cuánto gana por modalidad y proyectar sus ingresos</strong> frente a una demanda estacional.
-  </div>
+  <div class="card" style="border-left:3px solid var(--accent);">Las kinesiólogas independientes con atención mixta gestionan su agenda y sus finanzas en herramientas separadas y manuales. Por eso <strong>no saben cuánto ganan realmente, no descuentan los costos de la atención a domicilio ni anticipan impuestos ni meses bajos</strong>, y pierden cerca de una hora diaria en registro.</div>
 
   <h3>Fundamentación</h3>
   <table>
-    <tr><th style="width:24%;">Fuente</th><th>Evidencia</th></tr>
-    <tr><td>Usuaria</td><td>Declara "desorden" en la gestión económica y que la carrera es "muy inestable". Registro manual en Excel.</td></tr>
-    <tr><td>Observación</td><td>Dos agendas paralelas; registro financiero posterior y manual.</td></tr>
-    <tr><td>Experta</td><td>Guion construido para validar que el patrón se repite (H1–H5).</td></tr>
-    <tr><td>Entorno</td><td>Estacionalidad, alza de retención tributaria, envejecimiento poblacional que aumenta demanda a domicilio.</td></tr>
-    <tr><td>Antecedentes</td><td>Agenda resuelta como commodity; control financiero para independientes con modelo mixto, sin resolver.</td></tr>
+    <tr><th style="width:22%;">Fuente</th><th>Evidencia</th></tr>
+    <tr><td>Usuaria</td><td>"Desorden" en la gestión económica; Excel manual; "la carrera es muy inestable".</td></tr>
+    <tr><td>Experta par</td><td>~1 h diaria en Excel; pagaría $30–40 mil/mes; la agenda gratuita no es el dolor.</td></tr>
+    <tr><td>Experto financiero</td><td>Patrón estructural del segmento; sin agenda confiable no hay dato financiero.</td></tr>
+    <tr><td>Observación</td><td>Agenda y Excel sin conexión; costos del domicilio no se registran como datos.</td></tr>
+    <tr><td>Entorno y antecedentes</td><td>Retención creciente; ninguna solución cruza agenda, costos e impuestos.</td></tr>
   </table>
 
   <h3>Redefinición del desafío</h3>
-  <blockquote style="font-size:11pt;">¿Cómo podríamos <strong>unificar</strong> la agenda y el control financiero de una kinesióloga independiente con modelo mixto, para que <strong>conozca su ingreso neto por modalidad y proyecte sus próximos 3 meses</strong>, reduciendo a menos de 10 minutos diarios el tiempo de registro, durante el segundo semestre de 2026 en Rancagua?</blockquote>
-
+  <blockquote style="font-size:11pt;">¿Cómo podríamos <strong>aumentar la visibilidad financiera</strong> de kinesiólogas independientes con atención mixta, conectando su agenda con sus ingresos y costos, para <strong>reducir a la mitad el tiempo de registro manual</strong> (de ~1 h a menos de 30 min diarios) en Rancagua durante 2027?</blockquote>
   <table>
-    <tr><th>Verbo</th><th>Proceso</th><th>Usuario</th><th>Impacto medible</th><th>Alcance</th></tr>
-    <tr><td>Unificar</td><td>Agenda + control financiero</td><td>Kinesióloga independiente, modelo mixto</td><td>Ingreso neto por modalidad visible; proyección 3 meses; &lt;10 min/día de registro</td><td>2° semestre 2026, Rancagua</td></tr>
+    <tr><th>Verbo</th><th>Proceso / componente</th><th>Usuarios</th><th>Impacto medible</th><th>Alcance</th></tr>
+    <tr><td>Aumentar</td><td>Visibilidad financiera, conectando agenda e ingresos</td><td>Kinesiólogas independientes con atención mixta</td><td>De ~1 h a menos de 30 min diarios de registro</td><td>Rancagua, 2027</td></tr>
   </table>
-
-  <div class="footer">
-    <span class="label-lgt">Problemática y desafío</span>
-    <span class="label-lgt">Pág. 18</span>
-  </div>
+  <p style="font-size:8.8pt;color:var(--page-text2);"><strong>Alternativas trabajadas:</strong> (A) anticipar meses de baja proyectando ingresos con 3 meses de anticipación — I6; (B) provisionar el 100% de la retención mensual — I4; (C) mostrar la ganancia real por atención descontando traslado y equipamiento — I5.</p>
+  <div class="footer"><span class="label-lgt">Problemática y desafío</span><span class="label-lgt">Pág. 22</span></div>
 </div>
 
-<!-- 13. OPORTUNIDADES Y TRABAJO FUTURO -->
+<!-- 13. OPORTUNIDADES -->
 <div class="page">
   <div class="abar-light"></div>
-  <h2>13. Oportunidades Seleccionadas y Trabajo Futuro</h2>
-
+  <h2>13. Oportunidades de Desarrollo y Trabajo Futuro</h2>
   <div class="card" style="border-left:3px solid var(--accent);">
     <span class="tag">Oportunidad 01 · Principal</span>
-    <div style="font-weight:700;margin:4px 0 2px;">Sistema de agenda personalizado + dashboard financiero en tiempo real</div>
-    <div style="font-size:9pt;">Reemplaza herramientas genéricas. Una sola vista de citas de clínica y domicilio, ingreso neto por modalidad y proyección mensual. <em>Tipo: proceso + tecnología.</em></div>
+    <div style="font-weight:700;margin:4px 0 2px;">Dashboard financiero conectado a la agenda</div>
+    <div style="font-size:9pt;">Se integra con agendas existentes (Cal.com / Google Calendar) y convierte cada cita en ingreso proyectado, con descuento de costos e impuestos. Ajuste tras la entrevista a Catalina: no reemplaza la agenda, la conecta.</div>
   </div>
   <div class="card" style="border-left:3px solid var(--h6);">
     <span class="tag tag-purple">Oportunidad 02 · Complementaria</span>
     <div style="font-weight:700;margin:4px 0 2px;">Presencia digital de InMotion: Instagram + sitio web</div>
-    <div style="font-size:9pt;">Da un canal al diferenciador (atención 1:1) y conecta la captación con la reserva online del sistema. <em>Tipo: metodología + tecnología.</em></div>
+    <div style="font-size:9pt;">Da un canal al diferenciador (atención 1:1) e integra la captación con la agenda conectada.</div>
   </div>
 
-  <h3>Otras oportunidades detectadas (en reserva)</h3>
-  <ul>
-    <li>Agrupación de domicilios por zona para reducir traslados y costos (proceso).</li>
-    <li>Programa de servicios grupales para adultos mayores (oferta de servicios).</li>
-    <li>Protocolo de seguimiento post-alta para fidelizar pacientes (metodología).</li>
-  </ul>
-
-  <h3>Acciones de trabajo futuro</h3>
   <table>
-    <tr><th style="width:18%;">Unidad</th><th>Acción</th></tr>
-    <tr><td>U2 · Ideación</td><td>Co-crear con Joselyn requerimientos del sistema; benchmark de casos de inspiración; propuesta de valor con enfoque sostenible.</td></tr>
-    <tr><td>U3 · Prototipo</td><td>Prototipo en Figma mobile-first; testeo con Joselyn y Catalina en al menos dos ciclos de iteración.</td></tr>
-    <tr><td>U4 · Propuesta</td><td>Evaluar factibilidad económica (modelo de suscripción) e impacto; pitch a programas de financiamiento (Sercotec).</td></tr>
-    <tr><td>Profesional</td><td>Convertir la solución en un producto replicable para otros profesionales de salud independientes (sistema HORIZON).</td></tr>
+    <tr><th style="width:16%;">Tipo</th><th>Oportunidad detectada</th><th style="width:36%;">Acción de trabajo futuro</th></tr>
+    <tr><td>Tecnología</td><td>Dashboard conectado a Cal.com / Google Calendar que convierte citas en ingresos proyectados.</td><td>Requerimientos (U2); prototipo testeado con Joselyn y Catalina (U3).</td></tr>
+    <tr><td>Proceso</td><td>Registro automático por atención con descuento de traslado y equipamiento.</td><td>Definir el flujo mínimo de registro (&lt; 30 min diarios).</td></tr>
+    <tr><td>Metodología</td><td>Provisión mensual de la retención y proyección de la Operación Renta en lenguaje no contable.</td><td>Validar reglas con el experto financiero y la contadora.</td></tr>
+    <tr><td>Modelo de negocio</td><td>Precio de entrada cerca de $20.000–$25.000 CLP/mes, compatible con la usuaria y el mercado.</td><td>Lean Canvas y factibilidad económica (U4).</td></tr>
+    <tr><td>Presencia digital</td><td>Instagram y sitio web para InMotion.</td><td>Integrar la captación con la agenda conectada.</td></tr>
   </table>
 
-  <div class="footer">
-    <span class="label-lgt">Oportunidades y trabajo futuro</span>
-    <span class="label-lgt">Pág. 19</span>
-  </div>
+  <h3>Hoja de ruta</h3>
+  <table>
+    <tr><th style="width:18%;">Unidad</th><th>Acción</th></tr>
+    <tr><td>U2 · Ideación</td><td>Co-crear requerimientos con Joselyn; propuesta de valor con enfoque sostenible.</td></tr>
+    <tr><td>U3 · Prototipo</td><td>Prototipo mobile-first en Figma; al menos dos ciclos de testeo con Joselyn y Catalina.</td></tr>
+    <tr><td>U4 · Propuesta</td><td>Factibilidad económica (suscripción) e impacto; pitch a programas de financiamiento (Sercotec).</td></tr>
+  </table>
+  <div class="footer"><span class="label-lgt">Oportunidades y trabajo futuro</span><span class="label-lgt">Pág. 23</span></div>
 </div>
 
 <!-- 14. COBERTURA Y CONCLUSIONES -->
 <div class="page">
   <div class="abar-light"></div>
   <h2>14. Cobertura de Criterios y Conclusiones</h2>
-
   <table>
     <tr><th style="width:12%;">Criterio</th><th>Descripción</th><th style="width:30%;">Evidencia en este informe</th></tr>
-    <tr><td>1.1.1</td><td>Aplica la fase de diagnóstico y selección de oportunidades del Ciclo de Innovación INACAP.</td><td>Secciones 2, 12 y 13</td></tr>
+    <tr><td>1.1.1</td><td>Aplica la fase de diagnóstico y selección de oportunidades del Ciclo de Innovación INACAP.</td><td>Secciones 2, 5, 12 y 13</td></tr>
     <tr><td>1.1.2</td><td>Aplica instrumentos pertinentes para la detección de necesidades.</td><td>Secciones 3, 4, 5, 7 y 8</td></tr>
     <tr><td>1.1.3</td><td>Integra resultados del análisis estratégico y del entorno.</td><td>Secciones 6 y 9</td></tr>
     <tr><td>1.1.4</td><td>Selecciona la problemática en consistencia con usuarios y entorno.</td><td>Secciones 10 y 12</td></tr>
-    <tr><td>1.1.5</td><td>Analiza antecedentes nacionales e internacionales.</td><td>Sección 11</td></tr>
+    <tr><td>1.1.5</td><td>Analiza antecedentes nacionales e internacionales.</td><td>Secciones 8 y 11</td></tr>
     <tr><td>1.1.6</td><td>Detecta oportunidades de desarrollo y propone trabajo futuro.</td><td>Sección 13</td></tr>
   </table>
 
   <h3>Conclusiones</h3>
   <ul>
-    <li>El diagnóstico, construido desde la usuaria, la observación, la experta, el entorno y los antecedentes, converge en un mismo punto: <strong>la gestión financiera y de agenda es el dolor principal</strong> del caso.</li>
-    <li>El mercado ya ofrece agendas; la oportunidad real está en <strong>integrar agenda y finanzas</strong> para el profesional independiente con modelo mixto.</li>
-    <li>La presencia digital es la oportunidad complementaria: el diferenciador de Joselyn existe, pero no tiene canal.</li>
-    <li>El desafío redefinido es medible y acotado, y deja una ruta clara para las unidades 2, 3 y 4.</li>
+    <li>Usuaria, experta par, experto financiero, observación, entorno y antecedentes convergen: <strong>el dolor principal es no tener visibilidad financiera</strong>.</li>
+    <li>El insight raíz es que <strong>la agenda es el origen del dato financiero</strong> (I2): conectarlas habilita la proyección, el control de costos y la provisión de impuestos.</li>
+    <li>La entrevista a Catalina afinó la oportunidad: la agenda ya está resuelta y es gratuita; el valor está en conectarla con las finanzas.</li>
+    <li>El desafío redefinido tiene una línea base real (~1 h diaria) y una meta medible (menos de 30 min) que guían las unidades 2, 3 y 4.</li>
   </ul>
-
   <div class="divider-light"></div>
-  <p style="font-size:8.5pt;color:var(--page-text2);">Documentos anexos: Canvas de Preguntas (PDF A4 horizontal), Mapa de Card Sorting (PDF A4 horizontal), Ficha de Entrevista a Experta (<em>Entrevista_Experta_Cata</em>), Bitácora de Declaración de Avance (Excel, semanas 1–4).</p>
+  <p style="font-size:8.5pt;color:var(--page-text2);">Documentos anexos: Canvas de Preguntas, Mapa de Card Sorting, Ficha de Entrevista a Experta (Catalina), Toolkit UA1 Integrado y Bitácora de Declaración de Avance.</p>
+  <div class="footer"><span class="label-lgt">Cobertura y conclusiones</span><span class="label-lgt">Pág. 24</span></div>
+</div>
 
-  <div class="footer">
-    <span class="label-lgt">Equipo HORIZON · INACAP Rancagua · 2026</span>
-    <span class="label accent">HORIZON</span>
-  </div>
+<!-- REFERENCIAS -->
+<div class="page">
+  <div class="abar-light"></div>
+  <h2>Referencias</h2>
+  <ul class="refs">
+    <li>Aguilar, F. J. (1967). <em>Scanning the business environment</em>. Macmillan.</li>
+    <li>INACAP. (2026). <em>Toolkit Innovación y Emprendimiento III — Unidad 1: Detección de oportunidades</em>. Vicerrectoría Académica, Formación General.</li>
+    <li>INACAP. (2026). <em>Manual del estudiante — Unidad 1, FGIE03</em>. Vicerrectoría Académica.</li>
+    <li>Ley N° 20.584. (2012). Regula los derechos y deberes que tienen las personas en relación con acciones vinculadas a su atención en salud. Biblioteca del Congreso Nacional de Chile.</li>
+    <li>Ley N° 21.133. (2019). Modifica las normas para la incorporación de los trabajadores independientes a los regímenes de protección social. Biblioteca del Congreso Nacional de Chile.</li>
+    <li>Ley N° 21.719. (2024). Regula la protección y el tratamiento de los datos personales. Biblioteca del Congreso Nacional de Chile.</li>
+    <li>Osterwalder, A., &amp; Pigneur, Y. (2010). <em>Business model generation</em>. John Wiley &amp; Sons.</li>
+    <li>Servicio de Impuestos Internos. (2026). <em>Boletas de honorarios electrónicas y retención</em>. https://www.sii.cl</li>
+  </ul>
+  <div class="footer"><span class="label-lgt">Referencias</span><span class="label-lgt">Pág. 25</span></div>
 </div>
 
 </body>
