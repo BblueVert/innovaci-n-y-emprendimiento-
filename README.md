@@ -19,6 +19,10 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 - **Semana 2** — Entrevista a experto/a Ficha A completa; Ficha B pendiente de completar con las respuestas de Catalina. Matriz PESTAL formateada en grid 2×3.
 - **Semana 3** — En progreso: matrices de vaciado de hallazgos y estudio comparativo de antecedentes.
 
+### Unidad 2 — Ideación de propuestas
+- **Semana 6** — Ficha y Matriz de referentes (2.1.2.1 A/B): 9 casos de otros ámbitos (Calendly, Uber, YNAB, Fintual, Duolingo, Strava, Doctoralia, Smart Fit, Mercado Pago), 6 variables y 6 tendencias.
+- **Semana 7** — Canvas brainstorming (36 ideas), Mapa de clasificación originalidad × factibilidad (16 ideas foco en 4 categorías), concepto directriz **Tablero InMotion** y Panel de metáforas y atributos (“tablero y copiloto de un auto de rally”: anticipador, legible, automático, cercano).
+
 ### Oportunidades seleccionadas
 1. Sistema de agenda personalizado + dashboard financiero en tiempo real, para reemplazar herramientas genéricas de pago.
 2. Construcción de presencia en Instagram y sitio web para InMotion, desde cero.
@@ -51,9 +55,22 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 | `1.1.5.1.B_Matriz_antecedentes_plantilla.pdf` | Plantilla matriz comparativa de antecedentes |
 | `*_infografia.pdf` | Infografías de apoyo con ejemplos aplicados por técnica (entrevista usuario/experto, observación, cuestionario, PESTEL, procesamiento de hallazgos, redefinición del desafío) |
 
+## Unidad 2 (`/unidad-2`)
+
+| Ruta | Descripción |
+|---|---|
+| `entregas/Act_online_sem6_Gx.docx` | Word institucional Semana 6 (Arial 12, títulos 16, justificado): portada, introducción, contraparte, instrumentos, conclusión individual, anexo |
+| `entregas/Act_online_sem7_Gx.docx` | Word institucional Semana 7: brainstorming, clasificación, concepto directriz, panel de metáforas |
+| `entregas/Bitacora_avance_U2_S6-S7.xlsx` | Bitácora de avance U2 con indicadores 1–6, 8 y 11 completos |
+| `tableros/*.png` / `*.html` | Tableros estilo MIRO de cada instrumento (se insertan en los Word) |
+| `_build/` | Fuente de contenido (`data.js`) y generador: `npm i docx playwright && node build.js` |
+| `material/` | Toolkit, manual, pautas S6/S7 y bitácora en blanco de la U2 |
+
 ## Pendientes
 - Completar Ficha B de la entrevista a Catalina con sus respuestas.
 - Rellenar las plantillas en blanco (entrevista usuario/experto, observación, PESTAL, antecedentes) con la información real del caso.
 - Terminar matrices de Semana 3 (vaciado de hallazgos, comparativo de antecedentes).
 - Redefinición del desafío (Semana 4).
 - Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
+- U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
+- U2: tabla de perfil de usuario y requerimientos (2.1.3.1–2.1.3.3), evaluación de factibilidad y cocreación con Joselyn (indicadores 7, 9, 10), panel de propuesta de valor (2.1.4.4).
