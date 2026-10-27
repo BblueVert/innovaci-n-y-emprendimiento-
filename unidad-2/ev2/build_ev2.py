@@ -5,6 +5,8 @@ from weasyprint import HTML
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
+LOGO = {'Uber Driver': 'uber', 'YNAB': 'ynab', 'Fintual': 'fintual', 'Mercado Pago': 'mercadopago', 'Smart Fit': 'smartfit', 'Duolingo': 'duolingo', 'Strava': 'strava', 'Google Maps': 'googlemaps', 'Too Good To Go': 'toogoodtogo', 'SII · Propuesta de F22': 'sii'}
+
 # ---------------------------------------------------------------- utilidades
 def sus(*tags):
     names = {'Ec': 'ec', 'So': 'so', 'Am': 'am'}
@@ -348,7 +350,7 @@ def fichas():
     cards = ''
     for i, r in enumerate(REFS):
         ini = ''.join(w[0] for w in r['n'].replace('·', ' ').split()[:2]).upper()
-        cards += f'''<div class="ref"><div class="top"><div class="mono">{ini}</div><div><b>{i + 1:02d} · {r["n"]}</b><span>{r["amb"]}</span></div></div>
+        cards += f'''<div class="ref"><div class="top"><img class="logo" src="img/logos/{LOGO[r['n']]}.png"><div><b>{i + 1:02d} · {r["n"]}</b><span>{r["amb"]}</span></div></div>
 <div class="bd"><div class="lbl">Descripción</div>{r["d"]}
 <div class="lbl">Aspectos relevantes</div>{r["r"]}
 <div class="rel"><b>Para el desafío:</b> {r["a"]}</div>
@@ -363,7 +365,7 @@ lectura de sostenibilidad y fuente.</p><div class="refs">{cards}</div>
 
 def matriz():
     head = ['Caso'] + [v.split(' ', 1)[0] for v in VARS] + ['Tendencia']
-    rows = [[f'<strong>{r["n"]}</strong>'] + [DOT[x] for x in r['v']] + [r['t']] for r in REFS]
+    rows = [[f'<span class="mcase"><img src="img/logos/{LOGO[r["n"]]}.png"><strong>{r["n"]}</strong></span>'] + [DOT[x] for x in r['v']] + [r['t']] for r in REFS]
     rows.append(['<strong>Oportunidad: ' + PRODUCTO + '</strong>'] + [DOT[2]] * 5 + ['T1–T6'])
     vleg = ''.join(f'<li><strong>{v.split(" ", 1)[0]}</strong> {v.split(" ", 1)[1]}</li>' for v in VARS)
     tend = ''.join(f'<tr><td><strong>{c}</strong></td><td><strong>{t}</strong><br><span class="small muted">{cs}</span></td><td>{ins} {sus(*s)}</td></tr>' for c, t, cs, ins, s in TEND)

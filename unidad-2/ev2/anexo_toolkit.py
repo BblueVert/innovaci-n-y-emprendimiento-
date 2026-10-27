@@ -25,6 +25,8 @@ AMBER = (1, 0.70, 0.28)
 GREY = (0.79, 0.78, 0.85)
 hexc = lambda h: tuple(int(h[i:i + 2], 16) / 255 for i in (1, 3, 5))
 
+LOGO = {'Uber Driver': 'uber', 'YNAB': 'ynab', 'Fintual': 'fintual', 'Mercado Pago': 'mercadopago', 'Smart Fit': 'smartfit', 'Duolingo': 'duolingo', 'Strava': 'strava', 'Google Maps': 'googlemaps', 'Too Good To Go': 'toogoodtogo', 'SII · Propuesta de F22': 'sii'}
+
 EQUIPO = 'Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez'
 CURSO = 'Innovación y Emprendimiento III (FGIE03)'
 
@@ -104,10 +106,10 @@ def fichas(D):
         p.insert_text((100, 110), clean(f'{i + 1:02d} · {r["n"]}'), fontname='fb', fontsize=15, color=INK)
         # imagen: tarjeta con monograma
         ini = ''.join(w[0] for w in r['n'].replace('·', ' ').split()[:2]).upper()
-        p.draw_rect(fitz.Rect(100, 132, 610, 292), color=None, fill=hexc('#12101E'), radius=0.04)
-        tw = fitz.Font(fontfile=F['bebas']).text_length(ini, fontsize=90)
-        p.insert_text((355 - tw / 2, 236), ini, fontname='fbebas', fontsize=90, color=ORANGE)
-        box(p, (120, 252, 590, 288), r['amb'].upper(), 10, 'mono', (0.85, 0.84, 0.95), align=1)
+        p.insert_image(fitz.Rect(130, 128, 290, 288), filename=os.path.join(HERE, 'img', 'logos', LOGO[r['n']] + '.png'))
+        p.draw_rect(fitz.Rect(130, 128, 290, 288), color=(0.89, 0.88, 0.94), width=0.8)
+        box(p, (310, 160, 610, 200), r['n'], 20, 'b')
+        box(p, (310, 205, 610, 260), r['amb'].upper(), 10, 'mono', MUTE)
         # variables
         y = 122
         for k, v in enumerate(D['VARS']):
@@ -138,7 +140,8 @@ def matriz(D):
         rows = [(174, 277), (282, 385), (389, 493), (497, 600), (605, 708)]
         for j, (y0, y1) in enumerate(rows):
             r = refs[part * 5 + j]
-            box(p, (44, 198 + (y0 - 174), 158, y1 - 4), r['n'], 10, 'b')
+            p.insert_image(fitz.Rect(46, y0 + 30, 96, y0 + 80), filename=os.path.join(HERE, 'img', 'logos', LOGO[r['n']] + '.png'))
+            box(p, (98, y0 + 30, 160, y1 - 4), r['n'], 9.5, 'b')
             for k, (x0, x1) in enumerate(cols):
                 dot(p, x0 + 11, y0 + 12, r['v'][k], 3.6)
                 box(p, (x0 + 20, y0 + 6, x1 - 6, y1 - 6), MAT[r['n']][k], 9.5)

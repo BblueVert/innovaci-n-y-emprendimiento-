@@ -339,3 +339,6 @@ td.k { font-weight:600; width:28%; }
 .kpi2>div{flex:1;display:flex;align-items:center;gap:2.5mm;border:1px solid var(--page-border);border-left:3px solid var(--accent);border-radius:6px;padding:2mm 3mm;background:#fff}
 .kpi2 .v{font-family:var(--fd);font-size:22pt;line-height:1;color:var(--accent);flex:none}
 .kpi2 .l{font-size:7.8pt;line-height:1.3;color:var(--page-text2)}
+
+.ref .logo{width:11mm;height:11mm;border-radius:5px;border:1px solid var(--page-border);flex:none;display:block}
+.mcase{display:flex;align-items:center;gap:2mm}.mcase img{width:7mm;height:7mm;border-radius:3px;border:1px solid var(--page-border);flex:none}
