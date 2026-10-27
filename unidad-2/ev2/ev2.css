@@ -45,7 +45,7 @@
     vertical-align: top; padding-top: 3mm; border-top: 0.6pt solid #E2E0EF;
   }
   @bottom-right {
-    content: "Página " counter(page) " de " counter(pages);
+    content: "Página " counter(page);
     width: 25%; text-align: right; font-family: 'DM Mono', monospace; font-size: 6.8pt; letter-spacing: .08em; color: #12101E;
     vertical-align: top; padding-top: 3mm; border-top: 0.6pt solid #E2E0EF;
   }

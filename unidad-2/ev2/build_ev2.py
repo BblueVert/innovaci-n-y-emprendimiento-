@@ -285,6 +285,8 @@ def indice():
     out = ''
     for g, li in items:
         out += f'<div class="grp">{g}</div><ul>' + ''.join(f'<li><span class="c">{c}</span><span class="t"><a href="#{h}">{t}</a></span></li>' for c, h, t in li) + '</ul>'
+    out += ('<div class="grp">Anexo</div><ul>'
+            f'<li><span class="c">Anexo A</span><span class="t">Toolkit UA2 completo: los 9 instrumentos oficiales con sus matrices llenas</span><span style="font-family:var(--fm);font-size:8pt">{ANEXO_PAGE}</span></li></ul>')
     return section('s-indice', 'ÍNDICE', 'Contenido', 'Índice', f'<div class="toc">{out}</div>')
 
 def intro():
@@ -529,11 +531,13 @@ en la UA1 y se marcan con borde punteado en el canvas.</p>
 Reglas de ajuste acordadas: si la metáfora no hace sentido, se prueba la alternativa “GPS que recalcula”; si la propuesta de valor no se entiende en 5 segundos, se reescribe con las palabras de las usuarias.</div>'''
     return section('s-cocrea', 'CO-CREACIÓN', 'Co-creación con usuarias', 'Participación de usuarias y co-creación', b)
 
+ATR = [('Anticipador', 'en el sentido de que avisa antes de la curva: proyecta los ingresos de los próximos meses y alerta la temporada baja con tiempo para actuar.', 'Ingresos estacionales sin proyección (I6).', 'R10 · R11', ['Ec']),
+       ('Legible de un vistazo', 'en el sentido de un tablero: semáforo, números grandes y palabras cotidianas, sin jerga contable.', '“Desorden o falta de educación” económica (I1).', 'R4 · R5', ['So']),
+       ('Automático', 'en el sentido de que la cita, el cobro y el traslado se registran solos; la usuaria solo confirma.', 'Excel diario al cierre de la jornada (I2 · I3).', 'R1 · R6 · R7 · R8', ['So', 'Ec']),
+       ('Sostenible', 'en el sentido de que rinde más con menos: menos km, menos horas nocturnas y un colchón para los meses bajos; el tiempo vuelve al trato 1:1.', 'Costos invisibles, desgaste e impuestos (I4 · I5).', 'R9 · R12 · R13', ['Ec', 'So', 'Am'])]
+
 def metaforas():
-    atr = [('Anticipador', 'en el sentido de que avisa antes de la curva: proyecta los ingresos de los próximos meses y alerta la temporada baja con tiempo para actuar.', 'Ingresos estacionales sin proyección (I6).', 'R10 · R11', ['Ec']),
-           ('Legible de un vistazo', 'en el sentido de un tablero: semáforo, números grandes y palabras cotidianas, sin jerga contable.', '“Desorden o falta de educación” económica (I1).', 'R4 · R5', ['So']),
-           ('Automático', 'en el sentido de que la cita, el cobro y el traslado se registran solos; la usuaria solo confirma.', 'Excel diario al cierre de la jornada (I2 · I3).', 'R1 · R6 · R7 · R8', ['So', 'Ec']),
-           ('Sostenible', 'en el sentido de que rinde más con menos: menos km, menos horas nocturnas y un colchón para los meses bajos; el tiempo vuelve al trato 1:1.', 'Costos invisibles, desgaste e impuestos (I4 · I5).', 'R9 · R12 · R13', ['Ec', 'So', 'Am'])]
+    atr = ATR
     b = f'''{card([('Técnica', 'Generación de metáfora y atributos.'), ('Criterios', '2.1.1 · 2.1.4'), ('Rol del instrumento', 'Mantener la coherencia del prototipado, el testeo y la propuesta de valor en la UA3.')])}
 <div class="met"><div class="k">Metáfora seleccionada</div><div class="m">“{PRODUCTO} es como el tablero y el copiloto de un auto de rally.”</div>
 <p>Joselyn maneja: atiende a sus pacientes. El tablero le muestra la velocidad y el combustible (ganancia del mes y colchón), y el copiloto le lee la ruta que viene:
@@ -728,14 +732,49 @@ def pagina_cierre():
 <div class="lead2" style="color:#F3E6FF">Referentes, requerimientos, ideas y usuarias convergen en lo mismo: conectar la agenda con el dinero para que la práctica independiente sea sostenible.</div></div>
 <div class="foot"><span>Criterios 2.1.1 – 2.1.5</span><span>Gracias</span></div></div>'''
 
-# ---------------------------------------------------------------- ensamblado
-html = f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Evaluación 2 — Ideación de Propuestas</title>
-<link rel="stylesheet" href="ev2.css"></head><body>
-{portada()}{indice()}{intro()}{ruta()}{fichas()}{matriz()}{pagina_cita()}{perfil()}{categorias()}{jerarquias()}{pagina_cifras()}{brainstorming()}{clasificacion()}{factibilidad()}
-{cocreacion()}{metaforas()}{pagina_pv()}{propuesta()}{sostenibilidad()}{tiempo()}{conclusiones()}{referencias()}{pagina_cierre()}
-</body></html>'''
+def pagina_anexo(titles):
+    seen = []
+    for t in titles:
+        k = t.split(' · ', 1)[1].rsplit(' ', 1)[0] if t[-1].isdigit() else t.split(' · ', 1)[1]
+        if k not in seen: seen.append(k)
+    li = ''.join(f'<div style="border-bottom:1px solid #2A2640;padding:2mm 0;font-size:9.5pt;color:#E9E6F7">{k}</div>' for k in seen)
+    return f'''<div class="full dark"><div class="in" style="top:34mm"><div class="kick" style="color:#FF6B35">Anexo A</div>
+<div class="big">TOOLKIT UA2<br><em>COMPLETO</em>.</div>
+<div class="lead2">Las plantillas oficiales del toolkit de Innovación y Emprendimiento III, llenas con el trabajo del equipo. Cada instrumento conserva su código y su formato original; las fichas de referentes se presentan una por caso.</div>
+<div style="margin-top:8mm;max-width:150mm">{li}</div></div>
+<div class="foot"><span>Matrices y paneles del toolkit</span><span>2.1.2.1 – 2.1.4.4</span></div></div>'''
 
-out_html = os.path.join(HERE, 'Evaluacion2_Informe_Ideacion.html')
-open(out_html, 'w', encoding='utf-8').write(html)
-HTML(out_html, base_url=HERE).write_pdf(os.path.join(HERE, 'Evaluacion2_Informe_Ideacion.pdf'))
-print('ok', out_html)
+# ---------------------------------------------------------------- ensamblado
+import pymupdf as fitz
+import anexo_toolkit
+
+HEAD = '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Evaluación 2 — Ideación de Propuestas</title><link rel="stylesheet" href="ev2.css"></head><body>'
+D = dict(REFS=REFS, VARS=VARS, DESAFIO=DESAFIO, EMPATIA=EMPATIA, REQS=REQS, CATS=CATS, JER=JER, IDEAS=IDEAS, CATC=CATC, CATN=CATN, quad=quad,
+         METAFORA=f'“{PRODUCTO} es como el tablero y el copiloto de un auto de rally.” Joselyn maneja: atiende a sus pacientes. El tablero le muestra la ganancia del mes y el colchón; el copiloto le lee la ruta que viene: los meses bajos, la agenda del día y cuándo acelerar. Ella nunca suelta el volante.',
+         ATRIBUTOS=ATR, PV=f'{PRODUCTO} es el copiloto financiero de la kinesióloga independiente: se conecta a la agenda que ya usa y convierte cada atención en ganancia real —descontando traslado, materiales, comisión e impuestos— para que sepa cuánto gana, anticipe los meses bajos y deje de cuadrar Excel de noche.')
+
+def render(body, name):
+    path = os.path.join(HERE, name)
+    open(path, 'w', encoding='utf-8').write(HEAD + body + '</body></html>')
+    return HTML(path, base_url=HERE).write_pdf()
+
+def main_body():
+    return (portada() + indice() + intro() + ruta() + fichas() + matriz() + pagina_cita() + perfil() + categorias() + jerarquias()
+            + pagina_cifras() + brainstorming() + clasificacion() + factibilidad() + cocreacion() + metaforas() + pagina_pv() + propuesta()
+            + sostenibilidad() + tiempo() + conclusiones() + referencias())
+
+# 1.ª pasada: largo del cuerpo principal → página donde empieza el anexo
+ANEXO_PAGE = '—'
+n_main = fitz.open(stream=render(main_body(), '_tmp.html'), filetype='pdf').page_count
+ANEXO_PAGE = n_main + 1
+main_pdf = fitz.open(stream=render(main_body(), 'Evaluacion2_Informe_Ideacion.html'), filetype='pdf')
+assert main_pdf.page_count == n_main
+anexo_pdf, titles = anexo_toolkit.build(D, n_main + 2)
+div_pdf = fitz.open(stream=render(pagina_anexo(titles), '_anexo.html'), filetype='pdf')
+end_pdf = fitz.open(stream=render(pagina_cierre(), '_cierre.html'), filetype='pdf')
+for extra in (div_pdf, anexo_pdf, end_pdf):
+    main_pdf.insert_pdf(extra)
+for f in ('_tmp.html', '_anexo.html', '_cierre.html'):
+    os.remove(os.path.join(HERE, f))
+main_pdf.save(os.path.join(HERE, 'Evaluacion2_Informe_Ideacion.pdf'), garbage=3, deflate=True)
+print('ok', main_pdf.page_count, 'páginas · anexo desde', ANEXO_PAGE)
