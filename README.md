@@ -75,7 +75,8 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 | Ruta | Descripción |
 |---|---|
-| `entregas/` | Word institucional S6 y S7 (borrador) y bitácora U2 |
+| `ev2/Evaluacion2_Informe_Ideacion.pdf` | **Informe EV2 (A4 vertical)**: todos los instrumentos U2, enfoque sostenible, co-creación, organización del tiempo y trazabilidad ES02. Generador: `python3 ev2/build_ev2.py` |
+| `entregas/` | Word S6–S7 (borradores previos) y bitácora U2 completa (`Bitacora_avance_U2_EV2.xlsx`) |
 | `tableros/` | Tableros PNG/HTML del borrador S6–S7 |
 | `figma/*.svg` | Plantillas en blanco 23–26 para arrastrar a Figma (texto editable) |
 | `_build/` | Generadores: `node build.js` (Word + tableros), `node figma_svg.js` (SVG) |
