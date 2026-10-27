@@ -55,16 +55,31 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 | `1.1.5.1.B_Matriz_antecedentes_plantilla.pdf` | Plantilla matriz comparativa de antecedentes |
 | `*_infografia.pdf` | Infografías de apoyo con ejemplos aplicados por técnica (entrevista usuario/experto, observación, cuestionario, PESTEL, procesamiento de hallazgos, redefinición del desafío) |
 
-## Unidad 2 (`/unidad-2`)
+## Unidad 2 (`/unidad-2`) — Ideación de propuestas
+
+Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativa grupal en S10.
+
+| Sem. | Instrumento | Plantilla Figma | Estado |
+|---|---|---|---|
+| S6 | 2.1.1.1 Ra-P-Rp (diagnóstica, en clase) | — | En clase |
+| S6 | 2.1.2.1 A/B Ficha y matriz de referentes | 18, 19 | Borrador Word ✅ · Figma vacío |
+| S7 | 2.1.3.1 Tabla perfil de usuario y requerimientos | 23 (SVG) | Plantilla lista |
+| S7 | 2.1.3.2 Mapa de categorías | 24 (SVG) | Plantilla lista |
+| S7 | 2.1.3.3 Mapa de jerarquías | 25 (SVG) | Plantilla lista |
+| S7 | 2.1.4.1 Canvas brainstorming | 20 | Borrador Word ✅ · Figma vacío |
+| S7 | 2.1.4.2 Mapa de clasificación de ideas | 21 | Borrador Word ✅ · Figma vacío |
+| S7 | 2.1.4.3 Panel de metáforas y atributos | 22 | Borrador Word ✅ · Figma vacío (faltan atributo 4 y pie) |
+| S8 | 2.1.4.4 Panel de propuesta de valor y métricas claves | 26 (SVG) | Plantilla lista |
+| S9 | Bitácora de avance (formativa) | — | 7/11 indicadores |
+| S10 | Evaluación sumativa grupal | — | Pendiente |
 
 | Ruta | Descripción |
 |---|---|
-| `entregas/Act_online_sem6_Gx.docx` | Word institucional Semana 6 (Arial 12, títulos 16, justificado): portada, introducción, contraparte, instrumentos, conclusión individual, anexo |
-| `entregas/Act_online_sem7_Gx.docx` | Word institucional Semana 7: brainstorming, clasificación, concepto directriz, panel de metáforas |
-| `entregas/Bitacora_avance_U2_S6-S7.xlsx` | Bitácora de avance U2 con indicadores 1–6, 8 y 11 completos |
-| `tableros/*.png` / `*.html` | Tableros estilo MIRO de cada instrumento (se insertan en los Word) |
-| `_build/` | Fuente de contenido (`data.js`) y generador: `npm i docx playwright && node build.js` |
-| `material/` | Toolkit, manual, pautas S6/S7 y bitácora en blanco de la U2 |
+| `entregas/` | Word institucional S6 y S7 (borrador) y bitácora U2 |
+| `tableros/` | Tableros PNG/HTML del borrador S6–S7 |
+| `figma/*.svg` | Plantillas en blanco 23–26 para arrastrar a Figma (texto editable) |
+| `_build/` | Generadores: `node build.js` (Word + tableros), `node figma_svg.js` (SVG) |
+| `material/` | Manual, toolkit, pautas S6–S8, bitácora en blanco, `plantillas/` oficiales e `infografias/` con ejemplos aplicados |
 
 ## Pendientes
 - Completar Ficha B de la entrevista a Catalina con sus respuestas.
@@ -73,4 +88,4 @@ Toolkit oficial FGIE03 (INACAP), plantillas en blanco de los instrumentos y las 
 - Redefinición del desafío (Semana 4).
 - Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
 - U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
-- U2: tabla de perfil de usuario y requerimientos (2.1.3.1–2.1.3.3), evaluación de factibilidad y cocreación con Joselyn (indicadores 7, 9, 10), panel de propuesta de valor (2.1.4.4).
+- U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Joselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
