@@ -73,7 +73,7 @@ def footer(page, y, x_int=100, x_cur=694, x_prof=928, size=9):
     y += 5
     page.insert_text((x_int, y), clean(EQUIPO), fontname='fr', fontsize=size, color=INK)
     page.insert_text((x_cur, y), clean(CURSO), fontname='fr', fontsize=size, color=INK)
-    page.insert_text((x_prof, y), '—', fontname='fr', fontsize=size, color=MUTE)
+    page.insert_text((x_prof, y), 'Roberto Escobar Donoso', fontname='fr', fontsize=size, color=INK)
 
 
 def tpl(name):
@@ -234,7 +234,7 @@ def canvas(D):
         p.draw_rect(fitz.Rect(xx, yy - 9, xx + 11, yy + 2), color=None, fill=hexc(D['CATC'][key]))
         p.insert_text((xx + 16, yy), f'{key} · {name}', fontname='fr', fontsize=10, color=MUTE)
     p.insert_text((640, ly + 96), 'Borde punteado: idea nacida de la voz de la usuaria o de un experto (UA1).', fontname='fi', fontsize=9.5, color=MUTE)
-    footer(p, 1659, 128, 900, 1225, 12)
+    footer(p, 1659, 128, 930, 1235, 12)
     return [(d, 'Anexo A · 2.1.4.1 Canvas brainstorming')]
 
 
@@ -253,7 +253,7 @@ def clasificacion(D):
             c, r = n % cols, n // cols
             rect = fitz.Rect(qx0 + 10 + c * cw + 3, qy0 + 34 + r * rh + 3, qx0 + 10 + (c + 1) * cw - 3, qy0 + 34 + (r + 1) * rh - 3)
             postit(p, rect, i, D['CATC'], compact=True)
-    footer(p, 1659, 128, 900, 1225, 12)
+    footer(p, 1659, 128, 930, 1235, 12)
     return [(d, 'Anexo A · 2.1.4.2 Mapa de clasificación de ideas')]
 
 

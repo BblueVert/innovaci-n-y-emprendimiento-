@@ -272,7 +272,7 @@ atención mixta (Centro Médico InMotion + domicilio). Desde el estudio de refer
 con enfoque sostenible y trazabilidad a los criterios 2.1.1 a 2.1.5.</div>
 <div class="grid">{chips}</div></div>
 <div class="meta"><div class="team"><div>Francisco Ahumada · Claudia Cifuentes</div><div>Néstor Rivera · Benjamín Vera Yáñez</div>
-<div class="inst" style="margin-top:1mm">Diseño Digital · INACAP Rancagua</div></div>
+<div class="inst" style="margin-top:1mm">Diseño Digital · INACAP Rancagua</div><div class="inst" style="margin-top:1mm">Profesor: Roberto Escobar Donoso</div></div>
 <div style="text-align:right"><div class="inst">Rancagua, Chile</div><div class="inst">Octubre 2026</div></div></div></div>'''
 
 def indice():
@@ -437,11 +437,13 @@ def brainstorming():
     b = f'''{card([('Técnica', 'Brainstorming (Llorenc, 2011; Pomar, 2020).'), ('Criterios', '2.1.1 · 2.1.4'),
                ('Reglas', 'No juzgar · cantidad antes que calidad · una idea por post-it · desafío siempre a la vista.')])}
 <div class="side" style="margin-bottom:3mm"><img src="img/04-card-sorting.jpg" style="width:64mm;height:35.7mm"><div class="box" style="margin:0"><div class="t">Desafío al centro del canvas</div>{DESAFIO}</div></div>
-<div class="grid2"><div><h4>Dinámica</h4><ul class="small">
+<h4>Dinámica</h4><ul class="small">
 <li><strong>10 min</strong> · moderador y ajuste del desafío con los requerimientos jerarquizados.</li>
 <li><strong>35 min</strong> · generación libre, partiendo de las tendencias T1–T6 como detonantes.</li>
-<li><strong>5 min</strong> · plenario y limpieza de ideas repetidas.</li></ul></div>
-<div class="kpi"><div><div class="v">{len(IDEAS)}</div><div class="l">ideas</div></div><div><div class="v">{nsus}</div><div class="l">con aporte sostenible</div></div><div><div class="v">{nvoz}</div><div class="l">desde la voz de usuarias o expertos</div></div></div></div>
+<li><strong>5 min</strong> · plenario y limpieza de ideas repetidas.</li></ul>
+<div class="kpi2"><div><span class="v">{len(IDEAS)}</span><span class="l">ideas generadas</span></div>
+<div><span class="v">{nsus}</span><span class="l">con aporte sostenible</span></div>
+<div><span class="v">{nvoz}</span><span class="l">nacen de la voz de usuarias o expertos</span></div></div>
 <div class="catlg">{leg}</div>
 <p class="small">Cada post-it indica su número, sus etiquetas de sostenibilidad, la puntuación de originalidad (O) y factibilidad (F) de 1 a 5, y si nace de una cita de la usuaria
 o de un experto (borde punteado). Las ideas exploratorias (H) se registran aunque parezcan imposibles: así lo pide la técnica.</p>
