@@ -291,10 +291,11 @@ def intro():
     b = f'''<p class="lead">La Unidad 2 corresponde a la fase de <strong>generación de ideas</strong> del Ciclo de Innovación INACAP. Su aprendizaje esperado
 es proponer una idea innovadora y su propuesta de valor a partir del diagnóstico de necesidades de la usuaria y de las variables del contexto
 levantadas en la Unidad 1.</p>
-<h3>Caso y punto de partida</h3><img class="banner intro-banner" src="img/02-caso.jpg" style="object-position:center 30%">
-{card([('Usuaria', 'Joselyn Toledo — kinesióloga, Centro Médico InMotion. ~1 año con empresa propia.'),
-       ('Modelo', 'Clínica (comisión 70/30) + atención particular a domicilio, 10 a 32 h semanales.'),
-       ('Insight raíz (UA1)', 'I2 · La agenda es el origen del dato financiero (triangulado 3/3).')])}
+<h3>Caso y punto de partida</h3>
+<div class="case"><img src="img/02-caso.jpg"><div class="facts">
+<div><b>Usuaria</b>Joselyn Toledo — kinesióloga, Centro Médico InMotion. ~1 año con empresa propia.</div>
+<div><b>Modelo</b>Clínica (comisión 70/30) + atención particular a domicilio, 10 a 32 h semanales.</div>
+<div><b>Insight raíz (UA1)</b>I2 · La agenda es el origen del dato financiero (triangulado 3/3).</div></div></div>
 <h4>Desafío redefinido en la Unidad 1</h4><div class="big-q">{DESAFIO}</div>
 <p>El desafío se mantiene sin cambios porque la UA1 lo validó con tres fuentes: la usuaria, una experta par (Catalina) y un asesor financiero.
 Sobre él se construyen todos los instrumentos de esta unidad.</p>
@@ -320,9 +321,9 @@ def ruta():
         ('S8', '2.1.4.4 Propuesta de valor', 'Redactar la propuesta de valor y sus métricas claves', '2.1.4'),
         ('S6–S9', 'Bitácora de avance', 'Planificar y registrar plazos, responsables y aprendizajes', '2.1.5'),
         ('S10', 'Evaluación sumativa grupal', 'Este informe', '2.1.1 – 2.1.5')]
-    b = f'''<p>El equipo aplicó los instrumentos del toolkit UA2 en el orden del manual del estudiante (semanas 6 a 10). Cada instrumento usa como insumo
-el resultado del anterior; la tabla muestra la secuencia y el criterio de la rúbrica ES02 que respalda.</p>
-<img class="banner s" src="img/03-ciclo.jpg" style="height:26mm">
+    b = f'''<div class="side" style="margin-bottom:3mm;align-items:center"><img src="img/03-ciclo.jpg" style="width:58mm;height:32.4mm"><div>
+<p style="margin:0">El equipo aplicó los instrumentos del toolkit UA2 en el orden del manual del estudiante (semanas 6 a 10). Cada instrumento usa como insumo
+el resultado del anterior; la tabla muestra la secuencia y el criterio de la rúbrica ES02 que respalda.</p></div></div>
 {table(['Semana', 'Instrumento', 'Objetivo de aplicación', 'Criterio'], rows, 'tight')}
 <h3>Hilo conductor de la unidad</h3>
 <div class="chain">
@@ -433,8 +434,7 @@ def brainstorming():
     nsus = sum(1 for i in IDEAS if i['s'])
     b = f'''{card([('Técnica', 'Brainstorming (Llorenc, 2011; Pomar, 2020).'), ('Criterios', '2.1.1 · 2.1.4'),
                ('Reglas', 'No juzgar · cantidad antes que calidad · una idea por post-it · desafío siempre a la vista.')])}
-<img class="banner s" src="img/04-card-sorting.jpg">
-<div class="box"><div class="t">Desafío al centro del canvas</div>{DESAFIO}</div>
+<div class="side" style="margin-bottom:3mm"><img src="img/04-card-sorting.jpg" style="width:64mm;height:35.7mm"><div class="box" style="margin:0"><div class="t">Desafío al centro del canvas</div>{DESAFIO}</div></div>
 <div class="grid2"><div><h4>Dinámica</h4><ul class="small">
 <li><strong>10 min</strong> · moderador y ajuste del desafío con los requerimientos jerarquizados.</li>
 <li><strong>35 min</strong> · generación libre, partiendo de las tendencias T1–T6 como detonantes.</li>
@@ -514,7 +514,7 @@ def cocreacion():
            ('Orden de los atributos', PEND), ('Explicación de la propuesta de valor con sus palabras', PEND), ('Ajustes realizados', PEND)]
     b = f'''{card([('Criterio', '2.1.4 — participación de usuarios como parte del proceso de co-creación.'), ('Participantes', 'Joselyn Toledo (usuaria) · Catalina (experta par y usuaria del segmento).'),
                ('Momentos', '1) Su voz como insumo directo de la ideación. 2) Sesión de validación del concepto.')])}
-<div class="side"><img src="img/05-entrevista.jpg" style="width:46mm;height:62mm"><div>
+<div class="side"><img src="img/05-entrevista.jpg" style="width:46mm;height:61.6mm"><div>
 <h3 style="margin-top:0">1 · La voz de las usuarias en la ideación</h3>
 <p>La co-creación no empieza en una sesión: empieza escuchando. Doce de las sesenta ideas nacen directamente de lo que dijeron la usuaria y los expertos
 en la UA1 y se marcan con borde punteado en el canvas.</p>
@@ -542,7 +542,7 @@ las curvas (meses bajos), los tramos (la agenda del día) y cuándo acelerar. El
 igual que la solución no debe exigir saber de finanzas. Además, la imagen del copiloto protege su rol: la herramienta acompaña, no decide por ella.</p>
 <h4>Metáforas descartadas</h4><ul class="small"><li>Como un GPS que recalcula la ruta cuando algo cambia (cancelaciones).</li><li>Como una alcancía con compartimentos: cada peso tiene un destino.</li></ul></div>
 <div><h4>Collage</h4>{collage_svg()}</div></div>
-<div class="collage"><img src="img/02-caso.jpg" style="width:84mm;height:40mm"><img src="img/14-dashboard.jpg" style="width:40mm;height:40mm;object-position:top"><img src="img/06-nudo.jpg" style="width:40mm;height:40mm"></div>
+<div class="collage"><img src="img/02-caso.jpg" style="width:62.7mm;height:35mm"><img src="img/14-dashboard.jpg" style="width:26.1mm;height:35mm"><img src="img/06-nudo.jpg" style="width:35mm;height:35mm"><img src="img/07-oficina-movil.jpg" style="width:35mm;height:35mm"></div>
 <p class="small muted">Collage: doble contexto de atención (clínica y domicilio), el celular como oficina móvil, el desorden que se ordena y una referencia visual de tablero. Imágenes generadas con IA por el equipo en la UA1; ilustración del tablero, elaboración propia.</p>
 '''
     cards = [f'<div class="attr" style="margin-bottom:3mm"><div class="n">{n} {sus(*s)}</div><div class="s">“{d}”</div><div class="r"><b>Necesidad</b>{nec}</div><div class="r"><b>Requerimientos</b>{r}</div></div>' for n, d, nec, r, s in atr]
@@ -697,7 +697,7 @@ STMT.update({
 # ---------------------------------------------------------------- páginas a sangre (lenguaje EV1)
 def pagina_cita():
     return '''<div class="full orange"><img src="img/06-nudo.jpg">
-<div class="in" style="top:34mm"><div class="kick">La voz de las usuarias · punto de partida de los requerimientos</div>
+<div class="in" style="top:24mm"><div class="kick">La voz de las usuarias · punto de partida de los requerimientos</div>
 <div class="q">“Para poder organizar el Excel sobre los ingresos y egresos que estoy teniendo me toma una hora actualmente diario.”</div>
 <div class="src">— Catalina, kinesióloga · entrevista a experta UA1 · P09</div>
 <div class="q2">“Siento que igual tengo como un cierto desorden o falta de educación.”<br><span class="src">— Joselyn Toledo, sobre su gestión económica</span></div></div>
