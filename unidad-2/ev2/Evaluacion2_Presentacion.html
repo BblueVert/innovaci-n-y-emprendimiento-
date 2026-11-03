@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Evaluación 2 — Presentación Copiloto Kine</title>
+<style>
+@font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'Instrument Serif';src:url(fonts/instrument-serif-latin-400-italic.woff2);font-style:italic}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-400-italic.woff2);font-weight:400;font-style:italic}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2);font-weight:700}
+:root{
+  --void:#07060E; --card:#1A1828; --border:#252235;
+  --accent:#FF6B35; --h2:#FF8C42; --h3:#FFB347; --h4:#E8637A; --h6:#7B3FA0; --h7:#4A3580;
+  --text:#F5F2FF; --text2:#9B98B8;
+  --bg:#F8F7FF; --ink:#12101E; --ink2:#504D6E; --line:#E2E0EF; --white:#FFFFFF;
+  --ok:#1F8A5B;
+  --fd:'Bebas Neue','Arial Narrow',Arial,sans-serif;
+  --fm:'DM Mono','Courier New',monospace;
+  --fb:'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif;
+  --fs:'Instrument Serif',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+@page{size:1280px 720px;margin:0}
+html,body{background:#2a2838}
+body{font-family:var(--fb);color:var(--ink);font-size:15px;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.slide{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--bg);padding:44px 64px 60px 72px;page-break-after:always;margin:0 auto 24px}
+@media print{.slide{margin:0}}
+.slide:last-child{page-break-after:auto}
+.dark{background:linear-gradient(135deg,var(--void) 0%,#1A0E2E 60%,#0D0820 100%);color:var(--text)}
+.abar{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--accent),var(--h4),var(--h6))}
+.light .abar{width:4px;opacity:.6}
+.foot{position:absolute;left:72px;right:64px;bottom:22px;display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}
+.dark .foot{color:var(--text2);border-color:var(--border)}
+.foot b{color:var(--accent);font-weight:500}
+.label{font-family:var(--fm);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.dark .label{color:var(--text2)}
+.acc{color:var(--accent)}
+.disp{font-family:var(--fd);letter-spacing:.03em;line-height:.95;font-weight:400}
+h1{font-family:var(--fd);font-weight:400;font-size:46px;letter-spacing:.02em;line-height:1;margin:6px 0 4px}
+.sub{color:var(--ink2);font-size:15.5px;max-width:980px}
+.serif{font-family:var(--fs);font-style:italic;font-weight:400}
+.bar{height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 18px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.tag{display:inline-block;font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.35);color:var(--accent)}
+.tag.p{background:rgba(123,63,160,.1);border-color:rgba(123,63,160,.35);color:var(--h6)}
+.tag.g{background:rgba(31,138,91,.1);border-color:rgba(31,138,91,.4);color:var(--ok)}
+.s{display:inline-block;font-family:var(--fm);font-size:9.5px;font-weight:500;padding:1px 5px;border-radius:3px;margin-left:2px;vertical-align:1px}
+.s.ec{background:#FFE8DC;color:#B4441A}.s.so{background:#EDE6F7;color:#4A3580}.s.am{background:#DDF2E7;color:#1F6B47}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+ul.clean{list-style:none}
+ul.clean li{padding-left:16px;position:relative;margin-bottom:5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.q{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--ink2);border-left:3px solid var(--accent);padding:4px 12px;background:rgba(255,107,53,.05)}
+.num{font-family:var(--fd);font-size:40px;line-height:1;color:var(--accent)}
+.small{font-size:13px}.xs{font-size:11.5px}
+.muted{color:var(--ink2)}
+.row{display:flex;justify-content:space-between;align-items:center}
+table.it{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
+table.it th{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:7px 9px;border-bottom:2px solid var(--line)}
+table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.33}
+.arrow{color:var(--accent);font-weight:700}
+
+/* BMC */
+.bmc{display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:1fr 1fr .74fr;gap:8px;height:498px}
+.bmc .b{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:11.2px;line-height:1.3;overflow:hidden}
+.bmc .b h4{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--h6);margin-bottom:5px}
+.bmc .b ul{list-style:none}
+.bmc .b li{margin-bottom:3px;padding-left:9px;position:relative}
+.bmc .b li::before{content:"·";position:absolute;left:0;color:var(--ink2);font-weight:700}
+.bmc .b li.n::before{content:"+";color:var(--accent);font-weight:700}
+.bmc .b li.n b{color:var(--accent)}
+.vp{background:linear-gradient(160deg,#fff 0%,#FFF3EC 100%)!important;border-color:rgba(255,107,53,.45)!important}
+
+/* Storyboard */
+.sb{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;height:506px}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.panel .art{height:150px;background:#F1EFFA;position:relative;border-bottom:1px solid var(--line)}
+.panel .art svg{width:100%;height:100%;display:block}
+.panel .n{position:absolute;top:8px;left:8px;font-family:var(--fd);font-size:22px;line-height:1;background:var(--h6);color:#fff;border-radius:5px;padding:4px 8px 2px}
+.panel .pain{position:absolute;top:8px;right:8px}
+.panel .cap{padding:9px 12px;font-size:12.3px;line-height:1.36}
+.panel .cap b{display:block;font-size:13px;margin-bottom:2px}
+.v2 .panel .art{background:#FFF1E9}
+.v2 .panel .n{background:var(--accent)}
+
+/* Phones */
+.phones{display:flex;gap:28px;justify-content:center;margin-top:12px}
+.phone{width:212px;height:432px;border-radius:30px;background:#0D0B18;padding:9px;box-shadow:0 18px 40px rgba(18,16,30,.2)}
+.phone .scr{width:100%;height:100%;border-radius:23px;background:#fff;overflow:hidden;position:relative;font-size:10.4px;line-height:1.3}
+.phone .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:60px;height:14px;background:#0D0B18;border-radius:10px;z-index:3}
+.sbar{height:28px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 16px 3px;font-size:9px;font-weight:700}
+.ph{padding:6px 12px 8px}
+.ph .t{font-weight:700;font-size:14px}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:3px 8px;font-size:9.5px;margin:0 3px 4px 0}
+.chip.on{background:var(--k);border-color:var(--k);color:#fff;font-weight:700}
+.btn{display:block;text-align:center;background:var(--k);color:#fff;font-weight:700;border-radius:10px;padding:8px;font-size:11.5px}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.li{border:1px solid var(--line);border-radius:9px;padding:6px 9px;margin-bottom:6px}
+.li .row>*{white-space:nowrap}
+.li.row>*{white-space:nowrap}
+.prog{height:8px;background:#EEEAF7;border-radius:8px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--k)}
+.tabbar{position:absolute;bottom:0;left:0;right:0;height:40px;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;font-size:8.5px;color:var(--ink2);background:#fff}
+.tabbar span.on{color:var(--k);font-weight:700}
+.big{font-size:21px;font-weight:700;line-height:1.1}
+.sem{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:-1px;margin-right:4px}
+.v1p{--k:#7B3FA0}
+.v2p{--k:#FF6B35}
+.cap2{font-size:12.5px;text-align:center;margin-top:10px;width:212px}
+.rq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rq .c{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.rq .c h5{font-size:13px;margin-bottom:4px}
+.rq .c .xs{line-height:1.4;font-size:12.6px}
+.pri{font-family:var(--fd);font-size:20px;color:#fff;background:var(--h6);border-radius:4px;padding:1px 7px 0;float:right;line-height:1.2}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="jos" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="13" fill="#F2C7A5"/>
+      <path d="M16 16 Q18 2 30 3 Q44 3 45 17 Q40 9 30 9 Q21 9 16 16Z" fill="#3B2416"/>
+      <circle cx="40" cy="8" r="6" fill="#3B2416"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L50 80 L10 80Z" fill="#FF6B35"/>
+      <rect x="26" y="34" width="8" height="8" fill="#fff" opacity=".9"/>
+      <rect x="15" y="80" width="12" height="28" rx="3" fill="#7B3FA0"/>
+      <rect x="33" y="80" width="12" height="28" rx="3" fill="#7B3FA0"/>
+    </symbol>
+    <symbol id="pac" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="13" fill="#E9B894"/>
+      <path d="M17 14 Q20 4 30 4 Q41 4 43 14 Q36 10 30 10 Q23 10 17 14Z" fill="#C9C6D6"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L50 80 L10 80Z" fill="#4A3580"/>
+      <rect x="15" y="80" width="12" height="28" rx="3" fill="#504D6E"/>
+      <rect x="33" y="80" width="12" height="28" rx="3" fill="#504D6E"/>
+    </symbol>
+    <symbol id="phone" viewBox="0 0 30 52"><rect x="1" y="1" width="28" height="50" rx="5" fill="#13111F"/><rect x="4" y="6" width="22" height="38" rx="2" fill="#fff"/></symbol>
+    <symbol id="laptop" viewBox="0 0 120 80"><rect x="14" y="4" width="92" height="60" rx="4" fill="#13111F"/><rect x="19" y="9" width="82" height="50" fill="#fff"/><path d="M2 66 H118 L112 76 H8Z" fill="#A9A6C2"/></symbol>
+    <symbol id="car" viewBox="0 0 120 60">
+      <path d="M10 40 Q12 26 26 24 L40 10 H80 L96 24 Q110 26 112 40 V48 H10Z" fill="#FF6B35"/>
+      <path d="M44 14 H62 V26 H32Z M66 14 H78 L90 26 H66Z" fill="#DCEBFF"/>
+      <circle cx="32" cy="48" r="9" fill="#13111F"/><circle cx="32" cy="48" r="4" fill="#9B98B8"/>
+      <circle cx="90" cy="48" r="9" fill="#13111F"/><circle cx="90" cy="48" r="4" fill="#9B98B8"/>
+    </symbol>
+    <symbol id="house" viewBox="0 0 80 70"><path d="M6 32 L40 6 L74 32Z" fill="#C4467A"/><rect x="14" y="30" width="52" height="38" fill="#fff" stroke="#E2E0EF"/><rect x="34" y="44" width="13" height="24" fill="#7B3FA0"/><rect x="20" y="38" width="10" height="10" fill="#DCEBFF"/><rect x="51" y="38" width="10" height="10" fill="#DCEBFF"/></symbol>
+    <symbol id="bubble" viewBox="0 0 60 40"><path d="M6 2 H54 Q58 2 58 6 V26 Q58 30 54 30 H22 L12 38 L14 30 H6 Q2 30 2 26 V6 Q2 2 6 2Z" fill="#25D366"/><rect x="10" y="10" width="34" height="4" rx="2" fill="#fff"/><rect x="10" y="18" width="24" height="4" rx="2" fill="#fff"/></symbol>
+    <symbol id="sheet" viewBox="0 0 60 70"><rect x="2" y="2" width="56" height="66" rx="3" fill="#fff" stroke="#1F8A5B" stroke-width="2"/><rect x="2" y="2" width="56" height="12" fill="#1F8A5B"/><path d="M2 26 H58 M2 38 H58 M2 50 H58 M22 14 V68 M40 14 V68" stroke="#BFE3D1" stroke-width="1.5"/></symbol>
+    <symbol id="coins" viewBox="0 0 50 40"><ellipse cx="25" cy="32" rx="18" ry="6" fill="#E0A21A"/><ellipse cx="25" cy="26" rx="18" ry="6" fill="#FFB347"/><ellipse cx="25" cy="20" rx="18" ry="6" fill="#FFC86B"/><text x="25" y="23" font-size="9" font-weight="700" text-anchor="middle" fill="#8A5A00">$</text></symbol>
+    <symbol id="cal" viewBox="0 0 60 60"><rect x="2" y="8" width="56" height="50" rx="5" fill="#fff" stroke="#7B3FA0" stroke-width="2"/><rect x="2" y="8" width="56" height="13" rx="5" fill="#7B3FA0"/><rect x="14" y="2" width="5" height="12" rx="2" fill="#4A3580"/><rect x="41" y="2" width="5" height="12" rx="2" fill="#4A3580"/><g fill="#E2E0EF"><rect x="9" y="27" width="9" height="8"/><rect x="25" y="27" width="9" height="8"/><rect x="41" y="27" width="9" height="8"/><rect x="9" y="41" width="9" height="8"/><rect x="41" y="41" width="9" height="8"/></g><rect x="25" y="41" width="9" height="8" fill="#FF6B35"/></symbol>
+    <symbol id="moon" viewBox="0 0 40 40"><path d="M28 4 A16 16 0 1 0 36 28 A13 13 0 1 1 28 4Z" fill="#FFB347"/></symbol>
+    <symbol id="check" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#1F8A5B"/><path d="M11 20 L18 27 L30 13" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="warn" viewBox="0 0 40 40"><path d="M20 3 L38 36 H2Z" fill="#E8637A"/><rect x="18" y="14" width="4" height="12" fill="#fff"/><rect x="18" y="29" width="4" height="4" fill="#fff"/></symbol>
+    <symbol id="pin" viewBox="0 0 30 40"><path d="M15 2 A12 12 0 0 1 27 14 C27 24 15 38 15 38 C15 38 3 24 3 14 A12 12 0 0 1 15 2Z" fill="#FF6B35"/><circle cx="15" cy="14" r="5" fill="#fff"/></symbol>
+    <symbol id="pinp" viewBox="0 0 30 40"><path d="M15 2 A12 12 0 0 1 27 14 C27 24 15 38 15 38 C15 38 3 24 3 14 A12 12 0 0 1 15 2Z" fill="#7B3FA0"/><circle cx="15" cy="14" r="5" fill="#fff"/></symbol>
+    <symbol id="bell" viewBox="0 0 40 40"><path d="M20 4 C12 4 9 11 9 18 V26 L5 31 H35 L31 26 V18 C31 11 28 4 20 4Z" fill="#FFB347"/><circle cx="20" cy="34" r="4" fill="#E0A21A"/></symbol>
+    <symbol id="clock" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fff" stroke="#7B3FA0" stroke-width="3"/><path d="M20 10 V20 L27 24" stroke="#12101E" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="gauge" viewBox="0 0 80 50"><path d="M8 44 A32 32 0 0 1 72 44" fill="none" stroke="#EEEAF7" stroke-width="10"/><path d="M8 44 A32 32 0 0 1 52 14" fill="none" stroke="#FF6B35" stroke-width="10"/><path d="M40 44 L56 22" stroke="#12101E" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="44" r="4" fill="#12101E"/></symbol>
+    <symbol id="jar" viewBox="0 0 40 50"><rect x="8" y="2" width="24" height="6" rx="2" fill="#7B3FA0"/><path d="M6 10 H34 V44 Q34 48 30 48 H10 Q6 48 6 44Z" fill="#fff" stroke="#7B3FA0" stroke-width="2"/><rect x="8" y="26" width="24" height="20" rx="2" fill="#FFB347"/></symbol>
+  </defs>
+</svg>
+
+<!-- 01 PORTADA -->
+<section class="slide dark">
+  <div class="abar"></div>
+  <div class="row" style="align-items:flex-start">
+    <div><div class="disp" style="font-size:34px">HORIZON</div><div class="label acc">Arquitectura Digital → Expansión Digital</div></div>
+    <div class="label" style="text-align:right">Innovación y Emprendimiento III · FGIE03<br>INACAP Rancagua</div>
+  </div>
+  <div style="position:absolute;left:72px;top:190px;right:64px">
+    <div class="label" style="margin-bottom:10px">Evaluación N°2 · Unidad 2 · Ideación de propuestas</div>
+    <div class="disp" style="font-size:112px">Copiloto Kine</div>
+    <div class="disp" style="font-size:38px;color:var(--h3);margin-top:6px">Contexto, Modelo Canvas, storyboards y mockups V1 → V2</div>
+    <div style="height:3px;width:220px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:22px 0"></div>
+    <div style="color:var(--text2);font-size:17px;max-width:800px">El copiloto financiero de la kinesióloga independiente: convierte cada atención en ganancia real y le avisa qué viene, sin que tenga que digitar. Caso Joselyn Toledo, Centro Médico InMotion.</div>
+  </div>
+  <div style="position:absolute;left:72px;right:64px;bottom:44px;display:flex;justify-content:space-between;align-items:flex-end">
+    <div>
+      <div style="font-weight:700;font-size:16px">Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez</div>
+      <div class="label" style="margin-top:4px">Diseño Digital · Profesor: Roberto Escobar Donoso</div>
+    </div>
+    <div class="label">Rancagua · Noviembre 2026</div>
+  </div>
+</section>
+
+<!-- 02 ÍNDICE -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">Contenido</div>
+  <h1>Hoja de ruta</h1>
+  <div class="bar"></div>
+  <div class="grid g2" style="gap:12px 48px;margin-top:6px">
+    <div>
+      <div class="label acc" style="margin-bottom:8px">01 · Contexto general (UA1 + UA2)</div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Caso de estudio y equipo</span><span class="label">03</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA1 · Diagnóstico e insights</span><span class="label">04</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA1 · Desafío redefinido</span><span class="label">05</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Referentes y tendencias</span><span class="label">06</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Perfil y requerimientos</span><span class="label">07</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · De 60 ideas a un concepto</span><span class="label">08</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Propuesta de valor y métricas</span><span class="label">09</span></div>
+    </div>
+    <div>
+      <div class="label acc" style="margin-bottom:8px">02 · Propuesta de solución</div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Modelo Canvas actualizado</span><span class="label">10</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 1</span><span class="label">11</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 1</span><span class="label">12</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Iteración: de V1 a V2</span><span class="label">13</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 2 (iterada)</span><span class="label">14</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 2 (iterada)</span><span class="label">15</span></div>
+      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Próximos pasos</span><span class="label">16</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>Equipo HORIZON · INACAP Rancagua · 2026</span><b>02</b></div>
+</section>
+
+<!-- 03 CASO -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general</div>
+  <h1>Una kinesióloga, dos negocios en paralelo</h1>
+  <div class="sub">Joselyn Toledo tiene empresa propia desde hace ~1 año. Atiende en el box de InMotion y en los hogares de sus pacientes, y su oficina es el celular.</div>
+  <div class="bar"></div>
+  <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:18px">
+    <div>
+      <img src="img/02-caso.jpg" style="width:100%;height:250px;object-fit:cover;border-radius:10px;border:1px solid var(--line)">
+      <div class="grid g2" style="margin-top:12px;gap:12px">
+        <div class="card"><span class="tag p">Clínica InMotion</span><div class="num" style="margin-top:8px;font-size:34px">70 / 30</div><div class="xs muted">Comisión. La secretaria de la clínica gestiona esa agenda.</div></div>
+        <div class="card"><span class="tag">Domicilio particular</span><div class="small" style="margin-top:8px">Coordina por WhatsApp, viaja en auto propio con sus materiales y cobra en efectivo, con boleta o por convenio.</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card">
+        <span class="tag p">Perfil</span>
+        <ul class="clean small" style="margin-top:10px">
+          <li>Rehabilitación musculoesquelética, respiratoria y neurológica, masoterapia, psicomotricidad acuática.</li>
+          <li>Diplomados en fisiología del ejercicio y piso pélvico.</li>
+          <li>10 a 32 h semanales, de lunes a sábado.</li>
+          <li>Gestiona con WhatsApp, el calendario del celular y un Excel que llena al final del día.</li>
+        </ul>
+      </div>
+      <div class="q">"Yo los trato como a mí me gustase que me tratasen."</div>
+      <div class="card" style="padding:12px 16px">
+        <span class="tag g">Equipo HORIZON</span>
+        <div class="small" style="margin-top:8px">Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Contexto · Caso y equipo</span><b>03</b></div>
+</section>
+
+<!-- 04 UA1 -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Unidad 1 — Diagnóstico y selección de oportunidades</div>
+  <h1>Ocho insights, triangulados con tres fuentes</h1>
+  <div class="sub">Entrevista a la usuaria, entrevistas a expertos (Catalina, kinesióloga par, y un asesor financiero), observación AEIOU, PESTAL y 8 antecedentes del rubro.</div>
+  <div class="bar"></div>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:10px">
+    <div class="card"><div class="row"><b class="acc">I1</b><span class="xs muted">3/3</span></div><b class="small">Ocupada no es lo mismo que rentable</b></div>
+    <div class="card" style="border-color:rgba(255,107,53,.5)"><div class="row"><b class="acc">I2 · raíz</b><span class="xs muted">3/3</span></div><b class="small">La agenda es el origen del dato financiero</b></div>
+    <div class="card"><div class="row"><b class="acc">I3</b><span class="xs muted">3/3</span></div><b class="small">El Excel como parche diario</b></div>
+    <div class="card"><div class="row"><b class="acc">I4</b><span class="xs muted">3/3</span></div><b class="small">Impuestos como sorpresa</b></div>
+    <div class="card"><div class="row"><b class="acc">I5</b><span class="xs muted">3/3</span></div><b class="small">Los costos invisibles del domicilio</b></div>
+    <div class="card"><div class="row"><b class="acc">I6</b><span class="xs muted">3/3</span></div><b class="small">Inestabilidad sin memoria</b></div>
+    <div class="card"><div class="row"><b class="acc">I7</b><span class="xs muted">3/3</span></div><b class="small">Fidelización informal por WhatsApp</b></div>
+    <div class="card"><div class="row"><b class="acc">I8</b><span class="xs muted">2/3</span></div><b class="small">Crecimiento sin plan</b></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px;gap:14px">
+    <div class="q" style="font-size:16px">"Siento que igual tengo como un cierto desorden o falta de educación."<div class="xs" style="font-family:var(--fb);font-style:normal;margin-top:4px">Joselyn, sobre su gestión económica</div></div>
+    <div class="q" style="font-size:16px">"Para poder organizar el Excel sobre los ingresos y egresos… me toma una hora actualmente diario."<div class="xs" style="font-family:var(--fb);font-style:normal;margin-top:4px">Catalina, kinesióloga · experta par</div></div>
+    <div class="q" style="font-size:16px">"Estar ocupado y estar ganando dinero no son lo mismo."<div class="xs" style="font-family:var(--fb);font-style:normal;margin-top:4px">Asesor financiero · experto</div></div>
+  </div>
+  <div class="xs muted" style="margin-top:12px">U = usuaria · E = expertos · O = observación. La puntuación 3/3 indica que el insight apareció en las tres fuentes.</div>
+  <div class="foot"><span>Contexto · Unidad 1</span><b>04</b></div>
+</section>
+
+<!-- 05 DESAFÍO -->
+<section class="slide dark">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Cierre Unidad 1</div>
+  <h1 style="color:var(--text)">Desafío redefinido</h1>
+  <div style="height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 22px"></div>
+  <div class="dcard" style="padding:26px 30px;border-color:rgba(255,107,53,.4)">
+    <div class="label acc" style="margin-bottom:10px">¿Cómo podríamos…?</div>
+    <div style="font-size:26px;line-height:1.38;font-weight:600">
+      ¿Cómo podríamos <span class="acc">aumentar la visibilidad financiera</span> de kinesiólogas independientes con atención mixta, <span style="color:var(--h3)">conectando su agenda con sus ingresos y costos</span>, para <span class="acc">reducir a la mitad el tiempo de registro manual</span> (de ~1 h a menos de 30 min diarios) en Rancagua durante 2027?
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:20px">
+    <div class="dcard"><span class="tag">Oportunidad seleccionada</span><div style="margin-top:8px;font-size:14.5px">Agenda conectada a un tablero financiero en tiempo real, en lugar de herramientas genéricas de pago.</div></div>
+    <div class="dcard"><span class="tag p">Por qué se mantiene en la UA2</span><div style="margin-top:8px;font-size:14.5px">Lo validaron las tres fuentes: la usuaria, la experta par y el asesor financiero.</div></div>
+    <div class="dcard"><span class="tag">Lectura del entorno</span><div style="margin-top:8px;font-size:14.5px">Las colegas ya usan agendas (Cal.com, AgendaPro). La diferencia está en <b>conectar</b> la agenda con los ingresos, los costos y los impuestos.</div></div>
+  </div>
+  <div class="foot"><span>Contexto · Desafío</span><b>05</b></div>
+</section>
+
+<!-- 06 REFERENTES -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Unidad 2 — 2.1.2 Estudio comparativo de referentes</div>
+  <h1>Mirar fuera del rubro: en otros ámbitos, el dato se captura solo</h1>
+  <div class="sub">10 referentes de otros ámbitos, analizados con 5 variables (incluida la sostenibilidad). De ellos salen 6 tendencias.</div>
+  <div class="bar" style="margin-bottom:14px"></div>
+  <div class="grid" style="grid-template-columns:1.1fr 1fr;gap:18px">
+    <div class="card" style="padding:12px 14px">
+      <table class="it" style="font-size:12px">
+        <tr><th>N°</th><th>Tendencia</th><th>Casos</th></tr>
+        <tr><td style="width:40px"><b class="acc">T1</b></td><td><b>El dato se captura solo</b></td><td>Uber Driver · Mercado Pago · Strava · Google Maps</td></tr>
+        <tr><td><b class="acc">T2</b></td><td><b>Dinero con propósito y proyección legible</b></td><td>YNAB · Fintual · SII (propuesta de F22)</td></tr>
+        <tr><td><b class="acc">T3</b></td><td><b>Recurrencia que da estabilidad</b></td><td>Smart Fit</td></tr>
+        <tr><td><b class="acc">T4</b></td><td><b>Hábitos de segundos y comunidad</b></td><td>Duolingo · Strava</td></tr>
+        <tr><td><b class="acc">T5</b></td><td><b>Eficiencia como sostenibilidad</b></td><td>Google Maps · Too Good To Go</td></tr>
+        <tr><td><b class="acc">T6</b></td><td><b>Transparencia en tiempo real</b></td><td>Uber · Mercado Pago</td></tr>
+      </table>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card" style="display:flex;gap:10px;align-items:center;justify-content:space-between;padding:10px 14px">
+        <img src="img/logos/uber.png" style="height:26px"><img src="img/logos/ynab.png" style="height:26px"><img src="img/logos/fintual.png" style="height:26px"><img src="img/logos/mercadopago.png" style="height:26px"><img src="img/logos/smartfit.png" style="height:26px">
+        <img src="img/logos/duolingo.png" style="height:26px"><img src="img/logos/strava.png" style="height:26px"><img src="img/logos/googlemaps.png" style="height:26px"><img src="img/logos/toogoodtogo.png" style="height:26px"><img src="img/logos/sii.png" style="height:26px">
+      </div>
+      <div class="card">
+        <span class="tag p">Lo que ningún caso resuelve solo</span>
+        <div class="small" style="margin-top:8px">Los que capturan el dato (Uber, Mercado Pago, Strava) no lo proyectan, y los que proyectan (Fintual, YNAB) no lo capturan. La oportunidad está en <b>integrar</b>: captura automática + lectura simple + anticipación.</div>
+      </div>
+      <div class="card" style="border-color:rgba(255,107,53,.45);background:#FFF7F2">
+        <span class="tag">Conclusión para la ideación</span>
+        <div class="small" style="margin-top:8px">La solución no debe pedirle a Joselyn "ordenar mejor su Excel": debe <b>eliminar la digitación</b>. T2 y T5 aportan la sostenibilidad: estabilidad económica y menos recursos por atención.</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Contexto · Unidad 2 · Referentes</span><b>06</b></div>
+</section>
+
+<!-- 07 REQUERIMIENTOS -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Unidad 2 — 2.1.3 Perfil de usuaria y requerimientos</div>
+  <h1>13 requerimientos, 6 necesidades, una jerarquía</h1>
+  <div class="sub">Cada insight de la UA1 se tradujo en lo que la solución debe cumplir, con su aporte sostenible: <span class="s ec">Ec</span> económico · <span class="s so">So</span> social · <span class="s am">Am</span> ambiental.</div>
+  <div class="bar" style="margin-bottom:14px"></div>
+  <div class="rq">
+    <div class="c" style="border-color:rgba(123,63,160,.5)"><span class="pri">1</span><h5>C1 · Agenda conectada</h5><div class="xs muted">R1 cada cita confirmada se vuelve ingreso proyectado · R2 integrarse con la agenda que ya usa (Google Calendar, Cal.com) · R3 separar clínica 70/30 y domicilio <span class="s ec">Ec</span><span class="s am">Am</span></div></div>
+    <div class="c" style="border-color:rgba(123,63,160,.5)"><span class="pri">1</span><h5>C2 · Ganancia real visible</h5><div class="xs muted">R4 ganancia neta por atención, semana y mes · R5 sin lenguaje contable, lectura de menos de 1 minuto en el celular <span class="s ec">Ec</span><span class="s so">So</span></div></div>
+    <div class="c"><span class="pri" style="background:var(--h4)">2</span><h5>C3 · Tiempo y bienestar</h5><div class="xs muted">R6 cerrar el día en menos de 30 min, con un toque por atención · R7 registrar en el momento, no de noche <span class="s so">So</span></div></div>
+    <div class="c"><span class="pri" style="background:var(--h4)">2</span><h5>C4 · Costos y rutas del domicilio</h5><div class="xs muted">R8 descontar traslado (km y combustible) y materiales · R9 sugerir agrupar domicilios por sector <span class="s ec">Ec</span><span class="s am">Am</span></div></div>
+    <div class="c"><span class="pri" style="background:var(--h2)">3</span><h5>C5 · Anticipación y estabilidad</h5><div class="xs muted">R10 historial y proyección a 3–6 meses con estacionalidad · R11 alertar meses bajos y sugerir acciones <span class="s ec">Ec</span><span class="s so">So</span></div></div>
+    <div class="c"><span class="pri" style="background:var(--h3)">4</span><h5>C6 · Cumplimiento y confianza</h5><div class="xs muted">R12 provisionar la retención de la boleta y estimar la Operación Renta · R13 guardar solo datos financieros y de agenda, nunca la ficha clínica (Ley 21.719) <span class="s ec">Ec</span><span class="s so">So</span></div></div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1.2fr;gap:14px;margin-top:14px">
+    <div class="card" style="padding:12px 14px"><span class="tag p">Mapa de empatía · lo que le duele</span><div class="small" style="margin-top:6px">No saber cuánto gana, los meses bajos que llegan por sorpresa, el trabajo administrativo fuera de horario, los costos del domicilio que no ve y los impuestos anuales.</div></div>
+    <div class="card" style="padding:12px 14px"><span class="tag">Jerarquía (impacto × frecuencia del dolor)</span><div class="small" style="margin-top:6px"><b>1</b> C1 · C2: el núcleo; sin agenda conectada no hay dato · <b>2</b> C3 · C4: victorias tempranas · <b>3</b> C5: necesita 2–3 meses de historial · <b>4</b> C6: alto impacto, pero el dolor es anual.</div></div>
+  </div>
+  <div class="foot"><span>Contexto · Unidad 2 · Requerimientos</span><b>07</b></div>
+</section>
+
+<!-- 08 IDEACIÓN -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Unidad 2 — 2.1.4 Brainstorming, clasificación y metáfora</div>
+  <h1>De 60 ideas a un concepto: Copiloto Kine</h1>
+  <div class="bar" style="margin-bottom:14px"></div>
+  <div class="grid" style="grid-template-columns:.9fr 1.05fr 1.15fr;gap:14px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card row" style="padding:10px 14px"><div class="num" style="font-size:46px">60</div><div class="small" style="width:150px">ideas en 8 categorías · 47 con aporte sostenible</div></div>
+      <div class="card row" style="padding:10px 14px"><div class="num" style="font-size:46px">13</div><div class="small" style="width:150px">en el foco: originalidad y factibilidad ≥ 4 de 5</div></div>
+      <div class="card row" style="padding:10px 14px;border-color:rgba(255,107,53,.5)"><div class="num" style="font-size:46px">1</div><div class="small" style="width:150px">concepto directriz: <b>Copiloto Kine</b></div></div>
+      <div class="xs muted">17 ideas nacen de la voz de la usuaria o de los expertos.</div>
+    </div>
+    <div class="card">
+      <span class="tag p">Selección de la idea (máx. 30)</span>
+      <table class="it" style="margin-top:6px;font-size:12px">
+        <tr><th>Camino</th><th>Total</th></tr>
+        <tr><td style="font-weight:700">A · Copiloto Kine<div class="xs muted" style="font-weight:400">Se conecta a la agenda existente</div></td><td><b class="acc" style="font-size:18px">27</b></td></tr>
+        <tr><td style="font-weight:600">B · Planilla inteligente<div class="xs muted" style="font-weight:400">Barata, pero mantiene la digitación diaria</div></td><td><b style="font-size:18px">21</b></td></tr>
+        <tr><td style="font-weight:600">C · Agenda propia nueva<div class="xs muted" style="font-weight:400">Compite con Cal.com y AgendaPro y obliga a cambiar de herramienta</div></td><td><b style="font-size:18px">15</b></td></tr>
+      </table>
+      <div class="xs muted" style="margin-top:6px">Criterios: responde al desafío, recursos internos y externos, prototipable en la UA3, aporte sostenible y diferenciación.</div>
+    </div>
+    <div class="card" style="background:linear-gradient(160deg,#fff,#FFF3EC);border-color:rgba(255,107,53,.45)">
+      <span class="tag">Metáfora y atributos · 2.1.4.3</span>
+      <div class="serif" style="font-size:21px;line-height:1.2;margin:10px 0 6px">"Es como el tablero y el copiloto de un auto de rally."</div>
+      <div class="xs muted" style="margin-bottom:10px">Joselyn maneja. El tablero muestra la ganancia y el colchón; el copiloto le lee la ruta que viene: los meses bajos, la agenda del día y cuándo acelerar. Ella nunca suelta el volante.</div>
+      <div class="grid g2" style="gap:6px">
+        <div class="li xs"><b>Anticipador</b> <span class="s ec">Ec</span><br>avisa antes de la curva</div>
+        <div class="li xs"><b>Automático</b> <span class="s so">So</span><span class="s ec">Ec</span><br>la usuaria solo confirma</div>
+        <div class="li xs"><b>Legible de un vistazo</b> <span class="s so">So</span><br>semáforo, sin jerga</div>
+        <div class="li xs"><b>Sostenible</b> <span class="s ec">Ec</span><span class="s so">So</span><span class="s am">Am</span><br>rinde más con menos</div>
+      </div>
+    </div>
+  </div>
+  <div class="label" style="margin:16px 0 8px">Las 13 ideas del foco, en 4 categorías</div>
+  <div class="grid g4" style="gap:12px">
+    <div class="card" style="padding:10px 13px"><b class="small">Ganancia real por atención</b><div class="xs muted" style="margin-top:3px">10 ganancia neta al cerrar · 12 clínica vs. domicilio · 17 costo por km · 18 kit de materiales</div></div>
+    <div class="card" style="padding:10px 13px"><b class="small">Impuestos sin sorpresa</b><div class="xs muted" style="margin-top:3px">33 provisión de la retención · 34 termómetro de la Operación Renta</div></div>
+    <div class="card" style="padding:10px 13px"><b class="small">Anticipación y colchón</b><div class="xs muted" style="margin-top:3px">25 proyección 3–6 meses · 26 alerta de meses bajos · 29 colchón automático · 30 cupos de último minuto</div></div>
+    <div class="card" style="padding:10px 13px"><b class="small">Tiempo y rutas sostenibles</b><div class="xs muted" style="margin-top:3px">22 días por sector · 48 modo "no trabajo de noche" · 49 horas recuperadas</div></div>
+  </div>
+  <div class="foot"><span>Contexto · Unidad 2 · Ideación</span><b>08</b></div>
+</section>
+
+<!-- 09 PROPUESTA DE VALOR -->
+<section class="slide dark">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Unidad 2 — 2.1.4.4 Propuesta de valor y métricas claves</div>
+  <h1 style="color:var(--text)">Un tablero para tu práctica</h1>
+  <div style="height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 18px"></div>
+  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:18px">
+    <div>
+      <div class="dcard" style="border-color:rgba(255,107,53,.45);padding:20px 22px">
+        <div style="font-size:20px;line-height:1.42">Copiloto Kine es el copiloto financiero de la kinesióloga independiente: <span class="acc">se conecta a la agenda que ya usa</span> y convierte cada atención en ganancia real (descontando traslado, materiales, comisión e impuestos) para que <span style="color:var(--h3)">sepa cuánto gana, anticipe los meses bajos y deje de cuadrar Excel de noche</span>.</div>
+      </div>
+      <div class="grid g2" style="margin-top:14px;gap:12px">
+        <div class="dcard" style="padding:12px 14px"><div class="label" style="margin-bottom:6px">Situación actual</div><div class="small">Atiende de día y cuadra el Excel de noche. No sabe si un mes fue bueno hasta que termina.</div></div>
+        <div class="dcard" style="padding:12px 14px"><div class="label acc" style="margin-bottom:6px">Situación futura</div><div class="small">Cierra cada atención con un toque, ve su ganancia real y sabe con meses de anticipación qué viene.</div></div>
+      </div>
+    </div>
+    <div class="dcard" style="padding:14px 16px">
+      <div class="label" style="margin-bottom:8px">Métricas claves (línea base → meta)</div>
+      <table class="it" style="font-size:12px;color:var(--text)">
+        <tr><td style="border-color:var(--border);width:auto;font-weight:600">Minutos diarios de registro</td><td style="border-color:var(--border)">~60 → <b class="acc">&lt; 30</b></td></tr>
+        <tr><td style="border-color:var(--border);font-weight:600">% de atenciones registradas sin digitar</td><td style="border-color:var(--border)">0 % → <b class="acc">≥ 80 %</b></td></tr>
+        <tr><td style="border-color:var(--border);font-weight:600">Diferencia entre ganancia proyectada y real</td><td style="border-color:var(--border)">— → <b class="acc">≤ 10 %</b></td></tr>
+        <tr><td style="border-color:var(--border);font-weight:600">Meses con la retención provisionada</td><td style="border-color:var(--border)">0 → <b class="acc">100 %</b></td></tr>
+        <tr><td style="border-color:var(--border);font-weight:600">Colchón para meses bajos</td><td style="border-color:var(--border)">0 → <b class="acc">≥ 1 mes</b></td></tr>
+        <tr><td style="border-color:var(--border);font-weight:600">Km mensuales en domicilios</td><td style="border-color:var(--border)">por medir → <b class="acc">−10 %</b></td></tr>
+      </table>
+      <div class="xs" style="color:var(--text2);margin-top:8px">Las líneas base "por medir" se levantan en las dos primeras semanas de testeo de la UA3.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Contexto · Unidad 2 · Propuesta de valor</span><b>09</b></div>
+</section>
+
+<!-- 10 CANVAS -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div>
+      <div class="label">02 · Propuesta · Modelo de negocio</div>
+      <h1 style="font-size:42px">Modelo Canvas actualizado · Copiloto Kine</h1>
+    </div>
+    <div class="small muted" style="text-align:right;max-width:400px">Base: panel de propuesta de valor (2.1.4.4). <span style="color:var(--accent);font-weight:700">+ naranjo</span> = lo que agrega la iteración V2.</div>
+  </div>
+  <div class="bmc" style="margin-top:10px">
+    <div class="b" style="grid-column:1/3;grid-row:1/3"><h4>Socios clave</h4><ul>
+      <li>Google Calendar / Cal.com (API sin costo)</li><li>Clínicas como InMotion</li><li>Asesor financiero y contadoras: validación tributaria</li><li>Comunidad gremial de kinesiología</li>
+      <li class="n">Servicios de mapas para las rutas por sector</li><li class="n">Medios de pago (link o QR) que generan el registro del cobro</li></ul></div>
+    <div class="b" style="grid-column:3/5;grid-row:1/2"><h4>Actividades clave</h4><ul>
+      <li>Diseño y desarrollo low-code</li><li>Integración con la agenda</li><li>Onboarding y soporte</li><li>Contenido educativo</li>
+      <li class="n">Mantener las reglas de retención vigentes (Ley 21.133)</li></ul></div>
+    <div class="b" style="grid-column:3/5;grid-row:2/3"><h4>Recursos clave</h4><ul>
+      <li>Equipo HORIZON: UX/UI, Figma, WordPress, IA</li><li>Base de datos (Google Sheets en el prototipo)</li><li>Co-creación con kinesiólogas reales</li>
+      <li class="n">Historial de 2–3 meses para proyectar</li></ul></div>
+    <div class="b vp" style="grid-column:5/7;grid-row:1/3"><h4>Propuesta de valor</h4><ul>
+      <li>Convierte cada atención en ganancia real y avisa qué viene, sin digitar</li><li>Conectado a la agenda que ya usa</li><li>Anticipador · Automático · Legible · Sostenible</li><li>Ganancia neta por atención con comisión, traslado y materiales descontados</li>
+      <li class="n">Impuestos sin sorpresa: la retención se aparta en cada cobro</li><li class="n">Menos km y cero cierres nocturnos</li></ul></div>
+    <div class="b" style="grid-column:7/9;grid-row:1/2"><h4>Relación con clientes</h4><ul>
+      <li>Onboarding de 10 min importando su Excel</li><li>Resumen semanal por WhatsApp</li><li>Co-creación continua</li>
+      <li class="n">Alertas con acción sugerida y un solo aviso diario configurable</li></ul></div>
+    <div class="b" style="grid-column:7/9;grid-row:2/3"><h4>Canales</h4><ul>
+      <li>Recomendación entre pares</li><li>Instagram y contenido educativo</li><li>Clínicas como InMotion</li><li>Comunidad gremial</li></ul></div>
+    <div class="b" style="grid-column:9/11;grid-row:1/3"><h4>Segmentos de clientes</h4><ul>
+      <li>Kinesiólogas y kinesiólogos independientes con atención mixta (clínica + domicilio), Rancagua y O'Higgins</li>
+      <li><b>Early adopters:</b> 0 a 2 años de práctica particular, como Joselyn y Catalina</li></ul></div>
+    <div class="b" style="grid-column:1/6;grid-row:3/4"><h4>Estructura de costos</h4><ul>
+      <li>Diseño y desarrollo low-code · nube y APIs · soporte · adquisición por contenido digital</li>
+      <li class="n">Mantención de las integraciones de rutas y cobro</li></ul></div>
+    <div class="b" style="grid-column:6/11;grid-row:3/4"><h4>Fuentes de ingresos</h4><ul>
+      <li>Suscripción mensual de referencia de $20.000–$25.000 CLP (disposición a pagar declarada: $30.000–$40.000)</li><li>Plan básico gratuito con el tablero mensual</li>
+      <li class="n">Funciones de la V2 (impuestos, rutas, colchón) en el plan pagado; precio a validar en la UA4</li></ul></div>
+  </div>
+  <div class="foot"><span>Propuesta · Modelo Canvas</span><b>10</b></div>
+</section>
+
+<!-- 11 STORYBOARD V1 -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 1 — alcance mínimo</div><h1 style="font-size:42px">Storyboard V1 · El tablero conectado a la agenda</h1></div>
+    <span class="tag p">Primera versión</span>
+  </div>
+  <div class="sb" style="margin-top:12px">
+    <div class="panel"><div class="art" style="background:#2A2547"><span class="n">1</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+      <svg viewBox="0 0 300 150"><use href="#moon" x="246" y="36" width="28" height="28"/>
+      <use href="#jos" x="30" y="36" width="62" height="114"/><use href="#laptop" x="104" y="44" width="118" height="80"/><use href="#sheet" x="140" y="52" width="40" height="46"/>
+      <text x="230" y="118" fill="#FFB347" font-size="20" font-weight="700">23:10</text></svg></div>
+      <div class="cap"><b>Hoy: el Excel de noche</b>Después de atender, Joselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.</div></div>
+    <div class="panel"><div class="art"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="36" y="36" width="62" height="114"/><use href="#phone" x="100" y="70" width="30" height="52"/>
+      <use href="#cal" x="160" y="40" width="54" height="54"/><path d="M218 66 H240" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#coins" x="242" y="48" width="44" height="36"/>
+      <text x="152" y="116" font-size="11" fill="#504D6E">Conecta su calendario</text></svg></div>
+      <div class="cap"><b>Conecta la agenda que ya usa</b>En 10 minutos enlaza su calendario, importa su Excel y define la comisión 70/30, el costo por km y el kit de materiales.</div></div>
+    <div class="panel"><div class="art"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#cal" x="40" y="44" width="62" height="62"/><path d="M110 76 H160" stroke="#7B3FA0" stroke-width="3"/><path d="M152 68 L162 76 L152 84" stroke="#7B3FA0" stroke-width="3" fill="none"/>
+      <rect x="170" y="44" width="110" height="62" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="180" y="66" font-size="11" fill="#504D6E">Ingreso proyectado</text><text x="180" y="90" font-size="18" font-weight="700" fill="#7B3FA0">+$25.000</text></svg></div>
+      <div class="cap"><b>Cada cita se vuelve un ingreso proyectado</b>La cita del jueves aparece sola en el tablero, etiquetada como clínica o domicilio. No hay que volver a digitarla.</div></div>
+    <div class="panel"><div class="art"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="14" y="58" width="90" height="80"/><use href="#jos" x="110" y="36" width="62" height="114"/><use href="#phone" x="170" y="68" width="30" height="52"/>
+      <rect x="208" y="46" width="84" height="58" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="216" y="64" font-size="9.5" fill="#504D6E">Ganancia neta</text><text x="216" y="86" font-size="16" font-weight="700" fill="#1F8A5B">$20.900</text><use href="#check" x="262" y="110" width="26" height="26"/></svg></div>
+      <div class="cap"><b>"Atención realizada" en un toque</b>Al despedirse confirma la atención y ve su ganancia neta: el traslado y los materiales ya vienen descontados.</div></div>
+    <div class="panel"><div class="art"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="30" y="36" width="62" height="114"/>
+      <rect x="110" y="34" width="170" height="90" rx="10" fill="#fff" stroke="#E2E0EF"/><circle cx="128" cy="56" r="7" fill="#F2B233"/><text x="142" y="60" font-size="11" font-weight="700" fill="#12101E">Mes en curso: 62 %</text>
+      <rect x="124" y="74" width="66" height="36" rx="5" fill="#EDE6F7"/><text x="130" y="88" font-size="8.5" fill="#4A3580">Clínica /h</text><text x="130" y="103" font-size="11" font-weight="700" fill="#4A3580">$14.700</text>
+      <rect x="198" y="74" width="68" height="36" rx="5" fill="#FFE8DC"/><text x="204" y="88" font-size="8.5" fill="#B4441A">Domicilio /h</text><text x="204" y="103" font-size="11" font-weight="700" fill="#B4441A">$16.100</text></svg></div>
+      <div class="cap"><b>Tablero con semáforo</b>Ve la ganancia real del mes de un vistazo y compara dónde gana más por hora: en la clínica o a domicilio.</div></div>
+    <div class="panel"><div class="art"><span class="n">6</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+      <svg viewBox="0 0 300 150"><polyline points="24,60 74,52 124,92" fill="none" stroke="#7B3FA0" stroke-width="4"/><polyline points="124,92 174,74" fill="none" stroke="#7B3FA0" stroke-width="4" stroke-dasharray="7 5"/>
+      <text x="28" y="122" font-size="9.5" fill="#504D6E">Dic · Ene · Feb · Mar</text><use href="#pinp" x="190" y="30" width="20" height="26"/><use href="#pinp" x="250" y="96" width="20" height="26"/><use href="#pinp" x="214" y="112" width="20" height="26"/>
+      <text x="196" y="80" font-size="10" font-weight="700" fill="#E8637A">¿Y abril?</text></svg></div>
+      <div class="cap"><b>Proyección a 3 meses… y lo que falta</b>Ve que febrero viene bajo, pero la app no le sugiere qué hacer. Los domicilios siguen dispersos y la Operación Renta todavía no aparece.</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V1 · alcance mínimo definido en el informe EV2</span><b>11</b></div>
+</section>
+
+<!-- 12 MOCKUPS V1 -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 1</div><h1 style="font-size:42px">Mockups V1 · Copiloto Kine (alcance mínimo)</h1></div>
+    <span class="tag p">Primera versión</span>
+  </div>
+  <div class="phones v1p">
+    <!-- A conectar -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="xs muted">Paso 2 de 3</div>
+        <div class="t">Conecta tu agenda</div>
+        <div class="xs muted" style="margin-bottom:8px">Usa la que ya tienes; no la reemplazamos.</div>
+        <div class="li row"><b>Google Calendar</b><b style="color:var(--ok)">● Conectado</b></div>
+        <div class="li row"><span>Cal.com</span><span class="muted">Conectar</span></div>
+        <div class="li row"><span>Importar mi Excel</span><span class="muted">.xlsx</span></div>
+        <div style="font-weight:700;margin:6px 0 4px">Tus reglas</div>
+        <div class="li xs row"><span>Comisión clínica</span><b>70 / 30</b></div>
+        <div class="li xs row"><span>Costo por km</span><b>$180</b></div>
+        <div class="li xs row"><span>Kit de materiales</span><b>3 kits</b></div>
+        <span class="btn" style="margin-top:6px">Continuar</span>
+      </div></div></div><div class="cap2"><b>A · Onboarding</b> y agenda conectada</div></div>
+    <!-- B atención -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>12:31</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="li" style="background:#F4EFFA;border-color:#D8CCEC"><b>¿Atención realizada?</b><div class="xs muted">L. Muñoz · Domicilio · 11:30</div></div>
+        <span class="btn">✓ Sí, realizada</span>
+        <div style="height:6px"></div>
+        <span class="btn ghost">Reagendar / no asistió</span>
+        <div style="font-weight:700;margin:10px 0 4px">Ganancia de esta atención</div>
+        <div class="li xs"><div class="row"><span>Valor sesión</span><b>$25.000</b></div><div class="row"><span>Traslado · 12 km</span><span>−$2.160</span></div><div class="row"><span>Materiales</span><span>−$1.940</span></div></div>
+        <div class="li row" style="border-color:#BFE3D1;background:#EEF8F3"><b>Ganancia neta</b><b style="color:var(--ok);font-size:15px">$20.900</b></div>
+      </div></div></div><div class="cap2"><b>B · Cierre en un toque</b></div></div>
+    <!-- C tablero -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:00</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="t">Mi tablero · noviembre</div>
+        <div class="li" style="margin-top:6px"><div class="xs muted"><span class="sem" style="background:#F2B233"></span>Vas en camino</div><div class="big">$618.400</div><div class="xs muted">ganancia real · meta $1.000.000</div><div class="prog" style="margin-top:5px"><i style="width:62%"></i></div></div>
+        <div style="font-weight:700;margin:6px 0 4px">¿Dónde gano más por hora?</div>
+        <div class="grid g2" style="gap:6px"><div class="li xs">Clínica 70/30<br><b style="font-size:12px">$14.700</b></div><div class="li xs">Domicilio<br><b style="font-size:12px">$16.100</b></div></div>
+        <div class="li xs row"><span>Atenciones registradas solas</span><b>41 / 46</b></div>
+        <div class="li xs row"><span>Tiempo de cierre hoy</span><b>6 min</b></div>
+      </div>
+      <div class="tabbar"><span>Hoy</span><span class="on">● Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>C · Tablero con semáforo</b></div></div>
+    <!-- D proyección -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:01</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="t">Próximos 3 meses</div>
+        <div class="xs muted" style="margin-bottom:4px">Según tu agenda y tu historial</div>
+        <svg viewBox="0 0 180 90" style="width:100%;height:96px"><g fill="#C4A8E0"><rect x="14" y="26" width="30" height="54" rx="3"/><rect x="58" y="34" width="30" height="46" rx="3"/></g><rect x="102" y="58" width="30" height="22" rx="3" fill="#E8637A"/><rect x="146" y="36" width="30" height="44" rx="3" fill="#C4A8E0" opacity=".6"/>
+          <g font-size="8" fill="#504D6E"><text x="20" y="89">Dic</text><text x="64" y="89">Ene</text><text x="108" y="89">Feb</text><text x="152" y="89">Mar</text></g></svg>
+        <div class="li xs"><div class="row"><b>Diciembre</b><span>$940.000</span></div><div class="row"><b>Enero</b><span>$820.000</span></div><div class="row"><b style="color:var(--h4)">Febrero</b><span style="color:var(--h4)">$410.000</span></div></div>
+        <div class="li xs" style="background:#FFF1F3;border-color:#F6C3CC"><b style="color:var(--h4)">Febrero viene bajo.</b></div>
+        <div class="xs muted" style="text-align:center;margin-top:4px">(sin acción sugerida en la V1)</div>
+      </div>
+      <div class="tabbar"><span>Hoy</span><span>Tablero</span><span class="on">● Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>D · Proyección simple</b> a 3 meses</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mockups V1 · datos ficticios de ejemplo</span><b>12</b></div>
+</section>
+
+<!-- 13 ITERACIÓN -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">02 · Propuesta · Iteración</div>
+  <h1>¿Qué cambia de V1 a V2 y por qué?</h1>
+  <div class="sub">La V1 cubre el núcleo (prioridades 1 y 2). La V2 suma lo que la V1 deja abierto, a partir de los requerimientos y de la voz de las usuarias y los expertos.</div>
+  <div class="bar" style="margin-bottom:10px"></div>
+  <table class="it" style="font-size:13.6px">
+    <tr><th>Aspecto</th><th>Versión 1</th><th>Evidencia</th><th>Versión 2 (iterada)</th></tr>
+    <tr><td style="font-weight:700;width:140px">Impuestos</td><td>No se consideran</td><td>Asesor financiero: la Operación Renta llega como sorpresa · I4 · R12</td><td><span class="arrow">→</span> Retención apartada en cada cobro y termómetro de la Operación Renta en pesos (ideas 33 y 34) <span class="s ec">Ec</span></td></tr>
+    <tr><td style="font-weight:700">Meses bajos</td><td>Los muestra, pero no sugiere qué hacer</td><td>Asesor financiero: no hay colchón para los meses bajos · I6 · R11</td><td><span class="arrow">→</span> Alerta temprana con acciones, colchón automático (un % de cada pago) y cupos de último minuto (ideas 26, 29 y 30) <span class="s ec">Ec</span><span class="s so">So</span></td></tr>
+    <tr><td style="font-weight:700">Domicilios</td><td>Descuenta los km, pero no los reduce</td><td>I5 · R9 · el auto propio es parte central de sus costos</td><td><span class="arrow">→</span> Días por sector ("martes = Machalí") y ruta del día agrupada (ideas 19 y 22) <span class="s am">Am</span><span class="s ec">Ec</span></td></tr>
+    <tr><td style="font-weight:700">Bienestar</td><td>Cierre rápido, pero a cualquier hora</td><td>Catalina: "me toma una hora actualmente diario" · R6 · R7</td><td><span class="arrow">→</span> Modo "no trabajo de noche" (cierre antes de las 21 h) e indicador de horas recuperadas (ideas 48 y 49) <span class="s so">So</span></td></tr>
+    <tr><td style="font-weight:700">Proyección</td><td>3 meses, solo con la agenda</td><td>R10 · se activa con 2–3 meses de historial</td><td><span class="arrow">→</span> 3 a 6 meses con estacionalidad, escrita en palabras cotidianas (referente Fintual) <span class="s ec">Ec</span></td></tr>
+    <tr><td style="font-weight:700">Avisos</td><td>Una notificación por cada atención</td><td>Riesgo de sobrecarga identificado en el informe EV2</td><td><span class="arrow">→</span> Resumen semanal por WhatsApp y un solo aviso diario configurable <span class="s so">So</span></td></tr>
+  </table>
+  <div class="xs muted" style="margin-top:8px">La V2 es el material que se llevará a la sesión de co-creación con Joselyn y Catalina (votación, metáfora y test de 5 segundos). Sus resultados se integrarán como siguiente ciclo.</div>
+  <div class="foot"><span>Propuesta · Iteración</span><b>13</b></div>
+</section>
+
+<!-- 14 STORYBOARD V2 -->
+<section class="slide light v2" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2</div><h1 style="font-size:42px">Storyboard V2 · El copiloto que lee la ruta</h1></div>
+    <span class="tag">Versión iterada</span>
+  </div>
+  <div class="sb" style="margin-top:12px">
+    <div class="panel"><div class="art"><span class="n">1</span>
+      <svg viewBox="0 0 300 150"><path d="M26 118 C70 70 120 120 160 86 S240 46 278 54" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="8 6"/>
+      <use href="#pin" x="14" y="92" width="24" height="32"/><use href="#pin" x="148" y="60" width="24" height="32"/><use href="#pin" x="200" y="44" width="24" height="32"/><use href="#pin" x="266" y="26" width="24" height="32"/>
+      <use href="#car" x="50" y="18" width="90" height="46"/><text x="176" y="122" font-size="12" font-weight="700" fill="#B4441A">Martes = Machalí</text></svg></div>
+      <div class="cap"><b>Martes = Machalí</b>Al empezar el día, el copiloto agrupa los domicilios por sector y ordena la ruta. Son menos km y menos combustible.</div></div>
+    <div class="panel"><div class="art"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="10" y="60" width="84" height="76"/><use href="#jos" x="98" y="36" width="62" height="114"/><use href="#phone" x="158" y="68" width="30" height="52"/>
+      <use href="#coins" x="200" y="30" width="44" height="36"/><use href="#jar" x="250" y="30" width="32" height="40"/>
+      <text x="198" y="92" font-size="9.5" fill="#504D6E">Retención apartada</text><text x="198" y="108" font-size="9.5" fill="#504D6E">+ colchón 5 %</text><use href="#check" x="246" y="112" width="26" height="26"/></svg></div>
+      <div class="cap"><b>Un toque reparte el pago</b>Al cerrar la atención, la ganancia neta se calcula sola y se aparta la retención de la boleta y un % para el colchón.</div></div>
+    <div class="panel"><div class="art"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#cal" x="30" y="40" width="64" height="64"/><text x="28" y="124" font-size="10" fill="#E8637A" font-weight="700">16:00 cancelada</text>
+      <path d="M104 72 H150" stroke="#FF6B35" stroke-width="3"/><path d="M142 64 L152 72 L142 80" stroke="#FF6B35" stroke-width="3" fill="none"/>
+      <use href="#pac" x="168" y="36" width="56" height="104"/><use href="#bubble" x="228" y="40" width="56" height="38"/><use href="#check" x="242" y="96" width="30" height="30"/></svg></div>
+      <div class="cap"><b>La hora vacía también genera ingreso</b>Un paciente cancela. El copiloto ofrece ese cupo de último minuto a precio preferente a su lista de pacientes y alguien lo toma.</div></div>
+    <div class="panel"><div class="art"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="34" y="36" width="62" height="114"/><use href="#phone" x="96" y="68" width="30" height="52"/><use href="#clock" x="150" y="36" width="50" height="50"/>
+      <text x="210" y="58" font-size="16" font-weight="700" fill="#12101E">20:40</text><text x="150" y="110" font-size="11" fill="#1F8A5B" font-weight="700">Día cerrado · 4 min</text><text x="150" y="126" font-size="10" fill="#504D6E">+11 h recuperadas este mes</text></svg></div>
+      <div class="cap"><b>Cierre antes de las 21 h</b>Tres preguntas y listo. El modo "no trabajo de noche" protege su descanso y le muestra las horas recuperadas.</div></div>
+    <div class="panel"><div class="art"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#bubble" x="22" y="30" width="80" height="54"/><use href="#jos" x="30" y="70" width="44" height="80"/>
+      <rect x="116" y="28" width="168" height="98" rx="10" fill="#fff" stroke="#FFCDB3"/><text x="128" y="50" font-size="11" font-weight="700" fill="#12101E">Resumen semanal</text>
+      <circle cx="134" cy="66" r="6" fill="#1F8A5B"/><text x="146" y="70" font-size="10" fill="#12101E">Ganancia real: $236.500</text>
+      <text x="128" y="90" font-size="10" fill="#504D6E">Colchón: $84.000</text><text x="128" y="108" font-size="10" fill="#504D6E">Renta abril: 72 % apartado</text></svg></div>
+      <div class="cap"><b>Lunes: el tablero llega solo</b>Recibe un resumen semanal por WhatsApp con la ganancia real, el colchón y lo apartado para la Operación Renta.</div></div>
+    <div class="panel"><div class="art"><span class="n">6</span>
+      <svg viewBox="0 0 300 150"><polyline points="20,60 60,50 100,56 140,44 180,98 220,72 260,56" fill="none" stroke="#7B3FA0" stroke-width="4"/>
+      <polyline points="180,98 220,84 260,66" fill="none" stroke="#FF6B35" stroke-width="4" stroke-dasharray="7 5"/>
+      <use href="#warn" x="166" y="104" width="28" height="28"/><text x="198" y="126" font-size="11" font-weight="700" fill="#E8637A">Feb · baja</text>
+      <use href="#bell" x="26" y="88" width="34" height="34"/><text x="64" y="112" font-size="10" fill="#504D6E">Ofrecer pack de 4</text></svg></div>
+      <div class="cap"><b>Avisa antes de la curva</b>Con seis semanas de anticipación advierte que febrero viene bajo y sugiere ofrecer packs de sesiones. La curva se aplana.</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V2</span><b>14</b></div>
+</section>
+
+<!-- 15 MOCKUPS V2 -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2</div><h1 style="font-size:42px">Mockups V2 · Copiloto Kine (iterado)</h1></div>
+    <span class="tag">Versión iterada</span>
+  </div>
+  <div class="phones v2p">
+    <!-- A Hoy ruta -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>8:05</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="t">Hoy · martes</div>
+        <div class="xs muted" style="margin-bottom:6px">Martes = Machalí · 3 domicilios</div>
+        <div class="li"><div class="row"><b>09:00 · Clínica</b><span class="tag p" style="font-size:8px;padding:1px 5px">70/30</span></div><span class="xs muted">M. Soto · Rehabilitación</span></div>
+        <div class="li" style="border-color:#FFCDB3;background:#FFF7F2"><div class="row"><b>11:30 · Domicilio</b><span class="tag" style="font-size:8px;padding:1px 5px">Machalí</span></div><span class="xs muted">L. Muñoz · 4,2 km</span></div>
+        <div class="li" style="border-color:#FFCDB3;background:#FFF7F2"><div class="row"><b>12:45 · Domicilio</b><span class="tag" style="font-size:8px;padding:1px 5px">Machalí</span></div><span class="xs muted">A. Rojas · 1,1 km</span></div>
+        <div class="li" style="border-style:dashed"><div class="row"><b>16:00 · Cupo libre</b><span class="tag g" style="font-size:8px;padding:1px 5px">Ofrecido</span></div><span class="xs muted">Último minuto · −15 %</span></div>
+        <div class="li xs" style="background:#EEF8F3;border-color:#BFE3D1"><b style="color:var(--ok)">Ruta agrupada:</b> −9 km hoy (≈ $1.600)</div>
+      </div>
+      <div class="tabbar"><span class="on">● Hoy</span><span>Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>A · Ruta por sector</b> y cupos libres</div></div>
+    <!-- B Cierre -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>12:31</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="xs muted">Atención realizada ✓</div>
+        <div class="t">L. Muñoz · Domicilio</div>
+        <div class="li" style="margin-top:6px;text-align:center"><div class="xs muted">Ganancia neta</div><div class="big" style="color:var(--ok)">$20.900</div><div class="xs muted">$25.000 − traslado − materiales</div></div>
+        <div style="font-weight:700;margin:6px 0 4px">El pago se reparte solo</div>
+        <div class="li xs"><div class="row"><span>Para ti (disponible)</span><b>$16.040</b></div><div class="row"><span>Retención boleta</span><b>$3.810</b></div><div class="row"><span>Colchón 5 %</span><b>$1.050</b></div></div>
+        <div style="font-weight:700;margin:4px 0 4px">¿Cómo pagó?</div>
+        <span class="chip on">Transferencia</span><span class="chip">Efectivo</span><span class="chip">Convenio</span>
+        <span class="btn" style="margin-top:4px">Confirmar</span>
+      </div></div></div><div class="cap2"><b>B · Cobro con retención</b> y colchón</div></div>
+    <!-- C Tablero -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:40</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="t">Mi tablero</div>
+        <div class="li" style="margin-top:6px"><div class="xs muted"><span class="sem" style="background:#1F8A5B"></span>Vas bien · noviembre</div><div class="big">$812.300</div><div class="prog" style="margin-top:5px"><i style="width:81%"></i></div></div>
+        <div class="grid g2" style="gap:6px">
+          <div class="li xs">Colchón<br><b style="font-size:12px">$84.000</b></div>
+          <div class="li xs">Horas recup.<br><b style="font-size:12px">11 h</b></div></div>
+        <div class="li xs"><div class="row"><b>Renta · abril</b><b style="color:var(--k)">72 %</b></div>
+          <svg viewBox="0 0 80 46" style="width:100%;height:32px"><use href="#gauge" width="80" height="46"/></svg>
+          <div class="muted">Tienes apartados $412.000 de $572.000</div></div>
+        <div class="li xs row" style="background:#EEF8F3;border-color:#BFE3D1;margin-bottom:0"><span>Cierre antes de 21 h</span><b style="color:var(--ok)">✓</b></div>
+      </div>
+      <div class="tabbar"><span>Hoy</span><span class="on">● Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>C · Tablero, colchón</b> e impuestos</div></div>
+    <!-- D Proyección + acción -->
+    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>9:00</span><span>●●● ▮</span></div>
+      <div class="ph">
+        <div class="t">Lo que viene</div>
+        <div class="xs muted">Próximos 6 meses, con tu historial</div>
+        <svg viewBox="0 0 180 64" style="width:100%;height:60px"><polyline points="6,22 36,18 66,26 96,48 126,30 156,22" fill="none" stroke="#7B3FA0" stroke-width="2.5"/><polyline points="66,26 96,38 126,26" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="96" cy="48" r="4" fill="#E8637A"/>
+          <g font-size="7" fill="#504D6E"><text x="1" y="62">Dic</text><text x="31" y="62">Ene</text><text x="61" y="62">Feb</text><text x="91" y="62">Mar</text><text x="121" y="62">Abr</text><text x="151" y="62">May</text></g></svg>
+        <div class="li xs" style="background:#FFF1F3;border-color:#F6C3CC"><b style="color:var(--h4)">En febrero vas a ganar ~$410.000</b>, la mitad de un mes normal. Faltan 6 semanas.</div>
+        <div style="font-weight:700;margin:4px 0 4px">Acciones sugeridas</div>
+        <div class="li xs row"><span>Ofrecer pack de 4 sesiones</span><b style="color:var(--k)">+$180k</b></div>
+        <div class="li xs row"><span>Recordar a 14 pacientes de alta</span><b style="color:var(--k)">+$95k</b></div>
+        <span class="btn" style="padding:6px">Activar acciones</span>
+      </div>
+      <div class="tabbar"><span>Hoy</span><span>Tablero</span><span class="on">● Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>D · Alerta con acciones</b></div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mockups V2 · datos ficticios de ejemplo</span><b>15</b></div>
+</section>
+
+<!-- 16 CIERRE -->
+<section class="slide dark">
+  <div class="abar"></div>
+  <div class="label">Cierre</div>
+  <h1 style="color:var(--text)">Próximos pasos</h1>
+  <div style="height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 24px"></div>
+  <div class="grid g3">
+    <div class="dcard"><div class="num">01</div><b style="font-size:17px">Sesión de co-creación (45 min)</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Con Joselyn (presencial) y Catalina (remota): votación de ideas, validación de la metáfora, test de 5 segundos de la propuesta de valor y elección de la métrica.</div></div>
+    <div class="dcard"><div class="num">02</div><b style="font-size:17px">Prototipo navegable · UA3</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Prototipo en Figma de los flujos de la V2, con dos ciclos de testeo midiendo las métricas claves (rúbrica ES03).</div></div>
+    <div class="dcard"><div class="num">03</div><b style="font-size:17px">Validación tributaria</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Revisar con el asesor financiero las reglas de retención y la estimación de la Operación Renta antes de prototiparlas.</div></div>
+  </div>
+  <div class="dcard" style="margin-top:22px;border-color:rgba(255,107,53,.4)">
+    <div class="serif" style="font-size:26px;line-height:1.35">Ella maneja. La herramienta es el copiloto: <span class="acc" style="font-family:var(--fb);font-style:normal;font-weight:700;font-size:22px">le devuelve el tiempo y la claridad</span> para sostener el trato 1:1 que la hace única.</div>
+  </div>
+  <div class="foot"><span>Equipo HORIZON · INACAP Rancagua · 2026</span><b>16</b></div>
+</section>
+
+</body>
+</html>

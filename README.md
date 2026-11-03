@@ -17,7 +17,6 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 
 - **Semana 1** — Completa: Canvas de Preguntas (33 preguntas / 9 bloques BMC), Card Sorting (9 categorías emergentes), entrevista de usuario Ficha A/B (Joselyn), observación no participante (por autorreporte).
 - **Semana 2** — Entrevista a experto/a Ficha A completa; Ficha B pendiente de completar con las respuestas de Catalina. Matriz PESTAL formateada en grid 2×3.
-- **Unidad 2 / Ev2** — Presentación armada (`Evaluacion2_Presentacion.html`). Falta validar la V2 con Joselyn (co-creación) y completar la evidencia del criterio 2.1.5.
 - **Semana 3** — En progreso: matrices de vaciado de hallazgos y estudio comparativo de antecedentes.
 
 ### Unidad 2 — Ideación de propuestas
@@ -33,7 +32,6 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 | Archivo | Descripción |
 |---|---|
 | `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Joselyn, mapa de síntesis, hallazgos. |
-| `Evaluacion2_Presentacion.html` / `.pdf` | Presentación Evaluación N°2 (Unidad 2), 13 láminas 16:9: contexto U1 + U2, desafío redefinido, ideación y requerimientos sostenibles, Modelo Canvas actualizado, storyboard V1 y V2 (iterado), mockups V1 (panel web) y V2 (app móvil "Pulso"), tabla de iteración y próximos pasos. |
 | `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B pendiente de completar con sus respuestas. |
 
 Ambos documentos usan la identidad visual HORIZON (portada degradada, barra de acento, tipografía Arial Narrow/Courier New/Helvetica o Bebas Neue/DM Mono/Plus Jakarta Sans según el entregable) y están pensados para exportarse a PDF vía WeasyPrint, formato A4.
@@ -77,6 +75,7 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 | Ruta | Descripción |
 |---|---|
+| `ev2/Evaluacion2_Presentacion.pdf` | **Presentación EV2 (16 láminas 16:9)**: contexto UA1 + UA2 (insights, desafío, referentes, requerimientos, ideación, propuesta de valor), Modelo Canvas actualizado de Copiloto Kine, storyboard y mockups V1 (alcance mínimo) y V2 (iterada), tabla de iteración y próximos pasos. Fuente: `ev2/Evaluacion2_Presentacion.html` |
 | `ev2/Evaluacion2_Informe_Ideacion.pdf` | **Informe EV2 (A4 vertical)**: todos los instrumentos U2, enfoque sostenible, co-creación, organización del tiempo y trazabilidad ES02. Generador: `python3 ev2/build_ev2.py` |
 | `entregas/` | Word S6–S7 (borradores previos) y bitácora U2 completa (`Bitacora_avance_U2_EV2.xlsx`) |
 | `tableros/` | Tableros PNG/HTML del borrador S6–S7 |
