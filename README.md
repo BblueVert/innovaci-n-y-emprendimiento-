@@ -75,8 +75,9 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 | Ruta | Descripción |
 |---|---|
-| `ev2/Evaluacion2_Presentacion.pdf` | **Presentación EV2 (20 láminas 16:9)**: contexto UA1 + UA2 (insights, desafío, referentes, requerimientos, ideación, propuesta de valor), Modelo Canvas actualizado de Copiloto Kine, storyboards V1, V2 Joselyn y V2 paciente, mapa del prototipo y mockups con capturas reales de la app, tabla de iteración y próximos pasos. Fuente: `ev2/Evaluacion2_Presentacion.html` |
+| `ev2/Evaluacion2_Presentacion.pdf` | **Presentación EV2 (22 láminas 16:9, estructura del brief U3: portada → problema → contexto → Canvas → storyboard con propuesta de valor → nuestro prototipo)**: contexto UA1 + UA2 (insights, desafío, referentes, requerimientos, ideación, propuesta de valor), Modelo Canvas actualizado de Copiloto Kine, storyboards V1, V2 Joselyn y V2 paciente, mapa del prototipo y mockups con capturas reales de la app, tabla de iteración y próximos pasos. Fuente: `ev2/Evaluacion2_Presentacion.html` |
 | `app/` | **Prototipo funcional Copiloto Kine** (V1 y V2, 17 pantallas de Joselyn y del paciente). Abrir `app/index.html`. Capturas en `app/capturas/` (`node _build/capturas_app.js`). |
+| `material/plantillas_u3/` | Plantillas del brief (Canvas y Prototipado U3), usadas como referencia de estructura; la presentación mantiene el diseño propio. |
 | `ev2/Evaluacion2_Prompts_Storyboard.md` | Prompts para Google Flow: personajes, 3 storyboards de 6 viñetas (V1, V2 Joselyn, V2 paciente) y 6 situaciones extra. Las imágenes van en `ev2/img/storyboard/` y se insertan solas al exportar (`node _build/render_presentacion.js`). |
 | `ev2/Evaluacion2_Informe_Ideacion.pdf` | **Informe EV2 (A4 vertical)**: todos los instrumentos U2, enfoque sostenible, co-creación, organización del tiempo y trazabilidad ES02. Generador: `python3 ev2/build_ev2.py` |
 | `entregas/` | Word S6–S7 (borradores previos) y bitácora U2 completa (`Bitacora_avance_U2_EV2.xlsx`) |
