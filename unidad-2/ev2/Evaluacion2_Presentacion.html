@@ -119,6 +119,28 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
 .rq .c h5{font-size:13px;margin-bottom:4px}
 .rq .c .xs{line-height:1.4;font-size:12.6px}
 .pri{font-family:var(--fd);font-size:20px;color:#fff;background:var(--h6);border-radius:4px;padding:1px 7px 0;float:right;line-height:1.2}
+
+/* Capturas reales de la app */
+.shots{display:flex;gap:22px;justify-content:center;margin-top:14px}
+.shotph{width:196px;flex:none}
+.shotph .fr{border-radius:30px;background:#0D0B18;padding:7px;box-shadow:0 16px 36px rgba(18,16,30,.22)}
+.shotph img{width:100%;display:block;border-radius:24px}
+.shotph .cp{font-size:12.3px;text-align:center;margin-top:9px;line-height:1.3}
+.shotph .cp b{display:block;font-size:12.8px}
+.shots.four .shotph{width:214px}
+/* Imagen de Google Flow sobre la viñeta (si existe) */
+.panel .art img.sbimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.panel .art .n,.panel .art .pain{z-index:2}
+.vp2 .panel .art{background:#F0ECFA}
+.vp2 .panel .n{background:var(--h4)}
+/* Mapa de pantallas */
+.smap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+.smap .g{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.smap .g h5{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--h6);margin-bottom:8px}
+.smap .th{display:flex;gap:6px;flex-wrap:wrap}
+.smap .th figure{width:60px}
+.smap .th img{width:60px;border-radius:8px;border:1px solid var(--line);display:block}
+.smap .th figcaption{font-size:8.6px;line-height:1.2;text-align:center;margin-top:3px;color:var(--ink2)}
 </style>
 </head>
 <body>
@@ -163,6 +185,16 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <symbol id="clock" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fff" stroke="#7B3FA0" stroke-width="3"/><path d="M20 10 V20 L27 24" stroke="#12101E" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
     <symbol id="gauge" viewBox="0 0 80 50"><path d="M8 44 A32 32 0 0 1 72 44" fill="none" stroke="#EEEAF7" stroke-width="10"/><path d="M8 44 A32 32 0 0 1 52 14" fill="none" stroke="#FF6B35" stroke-width="10"/><path d="M40 44 L56 22" stroke="#12101E" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="44" r="4" fill="#12101E"/></symbol>
     <symbol id="jar" viewBox="0 0 40 50"><rect x="8" y="2" width="24" height="6" rx="2" fill="#7B3FA0"/><path d="M6 10 H34 V44 Q34 48 30 48 H10 Q6 48 6 44Z" fill="#fff" stroke="#7B3FA0" stroke-width="2"/><rect x="8" y="26" width="24" height="20" rx="2" fill="#FFB347"/></symbol>
+
+    <symbol id="cam" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="12" fill="#E9B894"/>
+      <path d="M18 16 Q19 4 30 5 Q42 5 42 16 Q37 10 30 10 Q23 10 18 16Z" fill="#2B1A12"/>
+      <path d="M38 6 Q50 8 46 30 Q44 18 38 12Z" fill="#2B1A12"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L49 78 L11 78Z" fill="#E8637A"/>
+      <rect x="16" y="78" width="11" height="30" rx="3" fill="#12101E"/><rect x="33" y="78" width="11" height="30" rx="3" fill="#12101E"/>
+    </symbol>
+    <symbol id="ig" viewBox="0 0 40 40"><rect x="2" y="2" width="36" height="36" rx="10" fill="#C4467A"/><circle cx="20" cy="20" r="8" fill="none" stroke="#fff" stroke-width="3.5"/><circle cx="30" cy="10" r="2.5" fill="#fff"/></symbol>
+    <symbol id="heart" viewBox="0 0 40 36"><path d="M20 34 C6 24 2 16 2 10 A8 8 0 0 1 20 6 A8 8 0 0 1 38 10 C38 16 34 24 20 34Z" fill="#E8637A"/></symbol>
   </defs>
 </svg>
 
@@ -208,13 +240,14 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     </div>
     <div>
       <div class="label acc" style="margin-bottom:8px">02 · Propuesta de solución</div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Modelo Canvas actualizado</span><span class="label">10</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 1</span><span class="label">11</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 1</span><span class="label">12</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Iteración: de V1 a V2</span><span class="label">13</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 2 (iterada)</span><span class="label">14</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 2 (iterada)</span><span class="label">15</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Próximos pasos</span><span class="label">16</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Modelo Canvas actualizado</span><span class="label">10</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 1</span><span class="label">11</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 1</span><span class="label">12</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Iteración: de V1 a V2</span><span class="label">13</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard · V2 Joselyn y V2 paciente</span><span class="label">14–15</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>El prototipo y sus pantallas</span><span class="label">16</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · V2 (día, números, paciente)</span><span class="label">17–19</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Próximos pasos</span><span class="label">20</span></div>
     </div>
   </div>
   <div class="foot"><span>Equipo HORIZON · INACAP Rancagua · 2026</span><b>02</b></div>
@@ -486,31 +519,31 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <span class="tag p">Primera versión</span>
   </div>
   <div class="sb" style="margin-top:12px">
-    <div class="panel"><div class="art" style="background:#2A2547"><span class="n">1</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+    <div class="panel"><div class="art" style="background:#2A2547"><img class="sbimg" src="img/storyboard/v1-01.png" alt="" onerror="this.remove()"><span class="n">1</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
       <svg viewBox="0 0 300 150"><use href="#moon" x="246" y="36" width="28" height="28"/>
       <use href="#jos" x="30" y="36" width="62" height="114"/><use href="#laptop" x="104" y="44" width="118" height="80"/><use href="#sheet" x="140" y="52" width="40" height="46"/>
       <text x="230" y="118" fill="#FFB347" font-size="20" font-weight="700">23:10</text></svg></div>
       <div class="cap"><b>Hoy: el Excel de noche</b>Después de atender, Joselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.</div></div>
-    <div class="panel"><div class="art"><span class="n">2</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-02.png" alt="" onerror="this.remove()"><span class="n">2</span>
       <svg viewBox="0 0 300 150"><use href="#jos" x="36" y="36" width="62" height="114"/><use href="#phone" x="100" y="70" width="30" height="52"/>
       <use href="#cal" x="160" y="40" width="54" height="54"/><path d="M218 66 H240" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#coins" x="242" y="48" width="44" height="36"/>
       <text x="152" y="116" font-size="11" fill="#504D6E">Conecta su calendario</text></svg></div>
       <div class="cap"><b>Conecta la agenda que ya usa</b>En 10 minutos enlaza su calendario, importa su Excel y define la comisión 70/30, el costo por km y el kit de materiales.</div></div>
-    <div class="panel"><div class="art"><span class="n">3</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-03.png" alt="" onerror="this.remove()"><span class="n">3</span>
       <svg viewBox="0 0 300 150"><use href="#cal" x="40" y="44" width="62" height="62"/><path d="M110 76 H160" stroke="#7B3FA0" stroke-width="3"/><path d="M152 68 L162 76 L152 84" stroke="#7B3FA0" stroke-width="3" fill="none"/>
       <rect x="170" y="44" width="110" height="62" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="180" y="66" font-size="11" fill="#504D6E">Ingreso proyectado</text><text x="180" y="90" font-size="18" font-weight="700" fill="#7B3FA0">+$25.000</text></svg></div>
       <div class="cap"><b>Cada cita se vuelve un ingreso proyectado</b>La cita del jueves aparece sola en el tablero, etiquetada como clínica o domicilio. No hay que volver a digitarla.</div></div>
-    <div class="panel"><div class="art"><span class="n">4</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-04.png" alt="" onerror="this.remove()"><span class="n">4</span>
       <svg viewBox="0 0 300 150"><use href="#house" x="14" y="58" width="90" height="80"/><use href="#jos" x="110" y="36" width="62" height="114"/><use href="#phone" x="170" y="68" width="30" height="52"/>
       <rect x="208" y="46" width="84" height="58" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="216" y="64" font-size="9.5" fill="#504D6E">Ganancia neta</text><text x="216" y="86" font-size="16" font-weight="700" fill="#1F8A5B">$20.900</text><use href="#check" x="262" y="110" width="26" height="26"/></svg></div>
       <div class="cap"><b>"Atención realizada" en un toque</b>Al despedirse confirma la atención y ve su ganancia neta: el traslado y los materiales ya vienen descontados.</div></div>
-    <div class="panel"><div class="art"><span class="n">5</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-05.png" alt="" onerror="this.remove()"><span class="n">5</span>
       <svg viewBox="0 0 300 150"><use href="#jos" x="30" y="36" width="62" height="114"/>
       <rect x="110" y="34" width="170" height="90" rx="10" fill="#fff" stroke="#E2E0EF"/><circle cx="128" cy="56" r="7" fill="#F2B233"/><text x="142" y="60" font-size="11" font-weight="700" fill="#12101E">Mes en curso: 62 %</text>
       <rect x="124" y="74" width="66" height="36" rx="5" fill="#EDE6F7"/><text x="130" y="88" font-size="8.5" fill="#4A3580">Clínica /h</text><text x="130" y="103" font-size="11" font-weight="700" fill="#4A3580">$14.700</text>
       <rect x="198" y="74" width="68" height="36" rx="5" fill="#FFE8DC"/><text x="204" y="88" font-size="8.5" fill="#B4441A">Domicilio /h</text><text x="204" y="103" font-size="11" font-weight="700" fill="#B4441A">$16.100</text></svg></div>
       <div class="cap"><b>Tablero con semáforo</b>Ve la ganancia real del mes de un vistazo y compara dónde gana más por hora: en la clínica o a domicilio.</div></div>
-    <div class="panel"><div class="art"><span class="n">6</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-06.png" alt="" onerror="this.remove()"><span class="n">6</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
       <svg viewBox="0 0 300 150"><polyline points="24,60 74,52 124,92" fill="none" stroke="#7B3FA0" stroke-width="4"/><polyline points="124,92 174,74" fill="none" stroke="#7B3FA0" stroke-width="4" stroke-dasharray="7 5"/>
       <text x="28" y="122" font-size="9.5" fill="#504D6E">Dic · Ene · Feb · Mar</text><use href="#pinp" x="190" y="30" width="20" height="26"/><use href="#pinp" x="250" y="96" width="20" height="26"/><use href="#pinp" x="214" y="112" width="20" height="26"/>
       <text x="196" y="80" font-size="10" font-weight="700" fill="#E8637A">¿Y abril?</text></svg></div>
@@ -523,61 +556,13 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
 <section class="slide light" style="padding-top:36px">
   <div class="abar"></div>
   <div class="row">
-    <div><div class="label">02 · Propuesta · Versión 1</div><h1 style="font-size:42px">Mockups V1 · Copiloto Kine (alcance mínimo)</h1></div>
+    <div><div class="label">02 · Propuesta · Versión 1 — pantallas reales del prototipo</div><h1 style="font-size:42px">Mockups V1 · Copiloto Kine (alcance mínimo)</h1></div>
     <span class="tag p">Primera versión</span>
   </div>
-  <div class="phones v1p">
-    <!-- A conectar -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="xs muted">Paso 2 de 3</div>
-        <div class="t">Conecta tu agenda</div>
-        <div class="xs muted" style="margin-bottom:8px">Usa la que ya tienes; no la reemplazamos.</div>
-        <div class="li row"><b>Google Calendar</b><b style="color:var(--ok)">● Conectado</b></div>
-        <div class="li row"><span>Cal.com</span><span class="muted">Conectar</span></div>
-        <div class="li row"><span>Importar mi Excel</span><span class="muted">.xlsx</span></div>
-        <div style="font-weight:700;margin:6px 0 4px">Tus reglas</div>
-        <div class="li xs row"><span>Comisión clínica</span><b>70 / 30</b></div>
-        <div class="li xs row"><span>Costo por km</span><b>$180</b></div>
-        <div class="li xs row"><span>Kit de materiales</span><b>3 kits</b></div>
-        <span class="btn" style="margin-top:6px">Continuar</span>
-      </div></div></div><div class="cap2"><b>A · Onboarding</b> y agenda conectada</div></div>
-    <!-- B atención -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>12:31</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="li" style="background:#F4EFFA;border-color:#D8CCEC"><b>¿Atención realizada?</b><div class="xs muted">L. Muñoz · Domicilio · 11:30</div></div>
-        <span class="btn">✓ Sí, realizada</span>
-        <div style="height:6px"></div>
-        <span class="btn ghost">Reagendar / no asistió</span>
-        <div style="font-weight:700;margin:10px 0 4px">Ganancia de esta atención</div>
-        <div class="li xs"><div class="row"><span>Valor sesión</span><b>$25.000</b></div><div class="row"><span>Traslado · 12 km</span><span>−$2.160</span></div><div class="row"><span>Materiales</span><span>−$1.940</span></div></div>
-        <div class="li row" style="border-color:#BFE3D1;background:#EEF8F3"><b>Ganancia neta</b><b style="color:var(--ok);font-size:15px">$20.900</b></div>
-      </div></div></div><div class="cap2"><b>B · Cierre en un toque</b></div></div>
-    <!-- C tablero -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:00</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="t">Mi tablero · noviembre</div>
-        <div class="li" style="margin-top:6px"><div class="xs muted"><span class="sem" style="background:#F2B233"></span>Vas en camino</div><div class="big">$618.400</div><div class="xs muted">ganancia real · meta $1.000.000</div><div class="prog" style="margin-top:5px"><i style="width:62%"></i></div></div>
-        <div style="font-weight:700;margin:6px 0 4px">¿Dónde gano más por hora?</div>
-        <div class="grid g2" style="gap:6px"><div class="li xs">Clínica 70/30<br><b style="font-size:12px">$14.700</b></div><div class="li xs">Domicilio<br><b style="font-size:12px">$16.100</b></div></div>
-        <div class="li xs row"><span>Atenciones registradas solas</span><b>41 / 46</b></div>
-        <div class="li xs row"><span>Tiempo de cierre hoy</span><b>6 min</b></div>
-      </div>
-      <div class="tabbar"><span>Hoy</span><span class="on">● Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>C · Tablero con semáforo</b></div></div>
-    <!-- D proyección -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:01</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="t">Próximos 3 meses</div>
-        <div class="xs muted" style="margin-bottom:4px">Según tu agenda y tu historial</div>
-        <svg viewBox="0 0 180 90" style="width:100%;height:96px"><g fill="#C4A8E0"><rect x="14" y="26" width="30" height="54" rx="3"/><rect x="58" y="34" width="30" height="46" rx="3"/></g><rect x="102" y="58" width="30" height="22" rx="3" fill="#E8637A"/><rect x="146" y="36" width="30" height="44" rx="3" fill="#C4A8E0" opacity=".6"/>
-          <g font-size="8" fill="#504D6E"><text x="20" y="89">Dic</text><text x="64" y="89">Ene</text><text x="108" y="89">Feb</text><text x="152" y="89">Mar</text></g></svg>
-        <div class="li xs"><div class="row"><b>Diciembre</b><span>$940.000</span></div><div class="row"><b>Enero</b><span>$820.000</span></div><div class="row"><b style="color:var(--h4)">Febrero</b><span style="color:var(--h4)">$410.000</span></div></div>
-        <div class="li xs" style="background:#FFF1F3;border-color:#F6C3CC"><b style="color:var(--h4)">Febrero viene bajo.</b></div>
-        <div class="xs muted" style="text-align:center;margin-top:4px">(sin acción sugerida en la V1)</div>
-      </div>
-      <div class="tabbar"><span>Hoy</span><span>Tablero</span><span class="on">● Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>D · Proyección simple</b> a 3 meses</div></div>
+  <div class="shots ">
+    <div class="shotph"><div class="fr"><img src="../app/capturas/v1-01-conectar.png" alt="Conectar agenda"></div><div class="cp"><b>Conectar agenda</b>Lee la agenda que ya usa</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-03-hoy.png" alt="Hoy"></div><div class="cp"><b>Hoy</b>Cada cita con su ganancia</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-04-atencion.png" alt="Atención realizada"></div><div class="cp"><b>Atención realizada</b>Un toque y ganancia neta</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-05-tablero.png" alt="Tablero"></div><div class="cp"><b>Tablero</b>Semáforo y meta del mes</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-06-proyeccion.png" alt="Proyección"></div><div class="cp"><b>Proyección</b>3 meses, sin acciones</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V1 · datos ficticios de ejemplo</span><b>12</b></div>
+  <div class="foot"><span>Propuesta · Mockups V1 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>12</b></div>
 </section>
 
 <!-- 13 ITERACIÓN -->
@@ -608,32 +593,32 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <span class="tag">Versión iterada</span>
   </div>
   <div class="sb" style="margin-top:12px">
-    <div class="panel"><div class="art"><span class="n">1</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-01.png" alt="" onerror="this.remove()"><span class="n">1</span>
       <svg viewBox="0 0 300 150"><path d="M26 118 C70 70 120 120 160 86 S240 46 278 54" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="8 6"/>
       <use href="#pin" x="14" y="92" width="24" height="32"/><use href="#pin" x="148" y="60" width="24" height="32"/><use href="#pin" x="200" y="44" width="24" height="32"/><use href="#pin" x="266" y="26" width="24" height="32"/>
       <use href="#car" x="50" y="18" width="90" height="46"/><text x="176" y="122" font-size="12" font-weight="700" fill="#B4441A">Martes = Machalí</text></svg></div>
       <div class="cap"><b>Martes = Machalí</b>Al empezar el día, el copiloto agrupa los domicilios por sector y ordena la ruta. Son menos km y menos combustible.</div></div>
-    <div class="panel"><div class="art"><span class="n">2</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-02.png" alt="" onerror="this.remove()"><span class="n">2</span>
       <svg viewBox="0 0 300 150"><use href="#house" x="10" y="60" width="84" height="76"/><use href="#jos" x="98" y="36" width="62" height="114"/><use href="#phone" x="158" y="68" width="30" height="52"/>
       <use href="#coins" x="200" y="30" width="44" height="36"/><use href="#jar" x="250" y="30" width="32" height="40"/>
       <text x="198" y="92" font-size="9.5" fill="#504D6E">Retención apartada</text><text x="198" y="108" font-size="9.5" fill="#504D6E">+ colchón 5 %</text><use href="#check" x="246" y="112" width="26" height="26"/></svg></div>
       <div class="cap"><b>Un toque reparte el pago</b>Al cerrar la atención, la ganancia neta se calcula sola y se aparta la retención de la boleta y un % para el colchón.</div></div>
-    <div class="panel"><div class="art"><span class="n">3</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-03.png" alt="" onerror="this.remove()"><span class="n">3</span>
       <svg viewBox="0 0 300 150"><use href="#cal" x="30" y="40" width="64" height="64"/><text x="28" y="124" font-size="10" fill="#E8637A" font-weight="700">16:00 cancelada</text>
       <path d="M104 72 H150" stroke="#FF6B35" stroke-width="3"/><path d="M142 64 L152 72 L142 80" stroke="#FF6B35" stroke-width="3" fill="none"/>
       <use href="#pac" x="168" y="36" width="56" height="104"/><use href="#bubble" x="228" y="40" width="56" height="38"/><use href="#check" x="242" y="96" width="30" height="30"/></svg></div>
       <div class="cap"><b>La hora vacía también genera ingreso</b>Un paciente cancela. El copiloto ofrece ese cupo de último minuto a precio preferente a su lista de pacientes y alguien lo toma.</div></div>
-    <div class="panel"><div class="art"><span class="n">4</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-04.png" alt="" onerror="this.remove()"><span class="n">4</span>
       <svg viewBox="0 0 300 150"><use href="#jos" x="34" y="36" width="62" height="114"/><use href="#phone" x="96" y="68" width="30" height="52"/><use href="#clock" x="150" y="36" width="50" height="50"/>
       <text x="210" y="58" font-size="16" font-weight="700" fill="#12101E">20:40</text><text x="150" y="110" font-size="11" fill="#1F8A5B" font-weight="700">Día cerrado · 4 min</text><text x="150" y="126" font-size="10" fill="#504D6E">+11 h recuperadas este mes</text></svg></div>
       <div class="cap"><b>Cierre antes de las 21 h</b>Tres preguntas y listo. El modo "no trabajo de noche" protege su descanso y le muestra las horas recuperadas.</div></div>
-    <div class="panel"><div class="art"><span class="n">5</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-05.png" alt="" onerror="this.remove()"><span class="n">5</span>
       <svg viewBox="0 0 300 150"><use href="#bubble" x="22" y="30" width="80" height="54"/><use href="#jos" x="30" y="70" width="44" height="80"/>
       <rect x="116" y="28" width="168" height="98" rx="10" fill="#fff" stroke="#FFCDB3"/><text x="128" y="50" font-size="11" font-weight="700" fill="#12101E">Resumen semanal</text>
       <circle cx="134" cy="66" r="6" fill="#1F8A5B"/><text x="146" y="70" font-size="10" fill="#12101E">Ganancia real: $236.500</text>
       <text x="128" y="90" font-size="10" fill="#504D6E">Colchón: $84.000</text><text x="128" y="108" font-size="10" fill="#504D6E">Renta abril: 72 % apartado</text></svg></div>
       <div class="cap"><b>Lunes: el tablero llega solo</b>Recibe un resumen semanal por WhatsApp con la ganancia real, el colchón y lo apartado para la Operación Renta.</div></div>
-    <div class="panel"><div class="art"><span class="n">6</span>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-06.png" alt="" onerror="this.remove()"><span class="n">6</span>
       <svg viewBox="0 0 300 150"><polyline points="20,60 60,50 100,56 140,44 180,98 220,72 260,56" fill="none" stroke="#7B3FA0" stroke-width="4"/>
       <polyline points="180,98 220,84 260,66" fill="none" stroke="#FF6B35" stroke-width="4" stroke-dasharray="7 5"/>
       <use href="#warn" x="166" y="104" width="28" height="28"/><text x="198" y="126" font-size="11" font-weight="700" fill="#E8637A">Feb · baja</text>
@@ -642,69 +627,109 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   </div>
   <div class="foot"><span>Propuesta · Storyboard V2</span><b>14</b></div>
 </section>
+<!-- STORYBOARD PACIENTE -->
+<section class="slide light vp2" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2 — el paciente</div><h1 style="font-size:42px">Storyboard V2 · Lo que vive el paciente</h1></div>
+    <span class="tag">Versión iterada</span>
+  </div>
+  <div class="sb" style="margin-top:12px">
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-01.png" alt="" onerror="this.remove()"><span class="n">1</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#ig" x="156" y="34" width="36" height="36"/><path d="M196 52 H220" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#cal" x="226" y="26" width="54" height="54"/><use href="#check" x="238" y="96" width="30" height="30"/></svg></div>
+      <div class="cap"><b>Reserva en un minuto</b>Camila ve el link en el Instagram de InMotion y reserva desde el sofá en la agenda en línea que Joselyn ya usa.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-02.png" alt="" onerror="this.remove()"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#pac" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#bubble" x="150" y="34" width="80" height="54"/><use href="#check" x="236" y="44" width="34" height="34"/><text x="150" y="116" font-size="11" fill="#504D6E">Recordatorio 24 h antes</text></svg></div>
+      <div class="cap"><b>Recordatorio y confirmación</b>El día antes, don Luis recibe el recordatorio con la dirección y toca "Confirmo". Hay menos inasistencias por olvido.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-03.png" alt="" onerror="this.remove()"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="16" y="56" width="92" height="82"/><use href="#pac" x="50" y="64" width="34" height="62"/><use href="#bubble" x="116" y="30" width="66" height="44"/><use href="#car" x="170" y="86" width="116" height="58"/><text x="120" y="92" font-size="11" font-weight="700" fill="#B4441A">Llega 11:30</text></svg></div>
+      <div class="cap"><b>"Voy en camino"</b>Don Luis recibe el aviso y espera en la ventana. Joselyn llega a la hora porque la ruta del día está agrupada.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-04.png" alt="" onerror="this.remove()"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#pac" x="30" y="36" width="60" height="112"/><use href="#phone" x="92" y="70" width="30" height="52"/><rect x="140" y="38" width="140" height="74" rx="10" fill="#fff" stroke="#E2E0EF"/><text x="152" y="62" font-size="11" fill="#504D6E">Pago con link</text><text x="152" y="88" font-size="19" font-weight="700" fill="#12101E">$25.000</text><use href="#check" x="244" y="76" width="28" height="28"/></svg></div>
+      <div class="cap"><b>Paga con un link</b>Al terminar, paga desde su celular sin efectivo y la boleta le llega al correo. El ingreso queda registrado solo.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-05.png" alt="" onerror="this.remove()"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#clock" x="150" y="30" width="44" height="44"/><text x="202" y="58" font-size="16" font-weight="700" fill="#12101E">16:00</text><rect x="150" y="88" width="120" height="30" rx="15" fill="#FF6B35"/><text x="210" y="108" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Sí, la tomo</text></svg></div>
+      <div class="cap"><b>Un cupo de último minuto</b>A la hora de almuerzo, Camila recibe la oferta de una hora libre con 15 % de descuento y la toma con un toque.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-06.png" alt="" onerror="this.remove()"><span class="n">6</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="36" y="36" width="60" height="112"/><use href="#bubble" x="108" y="30" width="70" height="46"/><use href="#heart" x="186" y="36" width="30" height="27"/><use href="#cal" x="222" y="66" width="54" height="54"/><text x="108" y="104" font-size="10.5" fill="#504D6E">30 días después del alta</text></svg></div>
+      <div class="cap"><b>Seguimiento después del alta</b>Un mes después, recibe un mensaje de seguimiento con la voz de Joselyn y reserva un pack de mantención.</div></div>
+    
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V2 · paciente</span><b>15</b></div>
+</section>
 
-<!-- 15 MOCKUPS V2 -->
+<!-- MAPA PANTALLAS -->
 <section class="slide light" style="padding-top:36px">
   <div class="abar"></div>
   <div class="row">
-    <div><div class="label">02 · Propuesta · Versión 2</div><h1 style="font-size:42px">Mockups V2 · Copiloto Kine (iterado)</h1></div>
-    <span class="tag">Versión iterada</span>
+    <div><div class="label">02 · Propuesta · La app</div><h1 style="font-size:42px">Copiloto Kine: el prototipo y sus 17 pantallas</h1></div>
+    <span class="tag g">Prototipo funcional</span>
   </div>
-  <div class="phones v2p">
-    <!-- A Hoy ruta -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>8:05</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="t">Hoy · martes</div>
-        <div class="xs muted" style="margin-bottom:6px">Martes = Machalí · 3 domicilios</div>
-        <div class="li"><div class="row"><b>09:00 · Clínica</b><span class="tag p" style="font-size:8px;padding:1px 5px">70/30</span></div><span class="xs muted">M. Soto · Rehabilitación</span></div>
-        <div class="li" style="border-color:#FFCDB3;background:#FFF7F2"><div class="row"><b>11:30 · Domicilio</b><span class="tag" style="font-size:8px;padding:1px 5px">Machalí</span></div><span class="xs muted">L. Muñoz · 4,2 km</span></div>
-        <div class="li" style="border-color:#FFCDB3;background:#FFF7F2"><div class="row"><b>12:45 · Domicilio</b><span class="tag" style="font-size:8px;padding:1px 5px">Machalí</span></div><span class="xs muted">A. Rojas · 1,1 km</span></div>
-        <div class="li" style="border-style:dashed"><div class="row"><b>16:00 · Cupo libre</b><span class="tag g" style="font-size:8px;padding:1px 5px">Ofrecido</span></div><span class="xs muted">Último minuto · −15 %</span></div>
-        <div class="li xs" style="background:#EEF8F3;border-color:#BFE3D1"><b style="color:var(--ok)">Ruta agrupada:</b> −9 km hoy (≈ $1.600)</div>
-      </div>
-      <div class="tabbar"><span class="on">● Hoy</span><span>Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>A · Ruta por sector</b> y cupos libres</div></div>
-    <!-- B Cierre -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>12:31</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="xs muted">Atención realizada ✓</div>
-        <div class="t">L. Muñoz · Domicilio</div>
-        <div class="li" style="margin-top:6px;text-align:center"><div class="xs muted">Ganancia neta</div><div class="big" style="color:var(--ok)">$20.900</div><div class="xs muted">$25.000 − traslado − materiales</div></div>
-        <div style="font-weight:700;margin:6px 0 4px">El pago se reparte solo</div>
-        <div class="li xs"><div class="row"><span>Para ti (disponible)</span><b>$16.040</b></div><div class="row"><span>Retención boleta</span><b>$3.810</b></div><div class="row"><span>Colchón 5 %</span><b>$1.050</b></div></div>
-        <div style="font-weight:700;margin:4px 0 4px">¿Cómo pagó?</div>
-        <span class="chip on">Transferencia</span><span class="chip">Efectivo</span><span class="chip">Convenio</span>
-        <span class="btn" style="margin-top:4px">Confirmar</span>
-      </div></div></div><div class="cap2"><b>B · Cobro con retención</b> y colchón</div></div>
-    <!-- C Tablero -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>20:40</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="t">Mi tablero</div>
-        <div class="li" style="margin-top:6px"><div class="xs muted"><span class="sem" style="background:#1F8A5B"></span>Vas bien · noviembre</div><div class="big">$812.300</div><div class="prog" style="margin-top:5px"><i style="width:81%"></i></div></div>
-        <div class="grid g2" style="gap:6px">
-          <div class="li xs">Colchón<br><b style="font-size:12px">$84.000</b></div>
-          <div class="li xs">Horas recup.<br><b style="font-size:12px">11 h</b></div></div>
-        <div class="li xs"><div class="row"><b>Renta · abril</b><b style="color:var(--k)">72 %</b></div>
-          <svg viewBox="0 0 80 46" style="width:100%;height:32px"><use href="#gauge" width="80" height="46"/></svg>
-          <div class="muted">Tienes apartados $412.000 de $572.000</div></div>
-        <div class="li xs row" style="background:#EEF8F3;border-color:#BFE3D1;margin-bottom:0"><span>Cierre antes de 21 h</span><b style="color:var(--ok)">✓</b></div>
-      </div>
-      <div class="tabbar"><span>Hoy</span><span class="on">● Tablero</span><span>Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>C · Tablero, colchón</b> e impuestos</div></div>
-    <!-- D Proyección + acción -->
-    <div><div class="phone"><div class="scr"><div class="notch"></div><div class="sbar"><span>9:00</span><span>●●● ▮</span></div>
-      <div class="ph">
-        <div class="t">Lo que viene</div>
-        <div class="xs muted">Próximos 6 meses, con tu historial</div>
-        <svg viewBox="0 0 180 64" style="width:100%;height:60px"><polyline points="6,22 36,18 66,26 96,48 126,30 156,22" fill="none" stroke="#7B3FA0" stroke-width="2.5"/><polyline points="66,26 96,38 126,26" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-dasharray="5 4"/><circle cx="96" cy="48" r="4" fill="#E8637A"/>
-          <g font-size="7" fill="#504D6E"><text x="1" y="62">Dic</text><text x="31" y="62">Ene</text><text x="61" y="62">Feb</text><text x="91" y="62">Mar</text><text x="121" y="62">Abr</text><text x="151" y="62">May</text></g></svg>
-        <div class="li xs" style="background:#FFF1F3;border-color:#F6C3CC"><b style="color:var(--h4)">En febrero vas a ganar ~$410.000</b>, la mitad de un mes normal. Faltan 6 semanas.</div>
-        <div style="font-weight:700;margin:4px 0 4px">Acciones sugeridas</div>
-        <div class="li xs row"><span>Ofrecer pack de 4 sesiones</span><b style="color:var(--k)">+$180k</b></div>
-        <div class="li xs row"><span>Recordar a 14 pacientes de alta</span><b style="color:var(--k)">+$95k</b></div>
-        <span class="btn" style="padding:6px">Activar acciones</span>
-      </div>
-      <div class="tabbar"><span>Hoy</span><span>Tablero</span><span class="on">● Proyección</span><span>Ajustes</span></div></div></div><div class="cap2"><b>D · Alerta con acciones</b></div></div>
+  <div class="sub" style="margin-top:2px">App web móvil navegable (<b>unidad-2/app</b>), con datos de ejemplo y dos versiones: V1 (alcance mínimo) y V2 (iterada). Cada acción cambia los números: confirmar una atención suma al tablero, tomar un cupo llena la agenda y activar acciones sube la proyección.</div>
+  <div class="smap">
+    <div class="g"><h5>Joselyn · configurar</h5><div class="th">
+      <figure><img src="../app/capturas/v2-00-inicio.png"><figcaption>Bienvenida</figcaption></figure>
+      <figure><img src="../app/capturas/v2-01-conectar.png"><figcaption>Conectar agenda</figcaption></figure>
+      <figure><img src="../app/capturas/v2-02-reglas.png"><figcaption>Tus reglas</figcaption></figure>
+      <figure><img src="../app/capturas/v2-12-ajustes.png"><figcaption>Ajustes</figcaption></figure></div></div>
+    <div class="g"><h5>Joselyn · su día</h5><div class="th">
+      <figure><img src="../app/capturas/v2-03-hoy.png"><figcaption>Hoy</figcaption></figure>
+      <figure><img src="../app/capturas/v2-04-ruta.png"><figcaption>Ruta por sector</figcaption></figure>
+      <figure><img src="../app/capturas/v2-05-atencion.png"><figcaption>Atención realizada</figcaption></figure>
+      <figure><img src="../app/capturas/v2-06-cupo.png"><figcaption>Cupo último minuto</figcaption></figure>
+      <figure><img src="../app/capturas/v2-09-cierre.png"><figcaption>Cierre del día</figcaption></figure></div></div>
+    <div class="g"><h5>Joselyn · sus números</h5><div class="th">
+      <figure><img src="../app/capturas/v2-07-tablero.png"><figcaption>Tablero</figcaption></figure>
+      <figure><img src="../app/capturas/v2-08-proyeccion.png"><figcaption>Proyección</figcaption></figure>
+      <figure><img src="../app/capturas/v2-11-resumen.png"><figcaption>Resumen semanal</figcaption></figure></div></div>
+    <div class="g"><h5>Paciente</h5><div class="th">
+      <figure><img src="../app/capturas/p-01-reserva.png"><figcaption>Reserva en línea</figcaption></figure>
+      <figure><img src="../app/capturas/p-03-whatsapp-luis.png"><figcaption>Recordatorio y aviso</figcaption></figure>
+      <figure><img src="../app/capturas/p-04-pago.png"><figcaption>Pago con link</figcaption></figure>
+      <figure><img src="../app/capturas/p-06-whatsapp-camila.png"><figcaption>Cupo y seguimiento</figcaption></figure></div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V2 · datos ficticios de ejemplo</span><b>15</b></div>
+  <div class="grid g3" style="margin-top:14px;gap:12px">
+    <div class="card" style="padding:10px 14px"><b class="small">Cómo se usa</b><div class="xs muted">Abrir <b>unidad-2/app/index.html</b> en el navegador. En el computador se ve el teléfono junto a la lista de pantallas; en el celular, la app a pantalla completa.</div></div>
+    <div class="card" style="padding:10px 14px"><b class="small">Qué lee y qué no</b><div class="xs muted">Solo la fecha, el lugar y el valor de cada cita, más los cobros. Nunca la ficha clínica (R13 · Ley 21.719).</div></div>
+    <div class="card" style="padding:10px 14px"><b class="small">Listo para la UA3</b><div class="xs muted">Sirve para la sesión de co-creación y para los dos ciclos de testeo, midiendo minutos de registro y atenciones registradas solas.</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mapa de pantallas</span><b>16</b></div>
+</section>
+<!-- MOCKUPS V2 DIA -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2 — Joselyn, su día</div><h1 style="font-size:42px">Mockups V2 · El día con el copiloto</h1></div>
+    <span class="tag ">Versión iterada</span>
+  </div>
+  <div class="shots ">
+    <div class="shotph"><div class="fr"><img src="../app/capturas/v2-03-hoy.png" alt="Hoy"></div><div class="cp"><b>Hoy</b>Martes = Machalí</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-04-ruta.png" alt="Ruta por sector"></div><div class="cp"><b>Ruta por sector</b>−9 km en el día</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-05-atencion.png" alt="Atención realizada"></div><div class="cp"><b>Atención realizada</b>El pago se reparte solo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-06-cupo.png" alt="Cupo de último minuto"></div><div class="cp"><b>Cupo de último minuto</b>La hora vacía se ofrece</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-10-cierre-listo.png" alt="Cierre del día"></div><div class="cp"><b>Cierre del día</b>Antes de las 21:00</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>17</b></div>
+</section>
+<!-- MOCKUPS V2 NUMEROS -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2 — Joselyn, sus números</div><h1 style="font-size:42px">Mockups V2 · Ganancia, impuestos y lo que viene</h1></div>
+    <span class="tag ">Versión iterada</span>
+  </div>
+  <div class="shots four">
+    <div class="shotph"><div class="fr"><img src="../app/capturas/v2-02-reglas.png" alt="Tus reglas"></div><div class="cp"><b>Tus reglas</b>Retención, colchón y sectores</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-07-tablero.png" alt="Tablero"></div><div class="cp"><b>Tablero</b>Colchón y Operación Renta</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-08-proyeccion.png" alt="Proyección"></div><div class="cp"><b>Proyección</b>6 meses con acciones</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-11-resumen.png" alt="Resumen semanal"></div><div class="cp"><b>Resumen semanal</b>Llega solo por WhatsApp</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>18</b></div>
+</section>
+<!-- MOCKUPS V2 PACIENTE -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Versión 2 — el paciente</div><h1 style="font-size:42px">Mockups V2 · Lo que vive el paciente</h1></div>
+    <span class="tag ">Versión iterada</span>
+  </div>
+  <div class="shots ">
+    <div class="shotph"><div class="fr"><img src="../app/capturas/p-01-reserva.png" alt="Reserva en línea"></div><div class="cp"><b>Reserva en línea</b>La agenda de siempre</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-03-whatsapp-luis.png" alt="Recordatorio y aviso"></div><div class="cp"><b>Recordatorio y aviso</b>"Voy en camino" y link de pago</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-04-pago.png" alt="Pago con link"></div><div class="cp"><b>Pago con link</b>Sin efectivo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-05-pago-ok.png" alt="Pago recibido"></div><div class="cp"><b>Pago recibido</b>Boleta al correo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-07-whatsapp-camila-ok.png" alt="Cupo y seguimiento"></div><div class="cp"><b>Cupo y seguimiento</b>Toma la hora libre</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>19</b></div>
 </section>
 
 <!-- 16 CIERRE -->
@@ -715,13 +740,13 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div style="height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 24px"></div>
   <div class="grid g3">
     <div class="dcard"><div class="num">01</div><b style="font-size:17px">Sesión de co-creación (45 min)</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Con Joselyn (presencial) y Catalina (remota): votación de ideas, validación de la metáfora, test de 5 segundos de la propuesta de valor y elección de la métrica.</div></div>
-    <div class="dcard"><div class="num">02</div><b style="font-size:17px">Prototipo navegable · UA3</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Prototipo en Figma de los flujos de la V2, con dos ciclos de testeo midiendo las métricas claves (rúbrica ES03).</div></div>
+    <div class="dcard"><div class="num">02</div><b style="font-size:17px">Testeo del prototipo · UA3</b><div style="color:var(--text2);margin-top:6px;font-size:14px">El prototipo funcional ya existe (unidad-2/app). Se llevará a dos ciclos de testeo midiendo las métricas claves (rúbrica ES03).</div></div>
     <div class="dcard"><div class="num">03</div><b style="font-size:17px">Validación tributaria</b><div style="color:var(--text2);margin-top:6px;font-size:14px">Revisar con el asesor financiero las reglas de retención y la estimación de la Operación Renta antes de prototiparlas.</div></div>
   </div>
   <div class="dcard" style="margin-top:22px;border-color:rgba(255,107,53,.4)">
     <div class="serif" style="font-size:26px;line-height:1.35">Ella maneja. La herramienta es el copiloto: <span class="acc" style="font-family:var(--fb);font-style:normal;font-weight:700;font-size:22px">le devuelve el tiempo y la claridad</span> para sostener el trato 1:1 que la hace única.</div>
   </div>
-  <div class="foot"><span>Equipo HORIZON · INACAP Rancagua · 2026</span><b>16</b></div>
+  <div class="foot"><span>Equipo HORIZON · INACAP Rancagua · 2026</span><b>20</b></div>
 </section>
 
 </body>
