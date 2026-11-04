@@ -4,9 +4,9 @@ Secuencias de situaciones para ilustrar cómo **Joselyn** (nuestra usuaria) y **
 
 | Storyboard | Lámina | Archivos |
 |---|---|---|
-| V1 · Joselyn con el alcance mínimo | 11 | `v1-01.png` … `v1-06.png` |
-| V2 · Joselyn con la versión iterada | 14 | `v2-01.png` … `v2-06.png` |
-| V2 · El paciente | 15 | `p-01.png` … `p-06.png` |
+| V1 · Joselyn con el alcance mínimo | 11 | `v1-01.jpg` … `v1-06.jpg` |
+| V2 · Joselyn con la versión iterada | 14 | `v2-01.jpg` … `v2-06.jpg` |
+| V2 · El paciente | 15 | `p-01.jpg` … `p-06.jpg` |
 | Banco de situaciones extra | — | `x-01.png` … `x-06.png` |
 
 Las pantallas de la app que aparecen en cada escena existen de verdad en el prototipo (`unidad-2/app`). La columna **Pantalla** indica cuál es, por si quieren usar la captura como referencia.
@@ -21,7 +21,7 @@ Las pantallas de la app que aparecen en cada escena existen de verdad en el prot
 4. **Formato 16:9 horizontal.** La lámina recorta la imagen a una franja más ancha (≈ 2,5:1), así que la acción debe quedar en la **franja central** y con aire arriba y abajo. Cada prompt ya lo pide.
 5. **Sin texto en las imágenes.** Los títulos y textos van en la lámina. Si la IA dibuja letras en la pantalla del celular, regenerar o pedir "blank abstract UI shapes".
 6. Generar 2–4 variantes por viñeta y elegir la más clara. Mantener la misma **seed** o el mismo hilo de generación entre viñetas del mismo storyboard.
-7. **Guardar** con el nombre exacto en `unidad-2/ev2/img/storyboard/` (por ejemplo `v2-03.png`) y volver a exportar la presentación:
+7. **Guardar** con el nombre exacto en `unidad-2/ev2/img/storyboard/` (por ejemplo `v2-03.jpg`) y volver a exportar la presentación:
    ```
    node unidad-2/_build/render_presentacion.js
    ```
