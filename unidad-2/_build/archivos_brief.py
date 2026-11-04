@@ -110,7 +110,8 @@ PROTO_SLIDES = ['PROBLEMA', '03 CASO', '04 UA1', '05 DESAFÍO', '06 REFERENTES',
                 '12 MOCKUPS V1', '13 ITERACIÓN', 'PROTO V2', 'MOCKUPS V2 DIA', 'MOCKUPS V2 NUMEROS', 'MOCKUPS V2 PACIENTE',
                 'MAPA PANTALLAS', '16 CIERRE']
 pick = lambda k: canvas if k == '10 CANVAS' else relabel(SECS[k])
-write('EV2_Canvas_Storyboard.html', 'Copiloto Kine — Canvas y storyboard', [portada_canvas] + [pick(k) for k in CANVAS_SLIDES])
+PORTADA = SECS['01 PORTADA']  # misma portada que la presentación principal
+write('EV2_Canvas_Storyboard.html', 'Copiloto Kine — Canvas y storyboard', [PORTADA] + [pick(k) for k in CANVAS_SLIDES])
 
 # ------------------------------------------------ Archivo 2 · Prototipado y testeo
 miembros = ''.join(f'<div class="m"><b>{i}. {n}</b><span>Diseño Digital · {r}</span></div>' for i, (n, r) in enumerate(EQUIPO, start=1))
@@ -131,7 +132,7 @@ portada_proto = f"""<section class="slide dark">
 """
 cierre_proto = relabel(SECS['16 CIERRE']).replace('<div class="label">Cierre</div>', f'<div class="label">{UNIDAD}</div>')
 write('EV2_Prototipado_Testeo.html', 'Copiloto Kine — Prototipado y testeo',
-      [portada_proto] + [cierre_proto if k == '16 CIERRE' else relabel(SECS[k]) for k in PROTO_SLIDES])
+      [PORTADA] + [cierre_proto if k == '16 CIERRE' else relabel(SECS[k]) for k in PROTO_SLIDES])
 usadas = set(CANVAS_SLIDES) | set(PROTO_SLIDES) | {'01 PORTADA', '02 ÍNDICE'}
 faltan = [k for k in SECS if k not in usadas]
 assert not faltan, f'Láminas sin repartir: {faltan}'
