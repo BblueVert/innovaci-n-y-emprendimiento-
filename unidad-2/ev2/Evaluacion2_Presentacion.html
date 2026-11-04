@@ -141,6 +141,20 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
 .smap .th figure{width:60px}
 .smap .th img{width:60px;border-radius:8px;border:1px solid var(--line);display:block}
 .smap .th figcaption{font-size:8.6px;line-height:1.2;text-align:center;margin-top:3px;color:var(--ink2)}
+
+/* Iteración según brief U3 */
+.vpband{display:flex;gap:12px;align-items:center;background:#FFF1E9;border:1px solid #FFD2BD;border-radius:10px;padding:8px 14px;margin-top:10px;font-size:14px;line-height:1.3}
+.vpband b{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C24A1A;white-space:nowrap}
+.sb.vp{height:462px;margin-top:10px!important}
+.sb.vp .panel .art{height:128px}
+.postit{width:218px;background:#FFE58A;border-radius:3px;padding:8px 11px;font-size:11.2px;line-height:1.3;box-shadow:0 6px 14px rgba(18,16,30,.14);transform:rotate(-1.2deg)}
+.postit b{display:block;font-size:12px;margin-bottom:2px}
+.postit.alt{background:#FFD3A8;transform:rotate(1.2deg)}
+.hyp{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.hyp .pt{display:flex;gap:10px}
+.hyp .pt i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-style:normal;font-weight:700;font-size:13px;display:grid;place-items:center}
+.hyp .pt b{display:block;font-size:13.5px}
+.hyp .pt span{font-size:12.4px;color:var(--ink2);line-height:1.35}
 </style>
 </head>
 <body>
@@ -219,7 +233,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <div style="font-weight:700;font-size:16px">Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez</div>
       <div class="label" style="margin-top:4px">Diseño Digital · Profesor: Roberto Escobar Donoso</div>
     </div>
-    <div class="label">Rancagua · Noviembre 2026</div>
+    <div class="label" style="text-align:right">Grupo N° ___ · Sección ___<br>Rancagua · Noviembre 2026</div>
   </div>
 </section>
 
@@ -232,24 +246,26 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="grid g2" style="gap:12px 48px;margin-top:6px">
     <div>
       <div class="label acc" style="margin-bottom:8px">01 · Contexto general (UA1 + UA2)</div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>Caso de estudio y equipo</span><span class="label">03</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA1 · Diagnóstico e insights</span><span class="label">04</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA1 · Desafío redefinido</span><span class="label">05</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Referentes y tendencias</span><span class="label">06</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Perfil y requerimientos</span><span class="label">07</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · De 60 ideas a un concepto</span><span class="label">08</span></div>
-      <div class="row" style="padding:9px 0;border-bottom:1px solid var(--line)"><span>UA2 · Propuesta de valor y métricas</span><span class="label">09</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Caso de estudio y equipo</span><span class="label">03</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA1 · Diagnóstico e insights</span><span class="label">04</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA1 · Desafío redefinido</span><span class="label">05</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>El problema que resolvemos</span><span class="label">06</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA2 · Referentes y tendencias</span><span class="label">07</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA2 · Perfil y requerimientos</span><span class="label">08</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA2 · De 60 ideas a un concepto</span><span class="label">09</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>UA2 · Propuesta de valor y métricas</span><span class="label">10</span></div>
     </div>
     <div>
       <div class="label acc" style="margin-bottom:8px">02 · Propuesta de solución</div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Modelo Canvas actualizado</span><span class="label">10</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard · Versión 1</span><span class="label">11</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 1</span><span class="label">12</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Iteración: de V1 a V2</span><span class="label">13</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard · V2 Joselyn y V2 paciente</span><span class="label">14–15</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>El prototipo y sus pantallas</span><span class="label">16</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · V2 (día, números, paciente)</span><span class="label">17–19</span></div>
-      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Próximos pasos</span><span class="label">20</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Modelo Canvas actualizado</span><span class="label">11</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard V1 con propuesta de valor</span><span class="label">12</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · Versión 1</span><span class="label">13</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Iteración: de V1 a V2</span><span class="label">14</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Storyboard V2 (Joselyn y paciente)</span><span class="label">15–16</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>El prototipo y sus pantallas</span><span class="label">17</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Mockups · V2 (día, números, paciente)</span><span class="label">18–20</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Beneficios, costos e hipótesis</span><span class="label">21</span></div>
+      <div class="row" style="padding:7px 0;border-bottom:1px solid var(--line)"><span>Próximos pasos</span><span class="label">22</span></div>
     </div>
   </div>
   <div class="foot"><span>Innovación y Emprendimiento III · INACAP Rancagua · 2026</span><b>02</b></div>
@@ -336,6 +352,23 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="foot"><span>Contexto · Desafío</span><b>05</b></div>
 </section>
 
+<!-- PROBLEMA -->
+<section class="slide light">
+  <div class="abar"></div>
+  <div class="label">01 · Contexto general · Planteamiento del problema</div>
+  <h1>El problema que resolvemos</h1>
+  <div class="bar"></div>
+  <div class="card" style="background:#EAF3F5;border-color:#D3E6EA;padding:20px 24px">
+    <div class="label" style="color:#0E5A6B;margin-bottom:8px">Planteamiento del problema</div>
+    <div style="font-size:23px;line-height:1.42;font-weight:500"><b class="acc">Las kinesiólogas independientes con atención mixta</b> necesitan <b class="acc">saber cuánto ganan realmente y anticipar sus meses bajos</b> porque <b class="acc">su agenda y sus finanzas viven separadas</b>, lo que genera <b class="acc">cerca de 1 hora diaria de registro manual y meses bajos e impuestos que llegan por sorpresa</b>.</div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><div class="row" style="justify-content:flex-start;gap:10px;margin-bottom:8px"><span class="num" style="font-size:30px">1</span><span class="label" style="color:#0E5A6B">Usuario</span></div><div class="small">Joselyn Toledo, kinesióloga con ~1 año de práctica propia. Atiende en el Centro Médico InMotion (70/30) y a domicilio, de 10 a 32 h semanales.</div></div>
+    <div class="card"><div class="row" style="justify-content:flex-start;gap:10px;margin-bottom:8px"><span class="num" style="font-size:30px">2</span><span class="label" style="color:#0E5A6B">Necesidad</span></div><div class="small">Ver su ganancia real por atención (con comisión, traslado, materiales e impuestos) y saber con tiempo qué viene, sin digitar en un Excel de noche.</div></div>
+    <div class="card"><div class="row" style="justify-content:flex-start;gap:10px;margin-bottom:8px"><span class="num" style="font-size:30px">3</span><span class="label" style="color:#0E5A6B">Evidencia</span></div><div class="small">8 insights de la UA1, 7 triangulados 3/3 (usuaria, expertos y observación). Catalina: “me toma una hora actualmente diario”. Asesor: “estar ocupado y estar ganando dinero no son lo mismo”.</div></div>
+  </div>
+  <div class="foot"><span>Contexto · Problema</span><b>06</b></div>
+</section>
 <!-- 06 REFERENTES -->
 <section class="slide light">
   <div class="abar"></div>
@@ -370,7 +403,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       </div>
     </div>
   </div>
-  <div class="foot"><span>Contexto · Unidad 2 · Referentes</span><b>06</b></div>
+  <div class="foot"><span>Contexto · Unidad 2 · Referentes</span><b>07</b></div>
 </section>
 
 <!-- 07 REQUERIMIENTOS -->
@@ -392,7 +425,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <div class="card" style="padding:12px 14px"><span class="tag p">Mapa de empatía · lo que le duele</span><div class="small" style="margin-top:6px">No saber cuánto gana, los meses bajos que llegan por sorpresa, el trabajo administrativo fuera de horario, los costos del domicilio que no ve y los impuestos anuales.</div></div>
     <div class="card" style="padding:12px 14px"><span class="tag">Jerarquía (impacto × frecuencia del dolor)</span><div class="small" style="margin-top:6px"><b>1</b> C1 · C2: el núcleo; sin agenda conectada no hay dato · <b>2</b> C3 · C4: victorias tempranas · <b>3</b> C5: necesita 2–3 meses de historial · <b>4</b> C6: alto impacto, pero el dolor es anual.</div></div>
   </div>
-  <div class="foot"><span>Contexto · Unidad 2 · Requerimientos</span><b>07</b></div>
+  <div class="foot"><span>Contexto · Unidad 2 · Requerimientos</span><b>08</b></div>
 </section>
 
 <!-- 08 IDEACIÓN -->
@@ -437,7 +470,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <div class="card" style="padding:10px 13px"><b class="small">Anticipación y colchón</b><div class="xs muted" style="margin-top:3px">25 proyección 3–6 meses · 26 alerta de meses bajos · 29 colchón automático · 30 cupos de último minuto</div></div>
     <div class="card" style="padding:10px 13px"><b class="small">Tiempo y rutas sostenibles</b><div class="xs muted" style="margin-top:3px">22 días por sector · 48 modo "no trabajo de noche" · 49 horas recuperadas</div></div>
   </div>
-  <div class="foot"><span>Contexto · Unidad 2 · Ideación</span><b>08</b></div>
+  <div class="foot"><span>Contexto · Unidad 2 · Ideación</span><b>09</b></div>
 </section>
 
 <!-- 09 PROPUESTA DE VALOR -->
@@ -469,7 +502,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <div class="xs" style="color:var(--text2);margin-top:8px">Las líneas base "por medir" se levantan en las dos primeras semanas de testeo de la UA3.</div>
     </div>
   </div>
-  <div class="foot"><span>Contexto · Unidad 2 · Propuesta de valor</span><b>09</b></div>
+  <div class="foot"><span>Contexto · Unidad 2 · Propuesta de valor</span><b>10</b></div>
 </section>
 
 <!-- 10 CANVAS -->
@@ -480,7 +513,10 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <div class="label">02 · Propuesta · Modelo de negocio</div>
       <h1 style="font-size:42px">Modelo Canvas actualizado · Copiloto Kine</h1>
     </div>
-    <div class="small muted" style="text-align:right;max-width:400px">Base: panel de propuesta de valor (2.1.4.4). <span style="color:var(--accent);font-weight:700">+ naranjo</span> = lo que agrega la iteración V2.</div>
+    <div style="display:flex;gap:14px">
+      <div class="postit"><b>Problema</b>No sabe cuánto gana: agenda y finanzas separadas y ~1 h de Excel al día.</div>
+      <div class="postit alt"><b>Solución propuesta</b>Copiloto conectado a su agenda: ganancia real por atención y aviso de lo que viene.</div>
+    </div>
   </div>
   <div class="bmc" style="margin-top:10px">
     <div class="b" style="grid-column:1/3;grid-row:1/3"><h4>Socios clave</h4><ul>
@@ -510,17 +546,18 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <li>Suscripción mensual de referencia de $20.000–$25.000 CLP (disposición a pagar declarada: $30.000–$40.000)</li><li>Plan básico gratuito con el tablero mensual</li>
       <li class="n">Funciones de la V2 (impuestos, rutas, colchón) en el plan pagado; precio a validar en la UA4</li></ul></div>
   </div>
-  <div class="foot"><span>Propuesta · Modelo Canvas</span><b>10</b></div>
+  <div class="foot"><span>Propuesta · Modelo Canvas · <b style="color:var(--accent)">+ naranjo</b> = lo que agrega la iteración V2</span><b>11</b></div>
 </section>
 
 <!-- 11 STORYBOARD V1 -->
 <section class="slide light" style="padding-top:36px">
   <div class="abar"></div>
   <div class="row">
-    <div><div class="label">02 · Propuesta · Versión 1 — alcance mínimo</div><h1 style="font-size:42px">Storyboard V1 · El tablero conectado a la agenda</h1></div>
+    <div><div class="label">02 · Propuesta · Versión 1 — alcance mínimo</div><h1 style="font-size:42px">Storyboard V1 con propuesta de valor</h1></div>
     <span class="tag p">Primera versión</span>
   </div>
-  <div class="sb" style="margin-top:12px">
+  <div class="vpband"><b>Propuesta de valor</b><span>Un tablero conectado a la agenda que ya usa: cada atención se vuelve ganancia real, sin digitar.</span></div>
+  <div class="sb vp">
     <div class="panel"><div class="art" style="background:#2A2547"><img class="sbimg" src="img/storyboard/v1-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
       <svg viewBox="0 0 300 150"><use href="#moon" x="246" y="36" width="28" height="28"/>
       <use href="#jos" x="30" y="36" width="62" height="114"/><use href="#laptop" x="104" y="44" width="118" height="80"/><use href="#sheet" x="140" y="52" width="40" height="46"/>
@@ -551,7 +588,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <text x="196" y="80" font-size="10" font-weight="700" fill="#E8637A">¿Y abril?</text></svg></div>
       <div class="cap"><b>Proyección a 3 meses… y lo que falta</b>Ve que febrero viene bajo, pero la app no le sugiere qué hacer. Los domicilios siguen dispersos y la Operación Renta todavía no aparece.</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Storyboard V1 · alcance mínimo definido en el informe EV2</span><b>11</b></div>
+  <div class="foot"><span>Propuesta · Storyboard V1 · alcance mínimo definido en el informe EV2</span><b>12</b></div>
 </section>
 
 <!-- 12 MOCKUPS V1 -->
@@ -564,7 +601,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="shots ">
     <div class="shotph"><div class="fr"><img src="../app/capturas/v1-01-conectar.png" alt="Conectar agenda"></div><div class="cp"><b>Conectar agenda</b>Lee la agenda que ya usa</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-03-hoy.png" alt="Hoy"></div><div class="cp"><b>Hoy</b>Cada cita con su ganancia</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-04-atencion.png" alt="Atención realizada"></div><div class="cp"><b>Atención realizada</b>Un toque y ganancia neta</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-05-tablero.png" alt="Tablero"></div><div class="cp"><b>Tablero</b>Semáforo y meta del mes</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v1-06-proyeccion.png" alt="Proyección"></div><div class="cp"><b>Proyección</b>3 meses, sin acciones</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V1 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>12</b></div>
+  <div class="foot"><span>Propuesta · Mockups V1 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>13</b></div>
 </section>
 
 <!-- 13 ITERACIÓN -->
@@ -584,17 +621,18 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <tr><td style="font-weight:700">Avisos</td><td>Una notificación por cada atención</td><td>Riesgo de sobrecarga identificado en el informe EV2</td><td><span class="arrow">→</span> Resumen semanal por WhatsApp y un solo aviso diario configurable <span class="s so">So</span></td></tr>
   </table>
   <div class="xs muted" style="margin-top:8px">La V2 es el material que se llevará a la sesión de co-creación con Joselyn y Catalina (votación, metáfora y test de 5 segundos). Sus resultados se integrarán como siguiente ciclo.</div>
-  <div class="foot"><span>Propuesta · Iteración</span><b>13</b></div>
+  <div class="foot"><span>Propuesta · Iteración</span><b>14</b></div>
 </section>
 
 <!-- 14 STORYBOARD V2 -->
 <section class="slide light v2" style="padding-top:36px">
   <div class="abar"></div>
   <div class="row">
-    <div><div class="label">02 · Propuesta · Versión 2</div><h1 style="font-size:42px">Storyboard V2 · El copiloto que lee la ruta</h1></div>
+    <div><div class="label">02 · Propuesta · Versión 2</div><h1 style="font-size:42px">Storyboard V2 con propuesta de valor</h1></div>
     <span class="tag">Versión iterada</span>
   </div>
-  <div class="sb" style="margin-top:12px">
+  <div class="vpband"><b>Propuesta de valor</b><span>El copiloto financiero que convierte cada atención en ganancia real y le avisa qué viene, sin que tenga que digitar.</span></div>
+  <div class="sb vp">
     <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span>
       <svg viewBox="0 0 300 150"><path d="M26 118 C70 70 120 120 160 86 S240 46 278 54" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="8 6"/>
       <use href="#pin" x="14" y="92" width="24" height="32"/><use href="#pin" x="148" y="60" width="24" height="32"/><use href="#pin" x="200" y="44" width="24" height="32"/><use href="#pin" x="266" y="26" width="24" height="32"/>
@@ -627,16 +665,17 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <use href="#bell" x="26" y="88" width="34" height="34"/><text x="64" y="112" font-size="10" fill="#504D6E">Ofrecer pack de 4</text></svg></div>
       <div class="cap"><b>Avisa antes de la curva</b>Con seis semanas de anticipación advierte que febrero viene bajo y sugiere ofrecer packs de sesiones. La curva se aplana.</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Storyboard V2</span><b>14</b></div>
+  <div class="foot"><span>Propuesta · Storyboard V2</span><b>15</b></div>
 </section>
 <!-- STORYBOARD PACIENTE -->
 <section class="slide light vp2" style="padding-top:36px">
   <div class="abar"></div>
   <div class="row">
-    <div><div class="label">02 · Propuesta · Versión 2 — el paciente</div><h1 style="font-size:42px">Storyboard V2 · Lo que vive el paciente</h1></div>
+    <div><div class="label">02 · Propuesta · Versión 2 — el paciente</div><h1 style="font-size:42px">Storyboard V2 · el paciente</h1></div>
     <span class="tag">Versión iterada</span>
   </div>
-  <div class="sb" style="margin-top:12px">
+  <div class="vpband"><b>Propuesta de valor</b><span>Reservar, confirmar y pagar en un minuto, con la voz de Joselyn, sin cambiar de agenda ni usar efectivo.</span></div>
+  <div class="sb vp">
     <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span>
       <svg viewBox="0 0 300 150"><use href="#cam" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#ig" x="156" y="34" width="36" height="36"/><path d="M196 52 H220" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#cal" x="226" y="26" width="54" height="54"/><use href="#check" x="238" y="96" width="30" height="30"/></svg></div>
       <div class="cap"><b>Reserva en un minuto</b>Camila ve el link en el Instagram de InMotion y reserva desde el sofá en la agenda en línea que Joselyn ya usa.</div></div>
@@ -657,7 +696,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
       <div class="cap"><b>Seguimiento después del alta</b>Un mes después, recibe un mensaje de seguimiento con la voz de Joselyn y reserva un pack de mantención.</div></div>
     
   </div>
-  <div class="foot"><span>Propuesta · Storyboard V2 · paciente</span><b>15</b></div>
+  <div class="foot"><span>Propuesta · Storyboard V2 · paciente</span><b>16</b></div>
 </section>
 
 <!-- MAPA PANTALLAS -->
@@ -695,7 +734,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
     <div class="card" style="padding:10px 14px"><b class="small">Qué lee y qué no</b><div class="xs muted">Solo la fecha, el lugar y el valor de cada cita, más los cobros. Nunca la ficha clínica (R13 · Ley 21.719).</div></div>
     <div class="card" style="padding:10px 14px"><b class="small">Listo para la UA3</b><div class="xs muted">Sirve para la sesión de co-creación y para los dos ciclos de testeo, midiendo minutos de registro y atenciones registradas solas.</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mapa de pantallas</span><b>16</b></div>
+  <div class="foot"><span>Propuesta · Mapa de pantallas</span><b>17</b></div>
 </section>
 <!-- MOCKUPS V2 DIA -->
 <section class="slide light" style="padding-top:36px">
@@ -707,7 +746,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="shots ">
     <div class="shotph"><div class="fr"><img src="../app/capturas/v2-03-hoy.png" alt="Hoy"></div><div class="cp"><b>Hoy</b>Martes = Machalí</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-04-ruta.png" alt="Ruta por sector"></div><div class="cp"><b>Ruta por sector</b>−9 km en el día</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-05-atencion.png" alt="Atención realizada"></div><div class="cp"><b>Atención realizada</b>El pago se reparte solo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-06-cupo.png" alt="Cupo de último minuto"></div><div class="cp"><b>Cupo de último minuto</b>La hora vacía se ofrece</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-10-cierre-listo.png" alt="Cierre del día"></div><div class="cp"><b>Cierre del día</b>Antes de las 21:00</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>17</b></div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>18</b></div>
 </section>
 <!-- MOCKUPS V2 NUMEROS -->
 <section class="slide light" style="padding-top:36px">
@@ -719,7 +758,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="shots four">
     <div class="shotph"><div class="fr"><img src="../app/capturas/v2-02-reglas.png" alt="Tus reglas"></div><div class="cp"><b>Tus reglas</b>Retención, colchón y sectores</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-07-tablero.png" alt="Tablero"></div><div class="cp"><b>Tablero</b>Colchón y Operación Renta</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-08-proyeccion.png" alt="Proyección"></div><div class="cp"><b>Proyección</b>6 meses con acciones</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/v2-11-resumen.png" alt="Resumen semanal"></div><div class="cp"><b>Resumen semanal</b>Llega solo por WhatsApp</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>18</b></div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>19</b></div>
 </section>
 <!-- MOCKUPS V2 PACIENTE -->
 <section class="slide light" style="padding-top:36px">
@@ -731,9 +770,23 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="shots ">
     <div class="shotph"><div class="fr"><img src="../app/capturas/p-01-reserva.png" alt="Reserva en línea"></div><div class="cp"><b>Reserva en línea</b>La agenda de siempre</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-03-whatsapp-luis.png" alt="Recordatorio y aviso"></div><div class="cp"><b>Recordatorio y aviso</b>"Voy en camino" y link de pago</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-04-pago.png" alt="Pago con link"></div><div class="cp"><b>Pago con link</b>Sin efectivo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-05-pago-ok.png" alt="Pago recibido"></div><div class="cp"><b>Pago recibido</b>Boleta al correo</div></div><div class="shotph"><div class="fr"><img src="../app/capturas/p-07-whatsapp-camila-ok.png" alt="Cupo y seguimiento"></div><div class="cp"><b>Cupo y seguimiento</b>Toma la hora libre</div></div>
   </div>
-  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>19</b></div>
+  <div class="foot"><span>Propuesta · Mockups V2 · capturas de unidad-2/app · datos ficticios de ejemplo</span><b>20</b></div>
 </section>
 
+<!-- PROTOTIPO HIPOTESIS -->
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">02 · Propuesta · Testeo de la propuesta de solución</div><h1 style="font-size:42px">Nuestro prototipo: beneficios, costos e hipótesis</h1></div>
+    <span class="tag g">Lo que vamos a testear</span>
+  </div>
+  <div class="grid g3" style="margin-top:12px;gap:14px">
+    <div class="hyp"><div class="row"><b style="font-size:15px">V1 · alcance mínimo</b></div><img src="../entrega_ev2/img/mockup-v1.png" style="width:100%;height:150px;object-fit:contain;background:#EAF3F5;border-radius:8px"><div class="pt"><i>1</i><div><b>Beneficios</b><span>Cada cita se vuelve ingreso y al cerrar una atención ve su ganancia neta y su semáforo.</span></div></div><div class="pt"><i>2</i><div><b>Principales costos</b><span>Desarrollo low-code, Google Calendar (API sin costo) y Google Sheets como base.</span></div></div><div class="pt"><i>3</i><div><b>Hipótesis</b><span>Con el cierre de un toque, el registro baja de ~60 a menos de 30&nbsp;min y ≥&nbsp;80&nbsp;% de las atenciones se registran solas.</span></div></div></div>
+    <div class="hyp"><div class="row"><b style="font-size:15px">V2 · iterada</b></div><img src="../entrega_ev2/img/mockup-v2.png" style="width:100%;height:150px;object-fit:contain;background:#EAF3F5;border-radius:8px"><div class="pt"><i>1</i><div><b>Beneficios</b><span>Retención y colchón apartados solos, −9 km al día, horas libres recuperadas y cierre antes de las 21 h.</span></div></div><div class="pt"><i>2</i><div><b>Principales costos</b><span>Lo de la V1 más mapas, un medio de pago con link y soporte. Referencia: $20.000–25.000 al mes.</span></div></div><div class="pt"><i>3</i><div><b>Hipótesis</b><span>Ante un mes bajo, Joselyn activa la acción sugerida y la proyección se equivoca en ≤&nbsp;10&nbsp;%.</span></div></div></div>
+    <div class="hyp"><div class="row"><b style="font-size:15px">V2 · el paciente</b></div><img src="../entrega_ev2/img/mockup-paciente.png" style="width:100%;height:150px;object-fit:contain;background:#EAF3F5;border-radius:8px"><div class="pt"><i>1</i><div><b>Beneficios</b><span>Reserva en un minuto, recordatorio y aviso de llegada, y pago sin efectivo.</span></div></div><div class="pt"><i>2</i><div><b>Principales costos</b><span>Mensajes con plantillas en la voz de Joselyn y la comisión del medio de pago.</span></div></div><div class="pt"><i>3</i><div><b>Hipótesis</b><span>Los pacientes, incluidos adultos mayores, confirman y pagan con link sin ayuda (meta a validar: ≥&nbsp;70&nbsp;%).</span></div></div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Testeo · se mide en la sesión de co-creación y en los ciclos de la UA3</span><b>21</b></div>
+</section>
 <!-- 16 CIERRE -->
 <section class="slide dark">
   <div class="abar"></div>
@@ -748,7 +801,7 @@ table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:t
   <div class="dcard" style="margin-top:22px;border-color:rgba(255,107,53,.4)">
     <div class="serif" style="font-size:26px;line-height:1.35">Ella maneja. La herramienta es el copiloto: <span class="acc" style="font-family:var(--fb);font-style:normal;font-weight:700;font-size:22px">le devuelve el tiempo y la claridad</span> para sostener el trato 1:1 que la hace única.</div>
   </div>
-  <div class="foot"><span>Innovación y Emprendimiento III · INACAP Rancagua · 2026</span><b>20</b></div>
+  <div class="foot"><span>Innovación y Emprendimiento III · INACAP Rancagua · 2026</span><b>22</b></div>
 </section>
 
 </body>
