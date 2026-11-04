@@ -37,6 +37,7 @@ head = head.replace('</style>', """
 def relabel(sec, foot_extra=None):
     for a in ('01 · El problema', '03 · Modelo y storyboard', '04 · Prototipo y testeo'):
         sec = sec.replace(a, UNIDAD)
+    sec = sec.replace('02 · Contexto', 'Contexto')
     return sec
 
 
@@ -103,8 +104,13 @@ cierre_canvas = f"""<section class="slide dark">
   <div class="foot"><span>Copiloto Kine · Innovación y Emprendimiento III · INACAP Rancagua · 2026</span><b>00</b></div>
 </section>
 """
-write('EV2_Canvas_Storyboard.html', 'Copiloto Kine — Canvas y storyboard',
-      [portada_canvas, canvas, relabel(SECS['11 STORYBOARD V1']), relabel(SECS['14 STORYBOARD V2']), relabel(SECS['STORYBOARD PACIENTE']), cierre_canvas])
+# Reparto: cada lámina de la presentación general va a uno solo de los dos archivos.
+CANVAS_SLIDES = ['09 PROPUESTA DE VALOR', '10 CANVAS', '11 STORYBOARD V1', '14 STORYBOARD V2', 'STORYBOARD PACIENTE']
+PROTO_SLIDES = ['PROBLEMA', '03 CASO', '04 UA1', '05 DESAFÍO', '06 REFERENTES', '07 REQUERIMIENTOS', '08 IDEACIÓN',
+                '12 MOCKUPS V1', '13 ITERACIÓN', 'PROTO V2', 'MOCKUPS V2 DIA', 'MOCKUPS V2 NUMEROS', 'MOCKUPS V2 PACIENTE',
+                'MAPA PANTALLAS', '16 CIERRE']
+pick = lambda k: canvas if k == '10 CANVAS' else relabel(SECS[k])
+write('EV2_Canvas_Storyboard.html', 'Copiloto Kine — Canvas y storyboard', [portada_canvas] + [pick(k) for k in CANVAS_SLIDES])
 
 # ------------------------------------------------ Archivo 2 · Prototipado y testeo
 miembros = ''.join(f'<div class="m"><b>{i}. {n}</b><span>Diseño Digital · {r}</span></div>' for i, (n, r) in enumerate(EQUIPO, start=1))
@@ -125,5 +131,7 @@ portada_proto = f"""<section class="slide dark">
 """
 cierre_proto = relabel(SECS['16 CIERRE']).replace('<div class="label">Cierre</div>', f'<div class="label">{UNIDAD}</div>')
 write('EV2_Prototipado_Testeo.html', 'Copiloto Kine — Prototipado y testeo',
-      [portada_proto, relabel(SECS['PROBLEMA']), relabel(SECS['12 MOCKUPS V1']), relabel(SECS['13 ITERACIÓN']), relabel(SECS['PROTO V2']),
-       relabel(SECS['MOCKUPS V2 PACIENTE']), cierre_proto])
+      [portada_proto] + [cierre_proto if k == '16 CIERRE' else relabel(SECS[k]) for k in PROTO_SLIDES])
+usadas = set(CANVAS_SLIDES) | set(PROTO_SLIDES) | {'01 PORTADA', '02 ÍNDICE'}
+faltan = [k for k in SECS if k not in usadas]
+assert not faltan, f'Láminas sin repartir: {faltan}'
