@@ -1,12 +1,14 @@
-// Exporta la presentación EV2 a PDF (1280×720 por lámina) y deja vistas previas PNG.
+// Exporta una presentación HTML (por defecto la EV2) a PDF (1280×720 por lámina) y deja vistas previas PNG.
 // Uso: node unidad-2/_build/render_presentacion.js
 const path = require('path');
 const fs = require('fs');
 const { chromium } = require('playwright');
 
-const HTML = path.resolve(__dirname, '../ev2/Evaluacion2_Presentacion.html');
-const PDF = path.resolve(__dirname, '../ev2/Evaluacion2_Presentacion.pdf');
-const PREV = process.argv[2]; // carpeta opcional para vistas previas PNG
+// Uso: node render_presentacion.js [archivo.html] [carpeta_vistas_previas]
+const args = process.argv.slice(2);
+const HTML = args[0] && args[0].endsWith('.html') ? path.resolve(args.shift()) : path.resolve(__dirname, '../ev2/Evaluacion2_Presentacion.html');
+const PDF = HTML.replace(/\.html$/, '.pdf');
+const PREV = args[0]; // carpeta opcional para vistas previas PNG
 
 (async () => {
   const browser = await chromium.launch();

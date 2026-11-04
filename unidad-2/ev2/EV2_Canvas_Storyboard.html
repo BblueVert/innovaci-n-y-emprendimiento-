@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Copiloto Kine — Canvas y storyboard</title>
+<style>
+@font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'Instrument Serif';src:url(fonts/instrument-serif-latin-400-italic.woff2);font-style:italic}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-400-normal.woff2);font-weight:400}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-400-italic.woff2);font-weight:400;font-style:italic}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2);font-weight:700}
+:root{
+  --void:#07060E; --card:#1A1828; --border:#252235;
+  --accent:#FF6B35; --h2:#FF8C42; --h3:#FFB347; --h4:#E8637A; --h6:#7B3FA0; --h7:#4A3580;
+  --text:#F5F2FF; --text2:#9B98B8;
+  --bg:#F8F7FF; --ink:#12101E; --ink2:#504D6E; --line:#E2E0EF; --white:#FFFFFF;
+  --ok:#1F8A5B;
+  --fd:'Bebas Neue','Arial Narrow',Arial,sans-serif;
+  --fm:'DM Mono','Courier New',monospace;
+  --fb:'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif;
+  --fs:'Instrument Serif',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+@page{size:1280px 720px;margin:0}
+html,body{background:#2a2838}
+body{font-family:var(--fb);color:var(--ink);font-size:15px;line-height:1.45;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.slide{width:1280px;height:720px;position:relative;overflow:hidden;background:var(--bg);padding:44px 64px 60px 72px;page-break-after:always;margin:0 auto 24px}
+@media print{.slide{margin:0}}
+.slide:last-child{page-break-after:auto}
+.dark{background:linear-gradient(135deg,var(--void) 0%,#1A0E2E 60%,#0D0820 100%);color:var(--text)}
+.abar{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--accent),var(--h4),var(--h6))}
+.light .abar{width:4px;opacity:.6}
+.foot{position:absolute;left:72px;right:64px;bottom:22px;display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:1px solid var(--line);padding-top:8px}
+.dark .foot{color:var(--text2);border-color:var(--border)}
+.foot b{color:var(--accent);font-weight:500}
+.label{font-family:var(--fm);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.dark .label{color:var(--text2)}
+.acc{color:var(--accent)}
+.disp{font-family:var(--fd);letter-spacing:.03em;line-height:.95;font-weight:400}
+h1{font-family:var(--fd);font-weight:400;font-size:46px;letter-spacing:.02em;line-height:1;margin:6px 0 4px}
+.sub{color:var(--ink2);font-size:15.5px;max-width:980px}
+.serif{font-family:var(--fs);font-style:italic;font-weight:400}
+.bar{height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 18px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.tag{display:inline-block;font-family:var(--fm);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(255,107,53,.1);border:1px solid rgba(255,107,53,.35);color:var(--accent)}
+.tag.p{background:rgba(123,63,160,.1);border-color:rgba(123,63,160,.35);color:var(--h6)}
+.tag.g{background:rgba(31,138,91,.1);border-color:rgba(31,138,91,.4);color:var(--ok)}
+.s{display:inline-block;font-family:var(--fm);font-size:9.5px;font-weight:500;padding:1px 5px;border-radius:3px;margin-left:2px;vertical-align:1px}
+.s.ec{background:#FFE8DC;color:#B4441A}.s.so{background:#EDE6F7;color:#4A3580}.s.am{background:#DDF2E7;color:#1F6B47}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+ul.clean{list-style:none}
+ul.clean li{padding-left:16px;position:relative;margin-bottom:5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.q{font-family:var(--fs);font-style:italic;font-size:17px;color:var(--ink2);border-left:3px solid var(--accent);padding:4px 12px;background:rgba(255,107,53,.05)}
+.num{font-family:var(--fd);font-size:40px;line-height:1;color:var(--accent)}
+.small{font-size:13px}.xs{font-size:11.5px}
+.muted{color:var(--ink2)}
+.row{display:flex;justify-content:space-between;align-items:center}
+table.it{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
+table.it th{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);text-align:left;padding:7px 9px;border-bottom:2px solid var(--line)}
+table.it td{padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.33}
+.arrow{color:var(--accent);font-weight:700}
+
+/* BMC */
+.bmc{display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:1fr 1fr .74fr;gap:8px;height:458px}
+.bmc .b{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:11.2px;line-height:1.3;overflow:hidden}
+.bmc .b h4{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--h6);margin-bottom:5px}
+.bmc .b ul{list-style:none}
+.bmc .b li{margin-bottom:3px;padding-left:9px;position:relative}
+.bmc .b li::before{content:"·";position:absolute;left:0;color:var(--ink2);font-weight:700}
+.bmc .b li.n::before{content:"+";color:var(--accent);font-weight:700}
+.bmc .b li.n b{color:var(--accent)}
+.vp{background:linear-gradient(160deg,#fff 0%,#FFF3EC 100%)!important;border-color:rgba(255,107,53,.45)!important}
+
+/* Storyboard */
+.sb{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;height:506px}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.panel .art{height:160px;background:#F1EFFA;position:relative;border-bottom:1px solid var(--line)}
+.panel .art svg{width:100%;height:100%;display:block}
+.panel .n{position:absolute;top:8px;left:8px;font-family:var(--fd);font-size:22px;line-height:1;background:var(--h6);color:#fff;border-radius:5px;padding:4px 8px 2px}
+.panel .pain{position:absolute;top:8px;right:8px}
+.panel .cap{padding:9px 12px;font-size:12.3px;line-height:1.36}
+.panel .cap b{display:block;font-size:13px;margin-bottom:2px}
+.v2 .panel .art{background:#FFF1E9}
+.v2 .panel .n{background:var(--accent)}
+
+/* Phones */
+.phones{display:flex;gap:28px;justify-content:center;margin-top:12px}
+.phone{width:212px;height:432px;border-radius:30px;background:#0D0B18;padding:9px;box-shadow:0 18px 40px rgba(18,16,30,.2)}
+.phone .scr{width:100%;height:100%;border-radius:23px;background:#fff;overflow:hidden;position:relative;font-size:10.4px;line-height:1.3}
+.phone .notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);width:60px;height:14px;background:#0D0B18;border-radius:10px;z-index:3}
+.sbar{height:28px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 16px 3px;font-size:9px;font-weight:700}
+.ph{padding:6px 12px 8px}
+.ph .t{font-weight:700;font-size:14px}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:3px 8px;font-size:9.5px;margin:0 3px 4px 0}
+.chip.on{background:var(--k);border-color:var(--k);color:#fff;font-weight:700}
+.btn{display:block;text-align:center;background:var(--k);color:#fff;font-weight:700;border-radius:10px;padding:8px;font-size:11.5px}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.li{border:1px solid var(--line);border-radius:9px;padding:6px 9px;margin-bottom:6px}
+.li .row>*{white-space:nowrap}
+.li.row>*{white-space:nowrap}
+.prog{height:8px;background:#EEEAF7;border-radius:8px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--k)}
+.tabbar{position:absolute;bottom:0;left:0;right:0;height:40px;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;font-size:8.5px;color:var(--ink2);background:#fff}
+.tabbar span.on{color:var(--k);font-weight:700}
+.big{font-size:21px;font-weight:700;line-height:1.1}
+.sem{display:inline-block;width:9px;height:9px;border-radius:50%;vertical-align:-1px;margin-right:4px}
+.v1p{--k:#7B3FA0}
+.v2p{--k:#FF6B35}
+.cap2{font-size:12.5px;text-align:center;margin-top:10px;width:212px}
+.rq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rq .c{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px}
+.rq .c h5{font-size:13px;margin-bottom:4px}
+.rq .c .xs{line-height:1.4;font-size:12.6px}
+.pri{font-family:var(--fd);font-size:20px;color:#fff;background:var(--h6);border-radius:4px;padding:1px 7px 0;float:right;line-height:1.2}
+
+/* Capturas reales de la app */
+.shots{display:flex;gap:22px;justify-content:center;margin-top:14px}
+.shotph{width:196px;flex:none}
+.shotph .fr{border-radius:30px;background:#0D0B18;padding:7px;box-shadow:0 16px 36px rgba(18,16,30,.22)}
+.shotph img{width:100%;display:block;border-radius:24px}
+.shotph .cp{font-size:12.3px;text-align:center;margin-top:9px;line-height:1.3}
+.shotph .cp b{display:block;font-size:12.8px}
+.shots.four .shotph{width:214px}
+/* Imagen de Google Flow sobre la viñeta (si existe) */
+.panel .art img.sbimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.panel .art .n,.panel .art .pain{z-index:2}
+.vp2 .panel .art{background:#F0ECFA}
+.vp2 .panel .n{background:var(--h4)}
+/* Mapa de pantallas */
+.smap{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+.smap .g{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.smap .g h5{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--h6);margin-bottom:8px}
+.smap .th{display:flex;gap:6px;flex-wrap:wrap}
+.smap .th figure{width:60px}
+.smap .th img{width:60px;border-radius:8px;border:1px solid var(--line);display:block}
+.smap .th figcaption{font-size:8.6px;line-height:1.2;text-align:center;margin-top:3px;color:var(--ink2)}
+
+/* Iteración según brief U3 */
+.vpband{display:flex;gap:12px;align-items:center;background:#FFF1E9;border:1px solid #FFD2BD;border-radius:10px;padding:8px 14px;margin-top:10px;font-size:14px;line-height:1.3}
+.vpband b{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#C24A1A;white-space:nowrap}
+.sb.vp{height:462px;margin-top:10px!important}
+.sb.vp .panel .art{height:128px}
+.postit{width:218px;background:#FFE58A;border-radius:3px;padding:8px 11px;font-size:11.2px;line-height:1.3;box-shadow:0 6px 14px rgba(18,16,30,.14);transform:rotate(-1.2deg)}
+.postit b{display:block;font-size:12px;margin-bottom:2px}
+.postit.alt{background:#FFD3A8;transform:rotate(1.2deg)}
+.hyp{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.hyp .pt{display:flex;gap:10px}
+.hyp .pt i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-style:normal;font-weight:700;font-size:13px;display:grid;place-items:center}
+.hyp .pt b{display:block;font-size:13.5px}
+.hyp .pt span{font-size:12.4px;color:var(--ink2);line-height:1.35}
+
+/* Estructura del brief: Nuestro prototipo */
+.proto{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-top:14px;align-items:start}
+.proto .shots{margin-top:0;gap:16px;background:#F1EFFA;border-radius:14px;padding:18px 14px 12px}
+.proto .shotph{width:172px}
+.proto .pts{display:flex;flex-direction:column;gap:14px}
+.proto .pt{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.proto .pt i{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-style:normal;font-family:var(--fd);font-size:22px;display:grid;place-items:center;padding-top:2px}
+.proto .pt b{display:block;font-size:16px;margin-bottom:3px}
+.proto .pt span{font-size:13.4px;color:var(--ink2);line-height:1.4}
+.proto .pt.h{background:#FFF7F2;border-color:#FFD2BD}
+.asesor{border:1.5px dashed var(--ink2);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--ink2);margin-top:8px;display:flex;gap:10px;align-items:center;height:34px}
+.asesor b{font-family:var(--fm);font-weight:500;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--h6)}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:8px}
+.team div{font-size:12.4px;line-height:1.3}
+.team div b{display:block;font-size:13px}
+
+/* Portadas de los archivos del brief */
+.cv-sky{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cv-datos{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:15px;color:#E9E6F7}
+.cv-datos b{font-family:var(--fm);font-weight:500;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#FFB347;padding-top:3px}
+.int-card{position:absolute;right:64px;top:64px;width:430px;background:rgba(26,24,40,.92);border:1px solid #302D45;border-radius:16px;padding:20px 22px;backdrop-filter:blur(4px)}
+.int-card h3{font-weight:700;font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.int-card h3 i{width:30px;height:30px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-style:normal;font-size:14px}
+.int-card .m{background:#13111F;border:1px solid #252235;border-radius:10px;padding:10px 14px;margin-bottom:9px}
+.int-card .m b{display:block;font-size:15px}
+.int-card .m span{font-size:12.5px;color:#9B98B8}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="jos" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="13" fill="#F2C7A5"/>
+      <path d="M16 16 Q18 2 30 3 Q44 3 45 17 Q40 9 30 9 Q21 9 16 16Z" fill="#3B2416"/>
+      <circle cx="40" cy="8" r="6" fill="#3B2416"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L50 80 L10 80Z" fill="#FF6B35"/>
+      <rect x="26" y="34" width="8" height="8" fill="#fff" opacity=".9"/>
+      <rect x="15" y="80" width="12" height="28" rx="3" fill="#7B3FA0"/>
+      <rect x="33" y="80" width="12" height="28" rx="3" fill="#7B3FA0"/>
+    </symbol>
+    <symbol id="pac" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="13" fill="#E9B894"/>
+      <path d="M17 14 Q20 4 30 4 Q41 4 43 14 Q36 10 30 10 Q23 10 17 14Z" fill="#C9C6D6"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L50 80 L10 80Z" fill="#4A3580"/>
+      <rect x="15" y="80" width="12" height="28" rx="3" fill="#504D6E"/>
+      <rect x="33" y="80" width="12" height="28" rx="3" fill="#504D6E"/>
+    </symbol>
+    <symbol id="phone" viewBox="0 0 30 52"><rect x="1" y="1" width="28" height="50" rx="5" fill="#13111F"/><rect x="4" y="6" width="22" height="38" rx="2" fill="#fff"/></symbol>
+    <symbol id="laptop" viewBox="0 0 120 80"><rect x="14" y="4" width="92" height="60" rx="4" fill="#13111F"/><rect x="19" y="9" width="82" height="50" fill="#fff"/><path d="M2 66 H118 L112 76 H8Z" fill="#A9A6C2"/></symbol>
+    <symbol id="car" viewBox="0 0 120 60">
+      <path d="M10 40 Q12 26 26 24 L40 10 H80 L96 24 Q110 26 112 40 V48 H10Z" fill="#FF6B35"/>
+      <path d="M44 14 H62 V26 H32Z M66 14 H78 L90 26 H66Z" fill="#DCEBFF"/>
+      <circle cx="32" cy="48" r="9" fill="#13111F"/><circle cx="32" cy="48" r="4" fill="#9B98B8"/>
+      <circle cx="90" cy="48" r="9" fill="#13111F"/><circle cx="90" cy="48" r="4" fill="#9B98B8"/>
+    </symbol>
+    <symbol id="house" viewBox="0 0 80 70"><path d="M6 32 L40 6 L74 32Z" fill="#C4467A"/><rect x="14" y="30" width="52" height="38" fill="#fff" stroke="#E2E0EF"/><rect x="34" y="44" width="13" height="24" fill="#7B3FA0"/><rect x="20" y="38" width="10" height="10" fill="#DCEBFF"/><rect x="51" y="38" width="10" height="10" fill="#DCEBFF"/></symbol>
+    <symbol id="bubble" viewBox="0 0 60 40"><path d="M6 2 H54 Q58 2 58 6 V26 Q58 30 54 30 H22 L12 38 L14 30 H6 Q2 30 2 26 V6 Q2 2 6 2Z" fill="#25D366"/><rect x="10" y="10" width="34" height="4" rx="2" fill="#fff"/><rect x="10" y="18" width="24" height="4" rx="2" fill="#fff"/></symbol>
+    <symbol id="sheet" viewBox="0 0 60 70"><rect x="2" y="2" width="56" height="66" rx="3" fill="#fff" stroke="#1F8A5B" stroke-width="2"/><rect x="2" y="2" width="56" height="12" fill="#1F8A5B"/><path d="M2 26 H58 M2 38 H58 M2 50 H58 M22 14 V68 M40 14 V68" stroke="#BFE3D1" stroke-width="1.5"/></symbol>
+    <symbol id="coins" viewBox="0 0 50 40"><ellipse cx="25" cy="32" rx="18" ry="6" fill="#E0A21A"/><ellipse cx="25" cy="26" rx="18" ry="6" fill="#FFB347"/><ellipse cx="25" cy="20" rx="18" ry="6" fill="#FFC86B"/><text x="25" y="23" font-size="9" font-weight="700" text-anchor="middle" fill="#8A5A00">$</text></symbol>
+    <symbol id="cal" viewBox="0 0 60 60"><rect x="2" y="8" width="56" height="50" rx="5" fill="#fff" stroke="#7B3FA0" stroke-width="2"/><rect x="2" y="8" width="56" height="13" rx="5" fill="#7B3FA0"/><rect x="14" y="2" width="5" height="12" rx="2" fill="#4A3580"/><rect x="41" y="2" width="5" height="12" rx="2" fill="#4A3580"/><g fill="#E2E0EF"><rect x="9" y="27" width="9" height="8"/><rect x="25" y="27" width="9" height="8"/><rect x="41" y="27" width="9" height="8"/><rect x="9" y="41" width="9" height="8"/><rect x="41" y="41" width="9" height="8"/></g><rect x="25" y="41" width="9" height="8" fill="#FF6B35"/></symbol>
+    <symbol id="moon" viewBox="0 0 40 40"><path d="M28 4 A16 16 0 1 0 36 28 A13 13 0 1 1 28 4Z" fill="#FFB347"/></symbol>
+    <symbol id="check" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#1F8A5B"/><path d="M11 20 L18 27 L30 13" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="warn" viewBox="0 0 40 40"><path d="M20 3 L38 36 H2Z" fill="#E8637A"/><rect x="18" y="14" width="4" height="12" fill="#fff"/><rect x="18" y="29" width="4" height="4" fill="#fff"/></symbol>
+    <symbol id="pin" viewBox="0 0 30 40"><path d="M15 2 A12 12 0 0 1 27 14 C27 24 15 38 15 38 C15 38 3 24 3 14 A12 12 0 0 1 15 2Z" fill="#FF6B35"/><circle cx="15" cy="14" r="5" fill="#fff"/></symbol>
+    <symbol id="pinp" viewBox="0 0 30 40"><path d="M15 2 A12 12 0 0 1 27 14 C27 24 15 38 15 38 C15 38 3 24 3 14 A12 12 0 0 1 15 2Z" fill="#7B3FA0"/><circle cx="15" cy="14" r="5" fill="#fff"/></symbol>
+    <symbol id="bell" viewBox="0 0 40 40"><path d="M20 4 C12 4 9 11 9 18 V26 L5 31 H35 L31 26 V18 C31 11 28 4 20 4Z" fill="#FFB347"/><circle cx="20" cy="34" r="4" fill="#E0A21A"/></symbol>
+    <symbol id="clock" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fff" stroke="#7B3FA0" stroke-width="3"/><path d="M20 10 V20 L27 24" stroke="#12101E" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="gauge" viewBox="0 0 80 50"><path d="M8 44 A32 32 0 0 1 72 44" fill="none" stroke="#EEEAF7" stroke-width="10"/><path d="M8 44 A32 32 0 0 1 52 14" fill="none" stroke="#FF6B35" stroke-width="10"/><path d="M40 44 L56 22" stroke="#12101E" stroke-width="3" stroke-linecap="round"/><circle cx="40" cy="44" r="4" fill="#12101E"/></symbol>
+    <symbol id="jar" viewBox="0 0 40 50"><rect x="8" y="2" width="24" height="6" rx="2" fill="#7B3FA0"/><path d="M6 10 H34 V44 Q34 48 30 48 H10 Q6 48 6 44Z" fill="#fff" stroke="#7B3FA0" stroke-width="2"/><rect x="8" y="26" width="24" height="20" rx="2" fill="#FFB347"/></symbol>
+
+    <symbol id="cam" viewBox="0 0 60 110">
+      <circle cx="30" cy="18" r="12" fill="#E9B894"/>
+      <path d="M18 16 Q19 4 30 5 Q42 5 42 16 Q37 10 30 10 Q23 10 18 16Z" fill="#2B1A12"/>
+      <path d="M38 6 Q50 8 46 30 Q44 18 38 12Z" fill="#2B1A12"/>
+      <path d="M12 44 Q14 34 30 34 Q46 34 48 44 L49 78 L11 78Z" fill="#E8637A"/>
+      <rect x="16" y="78" width="11" height="30" rx="3" fill="#12101E"/><rect x="33" y="78" width="11" height="30" rx="3" fill="#12101E"/>
+    </symbol>
+    <symbol id="ig" viewBox="0 0 40 40"><rect x="2" y="2" width="36" height="36" rx="10" fill="#C4467A"/><circle cx="20" cy="20" r="8" fill="none" stroke="#fff" stroke-width="3.5"/><circle cx="30" cy="10" r="2.5" fill="#fff"/></symbol>
+    <symbol id="heart" viewBox="0 0 40 36"><path d="M20 34 C6 24 2 16 2 10 A8 8 0 0 1 20 6 A8 8 0 0 1 38 10 C38 16 34 24 20 34Z" fill="#E8637A"/></symbol>
+  </defs>
+</svg>
+
+<section class="slide dark" style="background:#07060E">
+  <img class="cv-sky" src="img/15-horizonte.jpg" alt="">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,6,14,.15) 0%,rgba(7,6,14,.05) 45%,rgba(7,6,14,.75) 75%,rgba(7,6,14,.95) 100%)"></div>
+  <div class="abar"></div>
+  <div class="row" style="position:relative;align-items:flex-start">
+    <div class="label" style="color:#fff">Unidad 3 · Prototipado y testeo</div>
+    <div class="label" style="text-align:right;color:#fff">Innovación y Emprendimiento III · FGIE03<br>INACAP Rancagua</div>
+  </div>
+  <div style="position:absolute;left:72px;top:150px;width:760px">
+    <div class="label" style="color:#fff;margin-bottom:10px">Testeo de la propuesta de solución</div>
+    <div class="disp" style="font-size:104px;color:#fff;text-shadow:0 4px 30px rgba(7,6,14,.35)">Copiloto Kine</div>
+    <div class="disp" style="font-size:36px;color:#fff;margin-top:4px">Business Model Canvas y storyboard con propuesta de valor</div>
+  </div>
+  <div style="position:absolute;left:72px;right:64px;bottom:46px;display:flex;justify-content:space-between;align-items:flex-end">
+    <div class="cv-datos">
+      <b>Empresa</b><span>Copiloto Kine · caso Joselyn Toledo, kinesióloga (Centro Médico InMotion)</span>
+      <b>Integrantes</b><span>Francisco Ahumada · Claudia Cifuentes · Néstor Rivera · Benjamín Vera Yáñez</span>
+      <b>Asignatura</b><span>Innovación y Emprendimiento III (FGIE03)</span>
+      <b>Docente</b><span>Roberto Escobar Donoso</span>
+    </div>
+    <div class="label" style="text-align:right;white-space:nowrap">Sección ___<br>Rancagua · Noviembre 2026</div>
+  </div>
+</section>
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div>
+      <div class="label">Unidad 3 · Modelo de negocio · <span style="color:var(--accent)">+ naranjo</span> = iteración V2</div>
+      <h1 style="font-size:42px">Modelo Canvas actualizado · Copiloto Kine</h1>
+    </div>
+    <div style="display:flex;gap:14px">
+      <div class="postit"><b>Problema</b>No sabe cuánto gana: agenda y finanzas separadas y ~1 h de Excel al día.</div>
+      <div class="postit alt"><b>Solución propuesta</b>Copiloto conectado a su agenda: ganancia real por atención y aviso de lo que viene.</div>
+    </div>
+  </div>
+  <div class="bmc" style="margin-top:10px">
+    <div class="b" style="grid-column:1/3;grid-row:1/3"><h4>Socios clave</h4><ul>
+      <li>Google Calendar / Cal.com (API sin costo)</li><li>Clínicas como InMotion</li><li>Asesor financiero y contadoras: validación tributaria</li><li>Comunidad gremial de kinesiología</li>
+      <li class="n">Servicios de mapas para las rutas por sector</li><li class="n">Medios de pago (link o QR) que generan el registro del cobro</li></ul></div>
+    <div class="b" style="grid-column:3/5;grid-row:1/2"><h4>Actividades clave</h4><ul>
+      <li>Diseño y desarrollo low-code</li><li>Integración con la agenda</li><li>Onboarding y soporte</li><li>Contenido educativo</li>
+      <li class="n">Mantener las reglas de retención vigentes (Ley 21.133)</li></ul></div>
+    <div class="b" style="grid-column:3/5;grid-row:2/3"><h4>Recursos clave</h4><ul>
+      <li>Equipo de Diseño Digital: UX/UI, Figma, WordPress, IA</li><li>Base de datos (Google Sheets en el prototipo)</li><li>Co-creación con kinesiólogas reales</li>
+      <li class="n">Historial de 2–3 meses para proyectar</li></ul></div>
+    <div class="b vp" style="grid-column:5/7;grid-row:1/3"><h4>Propuesta de valor</h4><ul>
+      <li>Convierte cada atención en ganancia real y avisa qué viene, sin digitar</li><li>Conectado a la agenda que ya usa</li><li>Anticipador · Automático · Legible · Sostenible</li><li>Ganancia neta por atención con comisión, traslado y materiales descontados</li>
+      <li class="n">Impuestos sin sorpresa: la retención se aparta en cada cobro</li><li class="n">Menos km y cero cierres nocturnos</li></ul></div>
+    <div class="b" style="grid-column:7/9;grid-row:1/2"><h4>Relación con clientes</h4><ul>
+      <li>Onboarding de 10 min importando su Excel</li><li>Resumen semanal por WhatsApp</li><li>Co-creación continua</li>
+      <li class="n">Alertas con acción sugerida y un solo aviso diario configurable</li></ul></div>
+    <div class="b" style="grid-column:7/9;grid-row:2/3"><h4>Canales</h4><ul>
+      <li>Recomendación entre pares</li><li>Instagram y contenido educativo</li><li>Clínicas como InMotion</li><li>Comunidad gremial</li></ul></div>
+    <div class="b" style="grid-column:9/11;grid-row:1/3"><h4>Segmentos de clientes</h4><ul>
+      <li>Kinesiólogas y kinesiólogos independientes con atención mixta (clínica + domicilio), Rancagua y O'Higgins</li>
+      <li><b>Early adopters:</b> 0 a 2 años de práctica particular, como Joselyn y Catalina</li></ul></div>
+    <div class="b" style="grid-column:1/6;grid-row:3/4"><h4>Estructura de costos</h4><ul>
+      <li>Diseño y desarrollo low-code · nube y APIs · soporte · adquisición por contenido digital</li>
+      <li class="n">Mantención de las integraciones de rutas y cobro</li></ul></div>
+    <div class="b" style="grid-column:6/11;grid-row:3/4"><h4>Fuentes de ingresos</h4><ul>
+      <li>Suscripción mensual de referencia de $20.000–$25.000 CLP (disposición a pagar declarada: $30.000–$40.000)</li><li>Plan básico gratuito con el tablero mensual</li>
+      <li class="n">Funciones de la V2 (impuestos, rutas, colchón) en el plan pagado; precio a validar en la UA4</li></ul></div>
+  </div>
+  <div class="asesor"><b>Retroalimentación del asesor</b><span>&nbsp;</span></div>
+  <div class="foot"><span>Proyecto: Copiloto Kine · Integrantes: F. Ahumada, C. Cifuentes, N. Rivera, B. Vera Yáñez · Sección ___</span><b>02</b></div>
+</section>
+<section class="slide light" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">Unidad 3 · Prototipado y testeo · Versión 1 — alcance mínimo</div><h1 style="font-size:42px">Storyboard V1 con propuesta de valor</h1></div>
+    <span class="tag p">Primera versión</span>
+  </div>
+  <div class="vpband"><b>Propuesta de valor</b><span>Un tablero conectado a la agenda que ya usa: cada atención se vuelve ganancia real, sin digitar.</span></div>
+  <div class="sb vp">
+    <div class="panel"><div class="art" style="background:#2A2547"><img class="sbimg" src="img/storyboard/v1-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+      <svg viewBox="0 0 300 150"><use href="#moon" x="246" y="36" width="28" height="28"/>
+      <use href="#jos" x="30" y="36" width="62" height="114"/><use href="#laptop" x="104" y="44" width="118" height="80"/><use href="#sheet" x="140" y="52" width="40" height="46"/>
+      <text x="230" y="118" fill="#FFB347" font-size="20" font-weight="700">23:10</text></svg></div>
+      <div class="cap"><b>Hoy: el Excel de noche</b>Después de atender, Joselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-02.jpg" alt="" onerror="this.remove()"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="36" y="36" width="62" height="114"/><use href="#phone" x="100" y="70" width="30" height="52"/>
+      <use href="#cal" x="160" y="40" width="54" height="54"/><path d="M218 66 H240" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#coins" x="242" y="48" width="44" height="36"/>
+      <text x="152" y="116" font-size="11" fill="#504D6E">Conecta su calendario</text></svg></div>
+      <div class="cap"><b>Conecta la agenda que ya usa</b>En 10 minutos enlaza su calendario, importa su Excel y define la comisión 70/30, el costo por km y el kit de materiales.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-03.jpg" alt="" onerror="this.remove()"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#cal" x="40" y="44" width="62" height="62"/><path d="M110 76 H160" stroke="#7B3FA0" stroke-width="3"/><path d="M152 68 L162 76 L152 84" stroke="#7B3FA0" stroke-width="3" fill="none"/>
+      <rect x="170" y="44" width="110" height="62" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="180" y="66" font-size="11" fill="#504D6E">Ingreso proyectado</text><text x="180" y="90" font-size="18" font-weight="700" fill="#7B3FA0">+$25.000</text></svg></div>
+      <div class="cap"><b>Cada cita se vuelve un ingreso proyectado</b>La cita del jueves aparece sola en el tablero, etiquetada como clínica o domicilio. No hay que volver a digitarla.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-04.jpg" alt="" onerror="this.remove()"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="14" y="58" width="90" height="80"/><use href="#jos" x="110" y="36" width="62" height="114"/><use href="#phone" x="170" y="68" width="30" height="52"/>
+      <rect x="208" y="46" width="84" height="58" rx="8" fill="#fff" stroke="#E2E0EF"/><text x="216" y="64" font-size="9.5" fill="#504D6E">Ganancia neta</text><text x="216" y="86" font-size="16" font-weight="700" fill="#1F8A5B">$20.900</text><use href="#check" x="262" y="110" width="26" height="26"/></svg></div>
+      <div class="cap"><b>"Atención realizada" en un toque</b>Al despedirse confirma la atención y ve su ganancia neta: el traslado y los materiales ya vienen descontados.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-05.jpg" alt="" onerror="this.remove()"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="30" y="36" width="62" height="114"/>
+      <rect x="110" y="34" width="170" height="90" rx="10" fill="#fff" stroke="#E2E0EF"/><circle cx="128" cy="56" r="7" fill="#F2B233"/><text x="142" y="60" font-size="11" font-weight="700" fill="#12101E">Mes en curso: 62 %</text>
+      <rect x="124" y="74" width="66" height="36" rx="5" fill="#EDE6F7"/><text x="130" y="88" font-size="8.5" fill="#4A3580">Clínica /h</text><text x="130" y="103" font-size="11" font-weight="700" fill="#4A3580">$14.700</text>
+      <rect x="198" y="74" width="68" height="36" rx="5" fill="#FFE8DC"/><text x="204" y="88" font-size="8.5" fill="#B4441A">Domicilio /h</text><text x="204" y="103" font-size="11" font-weight="700" fill="#B4441A">$16.100</text></svg></div>
+      <div class="cap"><b>Tablero con semáforo</b>Ve la ganancia real del mes de un vistazo y compara dónde gana más por hora: en la clínica o a domicilio.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v1-06.jpg" alt="" onerror="this.remove()"><span class="n">6</span><span class="pain"><svg width="26" height="26"><use href="#warn" width="26" height="26"/></svg></span>
+      <svg viewBox="0 0 300 150"><polyline points="24,60 74,52 124,92" fill="none" stroke="#7B3FA0" stroke-width="4"/><polyline points="124,92 174,74" fill="none" stroke="#7B3FA0" stroke-width="4" stroke-dasharray="7 5"/>
+      <text x="28" y="122" font-size="9.5" fill="#504D6E">Dic · Ene · Feb · Mar</text><use href="#pinp" x="190" y="30" width="20" height="26"/><use href="#pinp" x="250" y="96" width="20" height="26"/><use href="#pinp" x="214" y="112" width="20" height="26"/>
+      <text x="196" y="80" font-size="10" font-weight="700" fill="#E8637A">¿Y abril?</text></svg></div>
+      <div class="cap"><b>Proyección a 3 meses… y lo que falta</b>Ve que febrero viene bajo, pero la app no le sugiere qué hacer. Los domicilios siguen dispersos y la Operación Renta todavía no aparece.</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V1 · alcance mínimo definido en el informe EV2</span><b>03</b></div>
+</section>
+<section class="slide light v2" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">Unidad 3 · Prototipado y testeo · Versión 2</div><h1 style="font-size:42px">Storyboard V2 con propuesta de valor</h1></div>
+    <span class="tag">Versión iterada</span>
+  </div>
+  <div class="vpband"><b>Propuesta de valor</b><span>El copiloto financiero que convierte cada atención en ganancia real y le avisa qué viene, sin que tenga que digitar.</span></div>
+  <div class="sb vp">
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span>
+      <svg viewBox="0 0 300 150"><path d="M26 118 C70 70 120 120 160 86 S240 46 278 54" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="8 6"/>
+      <use href="#pin" x="14" y="92" width="24" height="32"/><use href="#pin" x="148" y="60" width="24" height="32"/><use href="#pin" x="200" y="44" width="24" height="32"/><use href="#pin" x="266" y="26" width="24" height="32"/>
+      <use href="#car" x="50" y="18" width="90" height="46"/><text x="176" y="122" font-size="12" font-weight="700" fill="#B4441A">Martes = Machalí</text></svg></div>
+      <div class="cap"><b>Martes = Machalí</b>Al empezar el día, el copiloto agrupa los domicilios por sector y ordena la ruta. Son menos km y menos combustible.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-02.jpg" alt="" onerror="this.remove()"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="10" y="60" width="84" height="76"/><use href="#jos" x="98" y="36" width="62" height="114"/><use href="#phone" x="158" y="68" width="30" height="52"/>
+      <use href="#coins" x="200" y="30" width="44" height="36"/><use href="#jar" x="250" y="30" width="32" height="40"/>
+      <text x="198" y="92" font-size="9.5" fill="#504D6E">Retención apartada</text><text x="198" y="108" font-size="9.5" fill="#504D6E">+ colchón 5 %</text><use href="#check" x="246" y="112" width="26" height="26"/></svg></div>
+      <div class="cap"><b>Un toque reparte el pago</b>Al cerrar la atención, la ganancia neta se calcula sola y se aparta la retención de la boleta y un % para el colchón.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-03.jpg" alt="" onerror="this.remove()"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#cal" x="30" y="40" width="64" height="64"/><text x="28" y="124" font-size="10" fill="#E8637A" font-weight="700">16:00 cancelada</text>
+      <path d="M104 72 H150" stroke="#FF6B35" stroke-width="3"/><path d="M142 64 L152 72 L142 80" stroke="#FF6B35" stroke-width="3" fill="none"/>
+      <use href="#pac" x="168" y="36" width="56" height="104"/><use href="#bubble" x="228" y="40" width="56" height="38"/><use href="#check" x="242" y="96" width="30" height="30"/></svg></div>
+      <div class="cap"><b>La hora vacía también genera ingreso</b>Un paciente cancela. El copiloto ofrece ese cupo de último minuto a precio preferente a su lista de pacientes y alguien lo toma.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-04.jpg" alt="" onerror="this.remove()"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#jos" x="34" y="36" width="62" height="114"/><use href="#phone" x="96" y="68" width="30" height="52"/><use href="#clock" x="150" y="36" width="50" height="50"/>
+      <text x="210" y="58" font-size="16" font-weight="700" fill="#12101E">20:40</text><text x="150" y="110" font-size="11" fill="#1F8A5B" font-weight="700">Día cerrado · 4 min</text><text x="150" y="126" font-size="10" fill="#504D6E">+11 h recuperadas este mes</text></svg></div>
+      <div class="cap"><b>Cierre antes de las 21 h</b>Tres preguntas y listo. El modo "no trabajo de noche" protege su descanso y le muestra las horas recuperadas.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-05.jpg" alt="" onerror="this.remove()"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#bubble" x="22" y="30" width="80" height="54"/><use href="#jos" x="30" y="70" width="44" height="80"/>
+      <rect x="116" y="28" width="168" height="98" rx="10" fill="#fff" stroke="#FFCDB3"/><text x="128" y="50" font-size="11" font-weight="700" fill="#12101E">Resumen semanal</text>
+      <circle cx="134" cy="66" r="6" fill="#1F8A5B"/><text x="146" y="70" font-size="10" fill="#12101E">Ganancia real: $236.500</text>
+      <text x="128" y="90" font-size="10" fill="#504D6E">Colchón: $84.000</text><text x="128" y="108" font-size="10" fill="#504D6E">Renta abril: 72 % apartado</text></svg></div>
+      <div class="cap"><b>Lunes: el tablero llega solo</b>Recibe un resumen semanal por WhatsApp con la ganancia real, el colchón y lo apartado para la Operación Renta.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/v2-06.jpg" alt="" onerror="this.remove()"><span class="n">6</span>
+      <svg viewBox="0 0 300 150"><polyline points="20,60 60,50 100,56 140,44 180,98 220,72 260,56" fill="none" stroke="#7B3FA0" stroke-width="4"/>
+      <polyline points="180,98 220,84 260,66" fill="none" stroke="#FF6B35" stroke-width="4" stroke-dasharray="7 5"/>
+      <use href="#warn" x="166" y="104" width="28" height="28"/><text x="198" y="126" font-size="11" font-weight="700" fill="#E8637A">Feb · baja</text>
+      <use href="#bell" x="26" y="88" width="34" height="34"/><text x="64" y="112" font-size="10" fill="#504D6E">Ofrecer pack de 4</text></svg></div>
+      <div class="cap"><b>Avisa antes de la curva</b>Con seis semanas de anticipación advierte que febrero viene bajo y sugiere ofrecer packs de sesiones. La curva se aplana.</div></div>
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V2</span><b>04</b></div>
+</section>
+<section class="slide light vp2" style="padding-top:36px">
+  <div class="abar"></div>
+  <div class="row">
+    <div><div class="label">Unidad 3 · Prototipado y testeo · Versión 2 — el paciente</div><h1 style="font-size:42px">Storyboard V2 · el paciente</h1></div>
+    <span class="tag">Versión iterada</span>
+  </div>
+  <div class="vpband"><b>Propuesta de valor</b><span>Reservar, confirmar y pagar en un minuto, con la voz de Joselyn, sin cambiar de agenda ni usar efectivo.</span></div>
+  <div class="sb vp">
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-01.jpg" alt="" onerror="this.remove()"><span class="n">1</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#ig" x="156" y="34" width="36" height="36"/><path d="M196 52 H220" stroke="#7B3FA0" stroke-width="3" stroke-dasharray="4 3"/><use href="#cal" x="226" y="26" width="54" height="54"/><use href="#check" x="238" y="96" width="30" height="30"/></svg></div>
+      <div class="cap"><b>Reserva en un minuto</b>Camila ve el link en el Instagram de InMotion y reserva desde el sofá en la agenda en línea que Joselyn ya usa.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-02.jpg" alt="" onerror="this.remove()"><span class="n">2</span>
+      <svg viewBox="0 0 300 150"><use href="#pac" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#bubble" x="150" y="34" width="80" height="54"/><use href="#check" x="236" y="44" width="34" height="34"/><text x="150" y="116" font-size="11" fill="#504D6E">Recordatorio 24 h antes</text></svg></div>
+      <div class="cap"><b>Recordatorio y confirmación</b>El día antes, don Luis recibe el recordatorio con la dirección y toca "Confirmo". Hay menos inasistencias por olvido.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-03.jpg" alt="" onerror="this.remove()"><span class="n">3</span>
+      <svg viewBox="0 0 300 150"><use href="#house" x="16" y="56" width="92" height="82"/><use href="#pac" x="50" y="64" width="34" height="62"/><use href="#bubble" x="116" y="30" width="66" height="44"/><use href="#car" x="170" y="86" width="116" height="58"/><text x="120" y="92" font-size="11" font-weight="700" fill="#B4441A">Llega 11:30</text></svg></div>
+      <div class="cap"><b>"Voy en camino"</b>Don Luis recibe el aviso y espera en la ventana. Joselyn llega a la hora porque la ruta del día está agrupada.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-04.jpg" alt="" onerror="this.remove()"><span class="n">4</span>
+      <svg viewBox="0 0 300 150"><use href="#pac" x="30" y="36" width="60" height="112"/><use href="#phone" x="92" y="70" width="30" height="52"/><rect x="140" y="38" width="140" height="74" rx="10" fill="#fff" stroke="#E2E0EF"/><text x="152" y="62" font-size="11" fill="#504D6E">Pago con link</text><text x="152" y="88" font-size="19" font-weight="700" fill="#12101E">$25.000</text><use href="#check" x="244" y="76" width="28" height="28"/></svg></div>
+      <div class="cap"><b>Paga con un link</b>Al terminar, paga desde su celular sin efectivo y la boleta le llega al correo. El ingreso queda registrado solo.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-05.jpg" alt="" onerror="this.remove()"><span class="n">5</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="40" y="36" width="60" height="112"/><use href="#phone" x="100" y="70" width="30" height="52"/><use href="#clock" x="150" y="30" width="44" height="44"/><text x="202" y="58" font-size="16" font-weight="700" fill="#12101E">16:00</text><rect x="150" y="88" width="120" height="30" rx="15" fill="#FF6B35"/><text x="210" y="108" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">Sí, la tomo</text></svg></div>
+      <div class="cap"><b>Un cupo de último minuto</b>A la hora de almuerzo, Camila recibe la oferta de una hora libre con 15 % de descuento y la toma con un toque.</div></div>
+    <div class="panel"><div class="art"><img class="sbimg" src="img/storyboard/p-06.jpg" alt="" onerror="this.remove()"><span class="n">6</span>
+      <svg viewBox="0 0 300 150"><use href="#cam" x="36" y="36" width="60" height="112"/><use href="#bubble" x="108" y="30" width="70" height="46"/><use href="#heart" x="186" y="36" width="30" height="27"/><use href="#cal" x="222" y="66" width="54" height="54"/><text x="108" y="104" font-size="10.5" fill="#504D6E">30 días después del alta</text></svg></div>
+      <div class="cap"><b>Seguimiento después del alta</b>Un mes después, recibe un mensaje de seguimiento con la voz de Joselyn y reserva un pack de mantención.</div></div>
+    
+  </div>
+  <div class="foot"><span>Propuesta · Storyboard V2 · paciente</span><b>05</b></div>
+</section>
+<section class="slide dark">
+  <div class="abar"></div>
+  <div class="label">Unidad 3 · Prototipado y testeo</div>
+  <h1 style="color:var(--text)">Propuesta de valor</h1>
+  <div style="height:3px;width:120px;background:linear-gradient(90deg,var(--accent),var(--h4),transparent);margin:12px 0 26px"></div>
+  <div class="dcard" style="border-color:rgba(255,107,53,.45);padding:26px 30px">
+    <div style="font-size:26px;line-height:1.42">Copiloto Kine es el copiloto financiero de la kinesióloga independiente: <span class="acc">se conecta a la agenda que ya usa</span> y convierte cada atención en ganancia real (descontando traslado, materiales, comisión e impuestos) para que <span style="color:var(--h3)">sepa cuánto gana, anticipe los meses bajos y deje de cuadrar Excel de noche</span>.</div>
+  </div>
+  <div class="grid g4" style="margin-top:22px">
+    <div class="dcard"><b class="acc">Anticipador</b><div style="color:var(--text2);font-size:14px;margin-top:4px">Avisa antes de la curva.</div></div>
+    <div class="dcard"><b class="acc">Automático</b><div style="color:var(--text2);font-size:14px;margin-top:4px">La usuaria solo confirma.</div></div>
+    <div class="dcard"><b class="acc">Legible de un vistazo</b><div style="color:var(--text2);font-size:14px;margin-top:4px">Semáforo y palabras simples.</div></div>
+    <div class="dcard"><b class="acc">Sostenible</b><div style="color:var(--text2);font-size:14px;margin-top:4px">Menos km, cero cierres nocturnos.</div></div>
+  </div>
+  <div class="foot"><span>Copiloto Kine · Innovación y Emprendimiento III · INACAP Rancagua · 2026</span><b>06</b></div>
+</section>
+
+</body>
+</html>
