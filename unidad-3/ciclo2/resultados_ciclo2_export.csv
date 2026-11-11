@@ -1,0 +1,6 @@
+﻿fecha;paciente;lugar;valor;comision;traslado;materiales;retencion;ganancia_real
+2026-11-10;RM;clinica;25000;7500;0;0;2669;14831
+2026-11-10;PA;clinica;25000;7500;0;0;2669;14831
+2026-11-10;CV;domicilio;28000;0;1440;1200;4270;21090
+2026-11-10;AP;domicilio;28000;0;540;1500;4270;21690
+2026-11-10;LR;domicilio;28000;0;1620;800;4270;21310

@@ -1,0 +1,140 @@
+{
+ "archivo": "copiloto-kine.html",
+ "tasks": [
+  {
+   "id": "T1",
+   "name": "Saber cuánto ganó en el mes y si va bien",
+   "taps": 0,
+   "ok": true,
+   "obs": "Visible sin tocar nada: $412.000 · Vas al ritmo de tu meta"
+  },
+  {
+   "id": "T2",
+   "name": "Registrar una atención como realizada",
+   "taps": 2,
+   "ok": true,
+   "obs": "Hoja de ganancia visible: true"
+  },
+  {
+   "id": "T3",
+   "name": "Entender de qué se compone la ganancia de una atención",
+   "taps": 2,
+   "ok": true,
+   "obs": "Valor de la sesión $28.000 | Traslado (8 km) − $1.440 | Materiales − $1.200 | Retención boleta (15,25 %) − $4.270 | Ganancia real $21.090"
+  },
+  {
+   "id": "T4",
+   "name": "Corregir una atención marcada por error",
+   "taps": 4,
+   "ok": true,
+   "obs": "Se puede deshacer"
+  },
+  {
+   "id": "T5",
+   "name": "Ver la ruta del día y avisar al primer paciente",
+   "taps": 2,
+   "ok": true,
+   "obs": "Feedback: WhatsApp a Carmen V.: «Hola, voy en camino. Llego en unos 15 minutos. Joselyn»"
+  },
+  {
+   "id": "T6",
+   "name": "Comparar la ruta sugerida con el orden original",
+   "taps": 2,
+   "ok": true,
+   "obs": "Ahorro visible en orden original: true"
+  },
+  {
+   "id": "T7",
+   "name": "Saber cuánto falta para cubrir enero y febrero y agregar una acción",
+   "taps": 2,
+   "ok": true,
+   "obs": "Te faltarían $770.000 entre enero y febrero para llegar a tu meta. → Te faltarían $530.000 entre enero y febrero para llegar a tu meta."
+  },
+  {
+   "id": "T8",
+   "name": "Saber cuánto tiene separado para impuestos",
+   "taps": 1,
+   "ok": true,
+   "obs": "Impuestos: $286.000"
+  },
+  {
+   "id": "T9",
+   "name": "Cambiar el costo por km o la comisión de la clínica",
+   "taps": 1,
+   "ok": true,
+   "obs": "Costos editables"
+  },
+  {
+   "id": "T10",
+   "name": "Marcar que un paciente no asistió",
+   "taps": 2,
+   "ok": true,
+   "obs": "Inasistencia registrada"
+  },
+  {
+   "id": "T11",
+   "name": "Preparar la información del mes para la contadora",
+   "taps": 0,
+   "ok": true,
+   "obs": "Exportación disponible"
+  }
+ ],
+ "axe": {
+  "inicio": [],
+  "ruta": [],
+  "agenda": [],
+  "proyeccion": [],
+  "impuestos": []
+ },
+ "targets": {
+  "inicio": [],
+  "ruta": [],
+  "agenda": [],
+  "proyeccion": [],
+  "impuestos": []
+ },
+ "fonts": {
+  "inicio": {
+   "12": 18,
+   "13": 2,
+   "14": 4,
+   "16": 1,
+   "22": 1,
+   "24": 1,
+   "28": 2,
+   "40": 1
+  },
+  "ruta": {
+   "12": 15,
+   "13": 10,
+   "14": 3,
+   "15": 4,
+   "16": 1,
+   "22": 1
+  },
+  "agenda": {
+   "12": 24,
+   "13": 5,
+   "14": 12,
+   "15": 5,
+   "16": 1,
+   "22": 1
+  },
+  "proyeccion": {
+   "12": 14,
+   "13": 3,
+   "14": 4,
+   "16": 1,
+   "22": 1
+  },
+  "impuestos": {
+   "12": 14,
+   "13": 1,
+   "14": 8,
+   "15": 1,
+   "16": 1,
+   "22": 1,
+   "26": 3
+  }
+ }
+}

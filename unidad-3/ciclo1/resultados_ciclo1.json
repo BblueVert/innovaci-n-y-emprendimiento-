@@ -1,0 +1,220 @@
+{
+ "archivo": "copiloto-kine-v1.html",
+ "tasks": [
+  {
+   "id": "T1",
+   "name": "Saber cuánto ganó en el mes y si va bien",
+   "taps": 0,
+   "ok": true,
+   "obs": "Visible sin tocar nada: $412.000 · Vas al ritmo de tu meta"
+  },
+  {
+   "id": "T2",
+   "name": "Registrar una atención como realizada",
+   "taps": 2,
+   "ok": true,
+   "obs": "Hoja de ganancia visible: true"
+  },
+  {
+   "id": "T3",
+   "name": "Entender de qué se compone la ganancia de una atención",
+   "taps": 2,
+   "ok": true,
+   "obs": "Valor de la sesión $28.000 | Traslado (8 km) − $1.440 | Materiales − $1.200 | Retención boleta (15,25 %) − $4.270 | Ganancia real $21.090"
+  },
+  {
+   "id": "T4",
+   "name": "Corregir una atención marcada por error",
+   "taps": 3,
+   "ok": false,
+   "obs": "No existe opción para deshacer o editar la atención"
+  },
+  {
+   "id": "T5",
+   "name": "Ver la ruta del día y avisar al primer paciente",
+   "taps": 2,
+   "ok": true,
+   "obs": "Feedback: Aviso enviado a Carmen V.: llegas en ~15 min"
+  },
+  {
+   "id": "T6",
+   "name": "Comparar la ruta sugerida con el orden original",
+   "taps": 2,
+   "ok": true,
+   "obs": "Ahorro visible en orden original: false"
+  },
+  {
+   "id": "T7",
+   "name": "Saber cuánto falta para cubrir enero y febrero y agregar una acción",
+   "taps": 2,
+   "ok": true,
+   "obs": "Te faltarían $770.000 entre enero y febrero para llegar a tu meta. → Te faltarían $530.000 entre enero y febrero para llegar a tu meta."
+  },
+  {
+   "id": "T8",
+   "name": "Saber cuánto tiene separado para impuestos",
+   "taps": 1,
+   "ok": true,
+   "obs": "Impuestos: $286.000"
+  },
+  {
+   "id": "T9",
+   "name": "Cambiar el costo por km o la comisión de la clínica",
+   "taps": 1,
+   "ok": false,
+   "obs": "Los costos se muestran pero no se pueden editar"
+  },
+  {
+   "id": "T10",
+   "name": "Marcar que un paciente no asistió",
+   "taps": 1,
+   "ok": false,
+   "obs": "No existe estado de inasistencia o cancelación"
+  },
+  {
+   "id": "T11",
+   "name": "Preparar la información del mes para la contadora",
+   "taps": 0,
+   "ok": false,
+   "obs": "No existe exportación para la contadora"
+  }
+ ],
+ "axe": {
+  "inicio": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "ej": [
+     "#mLight > span"
+    ]
+   }
+  ],
+  "ruta": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 4,
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "ej": [
+     "#rOrig",
+     "button[data-notify=\"a3\"]",
+     "button[data-notify=\"a4\"]"
+    ]
+   }
+  ],
+  "agenda": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 6,
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "ej": [
+     "button[data-done=\"a1\"]",
+     "button[data-done=\"a2\"]",
+     "button[data-done=\"a3\"]"
+    ]
+   }
+  ],
+  "proyeccion": [],
+  "impuestos": []
+ },
+ "targets": {
+  "inicio": [
+   {
+    "t": "Abrir mapa →",
+    "w": 84,
+    "h": 19
+   },
+   {
+    "t": "Ver proyección →",
+    "w": 111,
+    "h": 19
+   }
+  ],
+  "ruta": [
+   {
+    "t": "Ruta sugerida",
+    "w": 173,
+    "h": 36
+   },
+   {
+    "t": "Orden original",
+    "w": 173,
+    "h": 36
+   },
+   {
+    "t": "Voy en camino",
+    "w": 116,
+    "h": 36
+   },
+   {
+    "t": "Voy en camino",
+    "w": 116,
+    "h": 36
+   },
+   {
+    "t": "Voy en camino",
+    "w": 116,
+    "h": 36
+   }
+  ],
+  "agenda": [],
+  "proyeccion": [],
+  "impuestos": []
+ },
+ "fonts": {
+  "inicio": {
+   "10": 1,
+   "11": 8,
+   "12": 7,
+   "13": 4,
+   "14": 2,
+   "16": 1,
+   "22": 1,
+   "24": 1,
+   "28": 2,
+   "40": 1
+  },
+  "ruta": {
+   "10": 1,
+   "11": 9,
+   "12": 5,
+   "13": 12,
+   "14": 1,
+   "15": 4,
+   "16": 1,
+   "22": 1
+  },
+  "agenda": {
+   "10": 6,
+   "11": 5,
+   "12": 13,
+   "13": 5,
+   "14": 7,
+   "15": 5,
+   "16": 1,
+   "22": 1
+  },
+  "proyeccion": {
+   "10": 1,
+   "11": 7,
+   "12": 6,
+   "13": 3,
+   "14": 4,
+   "16": 1,
+   "22": 1
+  },
+  "impuestos": {
+   "10": 1,
+   "11": 7,
+   "12": 6,
+   "14": 10,
+   "15": 1,
+   "16": 1,
+   "22": 1,
+   "26": 3
+  }
+ }
+}

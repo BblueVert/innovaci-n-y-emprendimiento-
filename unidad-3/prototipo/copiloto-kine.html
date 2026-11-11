@@ -14,14 +14,16 @@
   --soft: #EFEBFA;      /* superficies secundarias */
   --line: #E3DEF2;
   --ink: #17142A;
-  --muted: #6E6888;
+  --muted: #5E5878;
   --accent: #FF6B35;    /* naranja del proyecto */
   --accent-soft: #FFEDE4;
+  --accent-strong: #C2410C; /* naranja accesible para botones con texto blanco (5,2:1) */
   --purple: #7B3FA0;    /* clínica */
   --purple-soft: #F1E8F8;
   --coral: #E8637A;
   --amber: #F5A524;
   --ok: #1F9D6B;
+  --ok-ink: #146C4A;
   --ok-soft: #E3F6EE;
   --map-land: #F1EEE6; --map-road: #FFFFFF; --map-main: #FBE3B6; --map-park: #D8EFD9; --map-water: #CFE3F5;
   --f-display: 'Bebas Neue', 'Oswald', Impact, sans-serif;
@@ -50,13 +52,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .brand .mark { width: 32px; height: 32px; border-radius: 10px; background: var(--accent); display: grid; place-items: center; }
 .brand b { display: block; font-weight: 700; font-size: 16px; line-height: 1.1; }
 .brand small { display: block; font-size: 12px; color: var(--muted); }
-.sample { font-family: var(--f-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--purple); background: var(--purple-soft); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
+.sample { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--purple); background: var(--purple-soft); border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
 
 main { flex: 1; padding-bottom: 100px; }
 .view { display: flex; flex-direction: column; gap: 14px; }
 h1 { font-size: 22px; font-weight: 700; line-height: 1.2; margin: 0; text-wrap: balance; }
 .sub { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h2 { font-family: var(--f-mono); font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; }
 
 /* Tablero: indicador compacto */
@@ -64,9 +66,9 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 .meter svg { width: 112px; height: auto; display: block; }
 .meter .v { font-family: var(--f-display); font-size: 40px; line-height: .95; letter-spacing: .01em; }
 .meter .of { font-size: 13px; color: var(--muted); }
-.chip { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--ok-soft); color: var(--ok); }
+.chip { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--ok-soft); color: var(--ok-ink); }
 .chip i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-.chip.warn { background: #FFF3DC; color: #A86A00; }
+.chip.warn { background: #FFF3DC; color: #8A5600; }
 .chip.bad { background: #FDE6EA; color: #B0283F; }
 
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -80,20 +82,24 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 .alert .ico { flex: none; width: 32px; height: 32px; border-radius: 10px; background: var(--accent); display: grid; place-items: center; }
 .alert b { display: block; font-size: 14px; }
 .alert p { margin: 2px 0 0; font-size: 13px; color: #5A3A2C; }
-.link { background: none; border: 0; padding: 0; color: #C2410C; font-weight: 700; font-size: 13px; margin-top: 6px; }
+.link { background: none; border: 0; padding: 0; color: var(--accent-strong); font-weight: 700; font-size: 14px; margin-top: 2px; min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 12px; padding: 11px 14px; font-weight: 700; font-size: 14px; background: var(--accent); color: #fff; width: 100%; min-height: 44px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 12px; padding: 11px 14px; font-weight: 700; font-size: 14px; background: var(--accent-strong); color: #fff; width: 100%; min-height: 44px; }
 .btn.ghost { background: var(--soft); color: var(--ink); }
-.btn.sm { width: auto; min-height: 36px; padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+.btn.sm { width: auto; min-height: 44px; padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+.btn.line { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.btns { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 10px; }
+.btns .btn.line { padding-inline: 14px; white-space: nowrap; }
+.btns .btn { margin-top: 0; }
 
 /* Ruta del día (mapa) */
 .mapwrap { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--map-land); }
 .mapwrap svg { display: block; width: 100%; height: auto; }
-.mapwrap .eta { position: absolute; left: 10px; right: 10px; bottom: 10px; background: var(--surface); border-radius: 14px; padding: 9px 12px; box-shadow: 0 8px 24px rgba(40,30,80,.15); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.mapwrap .eta { position: static; margin: 0; border-top: 1px solid var(--line); border-radius: 0; background: var(--surface); border-radius: 14px; padding: 9px 12px; box-shadow: 0 8px 24px rgba(40,30,80,.15); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
 .mapwrap .eta b { font-family: var(--f-display); font-size: 24px; line-height: 1; font-weight: 400; }
 .mapwrap .eta span { font-size: 12px; color: var(--muted); }
 .seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--soft); border-radius: 12px; padding: 4px; gap: 4px; }
-.seg button { border: 0; background: transparent; border-radius: 9px; padding: 8px; font-size: 13px; font-weight: 600; color: var(--muted); min-height: 36px; }
+.seg button { border: 0; background: transparent; border-radius: 9px; padding: 8px; font-size: 14px; font-weight: 600; color: var(--muted); min-height: 44px; }
 .seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 1px 3px rgba(40,30,80,.12); }
 .stops { display: flex; flex-direction: column; }
 .stop { display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: start; position: relative; padding-bottom: 14px; }
@@ -103,7 +109,7 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 .pin.done { background: var(--ok); }
 .stop .who { font-weight: 600; }
 .stop .meta { font-size: 12px; color: var(--muted); }
-.stop .leg { font-family: var(--f-mono); font-size: 11px; color: var(--muted); margin-top: 4px; }
+.stop .leg { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 4px; }
 .saving { display: flex; gap: 10px; align-items: center; background: var(--ok-soft); color: #11603F; border-radius: 14px; padding: 10px 12px; font-size: 13px; }
 
 /* Agenda */
@@ -114,12 +120,14 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 .appt.done { background: #FBFAFE; }
 .appt .who { font-weight: 600; }
 .appt .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.tag { display: inline-block; font-family: var(--f-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; border-radius: 6px; padding: 2px 6px; margin-right: 6px; background: var(--purple-soft); color: var(--purple); }
+.tag { display: inline-block; font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; border-radius: 6px; padding: 2px 6px; margin-right: 6px; background: var(--purple-soft); color: var(--purple); }
 .tag.home { background: var(--accent-soft); color: #C2410C; }
-.tag.ok { background: var(--ok-soft); color: var(--ok); }
+.tag.ok { background: var(--ok-soft); color: var(--ok-ink); }
+.tag.ns { background: #FDE6EA; color: #9B1C33; }
 .appt .btn { margin-top: 10px; }
 .okline { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 13px; }
-.okline b { font-family: var(--f-display); font-size: 22px; font-weight: 400; color: var(--ok); }
+.okline b { font-family: var(--f-display); font-size: 22px; font-weight: 400; color: var(--ok-ink); }
+.undo { background: none; border: 0; color: var(--accent-strong); font-weight: 700; font-size: 13px; min-height: 44px; padding: 0 4px; }
 .legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
 
@@ -134,12 +142,17 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 .row span:last-child { font-family: var(--f-mono); }
 .row.minus span:last-child { color: #B0283F; }
 .row.total { border-top: 1px solid var(--line); padding-top: 10px; font-weight: 700; }
-.row.total span:last-child { font-family: var(--f-display); font-size: 30px; color: var(--ok); font-weight: 400; }
+.row.total span:last-child { font-family: var(--f-display); font-size: 30px; color: var(--ok-ink); font-weight: 400; }
+.field { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 14px; }
+.field input { width: 96px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; font-family: var(--f-mono); text-align: right; background: var(--bg); color: var(--ink); }
+.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.privacy { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--muted); background: var(--purple-soft); border-radius: 14px; padding: 12px; }
 .note { font-size: 12px; color: var(--muted); }
 
 /* Proyección */
 .chart { width: 100%; height: auto; display: block; }
-.chart text { fill: var(--muted); font-family: var(--f-mono); font-size: 11px; }
+.chart text { fill: var(--muted); font-family: var(--f-mono); font-size: 12px; }
+.chart .val { fill: var(--ink); font-weight: 500; }
 .act { display: flex; flex-direction: column; gap: 10px; }
 .act button { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; display: flex; gap: 12px; align-items: center; }
 .act button b { display: block; font-size: 14px; }
@@ -157,11 +170,11 @@ h2 { font-family: var(--f-mono); font-size: 11px; font-weight: 500; letter-spaci
 
 nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 15; background: rgba(255,255,255,.97); border-top: 1px solid var(--line); padding: 6px max(10px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(10px, env(safe-area-inset-left, 0px)); }
 nav .in { max-width: 430px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
-nav a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 2px; border-radius: 12px; color: var(--muted); text-decoration: none; font-size: 11px; font-weight: 600; min-height: 44px; }
-nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
+nav a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 2px; border-radius: 12px; color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 600; min-height: 48px; }
+nav a[aria-current="page"] { color: var(--accent-strong); background: var(--accent-soft); }
 @media (min-width: 640px) { nav { bottom: 24px; background: transparent; border: 0; } nav .in { background: rgba(255,255,255,.97); border: 1px solid var(--line); border-radius: 20px; padding: 6px; max-width: 400px; box-shadow: 0 8px 24px rgba(40,30,80,.12); } }
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom, 0px)); z-index: 30; background: var(--ink); color: #fff; font-weight: 600; font-size: 13px; padding: 10px 16px; border-radius: 999px; max-width: calc(100% - 32px); text-align: center; }
-.foot { font-size: 11px; color: var(--muted); text-align: center; }
+.foot { font-size: 12px; color: var(--muted); text-align: center; }
 </style>
 </head>
 <body>
@@ -194,6 +207,7 @@ nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
             <div class="chip" id="mLight"><i></i><span>Vas al ritmo de tu meta</span></div>
           </div>
         </div>
+        <p class="note" style="margin:10px 0 0"><b>Ganancia real</b> = lo que te queda después de comisión, traslado, materiales e impuestos.</p>
       </div>
 
       <div class="duo">
@@ -246,10 +260,10 @@ nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
           <title id="cT">Ganancia real proyectada: noviembre 1.150.000, diciembre 1.020.000, enero 740.000, febrero 690.000. Meta 1.100.000.</title>
           <line x1="40" y1="20" x2="330" y2="20" stroke="var(--line)"/><line x1="40" y1="80" x2="330" y2="80" stroke="var(--line)"/><line x1="40" y1="140" x2="330" y2="140" stroke="var(--line)"/><line x1="40" y1="170" x2="330" y2="170" stroke="var(--line)"/>
           <text x="34" y="24" text-anchor="end">1,2M</text><text x="34" y="84" text-anchor="end">0,8M</text><text x="34" y="144" text-anchor="end">0,4M</text><text x="34" y="174" text-anchor="end">0,2M</text>
-          <rect x="58" y="27.5" width="44" height="142.5" rx="6" fill="var(--ok)"/>
-          <rect x="130" y="47" width="44" height="123" rx="6" fill="var(--ok)" opacity=".7"/>
-          <rect x="202" y="89" width="44" height="81" rx="6" fill="var(--amber)"/>
-          <rect id="barFeb" x="274" y="96.5" width="44" height="73.5" rx="6" fill="var(--coral)"/>
+          <rect x="58" y="27.5" width="44" height="142.5" rx="6" fill="var(--ok)"/><text class="val" x="80" y="46" text-anchor="middle" fill="#fff">1,15M</text>
+          <rect x="130" y="47" width="44" height="123" rx="6" fill="var(--ok)" opacity=".7"/><text class="val" x="152" y="56" text-anchor="middle" fill="#fff">1,02M</text>
+          <rect x="202" y="89" width="44" height="81" rx="6" fill="var(--amber)"/><text class="val" x="224" y="83" text-anchor="middle">0,74M</text>
+          <rect id="barFeb" x="274" y="96.5" width="44" height="73.5" rx="6" fill="var(--coral)"/><text class="val" x="296" y="90" text-anchor="middle">0,69M</text>
           <line x1="40" y1="35" x2="330" y2="35" stroke="var(--ink)" stroke-dasharray="5 5"/>
           <text x="330" y="30" text-anchor="end" fill="var(--ink)">meta 1,1M</text>
           <text x="80" y="190" text-anchor="middle">NOV</text><text x="152" y="190" text-anchor="middle">DIC</text><text x="224" y="190" text-anchor="middle">ENE</text><text x="296" y="190" text-anchor="middle">FEB</text>
@@ -283,12 +297,14 @@ nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
       <div class="card">
         <h2>Tus costos por atención</h2>
         <div class="rows" style="margin:0">
-          <div class="row"><span>Comisión clínica InMotion</span><span>30 %</span></div>
-          <div class="row"><span>Traslado (bencina + desgaste)</span><span>$180 / km</span></div>
-          <div class="row"><span>Materiales por domicilio</span><span>$800 – $1.500</span></div>
+          <label class="field" for="cCom"><span>Comisión clínica InMotion (%)</span><input id="cCom" type="number" inputmode="decimal" min="0" max="100" step="1" value="30"></label>
+          <label class="field" for="cKm"><span>Traslado por km (bencina + desgaste)</span><input id="cKm" type="number" inputmode="numeric" min="0" step="10" value="180"></label>
+          <label class="field" for="cRet"><span>Retención boleta 2026 (%)</span><input id="cRet" type="number" inputmode="decimal" min="0" max="30" step="0.25" value="15.25"></label>
         </div>
-        <p class="note" style="margin:10px 0 0">Los configuras una vez y se descuentan en cada atención.</p>
+        <p class="note" style="margin:10px 0 0">Los cambios se aplican a todas las atenciones de hoy.</p>
       </div>
+      <button class="btn" data-export>Descargar resumen para tu contadora (CSV)</button>
+      <div class="privacy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex:none"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>El resumen incluye solo montos, fechas e iniciales. Nunca guarda diagnósticos ni ficha clínica (Ley 21.719).</span></div>
     </section>
   </main>
 
@@ -298,7 +314,7 @@ nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
       <a href="#ruta" data-nav="ruta"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-6-5.6-6-10a6 6 0 0 1 12 0c0 4.4-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>Ruta</a>
       <a href="#agenda" data-nav="agenda"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Agenda</a>
       <a href="#proyeccion" data-nav="proyeccion"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 20h18"/><path d="M6 16V9M11 16V5M16 16v-4M21 16v-2"/></svg>Proyección</a>
-      <a href="#impuestos" data-nav="impuestos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16v13H4z"/><path d="M4 7l2-4h12l2 4M10 12h4"/></svg>Destinos</a>
+      <a href="#impuestos" data-nav="impuestos"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16v13H4z"/><path d="M4 7l2-4h12l2 4M10 12h4"/></svg>Mi plata</a>
     </div>
   </nav>
 </div>
@@ -316,7 +332,7 @@ nav a[aria-current="page"] { color: #C2410C; background: var(--accent-soft); }
 <div class="toast" id="toast" hidden></div>
 
 <script>
-const RET = 0.1525, KM = 180, META = 1100000, BASE_MONTH = 412000;
+let RET = 0.1525, KM = 180, COM = 0.30; const META = 1100000, BASE_MONTH = 412000;
 const clp = n => '$' + Math.round(n).toLocaleString('es-CL');
 const $ = id => document.getElementById(id);
 const APPTS = [
@@ -335,19 +351,21 @@ const ROUTES = {
           path: 'M70 160 L120 160 L120 100 L230 100 L230 62 L285 62 L285 100 L150 100 L150 120 L150 140 L318 140 L318 104' },
 };
 let mode = 'opt', done = {}, acts = {}, notified = {};
-try { done = JSON.parse(localStorage.getItem('ck-done') || '{}'); } catch (e) { done = {}; }
+try { done = JSON.parse(localStorage.getItem('ck-done') || '{}'); const c = JSON.parse(localStorage.getItem('ck-cost') || 'null'); if (c) { KM = c.KM; COM = c.COM; RET = c.RET; } } catch (e) { done = {}; }
+const saveCost = () => { try { localStorage.setItem('ck-cost', JSON.stringify({ KM, COM, RET })); } catch (e) {} };
 const save = () => { try { localStorage.setItem('ck-done', JSON.stringify(done)); } catch (e) {} };
 function calc(a) {
-  if (a.kind === 'clinic') { const own = a.price * 0.7, ret = own * RET; return { lines: [['Valor de la sesión', a.price], ['Comisión InMotion (30 %)', -a.price * 0.3], ['Retención boleta (15,25 %)', -ret]], net: own - ret }; }
+  const pr = (RET * 100).toLocaleString('es-CL');
+  if (a.kind === 'clinic') { const own = a.price * (1 - COM), ret = own * RET; return { lines: [['Valor de la sesión', a.price], [`Comisión InMotion (${Math.round(COM * 100)} %)`, -a.price * COM], [`Retención boleta (${pr} %)`, -ret]], net: own - ret, com: a.price * COM, tr: 0, mat: 0, ret }; }
   const tr = a.km * KM, ret = a.price * RET;
-  return { lines: [['Valor de la sesión', a.price], [`Traslado (${a.km} km)`, -tr], ['Materiales', -a.mat], ['Retención boleta (15,25 %)', -ret]], net: a.price - tr - a.mat - ret };
+  return { lines: [['Valor de la sesión', a.price], [`Traslado (${a.km} km)`, -tr], ['Materiales', -a.mat], [`Retención boleta (${pr} %)`, -ret]], net: a.price - tr - a.mat - ret, com: 0, tr, mat: a.mat, ret };
 }
 function mapSVG(big) {
   const r = ROUTES[mode];
   const roads = ['M0 160 L360 160', 'M0 62 L360 62', 'M0 140 L360 140', 'M0 200 L360 200', 'M150 0 L150 230', 'M285 0 L285 230', 'M318 0 L318 230', 'M40 0 L40 230', 'M230 0 L230 230'];
   const mains = ['M0 100 L360 100', 'M120 0 L120 230'];
   const pins = r.order.map((k, i) => {
-    const [x, y] = P[k], isC = k === 'clinic', d = !isC && done[k];
+    const [x, y] = P[k], isC = k === 'clinic', d = !isC && done[k] === 1;
     const fill = isC ? 'var(--purple)' : d ? 'var(--ok)' : 'var(--accent)', rr = big ? 13 : 11;
     return `<circle cx="${x}" cy="${y}" r="${rr}" fill="${fill}" stroke="#fff" stroke-width="3"/><text x="${x}" y="${y + 4.5}" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="${big ? 12 : 11}" font-weight="700" fill="#fff">${isC ? 'C' : i}</text>`;
   }).join('');
@@ -368,23 +386,24 @@ function renderRoute() {
   $('bigMap').innerHTML = mapSVG(true);
   $('miniMap').innerHTML = mapSVG(false);
   $('rOpt').setAttribute('aria-pressed', mode === 'opt'); $('rOrig').setAttribute('aria-pressed', mode === 'orig');
-  $('saving').hidden = mode !== 'opt';
-  $('savingTxt').innerHTML = `Ahorras <b>${other.km - r.km} km</b> y <b>${other.min - r.min} min</b> frente al orden original · ${clp((other.km - r.km) * KM)} menos en bencina.`;
+  const dk = Math.abs(other.km - r.km), dm = Math.abs(other.min - r.min);
+  $('saving').style.background = mode === 'opt' ? '' : '#FFF3DC'; $('saving').style.color = mode === 'opt' ? '' : '#6B4300';
+  $('savingTxt').innerHTML = mode === 'opt' ? `Ahorras <b>${dk} km</b> y <b>${dm} min</b> frente al orden original · ${clp(dk * KM)} menos en bencina.` : `Este orden recorre <b>${dk} km</b> y <b>${dm} min</b> más que la ruta sugerida · ${clp(dk * KM)} extra en bencina.`;
   $('stops').innerHTML = r.order.map((k, i) => {
     if (k === 'clinic') return `<div class="stop"><div class="pin clinic">C</div><div><div class="who">Salida · Clínica InMotion</div><div class="meta">Después de tu última atención en box (11:30)</div></div><span></span></div>`;
-    const a = APPTS.find(x => x.id === k), d = done[k], [km, mn] = r.legs[i];
+    const a = APPTS.find(x => x.id === k), d = done[k] === 1, [km, mn] = r.legs[i];
     const btn = d ? '<span class="tag ok">Hecha</span>' : notified[k] ? '<span class="tag home">Avisado</span>' : `<button class="btn sm" data-notify="${k}">Voy en camino</button>`;
     return `<div class="stop"><div class="pin ${d ? 'done' : ''}">${i}</div><div><div class="who">${a.t} · ${a.who}</div><div class="meta">${a.place} · ${a.why}</div><div class="leg">↳ ${km} km · ${mn} min · ${clp(km * KM)}</div></div>${btn}</div>`;
   }).join('');
 }
 function render() {
-  const doneA = APPTS.filter(a => done[a.id]);
+  const doneA = APPTS.filter(a => done[a.id] === 1);
   const todayNet = doneA.reduce((s, a) => s + calc(a).net, 0);
   const month = BASE_MONTH + todayNet, pct = Math.min(month / META, 1);
   $('mNet').textContent = clp(month);
   $('mPct').textContent = `${Math.round(pct * 100)} % de la meta de $1.100.000`;
   $('dNet').textContent = clp(todayNet);
-  $('dCount').textContent = `${doneA.length} de ${APPTS.length} atenciones`;
+  $('dCount').textContent = `${doneA.length} de ${APPTS.length} atenciones` + (Object.values(done).includes('ns') ? ' · 1 inasistencia' : '');
   $('gArc').setAttribute('stroke-dasharray', `${(pct * 100).toFixed(1)} 100`);
   $('gNeedle').setAttribute('transform', `rotate(${-90 + pct * 180} 60 64)`);
   const ritmo = month / META / (10 / 30), L = $('mLight');
@@ -395,10 +414,12 @@ function render() {
     return `<div class="slot"><div class="t num">${a.t}</div><div class="appt ${h ? 'home' : ''} ${d ? 'done' : ''}">
       <span class="tag ${h ? 'home' : ''}">${h ? 'Domicilio' : 'Clínica'}</span><span class="meta">${a.place}</span>
       <div class="who">${a.who}</div><div class="meta">${a.why}</div>
-      ${d ? `<div class="okline"><span>Ganancia real</span><b class="num">${clp(c.net)}</b></div>` : `<button class="btn" data-done="${a.id}">Atención realizada</button>`}
+      ${d === 1 ? `<div class="okline"><span>Ganancia real</span><b class="num">${clp(c.net)}</b></div><button class="undo" data-undo="${a.id}">Deshacer</button>`
+        : d === 'ns' ? `<div class="okline" style="align-items:center"><span><span class="tag ns">No asistió</span><span class="note">No suma ingreso</span></span><button class="undo" data-undo="${a.id}">Deshacer</button></div>`
+        : `<div class="btns"><button class="btn" data-done="${a.id}">Atención realizada</button><button class="btn line" data-noshow="${a.id}">No asistió</button></div>`}
     </div></div>`;
   }).join('');
-  const ret = doneA.reduce((s, a) => s + (a.kind === 'clinic' ? a.price * .7 : a.price) * RET, 0);
+  const ret = doneA.reduce((s, a) => s + calc(a).ret, 0);
   $('j1').textContent = clp(month); $('j2').textContent = clp(286000 + ret);
   const extra = Object.values(acts).reduce((s, v) => s + v, 0), gap = Math.max(770000 - extra, 0);
   $('gapNote').innerHTML = gap > 0 ? `Te faltarían <strong>${clp(gap)}</strong> entre enero y febrero para llegar a tu meta.` : '<strong>Con estas acciones cubres la baja de enero y febrero.</strong>';
@@ -418,18 +439,32 @@ document.addEventListener('click', e => {
   const d = e.target.closest('[data-done]');
   if (d) { const a = APPTS.find(x => x.id === d.dataset.done); done[a.id] = 1; save(); render(); openSheet(a); return; }
   const n = e.target.closest('[data-notify]');
-  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`Aviso enviado a ${a.who}: llegas en ~15 min`); return; }
+  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`WhatsApp a ${a.who}: «Hola, voy en camino. Llego en unos 15 minutos. Joselyn»`); return; }
+  const un = e.target.closest('[data-undo]');
+  if (un) { delete done[un.dataset.undo]; save(); render(); toast('Atención vuelta a pendiente'); return; }
+  const ns = e.target.closest('[data-noshow]');
+  if (ns) { done[ns.dataset.noshow] = 'ns'; save(); render(); toast('Marcada como inasistencia · no suma ingreso'); return; }
+  if (e.target.closest('[data-export]')) { exportCSV(); return; }
   const g = e.target.closest('[data-go]');
   if (g) { location.hash = g.dataset.go; return; }
   const b = e.target.closest('#acts button');
   if (b) { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); if (on) acts[b.dataset.k] = +b.dataset.v; else delete acts[b.dataset.k]; render(); toast(on ? 'Acción agregada a tu plan' : 'Acción quitada'); }
 });
+function exportCSV() {
+  const rows = [['fecha', 'paciente', 'lugar', 'valor', 'comision', 'traslado', 'materiales', 'retencion', 'ganancia_real']];
+  APPTS.filter(a => done[a.id] === 1).forEach(a => { const c = calc(a); rows.push(['2026-11-10', a.who.split(' ').map(w => w[0]).join('') , a.kind === 'home' ? 'domicilio' : 'clinica', a.price, Math.round(c.com), Math.round(c.tr), c.mat, Math.round(c.ret), Math.round(c.net)]); });
+  if (rows.length === 1) { toast('Primero registra al menos una atención'); return; }
+  const blob = new Blob(['\ufeff' + rows.map(r => r.join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
+  const l = document.createElement('a'); l.href = URL.createObjectURL(blob); l.download = 'copiloto-kine-noviembre-2026.csv'; document.body.appendChild(l); l.click(); l.remove();
+  toast(`Resumen descargado · ${rows.length - 1} atenciones`);
+}
+[['cCom', v => COM = v / 100], ['cKm', v => KM = v], ['cRet', v => RET = v / 100]].forEach(([id, set]) => { const el = $(id); el.value = id === 'cCom' ? Math.round(COM * 100) : id === 'cKm' ? KM : +(RET * 100).toFixed(2); el.addEventListener('change', () => { const v = parseFloat(el.value); if (isNaN(v) || v < 0) { el.value = id === 'cCom' ? Math.round(COM * 100) : id === 'cKm' ? KM : RET * 100; return; } set(v); saveCost(); render(); toast('Costos actualizados'); }); });
 $('rOpt').onclick = () => { mode = 'opt'; renderRoute(); };
 $('rOrig').onclick = () => { mode = 'orig'; renderRoute(); };
 $('sClose').onclick = () => { $('scrim').hidden = true; };
 $('scrim').onclick = e => { if (e.target.id === 'scrim') $('scrim').hidden = true; };
 document.addEventListener('keydown', e => { if (e.key === 'Escape') $('scrim').hidden = true; });
-$('closeDay').onclick = () => { const n = Object.keys(done).length; toast(n === APPTS.length ? 'Día cerrado · 0 minutos en Excel' : `Faltan ${APPTS.length - n} atenciones por confirmar`); };
+$('closeDay').onclick = () => { const n = Object.keys(done).length; toast(n === APPTS.length ? 'Día cerrado · sin pasar nada a Excel' : `Faltan ${APPTS.length - n} atenciones por confirmar`); };
 const VIEWS = ['inicio', 'ruta', 'agenda', 'proyeccion', 'impuestos'];
 function route() {
   const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'inicio';

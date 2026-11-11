@@ -1,0 +1,81 @@
+{
+ "pruebas": [
+  {
+   "id": "P1",
+   "req": "R4 · R8 · R12",
+   "nombre": "Ganancia neta por atención coincide con el cálculo de referencia (5 casos)",
+   "ok": true,
+   "evidencia": "a1: app 14831 / ref 14831 · a2: app 14831 / ref 14831 · a3: app 21090 / ref 21090 · a4: app 21690 / ref 21690 · a5: app 21310 / ref 21310"
+  },
+  {
+   "id": "P2",
+   "req": "R1 · R4",
+   "nombre": "Ganancia del día y del mes se actualizan con cada atención",
+   "ok": true,
+   "evidencia": "día app 93753 / ref 93753 · mes 505753"
+  },
+  {
+   "id": "P3",
+   "req": "R6 · R7",
+   "nombre": "Los registros se mantienen al cerrar y volver a abrir la app",
+   "ok": true,
+   "evidencia": "tras recargar: 5 de 5 atenciones"
+  },
+  {
+   "id": "P4",
+   "req": "R6",
+   "nombre": "Cierre de un día de 5 atenciones",
+   "ok": true,
+   "evidencia": "11 toques, sin digitar ningún número (línea base UA1: ~60 min diarios en Excel)"
+  },
+  {
+   "id": "P5",
+   "req": "R3 · R8",
+   "nombre": "Cambiar el costo por km recalcula la ganancia",
+   "ok": true,
+   "evidencia": "a3 con $200/km: app 20930 / ref 20930"
+  },
+  {
+   "id": "P6",
+   "req": "R12 · R13",
+   "nombre": "Resumen CSV para la contadora sin diagnósticos ni nombres completos",
+   "ok": true,
+   "evidencia": "5 filas · columnas: fecha;paciente;lugar;valor;comision;traslado;materiales;retencion;ganancia_real"
+  },
+  {
+   "id": "P7",
+   "req": "R1",
+   "nombre": "Una inasistencia queda registrada y no suma ingreso",
+   "ok": true,
+   "evidencia": "0 de 5 atenciones · 1 inasistencia"
+  },
+  {
+   "id": "P8",
+   "req": "R9",
+   "nombre": "La ruta sugerida reduce km y lo informa en ambos modos",
+   "ok": true,
+   "evidencia": "Ahorras 7 km y 16 min frente al orden original · $1.260 menos en bencina."
+  },
+  {
+   "id": "P9",
+   "req": "R5",
+   "nombre": "Peso y tiempo de carga del prototipo",
+   "ok": true,
+   "evidencia": "39.4 KB · DOMContentLoaded 13 ms · load 20 ms (archivo local)"
+  },
+  {
+   "id": "P10",
+   "req": "R5",
+   "nombre": "Sin internet para las fuentes la app sigue legible (fuentes de respaldo)",
+   "ok": true,
+   "evidencia": "fuente declarada: \"Bebas Neue\", Oswald, Impact, sans-serif"
+  },
+  {
+   "id": "P11",
+   "req": "R12",
+   "nombre": "La tasa de retención se puede actualizar para 2027 (16 %)",
+   "ok": true,
+   "evidencia": "a5 con 16 %: app 21100 / ref 21100"
+  }
+ ]
+}
