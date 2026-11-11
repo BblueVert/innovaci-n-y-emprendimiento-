@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copiloto Kine · Vista paciente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Estímulo de testeo para pacientes: los mensajes que el paciente recibe cuando su kinesióloga usa Copiloto Kine.
+   Simula WhatsApp; no envía nada. Se usa con los perfiles de pacientes del kit de testeo (guion B). */
+:root {
+  --bg: #F6F4FC; --chat: #EFEAE2; --in: #FFFFFF; --out: #E7FFDB; --ink: #17142A; --muted: #5E5878;
+  --accent: #FF6B35; --accent-strong: #C2410C; --accent-soft: #FFEDE4; --purple: #7B3FA0; --ok-ink: #146C4A; --line: #E3DEF2;
+  --f-body: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body { font-family: var(--f-body); color: var(--ink); background: var(--bg); min-height: 100vh; }
+body.big { font-size: 1.2rem; }
+.app { max-width: 430px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; background: var(--chat); }
+header { background: #fff; border-bottom: 1px solid var(--line); padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 2; }
+.av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--purple)); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
+header b { display: block; font-size: 1rem; } header span { font-size: .8rem; color: var(--muted); }
+.tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 10px 12px; background: #fff; border-bottom: 1px solid var(--line); }
+section[data-v] { display: flex; flex-direction: column; gap: 10px; }
+.tabs button { min-height: 44px; padding: 0 14px; border-radius: 22px; border: 1px solid var(--line); background: #fff; font: 600 .82rem var(--f-body); color: var(--ink); cursor: pointer; }
+.tabs button[aria-pressed=true] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chat { flex: 1; padding: 16px 12px 24px; display: flex; flex-direction: column; gap: 10px; }
+.day { align-self: center; background: #fff; border-radius: 8px; padding: 4px 10px; font: 500 .75rem var(--f-mono); color: var(--muted); }
+.msg { max-width: 88%; background: var(--in); border-radius: 0 12px 12px 12px; padding: 10px 12px 6px; box-shadow: 0 1px 1px rgba(0,0,0,.06); font-size: 1em; line-height: 1.45; }
+.msg.out { align-self: flex-end; background: var(--out); border-radius: 12px 0 12px 12px; }
+.msg .hd { font: 600 .75rem var(--f-body); color: var(--purple); margin-bottom: 4px; }
+.msg .t { font: 400 .72rem var(--f-mono); color: var(--muted); text-align: right; margin-top: 4px; }
+.msg .card { background: var(--bg); border-radius: 8px; padding: 10px; margin: 8px 0 4px; font-size: .92em; }
+.msg .card .row { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; }
+.msg .card .row.tot { border-top: 1px solid var(--line); margin-top: 4px; padding-top: 6px; font-weight: 700; }
+.msg .eta { font-size: 1.6em; font-weight: 700; color: var(--accent-strong); }
+.acts { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+.acts button { min-height: 44px; border-radius: 8px; border: 1px solid var(--line); background: #fff; font: 600 .9rem var(--f-body); color: #0B6E99; cursor: pointer; }
+.acts button.pri { background: var(--accent-strong); color: #fff; border-color: var(--accent-strong); }
+.map { height: 92px; border-radius: 8px; margin: 8px 0 4px; background: #F1EEE6; position: relative; overflow: hidden; }
+.map svg { width: 100%; height: 100%; display: block; }
+.note { font-size: .8rem; color: var(--muted); padding: 10px 16px 16px; background: #fff; border-top: 1px solid var(--line); }
+.note b { color: var(--ink); }
+.ctrl { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.ctrl button { min-height: 44px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--line); background: #fff; font: 600 .82rem var(--f-body); cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="av" aria-hidden="true">JT</div>
+    <div><b>Joselyn Toledo · Kinesióloga</b><span>Mensajes enviados desde Copiloto Kine</span></div>
+  </header>
+  <nav class="tabs" aria-label="Momentos del servicio">
+    <button data-m="m1" aria-pressed="true">1 · Recordatorio</button>
+    <button data-m="m2" aria-pressed="false">2 · Voy en camino</button>
+    <button data-m="m3" aria-pressed="false">3 · Comprobante</button>
+    <button data-m="m4" aria-pressed="false">4 · Hora liberada</button>
+  </nav>
+
+  <main class="chat" id="chat">
+    <!-- M1 · Recordatorio con ventana horaria (valida H5: ¿acepta ±30 min para ordenar la ruta?) -->
+    <section data-v="m1">
+      <div class="day">Lunes</div>
+      <div class="msg"><div class="hd">Joselyn Toledo · Kinesióloga</div>
+        Hola <span class="nm">Carmen</span> 👋 Te recuerdo tu sesión de kinesiología <b>mañana martes</b> en tu domicilio (Machalí).
+        <div class="card"><div class="row"><span>Llegada estimada</span><b>entre 12:15 y 12:45</b></div><div class="row"><span>Duración</span><span>45 min</span></div><div class="row"><span>Valor</span><span>$28.000</span></div></div>
+        La ventana de 30 min me permite ordenar el recorrido del día. Te aviso cuando vaya en camino.
+        <div class="acts" id="m1acts"><button class="pri" data-r="ok">Confirmo</button><button data-r="fijo">Necesito una hora exacta</button><button data-r="cambio">Quiero cambiar la hora</button></div>
+        <div class="t">18:02</div></div>
+      <div class="msg out" id="m1ans" hidden><span id="m1txt"></span><div class="t">18:05 ✓✓</div></div>
+    </section>
+
+    <!-- M2 · Voy en camino (valida H6) -->
+    <section data-v="m2" hidden>
+      <div class="day">Martes</div>
+      <div class="msg"><div class="hd">Joselyn Toledo · Kinesióloga</div>
+        Hola <span class="nm">Carmen</span>, voy en camino 🚗
+        <div class="map" role="img" aria-label="Mapa ilustrativo con el trayecto"><svg viewBox="0 0 300 92" aria-hidden="true"><rect width="300" height="92" fill="#F1EEE6"/><path d="M0 60 H300 M90 0 V92 M210 0 V92" stroke="#fff" stroke-width="8"/><path d="M0 30 C80 30 120 70 300 40" stroke="#FBE3B6" stroke-width="10" fill="none"/><path d="M40 60 H90 V30 C130 40 170 64 230 50" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="7 5"/><circle cx="40" cy="60" r="7" fill="#7B3FA0"/><circle cx="232" cy="50" r="9" fill="#C2410C"/><circle cx="232" cy="50" r="3.5" fill="#fff"/></svg></div>
+        <div>Llego en</div><div class="eta">≈ 15 min</div>
+        <div class="acts"><button data-r="listo">Ok, te espero</button><button data-r="porton">Indicaciones para llegar</button></div>
+        <div class="t">12:14</div></div>
+      <div class="msg out" id="m2ans" hidden><span id="m2txt"></span><div class="t">12:15 ✓✓</div></div>
+    </section>
+
+    <!-- M3 · Comprobante sin datos clínicos (valida H7) -->
+    <section data-v="m3" hidden>
+      <div class="day">Martes</div>
+      <div class="msg"><div class="hd">Joselyn Toledo · Kinesióloga</div>
+        ¡Gracias por la sesión de hoy! Aquí va tu comprobante:
+        <div class="card">
+          <div class="row"><span>Fecha</span><span>Mar 17 nov · 12:30</span></div>
+          <div class="row"><span>Prestación</span><span>Sesión de kinesiología a domicilio</span></div>
+          <div class="row"><span>Pago</span><span>Transferencia</span></div>
+          <div class="row tot"><span>Total</span><span>$28.000</span></div>
+        </div>
+        La boleta de honorarios electrónica (SII) te llega a tu correo; sirve para pedir reembolso en tu Isapre, Fonasa MLE o seguro complementario.
+        <div class="acts"><button data-r="boleta">Enviar boleta a otro correo</button><button data-r="prox">Agendar la próxima sesión</button></div>
+        <div class="t">13:20</div></div>
+      <div class="msg out" id="m3ans" hidden><span id="m3txt"></span><div class="t">13:22 ✓✓</div></div>
+    </section>
+
+    <!-- M4 · Hora liberada a precio preferente (idea EV2, referente Too Good To Go) -->
+    <section data-v="m4" hidden>
+      <div class="day">Jueves</div>
+      <div class="msg"><div class="hd">Joselyn Toledo · Kinesióloga</div>
+        Hola <span class="nm">Carmen</span>, se liberó una hora <b>hoy a las 16:00</b> cerca de tu sector. Si la tomas, la sesión queda en <b>$24.000</b> (valor normal $28.000).
+        <div class="acts"><button class="pri" data-r="tomo">La tomo</button><button data-r="no">Esta vez no</button><button data-r="nomas">No quiero recibir estos avisos</button></div>
+        <div class="t">10:41</div></div>
+      <div class="msg out" id="m4ans" hidden><span id="m4txt"></span><div class="t">10:43 ✓✓</div></div>
+    </section>
+  </main>
+
+  <div class="note">
+    <b>Prototipo de testeo.</b> Los mensajes no se envían. No incluyen diagnósticos ni motivo de consulta (Ley 21.719).
+    <div class="ctrl"><button id="big" aria-pressed="false">Letra grande</button><button id="who">Cambiar nombre del paciente</button></div>
+  </div>
+</div>
+<script>
+const R = {
+  ok: 'Confirmo 👍', fijo: 'Necesito que sea a las 12:30 exacto, tengo que salir después.', cambio: '¿Podemos cambiarla a la tarde?',
+  listo: 'Ok, te espero 🙂', porton: 'Es la casa del portón verde, toca el timbre de la izquierda.',
+  boleta: 'Mándala al correo de mi hija, por favor.', prox: 'Agendemos la próxima para el jueves.',
+  tomo: '¡La tomo!', no: 'Esta vez no, gracias.', nomas: 'Prefiero no recibir estos avisos.'
+};
+const show = m => {
+  document.querySelectorAll('[data-v]').forEach(s => s.hidden = s.dataset.v !== m);
+  document.querySelectorAll('[data-m]').forEach(b => b.setAttribute('aria-pressed', b.dataset.m === m));
+  try { history.replaceState(null, '', '#' + m); } catch (e) {}
+};
+document.addEventListener('click', e => {
+  const t = e.target.closest('button'); if (!t) return;
+  if (t.dataset.m) return show(t.dataset.m);
+  if (t.dataset.r) {
+    const sec = t.closest('[data-v]').dataset.v;
+    document.getElementById(sec + 'txt').textContent = R[t.dataset.r];
+    document.getElementById(sec + 'ans').hidden = false;
+    t.closest('.acts').querySelectorAll('button').forEach(b => b.disabled = true);
+  }
+});
+document.getElementById('big').onclick = e => { const on = document.body.classList.toggle('big'); e.target.setAttribute('aria-pressed', on); };
+document.getElementById('who').onclick = () => {
+  const n = prompt('Nombre del participante (solo para la sesión):', 'Carmen');
+  if (n) document.querySelectorAll('.nm').forEach(x => x.textContent = n.slice(0, 20));
+};
+const fromHash = () => show(/^#m[1-4]$/.test(location.hash) ? location.hash.slice(1) : 'm1');
+window.addEventListener('hashchange', fromHash); fromHash();
+</script>
+</body>
+</html>

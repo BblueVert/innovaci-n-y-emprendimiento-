@@ -82,6 +82,18 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 | `_build/` | Generadores: `node build.js` (Word + tableros), `node figma_svg.js` (SVG) |
 | `material/` | Manual, toolkit, pautas S6–S8, bitácora en blanco, `plantillas/` oficiales e `infografias/` con ejemplos aplicados |
 
+## Unidad 3 (`/unidad-3`) — Prototipado y testeo
+
+| Ruta | Descripción |
+|---|---|
+| `ev3/Evaluacion3_Presentacion_Prototipado.pdf` | **Entrega EV3 en presentación 16:9 (44 diapositivas)**: SQA, storyboard y mock-up, ciclo 1 (funcional y estético), iteración v2, ciclo 2 (técnico), kit con usuarios, propuesta de valor iterada, PESTAL profundizada, estado del arte, pertinencia, sostenibilidad, gestión y anexo con las 7 plantillas oficiales llenas. Generador: `python3 ev3/build_presentacion.py` |
+| `prototipo/copiloto-kine.html` | Prototipo v2 (kinesióloga), navegable en el celular. v1 en `copiloto-kine-v1.html`; capturas en `capturas_v1/` y `capturas_v2/` |
+| `prototipo/vista-paciente.html` | Estímulo para pacientes: recordatorio, “voy en camino”, comprobante y hora liberada (capturas en `capturas_paciente/`) |
+| `ciclo1/`, `ciclo2/` | Scripts reproducibles y resultados JSON de los ciclos de testeo interno |
+| `testeo/Kit_Testeo_Copiloto_Kine.pdf` | **Kit de testeo con usuarios** (19 págs.): 10 hipótesis, 9 perfiles (kinesiólogas, 6 perfiles de pacientes, contadora), guiones A/B/C, consentimiento, pautas, SUS, matriz de consolidación e invitaciones. Generador: `python3 testeo/build_kit.py` |
+| `entregas/Bitacora_avance_U3_EV3.xlsx` | Bitácora U3 completa (versión S13) |
+| `material/` | Manual, toolkit, actividades S11–S12, bitácoras, plantillas oficiales y rúbrica |
+
 ## Pendientes
 - Completar Ficha B de la entrevista a Catalina con sus respuestas.
 - Rellenar las plantillas en blanco (entrevista usuario/experto, observación, PESTAL, antecedentes) con la información real del caso.
@@ -90,3 +102,4 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 - Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
 - U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
 - U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Joselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
+- U3: transcribir la reunión del jueves 12/11 (feedback de la emprendedora) e integrarla como fuente F0 del kit; aplicar las sesiones con Joselyn, Catalina, pacientes y contadora y completar los resultados pendientes.
