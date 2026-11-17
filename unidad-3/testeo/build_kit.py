@@ -51,7 +51,7 @@ PERF = [
     dict(c='C1', n='Contadora o asesor financiero', t='Experto técnico', tipo='e', real=False,
          d='Lleva la contabilidad de profesionales a honorarios (boletas, retención, Operación Renta).',
          s='Exportación CSV + vista “Mi plata”', h='H3 · H9', m='Remota · 20 min', a='Enviar el CSV de ejemplo con anticipación.'),
-    dict(c='P1', n='“Don Hernán”', t='Adulto mayor atendido a domicilio', tipo='p',
+    dict(c='P1', n='“Don Luis”', t='Adulto mayor atendido a domicilio', tipo='p',
          d='70 años o más. Rehabilitación tras una caída o por artrosis. Vive en Machalí con su familia. Usa WhatsApp, con letra grande.',
          s='Vista paciente: M1 y M2 (con “Letra grande”)', h='H5 · H6 · H8', m='Presencial, idealmente en su casa · 15 min', a='Leer en voz alta si lo pide; frases cortas; un mensaje a la vez; permitir acompañante.'),
     dict(c='P2', n='“Marcela”', t='Cuidadora familiar', tipo='p',

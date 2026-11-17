@@ -42,26 +42,26 @@ SQA = [
 ]
 
 # ---------------------------------------------------------------- Storyboard v1 (3.1.2.1)
-SCENES = [
-    ('11:40 p. m. · el Excel de siempre', 'img/06-nudo.jpg', 'wide',
-     'Joselyn termina de atender y cuadra ingresos y gastos en Excel. No sabe si el mes va bien.',
-     'Situación actual: registro manual, sin proyección (I1, I3).',
-     'Necesidad que la propuesta debe resolver: saber cuánto gana sin trabajo nocturno.'),
-    ('8:00 a. m. · abre el tablero', V1 + '01_tablero.png', '',
-     'Ve su ganancia real del mes, el % de la meta y un semáforo; abajo, la ruta del día.',
-     'Tablero con ganancia real y semáforo de meta.', 'Atributo “Legible de un vistazo”.'),
-    ('9:45 · termina en la clínica', V1 + '05_ganancia_atencion.png', '',
-     'Toca “Atención realizada” y la app muestra cuánto le quedó tras comisión y retención.',
-     'Registro de un toque con desglose de la ganancia.', 'Atributo “Automático”: la cita se vuelve ingreso sin digitar.'),
-    ('11:30 · sale a domicilios', V1 + '02_ruta_sugerida.png', '',
-     'La ruta agrupa Machalí y el centro y le muestra kilómetros, minutos y costo de bencina.',
-     'Ruta del día con paradas y ahorro de km.', 'Atributo “Sostenible”: menos km, menos costo y emisiones.'),
-    ('12:10 · “voy en camino”', V1 + '03_ruta_aviso.png', '',
-     'Con un toque avisa a Carmen que va llegando, sin escribir mientras maneja.',
-     'Aviso automático al paciente.', 'Trato 1:1 que Joselyn define como su diferenciador.'),
-    ('Domingo · mira lo que viene', V1 + '07_proyeccion.png', '',
-     'Ve que enero y febrero vienen bajos y agrega acciones (packs, colchón) a su plan.',
-     'Proyección a 3 meses con acciones sugeridas.', 'Atributo “Anticipador”: avisa antes de la curva.'),
+SB = 'img/storyboard/'
+SCENES = [  # versión actual · visual y funcional (prototipo v1)
+    ('23:10 · el Excel de noche', SB + 'v1-01.jpg', 'wide',
+     'Después de atender, Joselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.',
+     'Situación actual: registro manual, sin proyección (UA1).', 'Necesidad: saber cuánto gana sin trabajo nocturno.'),
+    ('9:45 · entre pacientes, en la clínica', SB + 'v1-02.jpg', 'wide',
+     'Abre el tablero: ganancia real del mes, porcentaje de la meta y semáforo, sin tocar nada.',
+     'Tablero con ganancia real y semáforo.', 'Atributo “Legible de un vistazo”.'),
+    ('8:00 · la agenda llega sola', SB + 'v1-03.jpg', 'wide',
+     'Cada cita del día aparece como ingreso proyectado, etiquetada como clínica o domicilio.',
+     'Agenda conectada (simulada en v1).', 'Atributo “Automático”: no se vuelve a digitar.'),
+    ('12:30 · “atención realizada”', SB + 'v1-04.jpg', 'wide',
+     'Al despedirse de don Luis confirma la atención con un toque y ve su ganancia neta.',
+     'Registro de un toque con desglose.', 'Ganancia real: traslado, materiales y retención ya descontados.'),
+    ('13:10 · ruta y “voy en camino”', SB + 'v1-05.jpg', 'wide',
+     'La ruta ordena los domicilios y con un toque avisa al siguiente paciente que va llegando.',
+     'Ruta del día y aviso al paciente.', 'Atributos “Sostenible” y “Cercano”.'),
+    ('Domingo · lo que viene', SB + 'v1-06.jpg', 'wide',
+     'Ve que febrero viene bajo, pero todavía arma a mano lo que le entrega a la contadora.',
+     'Proyección a 3 meses.', '“Anticipador”; queda abierto el cierre con la contadora.'),
 ]
 
 # ---------------------------------------------------------------- Mock-up v1 (3.1.2.2)
@@ -133,19 +133,63 @@ METAFORA_ITER = dict(
         ('Sostenible', 'en el sentido de que rinde más con menos: 7 km menos por día, colchón para los meses bajos y datos de salud fuera del sistema.', 'Se refuerza con la ruta y la privacidad por diseño.', ['Ec', 'So', 'Am']),
     ])
 
-SCENES_ITER = [
-    ('11:40 p. m. · el Excel de siempre', 'img/06-nudo.jpg', 'wide', 'La escena de partida se mantiene: es la situación que el sistema reemplaza.',
-     'Se entiende el problema sin explicación.', 'Mostrar el tiempo perdido: ~1 h diaria (Catalina, UA1).'),
-    ('8:00 a. m. · abre el tablero', V2 + '01_tablero.png', '', 'Tablero compacto con la definición de “ganancia real” y la ruta en miniatura.',
-     'Respuesta a T1 sin tocar nada.', 'Se agregó la definición; letra mínima de 12 px.'),
-    ('9:45 · registra o corrige', V2 + '06_agenda.png', '', 'Puede marcar “Atención realizada”, “No asistió” o deshacer.',
-     'El registro sigue siendo de un toque.', 'Se agregaron deshacer e inasistencia (T4, T10).'),
-    ('11:30 · ruta del día', V2 + '04_ruta_original.png', '', 'Compara la ruta sugerida con su orden habitual y ve los km y la bencina de diferencia.',
-     'La ruta es la vista más valorada.', 'La diferencia se muestra en ambos modos (T6).'),
-    ('12:10 · “voy en camino”', V2 + '03_ruta_aviso.png', '', 'El aviso muestra el mensaje exacto que recibe el paciente.',
-     'Mantiene el trato cercano.', 'Texto del mensaje visible antes de enviar.'),
-    ('Fin de mes · “Mi plata”', V2 + '08_mi_plata.png', '', 'Ajusta sus costos y descarga el resumen para la contadora, sin datos clínicos.',
-     'Separa ganancia, impuestos y colchón.', 'Costos editables y exportación (T9, T11).'),
+SCENES_ITER = [  # versión actualizada · técnica (prototipo v2 + propuesta v3)
+    ('8:30 · martes = Machalí', SB + 'v2-01.jpg', 'wide', 'El copiloto agrupa los domicilios por sector, ordena la ruta y muestra km, minutos y la bencinera más barata del camino.',
+     'La ruta fue la vista más valorada (ciclo 1).', 'Diferencia de km en ambos modos; v3: precios de bencina en línea.'),
+    ('10:15 · registra o corrige', SB + 'v2-02.jpg', 'wide', 'Cierra la atención con don Luis en un toque. Si se equivocó o el paciente no estuvo, lo corrige con otro.',
+     'Registro de un toque y cálculo exacto (P1).', 'Deshacer y “No asistió” (T4, T10).'),
+    ('12:40 · “voy en camino”', SB + 'v2-03.jpg', 'wide', 'El aviso muestra el mensaje exacto que recibe el paciente; si alguien cancela, el cupo se ofrece a la lista.',
+     'Trato cercano sin escribir mientras maneja.', 'Mensaje visible (v2) y hora liberada (vista paciente).'),
+    ('20:40 · día cerrado', SB + 'v2-04.jpg', 'wide', 'Cierra un día de cinco atenciones en 11 toques y llega a tiempo a cenar con su familia.',
+     'Sin trabajo nocturno (P4).', 'Persistencia de datos (P3); v3: respaldo en la nube.'),
+    ('Fin de mes · “Mi plata”', SB + 'v2-05.jpg', 'wide', 'Ajusta comisión, costo por km y retención, y envía a la contadora el resumen sin datos clínicos.',
+     'Separa ganancia, impuestos y colchón.', 'Costos editables y exportación (T9, T11, P5, P6).'),
+    ('Seis semanas antes · febrero', SB + 'v2-06.jpg', 'wide', 'El tablero avisa que febrero viene bajo y propone packs y colchón con su monto; la curva se aplana.',
+     'Acciones con monto (T7).', 'Valores en el gráfico; v3: proyección desde su historial.'),
+]
+
+# Recorrido del paciente (storyboard EV2) ↔ mensajes de la vista paciente
+SB_PACIENTE = [
+    (SB + 'p-01.jpg', 'Camila reserva en un minuto', 'Agenda en línea que Joselyn ya usa', '—'),
+    (SB + 'p-02.jpg', 'Don Luis confirma el recordatorio', 'M1 · ventana de llegada de 30 min', 'H5 · H8'),
+    (SB + 'p-03.jpg', '“Voy en camino”', 'M2 · aviso con tiempo estimado', 'H6'),
+    (SB + 'p-04.jpg', 'Paga y recibe el comprobante', 'M3 · comprobante sin diagnóstico', 'H7'),
+    (SB + 'p-05.jpg', 'Camila toma un cupo liberado', 'M4 · hora liberada a precio preferente', 'H10'),
+    (SB + 'p-06.jpg', 'Seguimiento después del alta', 'Fase 2 · pack de mantención', '—'),
+]
+
+# Iteración de los instrumentos: versión actual (visual-funcional) → versión actualizada (técnica)
+ITER_DOCS = [
+    ('3.1.2.1 → 3.1.3.2', 'Storyboard', 'Un día de Joselyn con la promesa de la EV2: tablero, registro, ruta y proyección.', 'Mismo día con lo corregido y lo técnico: ruta por sector con bencina, corrección, cierre a las 20:40 y proyección con acciones.', 'Ruta como vista más valorada; “automático” sin corrección'),
+    ('3.1.2.2 → 3.1.3.3', 'Mock-up', 'Prototipo v1: 5 vistas, foco en que se vea y se use bien.', 'Prototipo v2: 12 cambios (accesibilidad, deshacer, inasistencia, costos editables, exportación) + vista paciente.', '7/11 tareas; 11 errores de contraste'),
+    ('3.1.2.3 → 3.1.3.4', 'Ficha de testeo', 'Ciclo 1 visual y funcional: tareas, WCAG AA, heurísticas.', 'Ciclo 2 técnico: exactitud de cálculos, persistencia, privacidad, rendimiento y cobertura R1–R13.', 'Lo funcional quedó resuelto en v2'),
+    ('3.1.2.4 (×2)', 'Matriz CDM', 'Ciclo 1: uso, estética y promesa de valor.', 'Ciclo 2: brechas técnicas e integraciones para el MVP.', 'Cambia el tipo de debilidad: de uso a integración'),
+    ('2.1.4.3 → 3.1.3.1', 'Metáfora y atributos', 'Tablero y copiloto de rally; “Legible de un vistazo”, “Automático”.', 'Copiloto que lee la ruta y lleva las cuentas; “Claro”, “Automático y corregible”.', 'Ruta más valorada; accesibilidad medida'),
+    ('2.1.4.4 → 3.1.5', 'Propuesta de valor', '“Se conecta a la agenda que ya usa… deja de cuadrar Excel de noche”.', '“Ordena su ruta… entrega sus números a la contadora sin pasar nada a Excel”.', 'Promesa ajustada a lo verificado (P6, B1)'),
+    ('1.1.3.1 → 3.1.4.1', 'Matriz PESTAL', 'Contexto general de la UA1.', 'Cada factor con evidencia del prototipo y oportunidades técnicas (APIs públicas de combustible y mapas).', 'Testeo técnico y brechas B1–B7'),
+]
+
+# ---------------------------------------------------------------- Propuesta técnica (versión 3 · MVP)
+INTEGRACIONES = [
+    ('Precios de combustible', 'API pública “Bencina en Línea” de la Comisión Nacional de Energía (registro gratuito)', 'Costo por km calculado con el precio real de la bencinera más cercana y aviso de la más barata en la ruta del día.', 'Ec · Am', 'MVP'),
+    ('Optimización de ruta', 'Servicio de rutas (Google Routes u OpenRouteService) con optimización de paradas y ventanas horarias', 'Orden de domicilios según tráfico real, respetando la ventana de 30 min que acepta cada paciente (H5).', 'Am · Ec', 'MVP'),
+    ('Agenda', 'Google Calendar API o Cal.com (OAuth, solo lectura)', 'Cada cita se convierte sola en ingreso proyectado (resuelve R1, R2 y B1).', 'So', 'MVP'),
+    ('Mensajería', 'Enlace wa.me (sin costo) y luego WhatsApp Business API', 'Recordatorio, “voy en camino”, comprobante y hora liberada (M1–M4).', 'So', 'MVP → fase 2'),
+    ('Base de datos', 'Base de datos en la nube con cifrado y respaldo (p. ej. Supabase/PostgreSQL) + modo sin conexión', 'Historial seguro entre dispositivos (B2) y proyección desde el historial propio (B3).', 'So', 'MVP'),
+    ('Pagos y boleta', 'Link de pago (Mercado Pago) y registro del folio de la boleta de honorarios del SII', 'El pago registra el ingreso solo; el folio cuadra con lo que ve la contadora.', 'Ec', 'Fase 2'),
+]
+
+FUNCIONES = [
+    ('Agregar', 'Bencinera más barata en la ruta y costo por km automático', 'Hoy el costo por km es fijo ($180) y lo ajusta la usuaria (T9).'),
+    ('Agregar', 'Ventana horaria por paciente y marca “hora fija”', 'La ruta solo es real si el paciente la acepta (H5); los de hora fija no se mueven.'),
+    ('Agregar', 'Llegada detectada por ubicación (geocerca) para sugerir “atención realizada”', 'Reduce aún más el registro manual, siempre con confirmación de la usuaria.'),
+    ('Agregar', 'Costos fijos del mes (celular, seguros, cursos)', 'La ganancia mensual hoy los omite (B7).'),
+    ('Agregar', 'Respaldo en la nube y modo sin conexión', 'Datos solo en el celular (B2); señal irregular entre domicilios.'),
+    ('Mantener', 'Registro de un toque, deshacer e inasistencia', 'Validado en ciclos 1 y 2 (T2, T4, T10, P4).'),
+    ('Mantener', 'Exportación para la contadora sin datos clínicos', 'Verificado (P6) y alineado con la Ley 21.719.'),
+    ('Quitar', 'Motivo de consulta visible en la agenda', 'Es un dato de salud (B6): queda solo en la agenda original.'),
+    ('Quitar', 'Mapa ilustrativo y proyección de ejemplo', 'Se reemplazan por la ruta real y la proyección desde el historial (B3, B4).'),
+    ('Quitar', 'Nombres completos de pacientes en pantallas compartidas', 'Iniciales por defecto; privacidad por diseño.'),
 ]
 
 # ---------------------------------------------------------------- Ficha ciclo 2 (3.1.3.4)

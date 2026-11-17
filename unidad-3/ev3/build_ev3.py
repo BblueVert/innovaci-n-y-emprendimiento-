@@ -40,6 +40,10 @@ STMT = {
     's-f1': 'El ciclo 1 pregunta: <b>¿se puede usar y se ve bien?</b>',
     's-r1': 'Funciona en lo central y <b>falla en lo que permite corregir</b>.',
     's-cdm1': 'Todo problema de severidad 2 o más <b>entra a la iteración</b>.',
+    's-iter': 'Primero <b>visual y funcional</b>; después <b>técnica</b>.',
+    's-fun': 'Menos digitación, <b>más datos reales</b>.',
+    's-tec': 'Lo que falta no es diseño: <b>es conectar datos reales</b>.',
+    's-pac': 'Cada escena del paciente <b>es una hipótesis</b>.',
     's-meta': 'La metáfora pasa <b>del tablero al copiloto</b>.',
     's-sb2': 'El mismo día, <b>con lo que aprendimos</b>.',
     's-mk2': 'Doce cambios, <b>cada uno con su hallazgo</b>.',
@@ -81,11 +85,10 @@ def phones(items):
 def scenes(sc, it=False):
     out = ''
     for i, (t, img, kind, txt, a, b) in enumerate(sc, 1):
-        im = f'<img class="wide" src="{img}">' if kind == 'wide' else f'<img src="{img}">'
         ca, cb = (('ok', 'Cualidad (testeo)'), ('mj', 'Mejora incorporada')) if it else (('p', 'Componente del producto'), ('v', 'Componente de la propuesta de valor'))
-        out += (f'<div class="scene"><div class="im">{im}</div><div class="tx"><div class="n">{i:02d}<span>{t}</span></div><div style="margin-top:1mm">{txt}</div>'
+        out += (f'<div class="sc2"><div class="im"><img src="{img}"><span class="n">{i:02d}</span></div><div class="tx"><div class="h">{t}</div><div>{txt}</div>'
                 f'<div class="c {ca[0]}"><b>{ca[1]}</b>{a}</div><div class="c {cb[0]}"><b>{cb[1]}</b>{b}</div></div></div>')
-    return f'<div class="scenes">{out}</div>'
+    return f'<div class="sb2">{out}</div>'
 
 
 def cdm(D):
@@ -133,9 +136,9 @@ def indice():
     items = [('Marco', [('01', 's-intro', 'Introducción, caso y propuesta de valor de partida'), ('02', 's-ruta', 'Ruta metodológica y trazabilidad de criterios'), ('3.1.1.1', 's-sqa', 'Evaluación diagnóstica: tabla SQA')]),
              ('Prototipado · versión 1', [('3.1.2.1', 's-sb1', 'Storyboard con propuesta de valor'), ('3.1.2.2', 's-mk1', 'Mock-up con propuesta de valor')]),
              ('Testeo · ciclo 1 funcional y estético', [('3.1.2.3', 's-f1', 'Ficha de planificación del testeo'), ('Ciclo 1', 's-r1', 'Resultados: tareas, accesibilidad y heurísticas'), ('3.1.2.4', 's-cdm1', 'Matriz CDM con propuesta de valor')]),
-             ('Iteración · versión 2', [('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
-             ('Testeo · ciclo 2 técnico', [('3.1.3.4', 's-f2', 'Ficha de planificación del testeo de la iteración'), ('Ciclo 2', 's-r2', 'Resultados técnicos y cobertura de requerimientos'), ('3.1.2.4', 's-cdm2', 'Brechas y matriz CDM del ciclo 2')]),
-             ('Validación y propuesta de valor', [('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
+             ('Iteración · versión 2', [('Iteración', 's-iter', 'De la versión actual a la actualizada'), ('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
+             ('Testeo · ciclo 2 técnico', [('3.1.3.4', 's-f2', 'Ficha de planificación del testeo de la iteración'), ('Ciclo 2', 's-r2', 'Resultados técnicos y cobertura de requerimientos'), ('3.1.2.4', 's-cdm2', 'Brechas y matriz CDM del ciclo 2'), ('Técnica', 's-tec', 'Propuesta técnica v3: integraciones y funcionalidades')]),
+             ('Validación y propuesta de valor', [('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
              ('Estado del arte y pertinencia', [('3.1.4.1', 's-pestal', 'Matriz PESTAL profundizada'), ('3.1.4', 's-arte', 'Estado del arte y tendencias'), ('3.1.5', 's-pert', 'Pertinencia de la propuesta de valor')]),
              ('Cierre', [('Sost.', 's-sost', 'Enfoque sostenible'), ('Gestión', 's-gest', 'Gestión de la fase y bitácora'), ('Cierre', 's-concl', 'Conclusiones y próximos pasos'), ('Ref.', 's-ref', 'Referencias')])]
     out = ''
@@ -255,11 +258,41 @@ def pagina_cifras():
 <div class="foot"><span>Iteración del prototipo</span><span>3.1.3.1 – 3.1.3.3</span></div></div>'''
 
 
+def iter_docs():
+    rows = [[f'<span class="code">{c}</span><br><b>{n}</b>', f'<span class="vv a">Versión actual</span><br>{a}', f'<span class="vv b">Versión actualizada</span><br>{b_}', f'<span class="small muted">{h}</span>'] for c, n, a, b_, h in C.ITER_DOCS]
+    b = (f'<div class="side"><img src="{VEC}18-iteracion.png" style="width:56mm;height:31.3mm;object-fit:contain;background:#F4F2FC"><p class="lead" style="margin:0">Los instrumentos del toolkit no se llenan una sola vez: cada uno se presenta en su <b>versión actual</b> —más visual y funcional, la que llevamos al ciclo 1— y en su <b>versión actualizada</b> según los hallazgos clave del testeo, más técnica y enfocada en resolver las necesidades puntuales de la kinesióloga.</p></div>'
+         + table(['Instrumento', 'Versión actual · visual y funcional', 'Versión actualizada · técnica', 'Hallazgo que la motiva'], rows, 'tight')
+         + '<p class="small">Las páginas siguientes muestran cada par. Las plantillas oficiales de ambas versiones están en el Anexo A.</p>')
+    return section('s-iter', 'ITERACIÓN DE INSTRUMENTOS', 'Iteración · versión 2', 'De la versión actual a la actualizada', b)
+
+
+def tecnico():
+    izq = ''.join(f'<div class="nd"><b>{n}</b>{f}</div>' for n, _, f, _, _ in C.INTEGRACIONES[:3])
+    der = ''.join(f'<div class="nd p"><b>{n}</b>{f}</div>' for n, _, f, _, _ in C.INTEGRACIONES[3:])
+    arq = f'<div class="arq"><div class="col">{izq}</div><div class="core"><div class="t">COPILOTO KINE · V3</div><div class="d">App web instalable (PWA) · cálculo de ganancia real · ruta · proyección · sin datos clínicos</div></div><div class="col">{der}</div></div>'
+    integ = [[f'<b>{n}</b>', fu, f'<span class="small">{u}</span>', sus(*[x.strip() for x in d.split('·')]), et] for n, fu, u, d, et in C.INTEGRACIONES]
+    fn = [[f'<span class="fn {a}">{a}</span>', f, f'<span class="small muted">{r}</span>'] for a, f, r in C.FUNCIONES]
+    b = (f'<p class="lead">El ciclo 2 dejó claro que lo que falta no es diseño sino integración con datos reales. Esta es la propuesta técnica para la versión 3 (MVP de la Unidad 4): qué se conecta, qué se agrega y qué se quita.</p>{arq}'
+         + table(['Integración', 'Fuente / servicio', 'Para qué', 'Sost.', 'Etapa'], integ, 'tight xs')
+         )
+    b2 = (table(['Acción', 'Funcionalidad', 'Por qué'], fn, 'tight')
+         + f'<img class="banner vec" src="{VEC}17-ruta.png" style="height:40mm">'
+         + '<div class="note" style="border-color:var(--accent);background:rgba(255,107,53,.05)"><b>Ejemplo · costo por km con precio real.</b> Costo de combustible por km = precio del litro ÷ rendimiento del auto. Con un rendimiento de 14 km/l, cada $50 que baja el litro reduce el costo en ~$3,6 por km; en los ~400 km de domicilios de un mes son ~$1.430 menos, más el ahorro de los 140 km que evita la ruta sugerida. La app usaría el precio de la bencinera elegida en lugar del valor fijo de $180/km del prototipo.</div>')
+    return (section('s-tec', 'PROPUESTA TÉCNICA V3', 'Testeo · ciclo 2', 'Propuesta técnica: integraciones', b)
+            + section('s-fun', 'PROPUESTA TÉCNICA V3', 'Testeo · ciclo 2', 'Funcionalidades: agregar, mantener y quitar', b2))
+
+
+def recorrido():
+    cards = ''.join(f'<div class="sc2"><div class="im"><img src="{img}"><span class="n">{i:02d}</span></div><div class="tx"><div class="h">{t}</div><div class="c v"><b>Mensaje / prototipo</b>{m}</div><div class="c p"><b>Hipótesis</b>{h}</div></div></div>' for i, (img, t, m, h) in enumerate(C.SB_PACIENTE, 1))
+    b = (f'<p class="lead">El storyboard del paciente construido en la EV2 —con don Luis, adulto mayor atendido a domicilio, y Camila, estudiante con dolor de espalda— se convierte en el guion del testeo con pacientes: cada escena tiene un mensaje de la vista paciente y una hipótesis que validar.</p><div class="sb2">{cards}</div>'
+         + '<p class="small" style="margin-top:3mm"><b>Lectura.</b> Las escenas 2 a 5 ya están prototipadas (mensajes M1 a M4). La reserva en línea (escena 1) depende de la agenda que Joselyn ya usa, y el seguimiento después del alta (escena 6) queda para la fase 2.</p>')
+    return section('s-pac', 'RECORRIDO DEL PACIENTE', 'Validación y propuesta de valor', 'Storyboard del paciente', b)
+
+
 def meta():
     M = C.METAFORA_ITER
     at = ''.join(f'<div class="attr"><div class="n">{n}</div><div class="s">…{s}</div>{sus(*tags)}<div class="r"><b>Ajuste según el testeo</b>{r}</div></div>' for n, s, r, tags in M['atributos'])
     b = f'''{card([('Instrumento', '3.1.3.1 Panel de metáforas y atributos iterado'), ('Fuente', 'Matriz CDM del ciclo 1'), ('Cambio', 'Metáfora y 2 atributos')])}
-<img class="banner vec" src="{VEC}18-iteracion.png">
 <div class="grid2"><div class="met" style="background:#F4F3F8;color:var(--page-text2)"><div class="k" style="color:var(--page-text2)">Antes · EV2</div><div class="m" style="color:var(--page-text2)">{M["antes"]}</div></div>
 <div class="met"><div class="k">Después · iteración</div><div class="m">{M["despues"]}</div></div></div>
 <p><b>Fundamento.</b> {M["porque"]}</p>
@@ -318,7 +351,10 @@ def val():
     pf = ''.join(f'<div class="pfc {p["tipo"]}"><div class="cd">{p["c"]}</div><div><b>{p["n"]}</b> · {p["t"]}<div class="small muted">{p["s"]} · {p["m"]}</div></div></div>' for p in K.PERF)
     b = f'''<p class="lead">Para validar con usuarios externos preparamos un kit de testeo (19 páginas) para tres públicos: las <b>kinesiólogas</b>, que usan la app; los
 <b>pacientes</b>, que reciben sus mensajes y de quienes depende la ruta; y una <b>contadora</b>, que recibe el resumen mensual.</p>
-<img class="banner vec" src="{VEC}19-pacientes.png" style="height:27mm;object-fit:cover;object-position:50% 62%">
+<div class="pj"><figure><img src="img/storyboard/personajes/joselyn.jpg"><figcaption><b>Joselyn</b>Usuaria principal · kinesióloga</figcaption></figure>
+<figure><img src="img/storyboard/personajes/don-luis.jpg"><figcaption><b>Don Luis</b>Paciente · adulto mayor a domicilio</figcaption></figure>
+<figure><img src="img/storyboard/personajes/camila.jpg"><figcaption><b>Camila</b>Paciente · estudiante con dolor de espalda</figcaption></figure>
+<figure><img src="{VEC}19-pacientes.png" style="object-position:50% 70%"><figcaption><b>Otros perfiles</b>Cuidadora, oficina, turnos y deportista</figcaption></figure></div>
 <div class="pfs2">{pf}</div>
 <h3>Hipótesis y criterios de éxito</h3>{table(['#', 'Público', 'Hipótesis', 'Éxito si…', 'Resultado'], hip, 'tight xs')}
 '''
@@ -487,10 +523,32 @@ table.ficha{font-size:7pt}table.ficha td{padding:3px 4px}
 .attr{width:calc(50% - 2mm);margin-bottom:3mm}
 code{font-family:var(--fm);font-size:7pt;background:var(--page-card);padding:0 3px;border-radius:2px}
 .cover .grid{max-width:118mm}
+.sb2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.6mm}
+.sc2{border:1px solid var(--page-border);border-radius:6px;overflow:hidden;break-inside:avoid;background:#fff}
+.sc2 .im{position:relative;height:31mm;overflow:hidden}.sc2 .im img{width:100%;height:100%;object-fit:cover;display:block}
+.sc2 .im .n{position:absolute;left:2mm;top:2mm;background:var(--accent);color:#fff;font-family:var(--fd);font-size:12pt;line-height:1;padding:1mm 1.8mm .6mm;border-radius:3px}
+.sc2 .tx{padding:1.8mm 2.2mm 2.2mm;font-size:7.1pt;line-height:1.36}
+.sc2 .h{font-weight:700;font-size:8.2pt;margin-bottom:.8mm}
+.sc2 .c{margin-top:1.1mm;padding:.9mm 1.4mm;border-radius:3px;font-size:6.7pt;line-height:1.3}
+.sc2 .c b{display:block;font-family:var(--fm);font-size:5.5pt;letter-spacing:.08em;text-transform:uppercase;font-weight:400}
+.sc2 .c.p{background:#F1EEFA}.sc2 .c.p b{color:#7B3FA0}.sc2 .c.v{background:rgba(255,107,53,.08)}.sc2 .c.v b{color:var(--accent)}
+.sc2 .c.ok{background:rgba(31,138,91,.08)}.sc2 .c.ok b{color:var(--ok)}.sc2 .c.mj{background:rgba(255,179,71,.14)}.sc2 .c.mj b{color:#B7701A}
+.vv{display:inline-block;font-family:var(--fm);font-size:6pt;letter-spacing:.08em;text-transform:uppercase;border-radius:3px;padding:0 4px;color:#fff}
+.vv.a{background:#9B98B8}.vv.b{background:var(--accent)}
+.pj{display:flex;gap:3mm;margin:1mm 0 3mm}.pj figure{flex:1;margin:0;border:1px solid var(--page-border);border-radius:6px;overflow:hidden;background:#F4F3FA}
+.pj img{width:100%;height:17mm;object-fit:cover;object-position:50% 30%;display:block}.pj figcaption{font-size:6.6pt;padding:.8mm 1.6mm;line-height:1.3}.pj figcaption b{display:block;font-size:7.8pt}
+.arq{display:grid;grid-template-columns:1fr 46mm 1fr;gap:3mm;align-items:center;margin:2mm 0 4mm}
+.arq .col{display:flex;flex-direction:column;gap:2mm}
+.arq .nd{border:1px solid var(--page-border);border-left:3px solid var(--accent);border-radius:6px;padding:1.6mm 2.2mm;font-size:7pt;line-height:1.3;background:#fff}
+.arq .nd b{display:block;font-size:7.8pt}.arq .nd.p{border-left-color:var(--h6)}
+.arq .core{background:#12101E;color:#F5F2FF;border-radius:10px;padding:4mm 3mm;text-align:center}
+.arq .core .t{font-family:var(--fd);font-size:17pt;line-height:1;color:var(--accent)}.arq .core .d{font-size:6.8pt;color:#C9C6DA;margin-top:1.5mm;line-height:1.35}
+.fn{display:inline-block;font-family:var(--fm);font-size:6pt;letter-spacing:.08em;text-transform:uppercase;border-radius:3px;padding:0 5px;color:#fff}
+.fn.Agregar{background:var(--ok)}.fn.Mantener{background:#7B3FA0}.fn.Quitar{background:#C2283F}
 .banner.vec{height:46mm;object-fit:contain;background:#F4F2FC}
 .pestal td:first-child small{font-family:var(--fb);font-size:6.6pt;letter-spacing:0;line-height:1.35;margin-top:1mm}.pestal td:first-child{width:24%}.pestal td{font-size:7.4pt;padding:2.6px 5px}.pestal td:first-child{font-size:11pt}
 .side img{object-fit:cover}
-#s-indice .toc li{padding:.75mm 0;font-size:8.4pt}#s-indice .toc .grp{margin:2mm 0 .2mm}#s-indice .stmt{display:none}
+#s-indice .toc li{padding:.45mm 0;font-size:8pt}#s-indice .toc .grp{margin:1.5mm 0 0}#s-indice h2{margin-bottom:0}#s-indice .stmt{display:none}
 .phones.s6 figure{width:25.5mm}.phones.s6 img{width:25.5mm;height:55.2mm}
 .phones.big figure{width:38mm}.phones.big img{width:38mm;height:82.2mm}
 table.xs{font-size:7.3pt}table.xs td{padding:2.6px 5px}
@@ -506,7 +564,7 @@ def render(body, name):
 
 def main_body():
     return (portada() + indice() + intro() + ruta() + sqa() + sb1() + mk1() + pagina_cita() + f1() + r1() + cdm1() + pagina_cifras()
-            + meta() + sb2() + mk2() + f2() + r2() + cdm2() + val() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
+            + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
 
 
 if __name__ == '__main__':
