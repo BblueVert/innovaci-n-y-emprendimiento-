@@ -322,7 +322,7 @@ def gestion():
 def conclusiones():
     return slide(head('Cierre', 'Conclusiones y próximos pasos') + '''<div class="row">
 <div class="card"><div class="t">Aprendimos</div><ul><li>Medir tareas y accesibilidad da evidencia más útil que preguntar si “gusta”.</li><li>“Automático” sin “corregible” genera registros falsos.</li><li>La ruta es tan valiosa como el tablero: la metáfora se movió hacia el copiloto.</li><li>El paciente también es usuario: sin su ventana horaria no hay ruta optimizada.</li></ul></div>
-<div class="card"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas; cálculo exacto y exportación sin datos clínicos.</li><li>9 de 13 requerimientos cumplidos y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
+<div class="card"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas; cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
 <div class="card"><div class="t">Sigue</div><ul><li><b>Jue 12/11:</b> integrar la retroalimentación de la emprendedora.</li><li><b>17–19/11:</b> sesiones con Joselyn, Catalina, pacientes y contadora.</li><li><b>20/11:</b> consolidar, CDM con usuarios y decisiones v3.</li><li><b>UA4:</b> MVP con agenda real, respaldo en la nube y enlace wa.me.</li></ul></div></div>''', 'Cierre')
 
 

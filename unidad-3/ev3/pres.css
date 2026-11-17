@@ -1,13 +1,12 @@
 @font-face{font-family:'Bebas Neue';src:url(fonts/bebas-neue-latin-400-normal.woff2)}
 @font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-400-normal.woff2);font-weight:400}
 @font-face{font-family:'DM Mono';src:url(fonts/dm-mono-latin-500-normal.woff2);font-weight:500}
-@font-face{font-family:'Instrument Serif';src:url(fonts/instrument-serif-latin-400-italic.woff2);font-style:italic}
 @font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-400-normal.woff2);font-weight:400}
 @font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-500-normal.woff2);font-weight:500}
 @font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-600-normal.woff2);font-weight:600}
 @font-face{font-family:'Plus Jakarta Sans';src:url(fonts/plus-jakarta-sans-latin-700-normal.woff2);font-weight:700}
 :root{--ink:#12101E;--ink2:#504D6E;--line:#E2E0EF;--card:#F8F7FF;--acc:#FF6B35;--acc2:#C2410C;--coral:#E8637A;--pur:#7B3FA0;--amb:#FFB347;--ok:#1F8A5B;--ko:#C0392B;
---fd:'Bebas Neue',sans-serif;--fm:'DM Mono',monospace;--fb:'Plus Jakarta Sans',sans-serif;--fs:'Instrument Serif',serif}
+--fd:'Bebas Neue',sans-serif;--fm:'DM Mono',monospace;--fb:'Plus Jakarta Sans',sans-serif;--fs:'Plus Jakarta Sans',sans-serif}
 @page{size:338.667mm 190.5mm;margin:0}
 *{margin:0;padding:0;box-sizing:border-box}
 html{font-family:var(--fb);font-size:12pt;line-height:1.45;color:var(--ink)}
@@ -112,3 +111,5 @@ table.sm{font-size:9pt}table.sm td{padding:3.4px 6px}
 .cmp{display:flex;gap:6mm}.cmp>div{flex:1}
 
 .pvphone{position:absolute;right:26mm;top:14mm;width:72mm;border-radius:10mm;border:2.5mm solid #1E1A30;box-shadow:0 6mm 14mm rgba(0,0,0,.45);z-index:0}
+
+.quote,.attr .s2,.pvq{font-style:normal!important;font-weight:600}.quote{font-size:14pt}.pvq{font-size:16pt}.attr .s2{font-size:10.5pt}

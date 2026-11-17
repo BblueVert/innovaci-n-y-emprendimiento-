@@ -46,7 +46,7 @@ SC_RECTS = [(40, 243, 404, 409), (428, 243, 792, 409), (815, 243, 1178, 409), (4
 
 def storyboard(scenes, pdv, title_note):
     d = tpl('3.1.2.1_Storyboard_PdV.pdf'); p = d[0]
-    box(p, (142, 104, 1170, 220), pdv, size=13, font='serif', lh=1.3)
+    box(p, (142, 104, 1170, 194), pdv, size=12.5, font='m', lh=1.3)
     box(p, (50, 196, 1170, 222), title_note, size=8, font='mono', color=MUTE)
     for i, (tit, img, kind, txt, prod, pv) in enumerate(scenes):
         x0, y0, x1, y1 = SC_RECTS[i]

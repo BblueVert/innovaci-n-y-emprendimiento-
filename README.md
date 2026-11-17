@@ -86,6 +86,7 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 | Ruta | Descripción |
 |---|---|
+| `entrega-final/EV3_Informe_Prototipado_Copiloto_Kine.pdf` | **Entregable EV3: informe A4 (39 págs.)** con el lenguaje visual de la EV1/EV2, ilustraciones del proyecto y vectores nuevos (`ev3/img/vec`, generador `ev3/gen_vectores.py`), y anexo con las 7 plantillas oficiales. Generador: `python3 ev3/build_ev3.py` |
 | `ev3/Evaluacion3_Presentacion_Prototipado.pdf` | **Entrega EV3 en presentación 16:9 (44 diapositivas)**: SQA, storyboard y mock-up, ciclo 1 (funcional y estético), iteración v2, ciclo 2 (técnico), kit con usuarios, propuesta de valor iterada, PESTAL profundizada, estado del arte, pertinencia, sostenibilidad, gestión y anexo con las 7 plantillas oficiales llenas. Generador: `python3 ev3/build_presentacion.py` |
 | `prototipo/copiloto-kine.html` | Prototipo v2 (kinesióloga), navegable en el celular. v1 en `copiloto-kine-v1.html`; capturas en `capturas_v1/` y `capturas_v2/` |
 | `prototipo/vista-paciente.html` | Estímulo para pacientes: recordatorio, “voy en camino”, comprobante y hora liberada (capturas en `capturas_paciente/`) |
