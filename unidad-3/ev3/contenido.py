@@ -305,8 +305,8 @@ GANTT = [
 
 # ---------------------------------------------------------------- Retroalimentación 12/11 (Sercotec + clienta + docentes)
 # Fuente: ../retroalimentacion/Transcripcion_reunion_2026-11-12.md (minutos entre corchetes)
-RETRO_CONTEXTO = ('Reunión de Meet del 12 de noviembre (08:33, 40 min) con Mabel Aceituno Romero (Sercotec), la clienta Josselyn Toledo, '
-                  'el docente Ariel O’Nell y la docente Ana Luisa Aguilera. Se revisaron cuatro propuestas de distintas secciones: una app de gestión, '
+RETRO_CONTEXTO = ('Reunión de Meet del 12 de noviembre (08:33, 40 min) con Mabel Aceituno Romero (encargada de Sercotec), la clienta Josselyn Toledo, '
+                  'el profesor a cargo Ariel O’Nell (INACAP) y Ana Luisa Aguilera, docente INACAP de otra sección que también trabajó el caso. Se revisaron cuatro propuestas de distintas secciones: una app de gestión, '
                   'una planilla Excel, un modelo de programas grupales y la propuesta “Copiloto” (nuestra línea de trabajo, prototipos v1 y v2), leída entre el minuto 30:49 y el 35:29.')
 RETRO_HALLAZGOS = [
     ('RF1', 'No conoce una herramienta que haga esto', '“No. Así como solamente por pauta, por agenda, por horario, pero nada más que eso.”', '12:22', 'Diferenciación confirmada: las apps que usa solo agendan.'),
@@ -323,12 +323,12 @@ RETRO_HALLAZGOS = [
     ('RF12', 'Interés directo en la app', '“Me encantaría conocerla.” · “Felicitaciones a sus alumnos.”', '13:31 · 38:35', 'Disposición a probar: base para la sesión con la usuaria.'),
 ]
 RETRO_DOCENTES = [
-    ('Ariel O’Nell', 'Bajo o cero costo, usable en teléfono, tablet y computador; todo parametrizado: ella ingresa datos y la app entrega el cálculo, con resúmenes semanales y mensuales que sirvan a la parte contable.', '10:47'),
-    ('Ariel O’Nell', 'Costo oculto: la hora hombre del traslado. Permite definir el valor exacto de su hora profesional.', '19:45'),
-    ('Ariel O’Nell', 'Las propuestas no son excluyentes: puede combinar una app, una planilla y un modelo grupal.', '17:33'),
-    ('Mabel Aceituno (Sercotec)', 'Que los estudiantes estimen cuánto costaría la solución.', '12:30'),
-    ('Mabel Aceituno (Sercotec)', 'Analizar por tipo de cliente y lugar (particular vs. clínica, por semana y mes) para decidir dónde enfocarse.', '18:23'),
-    ('Mabel Aceituno (Sercotec)', 'No toda cita agendada se concreta; la bencina sube: conviene partir con valores fijos estimados.', '15:12 · 33:31'),
+    ('Ariel O’Nell (profesor a cargo)', 'Bajo o cero costo, usable en teléfono, tablet y computador; todo parametrizado: ella ingresa datos y la app entrega el cálculo, con resúmenes semanales y mensuales que sirvan a la parte contable.', '10:47'),
+    ('Ariel O’Nell (profesor a cargo)', 'Costo oculto: la hora hombre del traslado. Permite definir el valor exacto de su hora profesional.', '19:45'),
+    ('Ariel O’Nell (profesor a cargo)', 'Las propuestas no son excluyentes: puede combinar una app, una planilla y un modelo grupal.', '17:33'),
+    ('Mabel Aceituno (encargada Sercotec)', 'Que los estudiantes estimen cuánto costaría la solución.', '12:30'),
+    ('Mabel Aceituno (encargada Sercotec)', 'Analizar por tipo de cliente y lugar (particular vs. clínica, por semana y mes) para decidir dónde enfocarse.', '18:23'),
+    ('Mabel Aceituno (encargada Sercotec)', 'No toda cita agendada se concreta; la bencina sube: conviene partir con valores fijos estimados.', '15:12 · 33:31'),
 ]
 RETRO_PATRONES = [
     ('Rentabilidad por canal y por hora', 'RF5 · RF6 · RF7 · Ariel 19:45', 'La pregunta de fondo no es “cuánto gané” sino “qué me conviene”: clínica, domicilio, piscina o grupo.'),
@@ -348,3 +348,4 @@ RETRO_CAMBIOS = [
     ('Ejemplos y rutas en su territorio: San Fernando, Agua Buena, Las Cabras', 'RF8', 'Prototipo v3'),
     ('Costo estimado de la solución visible en la propuesta (MVP con herramientas de bajo costo)', 'Mabel 12:30', 'Propuesta'),
 ]
+RETRO_DOCENTES.append(('Ana Luisa Aguilera (docente INACAP)', 'Las propuestas de su sección también apuntan al agendamiento y la organización interna; la retroalimentación servirá para mejorarlas.', '39:29'))

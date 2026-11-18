@@ -8,8 +8,8 @@ import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CLUSTER = {'ARIEL': 'ARIEL', 'MABEL': 'MABEL', 'JOSELYN': 'JOSSELYN', '?': None}
-NOMBRE = {'ARIEL': 'Ariel O\'Nell (docente INACAP)', 'MABEL': 'Mabel Aceituno Romero (Sercotec)',
-          'JOSSELYN': 'Klga. Josselyn Toledo (clienta)', 'ANA': 'Ana Luisa Aguilera (docente)', 'SIS': '[Sistema de Meet]'}
+NOMBRE = {'ARIEL': 'Ariel O\'Nell (profesor a cargo, INACAP)', 'MABEL': 'Mabel Aceituno Romero (encargada Sercotec)',
+          'JOSSELYN': 'Klga. Josselyn Toledo (clienta)', 'ANA': 'Ana Luisa Aguilera (docente INACAP, otra sección)', 'SIS': '[Sistema de Meet]'}
 
 # Bloques sin voz asignada o mal asignados, corregidos por contexto (índice de bloque → hablante)
 OVERRIDE = {9: 'MABEL', 11: 'MABEL', 14: 'MABEL', 17: 'MABEL', 22: 'MABEL', 24: 'MABEL', 27: 'MABEL', 29: 'ARIEL',
@@ -70,10 +70,11 @@ def main():
           '', '**Reunión:** “Retroalimentación Inacap I+E – Servicio de atención kinesiológica” · Google Meet · 12 de noviembre de 2026, 08:33 · duración 40:40',
           '', '## Participantes', '',
           '| Interlocutor | Rol en la reunión | Cómo se identificó |', '|---|---|---|',
-          '| **Mabel Aceituno Romero** | Sercotec · coordina la reunión, comparte pantalla y lee los trabajos | Nombre en Meet y polera con logo de Sercotec; voz grupo 2 |',
-          '| **Ariel O\'Nell** | Docente INACAP (Innovación y Emprendimiento, desarrollo de proyectos) | Nombre en Meet; voz grupo 1 |',
-          '| **Klga. Josselyn Toledo** | Clienta · kinesióloga y psicomotricista acuática | Nombre en Meet (“Klga Josselyn Toledo”); voz grupo 3 |',
-          '| **Ana Luisa Aguilera** | Docente (“profesora Ana”) de la sección que trabajó con Josselyn; se conecta viajando | Nombre en Meet; turnos breves identificados por contenido |',
+          '| **Mabel Aceituno Romero** | Encargada de Sercotec del caso: coordina la reunión, comparte pantalla y lee los trabajos | Nombre en Meet y polera con logo de Sercotec; Ariel le agradece “la gestión de conectarnos y el apoyo… este semestre” [40:05] |',
+          '| **Ariel O\'Nell** | Profesor a cargo de la actividad (INACAP, Innovación y Emprendimiento) | Nombre en Meet; “yo estoy 100 % en INACAP” [05:13]; presenta los trabajos y su sentido |',
+          '| **Klga. Josselyn Toledo** | Clienta del caso: kinesióloga y psicomotricista acuática | Nombre en Meet (“Klga Josselyn Toledo”) |',
+          '| **Ana Luisa Aguilera** | Docente INACAP de otra sección que también trabajó el caso; se conecta en tránsito | Mabel la saluda como “profesora” y ella responde que va “camino a la sede” [08:28–08:33]; al cierre dice “tengo clases ahora precisamente con la sección que estuvo trabajando con Josselyn” [39:29] |',
+          '', '> Roberto Escobar Donoso, profesor de nuestra sección, no participó en la reunión.',
           '', '> **Nota de método.** Transcripción automática (Whisper, español) con identificación de voces (ECAPA) y verificación visual en el video. '
           'Se corrigieron nombres propios, lugares y términos del caso. Los fragmentos entre corchetes son palabras dudosas. '
           'Puede haber errores menores de reconocimiento; ante una cita textual importante, verificar en la grabación con el minuto indicado.', '',

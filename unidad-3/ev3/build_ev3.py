@@ -44,7 +44,7 @@ STMT = {
     's-fun': 'Menos digitación, <b>más datos reales</b>.',
     's-tec': 'Lo que falta no es diseño: <b>es conectar datos reales</b>.',
     's-retro': 'La clienta ya hace lo que la app promete: <b>a mano y de noche</b>.',
-    's-retro2': 'Lo que importa no es cuánto ganó, sino <b>qué canal le conviene</b>.',
+    
     's-pac': 'Cada escena del paciente <b>es una hipótesis</b>.',
     's-meta': 'La metáfora pasa <b>del tablero al copiloto</b>.',
     's-sb2': 'El mismo día, <b>con lo que aprendimos</b>.',
@@ -292,10 +292,10 @@ def retro():
     doc = [[f'<b>{w}</b>', t, f'<span class="code b">{m}</span>'] for w, t, m in C.RETRO_DOCENTES]
     pat = [[f'<b>{p}</b>', f'<span class="small muted">{e}</span>', d] for p, e, d in C.RETRO_PATRONES]
     cam = [[f'<b>{i}</b>', c, f'<span class="small muted">{h}</span>', f'<span class="code">{e}</span>'] for i, (c, h, e) in enumerate(C.RETRO_CAMBIOS, 1)]
-    b2 = ('<h3>Lo que pidieron Sercotec y el docente</h3>' + table(['Quién', 'Sugerencia', 'Min.'], doc, 'tight xxs')
+    b2 = ('<h3 style="margin-top:1mm">Lo que pidieron Sercotec y los docentes</h3>' + table(['Quién', 'Sugerencia', 'Min.'], doc, 'tight xxs')
           + '<h3>Patrones al hilar los hallazgos</h3>' + table(['Patrón', 'Evidencia', 'Qué significa'], pat, 'tight xxs')
           + '<h3>Cambios a la propuesta (prototipo v3)</h3>' + table(['#', 'Cambio', 'Origen', 'Dónde'], cam, 'tight xxs')
-          + '<p class="small"><b>Lectura.</b> La reunión no fue una sesión de testeo, pero la clienta reaccionó a nuestra propuesta: confirmó que no existe una herramienta así para ella, que ya registra lo mismo cada noche a mano y que lo que más le importa es saber qué canal le conviene. Eso valida el núcleo de la propuesta y corrige dos supuestos: su agenda es AgendaPro (no Google Calendar) y la clínica se le paga con factura mensual.</p>')
+          + '<p class="small"><b>Lectura.</b> La clienta valida el núcleo (no existe algo así; ya lo hace a mano cada noche; le importa qué canal le conviene) y corrige dos supuestos: usa AgendaPro y la clínica le paga con factura mensual.</p>')
     return (section('s-retro', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Retroalimentación de la clienta y Sercotec', b)
             + section('s-retro2', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Patrones y cambios a la propuesta', b2))
 
