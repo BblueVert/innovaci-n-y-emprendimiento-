@@ -46,6 +46,7 @@ STMT = {
     's-retro': 'La clienta ya hace lo que la app promete: <b>a mano y de noche</b>.',
     
     's-retro3': 'Todos vieron el mismo problema: <b>la diferencia está en cómo se resuelve</b>.',
+    's-aplica': 'De la conversación a <b>cambios medibles</b>.',
     's-pac': 'Cada escena del paciente <b>es una hipótesis</b>.',
     's-meta': 'La metáfora pasa <b>del tablero al copiloto</b>.',
     's-sb2': 'El mismo día, <b>con lo que aprendimos</b>.',
@@ -141,7 +142,7 @@ def indice():
              ('Testeo · ciclo 1 funcional y estético', [('3.1.2.3', 's-f1', 'Ficha de planificación del testeo'), ('Ciclo 1', 's-r1', 'Resultados: tareas, accesibilidad y heurísticas'), ('3.1.2.4', 's-cdm1', 'Matriz CDM con propuesta de valor')]),
              ('Iteración · versión 2', [('Iteración', 's-iter', 'De la versión actual a la actualizada'), ('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
              ('Testeo · ciclo 2 técnico', [('3.1.3.4', 's-f2', 'Ficha de planificación del testeo de la iteración'), ('Ciclo 2', 's-r2', 'Resultados técnicos y cobertura de requerimientos'), ('3.1.2.4', 's-cdm2', 'Brechas y matriz CDM del ciclo 2'), ('Técnica', 's-tec', 'Propuesta técnica v3: integraciones y funcionalidades')]),
-             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('12/11', 's-retro3', 'Hallazgos generales y otras propuestas revisadas'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
+             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('12/11', 's-retro3', 'Hallazgos generales y otras propuestas revisadas'), ('12/11', 's-aplica', 'Cómo aplicamos los hallazgos'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
              ('Estado del arte y pertinencia', [('3.1.4.1', 's-pestal', 'Matriz PESTAL profundizada'), ('3.1.4', 's-arte', 'Estado del arte y tendencias'), ('3.1.5', 's-pert', 'Pertinencia de la propuesta de valor')]),
              ('Cierre', [('Sost.', 's-sost', 'Enfoque sostenible'), ('Gestión', 's-gest', 'Gestión de la fase y bitácora'), ('Cierre', 's-concl', 'Conclusiones y próximos pasos'), ('Ref.', 's-ref', 'Referencias')])]
     out = ''
@@ -307,6 +308,15 @@ def retro3():
     b = ('<h3 style="margin-top:1mm">Hallazgos generales de la conversación</h3>' + table(['Hallazgo', 'Evidencia', 'Qué hacemos con esto'], gen, 'tight xxs')
          + '<h3>Las otras propuestas revisadas</h3>' + table(['Propuesta', 'Cómo lo propone', 'Reacción en la reunión', 'Qué tomamos'], otr, 'tight xxs'))
     return section('s-retro3', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Hallazgos generales y otras propuestas', b)
+
+
+def aplica():
+    g = [[f'<b>{h}</b>', p, pr, f'<span class="muted">{v}</span>'] for h, p, pr, v in C.APLICA_GENERALES]
+    o = [[f'<b>{n}</b>', f'<span class="muted">{q}</span>', a] for n, q, a in C.APLICA_OTRAS]
+    b = ('<p class="small">Cada hallazgo se traduce en una acción en el producto, en la propuesta que se presenta y en una forma de validarlo. Así la retroalimentación no queda como comentario, sino como cambios medibles para el prototipo v3 y la entrega final.</p>'
+         + '<h3 style="margin-top:1mm">Hallazgos generales → acciones</h3>' + table(['Hallazgo', 'En el producto', 'En la propuesta y presentación final', 'Cómo lo validamos'], g, 'tight xxs')
+         + '<h3>Lo que tomamos de las otras propuestas</h3>' + table(['Fuente', 'Lo que proponen', 'Cómo lo aplicamos en Copiloto Kine'], o, 'tight xxs'))
+    return section('s-aplica', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Cómo aplicamos los hallazgos', b)
 
 
 def recorrido():
@@ -592,7 +602,7 @@ def render(body, name):
 
 def main_body():
     return (portada() + indice() + intro() + ruta() + sqa() + sb1() + mk1() + pagina_cita() + f1() + r1() + cdm1() + pagina_cifras()
-            + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + retro() + retro3() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
+            + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + retro() + retro3() + aplica() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
 
 
 if __name__ == '__main__':

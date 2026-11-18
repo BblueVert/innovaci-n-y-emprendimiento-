@@ -378,3 +378,20 @@ RETRO_OTRAS = [  # descripción tomada de los documentos compartidos en pantalla
      'Mabel lo explica con un domicilio en Rengo y valores estimados de bencina. Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”.',
      'Valida el núcleo; corregimos AgendaPro, factura mensual de clínica y ganancia por hora por canal.'),
 ]
+
+# Cómo aplicamos los hallazgos generales y de las otras propuestas
+APLICA_GENERALES = [
+    ('Todos vieron el mismo problema', 'Destacar lo que solo hace Copiloto Kine: la cita entra sola, ruta con tiempo de traslado, retención apartada, proyección y vista paciente.', 'Lámina comparativa de las 4 propuestas en la presentación final.', 'Preguntar a Josselyn qué la haría elegir una u otra.'),
+    ('Comparará o combinará propuestas', 'Exportar a Excel o Google Sheets con el formato de panel mensual y anual, para convivir con una planilla.', 'Mensaje: “funciona con lo que ya usas: AgendaPro y Excel”.', 'Prueba: abrir el resumen exportado en una planilla.'),
+    ('Tres modelos en juego (app, Excel, grupal)', 'Integrarlos en una hoja de ruta: núcleo app → exportación Excel → módulo de clases grupales.', 'Presentarlo como una “batería de apoyo” en un solo lugar.', 'Validar con ella el orden de prioridad.'),
+    ('El costo es pregunta obligada', 'Costeo del MVP: horas del equipo, servicios en planes gratuitos o de bajo costo, enlace wa.me y API de combustible sin costo.', 'Tabla de costos de desarrollo, de operación mensual y precio para la usuaria (referencia EV2: $20–25 mil/mes, a validar).', 'Pregunta de precio del guion A (H4).'),
+    ('Lo manual no escala', 'Medir automatización: % de atenciones que entran solas desde la agenda y minutos de cierre del día.', 'Mostrar el contraste con las planillas: “no hay que alimentarla”.', 'Meta EV2: ≥ 80 % de atenciones registradas solas; cierre < 30 min.'),
+    ('Cada equipo propone desde su formación', 'Reforzar lo de Diseño Digital: experiencia de uso, accesibilidad AA, mirada del paciente.', 'Demo en vivo del prototipo en el celular durante la presentación.', 'Cuestionario SUS ≥ 75 con Josselyn.'),
+    ('La clienta está abierta', 'Agendar la sesión de testeo con el prototipo v3 a la brevedad.', '—', 'Kit de testeo, guion A, con preguntas sobre las otras propuestas.'),
+]
+APLICA_OTRAS = [
+    ('Herramienta integral en Excel', 'Guía de uso, respaldo, alertas, resúmenes mensuales y metas de crecimiento.', 'Guía de inicio en 3 pasos; respaldo en la nube (B2); resumen mensual automático; meta de pacientes nuevos además de la meta de ganancia.'),
+    ('Planilla Excel de gestión', 'Listas desplegables de tipo, modalidad, estado y medio de pago; panel mensual y anual; ingresos dependientes e independientes.', 'Campos de estado y medio de pago en cada atención; vista anual; separación clínica (factura mensual) / particulares.'),
+    ('Programas grupales', 'Estacionalidad, convenios con empresas y municipalidades, pausas activas, seguimiento de asistencia y permanencia.', 'Clases grupales en la proyección de meses bajos; convenios como tipo de cliente (cobro a una institución); pausas activas para las empresas de sus propios clientes; asistencia y permanencia por grupo.'),
+    ('Comentarios del profesor y Sercotec', 'Usable en teléfono, tablet o computador; todo parametrizado; resúmenes semanales y mensuales; costo de la hora hombre.', 'App web instalable en cualquier dispositivo; resumen semanal; valor de su hora profesional calculado con el tiempo de traslado.'),
+]
