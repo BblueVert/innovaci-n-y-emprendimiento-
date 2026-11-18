@@ -42,7 +42,7 @@ HIP = [
 
 # ---------------------------------------------------------------- perfiles
 PERF = [
-    dict(c='K1', n='Joselyn Toledo', t='Kinesióloga independiente · usuaria del caso', tipo='k', real=True,
+    dict(c='K1', n='Josselyn Toledo', t='Kinesióloga independiente · usuaria del caso', tipo='k', real=True,
          d='Atención mixta: Centro Médico InMotion (70/30) y domicilios en Rancagua y Machalí. Hoy cuadra ingresos en Excel de noche.',
          s='Prototipo Kine completo (tareas T1–T11)', h='H1 · H2 · H3 · H4', m='Presencial con su celular · 60 min', a='Moderación sin explicar la interfaz; pedir que piense en voz alta.'),
     dict(c='K2', n='Catalina', t='Kinesióloga · experta par (UA1)', tipo='k', real=True,
@@ -155,7 +155,7 @@ def plan():
 
 def plan2():
     filas = [
-        ['Validar uso y valor con kinesiólogas', 'K1 Joselyn · K2 Catalina', 'Prototipo Kine v2 en su celular', 'Tareas T1–T11, SUS, preguntas CDM, precio', 'Mod.: Claudia · Obs.: Francisco · Téc.: Néstor', 'H1 · H2 · H3 · H4', 'Clínica o remota', '40–60 min'],
+        ['Validar uso y valor con kinesiólogas', 'K1 Josselyn · K2 Catalina', 'Prototipo Kine v2 en su celular', 'Tareas T1–T11, SUS, preguntas CDM, precio', 'Mod.: Claudia · Obs.: Francisco · Téc.: Néstor', 'H1 · H2 · H3 · H4', 'Clínica o remota', '40–60 min'],
         ['Validar mensajes con pacientes', 'P1–P6 · 1 a 2 por perfil', 'Vista paciente (M1–M4)', 'Lectura y reacción a cada mensaje, encuesta breve', 'Mod.: Claudia o Benjamín · Obs.: Néstor', 'H5 · H6 · H7 · H8 · H10', 'Domicilio, INACAP o remota', '15 min'],
         ['Validar exactitud y entrega contable', 'C1 contadora', 'CSV + “Mi plata”', 'Revisión guiada con lista de verificación', 'Benjamín', 'H3 · H9', 'Remota', '20 min'],
     ]
@@ -170,7 +170,7 @@ def plan2():
 <ul><li><b>Kinesiólogas:</b> 2 (caso + experta par).</li><li><b>Pacientes:</b> mínimo 6 (uno por perfil), ideal 10–12. Con 5 personas por segmento se detecta la mayoría de los problemas de uso.</li>
 <li><b>Contadora:</b> 1.</li></ul>
 <h3>Reclutamiento ético</h3>
-<ul><li>Pacientes de Joselyn <b>solo si ella los invita</b> y aceptan; nunca se usan sus datos de agenda.</li>
+<ul><li>Pacientes de Josselyn <b>solo si ella los invita</b> y aceptan; nunca se usan sus datos de agenda.</li>
 <li>Alternativa: personas del entorno del equipo que calcen con el perfil (familiares, compañeros INACAP, trabajadores por turno).</li>
 <li>La dolencia se pregunta solo como categoría general y es voluntaria; no se registran diagnósticos.</li></ul></div>
 <div><h3>Cronograma</h3>{table(['Fecha', 'Actividad', 'Responsable'], crono, 'tight')}
@@ -224,7 +224,7 @@ def guion_a():
         ('7 · Precio', '3 min', '¿A qué precio mensual te parecería barata? ¿Cara pero la pagarías? ¿Tan cara que no la pagarías? ¿Tan barata que dudarías de su calidad?'),
         ('8 · Cierre', '2 min', '“Si mañana pudieras usar una sola función, ¿cuál sería?” Agradecer.'),
     ]
-    b = f'''<div class="inst-card"><div class="col"><div class="lbl">Participantes</div>K1 Joselyn · K2 Catalina</div><div class="col"><div class="lbl">Duración</div>40–60 min</div>
+    b = f'''<div class="inst-card"><div class="col"><div class="lbl">Participantes</div>K1 Josselyn · K2 Catalina</div><div class="col"><div class="lbl">Duración</div>40–60 min</div>
 <div class="col"><div class="lbl">Estímulo</div>copiloto-kine.html (v2)</div><div class="col"><div class="lbl">Hipótesis</div>H1 · H2 · H3 · H4</div></div>
 {table(['Bloque', 'Tiempo', 'Qué decir o hacer'], pasos, 'tight')}
 <h3 style="break-before:page">Tareas (leer tal cual)</h3>
@@ -344,13 +344,13 @@ sueltas: si se cumple el criterio, se mantiene; si no, ya sabemos qué cambiar.<
         ['Problemas observados', 'Severidad 0–4 (promedio de observadores); ≥ 3 entra a la iteración v3.', 'Backlog priorizado']], 'tight')}
 <h3>Fuentes a integrar</h3>
 {table(['Fuente', 'Tipo', 'Estado'], [['F0 · Reunión jue 12 nov: retroalimentación de la emprendedora sobre los trabajos revisados (grabación del profesor)', 'Retroalimentación experta general', PEND],
-        ['F1 · Sesión K1 Joselyn', 'Usuaria principal', PEND], ['F2 · Sesión K2 Catalina', 'Experta par', PEND],
+        ['F1 · Sesión K1 Josselyn', 'Usuaria principal', PEND], ['F2 · Sesión K2 Catalina', 'Experta par', PEND],
         ['F3 · Sesiones P1–P6', 'Usuarios secundarios', PEND], ['F4 · Sesión C1 contadora', 'Experto técnico', PEND]], 'tight')}'''
     return section('k-cons2', 'CONSOLIDAR', 'Matriz de consolidación y decisiones', 'Consolidar y decidir', b)
 
 
 def invitaciones():
-    msgs = [('Joselyn (K1)', 'Hola Joselyn 😊 Te cuento que armamos el prototipo de Copiloto Kine con todo lo que conversamos: registra tus atenciones con un toque, te muestra cuánto te queda de verdad y ordena tu ruta de domicilios. ¿Tendrías 45 minutos la próxima semana para probarlo en tu celular? Nos adaptamos a tu horario.'),
+    msgs = [('Josselyn (K1)', 'Hola Josselyn 😊 Te cuento que armamos el prototipo de Copiloto Kine con todo lo que conversamos: registra tus atenciones con un toque, te muestra cuánto te queda de verdad y ordena tu ruta de domicilios. ¿Tendrías 45 minutos la próxima semana para probarlo en tu celular? Nos adaptamos a tu horario.'),
             ('Catalina (K2)', 'Hola Cata, ¿cómo estás? Con el equipo convertimos lo que nos contaste del Excel diario en un prototipo. ¿Te animas a probarlo unos 30–40 minutos por videollamada? Nos ayuda mucho tu mirada de kinesióloga.'),
             ('Pacientes (P1–P6)', 'Hola, somos estudiantes de Diseño Digital de INACAP Rancagua. Estamos probando unos mensajes que una kinesióloga le enviaría a sus pacientes (recordatorio, aviso de llegada y comprobante). ¿Nos regalas 15 minutos? No te preguntaremos nada de tu salud.'),
             ('Contadora (C1)', 'Hola, somos estudiantes de INACAP Rancagua. Diseñamos una herramienta para que kinesiólogas a honorarios lleven sus ingresos, costos y retención. ¿Podría revisar 20 minutos el resumen que exporta y decirnos si le sirve para su trabajo?')]

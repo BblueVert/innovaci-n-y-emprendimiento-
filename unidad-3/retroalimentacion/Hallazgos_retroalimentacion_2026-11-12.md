@@ -57,9 +57,23 @@ Fuente: `Transcripcion_reunion_2026-11-12.md` (citas textuales con minuto de la 
 | 8 | Ejemplos y rutas en su territorio: San Fernando, Agua Buena, Las Cabras | RF8 | Prototipo v3 |
 | 9 | Costo estimado de la solución visible en la propuesta (MVP con herramientas de bajo costo) | Mabel 12:30 | Propuesta |
 
-## Otras propuestas revisadas en la reunión (de otras secciones)
+## Hallazgos generales de toda la conversación
 
-- **App de gestión integral** (09:00–13:37): organizar pacientes y atenciones, centralizar finanzas; Mabel pidió estimar su costo.
-- **Planilla Excel de gestión kinesiológica** (14:07–17:33): listas desplegables, ingresos dependientes/independientes; requiere alimentarla a mano. Ariel: complementaria a una app.
-- **Programas grupales de movimiento y bienestar** (21:41–29:43): convenios con municipios y empresas. Josselyn: lo terapéutico es individual; lo grupal preventivo para adultos mayores sí le interesa.
-- **Copiloto (nuestra línea)** (30:49–35:29): problema, prototipos v1/v2, costo referencial $20.000–25.000/mes e hipótesis; Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”.
+| Hallazgo | Evidencia | Qué hacemos con esto |
+|---|---|---|
+| Todas las secciones vieron el mismo problema | “Las propuestas pueden ser muy similares porque todos identificaron el tema de los ingresos.” (Mabel, 38:45) · “Es el tema del agendamiento y la organización interna.” (Ana, 39:29) | La diferenciación no está en el problema sino en cómo se resuelve: ruta, tiempo de traslado, retención, proyección y vista paciente. |
+| La clienta elegirá comparando o combinando | “Presentaciones estandarizadas… para comparar las propuestas.” (Ariel, 37:45) · “No son excluyentes… una batería de apoyo.” (Ariel, 17:33) | Mostrar con claridad qué hace nuestra propuesta que las otras no, y que puede convivir con ellas (exportar a Excel). |
+| Hay tres modelos de apoyo en juego | App de gestión, planilla Excel dinámica y modelo de negocio grupal. (Ariel, 29:43) | Copiloto Kine puede integrar los tres: app + exportación a Excel + módulo grupal. |
+| El costo es una pregunta obligada | “Que se pueda identificar más o menos cuánto saldría.” (Mabel, 12:30) · “De muy bajo costo… plataformas liberadas.” (Ariel, 12:52) | Incluir un costeo del MVP y del uso mensual en la entrega final. |
+| Lo manual no escala | “Al ser una planilla Excel hay que alimentarla… no va a tener la información sola.” (Mabel, 15:12) | La automatización (agenda, ruta, cálculo) es la ventaja frente al Excel. |
+| Cada propuesta refleja la formación de su equipo | Alumnos contables proponen desde lo contable; administración, desde la gestión. (Ariel, 02:20) | Nuestro aporte como Diseño Digital es la experiencia: claridad, accesibilidad, prototipo navegable y la mirada del paciente. |
+| La clienta está abierta y comprometida | “Me encantaría conocerla.” (13:31) · “Muy buenas las propuestas… hay que dar una muy buena resolución.” (39:07) | Hay disposición para la sesión de testeo con ella. |
+
+## Otras propuestas revisadas en la reunión
+
+| Propuesta | Min. | Qué plantea | Reacción en la reunión | Qué tomamos |
+|---|---|---|---|---|
+| App de gestión integral | 09:00–13:37 | Herramienta digital para organizar pacientes y atenciones, centralizar finanzas, visualizar resultados y estrategias de captación y crecimiento. | Ariel: simple, de bajo o cero costo, en teléfono, tablet o computador; considera el costo de traslado según la distancia del paciente. Mabel pide estimar su costo. Josselyn: “me encantaría conocerla”. | Es la más parecida a la nuestra. Nos diferencian la ruta, el tiempo de traslado, la retención, la proyección y la vista paciente. |
+| Planilla Excel de gestión kinesiológica | 14:07–17:33 | Hojas de atenciones y movimientos, listas desplegables, panel mensual y anual; ingresos dependientes e independientes; estado de la atención. | Mabel: hay que alimentarla a mano, pero permite analizar por tipo de cliente. Josselyn: “más similar, pero más detallado” que lo que ya hace. Ariel: complementaria a una app. | Tomamos el panel mensual y anual y la exportación a Excel; superamos la carga manual. |
+| Programas grupales “Movimiento y bienestar” | 21:41–29:43 | Programas todo el año para distintas edades, convenios con empresas y municipios, talleres y pausas activas para estabilizar ingresos. | Josselyn: lo terapéutico es individual (y la psicomotricidad acuática también); lo grupal preventivo para adultos mayores en Las Cabras sí. Ariel: ejemplo de gimnasia acuática grupal muy rentable en Rancagua. | Incorporamos clases grupales como acción de la proyección y módulo de cupos y cobro por persona. |
+| Copiloto (nuestra línea) | 30:49–35:29 | Copiloto financiero: cada cita se vuelve ingreso, ganancia neta con comisión, traslado y materiales; tablero con semáforo; v1 y v2; $20–25 mil/mes de referencia. | Mabel lo explica con un ejemplo de domicilio en Rengo y valores estimados de bencina. Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”. | Valida el núcleo; corregimos AgendaPro, factura mensual de clínica y ganancia por hora por canal. |

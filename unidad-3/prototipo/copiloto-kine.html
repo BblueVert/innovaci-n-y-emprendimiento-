@@ -190,7 +190,7 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
   <main>
     <!-- ============ TABLERO ============ -->
     <section class="view" id="v-inicio" aria-labelledby="t-inicio">
-      <div><h1 id="t-inicio">Hola, Joselyn</h1><p class="sub">Así va tu mes y tu día.</p></div>
+      <div><h1 id="t-inicio">Hola, Josselyn</h1><p class="sub">Así va tu mes y tu día.</p></div>
       <div class="card">
         <h2>Ganancia real de noviembre</h2>
         <div class="meter">
@@ -439,7 +439,7 @@ document.addEventListener('click', e => {
   const d = e.target.closest('[data-done]');
   if (d) { const a = APPTS.find(x => x.id === d.dataset.done); done[a.id] = 1; save(); render(); openSheet(a); return; }
   const n = e.target.closest('[data-notify]');
-  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`WhatsApp a ${a.who}: «Hola, voy en camino. Llego en unos 15 minutos. Joselyn»`); return; }
+  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`WhatsApp a ${a.who}: «Hola, voy en camino. Llego en unos 15 minutos. Josselyn»`); return; }
   const un = e.target.closest('[data-undo]');
   if (un) { delete done[un.dataset.undo]; save(); render(); toast('Atención vuelta a pendiente'); return; }
   const ns = e.target.closest('[data-noshow]');

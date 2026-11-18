@@ -9,13 +9,13 @@ Repositorio del trabajo de la asignatura **Innovación y Emprendimiento III** (F
 - Benjamín Vera Yáñez
 
 ## Caso de estudio
-**Joselyn Toledo**, kinesióloga independiente — Centro Médico InMotion. Atiende en modalidad mixta: clínica (comisión 70/30) y atención particular a domicilio.
+**Josselyn Toledo**, kinesióloga independiente — Centro Médico InMotion. Atiende en modalidad mixta: clínica (comisión 70/30) y atención particular a domicilio.
 
 Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportunidades y proponer mejoras, aplicando el **Ciclo de Innovación INACAP** (needfinding, entrevistas, matrices, redefinición del desafío).
 
 ## Estado actual
 
-- **Semana 1** — Completa: Canvas de Preguntas (33 preguntas / 9 bloques BMC), Card Sorting (9 categorías emergentes), entrevista de usuario Ficha A/B (Joselyn), observación no participante (por autorreporte).
+- **Semana 1** — Completa: Canvas de Preguntas (33 preguntas / 9 bloques BMC), Card Sorting (9 categorías emergentes), entrevista de usuario Ficha A/B (Josselyn), observación no participante (por autorreporte).
 - **Semana 2** — Entrevista a experto/a Ficha A completa; Ficha B pendiente de completar con las respuestas de Catalina. Matriz PESTAL formateada en grid 2×3.
 - **Semana 3** — En progreso: matrices de vaciado de hallazgos y estudio comparativo de antecedentes.
 
@@ -31,7 +31,7 @@ Objetivo del proyecto: diagnosticar su situación de negocio, identificar oportu
 
 | Archivo | Descripción |
 |---|---|
-| `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Joselyn, mapa de síntesis, hallazgos. |
+| `Evaluacion1_Informe_Consolidado.html` | Informe A4 consolidado — Evaluación N°1: Diagnóstico y Selección de Oportunidades. Contexto, metodología, guion de sondeo, card sorting, entrevista a Josselyn, mapa de síntesis, hallazgos. |
 | `Entrevista_Experta_Cata.html` | Ficha de Entrevista a Experta (Instrumento 1.1.2.3) — guion de 10 preguntas para Catalina, validando el dolor de gestión de agenda/finanzas. Ficha B pendiente de completar con sus respuestas. |
 
 Ambos documentos usan la identidad visual HORIZON (portada degradada, barra de acento, tipografía Arial Narrow/Courier New/Helvetica o Bebas Neue/DM Mono/Plus Jakarta Sans según el entregable) y están pensados para exportarse a PDF vía WeasyPrint, formato A4.
@@ -102,5 +102,5 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 - Redefinición del desafío (Semana 4).
 - Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
 - U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
-- U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Joselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
-- U3: transcribir la reunión del jueves 12/11 (feedback de la emprendedora) e integrarla como fuente F0 del kit; aplicar las sesiones con Joselyn, Catalina, pacientes y contadora y completar los resultados pendientes.
+- U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Josselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
+- U3: transcribir la reunión del jueves 12/11 (feedback de la emprendedora) e integrarla como fuente F0 del kit; aplicar las sesiones con Josselyn, Catalina, pacientes y contadora y completar los resultados pendientes.

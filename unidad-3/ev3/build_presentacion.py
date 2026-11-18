@@ -79,7 +79,7 @@ def partida():
 <h3>Propuesta de valor (EV2)</h3><p style="font-size:10pt">{C.PDV_EV2}</p>
 <div><span class="chip o">Anticipador</span><span class="chip o">Legible de un vistazo</span><span class="chip o">Automático</span><span class="chip o">Sostenible</span><span class="chip">Requerimientos R1–R13</span></div></div>
 <div class="b"><img src="img/02-caso.jpg" style="width:100%;border-radius:8px;border:1px solid var(--line)">
-<div class="card" style="margin-top:3mm;font-size:9pt"><div class="t">Usuaria</div>Joselyn Toledo, kinesióloga independiente: Centro Médico InMotion (70/30) + domicilios en Rancagua y Machalí.
+<div class="card" style="margin-top:3mm;font-size:9pt"><div class="t">Usuaria</div>Josselyn Toledo, kinesióloga independiente: Centro Médico InMotion (70/30) + domicilios en Rancagua y Machalí.
 Cuadra ingresos en Excel de noche y no sabe cuánto gana de verdad.</div></div></div>''', 'Contexto')
 
 
@@ -113,7 +113,7 @@ def scenes(sc, mode):
 
 
 def storyboard_v1():
-    return slide(head('3.1.2.1 · Storyboard con propuesta de valor', 'Un día de Joselyn con Copiloto Kine', '3.1.2.1') + scenes(C.SCENES, 'v1'), '3.1.1 · 3.1.5')
+    return slide(head('3.1.2.1 · Storyboard con propuesta de valor', 'Un día de Josselyn con Copiloto Kine', '3.1.2.1') + scenes(C.SCENES, 'v1'), '3.1.1 · 3.1.5')
 
 
 def mock_v1():
@@ -250,7 +250,7 @@ def validacion():
 def perfiles():
     cards = ''.join(f'<div class="pf t{p["tipo"]}"><div class="top"><div class="cd">{p["c"]}</div><div><b>{p["n"]}</b><br><span style="color:var(--ink2)">{p["t"]}</span></div></div>{p["d"]}<div class="h">{p["h"]} · {p["m"]}</div></div>' for p in K.PERF)
     return slide(head('Validación con usuarios · públicos', 'Nueve perfiles: quien usa la app y quien vive sus efectos')
-                 + f'<div class="pfs">{cards}</div><p style="font-size:8.2pt;color:var(--ink2);margin-top:2.5mm">K1 y K2 son participantes reales del proyecto (UA1). Los pacientes entre comillas son perfiles a reclutar: se invita a pacientes de Joselyn solo si ella lo propone, o a personas del entorno del equipo que calcen con el perfil. No se registran diagnósticos.</p>', '3.1.2')
+                 + f'<div class="pfs">{cards}</div><p style="font-size:8.2pt;color:var(--ink2);margin-top:2.5mm">K1 y K2 son participantes reales del proyecto (UA1). Los pacientes entre comillas son perfiles a reclutar: se invita a pacientes de Josselyn solo si ella lo propone, o a personas del entorno del equipo que calcen con el perfil. No se registran diagnósticos.</p>', '3.1.2')
 
 
 def paciente():
@@ -296,7 +296,7 @@ def pertinencia():
     rows = [[f'<b>{a}</b>', b, c] for a, b, c in C.PERTINENCIA]
     return slide(head('3.1.5 · Pertinencia de la propuesta de valor', 'La propuesta responde al problema, al mercado y a la evidencia')
                  + table(['Dimensión', 'Lo que sabemos', 'Cómo responde la propuesta iterada'], rows)
-                 + '<div class="quote" style="font-size:14pt;margin-top:4mm">Pertinente hoy en lo que el prototipo demuestra; la validación con Joselyn, Catalina y pacientes decidirá precio, ventana horaria y alcance del MVP.</div>', '3.1.5')
+                 + '<div class="quote" style="font-size:14pt;margin-top:4mm">Pertinente hoy en lo que el prototipo demuestra; la validación con Josselyn, Catalina y pacientes decidirá precio, ventana horaria y alcance del MVP.</div>', '3.1.5')
 
 
 def sostenibilidad():
@@ -323,7 +323,7 @@ def conclusiones():
     return slide(head('Cierre', 'Conclusiones y próximos pasos') + '''<div class="row">
 <div class="card"><div class="t">Aprendimos</div><ul><li>Medir tareas y accesibilidad da evidencia más útil que preguntar si “gusta”.</li><li>“Automático” sin “corregible” genera registros falsos.</li><li>La ruta es tan valiosa como el tablero: la metáfora se movió hacia el copiloto.</li><li>El paciente también es usuario: sin su ventana horaria no hay ruta optimizada.</li></ul></div>
 <div class="card"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas; cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
-<div class="card"><div class="t">Sigue</div><ul><li><b>Jue 12/11:</b> integrar la retroalimentación de la emprendedora.</li><li><b>17–19/11:</b> sesiones con Joselyn, Catalina, pacientes y contadora.</li><li><b>20/11:</b> consolidar, CDM con usuarios y decisiones v3.</li><li><b>UA4:</b> MVP con agenda real, respaldo en la nube y enlace wa.me.</li></ul></div></div>''', 'Cierre')
+<div class="card"><div class="t">Sigue</div><ul><li><b>Jue 12/11:</b> integrar la retroalimentación de la emprendedora.</li><li><b>17–19/11:</b> sesiones con Josselyn, Catalina, pacientes y contadora.</li><li><b>20/11:</b> consolidar, CDM con usuarios y decisiones v3.</li><li><b>UA4:</b> MVP con agenda real, respaldo en la nube y enlace wa.me.</li></ul></div></div>''', 'Cierre')
 
 
 def referencias():
@@ -335,7 +335,7 @@ def referencias():
             'Ley 21.719 (2024). Regula la protección y el tratamiento de los datos personales. Biblioteca del Congreso Nacional.',
             'Ley 20.584 (2012). Derechos y deberes de los pacientes. Biblioteca del Congreso Nacional.',
             'Sitios oficiales de AgendaPro, Encuadrado, Reservo, Medilink, Cal.com, Cliniko, Jane App y Nubox (consulta UA1).',
-            'Equipo (2026). Informes EV1 y EV2, entrevistas a Joselyn Toledo y Catalina (UA1).']
+            'Equipo (2026). Informes EV1 y EV2, entrevistas a Josselyn Toledo y Catalina (UA1).']
     return slide(head('Fuentes', 'Referencias') + '<div style="font-size:9.6pt;columns:2;column-gap:10mm">' + ''.join(f'<p>{r}</p>' for r in refs) + '</div>', 'Ref.')
 
 

@@ -1,4 +1,4 @@
-# Contenido del informe EV3 · Unidad 3 Prototipado y testeo · caso Joselyn Toledo / Copiloto Kine.
+# Contenido del informe EV3 · Unidad 3 Prototipado y testeo · caso Josselyn Toledo / Copiloto Kine.
 # Todo hallazgo de los ciclos 1 y 2 proviene de ../ciclo1 y ../ciclo2 (scripts y JSON reproducibles).
 import json
 import os
@@ -45,7 +45,7 @@ SQA = [
 SB = 'img/storyboard/'
 SCENES = [  # versión actual · visual y funcional (prototipo v1)
     ('23:10 · el Excel de noche', SB + 'v1-01.jpg', 'wide',
-     'Después de atender, Joselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.',
+     'Después de atender, Josselyn cuadra ingresos y gastos. Le toma cerca de una hora y no sabe si el mes va bien.',
      'Situación actual: registro manual, sin proyección (UA1).', 'Necesidad: saber cuánto gana sin trabajo nocturno.'),
     ('9:45 · entre pacientes, en la clínica', SB + 'v1-02.jpg', 'wide',
      'Abre el tablero: ganancia real del mes, porcentaje de la meta y semáforo, sin tocar nada.',
@@ -79,7 +79,7 @@ EQUIPO_ROLES = 'Moderación: Claudia Cifuentes · Ejecución de tareas: Néstor 
 FICHA_C1 = dict(
     objetivo='Evaluar si el prototipo v1 permite a una kinesióloga independiente completar sus tareas diarias de registro, ruta y control financiero sin ayuda, y si su estética es clara, accesible y coherente con la metáfora.',
     filas=[
-        ('Verificar que las tareas principales se completan sin ayuda', 'Equipo en rol de usuaria (perfil de Joselyn, UA2)', 'Prototipo v1 en celular (390 px)', 'Recorrido guiado de 11 tareas', 'Mod.: Claudia · Ejec.: Néstor · Reg.: Francisco', '≥ 90 % de tareas completadas; ≤ 3 toques por tarea', '¿Se pudo completar sin ayuda? ¿Cuántos toques?', 'Planilla de tareas (éxito y toques) automatizada', 'Sala INACAP', '30 min'),
+        ('Verificar que las tareas principales se completan sin ayuda', 'Equipo en rol de usuaria (perfil de Josselyn, UA2)', 'Prototipo v1 en celular (390 px)', 'Recorrido guiado de 11 tareas', 'Mod.: Claudia · Ejec.: Néstor · Reg.: Francisco', '≥ 90 % de tareas completadas; ≤ 3 toques por tarea', '¿Se pudo completar sin ayuda? ¿Cuántos toques?', 'Planilla de tareas (éxito y toques) automatizada', 'Sala INACAP', '30 min'),
         ('Evaluar legibilidad y accesibilidad', 'Auditoría del equipo', 'Prototipo v1, 5 vistas', 'Auditoría WCAG 2.1 AA (axe-core) y medición de botones y letra', 'Benjamín', '0 errores de contraste; botones ≥ 44 px; texto ≥ 12 px', '¿Se lee y se toca bien en el celular?', 'Reporte automático por vista', 'Remoto', '15 min'),
         ('Revisar coherencia estética y de uso con la metáfora', '3 integrantes', 'Prototipo v1', 'Revisión heurística (10 heurísticas de Nielsen)', 'Todo el equipo', 'Sin problemas de severidad ≥ 3', '¿Transmite “tablero y copiloto” sin recargar?', 'Severidad 0–4 y matriz CDM', 'Sala INACAP', '20 min'),
     ])
@@ -150,7 +150,7 @@ SCENES_ITER = [  # versión actualizada · técnica (prototipo v2 + propuesta v3
 
 # Recorrido del paciente (storyboard EV2) ↔ mensajes de la vista paciente
 SB_PACIENTE = [
-    (SB + 'p-01.jpg', 'Camila reserva en un minuto', 'Agenda en línea que Joselyn ya usa', '—'),
+    (SB + 'p-01.jpg', 'Camila reserva en un minuto', 'Agenda en línea que Josselyn ya usa', '—'),
     (SB + 'p-02.jpg', 'Don Luis confirma el recordatorio', 'M1 · ventana de llegada de 30 min', 'H5 · H8'),
     (SB + 'p-03.jpg', '“Voy en camino”', 'M2 · aviso con tiempo estimado', 'H6'),
     (SB + 'p-04.jpg', 'Paga y recibe el comprobante', 'M3 · comprobante sin diagnóstico', 'H7'),
@@ -160,7 +160,7 @@ SB_PACIENTE = [
 
 # Iteración de los instrumentos: versión actual (visual-funcional) → versión actualizada (técnica)
 ITER_DOCS = [
-    ('3.1.2.1 → 3.1.3.2', 'Storyboard', 'Un día de Joselyn con la promesa de la EV2: tablero, registro, ruta y proyección.', 'Mismo día con lo corregido y lo técnico: ruta por sector con bencina, corrección, cierre a las 20:40 y proyección con acciones.', 'Ruta como vista más valorada; “automático” sin corrección'),
+    ('3.1.2.1 → 3.1.3.2', 'Storyboard', 'Un día de Josselyn con la promesa de la EV2: tablero, registro, ruta y proyección.', 'Mismo día con lo corregido y lo técnico: ruta por sector con bencina, corrección, cierre a las 20:40 y proyección con acciones.', 'Ruta como vista más valorada; “automático” sin corrección'),
     ('3.1.2.2 → 3.1.3.3', 'Mock-up', 'Prototipo v1: 5 vistas, foco en que se vea y se use bien.', 'Prototipo v2: 12 cambios (accesibilidad, deshacer, inasistencia, costos editables, exportación) + vista paciente.', '7/11 tareas; 11 errores de contraste'),
     ('3.1.2.3 → 3.1.3.4', 'Ficha de testeo', 'Ciclo 1 visual y funcional: tareas, WCAG AA, heurísticas.', 'Ciclo 2 técnico: exactitud de cálculos, persistencia, privacidad, rendimiento y cobertura R1–R13.', 'Lo funcional quedó resuelto en v2'),
     ('3.1.2.4 (×2)', 'Matriz CDM', 'Ciclo 1: uso, estética y promesa de valor.', 'Ciclo 2: brechas técnicas e integraciones para el MVP.', 'Cambia el tipo de debilidad: de uso a integración'),
@@ -242,7 +242,7 @@ CDM_C2 = dict(
 
 # ---------------------------------------------------------------- Validación con usuarias
 VALIDACION = [
-    ('Joselyn Toledo', 'Usuaria del caso', 'Presencial, con su celular', 'Tareas T1–T11 + preguntas CDM + metáfora', 'Pendiente'),
+    ('Josselyn Toledo', 'Usuaria del caso', 'Presencial, con su celular', 'Tareas T1–T11 + preguntas CDM + metáfora', 'Pendiente'),
     ('Catalina', 'Experta par (kinesióloga)', 'Remota, videollamada o notas de voz', 'Tareas T1, T2, T5, T7, T11 + disposición a pagar', 'Pendiente'),
     ('Asesor financiero', 'Experto técnico', 'Remota', 'Revisión de cálculos, retención y exportación (P1, P6, P11)', 'Pendiente'),
 ]
@@ -257,7 +257,7 @@ PESTAL = [
      dict(f='El ciclo 1 mostró que el costo de traslado es visible y configurable ($180/km); el ciclo 2, que cambia la ganancia de cada domicilio en $160 por cada $20 de alza por km.', o='Las acciones de la proyección (packs, grupo, colchón) suman $570.000 para cubrir enero y febrero: la herramienta genera ingreso, no solo lo registra.', a='Alzas de combustible reducen la ganancia por domicilio; el precio de la suscripción debe mantenerse bajo $25.000 (rango del mercado, UA1).')),
     ('Social',
      dict(f='Envejecimiento de la población y mayor demanda de rehabilitación y atención domiciliaria.', o='Crecimiento del segmento de kinesiología particular y servicios para adultos mayores.', a='Formación universitaria sin contenidos de gestión financiera.'),
-     dict(f='La atención a domicilio de adultos mayores es parte de la agenda tipo del prototipo; el aviso “voy en camino” responde a un paciente que espera en casa.', o='El trato 1:1 se protege: la app libera tiempo administrativo y comunica la llegada sin que Joselyn escriba mientras maneja.', a='Brecha digital: usuarias poco habituadas a apps; el ciclo 1 exigió letra mínima de 12 px y contraste AA.')),
+     dict(f='La atención a domicilio de adultos mayores es parte de la agenda tipo del prototipo; el aviso “voy en camino” responde a un paciente que espera en casa.', o='El trato 1:1 se protege: la app libera tiempo administrativo y comunica la llegada sin que Josselyn escriba mientras maneja.', a='Brecha digital: usuarias poco habituadas a apps; el ciclo 1 exigió letra mínima de 12 px y contraste AA.')),
     ('Tecnológico',
      dict(f='Adopción masiva de WhatsApp, agendas online (Cal.com, AgendaPro) y boleta de honorarios electrónica del SII.', o='Integrar herramientas que el profesional ya usa en vez de reemplazarlas.', a='Mercado con muchas soluciones genéricas; riesgo de ser “una app más”.'),
      dict(f='El prototipo funciona en el navegador del celular (39 KB) y sin fuentes web; las integraciones reales (agenda, mapas, WhatsApp) son brechas B1, B4 y B5.', o='Enlaces wa.me y APIs de calendario permiten integrar sin costo de licencia en el MVP.', a='Datos guardados solo en el dispositivo (B2): riesgo de pérdida al cambiar de celular.')),
@@ -286,7 +286,7 @@ TENDENCIAS = [
     ('Accesibilidad e inclusión', 'Las pautas WCAG 2.1/2.2 son hoy el estándar mínimo de calidad en productos digitales.', 'v2 sin errores WCAG AA, botones de 44 px y letra mínima de 12 px.'),
 ]
 PERTINENCIA = [
-    ('Problema de origen', 'Joselyn no sabe cuánto gana y cuadra Excel de noche (~1 h diaria, I1–I3).', 'Ganancia real al instante y cierre del día en 11 toques (P4).'),
+    ('Problema de origen', 'Josselyn no sabe cuánto gana y cuadra Excel de noche (~1 h diaria, I1–I3).', 'Ganancia real al instante y cierre del día en 11 toques (P4).'),
     ('Estado del arte', 'Ningún antecedente cruza agenda, costos por atención y retención chilena.', f'{PRODUCTO} cubre esas tres variables y agrega la ruta (matriz de estado del arte).'),
     ('Tendencias', 'Finanzas embebidas, herramientas para independientes, privacidad y accesibilidad.', 'La v2 responde a las seis tendencias identificadas.'),
     ('Evidencia de testeo', 'Ciclo 1: 7/11 tareas, 11 errores de contraste. Ciclo 2: brechas técnicas acotadas.', 'v2: 11/11 tareas, 0 errores WCAG AA, 11/11 pruebas técnicas.'),
@@ -299,7 +299,7 @@ GANTT = [
     ('SQA diagnóstica (en clase)', {'S11': 'on'}), ('Storyboard y mock-up v1 con propuesta de valor', {'S11': 'on'}),
     ('Ficha de testeo y ciclo 1 (funcional y estético)', {'S11': 'mid', 'S12': 'on'}), ('Matriz CDM del ciclo 1', {'S12': 'on'}),
     ('Iteración: metáfora, storyboard y mock-up v2', {'S12': 'on', 'S13': 'mid'}), ('Ficha de testeo de la iteración y ciclo 2 (técnico)', {'S13': 'on'}),
-    ('PESTAL profundizada y estado del arte', {'S13': 'on'}), ('Validación con Joselyn, Catalina y asesor', {'S13': 'mid', 'S14': 'on'}),
+    ('PESTAL profundizada y estado del arte', {'S13': 'on'}), ('Validación con Josselyn, Catalina y asesor', {'S13': 'mid', 'S14': 'on'}),
     ('Bitácora (registro semanal)', {'S11': 'mid', 'S12': 'mid', 'S13': 'hito'}), ('Informe EV3 y entrega', {'S14': 'hito'}),
 ]
 
@@ -349,3 +349,28 @@ RETRO_CAMBIOS = [
     ('Costo estimado de la solución visible en la propuesta (MVP con herramientas de bajo costo)', 'Mabel 12:30', 'Propuesta'),
 ]
 RETRO_DOCENTES.append(('Ana Luisa Aguilera (docente INACAP)', 'Las propuestas de su sección también apuntan al agendamiento y la organización interna; la retroalimentación servirá para mejorarlas.', '39:29'))
+
+# Hallazgos generales de toda la conversación y de las otras propuestas revisadas
+RETRO_GENERALES = [
+    ('Todas las secciones vieron el mismo problema', '“Las propuestas pueden ser muy similares porque todos identificaron el tema de los ingresos.” (Mabel, 38:45) · “Es el tema del agendamiento y la organización interna.” (Ana, 39:29)', 'La diferenciación no está en el problema sino en cómo se resuelve: ruta, tiempo de traslado, retención, proyección y vista paciente.'),
+    ('La clienta elegirá comparando o combinando', '“Presentaciones estandarizadas… para comparar las propuestas.” (Ariel, 37:45) · “No son excluyentes… una batería de apoyo.” (Ariel, 17:33)', 'Mostrar con claridad qué hace nuestra propuesta que las otras no, y que puede convivir con ellas (exportar a Excel).'),
+    ('Hay tres modelos de apoyo en juego', 'App de gestión, planilla Excel dinámica y modelo de negocio grupal. (Ariel, 29:43)', 'Copiloto Kine puede integrar los tres: app + exportación a Excel + módulo grupal.'),
+    ('El costo es una pregunta obligada', '“Que se pueda identificar más o menos cuánto saldría.” (Mabel, 12:30) · “De muy bajo costo… plataformas liberadas.” (Ariel, 12:52)', 'Incluir un costeo del MVP y del uso mensual en la entrega final.'),
+    ('Lo manual no escala', '“Al ser una planilla Excel hay que alimentarla… no va a tener la información sola.” (Mabel, 15:12)', 'La automatización (agenda, ruta, cálculo) es la ventaja frente al Excel.'),
+    ('Cada propuesta refleja la formación de su equipo', 'Alumnos contables proponen desde lo contable; administración, desde la gestión. (Ariel, 02:20)', 'Nuestro aporte como Diseño Digital es la experiencia: claridad, accesibilidad, prototipo navegable y la mirada del paciente.'),
+    ('La clienta está abierta y comprometida', '“Me encantaría conocerla.” (13:31) · “Muy buenas las propuestas… hay que dar una muy buena resolución.” (39:07)', 'Hay disposición para la sesión de testeo con ella.'),
+]
+RETRO_OTRAS = [
+    ('App de gestión integral', '09:00–13:37', 'Herramienta digital para organizar pacientes y atenciones, centralizar finanzas, visualizar resultados y estrategias de captación y crecimiento.',
+     'Ariel: simple, de bajo o cero costo, en teléfono, tablet o computador; considera el costo de traslado según la distancia del paciente. Mabel pide estimar su costo. Josselyn: “me encantaría conocerla”.',
+     'Es la más parecida a la nuestra. Nos diferencian la ruta, el tiempo de traslado, la retención, la proyección y la vista paciente.'),
+    ('Planilla Excel de gestión kinesiológica', '14:07–17:33', 'Hojas de atenciones y movimientos, listas desplegables, panel mensual y anual; ingresos dependientes e independientes; estado de la atención.',
+     'Mabel: hay que alimentarla a mano, pero permite analizar por tipo de cliente. Josselyn: “más similar, pero más detallado” que lo que ya hace. Ariel: complementaria a una app.',
+     'Tomamos el panel mensual y anual y la exportación a Excel; superamos la carga manual.'),
+    ('Programas grupales “Movimiento y bienestar”', '21:41–29:43', 'Programas todo el año para distintas edades, convenios con empresas y municipios, talleres y pausas activas para estabilizar ingresos.',
+     'Josselyn: lo terapéutico es individual (y la psicomotricidad acuática también); lo grupal preventivo para adultos mayores en Las Cabras sí. Ariel: ejemplo de gimnasia acuática grupal muy rentable en Rancagua.',
+     'Incorporamos clases grupales como acción de la proyección y módulo de cupos y cobro por persona.'),
+    ('Copiloto (nuestra línea)', '30:49–35:29', 'Copiloto financiero: cada cita se vuelve ingreso, ganancia neta con comisión, traslado y materiales; tablero con semáforo; v1 y v2; $20–25 mil/mes de referencia.',
+     'Mabel lo explica con un ejemplo de domicilio en Rengo y valores estimados de bencina. Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”.',
+     'Valida el núcleo; corregimos AgendaPro, factura mensual de clínica y ganancia por hora por canal.'),
+]

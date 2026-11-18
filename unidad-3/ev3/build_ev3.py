@@ -35,7 +35,7 @@ STMT = {
     's-intro': 'Prototipar es <b>hacer tangible la promesa</b> para poder probarla.',
     's-ruta': 'Dos ciclos con focos distintos: <b>primero usarla, después confiar en ella</b>.',
     's-sqa': 'Sabíamos prototipar; teníamos que <b>aprender a medir</b>.',
-    's-sb1': 'Un día de Joselyn, <b>de las 11:40 p. m. al domingo</b>.',
+    's-sb1': 'Un día de Josselyn, <b>de las 11:40 p. m. al domingo</b>.',
     's-mk1': 'Un enlace en el celular: <b>nada que instalar</b>.',
     's-f1': 'El ciclo 1 pregunta: <b>¿se puede usar y se ve bien?</b>',
     's-r1': 'Funciona en lo central y <b>falla en lo que permite corregir</b>.',
@@ -45,6 +45,7 @@ STMT = {
     's-tec': 'Lo que falta no es diseño: <b>es conectar datos reales</b>.',
     's-retro': 'La clienta ya hace lo que la app promete: <b>a mano y de noche</b>.',
     
+    's-retro3': 'Todos vieron el mismo problema: <b>la diferencia está en cómo se resuelve</b>.',
     's-pac': 'Cada escena del paciente <b>es una hipótesis</b>.',
     's-meta': 'La metáfora pasa <b>del tablero al copiloto</b>.',
     's-sb2': 'El mismo día, <b>con lo que aprendimos</b>.',
@@ -125,7 +126,7 @@ def portada():
 <div><div class="inst" style="color:var(--accent)">Innovación y Emprendimiento III · INACAP Rancagua</div></div>
 <div><h1>EVALUACIÓN<br>N°3</h1>
 <div class="sub">PROTOTIPADO Y TESTEO</div><div class="inst" style="margin-top:2mm">Informe sumativo grupal · Unidad de Aprendizaje N°3 · FGIE03</div><div class="div"></div>
-<div class="desc">Fase de desarrollo, prototipado y testeo del Ciclo de Innovación INACAP aplicada al caso de Joselyn Toledo, kinesióloga independiente
+<div class="desc">Fase de desarrollo, prototipado y testeo del Ciclo de Innovación INACAP aplicada al caso de Josselyn Toledo, kinesióloga independiente
 con atención mixta. Del storyboard al prototipo navegable Copiloto Kine, dos ciclos de testeo, la iteración de la propuesta de valor y su
 verificación frente al estado del arte, con trazabilidad a los criterios 3.1.1 a 3.1.5.</div>
 <div class="grid">{chips}</div></div>
@@ -140,7 +141,7 @@ def indice():
              ('Testeo · ciclo 1 funcional y estético', [('3.1.2.3', 's-f1', 'Ficha de planificación del testeo'), ('Ciclo 1', 's-r1', 'Resultados: tareas, accesibilidad y heurísticas'), ('3.1.2.4', 's-cdm1', 'Matriz CDM con propuesta de valor')]),
              ('Iteración · versión 2', [('Iteración', 's-iter', 'De la versión actual a la actualizada'), ('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
              ('Testeo · ciclo 2 técnico', [('3.1.3.4', 's-f2', 'Ficha de planificación del testeo de la iteración'), ('Ciclo 2', 's-r2', 'Resultados técnicos y cobertura de requerimientos'), ('3.1.2.4', 's-cdm2', 'Brechas y matriz CDM del ciclo 2'), ('Técnica', 's-tec', 'Propuesta técnica v3: integraciones y funcionalidades')]),
-             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
+             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('12/11', 's-retro3', 'Hallazgos generales y otras propuestas revisadas'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
              ('Estado del arte y pertinencia', [('3.1.4.1', 's-pestal', 'Matriz PESTAL profundizada'), ('3.1.4', 's-arte', 'Estado del arte y tendencias'), ('3.1.5', 's-pert', 'Pertinencia de la propuesta de valor')]),
              ('Cierre', [('Sost.', 's-sost', 'Enfoque sostenible'), ('Gestión', 's-gest', 'Gestión de la fase y bitácora'), ('Cierre', 's-concl', 'Conclusiones y próximos pasos'), ('Ref.', 's-ref', 'Referencias')])]
     out = ''
@@ -156,7 +157,7 @@ def intro():
 es elaborar el prototipo de la propuesta de valor, testearlo con usuarios en más de un ciclo, ajustarlo según los resultados y verificar su pertinencia frente al estado del arte y las tendencias.</p>
 <h3>Caso y punto de partida</h3>
 <div class="case"><img src="img/02-caso.jpg"><div class="facts">
-<div><b>Usuaria</b>Joselyn Toledo — kinesióloga independiente: Centro Médico InMotion (70/30) y domicilios en Rancagua y Machalí.</div>
+<div><b>Usuaria</b>Josselyn Toledo — kinesióloga independiente: Centro Médico InMotion (70/30) y domicilios en Rancagua y Machalí.</div>
 <div><b>Problema (UA1)</b>No sabe cuánto gana de verdad; cuadra ingresos y gastos en Excel de noche (~1 h diaria).</div>
 <div><b>Solución (UA2)</b>Copiloto Kine: convierte cada atención en ganancia real y anticipa los meses bajos.</div></div></div>
 <h3>Desafío</h3><div class="big-q">{C.DESAFIO}</div>
@@ -206,7 +207,7 @@ def mk1():
 proyecto con acentos naranjos; la clínica se identifica en morado y el domicilio en naranjo.</p>
 {phones([(m[1], m[0]) for m in C.MOCK_V1]).replace('class="phones"', 'class="phones s6"')}
 {table(['Pantalla', 'Qué materializa', 'Atributo de la propuesta de valor'], [[f'<b>{m[0]}</b>', m[2], m[3]] for m in C.MOCK_V1], 'tight')}
-<p class="small muted">Archivo: <code>unidad-3/prototipo/copiloto-kine-v1.html</code>. Las pantallas usan datos de ejemplo de un día tipo de Joselyn (2 atenciones en clínica y 3 a domicilio).</p>'''
+<p class="small muted">Archivo: <code>unidad-3/prototipo/copiloto-kine-v1.html</code>. Las pantallas usan datos de ejemplo de un día tipo de Josselyn (2 atenciones en clínica y 3 a domicilio).</p>'''
     return section('s-mk1', '3.1.2.2 · MOCK-UP', 'Prototipado · versión 1', 'Mock-up con propuesta de valor', b, '3.1.2.2')
 
 
@@ -300,10 +301,18 @@ def retro():
             + section('s-retro2', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Patrones y cambios a la propuesta', b2))
 
 
+def retro3():
+    gen = [[f'<b>{t}</b>', f'<span class="muted">{e}</span>', i] for t, e, i in C.RETRO_GENERALES]
+    otr = [[f'<b>{n}</b><br><span class="code b">{m}</span>', d, r, i] for n, m, d, r, i in C.RETRO_OTRAS]
+    b = ('<h3 style="margin-top:1mm">Hallazgos generales de la conversación</h3>' + table(['Hallazgo', 'Evidencia', 'Qué hacemos con esto'], gen, 'tight xxs')
+         + '<h3>Las otras propuestas revisadas</h3>' + table(['Propuesta', 'Qué plantea', 'Reacción en la reunión', 'Qué tomamos'], otr, 'tight xxs'))
+    return section('s-retro3', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Hallazgos generales y otras propuestas', b)
+
+
 def recorrido():
     cards = ''.join(f'<div class="sc2"><div class="im"><img src="{img}"><span class="n">{i:02d}</span></div><div class="tx"><div class="h">{t}</div><div class="c v"><b>Mensaje / prototipo</b>{m}</div><div class="c p"><b>Hipótesis</b>{h}</div></div></div>' for i, (img, t, m, h) in enumerate(C.SB_PACIENTE, 1))
     b = (f'<p class="lead">El storyboard del paciente construido en la EV2 —con don Luis, adulto mayor atendido a domicilio, y Camila, estudiante con dolor de espalda— se convierte en el guion del testeo con pacientes: cada escena tiene un mensaje de la vista paciente y una hipótesis que validar.</p><div class="sb2">{cards}</div>'
-         + '<p class="small" style="margin-top:3mm"><b>Lectura.</b> Las escenas 2 a 5 ya están prototipadas (mensajes M1 a M4). La reserva en línea (escena 1) depende de la agenda que Joselyn ya usa, y el seguimiento después del alta (escena 6) queda para la fase 2.</p>')
+         + '<p class="small" style="margin-top:3mm"><b>Lectura.</b> Las escenas 2 a 5 ya están prototipadas (mensajes M1 a M4). La reserva en línea (escena 1) depende de la agenda que Josselyn ya usa, y el seguimiento después del alta (escena 6) queda para la fase 2.</p>')
     return section('s-pac', 'RECORRIDO DEL PACIENTE', 'Validación y propuesta de valor', 'Storyboard del paciente', b)
 
 
@@ -369,7 +378,7 @@ def val():
     pf = ''.join(f'<div class="pfc {p["tipo"]}"><div class="cd">{p["c"]}</div><div><b>{p["n"]}</b> · {p["t"]}<div class="small muted">{p["s"]} · {p["m"]}</div></div></div>' for p in K.PERF)
     b = f'''<p class="lead">Para validar con usuarios externos preparamos un kit de testeo (19 páginas) para tres públicos: las <b>kinesiólogas</b>, que usan la app; los
 <b>pacientes</b>, que reciben sus mensajes y de quienes depende la ruta; y una <b>contadora</b>, que recibe el resumen mensual.</p>
-<div class="pj"><figure><img src="img/storyboard/personajes/joselyn.jpg"><figcaption><b>Joselyn</b>Usuaria principal · kinesióloga</figcaption></figure>
+<div class="pj"><figure><img src="img/storyboard/personajes/joselyn.jpg"><figcaption><b>Josselyn</b>Usuaria principal · kinesióloga</figcaption></figure>
 <figure><img src="img/storyboard/personajes/don-luis.jpg"><figcaption><b>Don Luis</b>Paciente · adulto mayor a domicilio</figcaption></figure>
 <figure><img src="img/storyboard/personajes/camila.jpg"><figcaption><b>Camila</b>Paciente · estudiante con dolor de espalda</figcaption></figure>
 <figure><img src="{VEC}19-pacientes.png" style="object-position:50% 70%"><figcaption><b>Otros perfiles</b>Cuidadora, oficina, turnos y deportista</figcaption></figure></div>
@@ -379,7 +388,7 @@ def val():
     b2 = f'''<p class="lead">Las kinesiólogas usan la app; los pacientes solo reciben sus mensajes. Para testear con ellos construimos una vista que simula los cuatro mensajes que recibirían por WhatsApp.</p>
 {phones([(PAC + '01_recordatorio.png', 'M1 · Recordatorio · H5'), (PAC + '02_voy_en_camino.png', 'M2 · Voy en camino · H6'), (PAC + '03_comprobante.png', 'M3 · Comprobante · H7'), (PAC + '04_hora_liberada.png', 'M4 · Hora liberada · H10')]).replace('class="phones"', 'class="phones big"')}
 <p class="small">La hipótesis más riesgosa del modelo es H5: si los pacientes no aceptan una ventana de llegada de 30 minutos, la ruta sugerida no se puede aplicar. Por eso los pacientes son parte del testeo aunque no usen la app. Los mensajes no incluyen diagnósticos (Ley 21.719), la vista tiene “Letra grande” para adultos mayores y sus cuatro pantallas pasan la auditoría WCAG AA sin errores. Archivo: <code>prototipo/vista-paciente.html</code>.</p>
-<div class="note"><b>Estado y siguientes pasos.</b> La retroalimentación de la reunión del 12 de noviembre ya está integrada (sección anterior); con ella se ajustan el guion y el prototipo v3 antes de las sesiones. Los pacientes de Joselyn participan solo si ella los invita; se complementa con personas del entorno del equipo que calcen con cada perfil.</div>
+<div class="note"><b>Estado y siguientes pasos.</b> La retroalimentación de la reunión del 12 de noviembre ya está integrada (sección anterior); con ella se ajustan el guion y el prototipo v3 antes de las sesiones. Los pacientes de Josselyn participan solo si ella los invita; se complementa con personas del entorno del equipo que calcen con cada perfil.</div>
 <h3>Contenido del kit de testeo</h3>
 {table(['Documento', 'Para qué sirve'], [['Plan e hipótesis', '10 hipótesis con métrica y criterio de éxito definidos antes de testear'], ['Perfiles', '9 perfiles con criterios de reclutamiento y adaptaciones'],
         ['Guiones A, B y C', 'Kinesiólogas (40–60 min), pacientes (15 min) y contadora (20 min)'], ['Consentimiento informado', 'Participación voluntaria, sin datos de salud (Ley 21.719)'],
@@ -472,7 +481,7 @@ def gest():
 def concl():
     b = '''<div class="grid3"><div class="box"><div class="t">Aprendimos</div><ul><li>Medir tareas, accesibilidad y exactitud da evidencia más útil que preguntar si “gusta”.</li><li>“Automático” sin “corregible” genera registros falsos.</li><li>La ruta es tan valiosa como el tablero: la metáfora se movió al copiloto.</li><li>El paciente también es usuario: sin su ventana horaria no hay ruta.</li></ul></div>
 <div class="box"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas: cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
-<div class="box"><div class="t">Sigue</div><ul><li>Retroalimentación del 12/11 integrada: AgendaPro, ganancia por hora por canal y clases grupales al prototipo v3.</li><li>Sesiones con Joselyn, Catalina, pacientes y contadora.</li><li>Consolidar: SUS, CDM con usuarios y decisiones v3.</li><li>UA4: MVP con agenda real, respaldo en la nube y aviso por WhatsApp.</li></ul></div></div>
+<div class="box"><div class="t">Sigue</div><ul><li>Retroalimentación del 12/11 integrada: AgendaPro, ganancia por hora por canal y clases grupales al prototipo v3.</li><li>Sesiones con Josselyn, Catalina, pacientes y contadora.</li><li>Consolidar: SUS, CDM con usuarios y decisiones v3.</li><li>UA4: MVP con agenda real, respaldo en la nube y aviso por WhatsApp.</li></ul></div></div>
 <h3>Conclusión</h3><p>La Unidad 3 convirtió una propuesta de valor en un prototipo que se puede usar, medir y corregir. Testear en dos ciclos con focos distintos permitió arreglar primero la experiencia y después verificar que la herramienta resuelve con exactitud las necesidades puntuales de la kinesióloga. La propuesta iterada es más honesta —promete solo lo que el prototipo demuestra— y más amplia, porque incorpora la ruta y al paciente. El siguiente paso es llevarla a las personas.</p>
 <img class="banner" src="img/05-entrevista.jpg">'''
     return section('s-concl', 'CONCLUSIONES', 'Cierre', 'Conclusiones y próximos pasos', b)
@@ -488,7 +497,7 @@ def refs():
          'Microsoft. (2026). <i>Playwright</i> [Software]. https://playwright.dev',
          'Nielsen, J. (1994). <i>10 usability heuristics for user interface design</i>. Nielsen Norman Group.',
          'W3C. (2018). <i>Web Content Accessibility Guidelines (WCAG) 2.1</i>. https://www.w3.org/TR/WCAG21/',
-         'Equipo del proyecto. (2026). Informes EV1 y EV2 y entrevistas a Joselyn Toledo y Catalina (UA1). INACAP Rancagua.']
+         'Equipo del proyecto. (2026). Informes EV1 y EV2 y entrevistas a Josselyn Toledo y Catalina (UA1). INACAP Rancagua.']
     return section('s-ref', 'REFERENCIAS', 'Fuentes', 'Referencias', ''.join(f'<p class="small" style="padding-left:6mm;text-indent:-6mm">{x}</p>' for x in r))
 
 
@@ -583,7 +592,7 @@ def render(body, name):
 
 def main_body():
     return (portada() + indice() + intro() + ruta() + sqa() + sb1() + mk1() + pagina_cita() + f1() + r1() + cdm1() + pagina_cifras()
-            + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + retro() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
+            + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + retro() + retro3() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
 
 
 if __name__ == '__main__':
