@@ -84,6 +84,8 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 ## Unidad 3 (`/unidad-3`) — Prototipado y testeo
 
+**Prototipos publicados:** vista profesional https://copiloto-kine.vercel.app/profesional/ · vista cliente https://copiloto-kine.vercel.app/cliente/ (fuente: `unidad-3/sitio/`)
+
 | Ruta | Descripción |
 |---|---|
 | `entrega-final/EV3_Informe_Prototipado_Copiloto_Kine.pdf` | **Entregable EV3: informe A4 (39 págs.)** con el lenguaje visual de la EV1/EV2, ilustraciones del proyecto y vectores nuevos (`ev3/img/vec`, generador `ev3/gen_vectores.py`), y anexo con las 7 plantillas oficiales. Generador: `python3 ev3/build_ev3.py` |

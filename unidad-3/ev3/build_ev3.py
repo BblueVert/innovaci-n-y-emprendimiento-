@@ -15,6 +15,9 @@ sys.path.insert(0, os.path.join(HERE, '..', 'testeo'))
 import build_kit as K  # noqa: E402
 
 VEC = 'img/vec/'
+URL = 'https://copiloto-kine.vercel.app'
+URL_PRO, URL_CLI = URL + '/profesional/', URL + '/cliente/'
+lnk = lambda u, t=None: f'<a class="lk" href="{u}">{t or u.replace("https://", "")}</a>'
 V1, V2, PAC = '../prototipo/capturas_v1/', '../prototipo/capturas_v2/', '../prototipo/capturas_paciente/'
 PAC1 = '../prototipo/capturas_paciente_v1/'
 PEND = '<span class="pend">Pendiente de sesión</span>'
@@ -34,6 +37,7 @@ def table(headers, rows, cls=''):
 
 STMT = {
     's-intro': 'Prototipar es <b>hacer tangible la promesa</b> para poder probarla.',
+    's-links': 'Dos vistas, <b>un mismo sistema</b>.',
     's-ruta': 'Dos ciclos con focos distintos: <b>primero usarla, después confiar en ella</b>.',
     's-sqa': 'Sabíamos prototipar; teníamos que <b>aprender a medir</b>.',
     's-sb1': 'Un día de Josselyn, <b>de las 11:40 p. m. al domingo</b>.',
@@ -132,14 +136,14 @@ def portada():
 <div class="desc">Fase de desarrollo, prototipado y testeo del Ciclo de Innovación INACAP aplicada al caso de Josselyn Toledo, kinesióloga independiente
 con atención mixta. Del storyboard al prototipo navegable Copiloto Kine, dos ciclos de testeo, la iteración de la propuesta de valor y su
 verificación frente al estado del arte, con trazabilidad a los criterios 3.1.1 a 3.1.5.</div>
-<div class="grid">{chips}</div></div>
+<div class="grid">{chips}</div><div class="url">PROTOTIPOS · <a href="{URL_PRO}">VISTA PROFESIONAL</a> · <a href="{URL_CLI}">VISTA CLIENTE</a> · copiloto-kine.vercel.app</div></div>
 <div class="meta"><div class="team"><div>Francisco Ahumada · Claudia Cifuentes</div><div>Néstor Rivera · Benjamín Vera Yáñez</div>
 <div class="inst" style="margin-top:1mm">Diseño Digital · INACAP Rancagua</div><div class="inst" style="margin-top:1mm">Profesor: Roberto Escobar Donoso</div></div>
 <div style="text-align:right"><div class="inst">Rancagua, Chile</div><div class="inst">Noviembre 2026</div></div></div></div>'''
 
 
 def indice():
-    items = [('Marco', [('01', 's-intro', 'Introducción, caso y propuesta de valor de partida'), ('02', 's-ruta', 'Ruta metodológica y trazabilidad de criterios'), ('3.1.1.1', 's-sqa', 'Evaluación diagnóstica: tabla SQA')]),
+    items = [('Marco', [('01', 's-intro', 'Introducción, caso y propuesta de valor de partida'), ('Links', 's-links', 'Prototipos navegables: vista profesional y vista cliente'), ('02', 's-ruta', 'Ruta metodológica y trazabilidad de criterios'), ('3.1.1.1', 's-sqa', 'Evaluación diagnóstica: tabla SQA')]),
              ('Prototipado · versión 1', [('3.1.2.1', 's-sb1', 'Storyboard con propuesta de valor'), ('3.1.2.2', 's-mk1', 'Mock-up con propuesta de valor')]),
              ('Testeo · ciclo 1 funcional y estético', [('3.1.2.3', 's-f1', 'Ficha de planificación del testeo'), ('Ciclo 1', 's-r1', 'Resultados: tareas, accesibilidad y heurísticas'), ('3.1.2.4', 's-cdm1', 'Matriz CDM con propuesta de valor')]),
              ('Iteración · versión 2', [('Iteración', 's-iter', 'De la versión actual a la actualizada'), ('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
@@ -169,6 +173,17 @@ es elaborar el prototipo de la propuesta de valor, testearlo con usuarios en má
 reproducibles y resultados guardados en el repositorio (<code>unidad-3/ciclo1</code> y <code>ciclo2</code>). La validación con usuarias, pacientes y una contadora queda preparada
 en un kit de testeo y sus resultados se informan como pendientes: no atribuimos opiniones a personas que aún no han participado.</div>'''
     return section('s-intro', '01 · INTRODUCCIÓN', 'Marco', 'Introducción', b)
+
+
+def links():
+    def card(qr, img, t, d, u, c):
+        return (f'<div class="pcard {c}"><img class="ph" src="{img}"><div class="tx"><div class="kk">{t}</div><div class="d">{d}</div>'
+                f'<div class="qr"><img src="{qr}"><div>Escanea con el celular o haz clic:<br>{lnk(u)}</div></div></div></div>')
+    b = (f'<p class="lead">Los dos prototipos están publicados y se abren desde cualquier celular, sin instalar nada. Son la evidencia funcional del informe: cada pantalla citada en las secciones siguientes se puede recorrer en estos enlaces.</p>'
+         + card('img/qr-profesional.png', V2 + '01_tablero.png', 'Vista profesional · Josselyn', 'La app de la kinesióloga (prototipo v2): tablero de ganancia real, ruta del día, agenda con registro de un toque, proyección y “Mi plata”.', URL_PRO, '')
+         + card('img/qr-cliente.png', PAC + '01_recordatorio_a.png', 'Vista cliente · paciente', 'Los mensajes que recibe el paciente (v2, simplificada para personas mayores): recordatorio, voy en camino, pago, clase grupal y hora liberada.', URL_CLI, 'c')
+         + f'<p class="small muted">Portada de ambos: {lnk(URL + "/")}. Las versiones v1 y el código fuente están en el repositorio del proyecto (<code>unidad-3/prototipo</code>). Los prototipos no envían mensajes ni guardan datos fuera del dispositivo.</p>')
+    return section('s-links', 'PROTOTIPOS NAVEGABLES', 'Marco', 'Prototipos navegables: vista profesional y vista cliente', b)
 
 
 def ruta():
@@ -210,7 +225,7 @@ def mk1():
 proyecto con acentos naranjos; la clínica se identifica en morado y el domicilio en naranjo.</p>
 {phones([(m[1], m[0]) for m in C.MOCK_V1]).replace('class="phones"', 'class="phones s6"')}
 {table(['Pantalla', 'Qué materializa', 'Atributo de la propuesta de valor'], [[f'<b>{m[0]}</b>', m[2], m[3]] for m in C.MOCK_V1], 'tight')}
-<p class="small muted">Archivo: <code>unidad-3/prototipo/copiloto-kine-v1.html</code>. Las pantallas usan datos de ejemplo de un día tipo de Josselyn (2 atenciones en clínica y 3 a domicilio).</p>'''
+<p class="small muted">Archivo: <code>unidad-3/prototipo/copiloto-kine-v1.html</code>. La versión iterada (v2) se prueba en {lnk(URL_PRO)}. Las pantallas usan datos de ejemplo de un día tipo de Josselyn (2 atenciones en clínica y 3 a domicilio).</p>'''
     return section('s-mk1', '3.1.2.2 · MOCK-UP', 'Prototipado · versión 1', 'Mock-up con propuesta de valor', b, '3.1.2.2')
 
 
@@ -351,7 +366,7 @@ def mk2():
     rows = [[f'<b>{i}</b>', c, h, r] for i, (c, h, r, _) in enumerate(C.CAMBIOS, 1)]
     b = (f'<div style="display:flex;justify-content:space-between">{ba}</div>'
          + table(['#', 'Cambio en v2', 'Hallazgo del ciclo 1', 'Requerimiento'], rows, 'tight')
-         + '<p class="small"><b>Resultado.</b> Con los mismos scripts del ciclo 1, la versión 2 completa 11 de 11 tareas, con 0 errores WCAG AA, 0 objetivos táctiles bajo 44 px y letra mínima de 12 px. Archivo: <code>unidad-3/prototipo/copiloto-kine.html</code>.</p>')
+         + '<p class="small"><b>Resultado.</b> Con los mismos scripts del ciclo 1, la versión 2 completa 11 de 11 tareas, con 0 errores WCAG AA, 0 objetivos táctiles bajo 44 px y letra mínima de 12 px. Pruébalo: ' + lnk(URL_PRO) + '.</p>')
     return section('s-mk2', '3.1.3.3 · MOCK-UP ITERADO', 'Iteración · versión 2', 'Mock-up iterado y ajustes fundamentados', b, '3.1.3.3')
 
 
@@ -399,7 +414,7 @@ def val():
 '''
     b2 = f'''<p class="lead">Las kinesiólogas usan la app; los pacientes solo reciben sus mensajes. La <b>versión actual</b> de la vista paciente simula cuatro mensajes de WhatsApp. Tras la reunión del 12/11 se itera a una versión simplificada para personas mayores (página siguiente).</p>
 {phones([(PAC1 + '01_recordatorio.png', 'v1 · M1 Recordatorio'), (PAC1 + '02_voy_en_camino.png', 'v1 · M2 Voy en camino'), (PAC1 + '03_comprobante.png', 'v1 · M3 Comprobante'), (PAC1 + '04_hora_liberada.png', 'v1 · M4 Hora liberada')]).replace('class="phones"', 'class="phones big"')}
-<p class="small">La hipótesis más riesgosa del modelo es H5: si los pacientes no aceptan una ventana de llegada de 30 minutos, la ruta sugerida no se puede aplicar. Por eso los pacientes son parte del testeo aunque no usen la app. Los mensajes no incluyen diagnósticos (Ley 21.719), la vista tiene “Letra grande” para adultos mayores y sus cuatro pantallas pasan la auditoría WCAG AA sin errores. Archivo: <code>prototipo/vista-paciente.html</code>.</p>
+<p class="small">La hipótesis más riesgosa del modelo es H5: si los pacientes no aceptan una ventana de llegada de 30 minutos, la ruta sugerida no se puede aplicar. Por eso los pacientes son parte del testeo aunque no usen la app. Los mensajes no incluyen diagnósticos (Ley 21.719), la vista tiene “Letra grande” para adultos mayores y sus cuatro pantallas pasan la auditoría WCAG AA sin errores. Versión actualizada en ' + lnk(URL_CLI) + '.</p>
 <div class="note"><b>Estado y siguientes pasos.</b> La retroalimentación de la reunión del 12 de noviembre ya está integrada (sección anterior); con ella se ajustan el guion y el prototipo v3 antes de las sesiones. Los pacientes de Josselyn participan solo si ella los invita; se complementa con personas del entorno del equipo que calcen con cada perfil.</div>
 <h3>Contenido del kit de testeo</h3>
 {table(['Documento', 'Para qué sirve'], [['Plan e hipótesis', '11 hipótesis con métrica y criterio de éxito definidos antes de testear'], ['Perfiles', '9 perfiles con criterios de reclutamiento y adaptaciones'],
@@ -411,7 +426,7 @@ def val():
 {phones([(PAC + '01_recordatorio_a.png', 'M1 · Recordatorio'), (PAC + '02_voy_en_camino_a.png', 'M2 · Voy en camino'), (PAC + '03_pago_comprobante_a.png', 'M3 · Pago y comprobante'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal'), (PAC + '05_hora_liberada_a.png', 'M5 · Hora liberada')]).replace('class="phones"', 'class="phones s6"')}'''
           + table(['Componente', 'Versión actual (v1)', 'Versión simplificada (v2)'], pr, 'tight xxs')
           + '<h3>Hallazgos que se ven en el lado del paciente</h3>' + table(['Hallazgo', 'Cómo se refleja en los mensajes'], hz, 'tight xxs')
-          + '<p class="small"><b>Verificación.</b> Las cinco pantallas pasan WCAG 2.1 AA sin errores, todos los botones miden 56 px o más y la letra mínima es de 14 px. Archivo: <code>prototipo/vista-paciente.html</code> (v1: <code>vista-paciente-v1.html</code>).</p>')
+          + '<p class="small"><b>Verificación.</b> Las cinco pantallas pasan WCAG 2.1 AA sin errores, todos los botones miden 56 px o más y la letra mínima es de 14 px. Pruébalo: ' + lnk(URL_CLI) + ' (v1 en el repositorio: <code>vista-paciente-v1.html</code>).</p>')
     return (section('s-val', 'VALIDACIÓN CON USUARIOS', 'Validación y propuesta de valor', 'Validación con usuarios externos', b)
             + section('s-vp', 'VISTA PACIENTE', 'Validación y propuesta de valor', 'Vista paciente · versión actual', b2)
             + section('s-vp2', 'VISTA PACIENTE', 'Validación y propuesta de valor', 'Vista paciente v2: simple para personas mayores', b3))
@@ -492,7 +507,7 @@ def gest():
     b = (f'<table class="gantt"><thead><tr><th>Actividad</th>{"".join(f"<th>{x}</th>" for x in w)}</tr></thead><tbody>{rows}</tbody></table>'
          + '<h3>Roles</h3>' + table(['Integrante', 'Rol'], roles, 'tight')
          + '<h3>Bitácora y evidencias</h3>' + ul(['Bitácora de avance U3 (versión S13) completa con los seis indicadores: <code>entregas/Bitacora_avance_U3_EV3.xlsx</code>.',
-                                                  'Prototipos: <code>prototipo/copiloto-kine-v1.html</code>, <code>copiloto-kine.html</code> y <code>vista-paciente.html</code>, con capturas.',
+                                                  'Prototipos publicados: vista profesional ' + lnk(URL_PRO) + ' y vista cliente ' + lnk(URL_CLI) + '; código y versiones v1 en <code>prototipo/</code>.',
                                                   'Ciclos: scripts y resultados JSON en <code>ciclo1/</code> y <code>ciclo2/</code>; kit de testeo en <code>testeo/</code>.'])
          + '<p class="small"><b>Aprendizaje de gestión.</b> Las sesiones con usuarias externas deben agendarse desde la primera semana de la unidad; esta vez quedaron para después de la reunión con la emprendedora.</p>')
     return section('s-gest', 'GESTIÓN', 'Cierre', 'Gestión de la fase y bitácora', b)
@@ -592,6 +607,13 @@ code{font-family:var(--fm);font-size:7pt;background:var(--page-card);padding:0 3
 .arq .core .t{font-family:var(--fd);font-size:17pt;line-height:1;color:var(--accent)}.arq .core .d{font-size:6.8pt;color:#C9C6DA;margin-top:1.5mm;line-height:1.35}
 .fn{display:inline-block;font-family:var(--fm);font-size:6pt;letter-spacing:.08em;text-transform:uppercase;border-radius:3px;padding:0 5px;color:#fff}
 .fn.Agregar{background:var(--ok)}.fn.Mantener{background:#7B3FA0}.fn.Quitar{background:#C2283F}
+.lk{color:#C2410C;font-weight:700;text-decoration:underline;word-break:break-all}
+.pcard{display:flex;gap:5mm;border:1px solid var(--page-border);border-left:4px solid var(--accent);border-radius:8px;padding:4mm;margin:3mm 0 4mm;break-inside:avoid;background:#fff}
+.pcard.c{border-left-color:var(--h6)}
+.pcard .ph{width:33mm;height:70mm;object-fit:cover;object-position:top;border-radius:6px;border:1px solid var(--page-border);flex:none}
+.pcard .kk{font-family:var(--fd);font-size:20pt;line-height:1;letter-spacing:.02em}.pcard .d{font-size:9pt;margin:2mm 0 4mm;color:var(--page-text2)}
+.pcard .qr{display:flex;gap:4mm;align-items:center;font-size:9pt}.pcard .qr img{width:30mm;height:30mm;border:1px solid var(--page-border);border-radius:4px}
+.cover .url{margin-top:4mm;font-family:var(--fm);font-size:7.5pt;letter-spacing:.06em}.cover .url a{color:#FF8A4C;text-decoration:none}
 .banner.vec{height:46mm;object-fit:contain;background:#F4F2FC}
 .pestal td:first-child small{font-family:var(--fb);font-size:6.6pt;letter-spacing:0;line-height:1.35;margin-top:1mm}.pestal td:first-child{width:24%}.pestal td{font-size:7.4pt;padding:2.6px 5px}.pestal td:first-child{font-size:11pt}
 .side img{object-fit:cover}
@@ -611,7 +633,7 @@ def render(body, name):
 
 
 def main_body():
-    return (portada() + indice() + intro() + ruta() + sqa() + sb1() + mk1() + pagina_cita() + f1() + r1() + cdm1() + pagina_cifras()
+    return (portada() + indice() + intro() + links() + ruta() + sqa() + sb1() + mk1() + pagina_cita() + f1() + r1() + cdm1() + pagina_cifras()
             + iter_docs() + meta() + sb2() + mk2() + f2() + r2() + cdm2() + tecnico() + retro() + retro3() + aplica() + val() + recorrido() + pagina_pv() + pv() + pestal() + arte() + pert() + sost() + gest() + concl() + refs())
 
 
