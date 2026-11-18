@@ -306,8 +306,8 @@ GANTT = [
 # ---------------------------------------------------------------- Retroalimentación 12/11 (Sercotec + clienta + docentes)
 # Fuente: ../retroalimentacion/Transcripcion_reunion_2026-11-12.md (minutos entre corchetes)
 RETRO_CONTEXTO = ('Reunión de Meet del 12 de noviembre (08:33, 40 min) con Mabel Aceituno Romero (encargada de Sercotec), la clienta Josselyn Toledo, '
-                  'el profesor a cargo Ariel O’Nell (INACAP) y Ana Luisa Aguilera, docente INACAP de otra sección que también trabajó el caso. Se revisaron cuatro propuestas de distintas secciones: una app de gestión, '
-                  'una planilla Excel, un modelo de programas grupales y la propuesta “Copiloto” (nuestra línea de trabajo, prototipos v1 y v2), leída entre el minuto 30:49 y el 35:29.')
+                  'el profesor a cargo Ariel O’Nell (INACAP) y Ana Luisa Aguilera, docente INACAP de otra sección que también trabajó el caso. Se revisaron cuatro propuestas: una herramienta de gestión integral materializada en Excel, '
+                  'una planilla Excel de gestión, un modelo de programas grupales y Copiloto Kine (nuestro equipo, carpeta “Grupo2”), leída entre el minuto 30:49 y el 35:29.')
 RETRO_HALLAZGOS = [
     ('RF1', 'No conoce una herramienta que haga esto', '“No. Así como solamente por pauta, por agenda, por horario, pero nada más que eso.”', '12:22', 'Diferenciación confirmada: las apps que usa solo agendan.'),
     ('RF2', 'Ya registra todo cada noche en el teléfono', '“Cada noche anoto todo… la ganancia, lo que gasto en bencina durante el día… cuántas sesiones hice y cuánto gané en cada sesión.”', '36:25', 'La app debe reemplazar ese hábito nocturno, no crear uno nuevo.'),
@@ -354,23 +354,27 @@ RETRO_DOCENTES.append(('Ana Luisa Aguilera (docente INACAP)', 'Las propuestas de
 RETRO_GENERALES = [
     ('Todas las secciones vieron el mismo problema', '“Las propuestas pueden ser muy similares porque todos identificaron el tema de los ingresos.” (Mabel, 38:45) · “Es el tema del agendamiento y la organización interna.” (Ana, 39:29)', 'La diferenciación no está en el problema sino en cómo se resuelve: ruta, tiempo de traslado, retención, proyección y vista paciente.'),
     ('La clienta elegirá comparando o combinando', '“Presentaciones estandarizadas… para comparar las propuestas.” (Ariel, 37:45) · “No son excluyentes… una batería de apoyo.” (Ariel, 17:33)', 'Mostrar con claridad qué hace nuestra propuesta que las otras no, y que puede convivir con ellas (exportar a Excel).'),
-    ('Hay tres modelos de apoyo en juego', 'App de gestión, planilla Excel dinámica y modelo de negocio grupal. (Ariel, 29:43)', 'Copiloto Kine puede integrar los tres: app + exportación a Excel + módulo grupal.'),
+    ('Hay tres modelos de apoyo en juego', 'App de gestión, planilla Excel dinámica y modelo de negocio grupal (Ariel, 29:43); en los documentos, dos de las cuatro propuestas se resuelven en Excel.', 'Copiloto Kine puede integrar los tres: app + exportación a Excel + módulo grupal.'),
     ('El costo es una pregunta obligada', '“Que se pueda identificar más o menos cuánto saldría.” (Mabel, 12:30) · “De muy bajo costo… plataformas liberadas.” (Ariel, 12:52)', 'Incluir un costeo del MVP y del uso mensual en la entrega final.'),
     ('Lo manual no escala', '“Al ser una planilla Excel hay que alimentarla… no va a tener la información sola.” (Mabel, 15:12)', 'La automatización (agenda, ruta, cálculo) es la ventaja frente al Excel.'),
     ('Cada propuesta refleja la formación de su equipo', 'Alumnos contables proponen desde lo contable; administración, desde la gestión. (Ariel, 02:20)', 'Nuestro aporte como Diseño Digital es la experiencia: claridad, accesibilidad, prototipo navegable y la mirada del paciente.'),
     ('La clienta está abierta y comprometida', '“Me encantaría conocerla.” (13:31) · “Muy buenas las propuestas… hay que dar una muy buena resolución.” (39:07)', 'Hay disposición para la sesión de testeo con ella.'),
 ]
-RETRO_OTRAS = [
-    ('App de gestión integral', '09:00–13:37', 'Herramienta digital para organizar pacientes y atenciones, centralizar finanzas, visualizar resultados y estrategias de captación y crecimiento.',
-     'Ariel: simple, de bajo o cero costo, en teléfono, tablet o computador; considera el costo de traslado según la distancia del paciente. Mabel pide estimar su costo. Josselyn: “me encantaría conocerla”.',
-     'Es la más parecida a la nuestra. Nos diferencian la ruta, el tiempo de traslado, la retención, la proyección y la vista paciente.'),
-    ('Planilla Excel de gestión kinesiológica', '14:07–17:33', 'Hojas de atenciones y movimientos, listas desplegables, panel mensual y anual; ingresos dependientes e independientes; estado de la atención.',
+RETRO_OTRAS = [  # descripción tomada de los documentos compartidos en pantalla y de la lectura de Mabel
+    ('Herramienta digital de gestión integral (Excel)', '09:00–13:37',
+     'Storyboard iterado con la persona “Priscilla”: organizar pacientes y atenciones, centralizar finanzas, ver resultados y planificar captación. Se materializa en una plantilla Excel reutilizable (hojas de pacientes, agenda, ingresos y gastos; cálculos automáticos; tablero con indicadores y gráficos). Mejoras previstas: guía de uso, respaldo, alertas, resúmenes mensuales y metas.',
+     'Ariel la presenta como una app simple, de bajo o cero costo, en teléfono, tablet o computador, que considere el traslado según la distancia del paciente. Mabel pide estimar su costo. Josselyn: no conoce algo así; “me encantaría conocerla”.',
+     'Es la más cercana a la nuestra, pero depende de que ella digite todo. Nos diferencian la agenda conectada, la ruta, el tiempo de traslado, la retención y la proyección.'),
+    ('Planilla Excel de gestión kinesiológica', '14:07–17:33',
+     'Problema: organizar atenciones y controlar ingresos y gastos sin una herramienta centralizada. Prototipo: hojas de atenciones y movimientos, listas desplegables (tipo, modalidad, estado, medio de pago), panel mensual y anual; separa ingresos dependientes e independientes. Costos: elaborarla, aprender a usarla, tener computador y Excel, mantenerla al día.',
      'Mabel: hay que alimentarla a mano, pero permite analizar por tipo de cliente. Josselyn: “más similar, pero más detallado” que lo que ya hace. Ariel: complementaria a una app.',
-     'Tomamos el panel mensual y anual y la exportación a Excel; superamos la carga manual.'),
-    ('Programas grupales “Movimiento y bienestar”', '21:41–29:43', 'Programas todo el año para distintas edades, convenios con empresas y municipios, talleres y pausas activas para estabilizar ingresos.',
-     'Josselyn: lo terapéutico es individual (y la psicomotricidad acuática también); lo grupal preventivo para adultos mayores en Las Cabras sí. Ariel: ejemplo de gimnasia acuática grupal muy rentable en Rancagua.',
-     'Incorporamos clases grupales como acción de la proyección y módulo de cupos y cobro por persona.'),
-    ('Copiloto (nuestra línea)', '30:49–35:29', 'Copiloto financiero: cada cita se vuelve ingreso, ganancia neta con comisión, traslado y materiales; tablero con semáforo; v1 y v2; $20–25 mil/mes de referencia.',
-     'Mabel lo explica con un ejemplo de domicilio en Rengo y valores estimados de bencina. Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”.',
+     'Tomamos el panel mensual y anual, el estado de la atención y la exportación a Excel; superamos la carga manual.'),
+    ('Programas grupales “Movimiento y bienestar todo el año”', '21:41–29:43',
+     'Modelo de negocio en 6 escenas: la estacionalidad corta la continuidad e ingresos; escuchar a niños, adultos, mayores y trabajadores; programa anual adaptado por edad; convenios con empresas y municipalidades; talleres de movimiento, recreación y pausas activas; evaluar asistencia, costos y permanencia.',
+     'Josselyn: lo terapéutico (y la psicomotricidad acuática) es individual; lo grupal preventivo para adultos mayores en Las Cabras sí le interesa. Ariel: ejemplo de gimnasia acuática grupal muy rentable en Rancagua.',
+     'Incorporamos clases grupales como acción de la proyección y un módulo de cupos y cobro por persona.'),
+    ('Copiloto Kine (nuestro equipo, carpeta “Grupo2”)', '30:49–35:29',
+     'App web: cada cita de la agenda se vuelve ingreso; ganancia neta con comisión, traslado y materiales; tablero con semáforo; v1 (atención, tablero, proyección) y v2 (retención y colchón, domicilios por sector, horas libres, cierre antes de las 21 h); $20–25 mil/mes de referencia.',
+     'Mabel lo explica con un domicilio en Rengo y valores estimados de bencina. Josselyn: “eso hago yo igual en el teléfono… simplemente no tengo esa aplicación”.',
      'Valida el núcleo; corregimos AgendaPro, factura mensual de clínica y ganancia por hora por canal.'),
 ]

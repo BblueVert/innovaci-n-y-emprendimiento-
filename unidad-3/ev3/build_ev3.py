@@ -305,7 +305,7 @@ def retro3():
     gen = [[f'<b>{t}</b>', f'<span class="muted">{e}</span>', i] for t, e, i in C.RETRO_GENERALES]
     otr = [[f'<b>{n}</b><br><span class="code b">{m}</span>', d, r, i] for n, m, d, r, i in C.RETRO_OTRAS]
     b = ('<h3 style="margin-top:1mm">Hallazgos generales de la conversación</h3>' + table(['Hallazgo', 'Evidencia', 'Qué hacemos con esto'], gen, 'tight xxs')
-         + '<h3>Las otras propuestas revisadas</h3>' + table(['Propuesta', 'Qué plantea', 'Reacción en la reunión', 'Qué tomamos'], otr, 'tight xxs'))
+         + '<h3>Las otras propuestas revisadas</h3>' + table(['Propuesta', 'Cómo lo propone', 'Reacción en la reunión', 'Qué tomamos'], otr, 'tight xxs'))
     return section('s-retro3', 'RETROALIMENTACIÓN 12/11', 'Validación y propuesta de valor', 'Hallazgos generales y otras propuestas', b)
 
 
