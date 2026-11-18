@@ -94,7 +94,7 @@ def ruta():
     return slide(head('Ruta metodológica', 'Dos ciclos con focos distintos y uno preparado con usuarios') + f'<div class="chain">{ch}</div>' + f'''
 <div class="row" style="margin-top:4mm"><div class="card"><div class="t">Ciclo 1 · funcional y estético</div>¿Puede una kinesióloga hacer su día sin ayuda? ¿Se lee, se toca y se entiende? Medido con tareas, auditoría WCAG 2.1 AA, objetivos táctiles, tamaño de letra y heurísticas de Nielsen.</div>
 <div class="card"><div class="t">Ciclo 2 · técnico</div>¿Resuelve con exactitud sus necesidades puntuales? Cálculo por atención, cierre del día, persistencia, costos editables, exportación sin datos clínicos, rendimiento y brechas.</div>
-<div class="card"><div class="t">Ciclo con usuarios · preparado</div>Kit completo con 10 hipótesis y 9 perfiles. Se suma la retroalimentación de la emprendedora (reunión del jueves 12/11) antes de aplicar las sesiones.</div></div>
+<div class="card"><div class="t">Ciclo con usuarios · preparado</div>Kit completo con 11 hipótesis y 9 perfiles. Se suma la retroalimentación de la emprendedora (reunión del jueves 12/11) antes de aplicar las sesiones.</div></div>
 <p class="note" style="margin-top:4mm"><b>Transparencia.</b> Los ciclos 1 y 2 los ejecutó el equipo como usuarios internos (lo permite el toolkit) con scripts reproducibles en <code>unidad-3/ciclo1</code> y <code>ciclo2</code>. Los resultados con usuarias y pacientes reales se marcan como pendientes: no inventamos respuestas de personas reales.</p>''', '3.1.1 · 3.1.2')
 
 
@@ -255,8 +255,8 @@ def perfiles():
 
 def paciente():
     return slide(head('Nuevo estímulo · vista paciente', 'Lo que recibe el paciente cuando su kine usa Copiloto Kine') + '<div class="col2"><div class="a">'
-                 + phones([(PAC + '01_recordatorio.png', 'M1 · Recordatorio', 'Ventana de 30 min (H5)'), (PAC + '02_voy_en_camino.png', 'M2 · Voy en camino', 'Tranquilidad (H6)'),
-                           (PAC + '03_comprobante.png', 'M3 · Comprobante', 'Sin diagnóstico (H7)'), (PAC + '04_hora_liberada.png', 'M4 · Hora liberada', 'Precio preferente (H10)')], crop=True)
+                 + phones([(PAC + '01_recordatorio_a.png', 'M1 · Recordatorio', 'Llego cerca de las 12:30 (H5)'), (PAC + '02_voy_en_camino_a.png', 'M2 · Voy en camino', 'Hora exacta (H6)'),
+                           (PAC + '03_pago_comprobante_a.png', 'M3 · Pago', 'Copia al familiar (H7)'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal', 'Personas mayores (H11)')], crop=True)
                  + '''</div><div class="b" style="flex:.55"><div class="card"><div class="t">Por qué</div>La ruta sugerida (−7 km/día) solo funciona si el paciente acepta una
 ventana de llegada. Es la hipótesis más riesgosa del modelo y no se puede probar con kinesiólogas.</div>
 <div class="card" style="margin-top:3mm"><div class="t">Accesibilidad</div>Botón “Letra grande” para adultos mayores, botones de 44 px y 0 errores WCAG AA en los 4 mensajes.</div>
@@ -322,7 +322,7 @@ def gestion():
 def conclusiones():
     return slide(head('Cierre', 'Conclusiones y próximos pasos') + '''<div class="row">
 <div class="card"><div class="t">Aprendimos</div><ul><li>Medir tareas y accesibilidad da evidencia más útil que preguntar si “gusta”.</li><li>“Automático” sin “corregible” genera registros falsos.</li><li>La ruta es tan valiosa como el tablero: la metáfora se movió hacia el copiloto.</li><li>El paciente también es usuario: sin su ventana horaria no hay ruta optimizada.</li></ul></div>
-<div class="card"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas; cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
+<div class="card"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas; cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 11 hipótesis y 9 perfiles.</li></ul></div>
 <div class="card"><div class="t">Sigue</div><ul><li><b>Jue 12/11:</b> integrar la retroalimentación de la emprendedora.</li><li><b>17–19/11:</b> sesiones con Josselyn, Catalina, pacientes y contadora.</li><li><b>20/11:</b> consolidar, CDM con usuarios y decisiones v3.</li><li><b>UA4:</b> MVP con agenda real, respaldo en la nube y enlace wa.me.</li></ul></div></div>''', 'Cierre')
 
 

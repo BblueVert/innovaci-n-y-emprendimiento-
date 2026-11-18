@@ -16,6 +16,7 @@ import build_kit as K  # noqa: E402
 
 VEC = 'img/vec/'
 V1, V2, PAC = '../prototipo/capturas_v1/', '../prototipo/capturas_v2/', '../prototipo/capturas_paciente/'
+PAC1 = '../prototipo/capturas_paciente_v1/'
 PEND = '<span class="pend">Pendiente de sesión</span>'
 ANEXO_PAGE = '—'
 
@@ -47,6 +48,7 @@ STMT = {
     
     's-retro3': 'Todos vieron el mismo problema: <b>la diferencia está en cómo se resuelve</b>.',
     's-aplica': 'De la conversación a <b>cambios medibles</b>.',
+    's-vp2': 'Un mensaje, <b>una decisión</b>.',
     's-pac': 'Cada escena del paciente <b>es una hipótesis</b>.',
     's-meta': 'La metáfora pasa <b>del tablero al copiloto</b>.',
     's-sb2': 'El mismo día, <b>con lo que aprendimos</b>.',
@@ -142,7 +144,7 @@ def indice():
              ('Testeo · ciclo 1 funcional y estético', [('3.1.2.3', 's-f1', 'Ficha de planificación del testeo'), ('Ciclo 1', 's-r1', 'Resultados: tareas, accesibilidad y heurísticas'), ('3.1.2.4', 's-cdm1', 'Matriz CDM con propuesta de valor')]),
              ('Iteración · versión 2', [('Iteración', 's-iter', 'De la versión actual a la actualizada'), ('3.1.3.1', 's-meta', 'Panel de metáforas y atributos iterado'), ('3.1.3.2', 's-sb2', 'Storyboard iterado'), ('3.1.3.3', 's-mk2', 'Mock-up iterado y ajustes fundamentados')]),
              ('Testeo · ciclo 2 técnico', [('3.1.3.4', 's-f2', 'Ficha de planificación del testeo de la iteración'), ('Ciclo 2', 's-r2', 'Resultados técnicos y cobertura de requerimientos'), ('3.1.2.4', 's-cdm2', 'Brechas y matriz CDM del ciclo 2'), ('Técnica', 's-tec', 'Propuesta técnica v3: integraciones y funcionalidades')]),
-             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('12/11', 's-retro3', 'Hallazgos generales y otras propuestas revisadas'), ('12/11', 's-aplica', 'Cómo aplicamos los hallazgos'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
+             ('Validación y propuesta de valor', [('12/11', 's-retro', 'Retroalimentación de la clienta y Sercotec'), ('12/11', 's-retro2', 'Patrones y cambios a la propuesta'), ('12/11', 's-retro3', 'Hallazgos generales y otras propuestas revisadas'), ('12/11', 's-aplica', 'Cómo aplicamos los hallazgos'), ('Usuarios', 's-val', 'Validación con usuarios externos: kit de testeo'), ('Paciente', 's-pac', 'Storyboard del paciente'), ('Paciente', 's-vp', 'Vista paciente · versión actual'), ('Paciente', 's-vp2', 'Vista paciente v2 para personas mayores'), ('3.1.5', 's-pv', 'Propuesta de valor iterada')]),
              ('Estado del arte y pertinencia', [('3.1.4.1', 's-pestal', 'Matriz PESTAL profundizada'), ('3.1.4', 's-arte', 'Estado del arte y tendencias'), ('3.1.5', 's-pert', 'Pertinencia de la propuesta de valor')]),
              ('Cierre', [('Sost.', 's-sost', 'Enfoque sostenible'), ('Gestión', 's-gest', 'Gestión de la fase y bitácora'), ('Cierre', 's-concl', 'Conclusiones y próximos pasos'), ('Ref.', 's-ref', 'Referencias')])]
     out = ''
@@ -393,18 +395,26 @@ def val():
 <figure><img src="img/storyboard/personajes/camila.jpg"><figcaption><b>Camila</b>Paciente · estudiante con dolor de espalda</figcaption></figure>
 <figure><img src="{VEC}19-pacientes.png" style="object-position:50% 70%"><figcaption><b>Otros perfiles</b>Cuidadora, oficina, turnos y deportista</figcaption></figure></div>
 <div class="pfs2">{pf}</div>
-<h3>Hipótesis y criterios de éxito</h3>{table(['#', 'Público', 'Hipótesis', 'Éxito si…', 'Resultado'], hip, 'tight xs')}
+<h3>Hipótesis y criterios de éxito</h3>{table(['#', 'Público', 'Hipótesis', 'Éxito si…', 'Resultado'], hip, 'tight xxs')}
 '''
-    b2 = f'''<p class="lead">Las kinesiólogas usan la app; los pacientes solo reciben sus mensajes. Para testear con ellos construimos una vista que simula los cuatro mensajes que recibirían por WhatsApp.</p>
-{phones([(PAC + '01_recordatorio.png', 'M1 · Recordatorio · H5'), (PAC + '02_voy_en_camino.png', 'M2 · Voy en camino · H6'), (PAC + '03_comprobante.png', 'M3 · Comprobante · H7'), (PAC + '04_hora_liberada.png', 'M4 · Hora liberada · H10')]).replace('class="phones"', 'class="phones big"')}
+    b2 = f'''<p class="lead">Las kinesiólogas usan la app; los pacientes solo reciben sus mensajes. La <b>versión actual</b> de la vista paciente simula cuatro mensajes de WhatsApp. Tras la reunión del 12/11 se itera a una versión simplificada para personas mayores (página siguiente).</p>
+{phones([(PAC1 + '01_recordatorio.png', 'v1 · M1 Recordatorio'), (PAC1 + '02_voy_en_camino.png', 'v1 · M2 Voy en camino'), (PAC1 + '03_comprobante.png', 'v1 · M3 Comprobante'), (PAC1 + '04_hora_liberada.png', 'v1 · M4 Hora liberada')]).replace('class="phones"', 'class="phones big"')}
 <p class="small">La hipótesis más riesgosa del modelo es H5: si los pacientes no aceptan una ventana de llegada de 30 minutos, la ruta sugerida no se puede aplicar. Por eso los pacientes son parte del testeo aunque no usen la app. Los mensajes no incluyen diagnósticos (Ley 21.719), la vista tiene “Letra grande” para adultos mayores y sus cuatro pantallas pasan la auditoría WCAG AA sin errores. Archivo: <code>prototipo/vista-paciente.html</code>.</p>
 <div class="note"><b>Estado y siguientes pasos.</b> La retroalimentación de la reunión del 12 de noviembre ya está integrada (sección anterior); con ella se ajustan el guion y el prototipo v3 antes de las sesiones. Los pacientes de Josselyn participan solo si ella los invita; se complementa con personas del entorno del equipo que calcen con cada perfil.</div>
 <h3>Contenido del kit de testeo</h3>
-{table(['Documento', 'Para qué sirve'], [['Plan e hipótesis', '10 hipótesis con métrica y criterio de éxito definidos antes de testear'], ['Perfiles', '9 perfiles con criterios de reclutamiento y adaptaciones'],
+{table(['Documento', 'Para qué sirve'], [['Plan e hipótesis', '11 hipótesis con métrica y criterio de éxito definidos antes de testear'], ['Perfiles', '9 perfiles con criterios de reclutamiento y adaptaciones'],
         ['Guiones A, B y C', 'Kinesiólogas (40–60 min), pacientes (15 min) y contadora (20 min)'], ['Consentimiento informado', 'Participación voluntaria, sin datos de salud (Ley 21.719)'],
         ['Pautas y cuestionarios', 'Observación de tareas, encuesta de pacientes y escala SUS'], ['Matriz de consolidación', 'Regla de decisión por hipótesis: mantener, iterar o descartar']], 'tight')}'''
+    pr = [[f'<b>{a}</b>', f'<span class="muted">{v1}</span>', v2] for a, v1, v2 in C.PAC_PRINCIPIOS]
+    hz = [[f'<b>{h}</b>', c] for h, c in C.PAC_HALLAZGOS]
+    b3 = (f'''<p class="small">Muchos pacientes de Josselyn son personas mayores atendidas a domicilio, como don Luis. La v2 simplifica el flujo y los componentes: cada mensaje pide una sola decisión, con letra y botones grandes, la hora exacta y ayuda siempre a mano. Además incorpora los hallazgos del 12/11.</p>
+{phones([(PAC + '01_recordatorio_a.png', 'M1 · Recordatorio'), (PAC + '02_voy_en_camino_a.png', 'M2 · Voy en camino'), (PAC + '03_pago_comprobante_a.png', 'M3 · Pago y comprobante'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal'), (PAC + '05_hora_liberada_a.png', 'M5 · Hora liberada')]).replace('class="phones"', 'class="phones s6"')}'''
+          + table(['Componente', 'Versión actual (v1)', 'Versión simplificada (v2)'], pr, 'tight xxs')
+          + '<h3>Hallazgos que se ven en el lado del paciente</h3>' + table(['Hallazgo', 'Cómo se refleja en los mensajes'], hz, 'tight xxs')
+          + '<p class="small"><b>Verificación.</b> Las cinco pantallas pasan WCAG 2.1 AA sin errores, todos los botones miden 56 px o más y la letra mínima es de 14 px. Archivo: <code>prototipo/vista-paciente.html</code> (v1: <code>vista-paciente-v1.html</code>).</p>')
     return (section('s-val', 'VALIDACIÓN CON USUARIOS', 'Validación y propuesta de valor', 'Validación con usuarios externos', b)
-            + section('s-vp', 'VISTA PACIENTE', 'Validación y propuesta de valor', 'Nuevo estímulo: vista paciente', b2))
+            + section('s-vp', 'VISTA PACIENTE', 'Validación y propuesta de valor', 'Vista paciente · versión actual', b2)
+            + section('s-vp2', 'VISTA PACIENTE', 'Validación y propuesta de valor', 'Vista paciente v2: simple para personas mayores', b3))
 
 
 def pagina_pv():
@@ -490,7 +500,7 @@ def gest():
 
 def concl():
     b = '''<div class="grid3"><div class="box"><div class="t">Aprendimos</div><ul><li>Medir tareas, accesibilidad y exactitud da evidencia más útil que preguntar si “gusta”.</li><li>“Automático” sin “corregible” genera registros falsos.</li><li>La ruta es tan valiosa como el tablero: la metáfora se movió al copiloto.</li><li>El paciente también es usuario: sin su ventana horaria no hay ruta.</li></ul></div>
-<div class="box"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas: cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 10 hipótesis y 9 perfiles.</li></ul></div>
+<div class="box"><div class="t">Logramos</div><ul><li>Prototipo v2 navegable: 11/11 tareas, 0 errores WCAG AA.</li><li>11/11 pruebas técnicas: cálculo exacto y exportación sin datos clínicos.</li><li>8 de 13 requerimientos cumplidos (4 parciales) y 7 brechas priorizadas.</li><li>Kit de testeo con 11 hipótesis y 9 perfiles.</li></ul></div>
 <div class="box"><div class="t">Sigue</div><ul><li>Retroalimentación del 12/11 integrada: AgendaPro, ganancia por hora por canal y clases grupales al prototipo v3.</li><li>Sesiones con Josselyn, Catalina, pacientes y contadora.</li><li>Consolidar: SUS, CDM con usuarios y decisiones v3.</li><li>UA4: MVP con agenda real, respaldo en la nube y aviso por WhatsApp.</li></ul></div></div>
 <h3>Conclusión</h3><p>La Unidad 3 convirtió una propuesta de valor en un prototipo que se puede usar, medir y corregir. Testear en dos ciclos con focos distintos permitió arreglar primero la experiencia y después verificar que la herramienta resuelve con exactitud las necesidades puntuales de la kinesióloga. La propuesta iterada es más honesta —promete solo lo que el prototipo demuestra— y más amplia, porque incorpora la ruta y al paciente. El siguiente paso es llevarla a las personas.</p>
 <img class="banner" src="img/05-entrevista.jpg">'''
@@ -585,7 +595,7 @@ code{font-family:var(--fm);font-size:7pt;background:var(--page-card);padding:0 3
 .banner.vec{height:46mm;object-fit:contain;background:#F4F2FC}
 .pestal td:first-child small{font-family:var(--fb);font-size:6.6pt;letter-spacing:0;line-height:1.35;margin-top:1mm}.pestal td:first-child{width:24%}.pestal td{font-size:7.4pt;padding:2.6px 5px}.pestal td:first-child{font-size:11pt}
 .side img{object-fit:cover}
-#s-indice .toc li{padding:.45mm 0;font-size:8pt}#s-indice .toc .grp{margin:1.5mm 0 0}#s-indice h2{margin-bottom:0}#s-indice .stmt{display:none}
+#s-indice .toc li{padding:.3mm 0;font-size:7.6pt;line-height:1.35}#s-indice .toc .grp{margin:1.1mm 0 0;font-size:6.2pt}#s-indice h2{margin-bottom:0}#s-indice .stmt{display:none}
 .phones.s6 figure{width:25.5mm}.phones.s6 img{width:25.5mm;height:55.2mm}
 .phones.big figure{width:38mm}.phones.big img{width:38mm;height:82.2mm}
 table.xs{font-size:7.3pt}table.xs td{padding:2.6px 5px}

@@ -37,7 +37,8 @@ HIP = [
     ('H7', 'Pacientes', 'El comprobante sin diagnóstico les sirve (incluido reembolso).', '¿Le falta algo para usarlo?', '≥ 80 % lo considera suficiente', 'B6 · Ley 21.719 · R13'),
     ('H8', 'Adulto mayor', 'Lee y responde el recordatorio solo o con letra grande.', 'Completa M1 sin ayuda del moderador', '≥ 2 de 3 participantes', 'Brecha digital · PESTAL social'),
     ('H9', 'Contadora', 'El resumen exportado alcanza para la declaración mensual y anual.', 'Lista de verificación de la contadora', 'Sin campos faltantes críticos', 'P6 ciclo 2 · R12'),
-    ('H10', 'Pacientes', 'Una hora liberada a precio preferente les interesa y no se siente invasiva.', 'Respuesta a M4', '≥ 50 % la tomaría · 0 la percibe como spam', 'Idea EV2 (referente Too Good To Go) · R11'),
+    ('H10', 'Pacientes', 'Una hora liberada a precio preferente les interesa y no se siente invasiva.', 'Respuesta a M5', '≥ 50 % la tomaría · 0 la percibe como spam', 'Idea EV2 (referente Too Good To Go) · R11'),
+    ('H11', 'Adultos mayores', 'Una clase grupal de movimiento cercana les interesa (con acompañante).', 'Respuesta a M4', '≥ 50 % se inscribiría', 'Retroalimentación 12/11 (RF10) · propuesta grupal'),
 ]
 
 # ---------------------------------------------------------------- perfiles
@@ -53,22 +54,22 @@ PERF = [
          s='Exportación CSV + vista “Mi plata”', h='H3 · H9', m='Remota · 20 min', a='Enviar el CSV de ejemplo con anticipación.'),
     dict(c='P1', n='“Don Luis”', t='Adulto mayor atendido a domicilio', tipo='p',
          d='70 años o más. Rehabilitación tras una caída o por artrosis. Vive en Machalí con su familia. Usa WhatsApp, con letra grande.',
-         s='Vista paciente: M1 y M2 (con “Letra grande”)', h='H5 · H6 · H8', m='Presencial, idealmente en su casa · 15 min', a='Leer en voz alta si lo pide; frases cortas; un mensaje a la vez; permitir acompañante.'),
+         s='Vista paciente v2: M1, M2, M3 y M4', h='H5 · H6 · H8 · H11', m='Presencial, idealmente en su casa · 15 min', a='Leer en voz alta si lo pide; frases cortas; un mensaje a la vez; permitir acompañante.'),
     dict(c='P2', n='“Marcela”', t='Cuidadora familiar', tipo='p',
          d='40 a 60 años. Coordina las sesiones de su madre o padre mientras trabaja. Paga por transferencia y guarda las boletas.',
          s='Vista paciente: M1, M2 y M3', h='H5 · H6 · H7', m='Presencial o remota · 15 min', a='Preguntar por quién recibe los mensajes: ella o su familiar.'),
     dict(c='P3', n='“Camila”', t='Estudiante con dolor de espalda', tipo='p',
          d='18 a 25 años. Dolor lumbar o cervical por postura y horas de notebook. Presupuesto ajustado. Agenda todo desde el celular.',
-         s='Vista paciente: M1, M3 y M4', h='H5 · H7 · H10', m='Presencial en INACAP · 15 min', a='Explorar sensibilidad al precio y packs.'),
+         s='Vista paciente: M1, M3 y M5', h='H5 · H7 · H10', m='Presencial en INACAP · 15 min', a='Explorar sensibilidad al precio y packs.'),
     dict(c='P4', n='“Rodrigo”', t='Trabajador de oficina o teletrabajo', tipo='p',
          d='30 a 45 años. Cervicalgia o tendinitis por trabajo en computador. Agenda rígida; pide reembolso a su Isapre o seguro.',
          s='Vista paciente: M1 y M3', h='H5 · H7', m='Remota o presencial · 15 min', a='Explorar si una ventana de 30 min le complica el horario laboral.'),
     dict(c='P5', n='“Luis”', t='Trabajador por turnos (minería o industria)', tipo='p',
          d='35 a 55 años. Lumbalgia no laboral. Sistema de turnos 7×7: solo puede atenderse en sus días libres.',
-         s='Vista paciente: M1 y M4', h='H5 · H10', m='Presencial o remota · 15 min', a='Explorar agendamiento en bloques de días libres.'),
+         s='Vista paciente: M1 y M5', h='H5 · H10', m='Presencial o remota · 15 min', a='Explorar agendamiento en bloques de días libres.'),
     dict(c='P6', n='“Valentina”', t='Deportista amateur', tipo='p',
          d='20 a 35 años. Esguince o tendinopatía por running o fútbol. Quiere volver rápido a entrenar; flexible en horario.',
-         s='Vista paciente: M1, M2 y M4', h='H6 · H10', m='Presencial · 15 min', a='Explorar interés en horas liberadas de último minuto.'),
+         s='Vista paciente: M1, M2 y M5', h='H6 · H10', m='Presencial · 15 min', a='Explorar interés en horas liberadas de último minuto.'),
 ]
 
 TAREAS = [
@@ -105,12 +106,13 @@ DECISION = [
     ('H8', 'Mensajes en texto con letra del sistema.', 'Versión con nota de voz o envío al cuidador.'),
     ('H9', 'Mantener columnas del CSV.', 'Agregar las columnas que pida la contadora (folio de boleta, RUT).'),
     ('H10', 'Incluir horas liberadas en la fase 2.', 'Descartar o dejar solo para pacientes que lo activen.'),
+    ('H11', 'Lanzar una clase piloto para personas mayores en Las Cabras.', 'Probar otro formato (parque o sede) o dejarla para la fase 2.'),
 ]
 
 
 # ---------------------------------------------------------------- páginas
 def portada():
-    chips = ''.join(f'<span class="chip">{c}</span>' for c in ['3.1.2.3 Ficha de planificación', '3.1.3.4 Testeo de la iteración', '10 hipótesis', '9 perfiles', '3 guiones', 'Formularios imprimibles'])
+    chips = ''.join(f'<span class="chip">{c}</span>' for c in ['3.1.2.3 Ficha de planificación', '3.1.3.4 Testeo de la iteración', '11 hipótesis', '9 perfiles', '3 guiones', 'Formularios imprimibles'])
     return f'''<div class="cover"><div class="bar"></div><img class="hero" src="../ev3/img/01-portada.jpg">
 <div><div class="inst" style="color:var(--accent)">Innovación y Emprendimiento III · INACAP Rancagua</div></div>
 <div><h1>KIT DE<br>TESTEO</h1><div class="sub">COPILOTO KINE · PROTOTIPO V2</div>
@@ -156,7 +158,7 @@ def plan():
 def plan2():
     filas = [
         ['Validar uso y valor con kinesiólogas', 'K1 Josselyn · K2 Catalina', 'Prototipo Kine v2 en su celular', 'Tareas T1–T11, SUS, preguntas CDM, precio', 'Mod.: Claudia · Obs.: Francisco · Téc.: Néstor', 'H1 · H2 · H3 · H4', 'Clínica o remota', '40–60 min'],
-        ['Validar mensajes con pacientes', 'P1–P6 · 1 a 2 por perfil', 'Vista paciente (M1–M4)', 'Lectura y reacción a cada mensaje, encuesta breve', 'Mod.: Claudia o Benjamín · Obs.: Néstor', 'H5 · H6 · H7 · H8 · H10', 'Domicilio, INACAP o remota', '15 min'],
+        ['Validar mensajes con pacientes', 'P1–P6 · 1 a 2 por perfil', 'Vista paciente v2 (M1–M5)', 'Lectura y reacción a cada mensaje, encuesta breve', 'Mod.: Claudia o Benjamín · Obs.: Néstor', 'H5 · H6 · H7 · H8 · H10', 'Domicilio, INACAP o remota', '15 min'],
         ['Validar exactitud y entrega contable', 'C1 contadora', 'CSV + “Mi plata”', 'Revisión guiada con lista de verificación', 'Benjamín', 'H3 · H9', 'Remota', '20 min'],
     ]
     crono = [('Jue 12 nov · 8:30', 'Reunión con retroalimentación de la emprendedora (grabación del profesor)', 'Insumo F0'),
@@ -195,9 +197,9 @@ edades, trabajos y dolencias frecuentes en la consulta particular. Los nombres d
 
 def estimulos():
     shots = [('../prototipo/capturas_v2/01_tablero.png', 'Kine · Tablero'), ('../prototipo/capturas_v2/02_ruta_sugerida.png', 'Kine · Ruta'),
-             ('../prototipo/capturas_v2/06_agenda.png', 'Kine · Agenda'), ('../prototipo/capturas_paciente/01_recordatorio.png', 'M1 · Recordatorio'),
-             ('../prototipo/capturas_paciente/02_voy_en_camino.png', 'M2 · Voy en camino'), ('../prototipo/capturas_paciente/03_comprobante.png', 'M3 · Comprobante'),
-             ('../prototipo/capturas_paciente/04_hora_liberada.png', 'M4 · Hora liberada')]
+             ('../prototipo/capturas_v2/06_agenda.png', 'Kine · Agenda'), ('../prototipo/capturas_paciente/01_recordatorio_a.png', 'M1 · Recordatorio'),
+             ('../prototipo/capturas_paciente/02_voy_en_camino_a.png', 'M2 · Voy en camino'), ('../prototipo/capturas_paciente/03_pago_comprobante_a.png', 'M3 · Pago'),
+             ('../prototipo/capturas_paciente/04_clase_grupal_a.png', 'M4 · Clase grupal')]
     ph = ''.join(f'<figure><img src="{s}"><figcaption>{t}</figcaption></figure>' for s, t in shots)
     b = f'''<p class="lead">Dos prototipos navegables en el celular. El de la kinesióloga es el v2 iterado tras los ciclos 1 y 2; la <b>vista paciente</b>
 es nueva: simula los mensajes que el paciente recibiría por WhatsApp cuando su kine usa Copiloto Kine. No envía nada y no muestra datos clínicos.</p>
@@ -206,7 +208,7 @@ es nueva: simula los mensajes que el paciente recibiría por WhatsApp cuando su 
         ['M1 · Recordatorio con ventana de llegada', 'Si el paciente acepta 30 min de holgura para que la ruta se ordene.', 'H5 · H8'],
         ['M2 · Voy en camino', 'Comprensión del aviso y tranquilidad en la espera.', 'H6'],
         ['M3 · Comprobante', 'Si sirve para trámites y reembolsos sin diagnóstico.', 'H7'],
-        ['M4 · Hora liberada', 'Interés por horas de último minuto a precio preferente.', 'H10']], 'tight')}
+        ['M4 · Clase grupal (personas mayores)', 'Interés por una clase de movimiento cercana, con acompañante.', 'H11'], ['M5 · Hora liberada (pacientes activos)', 'Interés por horas de último minuto a precio preferente.', 'H10']], 'tight')}
 <p class="small muted">Antes de cada sesión: abrir la pestaña que corresponde, usar “Cambiar nombre del paciente” con el nombre del participante
 y activar “Letra grande” para P1.</p>'''
     return section('k-est', 'ESTÍMULOS', 'Lo que se muestra', 'Prototipos de la sesión', b)
@@ -241,18 +243,18 @@ def guion_b():
         ('3 · M1 Recordatorio', '3 min', '“Te llega este mensaje. ¿Qué entiendes? ¿Qué responderías?” → ¿Te acomoda una ventana de 30 min? ¿Por qué?'),
         ('4 · M2 Voy en camino', '2 min', '“¿Qué te dice este mensaje? ¿Te sirve? ¿Qué le cambiarías?”'),
         ('5 · M3 Comprobante', '2 min', '“¿Para qué usarías este comprobante? ¿Le falta algo?” (reembolso, Isapre, Fonasa, seguro)'),
-        ('6 · M4 Hora liberada', '2 min', '“¿La tomarías? ¿Te molestaría recibir este tipo de mensaje?”'),
+        ('6 · M4 Clase grupal / M5 Hora liberada', '2 min', 'Personas mayores: “¿Iría a esta clase? ¿Con quién?” · Pacientes activos: “¿La tomarías? ¿Te molestaría recibir este tipo de mensaje?”'),
         ('7 · Privacidad', '1 min', '“¿Te parece bien que tu kine use una app para ordenar su día? ¿Qué datos tuyos no te gustaría que estuvieran ahí?”'),
         ('8 · Encuesta y cierre', '2 min', 'Encuesta breve (formulario) y agradecer.'),
     ]
     adap = [['P1 Adulto mayor', 'Activar “Letra grande”. Leer en voz alta si lo pide. Permitir que responda el acompañante, anotando quién respondió. Medir H8: ¿lo resolvió sin ayuda?'],
             ['P2 Cuidadora', 'Preguntar quién debería recibir cada mensaje: ella, su familiar o ambos. Usar “Enviar boleta a otro correo” en M3.'],
-            ['P3 Estudiante', 'Profundizar en M4 y precio: ¿cuánto pagaría por sesión? ¿Packs?'],
+            ['P3 Estudiante', 'Profundizar en M5 y precio: ¿cuánto pagaría por sesión? ¿Packs?'],
             ['P4 Oficina', 'En M1, explorar “Necesito una hora exacta”: ¿le sirve la ventana con su horario laboral?'],
-            ['P5 Turnos 7×7', 'En M1 y M4: ¿cómo agenda en sus días libres? ¿Le sirve reservar un bloque de sesiones?'],
-            ['P6 Deportista', 'En M4: ¿tomaría horas de último minuto? ¿Le interesa seguir su avance?']]
+            ['P5 Turnos 7×7', 'En M1 y M5: ¿cómo agenda en sus días libres? ¿Le sirve reservar un bloque de sesiones?'],
+            ['P6 Deportista', 'En M5: ¿tomaría horas de último minuto? ¿Le interesa seguir su avance?']]
     b = f'''<div class="inst-card"><div class="col"><div class="lbl">Participantes</div>P1–P6 · 1 a 2 por perfil</div><div class="col"><div class="lbl">Duración</div>15 min</div>
-<div class="col"><div class="lbl">Estímulo</div>vista-paciente.html (M1–M4)</div><div class="col"><div class="lbl">Hipótesis</div>H5 · H6 · H7 · H8 · H10</div></div>
+<div class="col"><div class="lbl">Estímulo</div>vista-paciente.html v2 (M1–M5)</div><div class="col"><div class="lbl">Hipótesis</div>H5 · H6 · H7 · H8 · H10 · H11</div></div>
 {table(['Bloque', 'Tiempo', 'Qué decir o hacer'], pasos, 'tight')}
 <h3>Adaptaciones por perfil</h3>{table(['Perfil', 'Ajuste de la sesión'], adap, 'tight')}'''
     return section('k-gb', 'GUION B', 'Guion de sesión · pacientes', 'Guion B · Pacientes', b)
@@ -303,7 +305,7 @@ def pauta():
 
 def pauta_b():
     msgs = [('M1', 'Recordatorio', '¿Confirma la ventana de 30 min? ☐ Sí ☐ Pide hora exacta ☐ Cambia'), ('M2', 'Voy en camino', '¿Lo entiende sin ayuda? ☐ Sí ☐ No'),
-            ('M3', 'Comprobante', '¿Le sirve para sus trámites? ☐ Sí ☐ Le falta algo'), ('M4', 'Hora liberada', '¿La tomaría? ☐ Sí ☐ No ☐ Lo siente invasivo')]
+            ('M3', 'Comprobante', '¿Le sirve para sus trámites? ☐ Sí ☐ Le falta algo'), ('M4', 'Clase grupal', '¿Iría? ☐ Sí ☐ Con acompañante ☐ No'), ('M5', 'Hora liberada', '¿La tomaría? ☐ Sí ☐ No ☐ Lo siente invasivo')]
     rows = ''.join(f'<tr><td><b>{a}</b></td><td>{b_}</td><td class="sm">{c}</td><td></td></tr>' for a, b_, c in msgs)
     b = f'''<table class="form head"><tbody><tr><td>Código</td><td></td><td>Perfil</td><td>☐ P1 ☐ P2 ☐ P3 ☐ P4 ☐ P5 ☐ P6</td></tr>
 <tr><td>Edad (rango)</td><td>☐ 18–29 ☐ 30–44 ☐ 45–59 ☐ 60–74 ☐ 75+</td><td>¿Atención previa?</td><td>☐ Consulta ☐ Domicilio ☐ Nunca</td></tr></tbody></table>
@@ -337,7 +339,7 @@ sueltas: si se cumple el criterio, se mantiene; si no, ya sabemos qué cambiar.<
 {table(['Dato', 'Cómo se procesa', 'Dónde queda'], [
         ['Éxito y toques por tarea (pauta A)', 'Tasa de éxito por tarea = S / participantes; promedio de toques y tiempo; frases textuales agrupadas por tema.', 'Tabla de tareas ciclo 3'],
         ['SUS', 'Puntaje 0–100 por participante y promedio (meta ≥ 75).', 'Resultado H1–H3'],
-        ['Respuestas a M1–M4 (pauta B)', 'Conteo por opción y por perfil; % que acepta la ventana (H5), entiende (H6), le sirve (H7), la tomaría (H10).', 'Resultado H5–H10'],
+        ['Respuestas a M1–M5 (pauta B)', 'Conteo por opción y por perfil; % que acepta la ventana (H5), entiende (H6), le sirve (H7), iría a la clase (H11), la tomaría (H10).', 'Resultado H5–H10'],
         ['Encuesta de pacientes', 'Promedio por afirmación (1–5) y por perfil; recomendación 0–10 (promotores 9–10 menos detractores 0–6).', 'Resultado H6–H8'],
         ['Lista de la contadora', 'Campos faltantes críticos y no críticos.', 'Resultado H9 · backlog'],
         ['Cualidades, debilidades y mejoras', 'Post-its por sesión → agrupación por afinidad → matriz CDM (3.1.2.4) del ciclo con usuarios.', 'CDM ciclo 3'],

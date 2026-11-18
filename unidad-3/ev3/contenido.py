@@ -154,8 +154,8 @@ SB_PACIENTE = [
     (SB + 'p-02.jpg', 'Don Luis confirma el recordatorio', 'M1 · ventana de llegada de 30 min', 'H5 · H8'),
     (SB + 'p-03.jpg', '“Voy en camino”', 'M2 · aviso con tiempo estimado', 'H6'),
     (SB + 'p-04.jpg', 'Paga y recibe el comprobante', 'M3 · comprobante sin diagnóstico', 'H7'),
-    (SB + 'p-05.jpg', 'Camila toma un cupo liberado', 'M4 · hora liberada a precio preferente', 'H10'),
-    (SB + 'p-06.jpg', 'Seguimiento después del alta', 'Fase 2 · pack de mantención', '—'),
+    (SB + 'p-05.jpg', 'Camila toma un cupo liberado', 'M5 · hora liberada a precio preferente', 'H10'),
+    (SB + 'p-06.jpg', 'Seguimiento después del alta', 'Fase 2 · pack de mantención o clase grupal (M4)', 'H11'),
 ]
 
 # Iteración de los instrumentos: versión actual (visual-funcional) → versión actualizada (técnica)
@@ -394,4 +394,25 @@ APLICA_OTRAS = [
     ('Planilla Excel de gestión', 'Listas desplegables de tipo, modalidad, estado y medio de pago; panel mensual y anual; ingresos dependientes e independientes.', 'Campos de estado y medio de pago en cada atención; vista anual; separación clínica (factura mensual) / particulares.'),
     ('Programas grupales', 'Estacionalidad, convenios con empresas y municipalidades, pausas activas, seguimiento de asistencia y permanencia.', 'Clases grupales en la proyección de meses bajos; convenios como tipo de cliente (cobro a una institución); pausas activas para las empresas de sus propios clientes; asistencia y permanencia por grupo.'),
     ('Comentarios del profesor y Sercotec', 'Usable en teléfono, tablet o computador; todo parametrizado; resúmenes semanales y mensuales; costo de la hora hombre.', 'App web instalable en cualquier dispositivo; resumen semanal; valor de su hora profesional calculado con el tiempo de traslado.'),
+]
+
+# Vista paciente v1 → v2 (personas mayores)
+PAC_PRINCIPIOS = [
+    ('Mensajes', 'Hasta 3 opciones y un mapa', 'Un mensaje = una acción; máximo 2 botones; al responder, las opciones desaparecen'),
+    ('Letra y botones', '16 px; botones de 44 px', 'Letra de 20 px (mínimo 14 px); botones de 56–60 px a todo el ancho'),
+    ('Hora', '“Entre 12:15 y 12:45” · “≈ 15 min”', '“Llego cerca de las 12:30” · “Llego a las 12:30”: sin rangos ni cuentas'),
+    ('Lenguaje', 'Tuteo y frases largas', 'Trato de “usted”, frases cortas, saludo con su nombre'),
+    ('Ayuda', 'Botón “Letra grande” opcional', '“Llamar a Josselyn” siempre visible y “Escuchar mensaje” en voz alta'),
+    ('Reagendar', 'Botón “Quiero cambiar la hora”', '“Necesito otra hora” → Josselyn lo llama (sin formularios)'),
+    ('Pago', 'Solo comprobante', 'Elegir transferencia o efectivo en un toque; comprobante a la persona y a su familiar'),
+    ('Oferta', 'Hora liberada con descuento para todos', 'Personas mayores: invitación a clase grupal; pacientes activos: hora liberada'),
+]
+PAC_HALLAZGOS = [
+    ('RF10 · grupal preventivo para adultos mayores (Las Cabras)', 'M4: invitación a clase de movimiento, con lugar, día, valor y “puede ir con un acompañante”.'),
+    ('Planilla de otro equipo · medio de pago y estado', 'M3: el paciente elige transferencia o efectivo; el registro de Josselyn queda con el medio de pago.'),
+    ('Clientes con familia que coordina (perfil cuidadora)', 'M3: comprobante en copia a la hija o cuidadora; el familiar también puede confirmar.'),
+    ('RF6 · caminos rurales y tiempo de traslado', 'M2: hora de llegada exacta calculada con la ruta, en vez de minutos aproximados.'),
+    ('RF9 · el servicio especializado se valora poco', 'M3: el monto se muestra junto a “sesión en su casa”, para dar cuenta del servicio a domicilio.'),
+    ('RF11 · pacientes que manejan sus tiempos', 'M5: la hora liberada se ofrece solo a pacientes activos (estudiantes, trabajadores, deportistas).'),
+    ('Ariel / Mabel · simple y de bajo costo', 'Todo ocurre en WhatsApp: el paciente no instala nada ni crea cuentas.'),
 ]
