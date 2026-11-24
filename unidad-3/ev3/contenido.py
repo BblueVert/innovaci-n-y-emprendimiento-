@@ -416,3 +416,167 @@ PAC_HALLAZGOS = [
     ('RF11 · pacientes que manejan sus tiempos', 'M5: la hora liberada se ofrece solo a pacientes activos (estudiantes, trabajadores, deportistas).'),
     ('Ariel / Mabel · simple y de bajo costo', 'Todo ocurre en WhatsApp: el paciente no instala nada ni crea cuentas.'),
 ]
+
+
+# ================================================================ CICLO 3 + ITERACIÓN v3
+# Ciclo 3 = validación externa del prototipo v2 con la clienta, Sercotec y docentes (reunión del 12/11).
+# Iteración v3 = metáfora, storyboard y mock-up ajustados con esos hallazgos; verificación en ../iteracion-v3.
+V3 = '../prototipo/capturas_v3/'
+R3 = json.load(open(os.path.join(HERE, '..', 'iteracion-v3', 'resultados_v3.json')))
+URL_V2 = 'unidad-3/prototipo/copiloto-kine-v2.html'
+
+PDV_V3 = (f'{PRODUCTO} es el copiloto de la kinesióloga independiente que trabaja en varios lugares: toma las citas de AgendaPro y de la '
+          'clínica, ordena su ruta y convierte cada atención —en clínica, a domicilio, en piscina o en el gimnasio— en ganancia real y '
+          'ganancia por hora, contando también el tiempo de viaje, para que decida dónde le conviene atender, cobre lo justo por cada '
+          'tramo y prepare los meses bajos sin anotar nada de noche.')
+
+FICHA_C3 = dict(
+    objetivo='Validar con la clienta y con actores del ecosistema (Sercotec y docentes) si la propuesta de valor y el prototipo v2 responden a su forma real de trabajar, y recoger qué ajustar antes del testeo de uso con la usuaria.',
+    filas=[
+        ('Contrastar la propuesta con su rutina real', 'Josselyn Toledo (clienta)', 'Propuesta y prototipo v2 (carpeta “Grupo2”)', 'Lectura guiada de la propuesta y preguntas abiertas', 'Mabel (lectura) · equipo (registro posterior)', 'Reconoce el problema y su forma de registrar', '¿Así lo hace hoy? ¿Qué le falta?', 'Transcripción con minuto y codificación RF1–RF12', 'Meet', '40 min'),
+        ('Recoger criterios de viabilidad', 'Encargada Sercotec y profesor a cargo', 'Las 4 propuestas del curso', 'Revisión comparada en la misma reunión', 'Mabel · Ariel', 'Sugerencias de costo, alcance y formato', '¿Es viable, barata y útil para lo contable?', 'Tabla de sugerencias por actor', 'Meet', '40 min'),
+        ('Ubicar la propuesta frente a las otras', 'Clienta, Sercotec y docentes', 'Documentos en pantalla de las 4 propuestas', 'Comparación de enfoques', 'Equipo (análisis posterior)', 'Diferencias claras y puntos combinables', '¿Qué hace nuestra propuesta que las otras no?', 'Matriz comparativa y “qué tomamos”', 'Remoto', '2 h de análisis'),
+    ])
+
+CDM_C3 = dict(
+    prod_c=['“Eso hago yo igual en el teléfono… simplemente no tengo esa aplicación” (36:25): el núcleo calza con su rutina.',
+            'No conoce otra herramienta que cruce agenda y ganancia (RF1, 12:22).',
+            'El cálculo con traslado se entiende sin explicación técnica (Mabel lo explica con un domicilio en Rengo).'],
+    prod_d=['Conecta Google Calendar, pero ella usa AgendaPro y la agenda de la clínica (RF3).',
+            'Trata la clínica por atención; ella factura un monto fijo mensual (RF4).',
+            'Solo existen clínica y domicilio; también atiende en piscina y gimnasio (RF7).',
+            'Cuenta la bencina pero no el tiempo de viaje (RF6, Ariel 19:45).',
+            'Ejemplos en Rancagua y Machalí; su territorio es San Fernando, Agua Buena y Las Cabras (RF8).'],
+    prod_m=['Agenda desde AgendaPro y agenda de la clínica.', 'Modo clínica por factura mensual.', 'Servicios configurables con su costo.',
+            'Tiempo de viaje como costo y tarifa por tramo.', 'Resumen semanal y mensual por canal, exportable a Excel.'],
+    pdv_c=['Diferenciación confirmada: las apps que usa “solo agendan”.', 'Reemplaza un hábito que ya existe (registro nocturno, RF2).',
+           'Interés directo: “Me encantaría conocerla” (13:31).'],
+    pdv_d=['La pregunta de fondo es “qué me conviene”, no solo “cuánto gané” (RF5).', 'Falta el costo de la solución (Mabel, 12:30).',
+           'Compite con propuestas en Excel: debe mostrar por qué no hay que “alimentarla”.'],
+    pdv_m=['Ganancia por hora por canal como métrica central.', 'Costeo del MVP y precio piloto bajo.',
+           'Clase grupal preventiva como nueva fuente de ingreso (RF10).', 'Convivir con Excel: exportación del resumen.'],
+)
+
+METAFORA_V3 = dict(
+    antes=METAFORA_ITER['despues'],
+    despues='“Copiloto Kine es como el copiloto de un rally que conoce el terreno: lee cada tramo —ciudad, ripio o precordillera—, canta cuánto rinde cada hora de carrera y lleva las cuentas de todas sus pistas: clínica, domicilio, piscina y gimnasio.”',
+    porque='La clienta no maneja una sola pista: atiende en cuatro lugares y su territorio es rural (San Fernando, Agua Buena, Las Cabras). El copiloto ya no solo lee la ruta: conoce el terreno, sabe que un camino de precordillera cuesta tiempo y compara las pistas por lo que rinden por hora.',
+    atributos=[
+        ('Anticipador', 'en el sentido de que canta la curva antes de llegar: avisa enero y febrero y propone acciones con su monto, ahora también la clase grupal con su punto de equilibrio.', 'Se mantiene y se amplía con la clase grupal (RF10).', ['Ec']),
+        ('Claro', 'en el sentido de que responde de un vistazo “qué me conviene”: ganancia por hora de cada canal ordenada de mayor a menor.', 'Se profundiza: de “cuánto gané” a “dónde rindo más” (RF5).', ['So']),
+        ('Conectado y corregible', 'en el sentido de que toma las citas de AgendaPro y de la clínica sin digitar, y cualquier error o inasistencia se corrige con un toque.', 'Antes “Automático y corregible”: ahora nombra las agendas reales (RF3).', ['So', 'Ec']),
+        ('Justo con su tiempo', 'en el sentido de que cuenta el viaje como hora de trabajo: muestra cuánto vale ese tiempo y sugiere cobrar por tramo.', 'Nuevo atributo (RF6 · Ariel 19:45). Reemplaza a “Sostenible”, que se reparte en los otros cuatro.', ['Ec', 'Am']),
+    ])
+
+SCENES_V3 = [  # storyboard iterado v3 · escenas con capturas del prototipo v3
+    ('8:15 · la agenda ya está', V3 + '05_agenda.png', 'phone', 'Las 3 sesiones de la clínica y las 4 particulares llegaron solas desde AgendaPro y la agenda de InMotion.',
+     'el registro de un toque (ciclos 1 y 2).', 'AgendaPro y agenda clínica (RF3).'),
+    ('10:05 · ¿qué me conviene?', V3 + '02_ganancia_por_hora.png', 'phone', 'Entre pacientes ve qué canal rinde más por hora: el domicilio pierde por el viaje.',
+     'tablero legible de un vistazo.', 'ganancia por hora por canal (RF5).'),
+    ('13:30 · Agua Buena', V3 + '06_atencion_agua_buena.png', 'phone', 'Termina con don Luis en la precordillera: el viaje le costó 28 min de su hora y la app sugiere cobrar el tramo.',
+     'desglose de la ganancia.', 'tiempo de viaje y tarifa por tramo (RF6, Ariel).'),
+    ('16:00 · piscina temperada', V3 + '10_servicios.png', 'phone', 'Antes de la psicomotricidad acuática, el arriendo de la piscina ya está en el cálculo.',
+     'costos editables (ciclo 1).', 'servicios con su propio costo (RF7).'),
+    ('20:10 · día cerrado', V3 + '11_cierre_dia.png', 'phone', 'Cierra con un resumen de atenciones, km, viaje y pagos pendientes. Ya no anota de noche.',
+     'cierre en toques (P4).', 'reemplaza el registro nocturno (RF2) y el medio de pago.'),
+    ('Fin de mes · Las Cabras', V3 + '07_clase_grupal.png', 'phone', 'Con el resumen por canal, arma la clase grupal para adultos mayores y ve desde cuántas personas conviene.',
+     'proyección con acciones.', 'reporte exportable y clase grupal (RF10).'),
+]
+
+CAMBIOS_V3 = [  # cambio · hallazgo · requerimiento/atributo · captura · estado en v3
+    ('Agenda desde AgendaPro y agenda de la clínica, con el origen visible en cada cita', 'RF3 · CDM 3', 'R1 · R2 · Conectado', '05_agenda.png', 'Simulado en el prototipo'),
+    ('Ganancia por hora por canal en el tablero, ordenada de mayor a menor', 'RF5 · CDM 3', 'R4 · Claro', '02_ganancia_por_hora.png', 'Funcional'),
+    ('Tiempo de viaje como costo de la hora profesional (valor editable)', 'RF6 · Ariel 19:45', 'R8 · Justo con su tiempo', '06_atencion_agua_buena.png', 'Funcional'),
+    ('Tarifa sugerida por tramo: urbano, rural y precordillera', 'RF6 · RF9', 'R8 · Justo con su tiempo', '04_paradas_tramos.png', 'Funcional'),
+    ('Modo clínica por factura mensual (o por atención 70/30)', 'RF4', 'R3', '09_clinica_factura.png', 'Funcional'),
+    ('Servicios configurables con su propio costo: domicilio, piscina, gimnasio, grupal y clínica', 'RF7', 'R3 · R8', '10_servicios.png', 'Funcional'),
+    ('Clase grupal en Las Cabras: cupos, cobro por persona y punto de equilibrio', 'RF10 · propuesta grupal', 'R11 · Anticipador', '07_clase_grupal.png', 'Funcional'),
+    ('Resumen semanal y mensual por canal, exportable a Excel o Google Sheets', 'Mabel 18:23 · Ariel 10:47', 'R4 · R12', '08_resumen_canal.png', 'Funcional'),
+    ('Ruta y ejemplos en su territorio: San Fernando, Agua Buena, camino a Roma', 'RF8', 'R9', '03_ruta.png', 'Funcional (mapa ilustrativo)'),
+    ('Medio de pago y estado en cada atención', 'Planilla de otro equipo', 'R7 · R12', '06_atencion_agua_buena.png', 'Funcional'),
+    ('Cierre del día con resumen (km, tiempo, pagos pendientes)', 'RF2', 'R6', '11_cierre_dia.png', 'Funcional'),
+    ('Motivo de consulta fuera de la agenda (dato de salud)', 'Brecha B6 · ciclo 2', 'R13', '05_agenda.png', 'Funcional'),
+]
+
+V3_TASKS = R3['tasks']
+V3_OK = sum(t['ok'] for t in V3_TASKS)
+V3_CALC_OK = sum(c['ok'] for c in R3['calculos'])
+V3_AXE = sum(x['n'] for v in R3['axe'].values() for x in v)
+V3_TARGETS = sum(len(v) for v in R3['targets'].values())
+
+MOCK_V2V3 = [  # pares antes → después para el mock-up iterado
+    (V2 + '01_tablero.png', V3 + '02_ganancia_por_hora.png', 'Tablero', 'Se suma “¿qué te conviene?”: ganancia por hora de 5 canales'),
+    (V2 + '02_ruta_sugerida.png', V3 + '03_ruta.png', 'Ruta', 'Rancagua–Machalí → San Fernando, Agua Buena y camino a Roma; tiempo de viaje con valor'),
+    (V2 + '05_ganancia_atencion.png', V3 + '06_atencion_agua_buena.png', 'Atención', 'Ganancia por hora, costo del viaje, tarifa por tramo y medio de pago'),
+    (V2 + '08_mi_plata.png', V3 + '08_resumen_canal.png', 'Mi plata', 'Resumen por canal (semana/mes) exportable; factura de la clínica; servicios'),
+]
+
+FICHA_C4 = dict(
+    objetivo='Validar con la usuaria real (Josselyn) y una par (Catalina) que el prototipo v3 resuelve su día de trabajo en sus cuatro canales y su territorio, que la ganancia por hora le ayuda a decidir y que el precio piloto es aceptable, usando su propio celular.',
+    filas=[
+        ('Comprobar que reconoce su día en la app', 'Josselyn Toledo (usuaria)', 'Prototipo v3 en su celular', 'Recorrido libre + tareas N1, N3, N8 (agenda, viaje a Agua Buena, ruta)', 'Mod.: Claudia · Reg.: Francisco', '“Así es mi día” sin explicación; ≤ 3 toques por tarea', '¿Qué cambiaría para que fuera su día real?', 'Pauta de observación + tiempos', 'Su consulta o domicilio', '25 min'),
+        ('Medir si la ganancia por hora cambia una decisión', 'Josselyn', 'Prototipo v3 · tablero y tramos', 'Tareas N2 y N3 + pregunta de decisión', 'Mod.: Claudia', 'Nombra una decisión concreta (precio, tramo o canal)', '¿Qué haría distinto con este dato?', 'Codificación de respuestas (sí/no + qué)', 'Su consulta', '10 min'),
+        ('Verificar factura de clínica y servicios', 'Josselyn', 'Mi plata: factura, servicios, resumen', 'Tareas N4, N5 y N7 con sus valores reales', 'Ejec.: Néstor', 'Ingresa su factura y 2 servicios sin ayuda', '¿Los valores y el resumen calzan con lo que anota hoy?', 'Comparación con su registro nocturno', 'Su consulta', '15 min'),
+        ('Validar la clase grupal y el precio', 'Josselyn · Catalina (par)', 'Proyección v3 + tabla de costos', 'Tarea N6 + preguntas de precio (H4) y de las otras propuestas', 'Mod.: Claudia · Reg.: Benjamín', 'Acepta piloto gratis y $9.990/mes después (o propone otro)', '¿Pagaría por esto? ¿Cuánto? ¿La combinaría con una planilla?', 'Tabla de disposición a pagar', 'Presencial / Meet', '10 min'),
+        ('Medir usabilidad percibida', 'Josselyn · Catalina', 'Prototipo v3', 'Cuestionario SUS al final', 'Reg.: Francisco', 'SUS ≥ 75', '10 afirmaciones SUS', 'Puntaje SUS (0–100)', 'Presencial / Meet', '5 min'),
+    ])
+
+ITER_DOCS_V3 = [
+    ('3.1.3.1 (v2 → v3)', 'Metáfora y atributos', 'Copiloto que lee la ruta y lleva las cuentas; “Claro”, “Automático y corregible”, “Sostenible”.', 'Copiloto que conoce el terreno y compara pistas; nuevo atributo “Justo con su tiempo”; “Conectado y corregible”.', 'RF5 · RF6 · RF7 · RF8'),
+    ('3.1.3.2 (v2 → v3)', 'Storyboard', 'Un día en Rancagua–Machalí, solo clínica y domicilio.', 'Un día en San Fernando con clínica, Agua Buena, piscina y gimnasio; cierre con resumen y clase grupal.', 'RF2 · RF3 · RF7 · RF8 · RF10'),
+    ('3.1.3.3 (v2 → v3)', 'Mock-up', 'Prototipo v2: 5 vistas, 2 canales, clínica por atención, Google Calendar.', f'Prototipo v3: 12 cambios, 5 canales, factura mensual, tramos y resumen exportable · {V3_OK}/{len(V3_TASKS)} tareas, 0 errores AA.', 'CDM ciclo 3'),
+    ('3.1.3.4 (ciclo 2 → 4)', 'Ficha de testeo', 'Ciclo 2 técnico, interno.', 'Ciclo 4 con la usuaria real y una par, en su celular, con tareas nuevas, SUS y precio.', 'Ciclo 3: la clienta ya validó el problema'),
+    ('3.1.2.4 (ciclo 3)', 'Matriz CDM', 'Ciclo 2: brechas técnicas.', 'Ciclo 3: validación externa con clienta, Sercotec y docentes.', 'Reunión 12/11'),
+    ('3.1.5 (v2 → v3)', 'Propuesta de valor', '“Ordena su ruta y convierte cada atención en ganancia real…”', '“…en clínica, a domicilio, en piscina o en el gimnasio… ganancia por hora, contando el tiempo de viaje… cobre lo justo por cada tramo”.', 'RF5 · RF6 · RF7'),
+]
+
+# Costeo (Mabel 12:30 · Ariel 12:52). Valores de referencia noviembre 2026; tipo de cambio $950/US$.
+COSTEO_DESARROLLO = [
+    ('Diseño y desarrollo del MVP', '4 integrantes × 60 h (UA4)', 'Aporte del equipo · valor de referencia $1.920.000 a $8.000/h', 'Proyecto académico: no se cobra a la clienta'),
+    ('Integraciones', 'Exportación de AgendaPro (Excel), API pública Bencina en Línea (CNE), OpenRouteService, enlace wa.me', '$0', 'Planes gratuitos o servicios públicos'),
+    ('Dominio', 'copilotokine.cl en NIC Chile', '≈ $10.900 al año', 'Opcional en el piloto'),
+]
+COSTEO_OPERACION = [
+    ('Piloto (1 usuaria)', 'Hosting Vercel Hobby · base de datos Supabase Free · mapas y bencina gratis · wa.me', '≈ $900 al mes (solo dominio)', 'Gratis para Josselyn por 3 meses'),
+    ('Comercial (desde 5 usuarias)', 'Vercel Pro (US$20) · Supabase Pro (US$25) · WhatsApp Business API por conversación', '≈ $48.000 al mes', '$9.990 al mes por usuaria (precio a validar, H4)'),
+]
+COSTEO_COMPARA = [
+    ('Seguir anotando de noche o en Excel', '$0 en software', '~1 h diaria ≈ 22 h al mes ≈ $330.000 de su hora ($15.000/h)'),
+    ('Planilla Excel (otras propuestas)', '$0 + computador y Excel', 'Hay que alimentarla a mano (Mabel, 15:12)'),
+    ('Copiloto Kine', 'Piloto $0 · luego $9.990/mes', 'Cierre del día en un minuto; datos exportables a la misma planilla'),
+]
+
+COMPARA_CRIT = ['La cita entra sola desde su agenda', 'Ganancia real por atención', 'Traslado en bencina y en tiempo', 'Rentabilidad por canal y por hora',
+                'Anticipa meses bajos', 'Nuevos ingresos grupales', 'Exporta a Excel', 'Uso en el celular entre domicilios', 'Experiencia del paciente']
+COMPARA = [  # 2 cubre · 1 parcial · 0 no cubre (según documentos mostrados el 12/11)
+    ('Herramienta integral en Excel', [0, 1, 1, 1, 1, 0, 2, 1, 0], '$0 + tiempo de digitación'),
+    ('Planilla Excel de gestión', [0, 1, 0, 1, 0, 0, 2, 0, 0], '$0 + computador y Excel'),
+    ('Programas grupales', [0, 0, 0, 0, 2, 2, 0, 0, 1], 'Espacio, convenios y difusión'),
+    (f'{PRODUCTO} v3', [1, 2, 2, 2, 2, 1, 2, 2, 2], 'Piloto $0 · luego $9.990/mes'),
+]
+COMPARA_NOTA = ('● cubre · ◐ parcial · ○ no cubre. Copiloto Kine marca ◐ en “la cita entra sola” porque en el prototipo la agenda es simulada (la '
+                'integración real es del MVP) y ◐ en grupal porque el módulo calcula la clase pero no gestiona inscripciones. Las propuestas no son '
+                'excluyentes (Ariel, 17:33): el resumen de Copiloto Kine se exporta a una planilla y la clase grupal toma el modelo del tercer equipo.')
+
+PERTINENCIA_V3 = [
+    ('Problema de origen', 'Josselyn no sabe cuánto gana y registra todo cada noche (UA1, RF2).', 'Cierre del día con resumen en un minuto (N10) y ganancia real por atención.'),
+    ('Voz de la clienta (ciclo 3)', '“Eso hago yo igual en el teléfono… simplemente no tengo esa aplicación” (36:25).', 'v3 se monta sobre su hábito: AgendaPro, factura de la clínica y sus 4 canales.'),
+    ('Estado del arte', 'Ningún antecedente cruza agenda, costos por atención, tiempo de viaje y retención chilena.', 'Copiloto Kine cubre esas variables y suma ganancia por hora por canal.'),
+    ('Otras propuestas', 'Dos se resuelven en Excel y una en un modelo grupal.', 'Lo que solo hace Copiloto Kine: la cita entra sola, ruta, tiempo de viaje y vista paciente; convive con las demás.'),
+    ('Viabilidad', 'Sercotec pide estimar el costo; el profesor, bajo costo y multi-dispositivo.', 'Piloto ≈ $900/mes con planes gratuitos; app web en teléfono, tablet y computador.'),
+    ('Evidencia de testeo', f'Ciclos 1 y 2 internos; ciclo 3 con la clienta.', f'v3: {V3_OK}/{len(V3_TASKS)} tareas, {V3_CALC_OK}/{len(R3["calculos"])} cálculos exactos, {V3_AXE} errores AA.'),
+]
+
+GANTT_W3 = ['S11', 'S12', 'S13', 'S14', 'S15']
+GANTT_V3 = [
+    ('SQA, storyboard y mock-up v1', {'S11': 'on'}), ('Ciclo 1 (funcional y estético) y CDM 1', {'S11': 'mid', 'S12': 'on'}),
+    ('Iteración v2 y ciclo 2 (técnico)', {'S12': 'mid', 'S13': 'on'}), ('Ciclo 3 · retroalimentación clienta y Sercotec (12/11)', {'S13': 'hito'}),
+    ('Transcripción, hallazgos y CDM 3', {'S13': 'mid', 'S14': 'on'}), ('Iteración v3: metáfora, storyboard y mock-up', {'S14': 'on'}),
+    ('Verificación v3 (21 tareas, cálculos, AA)', {'S14': 'on'}), ('Costeo y comparativa de propuestas', {'S14': 'on'}),
+    ('Ciclo 4 · sesión con Josselyn y Catalina', {'S15': 'on'}), ('Presentación final', {'S15': 'hito'}),
+]
+
+# Estado del arte con la variable nueva de la v3 (ganancia por hora por canal)
+ARTE_VARS = ARTE_VARS + ['Ganancia por hora por canal']
+ARTE = [(n, v + [0]) for n, v in ARTE] + [(f'{PRODUCTO} (v3)', [1, 2, 2, 2, 1, 1, 2, 2])]
+TENDENCIAS = TENDENCIAS + [('Profesionales multicanal', 'Cada vez más independientes combinan clínica, domicilio y servicios propios con costos distintos.', 'v3: cinco canales configurables y ganancia por hora de cada uno (RF5, RF7).')]

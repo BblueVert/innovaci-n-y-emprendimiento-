@@ -88,11 +88,11 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 
 | Ruta | Descripción |
 |---|---|
-| `entrega-final/EV3_Informe_Prototipado_Copiloto_Kine.pdf` | **Entregable EV3: informe A4 (39 págs.)** con el lenguaje visual de la EV1/EV2, ilustraciones del proyecto y vectores nuevos (`ev3/img/vec`, generador `ev3/gen_vectores.py`), y anexo con las 7 plantillas oficiales. Generador: `python3 ev3/build_ev3.py` |
-| `ev3/Evaluacion3_Presentacion_Prototipado.pdf` | **Entrega EV3 en presentación 16:9 (44 diapositivas)**: SQA, storyboard y mock-up, ciclo 1 (funcional y estético), iteración v2, ciclo 2 (técnico), kit con usuarios, propuesta de valor iterada, PESTAL profundizada, estado del arte, pertinencia, sostenibilidad, gestión y anexo con las 7 plantillas oficiales llenas. Generador: `python3 ev3/build_presentacion.py` |
-| `prototipo/copiloto-kine.html` | Prototipo v2 (kinesióloga), navegable en el celular. v1 en `copiloto-kine-v1.html`; capturas en `capturas_v1/` y `capturas_v2/` |
+| `entrega-final/EV3_Informe_Prototipado_Copiloto_Kine.pdf` | **Entregable EV3: informe A4 (69 págs.)**: ciclos 1 y 2 internos, ciclo 3 con la clienta, Sercotec y docentes (12/11), iteración v3 (metáfora, storyboard, mock-up, verificación, ficha del ciclo 4), comparativa de las 4 propuestas, costeo y anexo con 11 plantillas oficiales. Generador: `python3 ev3/build_ev3.py` |
+| `entrega-final/EV3_Presentacion_Prototipado_Copiloto_Kine.pdf` | **Presentación 16:9 (64 diapositivas)**: lo anterior más ciclo 3 (ficha, 12 hallazgos, sugerencias, comparativa, CDM 3), iteración v3 (metáfora, storyboard, mock-up v2→v3, 12 cambios, verificación), ficha del ciclo 4, costeo y propuesta de valor v3. Generador: `python3 ev3/build_presentacion.py` |
+| `prototipo/copiloto-kine.html` | **Prototipo v3** (kinesióloga): agenda desde AgendaPro y la clínica, ganancia por hora de 5 canales (clínica, domicilio, piscina, gimnasio, grupal), tiempo de viaje como costo y tarifa por tramo, clínica por factura mensual, servicios configurables, clase grupal con punto de equilibrio, resumen semanal/mensual exportable y cierre del día. v1 y v2 en `copiloto-kine-v1.html` y `-v2.html`; capturas en `capturas_v1/`, `capturas_v2/` y `capturas_v3/` |
 | `prototipo/vista-paciente.html` | Vista paciente v2 simplificada para personas mayores: recordatorio, voy en camino, pago, clase grupal y hora liberada (v1 en `vista-paciente-v1.html`; capturas en `capturas_paciente/` y `capturas_paciente_v1/`) |
-| `ciclo1/`, `ciclo2/` | Scripts reproducibles y resultados JSON de los ciclos de testeo interno |
+| `ciclo1/`, `ciclo2/`, `iteracion-v3/` | Scripts reproducibles y resultados JSON: ciclo 1, ciclo 2 y verificación de la v3 (21/21 tareas, 5/5 cálculos, 0 errores WCAG AA). `iteracion-v3`: `npm install && node verificar_v3.js ../prototipo/copiloto-kine.html resultados_v3.json ../prototipo/capturas_v3` |
 | `testeo/Kit_Testeo_Copiloto_Kine.pdf` | **Kit de testeo con usuarios** (19 págs.): 10 hipótesis, 9 perfiles (kinesiólogas, 6 perfiles de pacientes, contadora), guiones A/B/C, consentimiento, pautas, SUS, matriz de consolidación e invitaciones. Generador: `python3 testeo/build_kit.py` |
 | `entregas/Bitacora_avance_U3_EV3.xlsx` | Bitácora U3 completa (versión S13) |
 | `material/` | Manual, toolkit, actividades S11–S12, bitácoras, plantillas oficiales y rúbrica |
@@ -105,4 +105,4 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 - Informe sumativo final cubriendo los seis criterios 1.1.1–1.1.6.
 - U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
 - U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Josselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
-- U3: transcribir la reunión del jueves 12/11 (feedback de la emprendedora) e integrarla como fuente F0 del kit; aplicar las sesiones con Josselyn, Catalina, pacientes y contadora y completar los resultados pendientes.
+- U3: aplicar el ciclo 4 (Josselyn y Catalina con la v3, tareas N1–N10, SUS y precio) y las sesiones con pacientes y contadora; completar la CDM del ciclo 4.

@@ -113,3 +113,8 @@ table.sm{font-size:9pt}table.sm td{padding:3.4px 6px}
 .pvphone{position:absolute;right:26mm;top:14mm;width:72mm;border-radius:10mm;border:2.5mm solid #1E1A30;box-shadow:0 6mm 14mm rgba(0,0,0,.45);z-index:0}
 
 .quote,.attr .s2,.pvq{font-style:normal!important;font-weight:600}.quote{font-size:14pt}.pvq{font-size:16pt}.attr .s2{font-size:10.5pt}
+table.xs{font-size:7.6pt}table.xs td{padding:2.4px 5px}
+.sm3 .sc .tx{font-size:7.9pt;line-height:1.3}.sm3 .sc .h{font-size:8.6pt}.sm3 .sc .c{font-size:7.3pt}
+.mat.big{font-size:8.6pt}.mat.big td{padding:5px 5px}.mat.big th{font-size:6.6pt}.mat.big .d2,.mat.big .d1,.mat.big .d0{font-size:15pt;line-height:1}
+.sm3 .sc{height:auto;min-height:62mm}.sm3 .sc .tx>*{flex:none}.sm3 .sc .c:first-of-type{margin-top:auto}
+.sm3 .sc .tx{display:block}.sm3 .sc .c,.sm3 .sc .c:first-of-type{margin-top:1.4mm}

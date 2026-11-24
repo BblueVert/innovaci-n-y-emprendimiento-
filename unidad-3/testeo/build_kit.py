@@ -44,7 +44,7 @@ HIP = [
 # ---------------------------------------------------------------- perfiles
 PERF = [
     dict(c='K1', n='Josselyn Toledo', t='Kinesióloga independiente · usuaria del caso', tipo='k', real=True,
-         d='Atención mixta: Centro Médico InMotion (70/30) y domicilios en Rancagua y Machalí. Hoy cuadra ingresos en Excel de noche.',
+         d='Atención en 4 canales: InMotion (factura mensual), domicilios en San Fernando y Agua Buena, piscina y gimnasio. Anota todo cada noche en el teléfono.',
          s='Prototipo Kine completo (tareas T1–T11)', h='H1 · H2 · H3 · H4', m='Presencial con su celular · 60 min', a='Moderación sin explicar la interfaz; pedir que piense en voz alta.'),
     dict(c='K2', n='Catalina', t='Kinesióloga · experta par (UA1)', tipo='k', real=True,
          d='Colega independiente entrevistada en la UA1: “organizar el Excel me toma una hora diaria”.',
@@ -53,7 +53,7 @@ PERF = [
          d='Lleva la contabilidad de profesionales a honorarios (boletas, retención, Operación Renta).',
          s='Exportación CSV + vista “Mi plata”', h='H3 · H9', m='Remota · 20 min', a='Enviar el CSV de ejemplo con anticipación.'),
     dict(c='P1', n='“Don Luis”', t='Adulto mayor atendido a domicilio', tipo='p',
-         d='70 años o más. Rehabilitación tras una caída o por artrosis. Vive en Machalí con su familia. Usa WhatsApp, con letra grande.',
+         d='70 años o más. Rehabilitación tras una caída o por artrosis. Vive en San Fernando con su familia. Usa WhatsApp, con letra grande.',
          s='Vista paciente v2: M1, M2, M3 y M4', h='H5 · H6 · H8 · H11', m='Presencial, idealmente en su casa · 15 min', a='Leer en voz alta si lo pide; frases cortas; un mensaje a la vez; permitir acompañante.'),
     dict(c='P2', n='“Marcela”', t='Cuidadora familiar', tipo='p',
          d='40 a 60 años. Coordina las sesiones de su madre o padre mientras trabaja. Paga por transferencia y guarda las boletas.',

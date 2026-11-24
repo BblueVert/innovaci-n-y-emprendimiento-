@@ -124,6 +124,10 @@ def build():
         ('3.1.3.2 · Storyboard iterado con propuesta de valor (prototipo v2)', storyboard(C.SCENES_ITER, C.PDV_ITER, 'Propuesta de valor iterada · cualidades (izq.) y mejoras incorporadas (der.) por escena')),
         ('3.1.3.4 · Ficha de planificación del testeo de la iteración · ciclo 2 (técnico)', ficha(C.FICHA_C2, 'Ciclo 2 · verificación técnica del prototipo v2 contra las necesidades de la kinesióloga')),
         ('3.1.2.4 · Matriz CDM con propuesta de valor · ciclo 2', cdm(C.CDM_C2, 'Ciclo 2 · prototipo v2 · técnico')),
+        ('3.1.2.3 · Ficha de planificación del testeo · ciclo 3 (clienta, Sercotec y docentes)', ficha(C.FICHA_C3, 'Ciclo 3 · reunión del 12/11 con la clienta · fuente: transcripción con minuto (retroalimentacion/)')),
+        ('3.1.2.4 · Matriz CDM con propuesta de valor · ciclo 3', cdm(C.CDM_C3, 'Ciclo 3 · prototipo v2 frente a la clienta (12/11)')),
+        ('3.1.3.2 · Storyboard iterado con propuesta de valor (prototipo v3)', storyboard(C.SCENES_V3, C.PDV_V3, 'Propuesta de valor v3 · cualidades (izq.) y mejoras del ciclo 3 (der.) · capturas del prototipo v3')),
+        ('3.1.3.4 · Ficha de planificación del testeo de la iteración · ciclo 4 (usuarias, v3)', ficha(C.FICHA_C4, 'Ciclo 4 · Josselyn y Catalina con el prototipo v3 en su celular · ' + C.EQUIPO_ROLES)),
         ('3.1.4.1 · Matriz PESTAL profundizada', pestal()),
     ]
     return out

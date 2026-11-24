@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Copiloto Kine</title>
+<title>Copiloto Kine · v3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
 <style>
@@ -175,6 +175,64 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
 @media (min-width: 640px) { nav { bottom: 24px; background: transparent; border: 0; } nav .in { background: rgba(255,255,255,.97); border: 1px solid var(--line); border-radius: 20px; padding: 6px; max-width: 400px; box-shadow: 0 8px 24px rgba(40,30,80,.12); } }
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(86px + env(safe-area-inset-bottom, 0px)); z-index: 30; background: var(--ink); color: #fff; font-weight: 600; font-size: 13px; padding: 10px 16px; border-radius: 999px; max-width: calc(100% - 32px); text-align: center; }
 .foot { font-size: 12px; color: var(--muted); text-align: center; }
+
+/* ===== v3 · cambios de la retroalimentación del 12/11 ===== */
+.src { display: inline-block; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.sync { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.sync span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; }
+.sync span i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+/* Ganancia por hora por canal */
+.rank { display: flex; flex-direction: column; gap: 10px; }
+.rank .r { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; align-items: baseline; }
+.rank .r b { font-size: 14px; font-weight: 600; }
+.rank .r .v { font-family: var(--f-mono); font-size: 14px; font-weight: 500; }
+.rank .r .track { grid-column: 1 / -1; height: 10px; background: var(--soft); border-radius: 99px; overflow: hidden; }
+.rank .r .track span { display: block; height: 100%; border-radius: inherit; }
+.rank .r small { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
+.rank .r.proj b::after { content: " · proyectado"; font-weight: 400; color: var(--muted); font-size: 12px; }
+.insight { margin: 12px 0 0; font-size: 13px; background: var(--purple-soft); color: #4B2266; border-radius: 12px; padding: 10px 12px; }
+/* Etiquetas por servicio */
+.tag.pool { background: #E3F1FB; color: #0B5E8E; }
+.tag.gym { background: #FFF3DC; color: #7A4B00; }
+.appt.pool { border-left-color: #1C8AD1; }
+.appt.gym { border-left-color: var(--amber); }
+.pin.pool { background: #1C8AD1; }
+.pin.gym { background: #B7791F; }
+/* Tiempo de viaje y tramo */
+.hidden-cost { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: #FFF6E5; color: #6B4300; font-size: 13px; }
+.hidden-cost b { color: #4A2E00; }
+.tramo { display: inline-block; font-family: var(--f-mono); font-size: 12px; border-radius: 6px; padding: 1px 6px; margin-left: 4px; background: var(--soft); color: var(--ink); }
+.tramo.t2 { background: #FFF3DC; color: #7A4B00; }
+.tramo.t3 { background: #FDE6EA; color: #9B1C33; }
+.perh { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: var(--soft); font-size: 13px; }
+.perh b { font-family: var(--f-display); font-size: 24px; font-weight: 400; }
+/* Medio de pago */
+.pay { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 12px; }
+.pay button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 600; min-height: 44px; }
+.pay button[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+/* Segmentos de 2 o 3 opciones con texto largo */
+.seg.s3 { grid-template-columns: 1fr 1fr 1fr; }
+.seg.wrap button { font-size: 13px; line-height: 1.2; }
+/* Clase grupal */
+.group { border: 1px solid #BFE6D4; background: #F4FBF8; }
+.stepper { display: inline-grid; grid-template-columns: 44px 52px 44px; align-items: center; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.stepper button { border: 0; background: var(--soft); min-height: 44px; font-size: 20px; font-weight: 700; }
+.stepper output { text-align: center; font-family: var(--f-mono); font-size: 16px; }
+.seats { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin: 10px 0; }
+.seats i { aspect-ratio: 1; border-radius: 6px; background: var(--soft); border: 1px solid var(--line); }
+.seats i.on { background: var(--ok); border-color: var(--ok); }
+/* Reporte por canal */
+.rep { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rep th { font-family: var(--f-mono); font-size: 12px; font-weight: 500; color: var(--muted); text-align: right; padding: 6px 4px; border-bottom: 1px solid var(--line); }
+.rep th:first-child, .rep td:first-child { text-align: left; }
+.rep td { padding: 8px 4px; border-bottom: 1px dashed var(--line); text-align: right; font-variant-numeric: tabular-nums; }
+.rep tr.tot td { font-weight: 700; border-bottom: 0; border-top: 1px solid var(--line); }
+.svc { display: flex; flex-direction: column; gap: 10px; }
+.svc .it { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; padding-bottom: 10px; border-bottom: 1px dashed var(--line); }
+.svc .it:last-child { border-bottom: 0; padding-bottom: 0; }
+.svc .it b { font-size: 14px; } .svc .it small { display: block; font-size: 12px; color: var(--muted); }
+.svc .it input { width: 96px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; font-family: var(--f-mono); text-align: right; background: var(--bg); color: var(--ink); }
+.vtag { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; color: #fff; background: var(--ink); border-radius: 999px; padding: 4px 9px; }
 </style>
 </head>
 <body>
@@ -182,9 +240,9 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
   <header class="top">
     <div class="brand">
       <div class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 16a8 8 0 0 1 16 0"/><path d="M12 16l4-5"/></svg></div>
-      <div><b>Copiloto Kine</b><small>Martes 10 de noviembre</small></div>
+      <div><b>Copiloto Kine</b><small>Martes 24 de noviembre</small></div>
     </div>
-    <span class="sample" title="Prototipo para testeo: nombres y montos son de ejemplo">Datos de ejemplo</span>
+    <span class="sample" title="Prototipo v3 para testeo: nombres y montos son de ejemplo">Datos de ejemplo</span>
   </header>
 
   <main>
@@ -207,12 +265,23 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
             <div class="chip" id="mLight"><i></i><span>Vas al ritmo de tu meta</span></div>
           </div>
         </div>
-        <p class="note" style="margin:10px 0 0"><b>Ganancia real</b> = lo que te queda después de comisión, traslado, materiales e impuestos.</p>
+        <p class="note" style="margin:10px 0 0"><b>Ganancia real</b> = lo que te queda después de comisión o factura, traslado, materiales, arriendos e impuestos.</p>
       </div>
 
       <div class="duo">
-        <div class="mini"><div class="l">Hoy llevas</div><div class="v num" id="dNet">$0</div><div class="l num" id="dCount">0 de 5 atenciones</div></div>
+        <div class="mini"><div class="l">Hoy llevas</div><div class="v num" id="dNet">$0</div><div class="l num" id="dCount">0 de 7 atenciones</div></div>
         <div class="mini"><div class="l">Colchón para meses bajos</div><div class="v num">$380.000</div><div class="bar"><span style="width:38%"></span></div></div>
+      </div>
+      <div class="duo">
+        <div class="mini"><div class="l">Pacientes nuevos</div><div class="v num">3 de 5</div><div class="bar"><span style="width:60%;background:var(--purple)"></span></div></div>
+        <div class="mini"><div class="l">Tu hora profesional</div><div class="v num" id="vhMini">$15.000</div><div class="l">la usas para medir el viaje</div></div>
+      </div>
+
+      <div class="card">
+        <h2>¿Qué te conviene? · ganancia por hora</h2>
+        <div class="rank" id="rank"></div>
+        <p class="insight" id="insight"></p>
+        <button class="link" data-go="impuestos">Ver resumen por canal →</button>
       </div>
 
       <div class="card" style="padding:12px">
@@ -222,31 +291,37 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
 
       <div class="alert" role="status">
         <div class="ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
-        <div><b>Enero y febrero vienen bajos</b><p>Tus ingresos bajan cerca de 35 % esos meses. Tienes 7 semanas para prepararte.</p>
+        <div><b>Enero y febrero vienen bajos</b><p>Tus ingresos bajan cerca de 35 % esos meses. Tienes 5 semanas para prepararte.</p>
         <button class="link" data-go="proyeccion">Ver proyección →</button></div>
       </div>
-      <p class="foot">Conectado a Google Calendar · actualizado hace 2 min</p>
+      <div class="sync" aria-label="Agendas conectadas"><span><i></i>AgendaPro</span><span><i></i>Agenda de la clínica</span><span>actualizado hace 2 min</span></div>
     </section>
 
     <!-- ============ RUTA DEL DÍA ============ -->
     <section class="view" id="v-ruta" hidden aria-labelledby="t-ruta">
-      <div><h1 id="t-ruta">Ruta del día</h1><p class="sub">Tus domicilios ordenados para recorrer menos kilómetros.</p></div>
+      <div><h1 id="t-ruta">Ruta del día</h1><p class="sub">San Fernando y alrededores · tus traslados ordenados para manejar menos.</p></div>
       <div class="seg" role="group" aria-label="Orden de la ruta">
         <button type="button" id="rOpt" aria-pressed="true">Ruta sugerida</button>
         <button type="button" id="rOrig" aria-pressed="false">Orden original</button>
       </div>
       <div class="mapwrap" id="bigMap"></div>
       <div class="saving" id="saving"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12l4 4 10-10"/></svg><span id="savingTxt"></span></div>
+      <div class="hidden-cost" id="tripCost" style="margin-top:0"></div>
       <div class="card">
         <h2>Paradas</h2>
         <div class="stops" id="stops"></div>
+      </div>
+      <div class="card">
+        <h2>Tarifa sugerida por tramo</h2>
+        <div class="rows" style="margin:0" id="tramos"></div>
+        <p class="note" style="margin:10px 0 0">El recargo compensa el tiempo de viaje: en camino de precordillera vas más lento y esa hora no la atiendes.</p>
       </div>
     </section>
 
     <!-- ============ AGENDA ============ -->
     <section class="view" id="v-agenda" hidden aria-labelledby="t-agenda">
-      <div><h1 id="t-agenda">Agenda de hoy</h1><p class="sub">Al terminar cada atención, tócala para registrarla.</p></div>
-      <div class="legend"><span><i style="background:var(--purple)"></i>Clínica InMotion (70/30)</span><span><i style="background:var(--accent)"></i>Domicilio</span></div>
+      <div><h1 id="t-agenda">Agenda de hoy</h1><p class="sub">Llega sola desde AgendaPro y la agenda de la clínica. Al terminar, tócala para registrarla.</p></div>
+      <div class="legend"><span><i style="background:var(--purple)"></i>Clínica</span><span><i style="background:var(--accent)"></i>Domicilio</span><span><i style="background:#1C8AD1"></i>Piscina</span><span><i style="background:var(--amber)"></i>Gimnasio</span></div>
       <div id="agendaList" class="view" style="gap:10px"></div>
       <button class="btn" id="closeDay">Cerrar el día</button>
     </section>
@@ -262,7 +337,7 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
           <text x="34" y="24" text-anchor="end">1,2M</text><text x="34" y="84" text-anchor="end">0,8M</text><text x="34" y="144" text-anchor="end">0,4M</text><text x="34" y="174" text-anchor="end">0,2M</text>
           <rect x="58" y="27.5" width="44" height="142.5" rx="6" fill="var(--ok)"/><text class="val" x="80" y="46" text-anchor="middle" fill="#fff">1,15M</text>
           <rect x="130" y="47" width="44" height="123" rx="6" fill="var(--ok)" opacity=".7"/><text class="val" x="152" y="56" text-anchor="middle" fill="#fff">1,02M</text>
-          <rect x="202" y="89" width="44" height="81" rx="6" fill="var(--amber)"/><text class="val" x="224" y="83" text-anchor="middle">0,74M</text>
+          <rect id="barEne" x="202" y="89" width="44" height="81" rx="6" fill="var(--amber)"/><text class="val" x="224" y="83" text-anchor="middle">0,74M</text>
           <rect id="barFeb" x="274" y="96.5" width="44" height="73.5" rx="6" fill="var(--coral)"/><text class="val" x="296" y="90" text-anchor="middle">0,69M</text>
           <line x1="40" y1="35" x2="330" y2="35" stroke="var(--ink)" stroke-dasharray="5 5"/>
           <text x="330" y="30" text-anchor="end" fill="var(--ink)">meta 1,1M</text>
@@ -273,38 +348,76 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
       <div>
         <h2>Acciones sugeridas</h2>
         <div class="act" id="acts">
+          <button type="button" aria-pressed="false" data-k="grupo"><span class="chk" aria-hidden="true">✓</span><span><b>Abrir clases grupales para adultos mayores en Las Cabras</b><span id="grpActTxt">Preventivas, 2 veces por semana</span></span></button>
           <button type="button" aria-pressed="false" data-k="packs" data-v="240000"><span class="chk" aria-hidden="true">✓</span><span><b>Ofrecer 6 packs de 4 sesiones en diciembre</b><span>+ $240.000 que entran antes de la baja</span></span></button>
-          <button type="button" aria-pressed="false" data-k="grupo" data-v="180000"><span class="chk" aria-hidden="true">✓</span><span><b>Abrir un grupo de adultos mayores en enero</b><span>+ $180.000 · 8 personas, 2 veces por semana</span></span></button>
           <button type="button" aria-pressed="false" data-k="colchon" data-v="150000"><span class="chk" aria-hidden="true">✓</span><span><b>Guardar 10 % de cada pago en el colchón</b><span>+ $150.000 disponibles para febrero</span></span></button>
         </div>
       </div>
+      <div class="card group" id="grpCard" hidden>
+        <h2>Clase grupal · Las Cabras</h2>
+        <p style="margin:0 0 10px;font-size:14px">Movimiento y equilibrio para adultos mayores · martes y jueves 10:00 · sede de la agrupación.</p>
+        <div class="field"><span>Inscritos (cupo de 10)</span><span class="stepper" role="group" aria-label="Inscritos"><button type="button" id="gMinus" aria-label="Quitar una persona">−</button><output id="gN" aria-live="polite">6</output><button type="button" id="gPlus" aria-label="Sumar una persona">+</button></span></div>
+        <div class="seats" id="seats" aria-hidden="true"></div>
+        <label class="field" for="gP"><span>Cobro por persona y clase</span><input id="gP" type="number" inputmode="numeric" min="0" step="500" value="6000"></label>
+        <div class="rows" id="gRows" style="margin-bottom:0"></div>
+      </div>
     </section>
 
-    <!-- ============ DESTINOS ============ -->
+    <!-- ============ MI PLATA ============ -->
     <section class="view" id="v-impuestos" hidden aria-labelledby="t-imp">
-      <div><h1 id="t-imp">Tu plata con destino</h1><p class="sub">Cada pago se separa solo en tres partes.</p></div>
+      <div><h1 id="t-imp">Mi plata</h1><p class="sub">Tu resumen por canal, tus servicios y lo que va para impuestos.</p></div>
+
+      <div class="card">
+        <h2>Resumen por canal</h2>
+        <div class="seg" role="group" aria-label="Periodo del resumen" style="margin-bottom:10px">
+          <button type="button" id="pW" aria-pressed="true">Esta semana</button>
+          <button type="button" id="pM" aria-pressed="false">Noviembre</button>
+        </div>
+        <table class="rep" id="rep"></table>
+        <p class="note" id="repNote" style="margin:10px 0 0"></p>
+        <div class="btns" style="grid-template-columns:1fr"><button class="btn" data-export>Descargar para Excel o Google Sheets</button></div>
+      </div>
+
       <div class="jar">
         <div><span class="l"><span class="dot" style="background:var(--ok)"></span>Para ti<small>Ganancia real del mes</small></span><span class="v num" id="j1">$0</span></div>
         <div><span class="l"><span class="dot" style="background:var(--purple)"></span>Impuestos<small>Retención de boletas (15,25 %)</small></span><span class="v num" id="j2">$0</span></div>
         <div><span class="l"><span class="dot" style="background:var(--amber)"></span>Colchón<small>Para enero y febrero</small></span><span class="v num">$380.000</span></div>
       </div>
+
+      <div class="card">
+        <h2>¿Cómo te paga la clínica?</h2>
+        <div class="seg wrap" role="group" aria-label="Modo de pago de la clínica">
+          <button type="button" id="cmA" aria-pressed="false">Por atención (70/30)</button>
+          <button type="button" id="cmF" aria-pressed="true">Monto fijo mensual</button>
+        </div>
+        <label class="field" for="cFact" id="factRow" style="margin-top:10px"><span>Factura mensual a InMotion</span><input id="cFact" type="number" inputmode="numeric" min="0" step="10000" value="520000"></label>
+        <label class="field" for="cCom" id="comRow" style="margin-top:10px"><span>Comisión de la clínica (%)</span><input id="cCom" type="number" inputmode="decimal" min="0" max="100" step="1" value="30"></label>
+        <p class="note" id="cmNote" style="margin:10px 0 0"></p>
+      </div>
+
+      <div class="card">
+        <h2>Tus servicios</h2>
+        <div class="svc" id="svc"></div>
+        <p class="note" style="margin:10px 0 0">Cada servicio tiene su propio valor y su costo por sesión. Los cambios se aplican a todo el cálculo.</p>
+      </div>
+
+      <div class="card">
+        <h2>Traslado y tiempo</h2>
+        <div class="rows" style="margin:0">
+          <label class="field" for="cKm"><span>Traslado por km (bencina + desgaste)</span><input id="cKm" type="number" inputmode="numeric" min="0" step="10" value="180"></label>
+          <label class="field" for="cVh"><span>Valor de tu hora profesional</span><input id="cVh" type="number" inputmode="numeric" min="0" step="1000" value="15000"></label>
+          <label class="field" for="cRet"><span>Retención boleta 2026 (%)</span><input id="cRet" type="number" inputmode="decimal" min="0" max="30" step="0.25" value="15.25"></label>
+        </div>
+        <p class="note" style="margin:10px 0 0">Valores fijos estimados: los ajustas cuando sube la bencina.</p>
+      </div>
+
       <div class="card">
         <h2>Operación Renta · abril 2027</h2>
-        <p style="margin:0 0 8px">Tienes provisionada la retención de todas tus boletas de 2026. La retención financia tus cotizaciones de salud y pensión; tu contadora calcula el saldo final.</p>
+        <p style="margin:0 0 8px">Tienes provisionada la retención de todas tus boletas de 2026. Tu contadora calcula el saldo final.</p>
         <div class="bar" style="height:10px"><span style="width:100%"></span></div>
         <p class="note" style="margin:8px 0 0">12 de 12 meses provisionados</p>
       </div>
-      <div class="card">
-        <h2>Tus costos por atención</h2>
-        <div class="rows" style="margin:0">
-          <label class="field" for="cCom"><span>Comisión clínica InMotion (%)</span><input id="cCom" type="number" inputmode="decimal" min="0" max="100" step="1" value="30"></label>
-          <label class="field" for="cKm"><span>Traslado por km (bencina + desgaste)</span><input id="cKm" type="number" inputmode="numeric" min="0" step="10" value="180"></label>
-          <label class="field" for="cRet"><span>Retención boleta 2026 (%)</span><input id="cRet" type="number" inputmode="decimal" min="0" max="30" step="0.25" value="15.25"></label>
-        </div>
-        <p class="note" style="margin:10px 0 0">Los cambios se aplican a todas las atenciones de hoy.</p>
-      </div>
-      <button class="btn" data-export>Descargar resumen para tu contadora (CSV)</button>
-      <div class="privacy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex:none"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>El resumen incluye solo montos, fechas e iniciales. Nunca guarda diagnósticos ni ficha clínica (Ley 21.719).</span></div>
+      <div class="privacy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="flex:none"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>El resumen incluye solo montos, fechas, canal e iniciales. Nunca guarda diagnósticos ni ficha clínica (Ley 21.719).</span></div>
     </section>
   </main>
 
@@ -322,9 +435,10 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
 <div class="scrim" id="scrim" hidden>
   <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
     <div class="grab" aria-hidden="true"></div>
-    <h2>Atención registrada</h2>
+    <h2 id="sKick">Atención registrada</h2>
     <h1 id="sTitle">—</h1>
     <div class="rows" id="sRows"></div>
+    <div id="sExtra"></div>
     <p class="note" id="sNote"></p>
     <button class="btn" id="sClose">Listo</button>
   </div>
@@ -332,139 +446,310 @@ nav a[aria-current="page"] { color: var(--accent-strong); background: var(--acce
 <div class="toast" id="toast" hidden></div>
 
 <script>
-let RET = 0.1525, KM = 180, COM = 0.30; const META = 1100000, BASE_MONTH = 412000;
-const clp = n => '$' + Math.round(n).toLocaleString('es-CL');
+// Copiloto Kine · prototipo v3 · cambios de la retroalimentación del 12/11 (clienta, Sercotec y docentes)
+let RET = 0.1525, KM = 180, COM = 0.30, VH = 15000, CMODE = 'factura', FACT = 520000;
+const META = 1100000, DAY = 24, DAYS = 30;
+const BASE_OTH = 420000;           // particulares (domicilio, piscina, gimnasio) del 1 al 23 de noviembre
+const CLIN_TODATE = 290000;        // clínica por atención del 1 al 23 (modo por atención)
+const CLIN_HRS = 26;               // horas en clínica del mes (52 sesiones de 30 min)
+const clp = n => (n < 0 ? '−$' : '$') + Math.round(Math.abs(n)).toLocaleString('es-CL');
 const $ = id => document.getElementById(id);
-const APPTS = [
-  { id: 'a1', t: '09:00', who: 'Rosa M.', why: 'Rehabilitación de rodilla', kind: 'clinic', place: 'Box 2 · InMotion', price: 25000 },
-  { id: 'a2', t: '10:30', who: 'Pedro A.', why: 'Lumbago', kind: 'clinic', place: 'Box 2 · InMotion', price: 25000 },
-  { id: 'a3', t: '12:30', who: 'Carmen V.', why: 'Adulta mayor · equilibrio', kind: 'home', place: 'Machalí', km: 8, mat: 1200, price: 28000 },
-  { id: 'a4', t: '14:30', who: 'Ana P.', why: 'Postoperatorio de hombro', kind: 'home', place: 'Machalí', km: 3, mat: 1500, price: 28000 },
-  { id: 'a5', t: '17:00', who: 'Luis R.', why: 'Kinesioterapia respiratoria', kind: 'home', place: 'Rancagua centro', km: 9, mat: 800, price: 28000 },
-];
-// Mapa ilustrativo (no a escala) · lienzo 360×230
-const P = { clinic: [70, 160], a3: [285, 62], a4: [318, 104], a5: [150, 120] };
-const ROUTES = {
-  opt:  { order: ['clinic', 'a3', 'a4', 'a5'], km: 20, min: 52, legs: [null, [8, 18], [3, 8], [9, 26]],
-          path: 'M70 160 L120 160 L120 100 L230 100 L230 62 L285 62 L318 62 L318 104 L318 140 L150 140 L150 120' },
-  orig: { order: ['clinic', 'a3', 'a5', 'a4'], km: 27, min: 68, legs: [null, [8, 18], [11, 24], [8, 26]],
-          path: 'M70 160 L120 160 L120 100 L230 100 L230 62 L285 62 L285 100 L150 100 L150 120 L150 140 L318 140 L318 104' },
+const hm = m => (m >= 60 ? `${Math.floor(m / 60)} h ${m % 60 ? (m % 60) + ' min' : ''}` : `${m} min`).trim();
+
+// Servicios configurables (RF7): valor, duración y costo propio por sesión
+const SERV = {
+  clinic: { n: 'Clínica InMotion', d: 'Kinesiología · 2 pacientes por hora', p: 25000, min: 30, c: 0, cl: 'Comisión o factura' },
+  home:   { n: 'Domicilio', d: 'Kinesiología en casa · 60 min', p: 30000, min: 60, c: 1200, cl: 'Materiales' },
+  pool:   { n: 'Piscina temperada', d: 'Psicomotricidad acuática · 45 min', p: 35000, min: 45, c: 8000, cl: 'Arriendo de piscina' },
+  gym:    { n: 'Gimnasio', d: 'Entrenamiento personalizado · 60 min', p: 22000, min: 60, c: 1500, cl: 'Insumos y luz' },
+  group:  { n: 'Clase grupal', d: 'Adultos mayores · Las Cabras · por persona', p: 6000, min: 60, c: 5000, cl: 'Sala (por clase)' },
 };
-let mode = 'opt', done = {}, acts = {}, notified = {};
-try { done = JSON.parse(localStorage.getItem('ck-done') || '{}'); const c = JSON.parse(localStorage.getItem('ck-cost') || 'null'); if (c) { KM = c.KM; COM = c.COM; RET = c.RET; } } catch (e) { done = {}; }
-const saveCost = () => { try { localStorage.setItem('ck-cost', JSON.stringify({ KM, COM, RET })); } catch (e) {} };
-const save = () => { try { localStorage.setItem('ck-done', JSON.stringify(done)); } catch (e) {} };
+// Traslado típico ida y vuelta por canal (para la ganancia por hora del mes)
+const TYP = { clinic: [0, 0], home: [16, 40], pool: [14, 30], gym: [6, 20], group: [50, 70] };
+// Tarifa por tramo (RF6): el tiempo de viaje también es costo
+const TRAMOS = [{ k: 'u', n: 'Urbano', d: 'San Fernando', add: 0 }, { k: 'r', n: 'Rural', d: 'Roma, Puente Negro', add: 3000 }, { k: 'p', n: 'Precordillera', d: 'Agua Buena, ripio', add: 6000 }];
+const TCLS = { u: '', r: 't2', p: 't3' };
+
+// Día de ejemplo en su territorio (RF8) · llega desde AgendaPro y la agenda de la clínica (RF3)
+const APPTS = [
+  { id: 'a1', t: '08:30', who: 'Rosa M.', kind: 'clinic', place: 'Box 2 · InMotion', src: 'Agenda clínica' },
+  { id: 'a2', t: '09:00', who: 'Pedro A.', kind: 'clinic', place: 'Box 2 · InMotion', src: 'Agenda clínica' },
+  { id: 'a3', t: '09:30', who: 'Elena F.', kind: 'clinic', place: 'Box 2 · viene de Las Cabras', src: 'Agenda clínica' },
+  { id: 'a4', t: '11:30', who: 'Carmen V.', kind: 'home', place: 'San Fernando centro', km: 3, tm: 8, tr: 'u', src: 'AgendaPro' },
+  { id: 'a5', t: '13:30', who: 'Luis R.', kind: 'home', place: 'Agua Buena · precordillera', km: 14, tm: 28, tr: 'p', src: 'AgendaPro' },
+  { id: 'a6', t: '16:00', who: 'Sofía T.', kind: 'pool', place: 'Piscina temperada · camino a Roma', km: 17, tm: 30, tr: 'r', src: 'AgendaPro' },
+  { id: 'a7', t: '18:30', who: 'Andrés G.', kind: 'gym', place: 'Gimnasio · San Fernando', km: 7, tm: 12, tr: 'u', src: 'AgendaPro' },
+];
+const KLABEL = { clinic: 'Clínica', home: 'Domicilio', pool: 'Piscina', gym: 'Gimnasio' };
+const KTAG = { clinic: '', home: 'home', pool: 'pool', gym: 'gym' };
+
+// Mapa ilustrativo (no a escala) · lienzo 360×230 · San Fernando al centro, Agua Buena al oriente
+const P = { clinic: [96, 150], a4: [140, 120], a5: [318, 48], a6: [44, 70], a7: [70, 186] };
+const SEGS = {
+  'clinic-a4': 'M96 150 L96 120 L140 120', 'a4-a5': 'M140 120 L232 120 C262 120 262 84 290 76 C306 70 312 60 318 48',
+  'a5-a6': 'M318 48 C312 60 306 70 290 76 C262 84 262 120 232 120 L96 120 L44 70', 'a6-a7': 'M44 70 L96 120 L96 186 L70 186',
+  'clinic-a6': 'M96 150 L96 120 L44 70', 'a6-a4': 'M44 70 L96 120 L140 120', 'a5-a7': 'M318 48 C312 60 306 70 290 76 C262 84 262 120 232 120 L96 120 L96 186 L70 186',
+};
+const ROUTES = {
+  opt:  { order: ['clinic', 'a4', 'a5', 'a6', 'a7'], legs: [null, [3, 8], [14, 28], [17, 30], [7, 12]] },
+  orig: { order: ['clinic', 'a6', 'a4', 'a5', 'a7'], legs: [null, [7, 12], [6, 11], [14, 28], [26, 41]] },
+};
+const tot = r => r.legs.slice(1).reduce((s, [k, m]) => [s[0] + k, s[1] + m], [0, 0]);
+
+let mode = 'opt', period = 'w', done = {}, pay = {}, acts = {}, notified = {}, G = { n: 8, p: 6000 };
+try {
+  done = JSON.parse(localStorage.getItem('ck3-done') || '{}'); pay = JSON.parse(localStorage.getItem('ck3-pay') || '{}');
+  const c = JSON.parse(localStorage.getItem('ck3-cfg') || 'null');
+  if (c) { ({ KM, COM, RET, VH, CMODE, FACT } = c); Object.keys(c.S || {}).forEach(k => { SERV[k].p = c.S[k][0]; SERV[k].c = c.S[k][1]; }); }
+} catch (e) { done = {}; pay = {}; }
+const save = () => { try { localStorage.setItem('ck3-done', JSON.stringify(done)); localStorage.setItem('ck3-pay', JSON.stringify(pay)); } catch (e) {} };
+const saveCfg = () => { try { const S = {}; Object.keys(SERV).forEach(k => S[k] = [SERV[k].p, SERV[k].c]); localStorage.setItem('ck3-cfg', JSON.stringify({ KM, COM, RET, VH, CMODE, FACT, S })); } catch (e) {} };
+
+// ---------- cálculo por atención ----------
 function calc(a) {
-  const pr = (RET * 100).toLocaleString('es-CL');
-  if (a.kind === 'clinic') { const own = a.price * (1 - COM), ret = own * RET; return { lines: [['Valor de la sesión', a.price], [`Comisión InMotion (${Math.round(COM * 100)} %)`, -a.price * COM], [`Retención boleta (${pr} %)`, -ret]], net: own - ret, com: a.price * COM, tr: 0, mat: 0, ret }; }
-  const tr = a.km * KM, ret = a.price * RET;
-  return { lines: [['Valor de la sesión', a.price], [`Traslado (${a.km} km)`, -tr], ['Materiales', -a.mat], [`Retención boleta (${pr} %)`, -ret]], net: a.price - tr - a.mat - ret, com: 0, tr, mat: a.mat, ret };
+  const S = SERV[a.kind], pr = (RET * 100).toLocaleString('es-CL');
+  if (a.kind === 'clinic') {
+    if (CMODE === 'factura') return { fact: true, lines: [['Sesión del mes', 'incluida en factura']], net: 0, gross: 0, com: 0, tr: 0, mat: 0, ret: 0, min: S.min, perh: clinicPerH() };
+    const own = S.p * (1 - COM), ret = own * RET, net = own - ret;
+    return { lines: [['Valor de la sesión', S.p], [`Comisión InMotion (${Math.round(COM * 100)} %)`, -S.p * COM], [`Retención boleta (${pr} %)`, -ret]], net, gross: S.p, com: S.p * COM, tr: 0, mat: 0, ret, min: S.min, perh: net / (S.min / 60) };
+  }
+  const tr = a.km * KM, ret = S.p * RET, net = S.p - tr - S.c - ret, min = S.min + a.tm;
+  return { lines: [['Valor de la sesión', S.p], [`Traslado (${a.km} km)`, -tr], [S.cl, -S.c], [`Retención boleta (${pr} %)`, -ret]], net, gross: S.p, com: 0, tr, mat: S.c, ret, min, perh: net / (min / 60), hidden: a.tm / 60 * VH };
 }
+function clinicPerH() { return CMODE === 'factura' ? FACT * (1 - RET) / CLIN_HRS : SERV.clinic.p * (1 - COM) * (1 - RET) / (SERV.clinic.min / 60); }
+// Ganancia por hora típica de cada canal (RF5)
+function chanPerH(k) {
+  if (k === 'clinic') return clinicPerH();
+  const S = SERV[k], [km, tm] = TYP[k];
+  const gross = k === 'group' ? S.p * G.n : S.p;
+  const net = gross - S.c - km * KM - gross * RET;
+  return net / ((S.min + tm) / 60);
+}
+// Clase grupal (RF10): 2 veces por semana = 8 clases al mes
+function groupMonth() { const S = SERV.group, cls = 8, gross = G.n * G.p * cls, cost = (S.c + TYP.group[0] * KM) * cls, ret = gross * RET; return { cls, gross, cost, ret, net: gross - cost - ret }; }
+
+// Punto de equilibrio: desde cuántas personas la clase rinde por hora igual o más que un domicilio
+function breakEven() {
+  const n0 = G.n, h = chanPerH('home'); let be = null;
+  for (let n = 1; n <= 10 && be === null; n++) { G.n = n; if (chanPerH('group') >= h) be = n; }
+  G.n = n0;
+  return be === null ? 'Con este valor no alcanza a rendir lo que un domicilio: sube el cobro o comparte el viaje con otras atenciones.'
+    : G.n >= be ? `Con ${G.n} personas rinde igual o más por hora que un domicilio (desde ${be} conviene).` : `Conviene desde <b>${be} personas</b>: bajo eso rinde menos por hora que un domicilio, por el viaje a Las Cabras.`;
+}
+
+// ---------- reportes por canal (Mabel 18:23 · Ariel 10:47) ----------
+const VOL = { w: { clinic: 14, home: 6, pool: 3, gym: 4 }, m: { clinic: 46, home: 19, pool: 9, gym: 13 } };
+function report(per) {
+  const rows = Object.keys(VOL[per]).map(k => {
+    const n = VOL[per][k];
+    if (k === 'clinic') {
+      const hrs = n * SERV.clinic.min / 60;
+      const net = CMODE === 'factura' ? (per === 'm' ? FACT * (1 - RET) : FACT * (1 - RET) / 4.3) : n * SERV.clinic.p * (1 - COM) * (1 - RET);
+      return { k, n, net, hrs };
+    }
+    const S = SERV[k], [km, tm] = TYP[k], net = n * (S.p - S.c - km * KM - S.p * RET), hrs = n * (S.min + tm) / 60;
+    return { k, n, net, hrs };
+  });
+  return rows;
+}
+
+// ---------- mapa ----------
 function mapSVG(big) {
   const r = ROUTES[mode];
-  const roads = ['M0 160 L360 160', 'M0 62 L360 62', 'M0 140 L360 140', 'M0 200 L360 200', 'M150 0 L150 230', 'M285 0 L285 230', 'M318 0 L318 230', 'M40 0 L40 230', 'M230 0 L230 230'];
-  const mains = ['M0 100 L360 100', 'M120 0 L120 230'];
+  const roads = ['M0 120 L360 120', 'M96 0 L96 230', 'M0 186 L200 186', 'M140 60 L140 230', 'M44 70 L96 120', 'M0 40 L44 70'];
+  const path = r.order.slice(1).map((k, i) => SEGS[`${r.order[i]}-${k}`]).join(' ');
+  const mtn = '<path d="M250 70 L272 36 L294 70Z M290 60 L318 18 L346 60Z M318 74 L340 44 L360 74Z" fill="#E4DCCB"/>';
   const pins = r.order.map((k, i) => {
-    const [x, y] = P[k], isC = k === 'clinic', d = !isC && done[k] === 1;
-    const fill = isC ? 'var(--purple)' : d ? 'var(--ok)' : 'var(--accent)', rr = big ? 13 : 11;
+    const [x, y] = P[k], isC = k === 'clinic', a = APPTS.find(z => z.id === k), d = !isC && done[k] === 1;
+    const fill = isC ? 'var(--purple)' : d ? 'var(--ok)' : a.kind === 'pool' ? '#1C8AD1' : a.kind === 'gym' ? '#B7791F' : 'var(--accent)', rr = big ? 13 : 11;
     return `<circle cx="${x}" cy="${y}" r="${rr}" fill="${fill}" stroke="#fff" stroke-width="3"/><text x="${x}" y="${y + 4.5}" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="${big ? 12 : 11}" font-weight="700" fill="#fff">${isC ? 'C' : i}</text>`;
   }).join('');
-  const labels = big ? `<text x="246" y="44" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">MACHALÍ</text><text x="46" y="186" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">RANCAGUA</text><text x="160" y="94" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">Av. San Juan</text><text x="172" y="176" font-size="9" font-family="DM Mono, monospace" fill="#5E8B60">Parque</text>` : '';
-  return `<svg viewBox="0 0 360 230" role="img" aria-label="Mapa de la ruta del día con ${r.order.length - 1} domicilios">
-    <rect width="360" height="230" fill="var(--map-land)"/>
-    <rect x="166" y="150" width="56" height="40" rx="8" fill="var(--map-park)"/><path d="M0 222 C90 210 200 232 360 214 L360 230 L0 230Z" fill="var(--map-water)"/>
-    ${roads.map(d => `<path d="${d}" stroke="var(--map-road)" stroke-width="7"/>`).join('')}
-    ${mains.map(d => `<path d="${d}" stroke="var(--map-main)" stroke-width="10"/>`).join('')}
-    <path d="${r.path}" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="${r.path}" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    ${labels}${pins}
-    ${big ? '<circle cx="120" cy="130" r="8" fill="#1A73E8" stroke="#fff" stroke-width="3"/><circle cx="120" cy="130" r="16" fill="#1A73E8" opacity=".15"/>' : ''}
-  </svg>${big ? '' : `<div class="eta"><div><b class="num">${r.km} km</b><span> · ${r.min} min en ruta</span></div><span class="num">${clp(r.km * KM)} traslado</span></div>`}`;
+  const lab = big ? `<text x="112" y="146" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">SAN FERNANDO</text><text x="282" y="104" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">AGUA BUENA</text><text x="4" y="102" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">camino a Roma</text><text x="226" y="140" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">ripio · precordillera</text>` : '';
+  const [km, mn] = tot(r);
+  return `<svg viewBox="0 0 360 230" role="img" aria-label="Mapa de la ruta del día con ${r.order.length - 1} paradas en San Fernando, Agua Buena y camino a Roma">
+    <rect width="360" height="230" fill="var(--map-land)"/>${mtn}
+    <rect x="170" y="150" width="60" height="40" rx="8" fill="var(--map-park)"/><path d="M0 214 C90 204 200 226 360 208 L360 230 L0 230Z" fill="var(--map-water)"/>
+    ${roads.map(d => `<path d="${d}" stroke="var(--map-road)" stroke-width="7" fill="none"/>`).join('')}
+    <path d="M232 120 C262 120 262 84 290 76 C306 70 312 60 318 48" stroke="var(--map-main)" stroke-width="8" fill="none" stroke-dasharray="2 4"/>
+    <path d="${path}" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="${path}" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    ${lab}${pins}
+  </svg>${big ? '' : `<div class="eta"><div><b class="num">${km} km</b><span> · ${mn} min en ruta</span></div><span class="num">${clp(km * KM)} traslado</span></div>`}`;
 }
 function renderRoute() {
-  const r = ROUTES[mode], other = ROUTES[mode === 'opt' ? 'orig' : 'opt'];
-  $('bigMap').innerHTML = mapSVG(true);
-  $('miniMap').innerHTML = mapSVG(false);
+  const r = ROUTES[mode], other = ROUTES[mode === 'opt' ? 'orig' : 'opt'], [km, mn] = tot(r), [ok, om] = tot(other);
+  $('bigMap').innerHTML = mapSVG(true); $('miniMap').innerHTML = mapSVG(false);
   $('rOpt').setAttribute('aria-pressed', mode === 'opt'); $('rOrig').setAttribute('aria-pressed', mode === 'orig');
-  const dk = Math.abs(other.km - r.km), dm = Math.abs(other.min - r.min);
+  const dk = Math.abs(ok - km), dm = Math.abs(om - mn);
   $('saving').style.background = mode === 'opt' ? '' : '#FFF3DC'; $('saving').style.color = mode === 'opt' ? '' : '#6B4300';
-  $('savingTxt').innerHTML = mode === 'opt' ? `Ahorras <b>${dk} km</b> y <b>${dm} min</b> frente al orden original · ${clp(dk * KM)} menos en bencina.` : `Este orden recorre <b>${dk} km</b> y <b>${dm} min</b> más que la ruta sugerida · ${clp(dk * KM)} extra en bencina.`;
+  $('savingTxt').innerHTML = mode === 'opt' ? `Ahorras <b>${dk} km</b> y <b>${dm} min</b> frente al orden original · ${clp(dk * KM)} menos en bencina y ${clp(dm / 60 * VH)} de tu hora.`
+    : `Este orden recorre <b>${dk} km</b> y <b>${dm} min</b> más que la ruta sugerida · ${clp(dk * KM)} extra en bencina.`;
+  $('tripCost').innerHTML = `<b>Hoy manejas ${hm(mn)}.</b> Ese tiempo vale ${clp(mn / 60 * VH)} de tu hora profesional (${clp(VH)}/h): es el costo que no se ve en la bencina.`;
   $('stops').innerHTML = r.order.map((k, i) => {
-    if (k === 'clinic') return `<div class="stop"><div class="pin clinic">C</div><div><div class="who">Salida · Clínica InMotion</div><div class="meta">Después de tu última atención en box (11:30)</div></div><span></span></div>`;
-    const a = APPTS.find(x => x.id === k), d = done[k] === 1, [km, mn] = r.legs[i];
+    if (k === 'clinic') return `<div class="stop"><div class="pin clinic">C</div><div><div class="who">Salida · Clínica InMotion</div><div class="meta">Después de tu última atención en box (10:00)</div></div><span></span></div>`;
+    const a = APPTS.find(x => x.id === k), d = done[k] === 1, [lk, lm] = r.legs[i], T = TRAMOS.find(t => t.k === a.tr);
     const btn = d ? '<span class="tag ok">Hecha</span>' : notified[k] ? '<span class="tag home">Avisado</span>' : `<button class="btn sm" data-notify="${k}">Voy en camino</button>`;
-    return `<div class="stop"><div class="pin ${d ? 'done' : ''}">${i}</div><div><div class="who">${a.t} · ${a.who}</div><div class="meta">${a.place} · ${a.why}</div><div class="leg">↳ ${km} km · ${mn} min · ${clp(km * KM)}</div></div>${btn}</div>`;
+    return `<div class="stop"><div class="pin ${d ? 'done' : KTAG[a.kind]}">${i}</div><div><div class="who">${a.t} · ${a.who}</div><div class="meta">${a.place}<span class="tramo ${TCLS[a.tr]}">${T.n}</span></div><div class="leg">↳ ${lk} km · ${lm} min · ${clp(lk * KM)} + ${clp(lm / 60 * VH)} de tu hora</div></div>${btn}</div>`;
   }).join('');
+  $('tramos').innerHTML = TRAMOS.map(t => `<div class="row"><span>${t.n} <span class="note">· ${t.d}</span></span><span class="num">${t.add ? '+ ' + clp(t.add) : 'sin recargo'} → ${clp(SERV.home.p + t.add)}</span></div>`).join('');
 }
+
+// ---------- render general ----------
 function render() {
-  const doneA = APPTS.filter(a => done[a.id] === 1);
-  const todayNet = doneA.reduce((s, a) => s + calc(a).net, 0);
-  const month = BASE_MONTH + todayNet, pct = Math.min(month / META, 1);
+  const doneA = APPTS.filter(a => done[a.id] === 1), cs = doneA.map(calc);
+  const todayNet = cs.reduce((s, c) => s + c.net, 0);
+  const clinToday = doneA.filter(a => a.kind === 'clinic').length;
+  const clinMonth = CMODE === 'factura' ? FACT * (1 - RET) : CLIN_TODATE;
+  const month = BASE_OTH + clinMonth + todayNet, pct = Math.min(month / META, 1);
   $('mNet').textContent = clp(month);
   $('mPct').textContent = `${Math.round(pct * 100)} % de la meta de $1.100.000`;
   $('dNet').textContent = clp(todayNet);
-  $('dCount').textContent = `${doneA.length} de ${APPTS.length} atenciones` + (Object.values(done).includes('ns') ? ' · 1 inasistencia' : '');
+  $('dCount').textContent = `${doneA.length} de ${APPTS.length} atenciones` + (clinToday && CMODE === 'factura' ? ` · ${clinToday} en factura` : '') + (Object.values(done).includes('ns') ? ' · 1 inasistencia' : '');
   $('gArc').setAttribute('stroke-dasharray', `${(pct * 100).toFixed(1)} 100`);
   $('gNeedle').setAttribute('transform', `rotate(${-90 + pct * 180} 60 64)`);
-  const ritmo = month / META / (10 / 30), L = $('mLight');
+  const ritmo = month / META / (DAY / DAYS), L = $('mLight');
   L.className = 'chip' + (ritmo >= 1 ? '' : ritmo >= .85 ? ' warn' : ' bad');
   L.querySelector('span').textContent = ritmo >= 1 ? 'Vas al ritmo de tu meta' : ritmo >= .85 ? 'Un poco bajo el ritmo' : 'Bajo el ritmo de tu meta';
+  $('vhMini').textContent = clp(VH);
+
+  // Ganancia por hora por canal
+  const ch = ['clinic', 'home', 'pool', 'gym', 'group'].map(k => ({ k, v: chanPerH(k) })).sort((a, b) => b.v - a.v), mx = Math.max(...ch.map(x => x.v));
+  const COL = { clinic: 'var(--purple)', home: 'var(--accent)', pool: '#1C8AD1', gym: 'var(--amber)', group: 'var(--ok)' };
+  const SUB = { clinic: CMODE === 'factura' ? 'factura mensual ÷ horas en box' : '2 pacientes por hora, sin viaje', home: 'incluye ~40 min de viaje ida y vuelta', pool: 'incluye arriendo y ~30 min de viaje', gym: 'incluye insumos y ~20 min de viaje', group: `${G.n} personas · incluye sala y viaje a Las Cabras` };
+  $('rank').innerHTML = ch.map(({ k, v }) => `<div class="r ${k === 'group' ? 'proj' : ''}"><b>${k === 'group' ? 'Clase grupal' : SERV[k].n.replace(' InMotion', '').replace(' temperada', '')}</b><span class="v">${clp(v)}/h</span><div class="track"><span style="width:${Math.max(v / mx * 100, 4).toFixed(0)}%;background:${COL[k]}"></span></div><small>${SUB[k]}</small></div>`).join('');
+  const h = chanPerH('home'), c = chanPerH('clinic');
+  $('insight').innerHTML = c > h ? `En la clínica ganas <b>${clp(c)}</b> por hora; a domicilio, <b>${clp(h)}</b>, porque el viaje también es tiempo. Para domicilios lejanos usa la tarifa por tramo.` : `A domicilio ganas <b>${clp(h)}</b> por hora, más que en la clínica (${clp(c)}).`;
+
+  // Agenda
   $('agendaList').innerHTML = APPTS.map(a => {
-    const c = calc(a), d = done[a.id], h = a.kind === 'home';
-    return `<div class="slot"><div class="t num">${a.t}</div><div class="appt ${h ? 'home' : ''} ${d ? 'done' : ''}">
-      <span class="tag ${h ? 'home' : ''}">${h ? 'Domicilio' : 'Clínica'}</span><span class="meta">${a.place}</span>
-      <div class="who">${a.who}</div><div class="meta">${a.why}</div>
-      ${d === 1 ? `<div class="okline"><span>Ganancia real</span><b class="num">${clp(c.net)}</b></div><button class="undo" data-undo="${a.id}">Deshacer</button>`
+    const k = calc(a), d = done[a.id], cls = KTAG[a.kind];
+    const okl = k.fact ? `<div class="okline"><span>Sesión registrada</span><span class="note">Incluida en tu factura mensual</span></div>` : `<div class="okline"><span>Ganancia real${a.kind !== 'clinic' ? ` · <span class="note">${clp(k.perh)}/h con viaje</span>` : ''}</span><b class="num">${clp(k.net)}</b></div>`;
+    const pm = pay[a.id] ? `<span class="tag">${pay[a.id]}</span>` : '';
+    return `<div class="slot"><div class="t num">${a.t}</div><div class="appt ${cls} ${d ? 'done' : ''}">
+      <span class="tag ${cls}">${KLABEL[a.kind]}</span><span class="src">${a.src}</span>
+      <div class="who">${a.who}</div><div class="meta">${a.place}${a.tr ? `<span class="tramo ${TCLS[a.tr]}">${TRAMOS.find(t => t.k === a.tr).n}</span>` : ''}</div>
+      ${d === 1 ? `${okl}<div style="display:flex;justify-content:space-between;align-items:center">${pm}<button class="undo" data-undo="${a.id}">Deshacer</button></div>`
         : d === 'ns' ? `<div class="okline" style="align-items:center"><span><span class="tag ns">No asistió</span><span class="note">No suma ingreso</span></span><button class="undo" data-undo="${a.id}">Deshacer</button></div>`
         : `<div class="btns"><button class="btn" data-done="${a.id}">Atención realizada</button><button class="btn line" data-noshow="${a.id}">No asistió</button></div>`}
     </div></div>`;
   }).join('');
-  const ret = doneA.reduce((s, a) => s + calc(a).ret, 0);
-  $('j1').textContent = clp(month); $('j2').textContent = clp(286000 + ret);
+
+  // Mi plata
+  const ret = cs.reduce((s, c) => s + c.ret, 0);
+  $('j1').textContent = clp(month); $('j2').textContent = clp(254000 + ret);
+  renderReport(); renderClinicMode(); renderServices();
+
+  // Proyección y clase grupal
+  const gm = groupMonth();
+  $('grpActTxt').textContent = `+ ${clp(gm.net * 2)} en enero y febrero · ${G.n} personas, 2 veces por semana`;
+  if (acts.grupo !== undefined) acts.grupo = gm.net * 2;
   const extra = Object.values(acts).reduce((s, v) => s + v, 0), gap = Math.max(770000 - extra, 0);
   $('gapNote').innerHTML = gap > 0 ? `Te faltarían <strong>${clp(gap)}</strong> entre enero y febrero para llegar a tu meta.` : '<strong>Con estas acciones cubres la baja de enero y febrero.</strong>';
   $('barFeb').setAttribute('fill', gap === 0 ? 'var(--amber)' : 'var(--coral)');
+  $('grpCard').hidden = acts.grupo === undefined;
+  $('gN').textContent = G.n; $('gMinus').disabled = G.n <= 1; $('gPlus').disabled = G.n >= 10;
+  $('seats').innerHTML = Array.from({ length: 10 }, (_, i) => `<i class="${i < G.n ? 'on' : ''}"></i>`).join('');
+  $('gRows').innerHTML = [['Ingreso del mes (8 clases)', gm.gross], ['Sala y traslado', -gm.cost], [`Retención (${(RET * 100).toLocaleString('es-CL')} %)`, -gm.ret]].map(([k, v]) => `<div class="row ${v < 0 ? 'minus' : ''}"><span>${k}</span><span class="num">${clp(v)}</span></div>`).join('')
+    + `<div class="row total"><span>Ganancia real del mes</span><span class="num">${clp(gm.net)}</span></div><div class="row"><span>Por hora, con viaje</span><span class="num">${clp(chanPerH('group'))}/h</span></div>`
+    + `<p class="insight">${breakEven()}</p>`;
   renderRoute();
 }
-function openSheet(a) {
-  const c = calc(a);
-  $('sTitle').textContent = `${a.who} · ${a.t}`;
-  $('sRows').innerHTML = c.lines.map(([k, v]) => `<div class="row ${v < 0 ? 'minus' : ''}"><span>${k}</span><span class="num">${v < 0 ? '− ' + clp(-v) : clp(v)}</span></div>`).join('') + `<div class="row total"><span>Ganancia real</span><span class="num">${clp(c.net)}</span></div>`;
-  $('sNote').textContent = a.kind === 'home' ? 'El traslado, los materiales y la retención ya están descontados.' : 'La comisión y la retención ya están descontadas.';
+const NAME = { clinic: 'Clínica', home: 'Domicilio', pool: 'Piscina', gym: 'Gimnasio' };
+function renderReport() {
+  const rows = report(period), T = rows.reduce((s, r) => ({ n: s.n + r.n, net: s.net + r.net, hrs: s.hrs + r.hrs }), { n: 0, net: 0, hrs: 0 });
+  const part = rows.filter(r => r.k !== 'clinic').reduce((s, r) => s + r.net, 0);
+  $('rep').innerHTML = `<thead><tr><th>Canal</th><th>Atenc.</th><th>Ganancia</th><th>$/hora</th></tr></thead><tbody>`
+    + rows.map(r => `<tr><td>${NAME[r.k]}${r.k === 'clinic' && CMODE === 'factura' ? ' <span class="note">(factura)</span>' : ''}</td><td>${r.n}</td><td>${clp(r.net)}</td><td>${clp(r.net / r.hrs)}</td></tr>`).join('')
+    + `<tr class="tot"><td>Total</td><td>${T.n}</td><td>${clp(T.net)}</td><td>${clp(T.net / T.hrs)}</td></tr></tbody>`;
+  $('repNote').textContent = `${period === 'w' ? 'Semana del 17 al 23 de noviembre' : 'Noviembre al día 23'} · particulares ${clp(part)} (${Math.round(part / T.net * 100)} %) · clínica ${clp(T.net - part)}. Horas con viaje incluido.`;
+  $('pW').setAttribute('aria-pressed', period === 'w'); $('pM').setAttribute('aria-pressed', period === 'm');
+}
+function renderClinicMode() {
+  $('cmA').setAttribute('aria-pressed', CMODE === 'atencion'); $('cmF').setAttribute('aria-pressed', CMODE === 'factura');
+  $('factRow').hidden = CMODE !== 'factura'; $('comRow').hidden = CMODE !== 'atencion';
+  $('cmNote').textContent = CMODE === 'factura' ? `Registras las sesiones para saber cuántas hiciste; la ganancia de la clínica es la factura del mes (${clp(FACT * (1 - RET))} después de retención).` : 'Cada sesión de clínica descuenta la comisión y la retención al registrarla.';
+}
+function renderServices() {
+  if ($('svc').dataset.ready) return;
+  $('svc').innerHTML = ['home', 'pool', 'gym', 'group', 'clinic'].map(k => { const S = SERV[k]; return `<div class="it"><div><b>${S.n}</b><small>${S.d}</small></div><span></span>
+    <label class="field" for="sp-${k}" style="grid-column:1/-1"><span>Valor ${k === 'group' ? 'por persona' : 'de la sesión'}</span><input id="sp-${k}" data-svc="${k}" data-f="p" type="number" inputmode="numeric" min="0" step="500" value="${S.p}"></label>
+    ${k === 'clinic' ? '' : `<label class="field" for="sc-${k}" style="grid-column:1/-1"><span>${S.cl}</span><input id="sc-${k}" data-svc="${k}" data-f="c" type="number" inputmode="numeric" min="0" step="100" value="${S.c}"></label>`}</div>`; }).join('');
+  $('svc').dataset.ready = 1;
+}
+
+// ---------- hojas ----------
+function sheet(kick, title, rows, extra, note) {
+  $('sKick').textContent = kick; $('sTitle').textContent = title;
+  $('sRows').innerHTML = rows; $('sExtra').innerHTML = extra || ''; $('sNote').textContent = note || '';
   $('scrim').hidden = false; $('sClose').focus();
+}
+const row = ([k, v]) => `<div class="row ${typeof v === 'number' && v < 0 ? 'minus' : ''}"><span>${k}</span><span class="num">${typeof v === 'number' ? (v < 0 ? '− ' + clp(-v) : clp(v)) : v}</span></div>`;
+function openAppt(a) {
+  const c = calc(a);
+  if (c.fact) { const n = Object.keys(done).filter(id => done[id] === 1 && APPTS.find(x => x.id === id).kind === 'clinic').length; return sheet('Sesión registrada', `${a.who} · ${a.t}`, row(['Sesión de clínica', `${n + 33} de 52 del mes`]), '', 'En modo factura, la clínica suma su monto fijo del mes: no se calcula por atención.'); }
+  let extra = `<div class="perh"><span>${a.kind === 'clinic' ? 'Ganancia por hora en box' : `Por hora, con ${a.tm} min de viaje`}</span><b class="num">${clp(c.perh)}/h</b></div>`;
+  if (a.kind !== 'clinic') {
+    const T = TRAMOS.find(t => t.k === a.tr);
+    extra += `<div class="hidden-cost">El viaje te tomó <b>${a.tm} min</b> ≈ <b>${clp(c.hidden)}</b> de tu hora.${T.add ? ` Tramo ${T.n.toLowerCase()}: sugerimos cobrar <b>${clp(SERV[a.kind].p + T.add)}</b> (+${clp(T.add)}).` : ''}</div>`
+      + `<h2 style="margin:14px 0 6px">¿Cómo te pagó?</h2><div class="pay" role="group" aria-label="Medio de pago">${['Transferencia', 'Efectivo', 'Pendiente'].map(m => `<button type="button" data-pay="${a.id}" data-m="${m}" aria-pressed="${pay[a.id] === m}">${m}</button>`).join('')}</div>`;
+  }
+  sheet('Atención registrada', `${a.who} · ${a.t}`, c.lines.map(row).join('') + `<div class="row total"><span>Ganancia real</span><span class="num">${clp(c.net)}</span></div>`, extra,
+    a.kind === 'clinic' ? 'La comisión y la retención ya están descontadas.' : 'Traslado, costo del servicio y retención ya están descontados.');
+}
+function closeDay() {
+  const doneA = APPTS.filter(a => done[a.id] === 1), pend = APPTS.length - Object.keys(done).length;
+  if (pend) { toast(`Faltan ${pend} atenciones por confirmar`); return; }
+  const cs = doneA.map(calc), net = cs.reduce((s, c) => s + c.net, 0), [km, mn] = tot(ROUTES[mode]);
+  const porCobrar = doneA.filter(a => a.kind !== 'clinic' && (!pay[a.id] || pay[a.id] === 'Pendiente')).length;
+  sheet('Día cerrado', 'Martes 24 · resumen', [['Atenciones realizadas', String(doneA.length)], ['Inasistencias', String(Object.values(done).filter(v => v === 'ns').length)], ['Kilómetros', `${km} km`], ['Tiempo de viaje', hm(mn)], ['Pagos pendientes', String(porCobrar)]].map(row).join('')
+    + `<div class="row total"><span>Ganancia real del día</span><span class="num">${clp(net)}</span></div>`, '', 'Listo en un minuto: reemplaza tu nota de la noche y se suma al resumen semanal.');
 }
 function toast(msg) { const t = $('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => { t.hidden = true; }, 2600); }
 
 document.addEventListener('click', e => {
   const d = e.target.closest('[data-done]');
-  if (d) { const a = APPTS.find(x => x.id === d.dataset.done); done[a.id] = 1; save(); render(); openSheet(a); return; }
+  if (d) { const a = APPTS.find(x => x.id === d.dataset.done); done[a.id] = 1; save(); render(); openAppt(a); return; }
+  const py = e.target.closest('[data-pay]');
+  if (py) { pay[py.dataset.pay] = py.dataset.m; save(); document.querySelectorAll(`[data-pay="${py.dataset.pay}"]`).forEach(b => b.setAttribute('aria-pressed', b === py)); render(); return; }
   const n = e.target.closest('[data-notify]');
-  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`WhatsApp a ${a.who}: «Hola, voy en camino. Llego en unos 15 minutos. Josselyn»`); return; }
+  if (n) { const a = APPTS.find(x => x.id === n.dataset.notify); notified[a.id] = 1; renderRoute(); toast(`WhatsApp a ${a.who}: «Hola, voy en camino. Llego cerca de las ${a.t}. Josselyn»`); return; }
   const un = e.target.closest('[data-undo]');
-  if (un) { delete done[un.dataset.undo]; save(); render(); toast('Atención vuelta a pendiente'); return; }
+  if (un) { delete done[un.dataset.undo]; delete pay[un.dataset.undo]; save(); render(); toast('Atención vuelta a pendiente'); return; }
   const ns = e.target.closest('[data-noshow]');
   if (ns) { done[ns.dataset.noshow] = 'ns'; save(); render(); toast('Marcada como inasistencia · no suma ingreso'); return; }
   if (e.target.closest('[data-export]')) { exportCSV(); return; }
   const g = e.target.closest('[data-go]');
   if (g) { location.hash = g.dataset.go; return; }
   const b = e.target.closest('#acts button');
-  if (b) { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); if (on) acts[b.dataset.k] = +b.dataset.v; else delete acts[b.dataset.k]; render(); toast(on ? 'Acción agregada a tu plan' : 'Acción quitada'); }
+  if (b) { const on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on); if (on) acts[b.dataset.k] = b.dataset.k === 'grupo' ? groupMonth().net * 2 : +b.dataset.v; else delete acts[b.dataset.k]; render(); toast(on ? 'Acción agregada a tu plan' : 'Acción quitada'); }
 });
 function exportCSV() {
-  const rows = [['fecha', 'paciente', 'lugar', 'valor', 'comision', 'traslado', 'materiales', 'retencion', 'ganancia_real']];
-  APPTS.filter(a => done[a.id] === 1).forEach(a => { const c = calc(a); rows.push(['2026-11-10', a.who.split(' ').map(w => w[0]).join('') , a.kind === 'home' ? 'domicilio' : 'clinica', a.price, Math.round(c.com), Math.round(c.tr), c.mat, Math.round(c.ret), Math.round(c.net)]); });
-  if (rows.length === 1) { toast('Primero registra al menos una atención'); return; }
-  const blob = new Blob(['\ufeff' + rows.map(r => r.join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
-  const l = document.createElement('a'); l.href = URL.createObjectURL(blob); l.download = 'copiloto-kine-noviembre-2026.csv'; document.body.appendChild(l); l.click(); l.remove();
-  toast(`Resumen descargado · ${rows.length - 1} atenciones`);
+  const per = period === 'w' ? 'semana' : 'mes', rows = [['periodo', 'canal', 'atenciones', 'ganancia_real', 'horas_con_viaje', 'ganancia_por_hora']];
+  report(period).forEach(r => rows.push([per, NAME[r.k], r.n, Math.round(r.net), r.hrs.toFixed(1).replace('.', ','), Math.round(r.net / r.hrs)]));
+  rows.push([]); rows.push(['fecha', 'paciente', 'canal', 'lugar', 'estado', 'medio_pago', 'valor', 'comision', 'traslado', 'costo_servicio', 'retencion', 'ganancia_real', 'min_viaje']);
+  APPTS.filter(a => done[a.id]).forEach(a => { const c = calc(a), st = done[a.id] === 1 ? 'realizada' : 'no asistió';
+    rows.push(['2026-11-24', a.who.split(' ').map(w => w[0]).join(''), NAME[a.kind], a.kind === 'clinic' ? 'InMotion' : a.place.split(' · ')[0], st, pay[a.id] || (a.kind === 'clinic' ? 'clínica' : ''), done[a.id] === 1 ? c.gross : 0, Math.round(c.com), Math.round(c.tr), c.mat, Math.round(c.ret), done[a.id] === 1 ? Math.round(c.net) : 0, a.tm || 0]); });
+  const blob = new Blob(['﻿' + rows.map(r => r.join(';')).join('\n')], { type: 'text/csv;charset=utf-8' });
+  const l = document.createElement('a'); l.href = URL.createObjectURL(blob); l.download = `copiloto-kine-resumen-${per}.csv`; document.body.appendChild(l); l.click(); l.remove();
+  toast(`Resumen de la ${per === 'semana' ? 'semana' : 'mes'} descargado · se abre en Excel o Google Sheets`);
 }
-[['cCom', v => COM = v / 100], ['cKm', v => KM = v], ['cRet', v => RET = v / 100]].forEach(([id, set]) => { const el = $(id); el.value = id === 'cCom' ? Math.round(COM * 100) : id === 'cKm' ? KM : +(RET * 100).toFixed(2); el.addEventListener('change', () => { const v = parseFloat(el.value); if (isNaN(v) || v < 0) { el.value = id === 'cCom' ? Math.round(COM * 100) : id === 'cKm' ? KM : RET * 100; return; } set(v); saveCost(); render(); toast('Costos actualizados'); }); });
+// Ajustes
+const CFG = [['cCom', () => Math.round(COM * 100), v => COM = v / 100], ['cKm', () => KM, v => KM = v], ['cRet', () => +(RET * 100).toFixed(2), v => RET = v / 100], ['cVh', () => VH, v => VH = v], ['cFact', () => FACT, v => FACT = v]];
+CFG.forEach(([id, get, set]) => { const el = $(id); el.value = get(); el.addEventListener('change', () => { const v = parseFloat(el.value); if (isNaN(v) || v < 0) { el.value = get(); return; } set(v); saveCfg(); render(); toast('Valores actualizados'); }); });
+document.addEventListener('change', e => { const el = e.target.closest('[data-svc]'); if (!el) return; const v = parseFloat(el.value), S = SERV[el.dataset.svc]; if (isNaN(v) || v < 0) { el.value = S[el.dataset.f]; return; } S[el.dataset.f] = v; if (el.dataset.svc === 'group' && el.dataset.f === 'p') { G.p = v; $('gP').value = v; } saveCfg(); render(); toast('Servicio actualizado'); });
+$('gP').addEventListener('change', () => { const v = parseFloat($('gP').value); if (isNaN(v) || v < 0) { $('gP').value = G.p; return; } G.p = v; SERV.group.p = v; const s = $('sp-group'); if (s) s.value = v; render(); });
+$('gMinus').onclick = () => { G.n = Math.max(1, G.n - 1); render(); };
+$('gPlus').onclick = () => { G.n = Math.min(10, G.n + 1); render(); };
+$('cmA').onclick = () => { CMODE = 'atencion'; saveCfg(); render(); };
+$('cmF').onclick = () => { CMODE = 'factura'; saveCfg(); render(); };
+$('pW').onclick = () => { period = 'w'; renderReport(); };
+$('pM').onclick = () => { period = 'm'; renderReport(); };
 $('rOpt').onclick = () => { mode = 'opt'; renderRoute(); };
 $('rOrig').onclick = () => { mode = 'orig'; renderRoute(); };
 $('sClose').onclick = () => { $('scrim').hidden = true; };
 $('scrim').onclick = e => { if (e.target.id === 'scrim') $('scrim').hidden = true; };
 document.addEventListener('keydown', e => { if (e.key === 'Escape') $('scrim').hidden = true; });
-$('closeDay').onclick = () => { const n = Object.keys(done).length; toast(n === APPTS.length ? 'Día cerrado · sin pasar nada a Excel' : `Faltan ${APPTS.length - n} atenciones por confirmar`); };
+$('closeDay').onclick = closeDay;
 const VIEWS = ['inicio', 'ruta', 'agenda', 'proyeccion', 'impuestos'];
 function route() {
   const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'inicio';
@@ -474,6 +759,7 @@ function route() {
   window.scrollTo(0, 0);
 }
 window.addEventListener('hashchange', route);
+G.p = SERV.group.p;
 route(); render();
 </script>
 </body>

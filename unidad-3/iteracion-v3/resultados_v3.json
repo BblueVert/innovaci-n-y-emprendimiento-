@@ -1,0 +1,285 @@
+{
+ "archivo": "copiloto-kine.html",
+ "fecha": "2026-11-24",
+ "tasks": [
+  {
+   "id": "T1",
+   "origen": "EV2",
+   "name": "Saber cuánto ganó en el mes y si va bien",
+   "taps": 0,
+   "ok": true,
+   "obs": "$860.700 · Un poco bajo el ritmo"
+  },
+  {
+   "id": "T2",
+   "origen": "EV2",
+   "name": "Registrar una atención como realizada",
+   "taps": 2,
+   "ok": true,
+   "obs": "Hoja visible: true"
+  },
+  {
+   "id": "T3",
+   "origen": "EV2",
+   "name": "Entender de qué se compone la ganancia de una atención",
+   "taps": 2,
+   "ok": true,
+   "obs": "Valor de la sesión $30.000 · Traslado (14 km) − $2.520 · Materiales − $1.200 · Retención boleta (15,25 %) − $4.575 · Ganancia real $21.705"
+  },
+  {
+   "id": "T4",
+   "origen": "EV2",
+   "name": "Corregir una atención marcada por error",
+   "taps": 4,
+   "ok": true,
+   "obs": "Deshecha"
+  },
+  {
+   "id": "T5",
+   "origen": "EV2",
+   "name": "Ver la ruta y avisar al primer paciente",
+   "taps": 2,
+   "ok": true,
+   "obs": "WhatsApp a Carmen V.: «Hola, voy en camino. Llego cerca de las 11:30. Josselyn»"
+  },
+  {
+   "id": "T6",
+   "origen": "EV2",
+   "name": "Comparar la ruta sugerida con el orden original",
+   "taps": 2,
+   "ok": true,
+   "obs": "Este orden recorre 12 km y 14 min más que la ruta sugerida · $2.160 extra en bencina."
+  },
+  {
+   "id": "T7",
+   "origen": "EV2",
+   "name": "Saber cuánto falta para enero y febrero y agregar una acción",
+   "taps": 2,
+   "ok": true,
+   "obs": "Te faltarían $770.000 entre enero y febrero para llegar a tu meta. → Te faltarían $530.000 entre enero y febrero para llegar a tu meta."
+  },
+  {
+   "id": "T8",
+   "origen": "EV2",
+   "name": "Saber cuánto tiene separado para impuestos",
+   "taps": 1,
+   "ok": true,
+   "obs": "Impuestos: $254.000"
+  },
+  {
+   "id": "T9",
+   "origen": "EV2",
+   "name": "Cambiar el costo por km",
+   "taps": 2,
+   "ok": true,
+   "obs": "Costo por km = 200"
+  },
+  {
+   "id": "T10",
+   "origen": "EV2",
+   "name": "Marcar que un paciente no asistió",
+   "taps": 2,
+   "ok": true,
+   "obs": "0 de 7 atenciones · 1 inasistencia"
+  },
+  {
+   "id": "T11",
+   "origen": "EV2",
+   "name": "Preparar la información para la contadora",
+   "taps": 2,
+   "ok": true,
+   "obs": "Descarga: copiloto-kine-resumen-semana.csv"
+  },
+  {
+   "id": "N1",
+   "origen": "RF3 · cambio 1",
+   "name": "Saber de qué agenda viene cada cita",
+   "taps": 1,
+   "ok": true,
+   "obs": "Orígenes: Agenda clínica + AgendaPro"
+  },
+  {
+   "id": "N2",
+   "origen": "RF5 · cambio 2",
+   "name": "Saber qué canal le rinde más por hora",
+   "taps": 0,
+   "ok": true,
+   "obs": "Sin tocar nada: Clínica $16.950/h > Piscina $15.314/h > Domicilio $12.807/h > Clase grupal $12.314/h > Gimnasio $12.049/h"
+  },
+  {
+   "id": "N3",
+   "origen": "RF6 · cambio 3",
+   "name": "Ver cuánto le cuesta en tiempo el domicilio de Agua Buena y qué cobrar",
+   "taps": 2,
+   "ok": true,
+   "obs": "El viaje te tomó 28 min ≈ $7.000 de tu hora. Tramo precordillera: sugerimos cobrar $36.000 (+$6.000)."
+  },
+  {
+   "id": "N4",
+   "origen": "RF4 · cambio 4",
+   "name": "Registrar la clínica como monto fijo mensual",
+   "taps": 3,
+   "ok": true,
+   "obs": "Ya activo por defecto · En modo factura, la clínica suma su monto fijo del mes: no se calcula por atención."
+  },
+  {
+   "id": "N5",
+   "origen": "RF7 · cambio 5",
+   "name": "Cambiar el valor de la sesión en piscina",
+   "taps": 4,
+   "ok": true,
+   "obs": "Piscina a $38.000 → Ganancia real$21.145"
+  },
+  {
+   "id": "N6",
+   "origen": "RF10 · cambio 6",
+   "name": "Armar una clase grupal y saber desde cuántas personas conviene",
+   "taps": 3,
+   "ok": true,
+   "obs": "Con 9 personas rinde igual o más por hora que un domicilio (desde 9 conviene). · Te faltarían $261.760 entre enero y febrero para llegar a tu meta."
+  },
+  {
+   "id": "N7",
+   "origen": "Mabel · Ariel · cambio 7",
+   "name": "Ver el resumen del mes por canal y descargarlo para Excel",
+   "taps": 3,
+   "ok": true,
+   "obs": "Noviembre al día 23 · particulares $786.683 (64 %) · clínica $440.700. Horas con viaje incluido. · copiloto-kine-resumen-mes.csv"
+  },
+  {
+   "id": "N8",
+   "origen": "RF8 · cambio 8",
+   "name": "Reconocer su territorio en la ruta",
+   "taps": 1,
+   "ok": true,
+   "obs": "San Fernando · Agua Buena · camino a Roma · Hoy manejas 1 h 18 min. Ese tiempo vale $19.500 de tu hora profesional ($15.000/h): es el costo que no se ve en la bencina."
+  },
+  {
+   "id": "N9",
+   "origen": "Planilla de otro equipo",
+   "name": "Registrar el medio de pago de una atención",
+   "taps": 4,
+   "ok": true,
+   "obs": "Etiqueta en agenda: true"
+  },
+  {
+   "id": "N10",
+   "origen": "RF2",
+   "name": "Cerrar el día completo con resumen (reemplaza la nota de la noche)",
+   "taps": 16,
+   "ok": true,
+   "obs": "Atenciones realizadas 7 · Inasistencias 0 · Kilómetros 41 km · Tiempo de viaje 1 h 18 min · Pagos pendientes 4 · Ganancia real del día $79.878"
+  }
+ ],
+ "calculos": [
+  {
+   "id": "a4",
+   "net_app": 23685,
+   "net_ref": 23685,
+   "perh_app": 20899,
+   "perh_ref": 20899,
+   "viaje_app": 2000,
+   "viaje_ref": 2000,
+   "ok": true
+  },
+  {
+   "id": "a5",
+   "net_app": 21705,
+   "net_ref": 21705,
+   "perh_app": 14799,
+   "perh_ref": 14799,
+   "viaje_app": 7000,
+   "viaje_ref": 7000,
+   "ok": true
+  },
+  {
+   "id": "a6",
+   "net_app": 18603,
+   "net_ref": 18603,
+   "perh_app": 14882,
+   "perh_ref": 14882,
+   "viaje_app": 7500,
+   "viaje_ref": 7500,
+   "ok": true
+  },
+  {
+   "id": "a7",
+   "net_app": 15885,
+   "net_ref": 15885,
+   "perh_app": 13238,
+   "perh_ref": 13238,
+   "viaje_app": 3000,
+   "viaje_ref": 3000,
+   "ok": true
+  },
+  {
+   "id": "a2 (clínica por atención)",
+   "net_app": 14831,
+   "net_ref": 14831,
+   "ok": true
+  }
+ ],
+ "axe": {
+  "inicio": [],
+  "ruta": [],
+  "agenda": [],
+  "proyeccion": [],
+  "impuestos": [],
+  "hoja-atencion": []
+ },
+ "targets": {
+  "inicio": [],
+  "ruta": [],
+  "agenda": [],
+  "proyeccion": [],
+  "impuestos": []
+ },
+ "fonts": {
+  "inicio": {
+   "12": 29,
+   "13": 5,
+   "14": 15,
+   "16": 1,
+   "22": 1,
+   "24": 1,
+   "28": 4,
+   "40": 1
+  },
+  "ruta": {
+   "12": 26,
+   "13": 14,
+   "14": 9,
+   "15": 5,
+   "16": 1,
+   "22": 1
+  },
+  "agenda": {
+   "12": 36,
+   "13": 7,
+   "14": 16,
+   "15": 7,
+   "16": 1,
+   "22": 1
+  },
+  "proyeccion": {
+   "12": 15,
+   "13": 5,
+   "14": 16,
+   "16": 2,
+   "20": 2,
+   "22": 1,
+   "30": 1
+  },
+  "impuestos": {
+   "12": 30,
+   "13": 23,
+   "14": 25,
+   "15": 1,
+   "16": 1,
+   "22": 1,
+   "26": 3
+  }
+ },
+ "errores": [],
+ "peso_kb": 63.6
+}
