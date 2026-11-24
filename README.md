@@ -106,3 +106,9 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 - U2: reemplazar `Gx` por el número de grupo, insertar fotos de entrevistas en el anexo y que cada integrante escriba su conclusión individual.
 - U2: completar en Figma los instrumentos 18–26; brainstorming real (la infografía sugiere 50–100 ideas, con moderador); cocreación con Josselyn (indicador 7); factibilidad (indicadores 9 y 10); panel de propuesta de valor (S8).
 - U3: aplicar el ciclo 4 (Josselyn y Catalina con la v3, tareas N1–N10, SUS y precio) y las sesiones con pacientes y contadora; completar la CDM del ciclo 4.
+
+## EV4 / ES4 — Indicaciones del profesor (pizarra)
+- **Entrega ES4: 15/12/2026**, portal habilitado con anticipación, hasta las 23:59 h.
+- Material en AAI → carpeta **"Archivos Sercotec ES4 15/12/2026"**: formato Word del informe (U1, U2, U3 y U4), ejemplo de informe y PPT.
+- PPT → **pitch de 3½ minutos**.
+- Se sube a AAI: **informe** (Word, U1–U4) y **PPT** con **link al pitch** y **link al Miro**.
