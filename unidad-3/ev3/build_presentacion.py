@@ -480,7 +480,7 @@ def costeo():
                  + '<div class="col2"><div class="a"><h3>Desarrollo</h3>' + table(['Ítem', 'Qué incluye', 'Costo', 'Nota'], d, 'sm')
                  + '<h3 style="margin-top:3mm">Operación mensual</h3>' + table(['Etapa', 'Servicios', 'Costo', 'Precio a la usuaria'], o, 'sm') + '</div>'
                  + '<div class="b"><h3>Frente a sus alternativas</h3>' + table(['Opción', 'Costo directo', 'Costo real'], k, 'sm')
-                 + '<p class="note" style="margin-top:3mm">Precios de lista de noviembre 2026 a $950/US$. El precio de $9.990 baja la referencia de la EV2 ($20–25 mil) por lo dicho en el ciclo 3: bajo costo (Ariel) y un mercado regional que valora poco lo especializado (RF9). Se valida en el ciclo 4 (H4).</p></div></div>', '3.1.5')
+                 + '<p class="note" style="margin-top:3mm">Precios de lista de noviembre 2026 a $950/US$. El precio de $9.990 baja la referencia de la EV2 ($20–25 mil) por lo dicho en el ciclo 3: bajo costo (Ariel O’Nell) y un mercado regional que valora poco lo especializado (RF9). Se valida en el ciclo 4 (H4).</p></div></div>', '3.1.5')
 
 
 # ================================================================ versión condensada (informe + presentación en un solo archivo)

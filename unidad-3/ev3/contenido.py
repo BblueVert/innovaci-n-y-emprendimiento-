@@ -306,7 +306,7 @@ GANTT = [
 # ---------------------------------------------------------------- Retroalimentación 12/11 (Sercotec + clienta + docentes)
 # Fuente: ../retroalimentacion/Transcripcion_reunion_2026-11-12.md (minutos entre corchetes)
 RETRO_CONTEXTO = ('Reunión de Meet del 12 de noviembre (08:33, 40 min) con Mabel Aceituno Romero (encargada de Sercotec), la clienta Josselyn Toledo, '
-                  'el profesor a cargo Ariel O’Nell (INACAP) y Ana Luisa Aguilera, docente INACAP de otra sección que también trabajó el caso. Se revisaron cuatro propuestas: una herramienta de gestión integral materializada en Excel, '
+                  'Ariel O’Nell, docente INACAP y Ana Luisa Aguilera, docente INACAP de otra sección que también trabajó el caso. Se revisaron cuatro propuestas: una herramienta de gestión integral materializada en Excel, '
                   'una planilla Excel de gestión, un modelo de programas grupales y Copiloto Kine (nuestro equipo, carpeta “Grupo2”), leída entre el minuto 30:49 y el 35:29.')
 RETRO_HALLAZGOS = [
     ('RF1', 'No conoce una herramienta que haga esto', '“No. Así como solamente por pauta, por agenda, por horario, pero nada más que eso.”', '12:22', 'Diferenciación confirmada: las apps que usa solo agendan.'),
@@ -323,9 +323,9 @@ RETRO_HALLAZGOS = [
     ('RF12', 'Interés directo en la app', '“Me encantaría conocerla.” · “Felicitaciones a sus alumnos.”', '13:31 · 38:35', 'Disposición a probar: base para la sesión con la usuaria.'),
 ]
 RETRO_DOCENTES = [
-    ('Ariel O’Nell (profesor a cargo)', 'Bajo o cero costo, usable en teléfono, tablet y computador; todo parametrizado: ella ingresa datos y la app entrega el cálculo, con resúmenes semanales y mensuales que sirvan a la parte contable.', '10:47'),
-    ('Ariel O’Nell (profesor a cargo)', 'Costo oculto: la hora hombre del traslado. Permite definir el valor exacto de su hora profesional.', '19:45'),
-    ('Ariel O’Nell (profesor a cargo)', 'Las propuestas no son excluyentes: puede combinar una app, una planilla y un modelo grupal.', '17:33'),
+    ('Ariel O’Nell (docente INACAP)', 'Bajo o cero costo, usable en teléfono, tablet y computador; todo parametrizado: ella ingresa datos y la app entrega el cálculo, con resúmenes semanales y mensuales que sirvan a la parte contable.', '10:47'),
+    ('Ariel O’Nell (docente INACAP)', 'Costo oculto: la hora hombre del traslado. Permite definir el valor exacto de su hora profesional.', '19:45'),
+    ('Ariel O’Nell (docente INACAP)', 'Las propuestas no son excluyentes: puede combinar una app, una planilla y un modelo grupal.', '17:33'),
     ('Mabel Aceituno (encargada Sercotec)', 'Que los estudiantes estimen cuánto costaría la solución.', '12:30'),
     ('Mabel Aceituno (encargada Sercotec)', 'Analizar por tipo de cliente y lugar (particular vs. clínica, por semana y mes) para decidir dónde enfocarse.', '18:23'),
     ('Mabel Aceituno (encargada Sercotec)', 'No toda cita agendada se concreta; la bencina sube: conviene partir con valores fijos estimados.', '15:12 · 33:31'),
@@ -393,7 +393,7 @@ APLICA_OTRAS = [
     ('Herramienta integral en Excel', 'Guía de uso, respaldo, alertas, resúmenes mensuales y metas de crecimiento.', 'Guía de inicio en 3 pasos; respaldo en la nube (B2); resumen mensual automático; meta de pacientes nuevos además de la meta de ganancia.'),
     ('Planilla Excel de gestión', 'Listas desplegables de tipo, modalidad, estado y medio de pago; panel mensual y anual; ingresos dependientes e independientes.', 'Campos de estado y medio de pago en cada atención; vista anual; separación clínica (factura mensual) / particulares.'),
     ('Programas grupales', 'Estacionalidad, convenios con empresas y municipalidades, pausas activas, seguimiento de asistencia y permanencia.', 'Clases grupales en la proyección de meses bajos; convenios como tipo de cliente (cobro a una institución); pausas activas para las empresas de sus propios clientes; asistencia y permanencia por grupo.'),
-    ('Comentarios del profesor y Sercotec', 'Usable en teléfono, tablet o computador; todo parametrizado; resúmenes semanales y mensuales; costo de la hora hombre.', 'App web instalable en cualquier dispositivo; resumen semanal; valor de su hora profesional calculado con el tiempo de traslado.'),
+    ('Comentarios de Ariel O’Nell y Sercotec', 'Usable en teléfono, tablet o computador; todo parametrizado; resúmenes semanales y mensuales; costo de la hora hombre.', 'App web instalable en cualquier dispositivo; resumen semanal; valor de su hora profesional calculado con el tiempo de traslado.'),
 ]
 
 # Vista paciente v1 → v2 (personas mayores)
@@ -434,7 +434,7 @@ FICHA_C3 = dict(
     objetivo='Validar con la clienta y con actores del ecosistema (Sercotec y docentes) si la propuesta de valor y el prototipo v2 responden a su forma real de trabajar, y recoger qué ajustar antes del testeo de uso con la usuaria.',
     filas=[
         ('Contrastar la propuesta con su rutina real', 'Josselyn Toledo (clienta)', 'Propuesta y prototipo v2 (carpeta “Grupo2”)', 'Lectura guiada de la propuesta y preguntas abiertas', 'Mabel (lectura) · equipo (registro posterior)', 'Reconoce el problema y su forma de registrar', '¿Así lo hace hoy? ¿Qué le falta?', 'Transcripción con minuto y codificación RF1–RF12', 'Meet', '40 min'),
-        ('Recoger criterios de viabilidad', 'Encargada Sercotec y profesor a cargo', 'Las 4 propuestas del curso', 'Revisión comparada en la misma reunión', 'Mabel · Ariel', 'Sugerencias de costo, alcance y formato', '¿Es viable, barata y útil para lo contable?', 'Tabla de sugerencias por actor', 'Meet', '40 min'),
+        ('Recoger criterios de viabilidad', 'Encargada Sercotec y docente INACAP', 'Las 4 propuestas del curso', 'Revisión comparada en la misma reunión', 'Mabel · Ariel', 'Sugerencias de costo, alcance y formato', '¿Es viable, barata y útil para lo contable?', 'Tabla de sugerencias por actor', 'Meet', '40 min'),
         ('Ubicar la propuesta frente a las otras', 'Clienta, Sercotec y docentes', 'Documentos en pantalla de las 4 propuestas', 'Comparación de enfoques', 'Equipo (análisis posterior)', 'Diferencias claras y puntos combinables', '¿Qué hace nuestra propuesta que las otras no?', 'Matriz comparativa y “qué tomamos”', 'Remoto', '2 h de análisis'),
     ])
 
@@ -563,7 +563,7 @@ PERTINENCIA_V3 = [
     ('Voz de la clienta (ciclo 3)', '“Eso hago yo igual en el teléfono… simplemente no tengo esa aplicación” (36:25).', 'v3 se monta sobre su hábito: AgendaPro, factura de la clínica y sus 4 canales.'),
     ('Estado del arte', 'Ningún antecedente cruza agenda, costos por atención, tiempo de viaje y retención chilena.', 'Copiloto Kine cubre esas variables y suma ganancia por hora por canal.'),
     ('Otras propuestas', 'Dos se resuelven en Excel y una en un modelo grupal.', 'Lo que solo hace Copiloto Kine: la cita entra sola, ruta, tiempo de viaje y vista paciente; convive con las demás.'),
-    ('Viabilidad', 'Sercotec pide estimar el costo; el profesor, bajo costo y multi-dispositivo.', 'Piloto ≈ $900/mes con planes gratuitos; app web en teléfono, tablet y computador.'),
+    ('Viabilidad', 'Sercotec pide estimar el costo; Ariel O’Nell, bajo costo y multi-dispositivo.', 'Piloto ≈ $900/mes con planes gratuitos; app web en teléfono, tablet y computador.'),
     ('Evidencia de testeo', f'Ciclos 1 y 2 internos; ciclo 3 con la clienta.', f'v3: {V3_OK}/{len(V3_TASKS)} tareas, {V3_CALC_OK}/{len(R3["calculos"])} cálculos exactos, {V3_AXE} errores AA.'),
 ]
 
