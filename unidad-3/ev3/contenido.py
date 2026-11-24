@@ -580,3 +580,8 @@ GANTT_V3 = [
 ARTE_VARS = ARTE_VARS + ['Ganancia por hora por canal']
 ARTE = [(n, v + [0]) for n, v in ARTE] + [(f'{PRODUCTO} (v3)', [1, 2, 2, 2, 1, 1, 2, 2])]
 TENDENCIAS = TENDENCIAS + [('Profesionales multicanal', 'Cada vez más independientes combinan clínica, domicilio y servicios propios con costos distintos.', 'v3: cinco canales configurables y ganancia por hora de cada uno (RF5, RF7).')]
+
+# Si existen las ilustraciones del storyboard v3 (img/storyboard/v3-0N.jpg, ver Evaluacion3_Prompts_Storyboard_v3.md), se usan en vez de las capturas.
+SCENES_V3 = [((t, SB + f'v3-{i:02d}.jpg', 'wide') + tuple(rest)) if os.path.exists(os.path.join(HERE, SB + f'v3-{i:02d}.jpg')) else (t, img, kind) + tuple(rest)
+             for i, (t, img, kind, *rest) in enumerate(SCENES_V3, 1)]
+SCENES_V3 = [tuple(x) for x in SCENES_V3]

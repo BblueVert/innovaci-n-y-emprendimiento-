@@ -11,10 +11,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import contenido as C  # noqa: E402
 import anexo_u3  # noqa: E402
+from mockup import mock, ASPECT  # noqa: E402
 sys.path.insert(0, os.path.join(HERE, '..', 'testeo'))
 import build_kit as K  # noqa: E402
 
 N = [0]
+H_PH = 92  # alto estándar de las pantallas en las láminas (mm)
 PAC = '../prototipo/capturas_paciente/'
 
 
@@ -39,13 +41,20 @@ def ul(items):
     return '<ul>' + ''.join(f'<li>{i}</li>' for i in items) + '</ul>'
 
 
-def phones(items, crop=False):
+R = 1 / ASPECT  # alto / ancho del mockup de iPhone
+
+
+def dev(src, h, hl=False):
+    """Captura completa dentro del mockup de iPhone (foto recortada, fondo transparente), alto h en mm."""
+    return f'<img class="iph" src="{mock(src)}" style="width:{h / R:.1f}mm;height:{h:.1f}mm">'
+
+
+def phones(items, h=92, crop=None):
     out = ''
     for it in items:
         src, t = it[0], it[1]
         sub = f'<span>{it[2]}</span>' if len(it) > 2 else ''
-        img = f'<div class="crop"><img src="{src}"></div>' if crop else f'<img src="{src}">'
-        out += f'<figure>{img}<figcaption><b>{t}</b>{sub}</figcaption></figure>'
+        out += f'<figure style="width:{h / R + 4:.1f}mm">{dev(src, h)}<figcaption><b>{t}</b>{sub}</figcaption></figure>'
     return f'<div class="phones">{out}</div>'
 
 
@@ -111,8 +120,12 @@ def scenes(sc, mode):
     out = ''
     for i, (t, img, kind, txt, a, b) in enumerate(sc, 1):
         la, lb = ('Producto', 'Propuesta de valor') if mode == 'v1' else ('Cualidad', 'Mejora incorporada')
-        out += (f'<div class="sc"><div class="im {"w" if kind == "wide" else ""}"><img src="{img}"></div><div class="tx"><div class="n">Escena {i}</div>'
-                f'<div class="h">{t}</div><div>{txt}</div><div class="c p"><b>{la}</b>{a}</div><div class="c v"><b>{lb}</b>{b}</div></div></div>')
+        boxes = f'<div class="cc"><div class="c p"><b>{la}</b>{a}</div><div class="c v"><b>{lb}</b>{b}</div></div>'
+        head_ = f'<div class="n">Escena {i}</div><div class="h">{t}</div><div class="d">{txt}</div>'
+        if kind == 'wide':
+            out += f'<div class="sc w"><div class="top"><img class="il" src="{img}"><div class="tx">{head_}</div></div>{boxes}</div>'
+        else:
+            out += f'<div class="sc ph">{dev(img, 54)}<div class="tx">{head_}{boxes}</div></div>'
     return f'<div class="sb">{out}</div>'
 
 
@@ -122,7 +135,7 @@ def storyboard_v1():
 
 def mock_v1():
     return slide(head('3.1.2.2 · Mock-up con propuesta de valor', 'Prototipo v1 navegable en el celular', '3.1.2.2')
-                 + phones([(f, t, f'{d}<br><i style="color:var(--acc2)">{a}</i>') for t, f, d, a in C.MOCK_V1], crop=True)
+                 + phones([(f, t, f'{d}<br><i style="color:var(--acc2)">{a}</i>') for t, f, d, a in C.MOCK_V1], h=H_PH)
                  + '<p style="margin-top:3mm;font-size:8.6pt;color:var(--ink2)">HTML autocontenido (390 px), sin instalación: se abre desde un enlace en el celular. Paleta clara del proyecto con acentos naranjos; clínica en morado y domicilio en naranjo.</p>', '3.1.2')
 
 
@@ -198,12 +211,13 @@ def mock_it():
     pares = [('01_tablero.png', '01_tablero.png', 'Tablero', '“Ganancia real” definida; letra ≥ 12 px'),
              ('06_agenda.png', '06_agenda.png', 'Agenda', 'Deshacer y “No asistió”; botones accesibles'),
              ('08_destinos.png', '08_mi_plata.png', '“Destinos” → “Mi plata”', 'Costos editables y exportación')]
-    blk = ''
-    for a, b, t, d in pares:
-        blk += f'''<div style="flex:1"><div class="ba"><figure style="flex:1"><div class="crop" style="height:96mm"><img src="{V1 + a}" style="width:100%"></div></figure>
-<div class="ar">→</div><figure style="flex:1"><div class="crop" style="height:96mm;border-color:var(--acc)"><img src="{V2 + b}" style="width:100%"></div></figure></div>
-<div style="text-align:center;margin-top:2mm"><b>{t}</b><br><span style="font-size:8.4pt;color:var(--ink2)">{d}</span></div></div>'''
-    return slide(head('3.1.3.3 · Mock-up iterado', 'Versión 1 → versión 2', '3.1.3.3') + f'<div style="display:flex;gap:7mm">{blk}</div>', '3.1.3')
+    blk = ''.join(pair(V1 + a, V2 + b, t, d, 80, 'v1', 'v2') for a, b, t, d in pares)
+    return slide(head('3.1.3.3 · Mock-up iterado', 'Versión 1 → versión 2', '3.1.3.3') + f'<div class="pairs">{blk}</div>', '3.1.3')
+
+
+def pair(a, b, t, d, h, va, vb):
+    return (f'<div class="pair"><div class="ba2"><div><div class="vt">{va}</div>{dev(a, h)}</div><div class="ar">→</div>'
+            f'<div><div class="vt on">{vb}</div>{dev(b, h, True)}</div></div><div class="pc"><b>{t}</b><span>{d}</span></div></div>')
 
 
 def cambios():
@@ -260,7 +274,7 @@ def perfiles():
 def paciente():
     return slide(head('Nuevo estímulo · vista paciente', 'Lo que recibe el paciente cuando su kine usa Copiloto Kine') + '<div class="col2"><div class="a">'
                  + phones([(PAC + '01_recordatorio_a.png', 'M1 · Recordatorio', 'Llego cerca de las 12:30 (H5)'), (PAC + '02_voy_en_camino_a.png', 'M2 · Voy en camino', 'Hora exacta (H6)'),
-                           (PAC + '03_pago_comprobante_a.png', 'M3 · Pago', 'Copia al familiar (H7)'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal', 'Personas mayores (H11)')], crop=True)
+                           (PAC + '03_pago_comprobante_a.png', 'M3 · Pago', 'Copia al familiar (H7)'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal', 'Personas mayores (H11)')], h=H_PH)
                  + '''</div><div class="b" style="flex:.55"><div class="card"><div class="t">Por qué</div>La ruta sugerida (−7 km/día) solo funciona si el paciente acepta una
 ventana de llegada. Es la hipótesis más riesgosa del modelo y no se puede probar con kinesiólogas.</div>
 <div class="card" style="margin-top:3mm"><div class="t">Accesibilidad</div>Botón “Letra grande” para adultos mayores, botones de 44 px y 0 errores WCAG AA en los 4 mensajes.</div>
@@ -268,7 +282,7 @@ ventana de llegada. Es la hipótesis más riesgosa del modelo y no se puede prob
 
 
 def pdv():
-    return slide(f'''<img class="pvphone" src="../prototipo/capturas_v3/02_ganancia_por_hora.png"><div class="z" style="max-width:200mm;margin-top:2mm">
+    return slide(f'''<img class="pvphone" src="{mock('../prototipo/capturas_v3/02_ganancia_por_hora.png')}"><div class="z" style="max-width:200mm;margin-top:2mm">
 <div class="k">Propuesta de valor iterada (v3) · 3.1.5</div>
 <div class="big" style="font-size:40pt;margin:3mm 0 4mm">DEL COPILOTO DE SU DÍA<br>AL <em>COPILOTO DE SU TERRENO</em>.</div>
 <div class="pvq" style="font-size:13pt">{C.PDV_V3}</div>
@@ -409,16 +423,15 @@ def metafora_v3():
 
 
 def storyboard_v3():
-    return slide(head('3.1.3.2 · Storyboard iterado (v3)', 'Un martes de Josselyn en San Fernando, Agua Buena y la piscina', '3.1.3.2') + scenes(C.SCENES_V3, 'it').replace('class="sb"', 'class="sb sm3"'), '3.1.3')
+    return slide(head('3.1.3.2 · Storyboard iterado (v3)', 'Un martes de Josselyn en San Fernando, Agua Buena y la piscina', '3.1.3.2') + scenes(C.SCENES_V3, 'it'), '3.1.3')
 
 
 def mock_v3():
-    blk = ''
-    for a, b, t, d in C.MOCK_V2V3:
-        blk += f"""<div style="flex:1"><div class="ba"><figure style="flex:1"><div class="crop" style="height:92mm"><img src="{a}" style="width:100%"></div></figure>
-<div class="ar" style="font-size:18pt">→</div><figure style="flex:1"><div class="crop" style="height:92mm;border-color:var(--acc)"><img src="{b}" style="width:100%"></div></figure></div>
-<div style="text-align:center;margin-top:2mm"><b>{t}</b><br><span style="font-size:7.8pt;color:var(--ink2)">{d}</span></div></div>"""
-    return slide(head('3.1.3.3 · Mock-up iterado', 'Versión 2 → versión 3', '3.1.3.3') + f'<div style="display:flex;gap:4mm">{blk}</div>', '3.1.3')
+    out = ''
+    for k, grupo in enumerate((C.MOCK_V2V3[:2], C.MOCK_V2V3[2:]), 1):
+        blk = ''.join(pair(a, b, t, d, 104, 'v2', 'v3') for a, b, t, d in grupo)
+        out += slide(head('3.1.3.3 · Mock-up iterado', f'Versión 2 → versión 3 ({k}/2)', '3.1.3.3') + f'<div class="pairs">{blk}</div>', '3.1.3')
+    return out
 
 
 def mock_v3_b():
@@ -426,7 +439,7 @@ def mock_v3_b():
     return slide(head('3.1.3.3 · Mock-up v3', 'Lo nuevo, pantalla por pantalla', '3.1.3.3')
                  + phones([(V3 + '04_paradas_tramos.png', 'Tramos', 'Tiempo de viaje con valor y recargo por tramo'), (V3 + '09_clinica_factura.png', 'Clínica', 'Factura mensual o 70/30'),
                            (V3 + '10_servicios.png', 'Servicios', 'Piscina, gimnasio y grupal con su costo'), (V3 + '07_clase_grupal.png', 'Clase grupal', 'Cupos y punto de equilibrio'),
-                           (V3 + '11_cierre_dia.png', 'Cierre del día', 'Resumen que reemplaza la nota nocturna')], crop=True), '3.1.3')
+                           (V3 + '11_cierre_dia.png', 'Cierre del día', 'Resumen que reemplaza la nota nocturna')], h=H_PH), '3.1.3')
 
 
 def cambios_v3():
@@ -470,6 +483,163 @@ def costeo():
                  + '<p class="note" style="margin-top:3mm">Precios de lista de noviembre 2026 a $950/US$. El precio de $9.990 baja la referencia de la EV2 ($20–25 mil) por lo dicho en el ciclo 3: bajo costo (Ariel) y un mercado regional que valora poco lo especializado (RF9). Se valida en el ciclo 4 (H4).</p></div></div>', '3.1.5')
 
 
+# ================================================================ versión condensada (informe + presentación en un solo archivo)
+URL = 'https://copiloto-kine.vercel.app'
+
+
+def criterios_c():
+    cr = [('3.1.1', 15, 'Fase de desarrollo y prototipado', 'SQA · storyboard · mock-up · fichas · CDM'),
+          ('3.1.2', 20, 'Prototipo validado en más de un ciclo, sostenible', '4 ciclos: 2 internos, 1 con la clienta, 1 con usuarias'),
+          ('3.1.3', 15, 'Ajusta el prototipo con fundamento', 'v1 → v2 → v3 · 24 cambios trazados'),
+          ('3.1.4', 20, 'Estado del arte y tendencias', 'PESTAL profundizada · antecedentes · 4 propuestas'),
+          ('3.1.5', 30, 'Pertinencia de la propuesta de valor', 'Propuesta v3 · costo · pertinencia')]
+    cards = ''.join(f'<div><div class="c">CRITERIO {c}</div><div class="p">{p}<small> pts</small></div><div style="margin-top:1.5mm"><b>{t}</b></div><div class="w">{w}</div></div>' for c, p, t, w in cr)
+    ag = ['Caso, prototipos y ruta', 'Prototipo v1 y ciclo 1', 'Iteración v2 y ciclo 2', 'Ciclo 3 · la clienta prueba la propuesta',
+          'Iteración v3', 'Ciclo 4 · usuarias y pacientes', 'Costo y propuesta de valor v3', 'Estado del arte, pertinencia y sostenibilidad']
+    return slide(head('Qué presentamos', 'Agenda y criterios de evaluación') + f'<div class="cri">{cards}</div>'
+                 + '<div style="margin-top:6mm;columns:2;font-size:10.5pt">' + ''.join(f'<div style="margin-bottom:1.8mm"><span style="font-family:var(--fm);color:var(--acc2);font-size:8pt">{i:02d}</span> &nbsp;{a}</div>' for i, a in enumerate(ag, 1)) + '</div>', 'Rúbrica ES03')
+
+
+def caso_c():
+    def qr(img, t, d, u):
+        return (f'<div class="card" style="display:flex;gap:4mm;align-items:center"><img src="{img}" style="width:30mm;height:30mm;border:1px solid var(--line);border-radius:4px">'
+                f'<div><div class="t">{t}</div><div style="font-size:9pt">{d}</div><code style="font-size:7.4pt">{u}</code></div></div>')
+    izq = ('<div class="a"><div class="card" style="font-size:9.6pt"><div class="t">Usuaria</div>Josselyn Toledo, kinesióloga y psicomotricista acuática. '
+           'Atiende en el Centro Médico InMotion (factura mensual), a domicilio en San Fernando y la precordillera, en piscina temperada y en su gimnasio. '
+           'Anota todo cada noche en el teléfono.</div>'
+           f'<h3 style="margin-top:3mm">Desafío (UA1)</h3><div class="quote" style="font-size:12pt">{C.DESAFIO}</div>'
+           f'<h3>Propuesta de valor de partida (EV2)</h3><p style="font-size:9.4pt">{C.PDV_EV2}</p></div>')
+    der = ('<div class="b"><h3>Prototipos navegables · ábrelos en el celular</h3>'
+           + qr('img/qr-profesional.png', 'Vista profesional (v3)', 'La app de Josselyn: ganancia real y por hora, ruta, agenda, proyección y Mi plata.', URL + '/profesional/')
+           + '<div style="height:3mm"></div>'
+           + qr('img/qr-cliente.png', 'Vista cliente (paciente)', 'Los mensajes que recibe el paciente, simples para personas mayores.', URL + '/cliente/')
+           + '<p class="note" style="margin-top:3mm">Datos de ejemplo. Los prototipos no envían mensajes ni guardan datos fuera del dispositivo.</p></div>')
+    return slide(head('Caso y punto de partida', 'Josselyn, cuatro lugares de trabajo y ninguna herramienta que los cruce')
+                 + f'<div class="col2">{izq}{der}</div>', 'Contexto')
+
+
+def ruta_c():
+    st = [('on', 'S11 · Prototipar', 'SQA, storyboard y mock-up v1.'), ('on', 'S11–S12 · Ciclo 1', 'Uso y estética: 11 tareas, WCAG AA, heurísticas.'),
+          ('on', 'S12–S13 · Iterar v2', '12 cambios.'), ('on', 'S13 · Ciclo 2', 'Técnico: 11 pruebas y cobertura.'),
+          ('on', 'S13 · Ciclo 3', 'Clienta, Sercotec y docentes (12/11).'), ('on', 'S14 · Iterar v3', '12 cambios del ciclo 3.'), ('pe', 'S15 · Ciclo 4', 'Josselyn y Catalina con la v3.')]
+    ch = ''.join(f'<div class="{c}"><b>{t}</b>{d}</div>' for c, t, d in st)
+    cards = ('<div class="row" style="margin-top:4mm">'
+             '<div class="card"><div class="t">Ciclo 1 · funcional y estético</div>¿Lo usa sin ayuda? ¿Se lee y se toca bien? Tareas, WCAG 2.1 AA, objetivos táctiles y heurísticas de Nielsen.</div>'
+             '<div class="card"><div class="t">Ciclo 2 · técnico</div>¿Calcula exacto y resuelve sus necesidades puntuales? Pruebas contra una hoja de referencia, persistencia, privacidad y brechas.</div>'
+             '<div class="card"><div class="t">Ciclo 3 · con la clienta</div>¿Calza con su rutina real? Reunión del 12/11: 12 hallazgos que originan la v3.</div>'
+             '<div class="card"><div class="t">Ciclo 4 · usuarias</div>¿Lo usa en su celular y le ayuda a decidir? Tareas N1–N10, SUS y precio. <span class="pend">Pendiente</span></div></div>'
+             '<p class="note" style="margin-top:4mm"><b>Transparencia.</b> Los ciclos 1 y 2 los ejecutó el equipo como usuarios internos, con scripts reproducibles. '
+             'El ciclo 3 usa la transcripción de la reunión real. No inventamos respuestas de personas que aún no participan.</p>')
+    return slide(head('Ruta metodológica', 'Cuatro ciclos, cada uno con un foco distinto') + f'<div class="chain">{ch}</div>' + cards, '3.1.1 · 3.1.2')
+
+
+def ciclo1_c():
+    t = C.C1['tasks']; ok = sum(x['ok'] for x in t)
+    axe = sum(x['n'] for v in C.C1['axe'].values() for x in v); tg = sum(len(v) for v in C.C1['targets'].values())
+    fail = [[f'<b>{x["id"]}</b>', x['name'], f'<span class="ko">{fix(x["obs"])}</span>'] for x in t if not x['ok']]
+    hz = [[h, d, f'<b>{sv}</b>'] for h, d, sv in C.HEUR if sv >= 2]
+    k = (f'<div class="kpis"><div><div class="v">{ok}/{len(t)}</div><div class="l">tareas sin ayuda (meta ≥ 90 %)</div></div>'
+         f'<div><div class="v">{axe}</div><div class="l">errores de contraste WCAG AA</div></div><div><div class="v">{tg}</div><div class="l">botones bajo 44 px</div></div>'
+         '<div><div class="v">10–11 px</div><div class="l">letra mínima en etiquetas</div></div></div>')
+    return slide(head('3.1.2.3 · Ciclo 1 · ficha y resultados', 'Funciona en lo central; falla en corregir y en accesibilidad', '3.1.2.3')
+                 + f'<div class="quote" style="font-size:11pt">{C.FICHA_C1["objetivo"]}</div>' + k
+                 + '<div class="col2"><div class="a"><h3>Tareas que fallaron</h3>' + table(['#', 'Tarea', 'Evidencia'], fail, 'sm') + '</div>'
+                 + '<div class="b"><h3>Heurísticas con severidad ≥ 2</h3>' + table(['Heurística', 'Hallazgo', 'Sev.'], hz, 'sm') + '</div></div>', '3.1.2')
+
+
+def iter_v2_c():
+    M = C.METAFORA_ITER
+    rows = [[f'<b>{i}</b>', c, h] for i, (c, h, r, _) in enumerate(C.CAMBIOS, 1)]
+    at = ''.join(f'<span class="chip o">{n}</span>' for n, *_ in M['atributos'])
+    izq = (f'<div class="a" style="flex:.8"><div class="k" style="color:var(--ink2)">Antes (EV2)</div><div class="quote" style="font-size:11pt;border-color:#C9C6DA;color:var(--ink2)">{M["antes"]}</div>'
+           f'<div class="k">Después (v2)</div><div class="quote" style="font-size:11pt">{M["despues"]}</div><p style="font-size:8.6pt">{M["porque"]}</p><div>{at}</div>'
+           '<div class="kpis" style="margin-top:4mm"><div><div class="v ok">11/11</div><div class="l">tareas en v2</div></div><div><div class="v ok">0</div><div class="l">errores AA</div></div></div></div>')
+    return slide(head('3.1.3.1 · Iteración v2 · metáfora y ajustes', 'Del tablero al copiloto, y 12 cambios medidos', '3.1.3.1')
+                 + f'<div class="col2">{izq}<div class="b">{table(["#", "Cambio en v2", "Hallazgo del ciclo 1"], rows, "sm xs")}</div></div>', '3.1.3')
+
+
+def ciclo2_c():
+    pr = C.C2['pruebas']
+    br = [[f'<b>{b}</b>', t, f'<span class="chip {"o" if "MVP" in f or "Inm" in f else ""}">{f}</span>'] for b, t, d, f in C.BRECHAS]
+    cnt = {k: sum(1 for x in C.COBERTURA if x[2].startswith(k)) for k in ('Cumple', 'Parcial', 'Simulado')}
+    k = (f'<div class="kpis"><div><div class="v ok">{sum(p["ok"] for p in pr)}/{len(pr)}</div><div class="l">pruebas técnicas aprobadas</div></div>'
+         '<div><div class="v ok">$0</div><div class="l">diferencia con la hoja de referencia</div></div><div><div class="v ok">11</div><div class="l">toques para cerrar el día (antes ~60 min)</div></div>'
+         f'<div><div class="v">{cnt["Cumple"]} · {cnt["Parcial"]} · {cnt["Simulado"]}</div><div class="l">requerimientos que cumplen · parciales · simulado</div></div></div>')
+    return slide(head('3.1.3.4 · Ciclo 2 · técnico', 'Exacto, rápido y sin datos clínicos; lo que falta es integración', '3.1.3.4')
+                 + f'<div class="quote" style="font-size:11pt">{C.FICHA_C2["objetivo"]}</div>' + k
+                 + '<h3>Brechas técnicas → backlog del MVP</h3>' + table(['#', 'Brecha', 'Cuándo'], br, 'sm'), '3.1.2 · 3.1.3')
+
+
+def cdm12_c():
+    def mini(D, t):
+        return (f'<div><h3>{t}</h3><table class="sm xs"><thead><tr><th></th><th>Cualidades</th><th>Debilidades</th><th>Mejoras</th></tr></thead><tbody>'
+                f'<tr><td><b>Producto</b></td><td>{ul(D["prod_c"][:3])}</td><td>{ul(D["prod_d"][:3])}</td><td>{ul(D["prod_m"][:3])}</td></tr>'
+                f'<tr><td><b>Propuesta de valor</b></td><td>{ul(D["pdv_c"])}</td><td>{ul(D["pdv_d"])}</td><td>{ul(D["pdv_m"])}</td></tr></tbody></table></div>')
+    return slide(head('3.1.2.4 · Matrices CDM de los ciclos internos', 'De problemas de uso a problemas de integración', '3.1.2.4')
+                 + f'<div class="row" style="gap:5mm">{mini(C.CDM_C1, "Ciclo 1 · prototipo v1")}{mini(C.CDM_C2, "Ciclo 2 · prototipo v2")}</div>', '3.1.2 · 3.1.3')
+
+
+def mock_v3_c():
+    blk = ''.join(pair(a, b, t, d, 96, 'v2', 'v3') for a, b, t, d in (C.MOCK_V2V3[0], C.MOCK_V2V3[2]))
+    return slide(head('3.1.3.3 · Mock-up iterado', 'Versión 2 → versión 3', '3.1.3.3') + f'<div class="pairs">{blk}</div>', '3.1.3')
+
+
+def cambios_verif_c():
+    rows = [[f'<b>{i}</b>', c, h, f'<span class="{"ok" if e.startswith("Funcional") else "pa"}">{e}</span>'] for i, (c, h, r, _, e) in enumerate(C.CAMBIOS_V3, 1)]
+    nt = [x for x in C.V3_TASKS if x['id'].startswith('N')]
+    k = ('<div class="kpis"><div><div class="v ok">11/11</div><div class="l">tareas base (regresión)</div></div>'
+         f'<div><div class="v ok">{sum(x["ok"] for x in nt)}/{len(nt)}</div><div class="l">tareas nuevas, una por cambio</div></div>'
+         f'<div><div class="v ok">{C.V3_CALC_OK}/{len(C.R3["calculos"])}</div><div class="l">cálculos idénticos a la referencia</div></div>'
+         f'<div><div class="v ok">{C.V3_AXE} · {C.V3_TARGETS}</div><div class="l">errores WCAG AA · botones bajo 44 px</div></div></div>')
+    return slide(head('3.1.3.3 · Ajustes fundamentados y verificación v3', 'Cada cambio responde a la clienta, y funciona', '3.1.3.3')
+                 + k + table(['#', 'Cambio en v3', 'Hallazgo', 'Estado'], rows, 'sm xs')
+                 + '<p class="note" style="margin-top:2mm">Verificación interna reproducible (<code>iteracion-v3/verificar_v3.js</code>): confirma que nada se rompió y que lo nuevo calcula bien. La validación de uso es el ciclo 4.</p>', '3.1.2 · 3.1.3')
+
+
+def usuarios_c():
+    hip = ''.join(f'<tr><td><b>{h}</b></td><td>{p}</td><td>{t}</td></tr>' for h, p, t, _, c, _ in K.HIP)
+    ph = phones([(PAC + '01_recordatorio_a.png', 'M1 · Recordatorio', 'Llego cerca de las 12:30'), (PAC + '02_voy_en_camino_a.png', 'M2 · Voy en camino', 'Hora exacta'),
+                 (PAC + '03_pago_comprobante_a.png', 'M3 · Pago', 'Copia al familiar'), (PAC + '04_clase_grupal_a.png', 'M4 · Clase grupal', 'Las Cabras')], h=86)
+    izq = (f'<div class="a">{ph}<p class="note" style="margin-top:2mm">Vista paciente v2 para personas mayores: un mensaje = una decisión, letra de 20 px, '
+           'botones de 56 px, trato de “usted” y 0 errores WCAG AA.</p></div>')
+    der = (f'<div class="b" style="flex:.8"><table class="sm xs"><thead><tr><th>#</th><th>Público</th><th>Hipótesis</th></tr></thead><tbody>{hip}</tbody></table>'
+           '<div class="card" style="margin-top:2mm;font-size:8.6pt"><div class="t">Kit (20 págs.)</div>9 perfiles · guiones A (kines), B (pacientes) y C (contadora) · '
+           'consentimiento (Ley 21.719) · SUS · matriz de decisión. Resultados <span class="pend">pendientes</span>.</div></div>')
+    return slide(head('Ciclo 4 · usuarias y pacientes', 'Kit de testeo y vista paciente: quien usa la app y quien vive sus efectos')
+                 + f'<div class="col2">{izq}{der}</div>', '3.1.2 · 3.1.5')
+
+
+def pestal_c():
+    tr = ''.join(f'<tr><td><b style="font-family:var(--fd);font-size:13pt;font-weight:400">{n.upper()}</b></td><td>{p["f"]}</td><td>{p["o"]}</td><td>{p["a"]}</td></tr>' for n, o, p in C.PESTAL)
+    return slide(head('3.1.4.1 · Matriz PESTAL profundizada', 'Del contexto de la UA1 a la evidencia del prototipo', '3.1.4.1')
+                 + f'<table class="sm xs" style="font-size:7.4pt"><thead><tr><th style="width:11%">Factor</th><th>Factor profundizado</th><th>Oportunidad</th><th>Amenaza</th></tr></thead><tbody>{tr}</tbody></table>', '3.1.4')
+
+
+def arte_c():
+    dot = {2: '<span class="d2">●</span>', 1: '<span class="d1">◐</span>', 0: '<span class="d0">○</span>'}
+    rows = ''.join(f'<tr class="{"me" if "Copiloto" in n else ""}"><td>{n}</td>' + ''.join(f'<td>{dot[v]}</td>' for v in vs) + '</tr>' for n, vs in C.ARTE)
+    tr = ''.join(f'<li><b>{t}.</b> {r}</li>' for t, d, r in C.TENDENCIAS)
+    izq = (f'<div class="a"><table class="mat sm xs"><thead><tr><th>Solución</th>{"".join(f"<th>{v}</th>" for v in C.ARTE_VARS)}</tr></thead><tbody>{rows}</tbody></table>'
+           '<p class="note" style="margin-top:2mm">● cubre · ◐ parcial · ○ no cubre. Antecedentes revisados en sus sitios oficiales (UA1). Copiloto Kine se evalúa por lo que hace hoy.</p></div>')
+    der = f'<div class="b" style="flex:.75"><h3>Tendencias y cómo responde</h3><ul style="font-size:8.3pt">{tr}</ul></div>'
+    return slide(head('3.1.4 · Estado del arte y tendencias', 'Nadie cruza agenda, costos por atención, tiempo de viaje e impuestos')
+                 + f'<div class="col2">{izq}{der}</div>', '3.1.4')
+
+
+def sost_gest_c():
+    w = C.GANTT_W3
+    rows = ''.join(f'<tr><td>{t}</td>' + ''.join(f'<td class="{m.get(x, "")}"></td>' for x in w) + '</tr>' for t, m in C.GANTT_V3)
+    big = 'font-family:var(--fd);font-size:24pt;color:var(--acc2);line-height:1.05'
+    cards = ('<div class="row">'
+             f'<div class="card"><div class="t">Económico</div><div style="{big}">Ganancia por hora</div>Por canal, tarifa por tramo y clase grupal para los meses bajos; retención configurable (Ley 21.133).</div>'
+             f'<div class="card"><div class="t">Social</div><div style="{big}">~1 h → 1 min</div>Cierre del día sin anotar de noche; accesibilidad AA y vista para personas mayores; sin datos de salud (Ley 21.719).</div>'
+             f'<div class="card"><div class="t">Ambiental</div><div style="{big}">−12 km / día</div>Ruta sugerida en el día de ejemplo de San Fernando (41 vs. 53 km) y tiempo de viaje visible.</div></div>')
+    roles = table(['Integrante', 'Rol'], [('Claudia Cifuentes', 'Moderación'), ('Néstor Rivera', 'Prototipo y tareas'), ('Francisco Ahumada', 'Registro y CDM'), ('Benjamín Vera Yáñez', 'Secretario técnico')], 'sm')
+    gantt = f'<table class="gantt"><thead><tr><th>Actividad</th>{"".join(f"<th>{x}</th>" for x in w)}</tr></thead><tbody>{rows}</tbody></table>'
+    return slide(head('Enfoque sostenible y gestión de la fase', 'Económico, social y ambiental, con números') + cards
+                 + f'<div class="col2" style="margin-top:4mm"><div class="a">{gantt}</div><div class="b" style="flex:.6">{roles}</div></div>', '3.1.2 · Bitácora')
+
+
 # ---------------------------------------------------------------- ensamblado
 HEAD = '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Evaluación 3 — Prototipado y testeo</title><link rel="stylesheet" href="pres.css"></head><body>'
 W, H = 960, 540
@@ -499,17 +669,13 @@ def anexo_slide(doc, title, src, clip=None, idx=0, total=1):
 
 
 if __name__ == '__main__':
-    pe = C.PESTAL
-    body = (portada() + criterios() + partida() + ruta() + sqa() + storyboard_v1() + mock_v1() + ficha1() + res1() + heur()
-            + cdm_slide(C.CDM_C1, 'Ciclo 1 · prototipo v1', '3.1.2.4', '3.1.2') + antes_despues() + metafora() + storyboard_it() + mock_it() + cambios()
-            + ficha2() + res2() + cobertura() + brechas() + cdm_slide(C.CDM_C2, 'Ciclo 2 · prototipo v2', '3.1.2.4', '3.1.3')
-            + divisor('Ciclo 3 · validación externa', 'LA CLIENTA <em>PRUEBA LA PROPUESTA</em>', 'Reunión del 12 de noviembre con Josselyn Toledo, Sercotec y docentes INACAP: cuatro propuestas sobre la mesa.')
+    body = (portada() + criterios_c() + caso_c() + ruta_c() + sqa()
+            + storyboard_v1() + mock_v1() + ciclo1_c() + iter_v2_c() + mock_it() + ciclo2_c() + cdm12_c()
             + ficha3() + retro_rf() + retro_sug() + compara() + cdm_slide(C.CDM_C3, 'Ciclo 3 · clienta, Sercotec y docentes (prototipo v2)', '3.1.2.4', '3.1.2 · 3.1.3')
-            + salto_v3() + iter_docs_v3() + metafora_v3() + storyboard_v3() + mock_v3() + mock_v3_b() + cambios_v3() + verif_v3() + ficha4()
-            + validacion() + perfiles() + paciente() + costeo() + pdv() + pestal(pe[:3], '1/2') + pestal(pe[3:], '2/2') + arte() + tendencias()
-            + pertinencia() + sostenibilidad() + gestion() + conclusiones() + referencias())
+            + salto_v3() + metafora_v3() + storyboard_v3() + mock_v3_c() + mock_v3_b() + cambios_verif_c() + ficha4() + usuarios_c()
+            + costeo() + pdv() + pestal_c() + arte_c() + pertinencia() + sost_gest_c() + conclusiones() + referencias())
     main = fitz.open(stream=render(body, 'Evaluacion3_Presentacion_Prototipado.html'), filetype='pdf')
-    anx = anexo_u3.build()
+    anx = [x for x in anexo_u3.build() if any(k in x[0] for k in ('ciclo 3', 'prototipo v3', 'ciclo 4', 'PESTAL'))]
     titles = [t for t, _ in anx]
     main.insert_pdf(fitz.open(stream=render(div_anexo(titles), '_div.html'), filetype='pdf'))
     for t, d in anx:
