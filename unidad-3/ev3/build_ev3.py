@@ -167,7 +167,7 @@ def intro():
 es elaborar el prototipo de la propuesta de valor, testearlo con usuarios en más de un ciclo, ajustarlo según los resultados y verificar su pertinencia frente al estado del arte y las tendencias.</p>
 <h3>Caso y punto de partida</h3>
 <div class="case"><img src="img/02-caso.jpg"><div class="facts">
-<div><b>Usuaria</b>Josselyn Toledo — kinesióloga y psicomotricista acuática: Centro Médico InMotion (factura mensual), domicilios en San Fernando y Agua Buena, piscina temperada y gimnasio.</div>
+<div><b>Usuaria</b>Josselyn Toledo — kinesióloga y psicomotricista acuática: Centro Médico InMotion (factura mensual), domicilios en San Fernando y Aguas Buenas, piscina temperada y gimnasio.</div>
 <div><b>Problema (UA1)</b>No sabe cuánto gana de verdad; cuadra ingresos y gastos en Excel de noche (~1 h diaria).</div>
 <div><b>Solución (UA2)</b>Copiloto Kine: convierte cada atención en ganancia real y anticipa los meses bajos.</div></div></div>
 <h3>Desafío</h3><div class="big-q">{C.DESAFIO}</div>
@@ -454,7 +454,7 @@ def pv():
 {table(['Cambio', 'Evidencia que lo respalda'], [
         ['<b>“Toma las citas de AgendaPro y de la clínica”</b>', 'RF3: usa AgendaPro y una agenda médica; Google Calendar queda como alternativa.'],
         ['<b>“En clínica, a domicilio, en piscina o en el gimnasio”</b>', 'RF7: es psicomotricista acuática y hace entrenamiento personalizado.'],
-        ['<b>“Ganancia por hora… contando el tiempo de viaje”</b>', 'RF5 y RF6: quiere saber qué canal rinde más; Agua Buena le toma 25–30 min (Ariel: la hora hombre es un costo oculto).'],
+        ['<b>“Ganancia por hora… contando el tiempo de viaje”</b>', 'RF5 y RF6: quiere saber qué canal rinde más; Aguas Buenas le toma 25–30 min (Ariel: la hora hombre es un costo oculto).'],
         ['<b>“Cobre lo justo por cada tramo”</b>', 'RF6 y RF9: caminos de precordillera y un mercado que no valora lo especializado.'],
         ['<b>“Sin anotar nada de noche”</b>', 'RF2: hoy anota todo cada noche en el teléfono.']], 'tight')}
 <h3>Qué cambió de la EV2 a la v2</h3>
@@ -530,7 +530,7 @@ def meta3():
 def sb3():
     b = card([('Instrumento', '3.1.3.2 Storyboard iterado'), ('Insumo', 'Matriz CDM del ciclo 3'), ('Formato', 'Escenas con capturas del prototipo v3'), ('Plantilla', 'Anexo A')])
     b += f'<div class="big-q" style="font-size:10pt">{C.PDV_V3}</div>' + scenes(C.SCENES_V3, it=True).replace('class="sb2"', 'class="sb2 ph"')
-    b += '<p class="small" style="margin-top:3mm"><b>Qué cambió en la secuencia.</b> El día ya no transcurre entre Rancagua y Machalí con clínica y domicilio: empieza en InMotion, sube a Agua Buena, pasa por la piscina temperada y termina en el gimnasio. Cada escena muestra la cualidad que se conserva y la mejora que trajo el ciclo 3.</p>'
+    b += '<p class="small" style="margin-top:3mm"><b>Qué cambió en la secuencia.</b> El día ya no transcurre entre Rancagua y Machalí con clínica y domicilio: empieza en InMotion, sube a Aguas Buenas, pasa por la piscina temperada y termina en el gimnasio. Cada escena muestra la cualidad que se conserva y la mejora que trajo el ciclo 3.</p>'
     return section('s-sb3', '3.1.3.2 · STORYBOARD V3', 'Iteración · versión 3', 'Storyboard iterado (v3)', b, '3.1.3.2')
 
 

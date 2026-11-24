@@ -467,7 +467,7 @@ const SERV = {
 // Traslado típico ida y vuelta por canal (para la ganancia por hora del mes)
 const TYP = { clinic: [0, 0], home: [16, 40], pool: [14, 30], gym: [6, 20], group: [50, 70] };
 // Tarifa por tramo (RF6): el tiempo de viaje también es costo
-const TRAMOS = [{ k: 'u', n: 'Urbano', d: 'San Fernando', add: 0 }, { k: 'r', n: 'Rural', d: 'Roma, Puente Negro', add: 3000 }, { k: 'p', n: 'Precordillera', d: 'Agua Buena, ripio', add: 6000 }];
+const TRAMOS = [{ k: 'u', n: 'Urbano', d: 'San Fernando', add: 0 }, { k: 'r', n: 'Rural', d: 'Roma, Puente Negro', add: 3000 }, { k: 'p', n: 'Precordillera', d: 'Aguas Buenas, ripio', add: 6000 }];
 const TCLS = { u: '', r: 't2', p: 't3' };
 
 // Día de ejemplo en su territorio (RF8) · llega desde AgendaPro y la agenda de la clínica (RF3)
@@ -476,14 +476,14 @@ const APPTS = [
   { id: 'a2', t: '09:00', who: 'Pedro A.', kind: 'clinic', place: 'Box 2 · InMotion', src: 'Agenda clínica' },
   { id: 'a3', t: '09:30', who: 'Elena F.', kind: 'clinic', place: 'Box 2 · viene de Las Cabras', src: 'Agenda clínica' },
   { id: 'a4', t: '11:30', who: 'Carmen V.', kind: 'home', place: 'San Fernando centro', km: 3, tm: 8, tr: 'u', src: 'AgendaPro' },
-  { id: 'a5', t: '13:30', who: 'Luis R.', kind: 'home', place: 'Agua Buena · precordillera', km: 14, tm: 28, tr: 'p', src: 'AgendaPro' },
+  { id: 'a5', t: '13:30', who: 'Luis R.', kind: 'home', place: 'Aguas Buenas · precordillera', km: 14, tm: 28, tr: 'p', src: 'AgendaPro' },
   { id: 'a6', t: '16:00', who: 'Sofía T.', kind: 'pool', place: 'Piscina temperada · camino a Roma', km: 17, tm: 30, tr: 'r', src: 'AgendaPro' },
   { id: 'a7', t: '18:30', who: 'Andrés G.', kind: 'gym', place: 'Gimnasio · San Fernando', km: 7, tm: 12, tr: 'u', src: 'AgendaPro' },
 ];
 const KLABEL = { clinic: 'Clínica', home: 'Domicilio', pool: 'Piscina', gym: 'Gimnasio' };
 const KTAG = { clinic: '', home: 'home', pool: 'pool', gym: 'gym' };
 
-// Mapa ilustrativo (no a escala) · lienzo 360×230 · San Fernando al centro, Agua Buena al oriente
+// Mapa ilustrativo (no a escala) · lienzo 360×230 · San Fernando al centro, Aguas Buenas al oriente
 const P = { clinic: [96, 150], a4: [140, 120], a5: [318, 48], a6: [44, 70], a7: [70, 186] };
 const SEGS = {
   'clinic-a4': 'M96 150 L96 120 L140 120', 'a4-a5': 'M140 120 L232 120 C262 120 262 84 290 76 C306 70 312 60 318 48',
@@ -564,9 +564,9 @@ function mapSVG(big) {
     const fill = isC ? 'var(--purple)' : d ? 'var(--ok)' : a.kind === 'pool' ? '#1C8AD1' : a.kind === 'gym' ? '#B7791F' : 'var(--accent)', rr = big ? 13 : 11;
     return `<circle cx="${x}" cy="${y}" r="${rr}" fill="${fill}" stroke="#fff" stroke-width="3"/><text x="${x}" y="${y + 4.5}" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="${big ? 12 : 11}" font-weight="700" fill="#fff">${isC ? 'C' : i}</text>`;
   }).join('');
-  const lab = big ? `<text x="112" y="146" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">SAN FERNANDO</text><text x="282" y="104" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">AGUA BUENA</text><text x="4" y="102" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">camino a Roma</text><text x="226" y="140" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">ripio · precordillera</text>` : '';
+  const lab = big ? `<text x="112" y="146" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">SAN FERNANDO</text><text x="282" y="104" font-size="10" font-family="DM Mono, monospace" fill="#7A7468">AGUAS BUENAS</text><text x="4" y="102" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">camino a Roma</text><text x="226" y="140" font-size="9" font-family="DM Mono, monospace" fill="#9A8C6A">ripio · precordillera</text>` : '';
   const [km, mn] = tot(r);
-  return `<svg viewBox="0 0 360 230" role="img" aria-label="Mapa de la ruta del día con ${r.order.length - 1} paradas en San Fernando, Agua Buena y camino a Roma">
+  return `<svg viewBox="0 0 360 230" role="img" aria-label="Mapa de la ruta del día con ${r.order.length - 1} paradas en San Fernando, Aguas Buenas y camino a Roma">
     <rect width="360" height="230" fill="var(--map-land)"/>${mtn}
     <rect x="170" y="150" width="60" height="40" rx="8" fill="var(--map-park)"/><path d="M0 214 C90 204 200 226 360 208 L360 230 L0 230Z" fill="var(--map-water)"/>
     ${roads.map(d => `<path d="${d}" stroke="var(--map-road)" stroke-width="7" fill="none"/>`).join('')}

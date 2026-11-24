@@ -423,7 +423,7 @@ def metafora_v3():
 
 
 def storyboard_v3():
-    return slide(head('3.1.3.2 · Storyboard iterado (v3)', 'Un martes de Josselyn en San Fernando, Agua Buena y la piscina', '3.1.3.2') + scenes(C.SCENES_V3, 'it'), '3.1.3')
+    return slide(head('3.1.3.2 · Storyboard iterado (v3)', 'Un martes de Josselyn en San Fernando, Aguas Buenas y la piscina', '3.1.3.2') + scenes(C.SCENES_V3, 'it'), '3.1.3')
 
 
 def mock_v3():

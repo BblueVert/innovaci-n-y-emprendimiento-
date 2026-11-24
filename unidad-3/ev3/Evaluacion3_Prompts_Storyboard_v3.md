@@ -1,12 +1,12 @@
 # EV3 — Prompts del storyboard iterado v3 (3.1.3.2) para Google Flow
 
-Un martes de Josselyn con **Copiloto Kine v3**, después de la retroalimentación del 12/11: sus agendas reales (AgendaPro y la clínica), sus cuatro lugares de trabajo (InMotion, domicilio, piscina temperada y gimnasio), la precordillera de Agua Buena y la clase grupal en Las Cabras.
+Un martes de Josselyn con **Copiloto Kine v3**, después de la retroalimentación del 12/11: sus agendas reales (AgendaPro y la clínica), sus cuatro lugares de trabajo (InMotion, domicilio, piscina temperada y gimnasio), la precordillera de Aguas Buenas y la clase grupal en Las Cabras.
 
 | # | Archivo | Escena | Mejora del ciclo 3 | Ingredientes |
 |---|---|---|---|---|
 | 1 | `v3-01.jpg` | **8:15 · la agenda ya está** | AgendaPro + agenda de la clínica (RF3) | J, escenario box |
 | 2 | `v3-02.jpg` | **10:05 · ¿qué me conviene?** | Ganancia por hora por canal (RF5) | J |
-| 3 | `v3-03.jpg` | **13:30 · Agua Buena** | Tiempo de viaje y tarifa por tramo (RF6) | J, L, auto |
+| 3 | `v3-03.jpg` | **13:30 · Aguas Buenas** | Tiempo de viaje y tarifa por tramo (RF6) | J, L, auto |
 | 4 | `v3-04.jpg` | **16:00 · piscina temperada** | Servicios con su propio costo (RF7) | J |
 | 5 | `v3-05.jpg` | **20:10 · día cerrado** | Reemplaza el registro nocturno (RF2) | J |
 | 6 | `v3-06.jpg` | **Fin de mes · Las Cabras** | Clase grupal para adultos mayores (RF10) | J, grupo |
@@ -61,7 +61,7 @@ Early morning inside a small physiotherapy box at a medical center, the physioth
 Mid-morning, the physiotherapist (character J) sits in a small break room of the medical center between patients, looking thoughtfully at her phone, floating beside the phone a simple horizontal bar chart of five bars of different lengths in purple, turquoise, orange, green and amber, the longest bar on top glowing softly, a small clock icon and a small car icon next to the shorter orange bar, she has a light "aha" expression, soft warm light. [Bloque de estilo]
 ```
 
-### `v3-03` · 13:30 · Agua Buena
+### `v3-03` · 13:30 · Aguas Buenas
 ```
 Early afternoon in the Andes foothills near San Fernando, a narrow gravel road climbing between dry hills and poplar trees, a small orange hatchback parked in front of a rural adobe house with a tiled roof, the physiotherapist (character J) with her equipment bag says goodbye to an elderly man (character L) at the door while looking at her phone, floating above the phone a small clock icon with a dotted winding road and a small coin with a plus sign, the mountains close and big in the background, bright dry summer light. [Bloque de estilo]
 ```

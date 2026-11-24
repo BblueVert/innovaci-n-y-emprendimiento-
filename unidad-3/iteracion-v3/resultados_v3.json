@@ -109,7 +109,7 @@
   {
    "id": "N3",
    "origen": "RF6 · cambio 3",
-   "name": "Ver cuánto le cuesta en tiempo el domicilio de Agua Buena y qué cobrar",
+   "name": "Ver cuánto le cuesta en tiempo el domicilio de Aguas Buenas y qué cobrar",
    "taps": 2,
    "ok": true,
    "obs": "El viaje te tomó 28 min ≈ $7.000 de tu hora. Tramo precordillera: sugerimos cobrar $36.000 (+$6.000)."
@@ -152,7 +152,7 @@
    "name": "Reconocer su territorio en la ruta",
    "taps": 1,
    "ok": true,
-   "obs": "San Fernando · Agua Buena · camino a Roma · Hoy manejas 1 h 18 min. Ese tiempo vale $19.500 de tu hora profesional ($15.000/h): es el costo que no se ve en la bencina."
+   "obs": "San Fernando · Aguas Buenas · camino a Roma · Hoy manejas 1 h 18 min. Ese tiempo vale $19.500 de tu hora profesional ($15.000/h): es el costo que no se ve en la bencina."
   },
   {
    "id": "N9",

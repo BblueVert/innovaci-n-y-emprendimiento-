@@ -189,7 +189,7 @@
 
 **[20:43] Ariel O'Nell (profesor a cargo, INACAP):** Y también de parte de su costo.
 
-**[20:45] Klga. Josselyn Toledo (clienta):** Claro. Por ejemplo, yo tengo otro en Agua Buena de que de San Fernando queda para la precordillera. Y ahí, claro, por ejemplo, es más montañoso y ahí igual hay que diminuir un poco la velocidad porque hay mucho hay como muy malo el camino entonces igual yo me muero como 25 minutos, 30 minutos entonces también uno va viendo la cantidad de tiempo que usted demudra en el desplazamiento.
+**[20:45] Klga. Josselyn Toledo (clienta):** Claro. Por ejemplo, yo tengo otro en Aguas Buenas de que de San Fernando queda para la precordillera. Y ahí, claro, por ejemplo, es más montañoso y ahí igual hay que diminuir un poco la velocidad porque hay mucho hay como muy malo el camino entonces igual yo me muero como 25 minutos, 30 minutos entonces también uno va viendo la cantidad de tiempo que usted demudra en el desplazamiento.
 
 **[21:11] Ariel O'Nell (profesor a cargo, INACAP):** Como lo mencionábamos en la misma aplicación anterior que dependiendo del tramo, la distancia decoraba como un moto más fijo dependiendo de dónde, por ejemplo, equivocaba la habitación del domicilio.
 

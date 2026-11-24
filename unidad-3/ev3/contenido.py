@@ -314,9 +314,9 @@ RETRO_HALLAZGOS = [
     ('RF3', 'Usa dos agendas: AgendaPro y una agenda médica', '“Tengo dos tipos de agenda, la AgendaPro y la [agenda médica digital], tanto para personal y en clínica.”', '36:25', 'Integrar AgendaPro antes que Google Calendar.'),
     ('RF4', 'En la clínica factura un monto mensual', '“En clínica ya dejo como un monto fijo porque al final yo hago la factura y veo el monto total del mes.”', '36:25', 'Modo clínica por factura mensual, además del cálculo por atención.'),
     ('RF5', 'Quiere saber qué canal es más rentable', '“Si sale más rentable en clínica o en domicilio… en clínica puedo atender dos, tres pacientes por hora… a domicilio atiendo solo una persona, con el viaje incluido.”', '19:21', 'Ganancia por hora por canal como métrica central.'),
-    ('RF6', 'El traslado le cuesta tiempo, no solo bencina', '“Agua Buena… queda para la precordillera… es muy malo el camino… me demoro como 25, 30 minutos.”', '20:47', 'Incluir el tiempo de viaje como costo (hora profesional) y una tarifa por tramo.'),
+    ('RF6', 'El traslado le cuesta tiempo, no solo bencina', '“Aguas Buenas… queda para la precordillera… es muy malo el camino… me demoro como 25, 30 minutos.”', '20:47', 'Incluir el tiempo de viaje como costo (hora profesional) y una tarifa por tramo.'),
     ('RF7', 'Hace más que kinesiología', '“Trabajo tanto en piscina. Yo soy psicomotricista acuática… los entrenamientos personalizados que hago en mi propio [gimnasio].”', '05:56 · 23:27', 'Varios servicios y lugares con costos distintos: clínica, domicilio, piscina, gimnasio.'),
-    ('RF8', 'Su territorio es San Fernando y alrededores', 'San Fernando, Agua Buena, Las Cabras (tres pacientes en clínica) y la piscina temperada camino a Roma.', '07:59 · 20:47 · 28:17', 'Ajustar rutas y ejemplos a su territorio real (no solo Rancagua–Machalí).'),
+    ('RF8', 'Su territorio es San Fernando y alrededores', 'San Fernando, Aguas Buenas, Las Cabras (tres pacientes en clínica) y la piscina temperada camino a Roma.', '07:59 · 20:47 · 28:17', 'Ajustar rutas y ejemplos a su territorio real (no solo Rancagua–Machalí).'),
     ('RF9', 'En la región se valora poco lo especializado', '“La gente no sabe lo que es, ni sabe lo que vale realmente… encuentra que es caro.”', '06:42', 'Comunicar el valor del servicio (comprobante, explicación) y cuidar el precio de la app.'),
     ('RF10', 'Grupal sí, pero preventivo', 'Lo terapéutico es individual; ve “fantástico” hacer clases grupales para adultos mayores en Las Cabras, que “andan buscando cositas para hacer en grupo”.', '23:27 · 28:17', 'Módulo de clases grupales (cupos, asistencia, cobro por persona) como acción de la proyección.'),
     ('RF11', 'Sus clientes manejan sus tiempos', '“La mayoría son empresarios, independientes, manejan sus tiempos.”', '05:56', 'Indicio favorable para la ventana de llegada de 30 min (H5); se valida igual con pacientes.'),
@@ -345,7 +345,7 @@ RETRO_CAMBIOS = [
     ('Servicios configurables con su propio costo (piscina, gimnasio, domicilio, clínica)', 'RF7', 'Ajustes · MVP'),
     ('Módulo de clases grupales: cupos, asistencia y cobro por persona; aparece como acción en la proyección', 'RF10', 'Proyección · fase 2'),
     ('Reportes semanales y mensuales por tipo de cliente y lugar, exportables a Excel o Google Sheets', 'Mabel · Ariel', 'Reportes · MVP'),
-    ('Ejemplos y rutas en su territorio: San Fernando, Agua Buena, Las Cabras', 'RF8', 'Prototipo v3'),
+    ('Ejemplos y rutas en su territorio: San Fernando, Aguas Buenas, Las Cabras', 'RF8', 'Prototipo v3'),
     ('Costo estimado de la solución visible en la propuesta (MVP con herramientas de bajo costo)', 'Mabel 12:30', 'Propuesta'),
 ]
 RETRO_DOCENTES.append(('Ana Luisa Aguilera (docente INACAP)', 'Las propuestas de su sección también apuntan al agendamiento y la organización interna; la retroalimentación servirá para mejorarlas.', '39:29'))
@@ -446,7 +446,7 @@ CDM_C3 = dict(
             'Trata la clínica por atención; ella factura un monto fijo mensual (RF4).',
             'Solo existen clínica y domicilio; también atiende en piscina y gimnasio (RF7).',
             'Cuenta la bencina pero no el tiempo de viaje (RF6, Ariel 19:45).',
-            'Ejemplos en Rancagua y Machalí; su territorio es San Fernando, Agua Buena y Las Cabras (RF8).'],
+            'Ejemplos en Rancagua y Machalí; su territorio es San Fernando, Aguas Buenas y Las Cabras (RF8).'],
     prod_m=['Agenda desde AgendaPro y agenda de la clínica.', 'Modo clínica por factura mensual.', 'Servicios configurables con su costo.',
             'Tiempo de viaje como costo y tarifa por tramo.', 'Resumen semanal y mensual por canal, exportable a Excel.'],
     pdv_c=['Diferenciación confirmada: las apps que usa “solo agendan”.', 'Reemplaza un hábito que ya existe (registro nocturno, RF2).',
@@ -460,7 +460,7 @@ CDM_C3 = dict(
 METAFORA_V3 = dict(
     antes=METAFORA_ITER['despues'],
     despues='“Copiloto Kine es como el copiloto de un rally que conoce el terreno: lee cada tramo —ciudad, ripio o precordillera—, canta cuánto rinde cada hora de carrera y lleva las cuentas de todas sus pistas: clínica, domicilio, piscina y gimnasio.”',
-    porque='La clienta no maneja una sola pista: atiende en cuatro lugares y su territorio es rural (San Fernando, Agua Buena, Las Cabras). El copiloto ya no solo lee la ruta: conoce el terreno, sabe que un camino de precordillera cuesta tiempo y compara las pistas por lo que rinden por hora.',
+    porque='La clienta no maneja una sola pista: atiende en cuatro lugares y su territorio es rural (San Fernando, Aguas Buenas, Las Cabras). El copiloto ya no solo lee la ruta: conoce el terreno, sabe que un camino de precordillera cuesta tiempo y compara las pistas por lo que rinden por hora.',
     atributos=[
         ('Anticipador', 'en el sentido de que canta la curva antes de llegar: avisa enero y febrero y propone acciones con su monto, ahora también la clase grupal con su punto de equilibrio.', 'Se mantiene y se amplía con la clase grupal (RF10).', ['Ec']),
         ('Claro', 'en el sentido de que responde de un vistazo “qué me conviene”: ganancia por hora de cada canal ordenada de mayor a menor.', 'Se profundiza: de “cuánto gané” a “dónde rindo más” (RF5).', ['So']),
@@ -473,7 +473,7 @@ SCENES_V3 = [  # storyboard iterado v3 · escenas con capturas del prototipo v3
      'el registro de un toque (ciclos 1 y 2).', 'AgendaPro y agenda clínica (RF3).'),
     ('10:05 · ¿qué me conviene?', V3 + '02_ganancia_por_hora.png', 'phone', 'Entre pacientes ve qué canal rinde más por hora: el domicilio pierde por el viaje.',
      'tablero legible de un vistazo.', 'ganancia por hora por canal (RF5).'),
-    ('13:30 · Agua Buena', V3 + '06_atencion_agua_buena.png', 'phone', 'Termina con don Luis en la precordillera: el viaje le costó 28 min de su hora y la app sugiere cobrar el tramo.',
+    ('13:30 · Aguas Buenas', V3 + '06_atencion_agua_buena.png', 'phone', 'Termina con don Luis en la precordillera: el viaje le costó 28 min de su hora y la app sugiere cobrar el tramo.',
      'desglose de la ganancia.', 'tiempo de viaje y tarifa por tramo (RF6, Ariel).'),
     ('16:00 · piscina temperada', V3 + '10_servicios.png', 'phone', 'Antes de la psicomotricidad acuática, el arriendo de la piscina ya está en el cálculo.',
      'costos editables (ciclo 1).', 'servicios con su propio costo (RF7).'),
@@ -492,7 +492,7 @@ CAMBIOS_V3 = [  # cambio · hallazgo · requerimiento/atributo · captura · est
     ('Servicios configurables con su propio costo: domicilio, piscina, gimnasio, grupal y clínica', 'RF7', 'R3 · R8', '10_servicios.png', 'Funcional'),
     ('Clase grupal en Las Cabras: cupos, cobro por persona y punto de equilibrio', 'RF10 · propuesta grupal', 'R11 · Anticipador', '07_clase_grupal.png', 'Funcional'),
     ('Resumen semanal y mensual por canal, exportable a Excel o Google Sheets', 'Mabel 18:23 · Ariel 10:47', 'R4 · R12', '08_resumen_canal.png', 'Funcional'),
-    ('Ruta y ejemplos en su territorio: San Fernando, Agua Buena, camino a Roma', 'RF8', 'R9', '03_ruta.png', 'Funcional (mapa ilustrativo)'),
+    ('Ruta y ejemplos en su territorio: San Fernando, Aguas Buenas, camino a Roma', 'RF8', 'R9', '03_ruta.png', 'Funcional (mapa ilustrativo)'),
     ('Medio de pago y estado en cada atención', 'Planilla de otro equipo', 'R7 · R12', '06_atencion_agua_buena.png', 'Funcional'),
     ('Cierre del día con resumen (km, tiempo, pagos pendientes)', 'RF2', 'R6', '11_cierre_dia.png', 'Funcional'),
     ('Motivo de consulta fuera de la agenda (dato de salud)', 'Brecha B6 · ciclo 2', 'R13', '05_agenda.png', 'Funcional'),
@@ -506,7 +506,7 @@ V3_TARGETS = sum(len(v) for v in R3['targets'].values())
 
 MOCK_V2V3 = [  # pares antes → después para el mock-up iterado
     (V2 + '01_tablero.png', V3 + '02_ganancia_por_hora.png', 'Tablero', 'Se suma “¿qué te conviene?”: ganancia por hora de 5 canales'),
-    (V2 + '02_ruta_sugerida.png', V3 + '03_ruta.png', 'Ruta', 'Rancagua–Machalí → San Fernando, Agua Buena y camino a Roma; tiempo de viaje con valor'),
+    (V2 + '02_ruta_sugerida.png', V3 + '03_ruta.png', 'Ruta', 'Rancagua–Machalí → San Fernando, Aguas Buenas y camino a Roma; tiempo de viaje con valor'),
     (V2 + '05_ganancia_atencion.png', V3 + '06_atencion_agua_buena.png', 'Atención', 'Ganancia por hora, costo del viaje, tarifa por tramo y medio de pago'),
     (V2 + '08_mi_plata.png', V3 + '08_resumen_canal.png', 'Mi plata', 'Resumen por canal (semana/mes) exportable; factura de la clínica; servicios'),
 ]
@@ -514,7 +514,7 @@ MOCK_V2V3 = [  # pares antes → después para el mock-up iterado
 FICHA_C4 = dict(
     objetivo='Validar con la usuaria real (Josselyn) y una par (Catalina) que el prototipo v3 resuelve su día de trabajo en sus cuatro canales y su territorio, que la ganancia por hora le ayuda a decidir y que el precio piloto es aceptable, usando su propio celular.',
     filas=[
-        ('Comprobar que reconoce su día en la app', 'Josselyn Toledo (usuaria)', 'Prototipo v3 en su celular', 'Recorrido libre + tareas N1, N3, N8 (agenda, viaje a Agua Buena, ruta)', 'Mod.: Claudia · Reg.: Francisco', '“Así es mi día” sin explicación; ≤ 3 toques por tarea', '¿Qué cambiaría para que fuera su día real?', 'Pauta de observación + tiempos', 'Su consulta o domicilio', '25 min'),
+        ('Comprobar que reconoce su día en la app', 'Josselyn Toledo (usuaria)', 'Prototipo v3 en su celular', 'Recorrido libre + tareas N1, N3, N8 (agenda, viaje a Aguas Buenas, ruta)', 'Mod.: Claudia · Reg.: Francisco', '“Así es mi día” sin explicación; ≤ 3 toques por tarea', '¿Qué cambiaría para que fuera su día real?', 'Pauta de observación + tiempos', 'Su consulta o domicilio', '25 min'),
         ('Medir si la ganancia por hora cambia una decisión', 'Josselyn', 'Prototipo v3 · tablero y tramos', 'Tareas N2 y N3 + pregunta de decisión', 'Mod.: Claudia', 'Nombra una decisión concreta (precio, tramo o canal)', '¿Qué haría distinto con este dato?', 'Codificación de respuestas (sí/no + qué)', 'Su consulta', '10 min'),
         ('Verificar factura de clínica y servicios', 'Josselyn', 'Mi plata: factura, servicios, resumen', 'Tareas N4, N5 y N7 con sus valores reales', 'Ejec.: Néstor', 'Ingresa su factura y 2 servicios sin ayuda', '¿Los valores y el resumen calzan con lo que anota hoy?', 'Comparación con su registro nocturno', 'Su consulta', '15 min'),
         ('Validar la clase grupal y el precio', 'Josselyn · Catalina (par)', 'Proyección v3 + tabla de costos', 'Tarea N6 + preguntas de precio (H4) y de las otras propuestas', 'Mod.: Claudia · Reg.: Benjamín', 'Acepta piloto gratis y $9.990/mes después (o propone otro)', '¿Pagaría por esto? ¿Cuánto? ¿La combinaría con una planilla?', 'Tabla de disposición a pagar', 'Presencial / Meet', '10 min'),
@@ -523,7 +523,7 @@ FICHA_C4 = dict(
 
 ITER_DOCS_V3 = [
     ('3.1.3.1 (v2 → v3)', 'Metáfora y atributos', 'Copiloto que lee la ruta y lleva las cuentas; “Claro”, “Automático y corregible”, “Sostenible”.', 'Copiloto que conoce el terreno y compara pistas; nuevo atributo “Justo con su tiempo”; “Conectado y corregible”.', 'RF5 · RF6 · RF7 · RF8'),
-    ('3.1.3.2 (v2 → v3)', 'Storyboard', 'Un día en Rancagua–Machalí, solo clínica y domicilio.', 'Un día en San Fernando con clínica, Agua Buena, piscina y gimnasio; cierre con resumen y clase grupal.', 'RF2 · RF3 · RF7 · RF8 · RF10'),
+    ('3.1.3.2 (v2 → v3)', 'Storyboard', 'Un día en Rancagua–Machalí, solo clínica y domicilio.', 'Un día en San Fernando con clínica, Aguas Buenas, piscina y gimnasio; cierre con resumen y clase grupal.', 'RF2 · RF3 · RF7 · RF8 · RF10'),
     ('3.1.3.3 (v2 → v3)', 'Mock-up', 'Prototipo v2: 5 vistas, 2 canales, clínica por atención, Google Calendar.', f'Prototipo v3: 12 cambios, 5 canales, factura mensual, tramos y resumen exportable · {V3_OK}/{len(V3_TASKS)} tareas, 0 errores AA.', 'CDM ciclo 3'),
     ('3.1.3.4 (ciclo 2 → 4)', 'Ficha de testeo', 'Ciclo 2 técnico, interno.', 'Ciclo 4 con la usuaria real y una par, en su celular, con tareas nuevas, SUS y precio.', 'Ciclo 3: la clienta ya validó el problema'),
     ('3.1.2.4 (ciclo 3)', 'Matriz CDM', 'Ciclo 2: brechas técnicas.', 'Ciclo 3: validación externa con clienta, Sercotec y docentes.', 'Reunión 12/11'),

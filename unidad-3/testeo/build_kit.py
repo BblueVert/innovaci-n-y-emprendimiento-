@@ -44,7 +44,7 @@ HIP = [
 # ---------------------------------------------------------------- perfiles
 PERF = [
     dict(c='K1', n='Josselyn Toledo', t='Kinesióloga independiente · usuaria del caso', tipo='k', real=True,
-         d='Atención en 4 canales: InMotion (factura mensual), domicilios en San Fernando y Agua Buena, piscina y gimnasio. Anota todo cada noche en el teléfono.',
+         d='Atención en 4 canales: InMotion (factura mensual), domicilios en San Fernando y Aguas Buenas, piscina y gimnasio. Anota todo cada noche en el teléfono.',
          s='Prototipo Kine completo (tareas T1–T11)', h='H1 · H2 · H3 · H4', m='Presencial con su celular · 60 min', a='Moderación sin explicar la interfaz; pedir que piense en voz alta.'),
     dict(c='K2', n='Catalina', t='Kinesióloga · experta par (UA1)', tipo='k', real=True,
          d='Colega independiente entrevistada en la UA1: “organizar el Excel me toma una hora diaria”.',
