@@ -322,14 +322,14 @@ def bloque_ev1():
     return (divisor(1, 'DIAGNÓSTICO Y <em>SELECCIÓN DE OPORTUNIDADES</em>', 'Semanas 1 a 4 · criterios 1.1.1 a 1.1.6 · needfinding con la usuaria, expertos y el entorno.', 'img/05-entrevista.jpg',
                     ['Entrevista a Josselyn, observación AEIOU y dos expertos', '8 insights; raíz: la agenda y las finanzas viven separadas', 'PESTAL y 8 antecedentes', 'Desafío redefinido y oportunidad seleccionada'])
             + ev1_metodo() + ev1_insights() + ev1_entorno() + ev1_desafio()
-            + galeria('EV1 · instrumentos de la Unidad 1 (1/2)', G1[:10], 'EV1') + galeria('EV1 · instrumentos de la Unidad 1 (2/2)', G1[10:], 'EV1'))
+            + galeria('EV1 · instrumentos de la Unidad 1 (1/2)', G1[:10], 'EV1') + galeria('EV1 · instrumentos de la Unidad 1 (2/2)', G1[10:], 'EV1', 4, 49))
 
 
 def bloque_ev2():
     return (divisor(2, 'IDEACIÓN <em>DE PROPUESTAS</em>', 'Semanas 6 a 10 · criterios 2.1.1 a 2.1.5 · de un insight a una propuesta de valor.', 'img/04-card-sorting.jpg',
                     ['10 referentes de otros rubros y 6 tendencias', 'Perfil de usuaria y 13 requerimientos', '60 ideas, selección por factibilidad y co-creación', 'Metáfora, atributos y propuesta de valor'])
             + ev2_referentes() + ev2_requerimientos() + ev2_ideas() + ev2_propuesta()
-            + galeria('EV2 · instrumentos de la Unidad 2', G2, 'EV2', cols=5, h=46))
+            + galeria('EV2 · instrumentos de la Unidad 2', G2, 'EV2'))
 
 
 def bloque_ev3():
@@ -339,14 +339,14 @@ def bloque_ev3():
             + B.ficha3() + B.retro_rf() + B.retro_sug() + B.cdm_slide(C3.CDM_C3, 'Ciclo 3 · clienta, Sercotec y docentes (prototipo v2)', '3.1.2.4', '3.1.2 · 3.1.3')
             + B.salto_v3() + B.metafora_v3() + B.storyboard_v3() + B.mock_v3_c() + B.mock_v3_b() + B.cambios_verif_c() + B.ficha4() + B.usuarios_c()
             + B.pestal_c() + B.arte_c() + B.pertinencia() + B.sost_gest_c()
-            + galeria('EV3 · instrumentos de la Unidad 3', G3, 'EV3', cols=6, h=50))
+            + galeria('EV3 · instrumentos de la Unidad 3', G3, 'EV3'))
 
 
 def bloque_ev4():
     return (divisor(4, 'DIFUSIÓN <em>DE LA INNOVACIÓN</em>', 'Semanas 15 a 18 · criterios 4.1.1 a 4.1.5 · comunicar el potencial de la solución al ecosistema.', 'img/15-horizonte.jpg',
                     ['Qué veo, qué no veo, qué infiero', 'Lean Canvas, factibilidad e impacto', 'Formulario de postulación a fondo concursable', 'Guion del pitch, sostenibilidad y acciones futuras'])
             + problema() + recorrido() + solucion() + prototipo() + diferenciacion() + lean() + factibilidad() + impacto() + formulario() + guion() + sostenibilidad()
-            + galeria('EV4 · instrumentos de la Unidad 4', G4, 'EV4', cols=4, h=60))
+            + galeria('EV4 · instrumentos de la Unidad 4', G4, 'EV4'))
 
 
 def agenda():
@@ -359,6 +359,88 @@ def agenda():
                  + '<div class="row" style="margin-top:5mm"><div class="card"><div class="t">Recuento del toolkit</div>Cada evaluación cierra con la galería de sus plantillas; todas están también en el tablero del toolkit (link al final).</div>'
                  + f'<div class="card"><div class="t">Prototipo navegable</div>Vista profesional y vista cliente, publicadas y con código QR al final.</div>'
                  + '<div class="card"><div class="t">Criterios ES04</div>4.1.1 propuesta de valor · 4.1.2 factibilidad e impacto · 4.1.3 persuasión · 4.1.4 diferenciación · 4.1.5 sostenibilidad.</div></div>', 'Agenda')
+
+
+# ================================================================ mejoras de diagramación (portadas de bloque, galerías, cierre)
+def divisor(n, titulo, sub, img, puntos):
+    li = ''.join(f'<div style="border-bottom:1px solid #2A2640;padding:2mm 0;font-size:11pt;display:flex;gap:3mm"><span style="font-family:var(--fm);color:var(--acc);font-size:8pt;padding-top:1mm">{i:02d}</span>{p}</div>' for i, p in enumerate(puntos, 1))
+    return slide(f'''<img src="{img}" style="position:absolute;right:16mm;top:16mm;width:148mm;height:150mm;object-fit:cover;border-radius:5mm;border:1.2mm solid #2A2140;z-index:0">
+<div class="z" style="max-width:142mm;margin-top:10mm">
+<div style="font-family:var(--fd);font-size:96pt;line-height:.8;color:#3A2350">EV<span style="color:#FF6B35">{n}</span></div>
+<div class="k" style="margin-top:4mm">Evaluación N°{n}</div><div class="big" style="font-size:46pt;margin:3mm 0 4mm">{titulo}</div>
+<p class="lead" style="font-size:11pt">{sub}</p><div style="margin-top:4mm">{li}</div></div>''', f'EV{n}', 'dark solid')
+
+
+def galeria(titulo, items, crit, cols=None, h=None):
+    n = len(items)
+    if n > 10:
+        parts = [items[:6], items[6:]]
+        return ''.join(galeria(f'{titulo} ({k}/{len(parts)})', p, crit, 3, 50) for k, p in enumerate(parts, 1))
+    if cols is None or h is None:
+        cols, h = (4, 92) if n <= 4 else (4, 49) if n <= 8 else (5, 49)
+    figs = ''
+    for f, c in items:
+        code, _, name = c.partition(' ')
+        if not code[0].isdigit():
+            code, name = '', c
+        figs += (f'<figure style="margin:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff">'
+                 f'<div style="height:{h}mm;display:flex;align-items:center;justify-content:center;background:#F4F2FA;padding:2.5mm">'
+                 f'<img src="{TK}{f}" style="max-width:100%;max-height:{h - 5}mm;display:block;box-shadow:0 1mm 3mm rgba(18,16,30,.12)"></div>'
+                 f'<figcaption style="padding:1.8mm 2.5mm 2.2mm;border-top:1px solid var(--line)">'
+                 f'<span style="font-family:var(--fm);font-size:6.6pt;letter-spacing:.06em;color:var(--acc2)">{code or "INSTRUMENTO"}</span>'
+                 f'<b style="display:block;font-size:8.6pt;line-height:1.2">{name}</b></figcaption></figure>')
+    return slide(head('Recuento del toolkit', titulo) + f'<div style="display:grid;grid-template-columns:repeat({cols},1fr);gap:4mm">{figs}</div>'
+                 + f'<p style="font-size:8pt;color:var(--ink2);margin-top:3mm">Plantillas completas y en alta resolución en el tablero del toolkit · <b style="color:var(--acc2)">{TABLERO}</b></p>', crit)
+
+
+def _salto_v3():
+    canales = [('Clínica', '$16.950/h', 'factura mensual ÷ horas en box', '#7B3FA0'), ('Piscina', '$15.314/h', 'incluye arriendo y viaje', '#1C8AD1'),
+               ('Domicilio', '$12.807/h', '~40 min de viaje ida y vuelta', '#FF6B35'), ('Clase grupal', '$12.314/h', '8 personas en Las Cabras', '#1F9D6B'),
+               ('Gimnasio', '$12.049/h', 'incluye insumos y viaje', '#F5A524')]
+    cards = ''.join(f'<div style="flex:1;background:rgba(255,255,255,.14);border-radius:4mm;padding:4mm;border-top:2mm solid {c}">'
+                    f'<div style="font-family:var(--fm);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:#FFE8DD">{n}</div>'
+                    f'<div style="font-family:var(--fd);font-size:30pt;line-height:1;margin:1.5mm 0">{v}</div><div style="font-size:8.6pt;color:#FFF3EC">{d}</div></div>' for n, v, d, c in canales)
+    return slide(f'''<div class="k" style="margin-top:6mm">Del ciclo 3 a la versión 3</div>
+<div class="big" style="font-size:84pt;margin-top:4mm">2 CANALES <em>→ 5 CANALES</em></div>
+<p style="font-size:14pt;max-width:235mm;margin-top:4mm">La v3 trabaja como ella: clínica con factura mensual, domicilio, piscina, gimnasio y clase grupal, en San Fernando y sus caminos rurales.</p>
+<div style="display:flex;gap:4mm;margin-top:8mm">{cards}</div>
+<div style="display:flex;gap:10mm;margin-top:7mm;font-family:var(--fd);font-size:24pt"><div>{C3.V3_OK}/{len(C3.V3_TASKS)} <span style="font-family:var(--fb);font-size:10pt">tareas completadas</span></div>
+<div>{C3.V3_CALC_OK}/{len(C3.R3["calculos"])} <span style="font-family:var(--fb);font-size:10pt">cálculos exactos</span></div><div>{C3.V3_AXE} <span style="font-family:var(--fb);font-size:10pt">errores de accesibilidad AA</span></div></div>''', '3.1.3', 'orange')
+
+
+def _storyboard_v3():
+    return slide(head('3.1.3.2 · Storyboard iterado (v3)', 'Un martes de Josselyn con Copiloto Kine', '3.1.3.2') + B.scenes(C3.SCENES_V3, 'it'), '3.1.3')
+
+
+B.salto_v3 = _salto_v3
+B.storyboard_v3 = _storyboard_v3
+
+
+def links():
+    cards = [('qr_profesional', 'Prototipo', 'Vista profesional', 'La app de Josselyn: ganancia real y por hora, ruta, agenda, proyección y Mi plata.', C.URL_PRO),
+             ('qr_cliente', 'Prototipo', 'Vista cliente', 'Los mensajes que recibe el paciente: recordatorio, “voy en camino”, pago y clase grupal.', C.URL_CLI),
+             ('qr_tablero', 'Recuento', 'Tablero del toolkit U1–U4', 'Todas las plantillas del proyecto alrededor de Copiloto Kine (reemplaza el Miro).', TABLERO)]
+    out = ''.join(f'<div class="card" style="flex:1;text-align:center;padding:6mm 5mm;display:flex;flex-direction:column;align-items:center">'
+                  f'<div style="font-family:var(--fm);font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;color:var(--acc2)">{k}</div>'
+                  f'<div style="font-family:var(--fd);font-size:24pt;line-height:1.05;margin:1mm 0 4mm">{t}</div>'
+                  f'<img src="{REL}img/{q}.png" style="width:62mm;height:62mm;border:1px solid var(--line);border-radius:3mm;padding:2mm;background:#fff">'
+                  f'<div style="font-size:9.4pt;margin:4mm 0 3mm;line-height:1.4;width:100%;max-width:88mm">{d}</div>'
+                  f'<a href="{u}" style="font-family:var(--fm);font-size:7.6pt;color:var(--acc2);word-break:break-all;width:100%;max-width:88mm">{u}</a></div>' for q, k, t, d, u in cards)
+    return slide(head('Links del proyecto', 'Escanea con el celular o haz clic') + f'<div style="display:flex;gap:6mm;margin-top:2mm">{out}</div>'
+                 + '<p style="font-size:8.6pt;color:var(--ink2);margin-top:4mm;text-align:center">Los prototipos se abren en cualquier celular sin instalar nada y usan datos de ejemplo. El tablero se recorre con zoom, como un Miro.</p>', 'Links')
+
+
+def cierre():
+    eq = ''.join(f'<div style="flex:1;border-top:1.2mm solid #12101E;padding-top:2.5mm"><div style="font-family:var(--fd);font-size:19pt;line-height:1">{n}</div>'
+                 f'<div style="font-size:8.4pt;color:#FFF3EC;margin-top:1mm">{r}</div></div>'
+                 for n, r in (('Francisco Ahumada', 'Registro y matrices CDM'), ('Claudia Cifuentes', 'Moderación del testeo'),
+                              ('Néstor Rivera', 'Prototipo y tareas'), ('Benjamín Vera Yáñez', 'Secretario técnico')))
+    return slide(f'''<div class="k" style="margin-top:6mm">Gracias</div>
+<div class="big" style="font-size:58pt;margin-top:4mm;max-width:280mm">DEL DIAGNÓSTICO AL PITCH: <em>UN COPILOTO PARA LA KINESIÓLOGA INDEPENDIENTE</em>.</div>
+<p style="font-size:14pt;max-width:230mm;margin-top:6mm">Gracias a Josselyn Toledo, a Catalina, a Sercotec y a los docentes de INACAP Rancagua.</p>
+<div style="display:flex;gap:6mm;margin-top:16mm">{eq}</div>
+<div style="font-family:var(--fm);font-size:8pt;letter-spacing:.1em;margin-top:6mm;color:#FFE8DD">DISEÑO DIGITAL · INNOVACIÓN Y EMPRENDIMIENTO III · PROFESOR ROBERTO ESCOBAR DONOSO · DICIEMBRE 2026</div>''', 'Cierre', 'orange')
+
 
 
 HEAD = '<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Copiloto Kine — Presentación final</title><link rel="stylesheet" href="pres.css"></head><body>'
