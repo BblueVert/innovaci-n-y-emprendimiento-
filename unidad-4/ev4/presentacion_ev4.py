@@ -154,8 +154,8 @@ def formulario():
 
 
 def guion():
-    cards = ''.join(f'<div class="card"><div class="t">{t}</div><div style="font-size:8.6pt;line-height:1.38">{x}</div></div>' for t, x in C.PITCH)
-    return slide(head('4.1.3.2 · Guion del pitch (3½ min)', C.PITCH_FRASE, '4.1.3.2') + f'<div class="row" style="align-items:stretch">{cards}</div>', '4.1.4')
+    cards = ''.join(f'<div class="card"><div class="t">{t} · {C.PITCH_QUIEN[t]}</div><div style="font-size:8.6pt;line-height:1.38">{x}</div></div>' for t, x in C.PITCH)
+    return slide(head('4.1.3.2 · Guion del pitch · 3:15 min · 4 integrantes', C.PITCH_FRASE, '4.1.3.2') + f'<div class="row" style="align-items:stretch">{cards}</div>', '4.1.4')
 
 
 def sostenibilidad():
