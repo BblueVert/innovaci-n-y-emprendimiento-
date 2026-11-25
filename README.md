@@ -112,3 +112,16 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 - Material en AAI → carpeta **"Archivos Sercotec ES4 15/12/2026"**: formato Word del informe (U1, U2, U3 y U4), ejemplo de informe y PPT.
 - PPT → **pitch de 3½ minutos**.
 - Se sube a AAI: **informe** (Word, U1–U4) y **PPT** con **link al pitch** y **link al Miro**.
+
+### Material U4 (`/unidad-4/material`)
+| Archivo | Para qué |
+|---|---|
+| `FGIE03_U04_MANUAL_ESTUDIANTE_U04.pdf` · `FGIE03_U04_TOOLKIT_U04.pdf` | Criterios 4.1.1–4.1.5 e instrumentos de la U4 |
+| `plantillas/4.1.2.1_Lean_Canvas.pdf` | Lean Canvas (evaluación formativa) |
+| `plantillas/FGIE03_MC_U04S16_Datos_Basicos_del_Proyecto.docx` | 4.1.3.1 Formulario de postulación a fondo concursable |
+| `plantillas/4.1.3.2_Guion_Pitch.pdf` | Guion del pitch (evaluación sumativa): quién eres, qué haces, por qué es único, objetivo |
+| `infografias/` | Pitch y comunicación del modelo de negocio (Lean Canvas) |
+| `sercotec_es4/formato_informe.docx` | Formato Word del informe final (U1–U4) |
+| `sercotec_es4/PITCH_actualizado.pptx` | Plantilla del PPT del pitch: antecedentes, problema, solución, prototipo, acciones futuras, conclusiones |
+
+El ejemplo de informe de otro grupo (carpeta Sercotec) no se versiona: trae datos de otros estudiantes.
