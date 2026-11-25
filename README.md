@@ -135,4 +135,8 @@ El ejemplo de informe de otro grupo (carpeta Sercotec) no se versiona: trae dato
 | `4.1.3.2_Guion_Pitch_Copiloto_Kine.pdf/.png` | Guion del pitch (421 palabras, ~3–3½ min) |
 | `4.1.3.1_Formulario_Postulacion_Copiloto_Kine.docx` | Formulario de postulación a fondo concursable. RUT, correo, teléfono, líder y experiencia emprendedora los completa cada integrante. Generador: `formulario_u4.py` |
 
-Contenido único en `unidad-4/ev4/contenido_u4.py`. Pendiente: grabar el pitch y pegar los links del video y del Miro (portada del informe y diapositiva 2).
+Contenido único en `unidad-4/ev4/contenido_u4.py`. **Entregable final ES4: solo la presentación** (`Pitch_Copiloto_Kine.pptx`), con links y QR a la vista profesional, la vista cliente y el tablero del toolkit.
+
+Tablero del toolkit U1–U4 (reemplaza a Miro): https://claude.ai/artifact/6kjUvwa7Y9JhZNj7LzP1jv · fuente y generador en `unidad-4/tablero_toolkit/` (`armar_tablero.py`, imágenes en `img/`).
+
+Pendiente: grabar el pitch y pegar su link en la diapositiva 2.

@@ -22,7 +22,7 @@ RED = RGBColor(0xE3, 0x06, 0x13)
 INK = RGBColor(0x26, 0x26, 0x26)
 GREY = RGBColor(0x59, 0x59, 0x59)
 LINK_PITCH = '[pegar link del video]'
-LINK_MIRO = '[pegar link del Miro]'
+LINK_TABLERO = 'https://claude.ai/artifact/6kjUvwa7Y9JhZNj7LzP1jv'
 NOTES = {k: v for k, v in C.PITCH}
 
 
@@ -48,8 +48,12 @@ def write(tf, paras, size=40, color=INK, space=10):
         if isinstance(item, tuple):
             r = p.add_run(); r.text = item[0]; r.font.bold = True; r.font.size = Pt(size); r.font.color.rgb = INK
             r2 = p.add_run(); r2.text = ' ' + item[1]; r2.font.size = Pt(size); r2.font.color.rgb = color
+            if item[1].startswith('http'):
+                r2.hyperlink.address = item[1]
         else:
             r = p.add_run(); r.text = item; r.font.size = Pt(size); r.font.color.rgb = color
+            if item.startswith('http'):
+                r.hyperlink.address = item
         for r in p.runs:
             r.font.italic = False
 
@@ -141,7 +145,7 @@ def build():
                 r.text = ''
         elif sh.text_frame.text.startswith('NOMBRE'):
             lines = [('NOMBRE:', ', '.join(C.EQUIPO)), ('CARRERA:', C.CARRERA), ('ASIGNATURA:', C.ASIGNATURA), ('PROFESOR:', C.PROFESOR),
-                     ('FECHA:', '15-12-2026'), ('LINK PITCH:', LINK_PITCH), ('LINK MIRO:', LINK_MIRO)]
+                     ('FECHA:', '15-12-2026'), ('LINK PITCH:', LINK_PITCH), ('TABLERO TOOLKIT:', LINK_TABLERO), ('PROTOTIPO:', C.URL_PRO)]
             write(sh.text_frame, lines, size=22, space=0)
             sh.top = Cm(25.0); sh.height = Cm(10.5)
     notes(S[1], NOTES['Quién eres'].split('. Josselyn atiende')[0] + '.')
@@ -247,8 +251,26 @@ def build():
         box(af, 42, 11.0 + i * 6.0, 22.5, 5.4, [('#', d), t], size=28, fill=RGBColor(0xF6, 0xF2, 0xF2))
     notes(af, NOTES['Objetivo'].rsplit(' Copiloto Kine:', 1)[0])
 
+    # nueva · links del proyecto (antes de conclusiones)
+    lk = duplicate(prs, S[8])
+    for sh in list(lk.shapes):
+        if sh.has_text_frame and sh.name == 'Título Diapositiva 2':
+            sh.text_frame.text = 'Links del proyecto'
+        elif not (sh.shape_type == 13 and sh.name in ('ppt-back-slide.png', 'ppt-footer.jpg', 'logo-inacap.png')):
+            sh._element.getparent().remove(sh._element)
+    cards = [('qr_profesional', 'Prototipo · vista profesional', 'La app de Josselyn: ganancia real y por hora, ruta, agenda y Mi plata.', C.URL_PRO),
+             ('qr_cliente', 'Prototipo · vista cliente', 'Los mensajes que recibe el paciente, pensados para personas mayores.', C.URL_CLI),
+             ('qr_tablero', 'Tablero del toolkit U1–U4', 'Recuento de todos los instrumentos del proyecto alrededor de Copiloto Kine.', LINK_TABLERO)]
+    for i, (q, t, d, u) in enumerate(cards):
+        x = 4.5 + i * 20.5
+        lk.shapes.add_picture(os.path.join(IMG, q + '.png'), Cm(x + 3.5), Cm(10.5), width=Cm(11))
+        box(lk, x, 22.2, 19, 12.5, [('#', t), d, u], size=24)
+    notes(lk, 'Todo el proyecto está disponible en estos enlaces: el prototipo de Josselyn, la vista que recibe el paciente y el tablero con el recuento de todos los instrumentos del toolkit, de la unidad 1 a la 4.')
+    move(prs, lk, 9)
+    S = list(prs.slides)
+
     # 9 · conclusiones
-    cc = S[9]
+    cc = S[10]
     content_slide(prs, cc, 'Conclusiones', [
         ('#', 'Cómo beneficia a Josselyn frente al problema'),
         'Sabe cuánto gana de verdad y qué canal le conviene.',

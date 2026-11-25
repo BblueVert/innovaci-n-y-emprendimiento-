@@ -1,0 +1,692 @@
+[
+[
+{
+"op": "set",
+"collection": "board",
+"doc_id": "meta",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/meta.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e3",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e3.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e38",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e38.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e59",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e59.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e84",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e84.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e106",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e106.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e1",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e1.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e2",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e2.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e4",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e4.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e5",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e5.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e6",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e6.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e7",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e7.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e8",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e8.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e9",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e9.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e10",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e10.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e11",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e11.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e12",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e12.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e13",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e13.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e14",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e14.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e15",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e15.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e16",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e16.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e17",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e17.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e18",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e18.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e19",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e19.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e20",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e20.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e21",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e21.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e22",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e22.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e23",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e23.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e24",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e24.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e25",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e25.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e26",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e26.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e27",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e27.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e28",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e28.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e29",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e29.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e30",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e30.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e31",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e31.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e32",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e32.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e33",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e33.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e34",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e34.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e35",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e35.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e36",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e36.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e37",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e37.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e39",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e39.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e40",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e40.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e41",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e41.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e42",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e42.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e43",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e43.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e44",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e44.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e45",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e45.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e46",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e46.json"
+}
+],
+[
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e47",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e47.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e48",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e48.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e49",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e49.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e50",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e50.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e51",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e51.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e52",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e52.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e53",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e53.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e54",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e54.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e55",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e55.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e56",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e56.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e57",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e57.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e58",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e58.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e60",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e60.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e61",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e61.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e62",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e62.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e63",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e63.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e64",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e64.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e65",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e65.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e66",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e66.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e67",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e67.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e68",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e68.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e69",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e69.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e70",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e70.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e71",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e71.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e72",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e72.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e73",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e73.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e74",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e74.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e75",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e75.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e76",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e76.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e77",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e77.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e78",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e78.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e79",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e79.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e80",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e80.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e81",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e81.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e82",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e82.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e83",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e83.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e85",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e85.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e86",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e86.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e87",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e87.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e88",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e88.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e89",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e89.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e90",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e90.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e91",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e91.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e92",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e92.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e93",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e93.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e94",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e94.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e95",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e95.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e96",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e96.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e97",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e97.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e98",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e98.json"
+}
+],
+[
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e99",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e99.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e100",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e100.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e101",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e101.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e102",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e102.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e103",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e103.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e104",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e104.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e105",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e105.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e107",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e107.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e108",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e108.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e109",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e109.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e110",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e110.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e111",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e111.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e112",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e112.json"
+},
+{
+"op": "set",
+"collection": "elements",
+"doc_id": "e113",
+"file_path": "/home/user/innovaci-n-y-emprendimiento-/unidad-4/tablero_toolkit/elementos/e113.json"
+}
+]
+]
