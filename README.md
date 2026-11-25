@@ -135,7 +135,7 @@ El ejemplo de informe de otro grupo (carpeta Sercotec) no se versiona: trae dato
 | `4.1.3.2_Guion_Pitch_Copiloto_Kine.pdf/.png` | Guion del pitch (421 palabras, ~3–3½ min) |
 | `4.1.3.1_Formulario_Postulacion_Copiloto_Kine.docx` | Formulario de postulación a fondo concursable. RUT, correo, teléfono, líder y experiencia emprendedora los completa cada integrante. Generador: `formulario_u4.py` |
 
-Contenido único en `unidad-4/ev4/contenido_u4.py`. **Entregable final ES4: solo la presentación** — `EV4_Presentacion_Copiloto_Kine.pdf` (18 diapositivas, formato del proyecto; generador `presentacion_ev4.py`) o la versión en plantilla INACAP `Pitch_Copiloto_Kine.pptx`,, con links y QR a la vista profesional, la vista cliente y el tablero del toolkit.
+Contenido único en `unidad-4/ev4/contenido_u4.py`. **Entregable final ES4: solo la presentación** — `EV4_Presentacion_Copiloto_Kine.pdf` (59 diapositivas, formato del proyecto: proyecto completo EV1–EV4 con recuento del toolkit por evaluación; generador `presentacion_ev4.py`) o la versión en plantilla INACAP `Pitch_Copiloto_Kine.pptx`,, con links y QR a la vista profesional, la vista cliente y el tablero del toolkit.
 
 Tablero del toolkit U1–U4 (reemplaza a Miro): https://claude.ai/artifact/6kjUvwa7Y9JhZNj7LzP1jv · fuente y generador en `unidad-4/tablero_toolkit/` (`armar_tablero.py`, imágenes en `img/`).
 
