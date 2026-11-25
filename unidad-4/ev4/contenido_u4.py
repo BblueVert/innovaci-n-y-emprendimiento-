@@ -14,8 +14,8 @@ URL_CLI = 'https://copiloto-kine.vercel.app/cliente/'
 TITULO = 'Copiloto Kine: ganancia real y por hora para kinesiólogas independientes de O’Higgins'  # ≤ 15 palabras
 
 DESAFIO = ('¿Cómo podríamos aumentar la visibilidad financiera de kinesiólogas independientes con atención mixta, conectando su agenda '
-           'con sus ingresos y costos, para reducir a la mitad el tiempo de registro manual (de ~1 h a menos de 30 min diarios) en la '
-           'Región de O’Higgins durante 2027?')
+           'con sus ingresos y costos, para reducir a la mitad el tiempo de registro manual (de ~1 h a menos de 30 min diarios) en Rancagua '
+           'durante 2027?')
 
 # ---------------------------------------------------------------- Lean Canvas (4.1.2.1)
 LC = {
