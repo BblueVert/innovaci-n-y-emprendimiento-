@@ -125,3 +125,14 @@ Calendario oficial (manual U2): S6 → S10. Formativa (bitácora) en S9, sumativ
 | `sercotec_es4/PITCH_actualizado.pptx` | Plantilla del PPT del pitch: antecedentes, problema, solución, prototipo, acciones futuras, conclusiones |
 
 El ejemplo de informe de otro grupo (carpeta Sercotec) no se versiona: trae datos de otros estudiantes.
+
+### EV4 · entregables (`/unidad-4/ev4/entregables`)
+| Archivo | Qué es |
+|---|---|
+| `Informe_Final_Copiloto_Kine.docx` | Informe final U1–U4 en el formato Word Sercotec (18 págs.). Generador: `python3 unidad-4/ev4/informe_u4.py` |
+| `Pitch_Copiloto_Kine.pptx` (+ PDF) | PPT del pitch sobre la plantilla oficial, 11 diapositivas, guion en las notas. Generador: `pitch_u4.py` |
+| `4.1.2.1_Lean_Canvas_Copiloto_Kine.pdf/.png` | Lean Canvas en la plantilla oficial. Generador: `plantillas_u4.py` |
+| `4.1.3.2_Guion_Pitch_Copiloto_Kine.pdf/.png` | Guion del pitch (421 palabras, ~3–3½ min) |
+| `4.1.3.1_Formulario_Postulacion_Copiloto_Kine.docx` | Formulario de postulación a fondo concursable. RUT, correo, teléfono, líder y experiencia emprendedora los completa cada integrante. Generador: `formulario_u4.py` |
+
+Contenido único en `unidad-4/ev4/contenido_u4.py`. Pendiente: grabar el pitch y pegar los links del video y del Miro (portada del informe y diapositiva 2).
