@@ -128,3 +128,113 @@ PITCH = [
     ('Por qué es único', 'Las apps que usa Josselyn solo agendan, y las planillas en Excel hay que alimentarlas a mano. Copiloto Kine es la única que cruza la agenda con el costo del traslado rural, la retención de boletas y la experiencia del paciente, que recibe avisos claros pensados para personas mayores. No lo inventamos en una sala: lo probamos en cuatro ciclos, uno de ellos con la propia Josselyn, Sercotec y docentes, y lo ajustamos a cómo trabaja de verdad. El prototipo completa 21 de 21 tareas, calcula exacto y no tiene errores de accesibilidad. Y cuesta $9.990 al mes: menos de lo que Josselyn recupera cobrando un solo tramo rural.'),
     ('Objetivo', 'Queremos que las kinesiólogas independientes de O’Higgins dejen de trabajar de noche en sus cuentas y decidan con datos dónde atender, cuánto cobrar y cómo preparar los meses bajos. En marzo partimos con un piloto gratis para cinco profesionales de la región, medimos cuántas siguen usándolo, y con esos resultados postularemos a fondos de Sercotec para escalar a otras regiones y a otras profesiones de salud independientes. Copiloto Kine: sabe cuánto ganas y qué te conviene, sin anotar nada de noche.'),
 ]
+
+# ---------------------------------------------------------------- Formulario de postulación (4.1.3.1)
+FORM = {
+    'titulo': TITULO,
+    'resumen': ('Las kinesiólogas independientes de O’Higgins trabajan en varios lugares a la vez —clínica, domicilio, piscina, gimnasio— y no saben '
+                'cuánto ganan realmente ni qué les conviene. Josselyn Toledo, kinesióloga de San Fernando, anota cada noche en su teléfono lo que ganó y '
+                'gastó en bencina: casi una hora diaria, sin saber si un domicilio rural le rinde. Copiloto Kine es una app web que toma las citas de la '
+                'agenda que ya usa (AgendaPro y la de la clínica) y convierte cada atención en ganancia real y ganancia por hora, descontando comisión o '
+                'factura, traslado, materiales y retención de boletas. Valora el tiempo de viaje, sugiere cuánto cobrar por tramo rural, anticipa los meses '
+                'bajos con acciones concretas (como clases grupales para adultos mayores) y entrega un resumen para la contadora. El prototipo se validó en '
+                'cuatro ciclos, uno con la clienta, Sercotec y docentes. Impacto: cerca de una hora diaria de trabajo nocturno liberada, mejores ingresos '
+                'por cobrar el traslado y menos kilómetros recorridos.'),
+    'ods': ['Salud y Bienestar', 'Trabajo Decente y Crecimiento Económico', 'Industria, Innovación e Infraestructura'],
+    'otro': '',
+    'desafio': DESAFIO,
+    'problema': ('Las y los kinesiólogos independientes con atención mixta combinan una clínica (por comisión o con una factura mensual) con pacientes '
+                 'particulares a domicilio y otros servicios. En Chile hay 30.050 kinesiólogos en el Registro Nacional de Prestadores Individuales '
+                 '(Superintendencia de Salud); en O’Higgins estimamos cerca de 1.500. Las herramientas que usan solo agendan (AgendaPro, agendas médicas) '
+                 'y la parte financiera queda en notas del celular o en Excel.\n\n'
+                 'En la investigación (UA1) y en la reunión con la clienta del 12/11 encontramos tres problemas: (1) no saben cuánto ganan de verdad ni qué '
+                 'canal les conviene: Josselyn atiende en clínica, a domicilio, en piscina y en su gimnasio, y registra todo cada noche (“cada noche anoto '
+                 'todo… lo que gasto en bencina… cuánto gané en cada sesión”); una experta par, Catalina, declara “me toma una hora diaria”; (2) el traslado '
+                 'no se mide ni se cobra: un domicilio en Aguas Buenas, en la precordillera, le toma 25–30 minutos por camino de ripio; (3) los ingresos son '
+                 'estacionales: enero y febrero bajan cerca de 35 % sin un plan para cubrirlos.\n\n'
+                 'Afecta directamente a la profesional, e indirectamente a sus pacientes (muchos adultos mayores en zonas rurales) y a su contadora.'),
+    'consecuencias': ('Para la profesional: cerca de 1 hora diaria de trabajo administrativo nocturno (unas 22 horas al mes, que a $15.000 la hora '
+                      'equivalen a ~$330.000 de su tiempo) y desgaste personal. Decide a ciegas: puede estar atendiendo a pérdida un domicilio rural, '
+                      'porque el viaje de ida y vuelta (56 minutos y 28 km a Aguas Buenas) no se cobra. Sin proyección, enero y febrero la toman por '
+                      'sorpresa y recurre a sus ahorros.\n\n'
+                      'Para el territorio: en comunas rurales como Las Cabras o Aguas Buenas, los adultos mayores dependen de la atención a domicilio; '
+                      'si a la profesional no le rinde, la oferta se reduce. La región “valora poco lo especializado” (clienta, 12/11), por lo que '
+                      'subir precios sin argumentos es difícil.\n\n'
+                      'Para el sector: el trabajo independiente en salud crece y la Ley 21.133 aumenta gradualmente la retención de boletas (15,25 % en '
+                      '2026, 16 % en 2027, 17 % en 2028), lo que hace más necesario provisionar impuestos. Las soluciones del mercado (AgendaPro, '
+                      'Encuadrado, Reservo, Medilink, Nubox) agendan o llevan contabilidad, pero ninguna cruza la cita con el traslado, la comisión y la '
+                      'retención chilena.'),
+    'mercado': ('Ubicación: Región de O’Higgins (San Fernando, Rancagua, Colchagua y comunas rurales), con proyección nacional.\n'
+                'Mercado potencial: 30.050 kinesiólogos registrados en Chile; ~1.500 en O’Higgins (estimación del equipo, ≈ 5 % de la población). '
+                'Mercado objetivo inicial: los independientes con atención mixta; meta del año 1: 30 usuarias pagando (2 % del mercado regional).\n'
+                'Clientes y usuarios: la kinesióloga independiente paga y usa la app. Usuarios secundarios: sus pacientes, que reciben recordatorios, '
+                'avisos de llegada y comprobantes; y su contadora, que recibe el resumen.\n'
+                'Segmento más importante (early adopters): profesionales que ya registran ingresos a mano y atienden a domicilio en zonas rurales, como '
+                'Josselyn y Catalina. Otros segmentos futuros: fonoaudiólogas, terapeutas ocupacionales y nutricionistas independientes.\n'
+                'Relación: cercana y de autoservicio; piloto acompañado, comunidad de usuarias y soporte por WhatsApp.\n'
+                'Competidores y sustitutos: agendas (AgendaPro, Encuadrado, Reservo, Cal.com), software clínico (Medilink, Cliniko), contabilidad '
+                '(Nubox) y planillas Excel. Proveedores: servicios en la nube (Vercel, Supabase), mapas (OpenRouteService), precios de combustible '
+                '(API Bencina en Línea, CNE) y WhatsApp.'),
+    'tipo': 'Un nuevo producto (bien o servicio)',
+    'solucion': ('Copiloto Kine es una app web para el celular (sin instalación) que funciona como copiloto financiero de la kinesióloga '
+                 'independiente:\n'
+                 '1. La agenda entra sola: toma las citas de AgendaPro y de la agenda de la clínica.\n'
+                 '2. Cada atención se vuelve ganancia real con un toque: descuenta comisión o factura mensual, traslado, materiales o arriendos, y '
+                 'retención de la boleta.\n'
+                 '3. Ganancia por hora de cada canal (clínica, domicilio, piscina, gimnasio, clase grupal), contando el tiempo de viaje.\n'
+                 '4. Ruta del día con el costo del traslado y una tarifa sugerida por tramo (urbano, rural, precordillera).\n'
+                 '5. Proyección de meses bajos con acciones, entre ellas una clase grupal con su punto de equilibrio.\n'
+                 '6. Resumen semanal y mensual exportable a Excel para la contadora, sin datos clínicos.\n'
+                 '7. Vista paciente: mensajes simples para personas mayores (recordatorio, “voy en camino”, comprobante).\n\n'
+                 f'Nivel de avance: prototipo navegable v3 publicado ({URL_PRO}), validado en cuatro ciclos (dos internos, uno con la clienta, '
+                 'Sercotec y docentes, y uno planificado con usuarias). Completa 21 de 21 tareas, calcula igual que la hoja de referencia y no tiene '
+                 'errores de accesibilidad WCAG AA. Siguiente paso: MVP con la agenda real, respaldo en la nube y aviso por WhatsApp.'),
+    'novedad': ('Novedad: es la única solución que cruza la agenda con lo que realmente queda de cada atención en un trabajo itinerante y rural: '
+                'comisión o factura, traslado en bencina y en tiempo, y retención chilena. Las alternativas cubren una parte: AgendaPro, Encuadrado '
+                'o Reservo agendan; Nubox lleva contabilidad; las planillas en Excel hay que alimentarlas a mano.\n'
+                'Por qué pagarían: porque recuperan dinero (cobrar un solo tramo rural de $3.000–6.000 ya cubre los $9.990 del mes), tiempo (≈ 1 hora '
+                'diaria) y tranquilidad (impuestos provisionados y meses bajos anticipados). Hoy pagan por agendas que no les dicen cuánto ganan.\n'
+                'Por qué elegirnos: la diseñamos con una kinesióloga real de la región y la ajustamos a cómo trabaja (cuatro lugares, factura '
+                'mensual, caminos rurales). No reemplaza lo que usa: se conecta a su agenda y exporta a la misma planilla de su contadora. Cuesta '
+                'menos que una sesión y se prueba gratis.\n'
+                'Problemas que resuelve: no saber cuánto gana ni qué le conviene, no cobrar el traslado, la estacionalidad y el trabajo nocturno.\n'
+                'Necesidades que satisface: control financiero simple, decidir dónde atender y cuánto cobrar, y tiempo personal.'),
+    'canales': ('Fase 1 (piloto): canal directo y personal. Josselyn y Catalina invitan a colegas; demo en vivo desde un enlace; acompañamiento por '
+                'WhatsApp.\n'
+                'Fase 2 (crecimiento): comunidades profesionales (Colegio de Kinesiólogos, grupos regionales de WhatsApp y Facebook, ex alumnos), '
+                'contenido en Instagram y TikTok con casos reales (“¿cuánto te cuesta un domicilio en precordillera?”) y charlas en centros de '
+                'negocios Sercotec.\n'
+                'Fase 3 (escala): alianzas con clínicas que trabajan con kinesiólogos independientes y con agendas existentes.\n'
+                'Los canales más rentables para este segmento son el boca a boca entre colegas y las comunidades profesionales: bajo costo y alta '
+                'confianza. La app web se abre desde un enlace, sin tiendas de aplicaciones, lo que reduce la fricción y el costo de distribución.'),
+    'actividades': ('Actividades clave: desarrollo y mantención de la app (integración de agenda, cálculo, respaldo); acompañamiento del piloto; '
+                    'creación de contenido; gestión de comunidad y soporte.\n'
+                    'Cómo se medirán (métricas pirata):\n'
+                    '• Adquisición: kinesiólogas que abren la demo (meta 100 en 3 meses).\n'
+                    '• Activación: conectan la agenda y registran la primera atención el primer día (≥ 60 %).\n'
+                    '• Retención: cierran el día al menos 4 de 5 días hábiles; siguen usando la app a los 90 días (≥ 50 %).\n'
+                    '• Ingresos: pasan del piloto gratis al plan pagado (≥ 30 %).\n'
+                    '• Referencia: cada usuaria recomienda a una colega en 6 meses.\n'
+                    '• Producto: cierre del día en menos de 2 minutos; ≥ 80 % de las atenciones registradas solas; SUS ≥ 75.'),
+    'costos': ('Costos fijos: operación comercial ≈ $48.000 al mes (hosting Vercel Pro, base de datos Supabase Pro, WhatsApp Business API, a $950 por '
+               'dólar); dominio ≈ $10.900 al año; soporte y mantención 8 horas al mes del equipo.\n'
+               'Costos del piloto: ≈ $900 al mes, usando planes gratuitos.\n'
+               'Desarrollo del MVP: 4 integrantes × 60 horas, aporte del equipo (valor de referencia $1.920.000).\n'
+               'Costos variables: mensajes de WhatsApp por conversación y almacenamiento, bajos por usuaria.\n'
+               'Costo de adquisición (CAC): ≈ $15.000 por usuaria (contenido, charlas y referidos); se recupera en el segundo mes de pago.\n'
+               'No hay costos de distribución ni almacenaje: es un producto digital que se entrega por un enlace.'),
+    'ingresos': ('Modelo: suscripción. Piloto gratis por 3 meses; luego $9.990 al mes o $99.900 al año (2 meses de regalo).\n'
+                 'Valor del tiempo de vida (LTV): con 24 meses de permanencia promedio, ≈ $240.000 por usuaria, 16 veces el CAC.\n'
+                 'Proyección del año 1: escenario conservador 15 usuarias ($149.850 al mes); base 30 ($299.700 al mes, margen bruto ≈ 84 %); '
+                 'optimista 75 ($749.250 al mes). Punto de equilibrio de la operación: 5 usuarias pagando.\n'
+                 'Medio de pago preferido: transferencia o débito automático mensual (Mercado Pago o Flow), que es como las profesionales '
+                 'independientes pagan hoy otros servicios; plan anual por transferencia.'),
+    'equipo_desc': ('Equipo de 4 estudiantes de Diseño Digital de INACAP Rancagua, con competencias en investigación con usuarios, UX/UI, '
+                    'prototipado en Figma y HTML, identidad visual y desarrollo web. Roles: Claudia Cifuentes, moderación de sesiones de testeo y '
+                    'relación con usuarias; Néstor Rivera, prototipo y ejecución de tareas; Francisco Ahumada, registro, matrices y contenido; '
+                    'Benjamín Vera Yáñez, secretario técnico: consolidación, auditoría técnica y desarrollo. Durante 2026 desarrollamos el caso '
+                    'completo con la clienta Josselyn Toledo: diagnóstico, ideación, prototipo navegable y cuatro ciclos de testeo. Para el MVP '
+                    'buscaremos apoyo de un asesor contable para validar las reglas tributarias.'),
+    'programa': 'Instituto Profesional',
+    'carrera': 'Diseño Digital',
+}
