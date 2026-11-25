@@ -364,8 +364,13 @@ def agenda():
 # ================================================================ mejoras de diagramación (portadas de bloque, galerías, cierre)
 def divisor(n, titulo, sub, img, puntos):
     li = ''.join(f'<div style="border-bottom:1px solid #2A2640;padding:2mm 0;font-size:11pt;display:flex;gap:3mm"><span style="font-family:var(--fm);color:var(--acc);font-size:8pt;padding-top:1mm">{i:02d}</span>{p}</div>' for i, p in enumerate(puntos, 1))
-    return slide(f'''<img src="{img}" style="position:absolute;right:16mm;top:16mm;width:148mm;height:150mm;object-fit:cover;border-radius:5mm;border:1.2mm solid #2A2140;z-index:0">
-<div class="z" style="max-width:142mm;margin-top:10mm">
+    from PIL import Image as _I
+    iw, ih = _I.open(EV3 + '/' + img).size
+    bw, bh = 156, 150                      # caja disponible a la derecha (mm)
+    w, h = (bw, bw * ih / iw) if iw / ih > bw / bh else (bh * iw / ih, bh)
+    top = 16 + (bh - h) / 2
+    return slide(f'''<img src="{img}" style="position:absolute;right:16mm;top:{top:.1f}mm;width:{w:.1f}mm;height:{h:.1f}mm;object-fit:contain;border-radius:5mm;border:1.2mm solid #2A2140;z-index:0">
+<div class="z" style="max-width:138mm;margin-top:10mm">
 <div style="font-family:var(--fd);font-size:96pt;line-height:.8;color:#3A2350">EV<span style="color:#FF6B35">{n}</span></div>
 <div class="k" style="margin-top:4mm">Evaluación N°{n}</div><div class="big" style="font-size:46pt;margin:3mm 0 4mm">{titulo}</div>
 <p class="lead" style="font-size:11pt">{sub}</p><div style="margin-top:4mm">{li}</div></div>''', f'EV{n}', 'dark solid')
