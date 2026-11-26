@@ -343,7 +343,7 @@ def bloque_ev3():
 
 
 def bloque_ev4():
-    return (divisor(4, 'DIFUSIÓN <em>DE LA INNOVACIÓN</em>', 'Semanas 15 a 18 · criterios 4.1.1 a 4.1.5 · comunicar el potencial de la solución al ecosistema.', 'img/15-horizonte.jpg',
+    return (divisor(4, 'DIFUSIÓN <em>DE LA INNOVACIÓN</em>', 'Semanas 15 a 18 · criterios 4.1.1 a 4.1.5 · comunicar el potencial de la solución al ecosistema.', 'img/06-nudo.jpg',
                     ['Qué veo, qué no veo, qué infiero', 'Lean Canvas, factibilidad e impacto', 'Formulario de postulación a fondo concursable', 'Guion del pitch, sostenibilidad y acciones futuras'])
             + problema() + recorrido() + solucion() + prototipo() + diferenciacion() + lean() + factibilidad() + impacto() + formulario() + guion() + sostenibilidad()
             + galeria('EV4 · instrumentos de la Unidad 4', G4, 'EV4'))
